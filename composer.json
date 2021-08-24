@@ -1,0 +1,63 @@
+{
+    "name": "openeuropa/oe_showcase",
+    "description": "OpenEuropa Showcase profile.",
+    "type": "drupal-profile",
+    "license": "EUPL-1.2",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.2",
+        "drupal/core": "^8.9 || ^9.1"
+    },
+    "require-dev": {
+        "composer/installers": "~1.5",
+        "drupal/core-composer-scaffold": "^8.9 || ^9.1",
+        "drupal/coder": "8.3.8",
+        "drupal/config_devel": "^1.2",
+        "drupal/drupal-extension": "~4.0",
+        "drush/drush": "~10.3",
+        "guzzlehttp/guzzle": "~6.3",
+        "openeuropa/code-review": "~1.6",
+        "openeuropa/drupal-core-require-dev": "^8.9 || ^9.1",
+        "openeuropa/task-runner-drupal-project-symlink": "^1.0",
+        "phpunit/phpunit": "~6.0"
+    },
+    "scripts": {
+        "post-install-cmd": "./vendor/bin/run drupal:site-setup",
+        "post-update-cmd": "./vendor/bin/run drupal:site-setup"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Drupal\\oe_showcase\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\oe_showcase\\": "./tests/src/"
+        }
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "enable-patching": true,
+        "installer-paths": {
+            "build/core": ["type:drupal-core"],
+            "build/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "build/modules/contrib/{$name}": ["type:drupal-module"],
+            "build/themes/contrib/{$name}": ["type:drupal-theme"]
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./build"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
