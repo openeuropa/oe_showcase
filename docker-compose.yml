@@ -1,0 +1,62 @@
+version: '2'
+services:
+  web:
+    image: fpfis/httpd-php-dev:7.3
+    working_dir: /var/www/html
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/var/www/html # Non Mac users.
+      # - nfsmount:/var/www/html # Mac Users with the nfsmount volume.
+    environment:
+      # XDEBUG_CONFIG: "client_host=172.17.0.1" # Non-Mac users.
+      # XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1, idekey=VSCODE
+      XDEBUG_CONFIG: "client_host=172.17.0.1 client_port=9000  remote_host=172.17.0.1 remote_port=9000 remote_enable=1, idekey=VSCODE"
+      # XDEBUG_CONFIG: "client_host=host.docker.internal" # Mac users.
+      XDEBUG_MODE: "debug"
+      PHP_IDE_CONFIG: "serverName=Docker"
+      # Enable step debugging for all PHP request. See ./README.md#step-debugging for more information.
+      XDEBUG_SESSION: "VSCODE"
+  mysql:
+    image: percona/percona-server:5.7
+    command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    # ports:
+    #   - 3306:3306
+  sparql:
+    image: openeuropa/triple-store-dev
+    environment:
+    - SPARQL_UPDATE=true
+    - DBA_PASSWORD=dba
+    ports:
+      - "8890:8890"
+
+  # If you would like to see what is going on you can run the following on your host:
+  # docker run --rm -p 4444:4444 -p 5900:5900 --network="host" selenium/standalone-chrome-debug:latest
+  # Newer version of this image might run into this issue:
+  # @link https://github.com/elgalu/docker-selenium/issues/20
+  selenium:
+    image: selenium/standalone-chrome-debug:3.141.59-oxygen
+    environment:
+      - DISPLAY=:99
+      - SE_OPTS=-debug
+      - SCREEN_WIDTH=1280
+      - SCREEN_HEIGHT=800
+      - VNC_NO_PASSWORD=1
+    ports:
+      - '4444:4444'
+      - '5900:5900'
+    shm_size: 2g
+
+#### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
+
+#volumes:
+#  nfsmount:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=host.docker.internal,rw,nolock,hard,nointr,nfsvers=3
+#      device: ":${PWD}/"
+
+#### End Mac users.

@@ -1,0 +1,67 @@
+drupal:
+  root: "build"
+  base_url: "http://web:8080/build"
+  site:
+    name: "OpenEuropa"
+    profile: "minimal"
+  database:
+    host: "mysql"
+    port: "3306"
+    name: "oe_showcase"
+    user: "root"
+    password: ""
+  sparql:
+    host: "sparql"
+    port: "8890"
+  post_install:
+    # Prepare the instance.
+    - "./vendor/bin/drush en toolbar -y"
+    - "./vendor/bin/drush theme:enable bartik -y"
+    - "./vendor/bin/drush theme:enable seven -y"
+    - "./vendor/bin/drush config-set system.theme default bartik -y"
+    - "./vendor/bin/drush config-set system.theme admin seven -y"
+    - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
+    # Enable the modules.
+    - "./vendor/bin/drush en config_devel -y"
+    - "./vendor/bin/drush en oe_showcase -y"
+    - "./vendor/bin/drush cr"
+  settings:
+    settings:
+      file_scan_ignore_directories:
+        - "node_modules"
+        - "bower_components"
+        - "vendor"
+        - "${drupal.root}"
+      file_private_path: "sites/default/files/private"
+    databases:
+      sparql_default:
+        default:
+          prefix: ""
+          host: ${drupal.sparql.host}
+          port: ${drupal.sparql.port}
+          namespace: 'Drupal\sparql_entity_storage\Driver\Database\sparql'
+          driver: 'sparql'
+selenium:
+  host: "http://selenium"
+  port: "4444"
+  browser: "chrome"
+
+commands:
+  drupal:site-setup:
+    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/oe_showcase" }
+    - { task: "run", command: "drupal:drush-setup" }
+    - { task: "run", command: "drupal:settings-setup" }
+    - { task: "run", command: "setup:phpunit" }
+    - { task: "run", command: "setup:behat" }
+  setup:phpunit:
+    - { task: "process", source: "phpunit.xml.dist", destination: "phpunit.xml" }
+  setup:behat:
+    - { task: "process", source: "behat.yml.dist", destination: "behat.yml" }
+  # Use the following commands only if you can run Task Runner commands on your host machine.
+  sparql:purge:
+    - "docker-compose exec sparql ./vendor/bin/robo purge"
+  sparql:import:
+    - "docker-compose exec sparql ./vendor/bin/robo import"
+  sparql:reset:
+    - { task: "run", command: "sparql:purge" }
+    - { task: "run", command: "sparql:import" }
