@@ -6,7 +6,7 @@
 Basic installation profile, all it does is:
 
 1. Enable the bare minimum amount of core modules.
-2. Setup `seven` as administrative theme and [`oe_theme`][1] as front-end theme.
+2. Setup `seven` as administrative theme and [`bartik`][1] as front-end theme.
 
 ## Rationale
 
@@ -50,7 +50,6 @@ $ ./vendor/bin/run drupal:site-install
 This will:
 
 - Install the target site
-- Set the OpenEuropa Theme as the default theme
 - Enable development modules
 
 ### Using Docker Compose
@@ -103,8 +102,7 @@ tests.
 To initiate step debugging from the browser, set the correct cookie using a browser extension or a bookmarklet
 like the ones generated at https://www.jetbrains.com/phpstorm/marklets/.
 
-[1]: https://github.com/openeuropa/oe_theme/releases
-[2]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
-[3]: https://www.docker.com/get-docker
-[4]: https://docs.docker.com/compose
+[1]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
+[2]: https://www.docker.com/get-docker
+[3]: https://docs.docker.com/compose
 
