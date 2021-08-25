@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Profile
 type: profile
 description: 'OpenEuropa Showcase installation profile.'
-core: 8.x
+core_version_requirement: ^8.9 || ^9.1
 
 dependencies:
   - node
