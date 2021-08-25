@@ -102,7 +102,8 @@ tests.
 To initiate step debugging from the browser, set the correct cookie using a browser extension or a bookmarklet
 like the ones generated at https://www.jetbrains.com/phpstorm/marklets/.
 
-[1]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
-[2]: https://www.docker.com/get-docker
-[3]: https://docs.docker.com/compose
+[1]: https://www.drupal.org/project/bartik
+[2]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
+[3]: https://www.docker.com/get-docker
+[4]: https://docs.docker.com/compose
 
