@@ -6,19 +6,15 @@
 Basic installation profile, all it does is:
 
 1. Enable the bare minimum amount of core modules.
-2. Setup `seven` as administrative theme and [`bartik`][1] as front-end theme.
+2. Setup `seven` as administrative theme.
 
 ## Rationale
 
-Opting for a minimalistic installation profile will make it easier to deal with a fully distributed approach: the
-installation profile is seen as an empty shell that will never pose any compatibility issue to any of the site's modules
-and themes. Most importantly this will allow modules and themes maintainers to properly version their work semantically.
-
-This profile will also be used to build a basic site using the multiple components of OpenEuropa.
+This profile is aimed to provide developers with a series of examples on how the openeuropa library features are built and configured. Exposing that features, the building of new sites will be easy to get the necessary components to achieve every site's goals.
 
 ## Installation
 
-The recommended way of installing the OpenEuropa Profile is via a [Composer-based workflow][2].
+The recommended way of installing the OpenEuropa Profile is via a [Composer-based workflow][1].
 
 In the root of the project, run
 
@@ -58,8 +54,8 @@ The setup procedure described above can be sensitively simplified by using Docke
 
 Requirements:
 
-- [Docker][3]
-- [Docker-compose][4]
+- [Docker][2]
+- [Docker-compose][3]
 
 Copy docker-compose.yml.dist into docker-compose.yml.
 
@@ -102,8 +98,7 @@ tests.
 To initiate step debugging from the browser, set the correct cookie using a browser extension or a bookmarklet
 like the ones generated at https://www.jetbrains.com/phpstorm/marklets/.
 
-[1]: https://www.drupal.org/project/bartik
-[2]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
-[3]: https://www.docker.com/get-docker
-[4]: https://docs.docker.com/compose
+[1]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
+[2]: https://www.docker.com/get-docker
+[3]: https://docs.docker.com/compose
 
