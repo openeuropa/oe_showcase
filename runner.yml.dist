@@ -3,7 +3,7 @@ drupal:
   base_url: "http://web:8080/build"
   site:
     name: "OpenEuropa"
-    profile: "minimal"
+    profile: "oe_showcase"
   database:
     host: "mysql"
     port: "3306"
