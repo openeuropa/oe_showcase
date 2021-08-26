@@ -4,23 +4,24 @@ description: 'OpenEuropa Showcase installation profile.'
 core_version_requirement: ^8.9 || ^9.1
 
 dependencies:
-  - node
   - block
-  - config
-  - menu_link_content
-  - datetime
   - block_content
+  - config
+  - datetime
+  - dblog
+  - dynamic_page_cache
   - editor
+  - file
+  - filter
   - image
+  - menu_link_content
+  - node
+  - oe_showcase_default_content
   - options
   - path
   - page_cache
-  - dynamic_page_cache
-  - taxonomy
-  - dblog
   - toolbar
-  - file
-  - filter
+  - taxonomy
   - user
   - views
 
