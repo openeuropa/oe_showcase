@@ -10,9 +10,6 @@ drupal:
     name: "oe_showcase"
     user: "root"
     password: ""
-  sparql:
-    host: "sparql"
-    port: "8890"
   post_install:
     # Prepare the instance.
     - "./vendor/bin/drush en toolbar -y"
@@ -32,14 +29,7 @@ drupal:
         - "vendor"
         - "${drupal.root}"
       file_private_path: "sites/default/files/private"
-    databases:
-      sparql_default:
-        default:
-          prefix: ""
-          host: ${drupal.sparql.host}
-          port: ${drupal.sparql.port}
-          namespace: 'Drupal\sparql_entity_storage\Driver\Database\sparql'
-          driver: 'sparql'
+
 selenium:
   host: "http://selenium"
   port: "4444"
@@ -56,11 +46,3 @@ commands:
     - { task: "process", source: "phpunit.xml.dist", destination: "phpunit.xml" }
   setup:behat:
     - { task: "process", source: "behat.yml.dist", destination: "behat.yml" }
-  # Use the following commands only if you can run Task Runner commands on your host machine.
-  sparql:purge:
-    - "docker-compose exec sparql ./vendor/bin/robo purge"
-  sparql:import:
-    - "docker-compose exec sparql ./vendor/bin/robo import"
-  sparql:reset:
-    - { task: "run", command: "sparql:purge" }
-    - { task: "run", command: "sparql:import" }
