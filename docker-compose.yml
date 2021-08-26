@@ -24,13 +24,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     # ports:
     #   - 3306:3306
-  sparql:
-    image: openeuropa/triple-store-dev
-    environment:
-    - SPARQL_UPDATE=true
-    - DBA_PASSWORD=dba
-    ports:
-      - "8890:8890"
 
   # If you would like to see what is going on you can run the following on your host:
   # docker run --rm -p 4444:4444 -p 5900:5900 --network="host" selenium/standalone-chrome-debug:latest

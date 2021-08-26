@@ -35,13 +35,6 @@ services:
       - NODE_MAX_INSTANCES=5
       - NODE_MAX_SESSION=5
 
-  sparql:
-    image: registry.fpfis.eu/openeuropa/triple-store-dev
-    pull: true
-    environment:
-      - SPARQL_UPDATE=true
-      - DBA_PASSWORD=dba
-
 pipeline:
   composer-install:
     group: prepare
