@@ -1,0 +1,7 @@
+name: OpenEuropa Showcase default content
+type: module
+description: Provide default content to oe_showcase pages
+package: OpenEuropa
+core_version_requirement: ^8.9 || ^9.1
+dependencies:
+  - default_content:default_content
