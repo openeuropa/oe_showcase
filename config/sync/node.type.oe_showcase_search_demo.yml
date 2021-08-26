@@ -1,0 +1,11 @@
+uuid: 0af482fb-1281-45b8-a2ac-27db730d7476
+langcode: en
+status: true
+dependencies: {  }
+name: 'OE Showcase Search Demo'
+type: oe_showcase_search_demo
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
