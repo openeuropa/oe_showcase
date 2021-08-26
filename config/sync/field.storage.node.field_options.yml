@@ -1,0 +1,45 @@
+uuid: 9944fdf3-c94e-4bcd-8546-cc9c2e0d2de7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_options
+field_name: field_options
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: option_1
+      label: 'Option 1'
+    -
+      value: option_2
+      label: 'Option 2'
+    -
+      value: option_3
+      label: 'Option 3'
+    -
+      value: option_4
+      label: 'Option 4'
+    -
+      value: option_5
+      label: 'Option 5'
+    -
+      value: option_6
+      label: 'Option 6'
+    -
+      value: option_7
+      label: 'Option 7'
+    -
+      value: option_8
+      label: 'Option 8'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
