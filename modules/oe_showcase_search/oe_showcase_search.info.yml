@@ -10,3 +10,8 @@ dependencies:
 themes:
   - seven
   - bartik
+
+default_content:
+  node:
+    - 752f5d7a-27ed-4e47-8d0f-90b1e568bddf
+    - fa3a4916-c8f6-4719-ba9e-cdaa7f2bc5ed
