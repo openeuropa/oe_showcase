@@ -18,7 +18,11 @@ drupal:
     - "./vendor/bin/drush config-set system.theme default bartik -y"
     - "./vendor/bin/drush config-set system.theme admin seven -y"
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
+    # Don't aggregate or some pages will not be showed properly.
+    - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
+    - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
     # Enable the modules.
+    - "./vendor/bin/drush en oe_showcase_default_content -y"
     - "./vendor/bin/drush en config_devel -y"
     - "./vendor/bin/drush cr"
   settings:
@@ -30,14 +34,9 @@ drupal:
         - "${drupal.root}"
       file_private_path: "sites/default/files/private"
 
-selenium:
-  host: "http://selenium"
-  port: "4444"
-  browser: "chrome"
-
 commands:
   drupal:site-setup:
-    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/oe_showcase" }
+    - { task: "run", command: "drupal:symlink-project" }
     - { task: "run", command: "drupal:drush-setup" }
     - { task: "run", command: "drupal:settings-setup" }
     - { task: "run", command: "setup:phpunit" }

@@ -23,18 +23,6 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
 
-  selenium:
-    image: registry.fpfis.eu/fpfis/selenium:standalone-chrome-3.141.59-oxygen
-    pull: true
-    shm_size: 2g
-    environment:
-      - DISPLAY=:99
-      - SE_OPTS=-debug
-      - SCREEN_WIDTH=1280
-      - SCREEN_HEIGHT=800
-      - NODE_MAX_INSTANCES=5
-      - NODE_MAX_SESSION=5
-
 pipeline:
   composer-install:
     group: prepare
