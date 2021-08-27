@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e6dfbfa1-ca93-4be3-8758-46ed0fea1bb6
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Qui
+  created:
+    -
+      value: 1603424171
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Cogo decet hendrerit illum letalis nisl sit. Brevitas comis eligo ideo neo pagus plaga quadrum quidem sit. Minim nunc patria quidem sino veniam. Abdo dignissim dolus fere letalis minim nutus probo proprius ulciscor. At meus secundum. Caecus dignissim dolore magna oppeto persto ut valde venio.\n\nCausa ideo praesent quibus suscipere tamen usitas. Abico eum imputo letalis pala tamen. Abigo loquor luctus obruo plaga uxor. Abigo eum paulatim rusticus similis. Adipiscing aptent facilisis haero ideo imputo iustum laoreet nutus similis.\n\nAntehabeo esca et gilvus ille saluto. Abbas dolor eros iaceo jus molior odio validus. Consectetuer et jugis magna neo persto singularis utrum. Modo quia ulciscor validus. Diam eum nunc ymo. Aliquam minim rusticus saluto suscipit venio volutpat. Abigo causa comis luctus olim oppeto saepius vulputate.\n\nPremo refoveo turpis. Abbas adipiscing aliquip appellatio conventio neque nutus refero. Natu roto typicus utrum. Caecus exerci iriure nimis oppeto probo ut zelus. Ex mauris praesent premo quidne quis sino usitas vindico. Abbas antehabeo cogo eligo eu metuo pagus tamen vel. Huic iaceo nisl pala qui ullamcorper. Abluo ad genitus loquor probo quae ullamcorper vulputate.\n\nBlandit et loquor luptatum volutpat. Conventio ludus validus. Hos ideo lenis sed suscipit torqueo turpis. Abbas dolore paratus tation validus vel. Exputo neque praemitto quia tation tincidunt vicis. Ille lobortis os probo quis sagaciter suscipere typicus.\n\nMelior nulla sit. Distineo macto ratis singularis sino vicis. Genitus nimis pagus. Euismod quibus sit valde vereor. Dolor genitus luctus nunc singularis tum. Abluo decet paratus qui uxor ymo. Abico dolor nostrud premo suscipit tincidunt ulciscor vindico voco. Capto letalis paratus probo. Defui minim probo vulpes. Hos vel vereor. Caecus exputo humo olim voco.\n\nOppeto si vero. Importunus tation volutpat. Ille patria qui vero. Aliquip decet gravis neque nostrud secundum similis te. Abico consectetuer elit patria premo refoveo ymo. Eu mauris paulatim turpis vereor. Aliquip illum paratus refoveo te turpis. Augue defui ille meus quidne sino veniam vindico.\n\nGravis iriure loquor quis si. Aptent paulatim wisi. Commodo conventio diam iusto saluto ullamcorper. Ad brevitas duis in incassum lucidus nisl tamen tego venio. Consectetuer dolor facilisi hos in olim rusticus scisco typicus uxor. Ille incassum lobortis oppeto sed verto.\n\nDefui validus vereor. Dolore facilisi loquor saluto tamen volutpat. Bene blandit qui valde. Iaceo paratus veniam. Abico blandit camur importunus sino ullamcorper uxor valde vicis. Acsi dignissim jugis lenis mauris nimis qui quidne. Cui iriure melior molior. Comis loquor suscipit. Commodo gravis laoreet neque nimis nutus odio turpis utinam utrum.\n\nCausa exerci loquor praesent suscipere. Ex feugiat hendrerit paratus qui. Abbas aliquam iusto secundum. Aliquip autem pecus saepius veniam vulputate.\n\nCui dignissim magna neo virtus. Dignissim exputo hos ibidem molior natu torqueo. Cogo neo neque nimis nulla praemitto sagaciter similis uxor. Euismod hendrerit iaceo imputo quae. Iustum modo praemitto validus voco. Distineo gravis importunus lenis nimis. Ea exputo facilisis oppeto pagus pecus probo sed. Bene laoreet minim quia sudo. Aliquip caecus exputo populus probo. Meus nisl quidem similis suscipit. Euismod incassum meus sit typicus.\n\nAppellatio loquor meus modo quidne refero utrum velit vereor. Acsi autem ex illum os quidem zelus. Conventio dolor facilisi illum iriure loquor meus nisl pala sagaciter. Macto pagus quis. Accumsan aptent lenis melior natu odio proprius tamen. Abico dolore haero in neo premo sagaciter scisco ulciscor. Duis exputo nobis proprius secundum sudo suscipit. Abbas dolore duis enim euismod hendrerit importunus jugis minim.\n\n"
+      format: plain_text
+      summary: "Cogo decet hendrerit illum letalis nisl sit. Brevitas comis eligo ideo neo pagus plaga quadrum quidem sit. Minim nunc patria quidem sino veniam. Abdo dignissim dolus fere letalis minim nutus probo proprius ulciscor. At meus secundum. Caecus dignissim dolore magna oppeto persto ut valde venio.\n\nCausa ideo praesent quibus suscipere tamen usitas. Abico eum imputo letalis pala tamen. Abigo loquor luctus obruo plaga uxor. Abigo eum paulatim rusticus similis. Adipiscing aptent facilisis haero ideo imputo iustum laoreet nutus similis.\n\nAntehabeo esca et gilvus ille saluto. Abbas dolor eros iaceo jus molior odio validus. Consectetuer et jugis magna neo persto singularis utrum. Modo quia ulciscor validus. Diam eum nunc ymo. Aliquam minim rusticus saluto suscipit venio volutpat. Abigo causa comis luctus olim oppeto saepius vulputate.\n\nPremo refoveo turpis. Abbas adipiscing aliquip appellatio conventio neque nutus refero. Natu roto typicus utrum. Caecus exerci iriure nimis oppeto probo ut zelus. Ex mauris praesent premo quidne quis sino usitas vindico. Abbas antehabeo cogo eligo eu metuo pagus tamen vel. Huic iaceo nisl pala qui ullamcorper. Abluo ad genitus loquor probo quae ullamcorper vulputate.\n\nBlandit et loquor luptatum volutpat. Conventio ludus validus. Hos ideo lenis sed suscipit torqueo turpis. Abbas dolore paratus tation validus vel. Exputo neque praemitto quia tation tincidunt vicis. Ille lobortis os probo quis sagaciter suscipere typicus.\n\nMelior nulla sit. Distineo macto ratis singularis sino vicis. Genitus nimis pagus. Euismod quibus sit valde vereor. Dolor genitus luctus nunc singularis tum. Abluo decet paratus qui uxor ymo. Abico dolor nostrud premo suscipit tincidunt ulciscor vindico voco. Capto letalis paratus probo. Defui minim probo vulpes. Hos vel vereor. Caecus exputo humo olim voco.\n\nOppeto si vero. Importunus tation volutpat. Ille patria qui vero. Aliquip decet gravis neque nostrud secundum similis te. Abico consectetuer elit patria premo refoveo ymo. Eu mauris paulatim turpis vereor. Aliquip illum paratus refoveo te turpis. Augue defui ille meus quidne sino veniam vindico.\n\nGravis iriure loquor quis si. Aptent paulatim wisi. Commodo conventio diam iusto saluto ullamcorper. Ad brevitas duis in incassum lucidus nisl tamen tego venio. Consectetuer dolor facilisi hos in olim rusticus scisco typicus uxor. Ille incassum lobortis oppeto sed verto.\n\nDefui validus vereor. Dolore facilisi loquor saluto tamen volutpat. Bene blandit qui valde. Iaceo paratus veniam. Abico blandit camur importunus sino ullamcorper uxor valde vicis. Acsi dignissim jugis lenis mauris nimis qui quidne. Cui iriure melior molior. Comis loquor suscipit. Commodo gravis laoreet neque nimis nutus odio turpis utinam utrum.\n\nCausa exerci loquor praesent suscipere. Ex feugiat hendrerit paratus qui. Abbas aliquam iusto secundum. Aliquip autem pecus saepius veniam vulputate.\n\nCui dignissim magna neo virtus. Dignissim exputo hos ibidem molior natu torqueo. Cogo neo neque nimis nulla praemitto sagaciter similis uxor. Euismod hendrerit iaceo imputo quae. Iustum modo praemitto validus voco. Distineo gravis importunus lenis nimis. Ea exputo facilisis oppeto pagus pecus probo sed. Bene laoreet minim quia sudo. Aliquip caecus exputo populus probo. Meus nisl quidem similis suscipit. Euismod incassum meus sit typicus.\n\nAppellatio loquor meus modo quidne refero utrum velit vereor. Acsi autem ex illum os quidem zelus. Conventio dolor facilisi illum iriure loquor meus nisl pala sagaciter. Macto pagus quis. Accumsan aptent lenis melior natu odio proprius tamen. Abico dolore haero in neo premo sagaciter scisco ulciscor. Duis exputo nobis proprius secundum sudo suscipit. Abbas dolore duis enim euismod hendrerit importunus jugis minim.\n\n"
+  field_options:
+    -
+      value: option_6
+    -
+      value: option_3
