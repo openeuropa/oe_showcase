@@ -5,6 +5,7 @@ core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
   - search_api:search_api
+  - search_api_db:search_api_db
   - drupal:views
   - openeuropa:oe_showcase_default_content
 
