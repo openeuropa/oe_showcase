@@ -1,2 +1,2 @@
 # OE Showcase Search
-Demo search feature based on search_api
+Provides a demo search feature based on search_api.
