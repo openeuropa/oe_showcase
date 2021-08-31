@@ -15,7 +15,6 @@
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "^8.9 || ^9.1",
         "drupal/default_content": "^2.0@alpha",
-        "drupal/devel": "^4.1",
         "drupal/drupal-extension": "~4.0",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6",
