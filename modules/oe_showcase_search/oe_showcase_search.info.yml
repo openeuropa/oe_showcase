@@ -6,7 +6,7 @@ package: OpenEuropa
 dependencies:
   - search_api:search_api
   - drupal:views
-  - default_content:default_content
+  - openeuropa:oe_showcase_default_content
 
 themes:
   - seven
