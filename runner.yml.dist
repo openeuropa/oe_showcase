@@ -24,7 +24,6 @@ drupal:
     # Enable the modules.
     - "./vendor/bin/drush en oe_showcase_default_content -y"
     - "./vendor/bin/drush en oe_showcase_search -y"
-    - "./vendor/bin/drush en search_api_db -y"
     - "./vendor/bin/drush en config_devel -y"
     - "./vendor/bin/drush cr"
   settings:
