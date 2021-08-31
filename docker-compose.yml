@@ -22,15 +22,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     # ports:
     #   - 3306:3306
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: mysql
-      PMA_USER: root
-      PHP_UPLOAD_MAX_FILESIZE: 1G
-      PHP_MAX_INPUT_VARS: 1G
-    ports:
-      - 8082:80
 #### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
 
 #volumes:
