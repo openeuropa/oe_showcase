@@ -4,10 +4,12 @@
     <ini name="error_reporting" value="32767"/>
     <ini name="memory_limit" value="-1"/>
     <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["${selenium.browser}", null, "${selenium.host}:${selenium.port}/wd/hub"]'/>
+    <env name="SIMPLETEST_BASE_URL" value="http://web:8080/${drupal.root}"/>
   </php>
   <testsuites>
     <testsuite name="OpenEuropa Showcase">
       <directory>./tests/</directory>
+      <directory>./modules/oe_showcase_search/tests/</directory>
     </testsuite>
   </testsuites>
 </phpunit>
