@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase_search\Functional;
 
-use Drupal\Core\Url;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\search_api\Entity\Index;
 use Drupal\search_api\Entity\Server;
@@ -27,9 +26,9 @@ class ShowcaseSearchAssets extends BrowserTestBase {
     'search_api',
     'search_api_db',
     'oe_showcase_search',
-    'oe_showcase_default_content'
+    'oe_showcase_default_content',
   ];
-  
+
   /**
    * The profile to install as a basis for testing.
    *
@@ -41,7 +40,7 @@ class ShowcaseSearchAssets extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected $defaultTheme = 'stark';
-  
+
   /**
    * A user with permission to administer site configuration.
    *
@@ -57,7 +56,7 @@ class ShowcaseSearchAssets extends BrowserTestBase {
    * @see \Drupal\Core\Config\Development\ConfigSchemaChecker
    */
   protected $strictConfigSchema = FALSE;
-  
+
   /**
    * The test index.
    *
@@ -76,9 +75,9 @@ class ShowcaseSearchAssets extends BrowserTestBase {
   /**
    * Tests whether the default search was correctly installed.
    */
-  public function testInstallAndDefaultSetupWorking(): void  {
+  public function testInstallAndDefaultSetupWorking(): void {
     $this->drupalLogin($this->adminUser);
-    
+
     // Assure the Showcase server is can be used.
     $server = Server::load('showcase_search_server');
     $this->assertInstanceOf(Server::class, $server, 'Server can be loaded');
@@ -91,7 +90,7 @@ class ShowcaseSearchAssets extends BrowserTestBase {
   /**
    * Tests that all fields are added to the index, as expected.
    */
-  public function testFields(): void  {
+  public function testFields(): void {
     // Load the index defined in the config.
     $index = Index::load('showcase_search_index');
     $fields = $index->getFields();
@@ -115,11 +114,11 @@ class ShowcaseSearchAssets extends BrowserTestBase {
     }
   }
 
- /**
+  /**
    * Tests available indexed items.
    */
-  public function testIndexedContent(): void  {
-    // Set index
+  public function testIndexedContent(): void {
+    // Set index.
     $this->index = Index::load('showcase_search_index');
     $indexed_items = $this->index->indexItems();
 
