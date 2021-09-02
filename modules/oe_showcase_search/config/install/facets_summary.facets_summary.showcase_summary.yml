@@ -1,0 +1,57 @@
+uuid: 36cb2043-f895-48c7-b194-0b7b88febc6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_search_index
+    - views.view.showcase_search
+  module:
+    - search_api
+_core:
+  default_config_hash: AFmvgAyPxDQGqhAypEnAUaEr71gB5_lLdyhILwiX9lk
+id: showcase_summary
+name: 'Showcase Summary'
+facets:
+  authored_on:
+    checked: true
+    label: 'Authored on'
+    separator: ', '
+    weight: 0
+    show_count: false
+  options:
+    checked: true
+    label: Options
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_block__showcase_search__block_1'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  reset_facets:
+    processor_id: reset_facets
+    weights:
+      build: '30'
+    settings:
+      link_text: Clear
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
+  show_summary:
+    processor_id: show_summary
+    weights:
+      build: '20'
+    settings: {  }
+  show_text_when_empty:
+    processor_id: show_text_when_empty
+    weights:
+      build: '10'
+    settings:
+      text:
+        value: 'No results found.'
+        format: plain_text

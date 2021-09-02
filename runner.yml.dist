@@ -35,6 +35,11 @@ drupal:
         - "${drupal.root}"
       file_private_path: "sites/default/files/private"
 
+selenium:
+  host: "http://selenium"
+  port: "4444"
+  browser: "chrome"
+
 commands:
   drupal:site-setup:
     - { task: "run", command: "drupal:symlink-project" }
