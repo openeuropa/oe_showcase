@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+behat.yml
+build
+composer.lock
+docker-compose.*.yml
+grumphp.yml
+node_modules
+npm-debug.log
+package-lock.json
+phpunit.xml
+runner.yml
+vendor
+yarn.lock
+.tmp
+/.gitattributes

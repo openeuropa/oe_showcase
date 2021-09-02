@@ -1,0 +1,46 @@
+drupal:
+  root: "build"
+  base_url: "http://web:8080/build"
+  site:
+    name: "OpenEuropa"
+    profile: "oe_showcase"
+  database:
+    host: "mysql"
+    port: "3306"
+    name: "oe_showcase"
+    user: "root"
+    password: ""
+  post_install:
+    # Prepare the instance.
+    - "./vendor/bin/drush en toolbar -y"
+    - "./vendor/bin/drush theme:enable bartik -y"
+    - "./vendor/bin/drush theme:enable seven -y"
+    - "./vendor/bin/drush config-set system.theme default bartik -y"
+    - "./vendor/bin/drush config-set system.theme admin seven -y"
+    - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
+    # Don't aggregate or some pages will not be showed properly.
+    - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
+    - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
+    # Enable the modules.
+    - "./vendor/bin/drush en config_devel -y"
+    - "./vendor/bin/drush cr"
+  settings:
+    settings:
+      file_scan_ignore_directories:
+        - "node_modules"
+        - "bower_components"
+        - "vendor"
+        - "${drupal.root}"
+      file_private_path: "sites/default/files/private"
+
+commands:
+  drupal:site-setup:
+    - { task: "run", command: "drupal:symlink-project" }
+    - { task: "run", command: "drupal:drush-setup" }
+    - { task: "run", command: "drupal:settings-setup" }
+    - { task: "run", command: "setup:phpunit" }
+    - { task: "run", command: "setup:behat" }
+  setup:phpunit:
+    - { task: "process", source: "phpunit.xml.dist", destination: "phpunit.xml" }
+  setup:behat:
+    - { task: "process", source: "behat.yml.dist", destination: "behat.yml" }

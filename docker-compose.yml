@@ -1,0 +1,36 @@
+version: '2'
+services:
+  web:
+    image: fpfis/httpd-php-dev:7.3
+    working_dir: /var/www/html
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/var/www/html # Non Mac users.
+      # - nfsmount:/var/www/html # Mac Users with the nfsmount volume.
+    environment:
+      XDEBUG_CONFIG: "client_host=172.17.0.1" # Non-Mac users.
+      # XDEBUG_CONFIG: "client_host=host.docker.internal" # Mac users.
+      XDEBUG_MODE: "develop, debug"
+      PHP_IDE_CONFIG: "serverName=Docker"
+      # Enable step debugging for all PHP request. See ./README.md#step-debugging for more information.
+      # XDEBUG_SESSION: 1
+  mysql:
+    image: percona/percona-server:5.7
+    command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    # ports:
+    #   - 3306:3306
+
+#### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
+
+#volumes:
+#  nfsmount:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=host.docker.internal,rw,nolock,hard,nointr,nfsvers=3
+#      device: ":${PWD}/"
+
+#### End Mac users.
