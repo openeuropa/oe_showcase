@@ -1,0 +1,24 @@
+uuid: 0a850d21-f323-4445-8ba7-3eb073132634
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_search_index
+    - views.view.showcase_search
+  module:
+    - views
+    - search_api_autocomplete
+id: showcase_search
+label: 'Showcase Search'
+index_id: showcase_search_index
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:showcase_search':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

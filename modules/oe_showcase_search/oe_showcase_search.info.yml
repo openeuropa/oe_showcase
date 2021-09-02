@@ -6,11 +6,9 @@ package: OpenEuropa
 dependencies:
   - search_api:search_api
   - search_api_db:search_api_db
+  - search_api_autocomplete:search_api_autocomplete
   - drupal:views
   - openeuropa:oe_showcase_default_content
-  - facets_form:facets_form
-  - facets_summary:facets_summary
-  - facets_form_date_range:facets_form_date_range
 
 themes:
   - seven
