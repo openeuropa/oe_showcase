@@ -9,6 +9,7 @@
     <testsuite name="OpenEuropa Showcase">
       <directory>./modules/**/tests/</directory>
       <directory>./tests/</directory>
+      <directory>./modules/oe_showcase_search/tests/</directory>
     </testsuite>
   </testsuites>
 </phpunit>
