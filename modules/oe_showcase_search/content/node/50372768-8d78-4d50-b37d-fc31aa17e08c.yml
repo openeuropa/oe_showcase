@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 50372768-8d78-4d50-b37d-fc31aa17e08c
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Appellatio Immitto'
+  created:
+    -
+      value: 1602747829
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Abico augue jugis laoreet nimis plaga quidne typicus. Camur eum jugis meus saepius sudo. Diam dignissim ille iustum luctus luptatum macto odio quis. Abico dolore et facilisi iaceo immitto iusto probo singularis vero. Abdo eligo illum immitto mos neo veniam vicis zelus. Cui duis gilvus inhibeo jumentum lenis olim si wisi.\n\nFere mauris meus nutus plaga singularis tamen tum zelus. Abbas abigo amet blandit defui dignissim quibus singularis tum vereor. Accumsan commodo consectetuer dignissim iustum macto mauris nunc oppeto praemitto. Dolore esse sit. Elit eum refoveo. Aliquam capto iaceo interdico mauris quidne similis turpis verto.\n\nCaecus eu facilisi jumentum magna neque saepius similis ymo. Hos lenis si suscipit tation. Damnum facilisis ibidem quae sagaciter singularis uxor virtus wisi. Aliquam mauris odio os paratus populus probo ratis roto tation.\n\nAmet hendrerit natu neque qui ulciscor utrum wisi. Dignissim genitus iustum saluto sed vicis. At brevitas cogo nostrud os ymo. Consectetuer decet diam esca neo secundum tation virtus. Decet duis nimis. Enim facilisi inhibeo laoreet loquor obruo premo uxor volutpat wisi. Abico camur gravis hendrerit obruo praemitto vel. Abdo ea esca esse lobortis mauris pneum scisco tincidunt.\n\nDefui eu venio. Conventio imputo inhibeo mauris patria plaga quibus quidem tego. Persto praemitto quidem. Abigo aliquip fere immitto laoreet lucidus metuo quis velit. Duis ea esca huic nobis oppeto saluto secundum te vicis.\n\nAcsi aptent brevitas dolore eligo minim plaga valde. Acsi ex feugiat ille inhibeo olim probo quadrum ratis vulpes. Diam gemino iriure iusto jus metuo meus. Abdo blandit cui distineo ille quadrum. Nobis rusticus utrum validus vulpes. Oppeto probo ratis refoveo tego veniam venio. Amet eu ideo imputo jumentum obruo paulatim persto quadrum torqueo. Blandit mauris molior.\n\nAbigo immitto jumentum nunc torqueo. Haero immitto iriure mos obruo persto te vulputate. Ad amet eum mos quis similis sit usitas. Blandit capto esca inhibeo loquor molior vereor vicis volutpat ymo. Commoveo gravis nulla sudo virtus. Abluo at eros facilisis genitus incassum nulla occuro. Comis nutus persto ut validus. Amet camur imputo jus premo.\n\nAppellatio consequat conventio dolus gemino nulla nunc proprius similis ut. Commodo consequat fere haero huic illum pneum praesent sit. Abdo ad autem damnum macto molior nunc pertineo vel. Abigo luptatum paratus qui velit vereor ymo.\n\nCapto hendrerit verto ymo. Abdo aptent exputo immitto laoreet natu neo nibh nimis quadrum. Gemino inhibeo iusto praemitto valetudo. Commodo decet eu neo. Accumsan augue et neo nisl quidne. Illum ludus nimis quia saluto vindico vulpes.\n\nComis ex gemino lobortis os. Augue in jus oppeto suscipere vulputate. Commodo immitto melior similis tego turpis ullamcorper. Comis duis pertineo populus similis vindico wisi.\n\nIdeo vero zelus. Acsi illum lobortis. Autem importunus incassum meus nostrud obruo odio suscipere uxor. Antehabeo aptent genitus gilvus gravis inhibeo metuo saepius velit vulputate. Abigo aliquip antehabeo haero mos paulatim pecus probo suscipere vereor.\n\nCogo et hendrerit illum mauris saluto suscipere. Enim haero ibidem premo velit vereor. Consequat esse et fere hos nulla uxor. Abigo acsi et genitus haero huic paratus refoveo ullamcorper. Defui distineo patria utinam vulputate. Consequat gilvus immitto nulla quadrum quibus quidne saepius.\n\n"
+      format: plain_text
+      summary: "Abico augue jugis laoreet nimis plaga quidne typicus. Camur eum jugis meus saepius sudo. Diam dignissim ille iustum luctus luptatum macto odio quis. Abico dolore et facilisi iaceo immitto iusto probo singularis vero. Abdo eligo illum immitto mos neo veniam vicis zelus. Cui duis gilvus inhibeo jumentum lenis olim si wisi.\n\nFere mauris meus nutus plaga singularis tamen tum zelus. Abbas abigo amet blandit defui dignissim quibus singularis tum vereor. Accumsan commodo consectetuer dignissim iustum macto mauris nunc oppeto praemitto. Dolore esse sit. Elit eum refoveo. Aliquam capto iaceo interdico mauris quidne similis turpis verto.\n\nCaecus eu facilisi jumentum magna neque saepius similis ymo. Hos lenis si suscipit tation. Damnum facilisis ibidem quae sagaciter singularis uxor virtus wisi. Aliquam mauris odio os paratus populus probo ratis roto tation.\n\nAmet hendrerit natu neque qui ulciscor utrum wisi. Dignissim genitus iustum saluto sed vicis. At brevitas cogo nostrud os ymo. Consectetuer decet diam esca neo secundum tation virtus. Decet duis nimis. Enim facilisi inhibeo laoreet loquor obruo premo uxor volutpat wisi. Abico camur gravis hendrerit obruo praemitto vel. Abdo ea esca esse lobortis mauris pneum scisco tincidunt.\n\nDefui eu venio. Conventio imputo inhibeo mauris patria plaga quibus quidem tego. Persto praemitto quidem. Abigo aliquip fere immitto laoreet lucidus metuo quis velit. Duis ea esca huic nobis oppeto saluto secundum te vicis.\n\nAcsi aptent brevitas dolore eligo minim plaga valde. Acsi ex feugiat ille inhibeo olim probo quadrum ratis vulpes. Diam gemino iriure iusto jus metuo meus. Abdo blandit cui distineo ille quadrum. Nobis rusticus utrum validus vulpes. Oppeto probo ratis refoveo tego veniam venio. Amet eu ideo imputo jumentum obruo paulatim persto quadrum torqueo. Blandit mauris molior.\n\nAbigo immitto jumentum nunc torqueo. Haero immitto iriure mos obruo persto te vulputate. Ad amet eum mos quis similis sit usitas. Blandit capto esca inhibeo loquor molior vereor vicis volutpat ymo. Commoveo gravis nulla sudo virtus. Abluo at eros facilisis genitus incassum nulla occuro. Comis nutus persto ut validus. Amet camur imputo jus premo.\n\nAppellatio consequat conventio dolus gemino nulla nunc proprius similis ut. Commodo consequat fere haero huic illum pneum praesent sit. Abdo ad autem damnum macto molior nunc pertineo vel. Abigo luptatum paratus qui velit vereor ymo.\n\nCapto hendrerit verto ymo. Abdo aptent exputo immitto laoreet natu neo nibh nimis quadrum. Gemino inhibeo iusto praemitto valetudo. Commodo decet eu neo. Accumsan augue et neo nisl quidne. Illum ludus nimis quia saluto vindico vulpes.\n\nComis ex gemino lobortis os. Augue in jus oppeto suscipere vulputate. Commodo immitto melior similis tego turpis ullamcorper. Comis duis pertineo populus similis vindico wisi.\n\nIdeo vero zelus. Acsi illum lobortis. Autem importunus incassum meus nostrud obruo odio suscipere uxor. Antehabeo aptent genitus gilvus gravis inhibeo metuo saepius velit vulputate. Abigo aliquip antehabeo haero mos paulatim pecus probo suscipere vereor.\n\nCogo et hendrerit illum mauris saluto suscipere. Enim haero ibidem premo velit vereor. Consequat esse et fere hos nulla uxor. Abigo acsi et genitus haero huic paratus refoveo ullamcorper. Defui distineo patria utinam vulputate. Consequat gilvus immitto nulla quadrum quibus quidne saepius.\n\n"
+  field_options:
+    -
+      value: option_7
+    -
+      value: option_2

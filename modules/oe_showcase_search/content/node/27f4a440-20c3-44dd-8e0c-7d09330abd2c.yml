@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 27f4a440-20c3-44dd-8e0c-7d09330abd2c
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Camur Tego Vulputate'
+  created:
+    -
+      value: 1601688750
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Abluo blandit ille iriure proprius qui quibus ullamcorper vulpes. Nobis pneum vulputate. Augue autem exerci ille ludus tamen. Erat hendrerit macto nisl oppeto quibus refoveo vindico. Huic ideo importunus interdico metuo neo probo torqueo. Bene commodo haero incassum velit. Augue commodo commoveo consequat erat olim suscipit vero.\n\nAutem hos lobortis lucidus paulatim sit tego velit vicis. At dignissim esse eu iriure jumentum laoreet ludus luptatum neque. Abluo aliquip ex ibidem oppeto persto populus probo quadrum singularis. Et facilisi gemino in minim nunc pala quibus validus veniam. Abdo appellatio commodo gemino oppeto. Aliquam commoveo decet jus saepius.\n\nAccumsan cui eligo exerci gemino gilvus lucidus macto pagus ut. Camur capto diam iaceo jus letalis meus modo nobis. Aliquip fere nimis persto turpis. Adipiscing at sudo usitas velit ymo. Abdo aliquam distineo laoreet meus nibh nimis patria utinam. Bene dolor dolus illum melior metuo nimis refero valde. Blandit natu neo turpis.\n\nSingularis uxor volutpat. Eu ludus probo. Immitto inhibeo refero. Adipiscing blandit consectetuer dolore humo singularis suscipit vereor vindico. Consequat decet paulatim quidem. Antehabeo aptent dolor humo ludus quidem. In metuo vero. Fere imputo os usitas utrum vulputate. Aliquam persto singularis. Abbas duis jus metuo. Facilisis nutus roto rusticus.\n\nIbidem typicus verto. Autem ille veniam. Antehabeo praemitto sed. Abbas nutus roto sudo tincidunt volutpat vulpes. Conventio iustum jumentum occuro oppeto quidne si sit volutpat. Enim persto vero vulputate. Decet luctus pneum sudo suscipit tamen valetudo. Esca ludus tum ulciscor vereor. Accumsan aliquam nulla paratus proprius sed.\n\nAbico cogo consequat cui ideo probo suscipere valde virtus. Elit jugis modo neque plaga tego tincidunt veniam. Caecus melior venio. Abbas gilvus probo utinam velit.\n\nComis imputo interdico pala quis tamen. Blandit dignissim euismod huic humo illum incassum odio sed utrum. Acsi dolor immitto nimis paulatim ut utrum vindico. Brevitas importunus secundum. Abluo aliquip exputo hendrerit nimis pecus saepius suscipere torqueo vindico.\n\nAt feugiat imputo interdico lenis ymo. Ludus molior premo. Eros huic neque nostrud pecus saluto scisco. Fere imputo letalis natu neque quidem. Dolore enim qui. Exerci populus praemitto vel wisi. Brevitas camur exputo gravis in lenis nimis pagus veniam venio.\n\nBlandit eu melior nobis paratus scisco usitas veniam. Genitus haero ludus luptatum modo plaga pneum utinam vel. Distineo eligo iusto pneum proprius. Abbas eros feugiat premo torqueo vicis. Exerci iusto populus. Lenis neo neque paulatim ullamcorper vindico virtus volutpat. Euismod ex gravis immitto importunus pneum ullamcorper. Bene consequat ludus nibh nisl proprius turpis valetudo venio.\n\nDiam erat eum jus nutus praemitto rusticus si. Aliquip ibidem lucidus paulatim praesent singularis ulciscor. Molior patria velit wisi. Aliquam aptent cui esse nimis premo vulputate. Ideo mauris melior valde.\n\nAptent hos laoreet quis sino. Abluo feugiat ibidem importunus nostrud quis roto ullamcorper ut. Abico euismod hos natu quia. Jus similis uxor. Abigo fere odio rusticus saepius scisco.\n\nBlandit cogo eum facilisis macto patria paulatim pecus ratis. Abigo sit vulputate. Facilisis ideo inhibeo luptatum minim natu nostrud sagaciter sudo suscipit. Dignissim hendrerit huic melior molior neque turpis verto. Abigo dolor eros et ibidem inhibeo nutus pagus tego verto.\n\n"
+      format: plain_text
+      summary: "Abluo blandit ille iriure proprius qui quibus ullamcorper vulpes. Nobis pneum vulputate. Augue autem exerci ille ludus tamen. Erat hendrerit macto nisl oppeto quibus refoveo vindico. Huic ideo importunus interdico metuo neo probo torqueo. Bene commodo haero incassum velit. Augue commodo commoveo consequat erat olim suscipit vero.\n\nAutem hos lobortis lucidus paulatim sit tego velit vicis. At dignissim esse eu iriure jumentum laoreet ludus luptatum neque. Abluo aliquip ex ibidem oppeto persto populus probo quadrum singularis. Et facilisi gemino in minim nunc pala quibus validus veniam. Abdo appellatio commodo gemino oppeto. Aliquam commoveo decet jus saepius.\n\nAccumsan cui eligo exerci gemino gilvus lucidus macto pagus ut. Camur capto diam iaceo jus letalis meus modo nobis. Aliquip fere nimis persto turpis. Adipiscing at sudo usitas velit ymo. Abdo aliquam distineo laoreet meus nibh nimis patria utinam. Bene dolor dolus illum melior metuo nimis refero valde. Blandit natu neo turpis.\n\nSingularis uxor volutpat. Eu ludus probo. Immitto inhibeo refero. Adipiscing blandit consectetuer dolore humo singularis suscipit vereor vindico. Consequat decet paulatim quidem. Antehabeo aptent dolor humo ludus quidem. In metuo vero. Fere imputo os usitas utrum vulputate. Aliquam persto singularis. Abbas duis jus metuo. Facilisis nutus roto rusticus.\n\nIbidem typicus verto. Autem ille veniam. Antehabeo praemitto sed. Abbas nutus roto sudo tincidunt volutpat vulpes. Conventio iustum jumentum occuro oppeto quidne si sit volutpat. Enim persto vero vulputate. Decet luctus pneum sudo suscipit tamen valetudo. Esca ludus tum ulciscor vereor. Accumsan aliquam nulla paratus proprius sed.\n\nAbico cogo consequat cui ideo probo suscipere valde virtus. Elit jugis modo neque plaga tego tincidunt veniam. Caecus melior venio. Abbas gilvus probo utinam velit.\n\nComis imputo interdico pala quis tamen. Blandit dignissim euismod huic humo illum incassum odio sed utrum. Acsi dolor immitto nimis paulatim ut utrum vindico. Brevitas importunus secundum. Abluo aliquip exputo hendrerit nimis pecus saepius suscipere torqueo vindico.\n\nAt feugiat imputo interdico lenis ymo. Ludus molior premo. Eros huic neque nostrud pecus saluto scisco. Fere imputo letalis natu neque quidem. Dolore enim qui. Exerci populus praemitto vel wisi. Brevitas camur exputo gravis in lenis nimis pagus veniam venio.\n\nBlandit eu melior nobis paratus scisco usitas veniam. Genitus haero ludus luptatum modo plaga pneum utinam vel. Distineo eligo iusto pneum proprius. Abbas eros feugiat premo torqueo vicis. Exerci iusto populus. Lenis neo neque paulatim ullamcorper vindico virtus volutpat. Euismod ex gravis immitto importunus pneum ullamcorper. Bene consequat ludus nibh nisl proprius turpis valetudo venio.\n\nDiam erat eum jus nutus praemitto rusticus si. Aliquip ibidem lucidus paulatim praesent singularis ulciscor. Molior patria velit wisi. Aliquam aptent cui esse nimis premo vulputate. Ideo mauris melior valde.\n\nAptent hos laoreet quis sino. Abluo feugiat ibidem importunus nostrud quis roto ullamcorper ut. Abico euismod hos natu quia. Jus similis uxor. Abigo fere odio rusticus saepius scisco.\n\nBlandit cogo eum facilisis macto patria paulatim pecus ratis. Abigo sit vulputate. Facilisis ideo inhibeo luptatum minim natu nostrud sagaciter sudo suscipit. Dignissim hendrerit huic melior molior neque turpis verto. Abigo dolor eros et ibidem inhibeo nutus pagus tego verto.\n\n"
+  field_options:
+    -
+      value: option_5
+    -
+      value: option_5

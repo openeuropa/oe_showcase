@@ -1,0 +1,37 @@
+uuid: 6723bf89-c734-43c9-b877-a8811831ced5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_showcase_search_demo.body
+    - field.field.node.oe_showcase_search_demo.field_options
+    - node.type.oe_showcase_search_demo
+  module:
+    - options
+    - text
+    - user
+id: node.oe_showcase_search_demo.default
+targetEntityType: node
+bundle: oe_showcase_search_demo
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_options:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
