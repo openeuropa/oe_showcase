@@ -1,0 +1,225 @@
+uuid: f866f18c-f20f-4670-b399-02ef7dd93935
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.showcase_search
+id: showcase_search-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: e829ba53-8e2e-4abf-80d7-56f68486d1e2
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: 'Search layout'
+        column_widths: 25-75
+      components:
+        d745f1c9-3936-4eea-896f-07d785d823a4:
+          uuid: d745f1c9-3936-4eea-896f-07d785d823a4
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 5
+        74ec2d40-9c11-44de-ba4f-beecc9a6ec10:
+          uuid: 74ec2d40-9c11-44de-ba4f-beecc9a6ec10
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Published on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 6
+        85e733e9-6fa4-464d-b15f-735da774e252:
+          uuid: 85e733e9-6fa4-464d-b15f-735da774e252
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 7
+        eb5ca001-6139-4d24-8832-6318c64a7faa:
+          uuid: eb5ca001-6139-4d24-8832-6318c64a7faa
+          region: second
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 5
+        999a3d7c-f644-412f-97a8-04d7e202bf5c:
+          uuid: 999a3d7c-f644-412f-97a8-04d7e202bf5c
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 8
+        8bb43119-539e-4a7f-b5ba-87e9f12601e3:
+          uuid: 8bb43119-539e-4a7f-b5ba-87e9f12601e3
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 9
+        a8bae7d5-0639-46d6-9111-ab0494423785:
+          uuid: a8bae7d5-0639-46d6-9111-ab0494423785
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 10
+        468a9daa-2fd7-4e73-8e68-d76cadcba878:
+          uuid: 468a9daa-2fd7-4e73-8e68-d76cadcba878
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 11
+        ae149037-053d-4205-b038-ed2fc553fb2d:
+          uuid: ae149037-053d-4205-b038-ed2fc553fb2d
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 12
+        50b71c87-1616-4b89-8ecd-938b9742926c:
+          uuid: 50b71c87-1616-4b89-8ecd-938b9742926c
+          region: second
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 6
+        5fa7865f-5665-440c-8195-3485ce59f60b:
+          uuid: 5fa7865f-5665-440c-8195-3485ce59f60b
+          region: second
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 7
+        40a2090c-94a1-408a-97fa-34da6686a06a:
+          uuid: 40a2090c-94a1-408a-97fa-34da6686a06a
+          region: second
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 8
+        0e889aee-beaf-48cf-994d-044e02ecab5d:
+          uuid: 0e889aee-beaf-48cf-994d-044e02ecab5d
+          region: first
+          configuration:
+            id: 'facet_block:options'
+            label: Options
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 13
+        e4d9561a-99f4-4958-a498-0a441f40c2d1:
+          uuid: e4d9561a-99f4-4958-a498-0a441f40c2d1
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 14
+        80a15551-6f94-4acb-817b-0e7657f8c48c:
+          uuid: 80a15551-6f94-4acb-817b-0e7657f8c48c
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 15
+        b1dff285-8765-40f0-ba1d-073dda9340a8:
+          uuid: b1dff285-8765-40f0-ba1d-073dda9340a8
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 16
+        1cb7ee1d-e205-4a36-bd73-37b1f6f0c74e:
+          uuid: 1cb7ee1d-e205-4a36-bd73-37b1f6f0c74e
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 17
+        5a3c6e68-bae3-4fff-9c4e-024ca916005b:
+          uuid: 5a3c6e68-bae3-4fff-9c4e-024ca916005b
+          region: first
+          configuration:
+            id: 'facet_block:authored_on'
+            label: 'Authored on'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 18
+      third_party_settings: {  }
+page: showcase_search
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

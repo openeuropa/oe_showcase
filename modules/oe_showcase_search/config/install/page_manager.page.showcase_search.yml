@@ -1,0 +1,12 @@
+uuid: bd84f267-6d38-4ba2-8369-eae2a607b9ea
+langcode: en
+status: true
+dependencies: {  }
+id: showcase_search
+label: 'Showcase Search'
+description: 'Showcase search demo'
+use_admin_theme: false
+path: /search
+access_logic: and
+access_conditions: {  }
+parameters: {  }

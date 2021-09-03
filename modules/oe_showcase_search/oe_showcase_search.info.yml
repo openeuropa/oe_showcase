@@ -12,6 +12,7 @@ dependencies:
   - facets_form:facets_form
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
+  - page_manager_ui:page_manager_ui
 
 themes:
   - seven
