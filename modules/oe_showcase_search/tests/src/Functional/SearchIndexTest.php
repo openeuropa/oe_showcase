@@ -14,7 +14,7 @@ use Drupal\Core\Serialization\Yaml;
  *
  * @group oe_showcase_search
  */
-class ShowcaseSearchAssets extends BrowserTestBase {
+class SearchIndexTest extends BrowserTestBase {
 
   /**
    * {@inheritdoc}
@@ -78,7 +78,7 @@ class ShowcaseSearchAssets extends BrowserTestBase {
   public function testInstallAndDefaultSetupWorking(): void {
     $this->drupalLogin($this->adminUser);
 
-    // Assure the Showcase server is can be used.
+    // Assure the Showcase server can be used.
     $server = Server::load('showcase_search_server');
     $this->assertInstanceOf(Server::class, $server, 'Server can be loaded');
 
@@ -96,7 +96,7 @@ class ShowcaseSearchAssets extends BrowserTestBase {
     $fields = $index->getFields();
 
     // Load and parse the same configuration file.
-    $yaml_file = __DIR__ . '/../../../config/install/search_api.index.showcase_search_index.yml';
+    $yaml_file = drupal_get_path('module', 'oe_showcase_search') . '/config/install/search_api.index.showcase_search_index.yml';
     $index_configuration = Yaml::decode(file_get_contents($yaml_file));
     $field_settings = $index_configuration['field_settings'];
 
