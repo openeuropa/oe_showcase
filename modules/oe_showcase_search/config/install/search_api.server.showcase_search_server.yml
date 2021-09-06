@@ -1,0 +1,14 @@
+uuid: 07a27d9d-6454-4830-96db-2a9e52bd9da9
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: showcase_search_server
+name: 'Showcase search server'
+description: 'Demo Showcase search server'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
