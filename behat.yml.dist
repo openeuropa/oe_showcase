@@ -2,11 +2,7 @@ default:
   suites:
     default:
       paths:
-<<<<<<< HEAD
-        - %paths.base%/tests/features
-=======
         - "%paths.base%/tests/features"
->>>>>>> 29c4e50a1c960d9dc6b48e002c59e0a9daf02a50
       contexts:
         - Drupal\DrupalExtension\Context\MinkContext
         - Drupal\DrupalExtension\Context\DrupalContext

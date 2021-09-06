@@ -3,21 +3,12 @@
   <php>
     <ini name="error_reporting" value="32767"/>
     <ini name="memory_limit" value="-1"/>
-<<<<<<< HEAD
-    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["${selenium.browser}", null, "${selenium.host}:${selenium.port}/wd/hub"]'/>
-=======
->>>>>>> 29c4e50a1c960d9dc6b48e002c59e0a9daf02a50
     <env name="SIMPLETEST_BASE_URL" value="http://web:8080/${drupal.root}"/>
   </php>
   <testsuites>
     <testsuite name="OpenEuropa Showcase">
-<<<<<<< HEAD
-      <directory>./tests/</directory>
-      <directory>./modules/oe_showcase_search/tests/</directory>
-=======
       <directory>./modules/**/tests/</directory>
       <directory>./tests/</directory>
->>>>>>> 29c4e50a1c960d9dc6b48e002c59e0a9daf02a50
     </testsuite>
   </testsuites>
 </phpunit>
