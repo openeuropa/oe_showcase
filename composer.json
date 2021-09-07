@@ -9,7 +9,13 @@
         "php": ">=7.3",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/core": "^8.9 || ^9.1",
-        "drupal/search_api": "^1.20"
+        "drupal/search_api": "^1.20",
+        "npm-asset/jquery-ui-touch-punch": "^0.2.3",
+        "oomphinc/composer-installers-extender": "^2.0"
+    },
+    "suggest": {
+        "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
+        "npm-asset/jquery-ui-touch-punch": "Required to use drupal/jquery_ui_touch_punch module."
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -31,6 +37,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "autoload": {
@@ -46,11 +56,17 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
+        "installer-types": ["npm-asset", "bower-asset"],
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
             "build/modules/contrib/{$name}": ["type:drupal-module"],
-            "build/themes/contrib/{$name}": ["type:drupal-theme"]
+            "build/themes/contrib/{$name}": ["type:drupal-theme"],
+            "build/libraries/{$name}": [
+                "type:drupal-library",
+                "vendor:npm-asset",
+                "vendor:bower-asset"
+            ]
         },
         "drupal-scaffold": {
             "locations": {
