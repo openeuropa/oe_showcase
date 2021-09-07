@@ -3,6 +3,7 @@ default:
     default:
       paths:
         - "%paths.base%/tests/features"
+        - "%paths.base%/modules/oe_showcase_search/tests/features"
       contexts:
         - Drupal\DrupalExtension\Context\MinkContext
         - Drupal\DrupalExtension\Context\DrupalContext

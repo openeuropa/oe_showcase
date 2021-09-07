@@ -6,8 +6,11 @@ dependencies:
     - field.storage.node.body
     - search_api.index.showcase_search_index
   module:
+    - better_exposed_filters
     - search_api
     - text
+_core:
+  default_config_hash: h8MUztXpy12Qjl2VFzxVgX_-6YDdJ2FsjRRj5BrT_JM
 id: showcase_search
 label: 'Showcase Search'
 module: views
@@ -35,7 +38,7 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -44,6 +47,28 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: plain_text
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: true
+                combine_rewrite: "Post date Asc|Ascending\r\nPost date Desc|Descending\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
       pager:
         type: full
         options:
@@ -161,7 +186,7 @@ display:
           order: DESC
           exposed: true
           expose:
-            label: 'Authored on'
+            label: 'Published on'
           plugin_id: search_api
         title:
           id: title
@@ -182,6 +207,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -194,13 +220,15 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:search_api.index.showcase_search_index'
-  block_1:
-    display_plugin: block
-    id: block_1
-    display_title: Block
-    position: 1
+  showcase_search_page:
+    display_plugin: page
+    id: showcase_search_page
+    display_title: Page
+    position: 2
     display_options:
       display_extenders: {  }
+      exposed_block: true
+      path: showcase-search
     cache_metadata:
       max-age: -1
       contexts:
