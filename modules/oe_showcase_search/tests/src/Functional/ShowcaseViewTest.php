@@ -64,7 +64,7 @@ class ShowcaseViewTest extends BrowserTestBase {
     $this->drupalGet('admin/structure/views/view/showcase_search');
     $this->assertSession()->statusCodeEquals(200);
 
-    $this->drupalGet('admin/structure/views/view/showcase_search/edit/block_1');
+    $this->drupalGet('admin/structure/views/view/showcase_search/edit/showcase_search_page');
     $this->assertSession()->statusCodeEquals(200);
   }
 
