@@ -2,15 +2,16 @@ uuid: 8f3153e8-fe83-46fc-8df8-46aee7af1d59
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
+    - search_api
   config:
     - field.storage.node.body
     - field.storage.node.field_category
     - search_api.server.showcase_search_server
-  module:
-    - node
-    - search_api
+    - core.entity_view_mode.node.search_result
 _core:
-  default_config_hash: nm3_K2m4oscsFpcuUYFpEOd69VN-c5BokpcvPoAT9Ro
+  default_config_hash: RiAx2Kjoul1HccuLEGfm_zBh13u-qo9FdK3odYLvazc
 id: showcase_search_index
 name: 'Showcase search index'
 description: ''
@@ -40,6 +41,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_category
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          oe_showcase_search_demo: search_result
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -70,6 +81,24 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
+  ignore_character:
+    all_fields: true
+    fields:
+      - body
+      - rendered_item
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:
