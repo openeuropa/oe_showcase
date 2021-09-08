@@ -20,3 +20,4 @@ default:
         drupal_root: "${drupal.root}"
   formatters:
     progress: ~
+    
