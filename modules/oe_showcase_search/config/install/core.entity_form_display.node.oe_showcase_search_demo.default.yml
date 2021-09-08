@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.oe_showcase_search_demo.body
-    - field.field.node.oe_showcase_search_demo.field_options
+    - field.field.node.oe_showcase_search_demo.field_category
+    - field.field.node.oe_showcase_search_demo.field_image
+    - image.style.thumbnail
     - node.type.oe_showcase_search_demo
   module:
+    - image
     - path
     - text
+
 id: node.oe_showcase_search_demo.default
 targetEntityType: node
 bundle: oe_showcase_search_demo
@@ -30,11 +34,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_options:
-    weight: 122
+  field_category:
+    weight: 124
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
+    region: content
+  field_image:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   path:
     type: path

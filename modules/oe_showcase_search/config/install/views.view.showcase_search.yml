@@ -9,8 +9,7 @@ dependencies:
     - better_exposed_filters
     - search_api
     - text
-_core:
-  default_config_hash: h8MUztXpy12Qjl2VFzxVgX_-6YDdJ2FsjRRj5BrT_JM
+
 id: showcase_search
 label: 'Showcase Search'
 module: views

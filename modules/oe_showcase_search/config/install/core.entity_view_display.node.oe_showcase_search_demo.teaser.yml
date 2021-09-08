@@ -5,11 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.oe_showcase_search_demo.body
-    - field.field.node.oe_showcase_search_demo.field_options
+    - field.field.node.oe_showcase_search_demo.field_category
+    - field.field.node.oe_showcase_search_demo.field_image
     - node.type.oe_showcase_search_demo
   module:
     - text
     - user
+
 id: node.oe_showcase_search_demo.teaser
 targetEntityType: node
 bundle: oe_showcase_search_demo
@@ -29,4 +31,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_options: true
+  field_category: true
+  field_image: true
+  search_api_excerpt: true
