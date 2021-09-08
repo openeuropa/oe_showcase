@@ -10,6 +10,7 @@ dependencies:
   - openeuropa:oe_showcase_default_content
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
+  - search_api_autocomplete:search_api_autocomplete
 
 themes:
   - seven
