@@ -9,7 +9,7 @@ dependencies:
     - search_api
     - text
 _core:
-  default_config_hash: gj_Hf0ni4Nr3rwo9y80o8L0LZnP0I5Kfvr00cD2vdhc
+  default_config_hash: tu21X9PK4luylAXkI_ZO9CI12ORNM3SjqCWW6xmtcUI
 id: showcase_search
 label: 'Showcase Search'
 module: views
@@ -33,9 +33,9 @@ display:
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          skip_access: 0
+          bypass_access: 0
+          preserve_facet_query_args: 1
       exposed_form:
         type: basic
         options:
@@ -199,7 +199,7 @@ display:
           parse_mode: direct
           min_length: null
           fields:
-            - body
+            - rendered_item
           plugin_id: search_api_fulltext
       sorts:
         created:
