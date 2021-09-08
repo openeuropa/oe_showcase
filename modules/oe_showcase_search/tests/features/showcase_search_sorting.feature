@@ -34,3 +34,4 @@ Feature: Showcase search sorting.
     Then I visit "admin/structure/block/manage/exposedformshowcase_searchpage_test/delete"
     And I press "Remove"
     Then I should see "The block Exposed form: showcase_search-showcase_search_page has been removed."
+    
