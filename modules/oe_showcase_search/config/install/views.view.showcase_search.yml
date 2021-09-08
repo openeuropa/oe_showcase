@@ -8,7 +8,8 @@ dependencies:
   module:
     - search_api
     - text
-
+_core:
+  default_config_hash: KaFkFg_otBNDMaBq3bZ_qnFCuJRXzXyk1PtF_3gg0u0
 id: showcase_search
 label: 'Showcase Search'
 module: views

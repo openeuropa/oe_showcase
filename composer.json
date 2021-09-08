@@ -8,6 +8,7 @@
     "require": {
         "php": ">=7.3",
         "drupal/core": "^8.9 || ^9.1",
+        "drupal/facets_form": "^1.0@alpha",
         "drupal/search_api": "^1.20",
         "drupal/facets_form": "^1.0@alpha"
     },
