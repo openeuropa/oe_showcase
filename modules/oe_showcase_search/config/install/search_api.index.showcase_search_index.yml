@@ -2,14 +2,15 @@ uuid: 8f3153e8-fe83-46fc-8df8-46aee7af1d59
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - search_api
   config:
     - field.storage.node.body
     - field.storage.node.field_category
     - search_api.server.showcase_search_server
-
+  module:
+    - node
+    - search_api
+_core:
+  default_config_hash: nm3_K2m4oscsFpcuUYFpEOd69VN-c5BokpcvPoAT9Ro
 id: showcase_search_index
 name: 'Showcase search index'
 description: ''
