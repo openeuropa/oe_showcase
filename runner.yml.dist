@@ -22,10 +22,12 @@ drupal:
     - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
     - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
     # Move file assets.
-    - "cp -R default_images/. build/sites/default/files/."
+    - "cp -R modules/oe_showcase_default_content/content/default_images/. build/sites/default/files/."
     # Enable the modules.
     - "./vendor/bin/drush en oe_showcase_default_content -y"
     - "./vendor/bin/drush en oe_showcase_search -y"
+    # Index content.
+    - "./vendor/bin/drush sapi-i"
     - "./vendor/bin/drush en config_devel -y"
     - "./vendor/bin/drush cr"
   settings:
