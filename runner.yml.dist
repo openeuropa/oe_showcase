@@ -21,6 +21,8 @@ drupal:
     # Don't aggregate or some pages will not be showed properly.
     - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
     - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
+    # Move file assets.
+    - "cp -R default_images/. build/sites/default/files/."
     # Enable the modules.
     - "./vendor/bin/drush en oe_showcase_default_content -y"
     - "./vendor/bin/drush en oe_showcase_search -y"

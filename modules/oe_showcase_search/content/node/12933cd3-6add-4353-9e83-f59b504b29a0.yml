@@ -6,6 +6,7 @@ _meta:
   default_langcode: en
   depends:
     e5bc5b90-bbbb-4c08-9713-0a9e624650ce: taxonomy_term
+    95a68394-b896-4a4b-aef4-7c0e23629a9d: file
 default:
   revision_uid:
     -
@@ -43,3 +44,10 @@ default:
   field_category:
     -
       entity: e5bc5b90-bbbb-4c08-9713-0a9e624650ce
+  field_image:
+    -
+      entity: 95a68394-b896-4a4b-aef4-7c0e23629a9d
+      alt: 'default image'
+      title: ''
+      width: 200
+      height: 200

@@ -6,6 +6,7 @@ _meta:
   default_langcode: en
   depends:
     b03913c2-d17c-4da9-9956-564ddd35efb9: taxonomy_term
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -43,3 +44,10 @@ default:
   field_category:
     -
       entity: b03913c2-d17c-4da9-9956-564ddd35efb9
+  field_image:
+    -
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
+      title: ''
+      width: 200
+      height: 200

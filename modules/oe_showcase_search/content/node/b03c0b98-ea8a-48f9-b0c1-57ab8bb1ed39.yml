@@ -7,6 +7,7 @@ _meta:
   depends:
     e5bc5b90-bbbb-4c08-9713-0a9e624650ce: taxonomy_term
     b03913c2-d17c-4da9-9956-564ddd35efb9: taxonomy_term
+    6221418a-d630-4de9-a849-79190f45b9c6: file
 default:
   revision_uid:
     -
@@ -46,3 +47,10 @@ default:
       entity: e5bc5b90-bbbb-4c08-9713-0a9e624650ce
     -
       entity: b03913c2-d17c-4da9-9956-564ddd35efb9
+  field_image:
+    -
+      entity: 6221418a-d630-4de9-a849-79190f45b9c6
+      alt: 'default image'
+      title: ''
+      width: 200
+      height: 200
