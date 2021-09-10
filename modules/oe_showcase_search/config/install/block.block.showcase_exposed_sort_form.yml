@@ -1,0 +1,28 @@
+uuid: effb0276-3982-4117-a35f-898737fc5ad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.showcase_search
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: showcase_exposed_sort_form
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:showcase_search-showcase_search_page'
+settings:
+  id: 'views_exposed_filter_block:showcase_search-showcase_search_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /showcase-search
+    negate: false
