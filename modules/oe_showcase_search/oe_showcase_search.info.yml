@@ -8,7 +8,6 @@ dependencies:
   - search_api_db:search_api_db
   - drupal:views
   - openeuropa:oe_showcase_default_content
-  - better_exposed_filters:better_exposed_filters
 
 themes:
   - seven
