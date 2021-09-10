@@ -7,6 +7,8 @@ dependencies:
     - views.view.showcase_search
   module:
     - search_api
+_core:
+  default_config_hash: aS5nHAq1HFe-GXlV9G81gOYcIwri4pKupxXhSxrFKbQ
 id: category
 name: Category
 url_alias: category
@@ -30,24 +32,17 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: false
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
-    weights:
-      sort: 20
-    settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: 30
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
       sort: 40
     settings:
       sort: ASC
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
