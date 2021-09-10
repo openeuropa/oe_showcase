@@ -8,7 +8,6 @@
     "require": {
         "php": ">=7.3",
         "drupal/core": "^8.9 || ^9.1",
-        "drupal/facets_form": "^1.0@alpha",
         "drupal/search_api": "^1.20",
         "drupal/facets_form": "^1.0@alpha"
     },
@@ -47,7 +46,6 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
-        "installer-types": ["npm-asset", "bower-asset"],
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
