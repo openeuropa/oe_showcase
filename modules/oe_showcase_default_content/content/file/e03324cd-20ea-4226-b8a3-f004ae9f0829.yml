@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e03324cd-20ea-4226-b8a3-f004ae9f0829
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: default-image5_0.jpeg
+  uri:
+    -
+      value: 'public://2021-09/default-image5_0.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 10051
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1631179913

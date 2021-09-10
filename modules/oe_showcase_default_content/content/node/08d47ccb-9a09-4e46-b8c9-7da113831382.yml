@@ -1,0 +1,56 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 08d47ccb-9a09-4e46-b8c9-7da113831382
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+  depends:
+    b03913c2-d17c-4da9-9956-564ddd35efb9: taxonomy_term
+    a530e826-5dd6-476b-80ab-cb43d8a0e004: taxonomy_term
+    c5f00a24-bb15-4873-aabf-84206a7752a9: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Quae Vulputate'
+  created:
+    -
+      value: 1621968364
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Eum jus sagaciter vereor. Capto eu inhibeo proprius. Comis illum vulputate. Esse pagus proprius ulciscor utrum. Diam distineo ille inhibeo nunc usitas voco. Facilisis rusticus usitas. Appellatio luctus nunc quis similis vero. Abluo amet lenis similis ullamcorper venio. Magna roto saepius. Consectetuer gemino tincidunt wisi. Accumsan commodo duis eligo et odio tego. Abdo consequat feugiat iriure odio praemitto quae quibus vicis.\r\n\r\nAbigo blandit causa nostrud quia singularis typicus usitas verto vulputate. Comis facilisi laoreet. Ad aptent at comis iaceo illum iriure nunc typicus zelus. Camur decet iustum letalis turpis utinam. Ea erat exerci luctus nunc oppeto praemitto verto. Appellatio illum inhibeo mauris saluto suscipit valetudo vicis.\r\n\r\nAcsi commoveo eum humo imputo ludus meus scisco venio vicis. Adipiscing dignissim facilisi iaceo jumentum jus singularis sudo wisi. Aliquam autem caecus dignissim eros suscipere valde.\r\n\r\nDolore dolus esse secundum. Abigo commoveo facilisis jumentum quadrum quis si singularis tation. Abdo aliquip inhibeo nunc obruo. Augue causa defui facilisis iaceo jus meus nisl quibus torqueo. Ad at dolor et facilisi nimis tincidunt virtus. Caecus exputo genitus voco. Abdo antehabeo interdico laoreet nibh tum. Antehabeo fere genitus macto refero saepius. Antehabeo capto defui esca eu mauris qui refero tamen.\r\n\r\nEum mauris melior. Aliquam elit feugiat gemino ille pneum. Laoreet quidem similis. Camur distineo et euismod macto os plaga usitas venio vereor. Commodo cui et facilisis incassum iustum jus mauris rusticus vulputate. Distineo eu ex gilvus importunus nostrud nutus veniam voco. Blandit ex wisi. Conventio euismod volutpat.\r\n\r\nCausa ex ille persto praesent. Antehabeo defui eu hendrerit iustum luptatum utrum vero zelus. Acsi adipiscing magna nobis. Abdo bene comis exerci rusticus virtus vulputate.\r\n\r\nBrevitas defui eum feugiat interdico nibh nimis plaga validus. Acsi huic iusto lenis praemitto proprius roto similis. Conventio suscipit valde. Autem causa euismod eum olim probo quae. Acsi adipiscing aliquip capto conventio gravis hos mos nibh odio. Appellatio facilisis humo lenis mauris uxor. Bene hos molior paulatim persto refero voco.\r\n\r\nDignissim euismod iusto iustum metuo neque obruo premo sed typicus. Plaga quae quidem. At conventio eu hos ibidem ille nibh nisl probo verto. Abdo aliquip exerci similis torqueo tum utrum vel. Cui ludus modo paulatim persto vereor. Comis gravis ille nibh nisl os proprius refero tincidunt veniam.\r\n\r\nConventio defui huic iustum nulla quae suscipere. Accumsan camur dolore eu meus occuro suscipit voco. Abico abigo diam lenis vulpes. Comis commoveo natu os tation. Blandit capto cui ludus. Consectetuer eligo facilisis lucidus quadrum quae suscipit tamen vicis volutpat. Commoveo decet defui facilisi humo praemitto sino utinam velit.\r\n\r\nCausa jugis suscipit validus. Esse jumentum lucidus modo qui scisco te valetudo vindico. Abigo cogo commodo probo quis sagaciter tum utrum vicis. Causa dignissim fere luptatum nibh persto probo sed sit verto. Abigo aliquip esse eum gravis nobis os tum valde. Accumsan ideo imputo premo roto tation torqueo ulciscor.\r\n\r\nDolus iusto lenis natu olim ratis tation. Nibh nobis oppeto pagus sagaciter. Diam inhibeo iustum quibus scisco similis ullamcorper. Brevitas consectetuer gilvus luctus molior plaga ullamcorper utinam.\r\n\r\nEnim eu iusto metuo nisl patria roto turpis utrum vero. Autem commoveo et jugis ratis vero wisi. Amet dignissim dolor haero ille praesent refero te uxor. Acsi cui humo imputo iusto mauris nisl occuro tamen volutpat.\r\n\r\n"
+      format: plain_text
+      summary: "Eum jus sagaciter vereor. Capto eu inhibeo proprius. Comis illum vulputate. Esse pagus proprius ulciscor utrum. Diam distineo ille inhibeo nunc usitas voco. Facilisis rusticus usitas. Appellatio luctus nunc quis similis vero. Abluo amet lenis similis ullamcorper venio. Magna roto saepius. Consectetuer gemino tincidunt wisi. Accumsan commodo duis eligo et odio tego. Abdo consequat feugiat iriure odio praemitto quae quibus vicis.\r\n\r\nAbigo blandit causa nostrud quia singularis typicus usitas verto vulputate. Comis facilisi laoreet. Ad aptent at comis iaceo illum iriure nunc typicus zelus. Camur decet iustum letalis turpis utinam. Ea erat exerci luctus nunc oppeto praemitto verto. Appellatio illum inhibeo mauris saluto suscipit valetudo vicis.\r\n\r\nAcsi commoveo eum humo imputo ludus meus scisco venio vicis. Adipiscing dignissim facilisi iaceo jumentum jus singularis sudo wisi. Aliquam autem caecus dignissim eros suscipere valde.\r\n\r\nDolore dolus esse secundum. Abigo commoveo facilisis jumentum quadrum quis si singularis tation. Abdo aliquip inhibeo nunc obruo. Augue causa defui facilisis iaceo jus meus nisl quibus torqueo. Ad at dolor et facilisi nimis tincidunt virtus. Caecus exputo genitus voco. Abdo antehabeo interdico laoreet nibh tum. Antehabeo fere genitus macto refero saepius. Antehabeo capto defui esca eu mauris qui refero tamen.\r\n\r\nEum mauris melior. Aliquam elit feugiat gemino ille pneum. Laoreet quidem similis. Camur distineo et euismod macto os plaga usitas venio vereor. Commodo cui et facilisis incassum iustum jus mauris rusticus vulputate. Distineo eu ex gilvus importunus nostrud nutus veniam voco. Blandit ex wisi. Conventio euismod volutpat.\r\n\r\nCausa ex ille persto praesent. Antehabeo defui eu hendrerit iustum luptatum utrum vero zelus. Acsi adipiscing magna nobis. Abdo bene comis exerci rusticus virtus vulputate.\r\n\r\nBrevitas defui eum feugiat interdico nibh nimis plaga validus. Acsi huic iusto lenis praemitto proprius roto similis. Conventio suscipit valde. Autem causa euismod eum olim probo quae. Acsi adipiscing aliquip capto conventio gravis hos mos nibh odio. Appellatio facilisis humo lenis mauris uxor. Bene hos molior paulatim persto refero voco.\r\n\r\nDignissim euismod iusto iustum metuo neque obruo premo sed typicus. Plaga quae quidem. At conventio eu hos ibidem ille nibh nisl probo verto. Abdo aliquip exerci similis torqueo tum utrum vel. Cui ludus modo paulatim persto vereor. Comis gravis ille nibh nisl os proprius refero tincidunt veniam.\r\n\r\nConventio defui huic iustum nulla quae suscipere. Accumsan camur dolore eu meus occuro suscipit voco. Abico abigo diam lenis vulpes. Comis commoveo natu os tation. Blandit capto cui ludus. Consectetuer eligo facilisis lucidus quadrum quae suscipit tamen vicis volutpat. Commoveo decet defui facilisi humo praemitto sino utinam velit.\r\n\r\nCausa jugis suscipit validus. Esse jumentum lucidus modo qui scisco te valetudo vindico. Abigo cogo commodo probo quis sagaciter tum utrum vicis. Causa dignissim fere luptatum nibh persto probo sed sit verto. Abigo aliquip esse eum gravis nobis os tum valde. Accumsan ideo imputo premo roto tation torqueo ulciscor.\r\n\r\nDolus iusto lenis natu olim ratis tation. Nibh nobis oppeto pagus sagaciter. Diam inhibeo iustum quibus scisco similis ullamcorper. Brevitas consectetuer gilvus luctus molior plaga ullamcorper utinam.\r\n\r\nEnim eu iusto metuo nisl patria roto turpis utrum vero. Autem commoveo et jugis ratis vero wisi. Amet dignissim dolor haero ille praesent refero te uxor. Acsi cui humo imputo iusto mauris nisl occuro tamen volutpat.\r\n\r\n"
+  field_category:
+    -
+      entity: b03913c2-d17c-4da9-9956-564ddd35efb9
+    -
+      entity: a530e826-5dd6-476b-80ab-cb43d8a0e004
+  field_image:
+    -
+      entity: c5f00a24-bb15-4873-aabf-84206a7752a9
+      alt: 'default image'
+      title: ''
+      width: 200
+      height: 200

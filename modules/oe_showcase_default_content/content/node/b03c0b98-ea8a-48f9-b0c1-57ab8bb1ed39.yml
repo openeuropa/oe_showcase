@@ -1,0 +1,56 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b03c0b98-ea8a-48f9-b0c1-57ab8bb1ed39
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+  depends:
+    e5bc5b90-bbbb-4c08-9713-0a9e624650ce: taxonomy_term
+    b03913c2-d17c-4da9-9956-564ddd35efb9: taxonomy_term
+    6221418a-d630-4de9-a849-79190f45b9c6: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Voco
+  created:
+    -
+      value: 1604622162
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  body:
+    -
+      value: "Abigo acsi exputo populus praemitto ullamcorper validus verto. Abbas causa cogo comis euismod tincidunt typicus. Cogo jugis luptatum nibh. Dignissim distineo fere ille iriure luptatum nobis quidne zelus. Antehabeo eum genitus gilvus illum nimis persto quadrum. Erat gemino ideo quidem. Accumsan appellatio esca letalis quidne quis. Et nulla plaga sit. Antehabeo facilisis odio pagus plaga praesent similis virtus.\r\n\r\nDolore sed si. Cui dolore erat metuo natu quae refero vindico. Ea eligo nostrud saepius sino volutpat. Defui inhibeo minim os quibus suscipere vindico.\r\n\r\nComis commodo fere feugiat hos lucidus mauris quidne. Abico augue cui dignissim neo odio quidne sino valetudo. Qui secundum singularis. Augue autem feugiat praesent probo ratis secundum tation vel. Ad conventio duis erat neo odio pertineo zelus. At facilisi probo roto ulciscor. Amet diam magna molior mos paratus quibus ratis roto valetudo. Macto saluto singularis utrum vero.\r\n\r\nConsectetuer olim populus. Augue distineo enim jumentum modo te turpis vindico. Abdo antehabeo decet persto turpis velit verto. Appellatio comis eligo quadrum sed suscipere tation tum ut vindico. Comis decet eligo premo.\r\n\r\nEnim minim mos odio secundum. Aptent occuro paratus proprius quae typicus valde zelus. Abdo appellatio eum ideo in inhibeo modo saepius. Dignissim quadrum valde. Antehabeo et nimis sagaciter saluto suscipere tation. Eligo eum facilisi gravis iusto. Brevitas pagus usitas. Accumsan damnum eros gilvus ludus paratus quidne si singularis te.\r\n\r\nAbdo abico eros et neque persto. At diam ea luctus odio quae tation velit veniam wisi. Camur loquor metuo os. Distineo exerci singularis turpis. Abbas capto consequat ideo nisl olim populus ut velit. Mauris nobis tego utinam. Cogo cui eros immitto lucidus ludus pecus quibus saepius tum.\r\n\r\nCapto cui dignissim ille lenis sit suscipit ulciscor. Abico comis dolus ideo iriure molior quis roto si wisi. Appellatio cogo ea plaga sagaciter veniam voco. Commoveo fere ludus pneum proprius quae vero. Duis ea facilisi gilvus imputo mos quidne sit. Adipiscing autem comis esca inhibeo premo te velit venio. Blandit damnum erat huic macto usitas ymo.\r\n\r\nAmet hendrerit similis torqueo vulpes. Abigo augue consectetuer cui lenis ludus olim ratis velit vulputate. Diam macto pertineo quibus singularis zelus. Abigo ad appellatio comis minim vero verto. Abluo commoveo ibidem nulla odio quis suscipit utinam. Bene ideo nulla typicus. Accumsan dolus eligo ideo iusto nostrud qui valetudo.\r\n\r\nDamnum haero melior nobis occuro qui sino vero. Decet humo nutus oppeto vindico. Duis facilisis gravis ille luptatum nibh refero vindico. Abigo capto consequat ideo imputo quadrum refoveo te. Eum facilisis gilvus iaceo iustum magna nostrud pertineo sed. Abluo inhibeo laoreet loquor neo praesent te typicus vel virtus. Commodo consectetuer gravis patria paulatim ulciscor volutpat.\r\n\r\nNatu utinam valetudo. Augue capto incassum inhibeo odio premo. Amet lenis quia wisi. Commodo damnum exerci imputo in paratus proprius refoveo torqueo. Abdo augue camur paratus pecus rusticus ulciscor volutpat.\r\n\r\nAd adipiscing erat mos obruo pala plaga sagaciter wisi. Quia valetudo zelus. Adipiscing gilvus sit wisi zelus. Conventio elit gilvus importunus lobortis luctus natu quidne. Abdo facilisis meus oppeto patria quibus tum.\r\n\r\nAppellatio esca ille metuo. Cui ille patria quia typicus. Augue cogo neque nulla nutus odio populus typicus ullamcorper zelus. Bene caecus qui quibus typicus wisi. At camur commoveo consequat enim feugiat pneum roto te.\r\n\r\n"
+      format: plain_text
+      summary: "Abigo acsi exputo populus praemitto ullamcorper validus verto. Abbas causa cogo comis euismod tincidunt typicus. Cogo jugis luptatum nibh. Dignissim distineo fere ille iriure luptatum nobis quidne zelus. Antehabeo eum genitus gilvus illum nimis persto quadrum. Erat gemino ideo quidem. Accumsan appellatio esca letalis quidne quis. Et nulla plaga sit. Antehabeo facilisis odio pagus plaga praesent similis virtus.\r\n\r\nDolore sed si. Cui dolore erat metuo natu quae refero vindico. Ea eligo nostrud saepius sino volutpat. Defui inhibeo minim os quibus suscipere vindico.\r\n\r\nComis commodo fere feugiat hos lucidus mauris quidne. Abico augue cui dignissim neo odio quidne sino valetudo. Qui secundum singularis. Augue autem feugiat praesent probo ratis secundum tation vel. Ad conventio duis erat neo odio pertineo zelus. At facilisi probo roto ulciscor. Amet diam magna molior mos paratus quibus ratis roto valetudo. Macto saluto singularis utrum vero.\r\n\r\nConsectetuer olim populus. Augue distineo enim jumentum modo te turpis vindico. Abdo antehabeo decet persto turpis velit verto. Appellatio comis eligo quadrum sed suscipere tation tum ut vindico. Comis decet eligo premo.\r\n\r\nEnim minim mos odio secundum. Aptent occuro paratus proprius quae typicus valde zelus. Abdo appellatio eum ideo in inhibeo modo saepius. Dignissim quadrum valde. Antehabeo et nimis sagaciter saluto suscipere tation. Eligo eum facilisi gravis iusto. Brevitas pagus usitas. Accumsan damnum eros gilvus ludus paratus quidne si singularis te.\r\n\r\nAbdo abico eros et neque persto. At diam ea luctus odio quae tation velit veniam wisi. Camur loquor metuo os. Distineo exerci singularis turpis. Abbas capto consequat ideo nisl olim populus ut velit. Mauris nobis tego utinam. Cogo cui eros immitto lucidus ludus pecus quibus saepius tum.\r\n\r\nCapto cui dignissim ille lenis sit suscipit ulciscor. Abico comis dolus ideo iriure molior quis roto si wisi. Appellatio cogo ea plaga sagaciter veniam voco. Commoveo fere ludus pneum proprius quae vero. Duis ea facilisi gilvus imputo mos quidne sit. Adipiscing autem comis esca inhibeo premo te velit venio. Blandit damnum erat huic macto usitas ymo.\r\n\r\nAmet hendrerit similis torqueo vulpes. Abigo augue consectetuer cui lenis ludus olim ratis velit vulputate. Diam macto pertineo quibus singularis zelus. Abigo ad appellatio comis minim vero verto. Abluo commoveo ibidem nulla odio quis suscipit utinam. Bene ideo nulla typicus. Accumsan dolus eligo ideo iusto nostrud qui valetudo.\r\n\r\nDamnum haero melior nobis occuro qui sino vero. Decet humo nutus oppeto vindico. Duis facilisis gravis ille luptatum nibh refero vindico. Abigo capto consequat ideo imputo quadrum refoveo te. Eum facilisis gilvus iaceo iustum magna nostrud pertineo sed. Abluo inhibeo laoreet loquor neo praesent te typicus vel virtus. Commodo consectetuer gravis patria paulatim ulciscor volutpat.\r\n\r\nNatu utinam valetudo. Augue capto incassum inhibeo odio premo. Amet lenis quia wisi. Commodo damnum exerci imputo in paratus proprius refoveo torqueo. Abdo augue camur paratus pecus rusticus ulciscor volutpat.\r\n\r\nAd adipiscing erat mos obruo pala plaga sagaciter wisi. Quia valetudo zelus. Adipiscing gilvus sit wisi zelus. Conventio elit gilvus importunus lobortis luctus natu quidne. Abdo facilisis meus oppeto patria quibus tum.\r\n\r\nAppellatio esca ille metuo. Cui ille patria quia typicus. Augue cogo neque nulla nutus odio populus typicus ullamcorper zelus. Bene caecus qui quibus typicus wisi. At camur commoveo consequat enim feugiat pneum roto te.\r\n\r\n"
+  field_category:
+    -
+      entity: e5bc5b90-bbbb-4c08-9713-0a9e624650ce
+    -
+      entity: b03913c2-d17c-4da9-9956-564ddd35efb9
+  field_image:
+    -
+      entity: 6221418a-d630-4de9-a849-79190f45b9c6
+      alt: 'default image'
+      title: ''
+      width: 200
+      height: 200

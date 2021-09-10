@@ -5,3 +5,53 @@ package: OpenEuropa
 core_version_requirement: ^8.9 || ^9.1
 dependencies:
   - default_content:default_content
+
+default_content:
+  node:
+    - 752f5d7a-27ed-4e47-8d0f-90b1e568bddf
+    - fa3a4916-c8f6-4719-ba9e-cdaa7f2bc5ed
+    - b03c0b98-ea8a-48f9-b0c1-57ab8bb1ed39
+    - 7e822c27-9f35-46a2-9500-4421e5798c87
+    - 27f4a440-20c3-44dd-8e0c-7d09330abd2c
+    - f4829e19-5b49-4944-a7a7-7bc9ddb4ba4a
+    - 12933cd3-6add-4353-9e83-f59b504b29a0
+    - e96ce8c3-afc3-4ca9-8c02-b68bf0f55d16
+    - cdafca7f-4cce-423b-8a39-aaee0f300113
+    - ca69cefd-cbf2-4436-9f2c-6664cd371931
+    - c2b01518-8fc7-447f-8a51-cdcbfc6b01d1
+    - a007fbb0-d5f4-498d-b0a5-9e74c7854fa8
+    - 50372768-8d78-4d50-b37d-fc31aa17e08c
+    - 899046e9-356a-430a-9723-8f81625f3ab6
+    - 054058db-1a25-45ae-bbce-882c6a631f5b
+    - 3686bb5a-de9a-4094-ad75-210408473f16
+    - 810e0562-ad82-4cb6-8c94-5e8c61702542
+    - 08d47ccb-9a09-4e46-b8c9-7da113831382
+    - 4e77e7fe-ff23-4dc3-8465-2bd6b7aab55a
+  taxonomy_term:
+    - 78e5b83b-cb54-447c-94c6-72bb1472ad31
+    - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
+    - b03913c2-d17c-4da9-9956-564ddd35efb9
+    - a530e826-5dd6-476b-80ab-cb43d8a0e004
+    - ea582677-9263-4795-b339-44ee28cf8d95
+  file:
+    - 06abc8c8-f94c-43ed-902d-82d8d748880f
+    - 09ff8f73-2813-4faf-a68d-5d18af78a947
+    - 1b89e684-b091-4534-b89e-cbfa1db1330c
+    - 292ecfb2-1ce0-419b-acde-50a925f5478b
+    - 32d67535-ff47-42dc-a88d-4a36f09849ed
+    - 45f0db6b-f83f-4a87-9235-f519dd0f6f15
+    - 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+    - 59898f57-0e39-4223-bfdb-69cd65561c46
+    - 6221418a-d630-4de9-a849-79190f45b9c6
+    - 62a50b02-ea44-4c32-9111-e73d87ba03db
+    - 95a68394-b896-4a4b-aef4-7c0e23629a9d
+    - a30cef67-ab82-4a9d-a2cd-e49fa881edb1
+    - a455f8c4-0221-4cd0-bd77-50447ced1201
+    - a503bcff-795e-4766-b6c4-3119fe82e571
+    - adef7fd3-ff01-45c3-a837-2377f4dde8d8
+    - c3443ba2-3860-49c5-9f56-9f9412f74186
+    - c5f00a24-bb15-4873-aabf-84206a7752a9
+    - e03324cd-20ea-4226-b8a3-f004ae9f0829
+    - e807a764-c26e-4d60-a288-d8925a98f961
+    - f224340d-27ac-4768-ba2e-04615d81a179
+    - ffcc05ec-0f4f-47e1-9de9-af68727199fc
