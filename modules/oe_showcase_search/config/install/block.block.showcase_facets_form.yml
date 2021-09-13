@@ -5,6 +5,8 @@ dependencies:
   module:
     - facets_form
     - system
+  config:    
+    - views.view.showcase_search
   theme:
     - bartik
 id: showcase_facets_form
