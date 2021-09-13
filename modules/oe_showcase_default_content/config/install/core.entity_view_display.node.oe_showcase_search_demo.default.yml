@@ -1,4 +1,3 @@
-uuid: 6723bf89-c734-43c9-b877-a8811831ced5
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,6 @@ dependencies:
     - image
     - text
     - user
-
 id: node.oe_showcase_search_demo.default
 targetEntityType: node
 bundle: oe_showcase_search_demo

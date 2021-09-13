@@ -55,3 +55,17 @@ default_content:
     - e807a764-c26e-4d60-a288-d8925a98f961
     - f224340d-27ac-4768-ba2e-04615d81a179
     - ffcc05ec-0f4f-47e1-9de9-af68727199fc
+
+config_devel:
+  install:
+    - core.entity_form_display.node.oe_showcase_search_demo.default
+    - core.entity_view_display.node.oe_showcase_search_demo.default
+    - core.entity_view_display.node.oe_showcase_search_demo.search_result
+    - core.entity_view_display.node.oe_showcase_search_demo.teaser
+    - field.field.node.oe_showcase_search_demo.body
+    - field.field.node.oe_showcase_search_demo.field_category
+    - field.field.node.oe_showcase_search_demo.field_image
+    - field.storage.node.field_category
+    - field.storage.node.field_image
+    - node.type.oe_showcase_search_demo
+    - taxonomy.vocabulary.categories

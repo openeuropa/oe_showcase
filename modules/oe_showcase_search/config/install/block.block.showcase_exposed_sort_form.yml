@@ -1,4 +1,3 @@
-uuid: effb0276-3982-4117-a35f-898737fc5ad2
 langcode: en
 status: true
 dependencies:
@@ -24,5 +23,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /showcase-search
+    pages: /search
     negate: false

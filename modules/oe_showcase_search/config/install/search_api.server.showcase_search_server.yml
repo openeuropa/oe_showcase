@@ -1,11 +1,8 @@
-uuid: 07a27d9d-6454-4830-96db-2a9e52bd9da9
 langcode: en
 status: true
 dependencies:
   module:
     - search_api_db
-_core:
-  default_config_hash: 87wTqC2QLETSYAy7w3Du6vs2V-g0CztfYSdM3XOI_JQ
 id: showcase_search_server
 name: 'Showcase search server'
 description: 'Demo Showcase search server'

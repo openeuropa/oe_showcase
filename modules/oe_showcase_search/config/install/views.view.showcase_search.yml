@@ -1,4 +1,3 @@
-uuid: de0e739e-6390-46b5-bd04-30907177f5ee
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
   module:
     - search_api
     - text
-_core:
-  default_config_hash: tu21X9PK4luylAXkI_ZO9CI12ORNM3SjqCWW6xmtcUI
 id: showcase_search
 label: 'Showcase Search'
 module: views
@@ -165,13 +162,13 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: Keyword
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_fulltext
+            identifier: text
             required: false
             remember: false
             multiple: false
@@ -226,7 +223,7 @@ display:
           expose:
             label: Title
           plugin_id: search_api
-      title: 'Showcase Search'
+      title: Search
       header: {  }
       footer: {  }
       empty: {  }
@@ -255,7 +252,7 @@ display:
     display_options:
       display_extenders: {  }
       exposed_block: true
-      path: showcase-search
+      path: search
       cache:
         type: none
       defaults:

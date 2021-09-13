@@ -15,3 +15,17 @@ dependencies:
 themes:
   - bartik
   - seven
+
+config_devel:
+  install:
+    - block.block.showcase_exposed_sort_form
+    - block.block.showcase_facets_form
+    - block.block.showcase_facets_summary
+    - facets.facet.category
+    - facets.facet.published_on
+    - facets.facet_source.search_api__views_page__showcase_search__showcase_search_page
+    - facets_summary.facets_summary.showcase_summary
+    - search_api.index.showcase_search_index
+    - search_api.server.showcase_search_server
+    - search_api_autocomplete.search.showcase_search
+    - views.view.showcase_search
