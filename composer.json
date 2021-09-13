@@ -52,6 +52,11 @@
             "build/modules/contrib/{$name}": ["type:drupal-module"],
             "build/themes/contrib/{$name}": ["type:drupal-theme"]
         },
+        "patches": {
+            "drupal/facets_form": {
+                "https://www.drupal.org/project/facets_form/issues/3230468": "https://git.drupalcode.org/project/facets_form/-/merge_requests/15/diffs.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"

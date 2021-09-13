@@ -1,12 +1,13 @@
-uuid: 37b0ba74-dfdb-4462-9547-ca1f7ab49006
+uuid: 471a0cda-de89-4c14-ac60-a693129372a8
 langcode: en
 status: true
 dependencies:
+  config:
+    - facets.facet.category
+    - facets.facet.published_on
   module:
     - facets_form
     - system
-  config:    
-    - views.view.showcase_search
   theme:
     - bartik
 id: showcase_facets_form
