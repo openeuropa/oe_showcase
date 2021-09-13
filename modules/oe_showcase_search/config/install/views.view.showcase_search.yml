@@ -204,6 +204,10 @@ display:
       display_extenders: {  }
       exposed_block: true
       path: showcase-search
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

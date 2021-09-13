@@ -1,0 +1,27 @@
+uuid: a2186e96-1ce2-440b-8dd2-9784b0562e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.showcase_summary
+  module:
+    - facets_summary
+    - system
+  theme:
+    - bartik
+id: showcase_facets_summary
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'facets_summary_block:showcase_summary'
+settings:
+  id: 'facets_summary_block:showcase_summary'
+  label: 'Showcase Summary'
+  provider: facets_summary
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /showcase-search
+    negate: false

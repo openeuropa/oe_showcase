@@ -8,7 +8,8 @@
     "require": {
         "php": ">=7.3",
         "drupal/core": "^8.9 || ^9.1",
-        "drupal/search_api": "^1.20"
+        "drupal/search_api": "^1.20",
+        "drupal/facets_form": "^1.0@alpha"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -45,12 +46,16 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
-        "installer-types": ["npm-asset", "bower-asset"],
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
             "build/modules/contrib/{$name}": ["type:drupal-module"],
             "build/themes/contrib/{$name}": ["type:drupal-theme"]
+        },
+        "patches": {
+            "drupal/facets_form": {
+                "https://www.drupal.org/project/facets_form/issues/3230468": "https://git.drupalcode.org/project/facets_form/-/merge_requests/15/diffs.patch"
+            }
         },
         "drupal-scaffold": {
             "locations": {
