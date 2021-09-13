@@ -4,14 +4,14 @@ description: 'Demo search feature based on search_api.'
 core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
-  - search_api:search_api
-  - search_api_db:search_api_db
   - drupal:views
-  - openeuropa:oe_showcase_default_content
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
+  - openeuropa:oe_showcase_default_content
+  - search_api:search_api
+  - search_api_db:search_api_db
   - search_api_autocomplete:search_api_autocomplete
 
 themes:
-  - seven
   - bartik
+  - seven
