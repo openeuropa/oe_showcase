@@ -7,9 +7,9 @@ dependencies:
     - facets_summary
     - system
   theme:
-    - bartik
+    - oe_whitelabel
 id: showcase_facets_summary
-theme: bartik
+theme: oe_whitelabel
 region: content
 weight: 0
 provider: null

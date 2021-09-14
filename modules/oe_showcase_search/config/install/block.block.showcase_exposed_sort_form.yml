@@ -7,9 +7,9 @@ dependencies:
     - system
     - views
   theme:
-    - bartik
+    - oe_whitelabel
 id: showcase_exposed_sort_form
-theme: bartik
+theme: oe_whitelabel
 region: content
 weight: 0
 provider: null

@@ -8,9 +8,9 @@ dependencies:
     - facets_form
     - system
   theme:
-    - bartik
+    - oe_whitelabel
 id: showcase_facets_form
-theme: bartik
+theme: oe_whitelabel
 region: sidebar_first
 weight: 0
 provider: null
