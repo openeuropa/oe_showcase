@@ -6,6 +6,8 @@ dependencies:
     - views.view.showcase_search
   module:
     - search_api
+_core:
+  default_config_hash: EM7UNQ1nvrm_mtUb7ylbHJyYxutD9ZfnIUM1Svbvzm0
 id: published_on
 name: 'Published on'
 url_alias: published_on
@@ -60,4 +62,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
-show_title: false
+show_title: true
