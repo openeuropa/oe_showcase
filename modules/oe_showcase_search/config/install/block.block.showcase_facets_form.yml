@@ -1,4 +1,3 @@
-uuid: 471a0cda-de89-4c14-ac60-a693129372a8
 langcode: en
 status: true
 dependencies:
@@ -29,5 +28,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /showcase-search
+    pages: /search
     negate: false

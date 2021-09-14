@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_search_index
+    - views.view.showcase_search
+  module:
+    - views
+    - search_api_autocomplete
+id: showcase_search
+label: 'Showcase Search'
+index_id: showcase_search_index
+suggester_settings:
+  server:
+    fields:
+      - body
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:showcase_search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null
