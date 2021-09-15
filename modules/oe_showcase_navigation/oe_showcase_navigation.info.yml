@@ -1,0 +1,17 @@
+name: OpenEuropa Library Navigation
+type: module
+description: 'Demo navigation feature based on theme oe_whitelabel and easybreadcrumbs.'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - drupal:views
+
+themes:
+  - oe_whitelabel
+  - seven
+
+config_devel:
+  install:
+    - easy_breadcrumb.settings
+    - cas.settings
+    - oe_authentication.settings
