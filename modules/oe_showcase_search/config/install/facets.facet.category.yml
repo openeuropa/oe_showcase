@@ -6,7 +6,6 @@ dependencies:
     - views.view.showcase_search
   module:
     - search_api
-
 id: category
 name: Category
 url_alias: category
