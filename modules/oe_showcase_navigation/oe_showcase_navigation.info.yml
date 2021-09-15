@@ -12,6 +12,6 @@ themes:
 
 config_devel:
   install:
-    - easy_breadcrumb.settings
-    - cas.settings
-    - oe_authentication.settings
+    - block.block.corporateeulogoblock
+    - block.block.euloginlinkblock
+    - block.block.languageswitcherinterfacetext

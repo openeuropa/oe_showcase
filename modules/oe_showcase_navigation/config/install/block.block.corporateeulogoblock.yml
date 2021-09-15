@@ -1,0 +1,20 @@
+uuid: 0756290a-c825-4aed-849f-d579f3b406ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_whitelabel_helper
+  theme:
+    - oe_whitelabel
+id: corporateeulogoblock
+theme: oe_whitelabel
+region: navbar_branding
+weight: 0
+provider: null
+plugin: whitelabel_eu_logo_block
+settings:
+  id: whitelabel_eu_logo_block
+  label: 'Corporate EU Logo Block'
+  provider: oe_whitelabel_helper
+  label_display: '0'
+visibility: {  }
