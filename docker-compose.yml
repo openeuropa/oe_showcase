@@ -23,16 +23,7 @@ services:
     # ports:
     #   - 3306:3306
 #### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
-  node:
-    image: node:14.17.3
-    user: "node"
-    working_dir: /var/www/html/build/themes/contrib/oe_whitelabel
-    environment:
-      - NODE_ENV=${NODE_ENV}
-      - SHELL=bash
-    volumes:
-      - ./:/var/www/html/build/themes/contrib/oe_whitelabel
-    command: "sleep infinity"
+
 #volumes:
 #  nfsmount:
 #    driver: local
