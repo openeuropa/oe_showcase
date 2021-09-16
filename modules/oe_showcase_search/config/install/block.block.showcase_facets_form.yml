@@ -8,10 +8,10 @@ dependencies:
     - facets_form
     - system
   theme:
-    - bartik
+    - oe_whitelabel
 id: showcase_facets_form
-theme: bartik
-region: sidebar_first
+theme: oe_whitelabel
+region: sidebar_left
 weight: 0
 provider: null
 plugin: 'facets_form:search_api:views_page__showcase_search__showcase_search_page'
