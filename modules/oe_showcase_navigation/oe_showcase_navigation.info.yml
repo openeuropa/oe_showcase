@@ -16,3 +16,11 @@ config_devel:
     - block.block.euloginlinkblock
     - block.block.languageswitcherinterfacetext
     - block.block.breadcrumbs
+
+default_content:
+  node:
+    - 1788c049-ca94-454b-92ad-9e4eef4158e7
+    - 2229e44d-c88e-4041-9af0-12a26560b508
+    - aadd96d3-be2a-4a3d-81a7-c8cc16fd05ff
+    - c0a4a09e-e99c-4481-97d4-b0cc67d76cf6
+    - e1df55bf-b1f2-443c-a99c-f187d813c550

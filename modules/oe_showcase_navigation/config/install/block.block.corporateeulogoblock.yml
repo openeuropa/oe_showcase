@@ -7,8 +7,8 @@ dependencies:
     - oe_whitelabel
 id: corporateeulogoblock
 theme: oe_whitelabel
-region: header_top
-weight: -1
+region: navbar_left
+weight: -2
 provider: null
 plugin: whitelabel_eu_logo_block
 settings:

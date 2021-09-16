@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e1df55bf-b1f2-443c-a99c-f187d813c550
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Item 022'
+  created:
+    -
+      value: 1631773904
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "Fusce eleifend erat eu nulla viverra, a vehicula lectus placerat. Nullam vehicula tincidunt sem ut fringilla. Curabitur mi lorem, malesuada ac lacinia sit amet, maximus eget massa. Nam rhoncus, lorem a molestie sollicitudin, risus nulla mattis erat, semper malesuada nibh ipsum sed libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque sed laoreet eros, et aliquet massa. Etiam pulvinar maximus arcu ac dapibus.\r\n\r\nPhasellus varius non dolor ac luctus. Aliquam erat volutpat. Cras efficitur, lectus eu hendrerit accumsan, quam libero convallis tellus, sit amet consectetur velit diam et eros. Fusce pulvinar venenatis lectus, sed eleifend orci. Cras ultrices tempus purus, vel condimentum est laoreet vel. Phasellus a neque non velit sodales gravida. Vestibulum tristique mollis elit, placerat consectetur est aliquet sit amet. Praesent odio ipsum, eleifend et egestas in, posuere quis purus. Praesent scelerisque orci non purus scelerisque, vitae laoreet risus venenatis. Curabitur nec cursus est. Proin dictum libero purus, rhoncus auctor nisi tincidunt eu. Aliquam erat volutpat. In ut dictum mi. Nam ultrices turpis eu mi aliquet, ac aliquet neque volutpat. Aliquam aliquam iaculis molestie. Nunc a tellus eros.\r\n\r\n"
+      format: plain_text
+      summary: ''
