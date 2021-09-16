@@ -22,6 +22,7 @@ config_devel:
     - oe_corporate_blocks.footer_link.social.facebook
     - oe_corporate_blocks.footer_link.social.linkedin
     - oe_corporate_blocks.footer_link.social.twitter
+    - oe_corporate_blocks.footer_link.general.contact_us
 
 default_content:
   node:
