@@ -1,4 +1,3 @@
-uuid: d4655c85-aa4b-47c9-b658-8b6a463a9225
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,8 @@ dependencies:
     - oe_whitelabel
 id: languageswitcherinterfacetext
 theme: oe_whitelabel
-region: navbar_right
-weight: -1
+region: header_top
+weight: 0
 provider: null
 plugin: 'language_block:language_interface'
 settings:

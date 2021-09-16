@@ -1,4 +1,3 @@
-uuid: 43d427b3-823d-45e5-9d44-2b9b7246345f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,8 @@ dependencies:
     - oe_whitelabel
 id: euloginlinkblock
 theme: oe_whitelabel
-region: navbar_right
-weight: 0
+region: header_top
+weight: 1
 provider: null
 plugin: oe_authentication_login_block
 settings:

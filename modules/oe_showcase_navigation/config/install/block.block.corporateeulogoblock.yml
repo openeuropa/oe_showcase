@@ -1,4 +1,3 @@
-uuid: 0756290a-c825-4aed-849f-d579f3b406ec
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,8 @@ dependencies:
     - oe_whitelabel
 id: corporateeulogoblock
 theme: oe_whitelabel
-region: navbar_branding
-weight: 0
+region: header_top
+weight: -1
 provider: null
 plugin: whitelabel_eu_logo_block
 settings:
