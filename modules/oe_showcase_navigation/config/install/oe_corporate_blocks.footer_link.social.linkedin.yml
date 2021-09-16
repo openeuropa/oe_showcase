@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: linkedin
+label: Linkedin
+social_network: linkedin
+url: 'https://es.linkedin.com/company/european-union'
+weight: 0

@@ -19,3 +19,10 @@ config_devel:
     - block.block.languageswitcherinterfacetext
     - block.block.mainnavigation
     - block.block.sitebranding
+    - oe_corporate_blocks.footer_link.social.facebook
+    - oe_corporate_blocks.footer_link.social.linkedin
+    - oe_corporate_blocks.footer_link.social.twitter
+
+default_content:
+  node:
+    - 8ed084db-0867-4a34-92ca-c4799ae6d29e
