@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.oe_showcase_search_demo.body
     - field.field.node.oe_showcase_search_demo.field_category
     - field.field.node.oe_showcase_search_demo.field_image
+    - image.style.medium
     - node.type.oe_showcase_search_demo
   module:
     - image
@@ -18,9 +19,10 @@ mode: search_result
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_trimmed
     weight: 101
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     region: content
   field_category:
@@ -32,13 +34,12 @@ content:
       link: true
     third_party_settings: {  }
   field_image:
-    type: image
+    type: image_url
     weight: 0
     region: content
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: medium
     third_party_settings: {  }
   links:
     weight: 100
@@ -50,4 +51,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true
