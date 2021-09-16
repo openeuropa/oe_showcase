@@ -33,7 +33,6 @@ default:
     -
       alias: ''
       langcode: en
-      pathauto: 0
   body:
     -
       value: "Integer et urna pulvinar, interdum libero quis, scelerisque sem. Nullam quam sem, efficitur sit amet ligula ac, commodo eleifend enim. Quisque vehicula odio euismod, consequat urna sed, dignissim ligula. Phasellus vel nulla egestas, tristique risus sed, sollicitudin ex. Sed vel interdum tortor. Donec consectetur vel quam non posuere. Nam et mattis lorem. Nam in odio rhoncus, condimentum lectus eget, tincidunt turpis.\r\n\r\nPraesent id tortor at metus tristique tincidunt. Cras nec nisl massa. Nam facilisis scelerisque felis, a auctor neque pretium pulvinar. Etiam a augue hendrerit, condimentum eros sit amet, fermentum nisl. Nullam efficitur ultrices justo, ut venenatis ante vestibulum vitae. Proin ullamcorper lectus placerat nisl ullamcorper, ac commodo felis eleifend. Etiam purus orci, pharetra vitae egestas ac, posuere at sapien. Mauris feugiat dolor massa, non dignissim dolor sollicitudin vel. Ut interdum laoreet neque, id mattis quam porta a. Maecenas ac velit imperdiet felis molestie volutpat. Phasellus tempus sapien nisi, ultricies facilisis purus commodo non. Quisque lacinia vehicula faucibus. Proin congue risus tellus, at tempus neque cursus in."
