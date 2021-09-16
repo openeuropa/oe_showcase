@@ -14,10 +14,11 @@
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/ui_patterns": "^1.2",
         "drupal/ui_patterns_settings": "^1.1",
-        "openeuropa/oe_whitelabel": "dev-EPIC-Search"
+        "openeuropa/oe_whitelabel": "dev-OEL-465"
     },
     "require-dev": {
         "composer/installers": "~1.11",
+        "drupal/component_blocks": "^1.2",
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "^8.9 || ^9.1",
         "drupal/default_content": "^2.0@alpha",
