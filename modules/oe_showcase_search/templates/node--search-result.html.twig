@@ -4,6 +4,17 @@
  * Search result template.
  */
 #}
+{% set badges = [] %}
+{% if content.field_category is not empty %}
+  {% for key,item in content.field_category %}
+    {% if key|first != '#' %}
+      {% set badges = badges|merge([{
+        label: item['#title']
+      }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {{ pattern('card', {
   horizontal: true,
   horizontal_grid: {
@@ -25,4 +36,5 @@
     alt: "alt img",
     position: "top",
   },
+  badges: badges
 }) }}
