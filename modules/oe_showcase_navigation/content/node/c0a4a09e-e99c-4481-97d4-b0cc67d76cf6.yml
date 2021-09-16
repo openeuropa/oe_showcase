@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c0a4a09e-e99c-4481-97d4-b0cc67d76cf6
+  bundle: oe_showcase_search_demo
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Item 02'
+  created:
+    -
+      value: 1631773856
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "Quisque cursus dictum interdum. Cras lobortis turpis a ipsum sodales venenatis. Vestibulum non nisi eget mauris consectetur eleifend. Duis ut iaculis lorem. Vestibulum finibus neque vitae blandit pretium. Aliquam erat volutpat. Proin mollis sem eget ex luctus convallis. Nulla in vehicula elit. Donec posuere neque in dignissim efficitur. Cras tincidunt diam non vehicula elementum. Integer pharetra dapibus mauris, et vestibulum arcu. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nibh eleifend purus tempor dignissim. Maecenas sed diam id augue bibendum ullamcorper. Nam accumsan mattis mi vitae elementum.\r\n\r\nCras fermentum tempor dui vel blandit. Nulla gravida, nisi ut gravida tempus, ex lectus porta nibh, ac accumsan felis mauris ut mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tempus eleifend sem, nec faucibus turpis. Proin quis lectus eget augue venenatis posuere. Donec efficitur diam a nibh posuere condimentum. Donec pharetra tristique mi ac bibendum. Duis non dui quis augue finibus maximus. Sed placerat iaculis porttitor. Proin interdum elementum neque sed convallis. Sed at est dui. Nulla faucibus malesuada mi, ut rhoncus est. Nulla rutrum dui arcu, at efficitur ipsum facilisis ut. Donec quis finibus eros. Suspendisse potenti. Fusce malesuada, enim eget commodo tempus, lorem sapien tempus massa, eu venenatis nisl urna sit amet tellus."
+      format: plain_text
+      summary: ''
