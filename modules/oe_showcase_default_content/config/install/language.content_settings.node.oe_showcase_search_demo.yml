@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+ config:
+ - node.type.oe_showcase_search_demo
+ module:
+ - content_translation
+third_party_settings:
+ content_translation:
+ enabled: true
+id: node.oe_showcase_search_demo
+target_entity_type_id: node
+target_bundle: oe_showcase_search_demo
+default_langcode: site_default
+language_alterable: true

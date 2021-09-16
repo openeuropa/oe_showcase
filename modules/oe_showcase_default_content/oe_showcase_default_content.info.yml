@@ -5,6 +5,8 @@ package: OpenEuropa
 core_version_requirement: ^8.9 || ^9.1
 dependencies:
   - default_content:default_content
+  - drupal:content_translation
+  - drupal:language
 
 default_content:
   node:
@@ -75,5 +77,6 @@ config_devel:
     - field.field.node.oe_showcase_search_demo.field_image
     - field.storage.node.field_category
     - field.storage.node.field_image
+    - language.content_settings.node.oe_showcase_search_demo
     - node.type.oe_showcase_search_demo
     - taxonomy.vocabulary.categories
