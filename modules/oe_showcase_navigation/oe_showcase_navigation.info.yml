@@ -12,10 +12,13 @@ themes:
 
 config_devel:
   install:
+    - block.block.breadcrumbs
     - block.block.corporateeulogoblock
+    - block.block.eufooterblock
     - block.block.euloginlinkblock
     - block.block.languageswitcherinterfacetext
-    - block.block.breadcrumbs
+    - block.block.mainnavigation
+    - block.block.sitebranding
 
 default_content:
   node:
