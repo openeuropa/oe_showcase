@@ -12,13 +12,15 @@
         "drupal/facets_form": "^1.0@alpha",
         "drupal/search_api": "^1.20",
         "drupal/search_api_autocomplete": "^1.5",
+        "openeuropa/oe_authentication": "^1.4",
+        "openeuropa/oe_multilingual": "^1.8",
+        "openeuropa/oe_corporate_blocks": "^4.2",
         "drupal/ui_patterns": "^1.2",
         "drupal/ui_patterns_settings": "^1.1",
         "openeuropa/oe_whitelabel": "dev-OEL-465"
     },
     "require-dev": {
         "composer/installers": "~1.11",
-        "drupal/component_blocks": "^1.2",
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "^8.9 || ^9.1",
         "drupal/default_content": "^2.0@alpha",

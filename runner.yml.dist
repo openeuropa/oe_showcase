@@ -10,6 +10,9 @@ drupal:
     name: "oe_showcase"
     user: "root"
     password: ""
+  sparql:
+    host: "sparql"
+    port: "8890"
   post_install:
     # Prepare the instance.
     - "./vendor/bin/drush en toolbar -y"
@@ -41,7 +44,14 @@ drupal:
         - "vendor"
         - "${drupal.root}"
       file_private_path: "sites/default/files/private"
-
+    databases:
+      sparql_default:
+        default:
+          prefix: ""
+          host: ${drupal.sparql.host}
+          port: ${drupal.sparql.port}
+          namespace: 'Drupal\sparql_entity_storage\Driver\Database\sparql'
+          driver: 'sparql'
 commands:
   drupal:site-setup:
     - { task: "run", command: "drupal:symlink-project" }
