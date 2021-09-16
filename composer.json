@@ -7,6 +7,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.3",
+        "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/core": "^8.9 || ^9.1",
         "drupal/facets": "^1.8.0",
         "drupal/facets_form": "^1.0@alpha",
@@ -17,9 +18,9 @@
         "openeuropa/oe_corporate_blocks": "^4.2",
         "drupal/ui_patterns": "^1.2",
         "drupal/ui_patterns_settings": "^1.1",
-        "openeuropa/oe_whitelabel": "dev-EPIC-Search",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
-        "oomphinc/composer-installers-extender": "^2.0"
+        "oomphinc/composer-installers-extender": "^2.0",
+        "openeuropa/oe_whitelabel": "dev-EPIC-Search"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",

@@ -11,6 +11,7 @@ dependencies:
   - search_api:search_api
   - search_api_db:search_api_db
   - search_api_autocomplete:search_api_autocomplete
+  - better_exposed_filters:better_exposed_filters
 
 themes:
   - bartik
