@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Search result template.
+ */
+#}
+{% set badges = [] %}
+{% if content.field_category is not empty %}
+  {% for key,item in content.field_category %}
+    {% if key|first != '#' %}
+      {% set badges = badges|merge([{
+        label: item['#title']
+      }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{{ pattern('card', {
+  horizontal: true,
+  horizontal_grid: {
+    left_col_classes: "col-md-3",
+    right_col_classes: "col-md-9",
+    gutter: 0,
+  },
+  title: {
+    content: label,
+    classes: "mb-4",
+  },
+  text: {
+    content: content.body,
+    classes: "mb-4",
+  },
+  attributes: attributes.addClass(["border-0", "mb-5"]),
+  image: {
+    path: content.field_image[0]['#markup'],
+    alt: "alt img",
+    position: "top",
+  },
+  badges: badges
+}) }}

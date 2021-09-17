@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Showcase search module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_search_theme() {
+  return [
+    'node__search_result' => [
+      'render element' => 'elements',
+      'base hook' => 'node',
+    ],
+  ];
+}
