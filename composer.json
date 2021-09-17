@@ -24,7 +24,7 @@
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
-        "npm-asset/jquery-ui-touch-punch": "Required to use drupal/jquery_ui_touch_punch module."
+        "npm-asset/jquery-ui-touch-punch": "Required to use drupal/jquery_ui_touch_punch module for BEF."
     },
     "require-dev": {
         "composer/installers": "~1.11",
