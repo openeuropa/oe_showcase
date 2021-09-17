@@ -22,6 +22,12 @@ services:
     command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  sparql:
+    image: registry.fpfis.eu/openeuropa/triple-store-dev
+    pull: true
+    environment:
+      - SPARQL_UPDATE=true
+      - DBA_PASSWORD=dba
 
 pipeline:
   composer-install:
