@@ -17,7 +17,7 @@
         "openeuropa/oe_corporate_blocks": "^4.2",
         "drupal/ui_patterns": "^1.2",
         "drupal/ui_patterns_settings": "^1.1",
-        "openeuropa/oe_whitelabel": "dev-OEL-465"
+        "openeuropa/oe_whitelabel": "1.x"
     },
     "require-dev": {
         "composer/installers": "~1.11",
