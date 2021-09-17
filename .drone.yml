@@ -22,13 +22,13 @@ services:
     command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=drupal
   sparql:
     image: registry.fpfis.eu/openeuropa/triple-store-dev
     pull: true
     environment:
       - SPARQL_UPDATE=true
       - DBA_PASSWORD=dba
-
 pipeline:
   composer-install:
     group: prepare
@@ -44,10 +44,10 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
-      # @todo remove "composer install" step once the following issue is fixed.
-      # @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-1234
-      - composer update --prefer-lowest --prefer-stable --ansi --no-suggest --no-progress
+      - composer update --prefer-lowest --ansi --no-suggest --no-progress
     when:
+      event:
+        exclude: tag
       matrix:
         COMPOSER_BOUNDARY: lowest
 
@@ -55,31 +55,52 @@ pipeline:
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
       - ./vendor/bin/run drupal:site-install
+    when:
+      event:
+        exclude: tag
 
   grumphp:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
       - ./vendor/bin/grumphp run
+    when:
+      event:
+        exclude: tag
 
   phpunit:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
       - ./vendor/bin/phpunit
+    when:
+      event:
+        exclude: tag
 
   behat:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
       - ./vendor/bin/behat --strict
+    when:
+      event:
+        exclude: tag
 
-  debug:
+  before-release:
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
-      - ./vendor/bin/drush ws --count 500
+      - ./vendor/bin/run release:create-archive --tag=${DRONE_TAG}
     when:
-      status: failure
+      event: tag
+
+  github-release:
+    image: registry.fpfis.eu/drone-plugins/github-release
+    secrets: [ github_token ]
+    files: oe_showcase-${DRONE_TAG}.tar.gz
+    when:
+      event: tag
+      matrix:
+        COMPOSER_BOUNDARY: highest
 
 matrix:
   COMPOSER_BOUNDARY:
