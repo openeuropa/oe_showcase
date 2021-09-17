@@ -33,8 +33,3 @@ processor_configs:
     weights:
       build: '5'
     settings: {  }
-  show_summary:
-    processor_id: show_summary
-    weights:
-      build: '20'
-    settings: {  }

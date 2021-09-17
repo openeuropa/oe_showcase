@@ -20,7 +20,7 @@
         "drupal/ui_patterns_settings": "^1.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "openeuropa/oe_whitelabel": "dev-EPIC-Search"
+        "openeuropa/oe_whitelabel": "1.x"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
