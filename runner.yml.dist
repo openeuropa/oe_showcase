@@ -15,9 +15,13 @@ drupal:
     port: "8890"
   post_install:
     # Prepare the instance.
-    - "./vendor/bin/drush en ui_patterns ui_patterns_library ui_patterns_settings components -y"
-    - "./vendor/bin/drush en toolbar -y"
-    - "./vendor/bin/drush en oe_authentication oe_multilingual easy_breadcrumb -y"
+    - "./vendor/bin/drush en ui_patterns -y"
+    - "./vendor/bin/drush en ui_patterns_library -y"
+    - "./vendor/bin/drush en ui_patterns_settings -y"
+    - "./vendor/bin/drush en components -y"
+    - "./vendor/bin/drush en oe_authentication  -y"
+    - "./vendor/bin/drush en oe_multilingual -y"
+    - "./vendor/bin/drush en easy_breadcrumb -y"
     - "./vendor/bin/drush theme:enable oe_whitelabel -y"
     - "./vendor/bin/drush en oe_whitelabel_helper -y"
     - "./vendor/bin/drush theme:enable seven -y"
