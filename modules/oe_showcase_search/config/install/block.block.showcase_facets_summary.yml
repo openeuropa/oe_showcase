@@ -11,14 +11,14 @@ dependencies:
 id: showcase_facets_summary
 theme: oe_whitelabel
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: 'facets_summary_block:showcase_summary'
 settings:
   id: 'facets_summary_block:showcase_summary'
-  label: 'Showcase Summary'
+  label: 'Search results'
   provider: facets_summary
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path
