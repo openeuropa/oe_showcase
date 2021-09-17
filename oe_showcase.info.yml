@@ -1,12 +1,12 @@
 name: OpenEuropa Showcase Profile
 type: profile
-description: 'OpenEuropa Showcase installation profile.'
+description: 'Install with commonly used features for OpenEuropa Showcase profile.'
 core_version_requirement: ^8.9 || ^9.1
-
-dependencies:
+install:
   - block
   - block_content
   - config
+  - content_translation
   - datetime
   - dblog
   - dynamic_page_cache
@@ -14,6 +14,7 @@ dependencies:
   - file
   - filter
   - image
+  - language
   - menu_link_content
   - node
   - oe_showcase_default_content
@@ -24,7 +25,6 @@ dependencies:
   - taxonomy
   - user
   - views
-
 themes:
-  - seven
   - bartik
+  - seven

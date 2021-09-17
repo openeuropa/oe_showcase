@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_authentication
+  theme:
+    - oe_whitelabel
+id: euloginlinkblock
+theme: oe_whitelabel
+region: navbar_right
+weight: -1
+provider: null
+plugin: oe_authentication_login_block
+settings:
+  id: oe_authentication_login_block
+  label: 'EU Login Link Block'
+  provider: oe_authentication
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: twitter
+label: Twitter
+social_network: twitter
+url: 'https://twitter.com/EU_Commission?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'
+weight: 0

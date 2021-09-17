@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * OpenEuropa Showcase install file.
+ */
+
+declare(strict_types=1);
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_navigation_install(): void {
+
+  // Create Home link.
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Home',
+    'link' => ['uri' => 'route:<front>'],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+    'weight' => 0,
+  ]);
+  $menu_link->save();
+
+  // Create first level items.
+  $items = [
+    '2229e44d-c88e-4041-9af0-12a26560b508' => 'Item 1',
+    'c0a4a09e-e99c-4481-97d4-b0cc67d76cf6' => 'Item 2',
+  ];
+  $weight = 1;
+  foreach ($items as $uuid => $title) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['uuid' => $uuid]);
+    /** @var \Drupal\Core\Entity\EntityInterface $node_loaded_by_uuid */
+    $node_loaded_by_uuid = reset($node);
+    $nid = $node_loaded_by_uuid->id();
+
+    $menu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'internal:/node/' . $nid],
+      'menu_name' => 'main',
+      'expanded' => TRUE,
+      'weight' => $weight,
+    ]);
+    $weight++;
+    $menu_link->save();
+  }
+
+  // Create second level items.
+  $subItems = [
+    '1788c049-ca94-454b-92ad-9e4eef4158e7' => 'Item 21',
+    'e1df55bf-b1f2-443c-a99c-f187d813c550' => 'Item 22',
+    'fc412728-53e5-4d23-9e05-02ebf997ab47' => 'Item 23',
+    '50838390-e448-43c3-b03d-4a40737b0a21' => 'Item 24',
+  ];
+  foreach ($subItems as $uuid => $title) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['uuid' => $uuid]);
+    /** @var \Drupal\Core\Entity\EntityInterface $node_loaded_by_uuid */
+    $node_loaded_by_uuid = reset($node);
+    $nid = $node_loaded_by_uuid->id();
+    $submenu_link = MenuLinkContent::create([
+      'title' => $title,
+      'link' => ['uri' => 'internal:/node/' . $nid],
+      'menu_name' => 'main',
+      'expanded' => TRUE,
+      'parent' => 'menu_link_content:' . $menu_link->uuid(),
+    ]);
+    $submenu_link->save();
+  }
+
+}
