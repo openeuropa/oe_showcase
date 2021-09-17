@@ -15,6 +15,14 @@
   {% endfor %}
 {% endif %}
 
+{% if content.field_image[0] is defined and content.field_image[0]['#markup'] is not empty %}
+  {% set image = {
+    path: content.field_image[0]['#markup'],
+    alt: "alt img",
+    position: "top",
+  } %}
+{% endif %}
+
 {{ pattern('card', {
   horizontal: true,
   horizontal_grid: {
@@ -31,10 +39,6 @@
     classes: "mb-4",
   },
   attributes: attributes.addClass(["border-0", "mb-5"]),
-  image: {
-    path: content.field_image[0]['#markup'],
-    alt: "alt img",
-    position: "top",
-  },
+  image: image,
   badges: badges
 }) }}

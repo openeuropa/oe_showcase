@@ -8,7 +8,7 @@ dependencies:
 id: euloginlinkblock
 theme: oe_whitelabel
 region: navbar_right
-weight: -1
+weight: -4
 provider: null
 plugin: oe_authentication_login_block
 settings:
