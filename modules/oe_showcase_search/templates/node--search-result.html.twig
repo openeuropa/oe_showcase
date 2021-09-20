@@ -18,7 +18,6 @@
 {% if content.field_image[0] is defined and content.field_image[0]['#markup'] is not empty %}
   {% set image = {
     path: content.field_image[0]['#markup'],
-    alt: "alt img",
     position: "top",
   } %}
 {% endif %}
