@@ -181,55 +181,6 @@ display:
             multi_type: separator
             multi_separator: ', '
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_showcase_search_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: and
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: text
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-            placeholder: Keyword
-            expose_fields: false
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: 'Fulltext search'
-            description: null
-            identifier: search_api_fulltext
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
-          parse_mode: direct
-          min_length: null
-          fields:
-            - rendered_item
-          plugin_id: search_api_fulltext
         search_api_language:
           id: search_api_language
           table: search_api_index_showcase_search_index
@@ -303,12 +254,15 @@ display:
       arguments: {  }
       display_extenders: {  }
       use_ajax: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -334,7 +288,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
