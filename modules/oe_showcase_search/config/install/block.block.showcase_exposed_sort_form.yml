@@ -10,8 +10,8 @@ dependencies:
     - oe_whitelabel
 id: showcase_exposed_sort_form
 theme: oe_whitelabel
-region: content
-weight: 0
+region: content_top
+weight: -4
 provider: null
 plugin: 'views_exposed_filter_block:showcase_search-showcase_search_page'
 settings:
