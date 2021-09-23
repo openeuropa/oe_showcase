@@ -29,6 +29,8 @@ drupal:
     - "./vendor/bin/drush config-set system.theme default oe_whitelabel -y"
     - "./vendor/bin/drush config-set system.theme admin seven -y"
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
+    # Import translations.
+    - "./vendor/bin/drush oe-multilingual:import-local-translations"
     # Don't aggregate or some pages will not be showed properly.
     - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
     - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
