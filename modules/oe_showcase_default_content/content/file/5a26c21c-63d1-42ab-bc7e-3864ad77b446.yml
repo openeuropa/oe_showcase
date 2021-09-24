@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5a26c21c-63d1-42ab-bc7e-3864ad77b446
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Q8WSeS4Os-Ml2-ocrSad-tKX5CZX6Tz5HMgzfEkRl4M.jpg
+  uri:
+    -
+      value: 'public://media_avportal_thumbnails/Q8WSeS4Os-Ml2-ocrSad-tKX5CZX6Tz5HMgzfEkRl4M.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 109074
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1632391829

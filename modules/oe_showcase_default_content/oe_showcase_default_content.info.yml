@@ -7,9 +7,13 @@ dependencies:
   - default_content:default_content
   - drupal:content_translation
   - drupal:language
+  # - oe_showcase_navigation:oe_showcase_navigation
+  - oe_showcase_search_demo:oe_showcase_search
+  - oe_showcase_page:oe_showcase_page
 
 default_content:
   node:
+    # OE Showcase Search
     - 752f5d7a-27ed-4e47-8d0f-90b1e568bddf
     - fa3a4916-c8f6-4719-ba9e-cdaa7f2bc5ed
     - b03c0b98-ea8a-48f9-b0c1-57ab8bb1ed39
@@ -37,6 +41,14 @@ default_content:
     - 3301d80f-2ba7-4583-99ff-84233f481827
     - 50838390-e448-43c3-b03d-4a40737b0a21
     - fc412728-53e5-4d23-9e05-02ebf997ab47
+    # OE Showcase Navigation
+    - 8ed084db-0867-4a34-92ca-c4799ae6d29e
+    # OE Showcase Page
+    - 8e120065-b55f-4aec-b73e-954e06617b69
+    - 1cc6042e-041c-4c88-a48b-52a6ee1802c2
+    - 0cc679ae-1aaf-481e-b700-675c15c6db68
+    - a170562d-55f5-48b5-9e11-7a61d7677873
+    - e0bff251-495d-4dbe-b723-62e774ef6238
   taxonomy_term:
     - 78e5b83b-cb54-447c-94c6-72bb1472ad31
     - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
@@ -44,6 +56,7 @@ default_content:
     - a530e826-5dd6-476b-80ab-cb43d8a0e004
     - ea582677-9263-4795-b339-44ee28cf8d95
   file:
+    # OE Showcase Search
     - 06abc8c8-f94c-43ed-902d-82d8d748880f
     - 09ff8f73-2813-4faf-a68d-5d18af78a947
     - 1b89e684-b091-4534-b89e-cbfa1db1330c
@@ -65,18 +78,21 @@ default_content:
     - e807a764-c26e-4d60-a288-d8925a98f961
     - f224340d-27ac-4768-ba2e-04615d81a179
     - ffcc05ec-0f4f-47e1-9de9-af68727199fc
+    # OE Showcase Page
+    - 5bd6ec36-6035-4c6f-bd76-0431589cd7c8
+    - 5a26c21c-63d1-42ab-bc7e-3864ad77b446
+    - 92b23df3-273d-4a51-9e33-b7ea68e12d64
+    - 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
+    - 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
+    - 6d160789-df45-4cf9-ab0c-3b0547a2170c
+    - f63f9269-b08b-47dc-ad12-5fa53a026a54
+  media:
+    # OE Showcase Page
+    - 8fec7b57-dff0-4a75-b032-a2076ceeccbb
+    - 4ad702f7-8953-445e-82ba-bdb314ac9377
+    - 6850c50d-1848-4b59-8594-7e5cadecf39e
+    - ee957f04-6035-4e1c-bc4e-3669250c0c30
 
 config_devel:
   install:
-    - core.entity_form_display.node.oe_showcase_search_demo.default
-    - core.entity_view_display.node.oe_showcase_search_demo.default
-    - core.entity_view_display.node.oe_showcase_search_demo.search_result
-    - core.entity_view_display.node.oe_showcase_search_demo.teaser
-    - field.field.node.oe_showcase_search_demo.body
-    - field.field.node.oe_showcase_search_demo.field_category
-    - field.field.node.oe_showcase_search_demo.field_image
-    - field.storage.node.field_category
-    - field.storage.node.field_image
-    - language.content_settings.node.oe_showcase_search_demo
-    - node.type.oe_showcase_search_demo
-    - taxonomy.vocabulary.categories
+    - system.site

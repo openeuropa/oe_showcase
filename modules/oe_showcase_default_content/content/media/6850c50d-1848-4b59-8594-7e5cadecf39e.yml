@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 6850c50d-1848-4b59-8594-7e5cadecf39e
+  bundle: document
+  default_langcode: en
+  depends:
+    68ad2b7c-1564-40ca-b464-5ac0c6e30e86: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Example PDF file.'
+  created:
+    -
+      value: 1632392898
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  oe_media_file:
+    -
+      entity: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
+      display: true
+      description: ''
+  oe_media_file_type:
+    -
+      value: local

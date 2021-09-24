@@ -34,10 +34,10 @@ drupal:
     # Move file assets.
     - "cp -R modules/oe_showcase_default_content/content/default_images/. build/sites/default/files/."
     # Enable the modules.
-    - "./vendor/bin/drush en oe_showcase_default_content -y"
     - "./vendor/bin/drush en oe_showcase_search -y"
     - "./vendor/bin/drush en oe_showcase_navigation -y"
     - "./vendor/bin/drush en oe_showcase_page -y"
+    - "./vendor/bin/drush en oe_showcase_default_content -y"
     # Index content.
     - "./vendor/bin/drush sapi-i"
     - "./vendor/bin/drush en config_devel -y"

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 92b23df3-273d-4a51-9e33-b7ea68e12d64
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'LOGO CE_Vertical_EN_quadri_LR.png'
+  uri:
+    -
+      value: 'public://2021-09/LOGO CE_Vertical_EN_quadri_LR.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 9936
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1632392371

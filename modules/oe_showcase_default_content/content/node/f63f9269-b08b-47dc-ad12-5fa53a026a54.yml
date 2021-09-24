@@ -1,0 +1,80 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f63f9269-b08b-47dc-ad12-5fa53a026a54
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Openeuropa Showcase'
+  created:
+    -
+      value: 1632400817
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d9751fff-e71c-4cbb-a351-5a6ecf0de2aa
+          bundle: oe_rich_text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1632400989
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_text_long:
+            -
+              value: "<p>The Openeuropa Showcase profile serves as a general demo implementation&nbsp;of all components provided by the European Commission, such as:</p>\r\n\r\n<ul>\r\n\t<li>OE Search</li>\r\n\t<li>OE Paragraphs</li>\r\n\t<li>OE Page</li>\r\n\t<li>OE Boostrap Theme</li>\r\n\t<li>OE Whitelabel Theme</li>\r\n\t<li>OE Content</li>\r\n\t<li>OE Media</li>\r\n\t<li>OE Multilingual</li>\r\n\t<li>OE Corporate Blocks</li>\r\n\t<li>OE Corporate Site Info</li>\r\n\t<li>OE Authentication</li>\r\n</ul>\r\n"
+              format: full_html
+          field_oe_title:
+            -
+              value: Definition
+  field_description:
+    -
+      value: 'The Openeuropa Showcase profile serves as a general demo of all components provided.'

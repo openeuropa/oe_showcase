@@ -25,6 +25,9 @@ install:
   - taxonomy
   - user
   - views
+  - oe_corporate_blocks
+  - oe_authentication
+  - oe_whitelabel_helper
 themes:
   - seven
   - oe_whitelabel
