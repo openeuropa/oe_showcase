@@ -38,6 +38,8 @@ drupal:
     - "./vendor/bin/drush en oe_showcase_navigation -y"
     - "./vendor/bin/drush en oe_showcase_page -y"
     - "./vendor/bin/drush en oe_showcase_default_content -y"
+    # Set home page.
+    - "./vendor/bin/drush config-set system.site page.front /home -y"
     # Index content.
     - "./vendor/bin/drush sapi-i"
     - "./vendor/bin/drush en config_devel -y"
