@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 28e16576-588c-46e4-9ff3-c1b5ada00715
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    1b3e4017-2567-4c10-86e1-5171f99a31ef: menu_link_content
+    a170562d-55f5-48b5-9e11-7a61d7677873: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Lists && Links && Accordion'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: a170562d-55f5-48b5-9e11-7a61d7677873
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 3
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:1b3e4017-2567-4c10-86e1-5171f99a31ef'
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 564dacd1-2b25-430d-95d2-816ac0f10452
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    1b3e4017-2567-4c10-86e1-5171f99a31ef: menu_link_content
+    8e120065-b55f-4aec-b73e-954e06617b69: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Rich Text'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 8e120065-b55f-4aec-b73e-954e06617b69
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 1
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:1b3e4017-2567-4c10-86e1-5171f99a31ef'
+  revision_translation_affected:
+    -
+      value: true

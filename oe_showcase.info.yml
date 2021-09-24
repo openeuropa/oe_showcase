@@ -17,7 +17,6 @@ install:
   - language
   - menu_link_content
   - node
-  - oe_showcase_default_content
   - options
   - path
   - page_cache

@@ -7,8 +7,8 @@ dependencies:
   - default_content:default_content
   - drupal:content_translation
   - drupal:language
-  # - oe_showcase_navigation:oe_showcase_navigation
-  - oe_showcase_search_demo:oe_showcase_search
+  - oe_showcase_navigation:oe_showcase_navigation
+  - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page
 
 default_content:
@@ -92,7 +92,12 @@ default_content:
     - 4ad702f7-8953-445e-82ba-bdb314ac9377
     - 6850c50d-1848-4b59-8594-7e5cadecf39e
     - ee957f04-6035-4e1c-bc4e-3669250c0c30
-
-config_devel:
-  install:
-    - system.site
+  menu_link_content:
+    # OE Showcase Page
+    - 1b3e4017-2567-4c10-86e1-5171f99a31ef
+    - 28e16576-588c-46e4-9ff3-c1b5ada00715
+    - 3635a89b-02c4-4375-99ec-daab7606c9bd
+    - 564dacd1-2b25-430d-95d2-816ac0f10452
+    - 82ebc03e-63af-470f-97eb-26c4b8a0a8d1
+    - 98122b65-4bf5-4b39-84b2-3f60cc37467f
+    - 9d2ee108-3061-48c1-871c-614aa2df2928
