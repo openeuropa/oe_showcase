@@ -6,10 +6,12 @@
 #}
 {% set badges = [] %}
 {% if content.field_category is not empty %}
+  {% set badge_attr = create_attribute({'class': ['me-2']}) %}
   {% for key,item in content.field_category %}
     {% if key|first != '#' %}
       {% set badges = badges|merge([{
-        label: item['#title']
+        label: item['#title'],
+        attributes: badge_attr
       }]) %}
     {% endif %}
   {% endfor %}
