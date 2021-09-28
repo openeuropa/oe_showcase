@@ -1,0 +1,58 @@
+uuid: 5365b5a6-bdfd-4cc8-9330-55e7af491c51
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - search_api
+  config:
+    - search_api.server.showcase_search_group_server
+id: showcase_search_group_index
+name: 'Showcase search group index'
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: 'Created on'
+    datasource_id: 'entity:group'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - group
+  label:
+    label: Title
+    datasource_id: 'entity:group'
+    property_path: label
+    type: string
+    dependencies:
+      module:
+        - group
+  type:
+    label: 'Group type'
+    datasource_id: 'entity:group'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - group
+datasource_settings:
+  'entity:group':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: showcase_search_group_server

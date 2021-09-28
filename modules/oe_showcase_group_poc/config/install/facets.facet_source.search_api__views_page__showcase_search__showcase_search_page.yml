@@ -1,0 +1,11 @@
+uuid: ab3ad75b-2bdf-4b51-bb4a-514fb1c19b24
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mWjpMvkHaqG-ehYpWdWxODBeRksvfqZux7H8hSqTlr8
+id: search_api__views_page__showcase_search__showcase_search_page
+name: 'search_api:views_page__showcase_search__showcase_search_page'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

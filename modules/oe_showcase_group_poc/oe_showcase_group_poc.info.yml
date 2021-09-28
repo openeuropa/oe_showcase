@@ -30,9 +30,17 @@ config_devel:
     - block.block.showcase_group_members_list
     - block.block.summarygroupcontent_2
     - block.block.summarygroupcontent
+    - facets.facet.category
     - facets.facet.content_created_on
     - facets.facet.content_types
+    - facets.facet.created_on
+    - facets.facet.group_type
+    - facets.facet.published_on
     - facets.facet_source.search_api__views_page__showcase_group_content_search__page_1
+    - facets.facet_source.search_api__views_page__showcase_group_search__showcase_group_search_page
+    - facets.facet_source.search_api__views_page__showcase_search__showcase_search_page
+    - facets_summary.facets_summary.showcase_group_summary
+    - facets_summary.facets_summary.showcase_summary
     - facets_summary.facets_summary.summary_group_content
     - field.storage.group_content.grequest_status
     - field.storage.group_content.grequest_updated_by
@@ -49,6 +57,11 @@ config_devel:
     - group.role.public-g
     - group.role.public-member
     - group.role.public-outsider
+    - search_api.index.group_content
+    - search_api.index.showcase_search_group_index
+    - search_api.index.showcase_search_index
+    - search_api.server.showcase_search_group_server
+    - search_api.server.showcase_search_server
     - user.role.anonymous
     - user.role.authenticated
     - views.view.grou_content

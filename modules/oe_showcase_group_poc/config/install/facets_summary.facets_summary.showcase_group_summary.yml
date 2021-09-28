@@ -1,0 +1,30 @@
+uuid: 2b63114a-0f7a-4914-9e5b-6574d9d07ff2
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_search_group_index
+    - views.view.showcase_group_search
+  module:
+    - search_api
+id: showcase_group_summary
+name: 'Showcase Group Summary'
+facets:
+  group_type:
+    checked: true
+    label: 'Group type'
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__showcase_group_search__showcase_group_search_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }

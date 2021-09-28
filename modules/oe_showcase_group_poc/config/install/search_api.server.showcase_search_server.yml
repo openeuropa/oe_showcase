@@ -1,0 +1,16 @@
+uuid: 803062d6-290c-4110-997c-c3525d0ac907
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+_core:
+  default_config_hash: kWiOAL4fapXoD1yfB72wZa8gkikT8rSD2mKernjY1AU
+id: showcase_search_server
+name: 'Showcase search server'
+description: 'Demo Showcase search server'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words

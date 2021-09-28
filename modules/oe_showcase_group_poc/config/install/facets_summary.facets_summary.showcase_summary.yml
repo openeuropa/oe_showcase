@@ -1,0 +1,38 @@
+uuid: 6e40371c-2735-497b-8817-097c9b5693d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_search_index
+    - views.view.showcase_search
+  module:
+    - search_api
+_core:
+  default_config_hash: D2vdMCsKeca0iovAb6ozL1DKb5IMSGnNYCYvrSY_ca4
+id: showcase_summary
+name: 'Showcase Summary'
+facets:
+  category:
+    checked: true
+    label: Category
+    separator: ', '
+    weight: 0
+    show_count: false
+  published_on:
+    checked: true
+    label: 'Published on'
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__showcase_search__showcase_search_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }

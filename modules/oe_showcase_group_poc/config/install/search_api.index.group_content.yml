@@ -1,0 +1,81 @@
+uuid: 526e8d12-2ca5-4bc4-bcf8-86a6e282129b
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - search_api
+  config:
+    - search_api.server.showcase_search_group_server
+id: group_content
+name: 'Showcase Group Content'
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: 'Created on'
+    datasource_id: 'entity:group_content'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - group
+  gid:
+    label: 'Parent group'
+    datasource_id: 'entity:group_content'
+    property_path: gid
+    type: integer
+    dependencies:
+      module:
+        - group
+  label:
+    label: Title
+    datasource_id: 'entity:group_content'
+    property_path: label
+    type: string
+    dependencies:
+      module:
+        - group
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:group_content':
+          flex-group_membership: default
+          group_content_type_85d638ae025b1: default
+          private-group_membership: default
+          public-group_membership: default
+  type:
+    label: 'Group content type'
+    datasource_id: 'entity:group_content'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - group
+datasource_settings:
+  'entity:group_content':
+    bundles:
+      default: false
+      selected:
+        - group_content_type_3aff1e02bb715
+        - group_content_type_85d638ae025b1
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: showcase_search_group_server

@@ -1,0 +1,17 @@
+uuid: 4de42947-c987-49f1-bb10-907be0a62d7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: showcase_search_group_server
+name: 'Showcase search group server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true
