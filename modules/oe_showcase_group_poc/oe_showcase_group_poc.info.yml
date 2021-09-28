@@ -1,0 +1,58 @@
+name: OpenEuropa Showcase Group POC
+type: module
+description: 'POC showcase group'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - drupal:views
+  - facets_summary:facets_summary
+  - facets_form_date_range:facets_form_date_range
+  - openeuropa:oe_showcase_default_content
+  - search_api:search_api
+  - search_api_db:search_api_db
+  - search_api_autocomplete:search_api_autocomplete
+  - better_exposed_filters:better_exposed_filters
+  - ginvite:ginvite
+  - grequest:grequest
+  - group:group
+  - group_flex:group_flex
+  - group_members_extra:group_members_extra
+  - group_notifications:group_notifications
+
+themes:
+  - bartik
+  - seven
+
+config_devel:
+  install:
+    - block.block.showcase_exposed_sort_form
+    - block.block.showcase_facets_form_group_content
+    - block.block.showcase_group_members_list
+    - block.block.summarygroupcontent_2
+    - block.block.summarygroupcontent
+    - facets.facet.content_created_on
+    - facets.facet.content_types
+    - facets.facet_source.search_api__views_page__showcase_group_content_search__page_1
+    - facets_summary.facets_summary.summary_group_content
+    - field.storage.group_content.grequest_status
+    - field.storage.group_content.grequest_updated_by
+    - field.storage.group_content.invitation_status
+    - field.storage.group_content.invitee_mail
+    - group.role.private-admin
+    - group.role.private-anonymous
+    - group.role.private-group_owner
+    - group.role.private-member
+    - group.role.private-outsider
+    - group.role.public-admin
+    - group.role.public-anonymous
+    - group.role.public-contact
+    - group.role.public-g
+    - group.role.public-member
+    - group.role.public-outsider
+    - user.role.anonymous
+    - user.role.authenticated
+    - views.view.grou_content
+    - views.view.group
+    - views.view.showcase_group_content_search
+    - views.view.showcase_group_members_list
+    - views.view.showcase_group_search

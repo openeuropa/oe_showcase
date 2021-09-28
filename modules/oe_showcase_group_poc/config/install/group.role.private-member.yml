@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+id: private-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: private
+permissions_ui: true
+permissions:
+  - 'view group'
+  - 'view group members'
+  - 'view group_membership content'
+  - 'view group_node:oe_showcase_search_demo entity'

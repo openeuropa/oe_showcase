@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public
+id: public-contact
+label: Contact
+weight: 104
+internal: false
+audience: member
+group_type: public
+permissions_ui: true
+permissions: {  }

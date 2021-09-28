@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private
+id: private-group_owner
+label: 'Group Owner'
+weight: 102
+internal: false
+audience: member
+group_type: private
+permissions_ui: true
+permissions:
+  - 'access content overview'
+  - 'access group_node overview'
+  - 'administer group'
+  - 'administer members'
+  - 'create group_node:oe_showcase_search_demo entity'
+  - 'delete group'
+  - 'delete group revisions'
+  - 'edit group'
+  - 'leave group'
+  - 'revert group revisions'
+  - 'update own group_membership content'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group members'
+  - 'view group revisions'
+  - 'view group_membership content'
+  - 'view group_node:oe_showcase_search_demo entity'
+  - 'view latest group version'
+  - 'view own unpublished group'

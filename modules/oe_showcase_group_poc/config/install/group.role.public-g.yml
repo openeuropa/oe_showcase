@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public
+id: public-g
+label: 'Group Owner'
+weight: 103
+internal: false
+audience: member
+group_type: public
+permissions_ui: true
+permissions:
+  - 'access group_node overview'
+  - 'administer group'
+  - 'administer members'
+  - 'delete group'
+  - 'delete group revisions'
+  - 'edit group'
+  - 'leave group'
+  - 'revert group revisions'
+  - 'view group'
+  - 'view group members'
+  - 'view group revisions'
+  - 'view group_membership content'
+  - 'view group_node:oe_showcase_search_demo content'
+  - 'view group_node:oe_showcase_search_demo entity'
+  - 'view latest group version'
+  - 'view own unpublished group'

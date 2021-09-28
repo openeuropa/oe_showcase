@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.group_content
+    - views.view.grou_content
+  module:
+    - search_api
+id: summary_group_content
+name: 'Summary Group Content'
+facets:
+  content_created_on:
+    checked: true
+    label: 'Creation date'
+    separator: ', '
+    weight: 0
+    show_count: false
+  content_types:
+    checked: true
+    label: 'Content Types'
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__grou_content__showcase_group_content_list_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
+  show_summary:
+    processor_id: show_summary
+    weights:
+      build: '20'
+    settings: {  }
+  show_text_when_empty:
+    processor_id: show_text_when_empty
+    weights:
+      build: '10'
+    settings:
+      text:
+        value: 'No results found.'
+        format: plain_text

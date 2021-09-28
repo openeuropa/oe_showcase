@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public
+id: public-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: public
+permissions_ui: true
+permissions:
+  - 'access group_node overview'
+  - 'join group'
+  - 'view group'
+  - 'view group members'
+  - 'view group_membership content'
+  - 'view group_node:oe_showcase_search_demo content'
+  - 'view group_node:oe_showcase_search_demo entity'

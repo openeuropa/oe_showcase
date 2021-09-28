@@ -1,0 +1,26 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - facets_summary.facets_summary.summary_group_content
+  module:
+    - facets_summary
+    - system
+  theme:
+    - oe_whitelabel
+id: summarygroupcontent
+theme: oe_whitelabel
+region: content_top
+weight: -4
+provider: null
+plugin: 'facets_summary_block:summary_group_content'
+settings:
+  id: 'facets_summary_block:summary_group_content'
+  label: 'Summary Group Content'
+  provider: facets_summary
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '*/group/*/content-list'
+    negate: false

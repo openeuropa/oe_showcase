@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public
+id: public-admin
+label: Admin
+weight: 100
+internal: false
+audience: member
+group_type: public
+permissions_ui: true
+permissions:
+  - 'access content overview'
+  - 'access group_node overview'
+  - 'administer group'
+  - 'administer members'
+  - 'delete group'
+  - 'delete group revisions'
+  - 'edit group'
+  - 'leave group'
+  - 'override group permissions'
+  - 'revert group revisions'
+  - 'update own group_membership content'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group members'
+  - 'view group revisions'
+  - 'view group_membership content'
+  - 'view group_node:oe_showcase_search_demo content'
+  - 'view group_node:oe_showcase_search_demo entity'
+  - 'view latest group version'
+  - 'view own unpublished group'
