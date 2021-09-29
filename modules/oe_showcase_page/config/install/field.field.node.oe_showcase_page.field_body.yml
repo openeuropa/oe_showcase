@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.oe_showcase_page
+    - paragraphs.paragraphs_type.oe_accordion
+    - paragraphs.paragraphs_type.oe_accordion_item
+    - paragraphs.paragraphs_type.oe_document
+    - paragraphs.paragraphs_type.oe_links_block
+    - paragraphs.paragraphs_type.oe_list_item
+    - paragraphs.paragraphs_type.oe_list_item_block
+    - paragraphs.paragraphs_type.oe_quote
+    - paragraphs.paragraphs_type.oe_rich_text
+    - paragraphs.paragraphs_type.oe_text_feature_media
+  module:
+    - composite_reference
+    - entity_reference_revisions
+third_party_settings:
+  composite_reference:
+    composite: false
+id: node.oe_showcase_page.field_body
+field_name: field_body
+entity_type: node
+bundle: oe_showcase_page
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      oe_document: oe_document
+      oe_accordion: oe_accordion
+      oe_accordion_item: oe_accordion_item
+      oe_links_block: oe_links_block
+      oe_list_item: oe_list_item
+      oe_list_item_block: oe_list_item_block
+      oe_quote: oe_quote
+      oe_rich_text: oe_rich_text
+      oe_text_feature_media: oe_text_feature_media
+    target_bundles_drag_drop:
+      oe_accordion:
+        enabled: true
+        weight: 16
+      oe_accordion_item:
+        enabled: true
+        weight: 17
+      oe_content_row:
+        weight: 18
+        enabled: false
+      oe_contextual_navigation:
+        weight: 19
+        enabled: false
+      oe_document:
+        enabled: true
+        weight: 15
+      oe_fact:
+        weight: 20
+        enabled: false
+      oe_facts_figures:
+        weight: 21
+        enabled: false
+      oe_links_block:
+        enabled: true
+        weight: 22
+      oe_list_item:
+        enabled: true
+        weight: 23
+      oe_list_item_block:
+        enabled: true
+        weight: 24
+      oe_quote:
+        enabled: true
+        weight: 25
+      oe_rich_text:
+        enabled: true
+        weight: 26
+      oe_social_media_follow:
+        weight: 27
+        enabled: false
+      oe_text_feature_media:
+        enabled: true
+        weight: 28
+field_type: entity_reference_revisions

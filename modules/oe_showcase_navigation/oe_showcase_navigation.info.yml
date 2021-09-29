@@ -6,10 +6,6 @@ package: OpenEuropa
 dependencies:
   - drupal:views
 
-themes:
-  - oe_whitelabel
-  - seven
-
 config_devel:
   install:
     - block.block.breadcrumbs

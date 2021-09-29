@@ -1,0 +1,17 @@
+name: OpenEuropa Showcase Page
+type: module
+description: 'Demo showcase page'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - openeuropa:oe_paragraphs_document
+
+config_devel:
+  install:
+    - core.entity_form_display.node.oe_showcase_page.default
+    - core.entity_view_display.node.oe_showcase_page.teaser
+    - core.entity_view_display.node.oe_showcase_page.default
+    - field.field.node.oe_showcase_page.field_description
+    - field.field.node.oe_showcase_page.field_body
+    - field.storage.node.field_description
+    - field.storage.node.field_body

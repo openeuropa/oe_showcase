@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_showcase_page.field_body
+    - field.field.node.oe_showcase_page.field_description
+    - node.type.oe_showcase_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.oe_showcase_page.default
+targetEntityType: node
+bundle: oe_showcase_page
+mode: default
+content:
+  field_body:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
