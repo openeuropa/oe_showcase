@@ -1,2 +1,3 @@
-# OE Showcase Search
-Provides a demo search feature based on search_api.
+# Open Europa Showcase Search
+
+The scope of this module is to demo the Open Europa Library Search feature.

@@ -1,3 +1,3 @@
-# OE Showcase Page
+# Open Europa Showcase Page
 
-Provides a demo page content type.
+The scope of this module is to demo the Open Europa Library Page feature.

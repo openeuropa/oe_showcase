@@ -4,14 +4,7 @@ description: 'Demo showcase page'
 core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
-  - drupal:field_ui
-  - openeuropa:oe_paragraphs
   - openeuropa:oe_paragraphs_document
-  - openeuropa:oe_paragraphs_media
-
-themes:
-  - bartik
-  - seven
 
 config_devel:
   install:

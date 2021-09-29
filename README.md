@@ -7,10 +7,12 @@ Basic installation profile, all it does is:
 
 1. Enable the bare minimum amount of core modules.
 2. Setup `seven` as administrative theme.
+3. Set `Open Europa Whitelabel` theme as default.
+4. Enable dependency modules for the showcased OEL features.
 
 ## Rationale
 
-This profile is aimed to provide developers with a series of examples on how the openeuropa library features are built and configured. Exposing that features, the building of new sites will be easy to get the necessary components to achieve every site's goals.
+This profile is aimed to provide developers with a series of examples on how the Open Europa Library features are built and configured. Exposing that features, the building of new sites will be easy to get the necessary components to achieve every site's goals.
 
 ## Installation
 
