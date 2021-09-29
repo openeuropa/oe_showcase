@@ -38,6 +38,8 @@ drupal:
     - "./vendor/bin/drush en oe_showcase_navigation -y"
     - "./vendor/bin/drush en oe_showcase_page -y"
     - "./vendor/bin/drush en oe_showcase_default_content -y"
+    # Generate URL Aliases.
+    - "./vendor/bin/drush pathauto:aliases-generate create canonical_entities:node"
     # Set home page.
     - "./vendor/bin/drush config-set system.site page.front /home -y"
     # Index content.

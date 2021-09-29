@@ -7,6 +7,7 @@ dependencies:
   - default_content:default_content
   - drupal:content_translation
   - drupal:language
+  - drupal:path
   - oe_showcase_navigation:oe_showcase_navigation
   - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page
@@ -55,6 +56,7 @@ default_content:
     - b03913c2-d17c-4da9-9956-564ddd35efb9
     - a530e826-5dd6-476b-80ab-cb43d8a0e004
     - ea582677-9263-4795-b339-44ee28cf8d95
+    - f63f9269-b08b-47dc-ad12-5fa53a026a54
   file:
     # OE Showcase Search
     - 06abc8c8-f94c-43ed-902d-82d8d748880f
@@ -85,7 +87,6 @@ default_content:
     - 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
     - 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
     - 6d160789-df45-4cf9-ab0c-3b0547a2170c
-    - f63f9269-b08b-47dc-ad12-5fa53a026a54
   media:
     # OE Showcase Page
     - 8fec7b57-dff0-4a75-b032-a2076ceeccbb

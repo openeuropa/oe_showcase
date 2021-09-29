@@ -1,3 +1,3 @@
-# Open Europa Showcase default content
+# OpenEuropa Showcase default content
 
-Provide default content to aid in showcasing Open Europa Library features.
+Provide default content to aid in showcasing OpenEuropa Library features.
