@@ -13,7 +13,7 @@ default:
       value: true
   title:
     -
-      value: 'Lists && Links && Accordion'
+      value: 'Lists, Links and Accordion'
   menu_name:
     -
       value: main

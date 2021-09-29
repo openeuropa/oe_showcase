@@ -13,7 +13,7 @@ default:
       value: true
   title:
     -
-      value: 'Rich Text && Text with featured Media'
+      value: 'Rich Text and Text with featured Media'
   menu_name:
     -
       value: main

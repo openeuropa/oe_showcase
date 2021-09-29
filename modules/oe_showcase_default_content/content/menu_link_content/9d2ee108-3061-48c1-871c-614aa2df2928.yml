@@ -13,7 +13,7 @@ default:
       value: true
   title:
     -
-      value: 'Rich Text && Document'
+      value: 'Rich Text and Document'
   menu_name:
     -
       value: main
