@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f2129c34-58ff-4107-9d5c-f214f7c5eef6
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'About us'
+  created:
+    -
+      value: 1633107061
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /pages/about-us
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: df52b991-f6ba-424d-b395-8181fda8393d
+          bundle: oe_rich_text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1633107093
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_text_long:
+            -
+              value: "<p>Integer sodales dui eget porttitor ullamcorper. Fusce non pretium eros. Nulla facilisi. Morbi ut odio id elit efficitur gravida non non nisl. Vivamus eget ipsum eu lectus interdum sollicitudin. Sed tempor porta iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ut eros metus. Suspendisse potenti.</p>\r\n\r\n<p>Praesent pretium, urna tristique finibus pellentesque, enim elit auctor mi, non ornare nisi diam placerat massa. Suspendisse sagittis odio vitae molestie vehicula. Integer massa arcu, aliquet nec luctus ut, pulvinar vel dui. Etiam euismod pellentesque gravida. Fusce eu iaculis arcu. Maecenas tortor dolor, molestie ut aliquet sed, luctus in est. Phasellus nec scelerisque magna. Aliquam iaculis, risus vitae lacinia tincidunt, mauris arcu porta felis, quis feugiat elit massa ut nisi. Nullam malesuada velit vitae nulla ultricies cursus. Morbi quis feugiat velit, vitae pulvinar est. Vestibulum dictum massa at velit fermentum ullamcorper at non libero. In laoreet suscipit urna vel dictum. Donec nec placerat ex, eget egestas mi. In hac habitasse platea dictumst. Sed porttitor quam elit, at dictum nisl convallis nec. Curabitur non ante dui.</p>\r\n"
+              format: full_html
+  field_description:
+    -
+      value: 'About us demo page.'
