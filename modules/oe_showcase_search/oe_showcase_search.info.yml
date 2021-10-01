@@ -7,6 +7,7 @@ dependencies:
   - drupal:views
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
   - search_api:search_api
   - search_api_db:search_api_db
   - search_api_autocomplete:search_api_autocomplete

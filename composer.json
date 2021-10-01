@@ -12,7 +12,7 @@
         "drupal/core": "^8.9 || ^9.1",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/facets": "^1.8.0",
-        "drupal/facets_form": "^1.0@alpha",
+        "drupal/facets_form": "1.x-dev",
         "drupal/search_api": "^1.20",
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/ui_patterns": "^1.2",
@@ -93,11 +93,6 @@
                 "vendor:npm-asset",
                 "vendor:bower-asset"
             ]
-        },
-        "patches": {
-            "drupal/facets_form": {
-                "https://www.drupal.org/project/facets_form/issues/3230468": "https://git.drupalcode.org/project/facets_form/-/merge_requests/15/diffs.patch"
-            }
         },
         "drupal-scaffold": {
             "locations": {
