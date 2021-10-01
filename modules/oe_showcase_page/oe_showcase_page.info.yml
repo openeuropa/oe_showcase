@@ -23,5 +23,4 @@ config_devel:
     - easy_breadcrumb.settings
     - language.content_settings.node.oe_showcase_page
     - pathauto.pattern.page_url_alias_pattern
-    - pathauto.pattern.search_demo_url_alias_pattern
     - node.type.oe_showcase_page

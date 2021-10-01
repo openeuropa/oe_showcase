@@ -40,4 +40,5 @@ config_devel:
     - field.storage.node.field_image
     - language.content_settings.node.oe_showcase_search_demo
     - node.type.oe_showcase_search_demo
+    - pathauto.pattern.search_demo_url_alias_pattern
     - taxonomy.vocabulary.categories
