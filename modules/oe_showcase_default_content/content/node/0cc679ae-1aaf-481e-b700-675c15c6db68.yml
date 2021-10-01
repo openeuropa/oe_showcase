@@ -28,9 +28,12 @@ default:
   sticky:
     -
       value: false
+  revision_translation_affected:
+    -
+      value: true
   path:
     -
-      alias: /page/rich-text-and-text-featured-media
+      alias: /pages/rich-text-and-text-featured-media
       langcode: en
       pathauto: 1
   content_translation_source:
@@ -58,6 +61,9 @@ default:
           behavior_settings:
             -
               value: {  }
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -89,6 +95,9 @@ default:
           behavior_settings:
             -
               value: {  }
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
