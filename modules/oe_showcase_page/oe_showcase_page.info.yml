@@ -5,6 +5,9 @@ core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
   - openeuropa:oe_paragraphs_document
+  - drupal:menu_ui
+  - drupal:editor
+  - drupal:ckeditor
 
 config_devel:
   install:
@@ -15,3 +18,10 @@ config_devel:
     - field.field.node.oe_showcase_page.field_body
     - field.storage.node.field_description
     - field.storage.node.field_body
+    - filter.format.full_html
+    - block.block.pagetitle
+    - easy_breadcrumb.settings
+    - pathauto.pattern.page_url_alias_pattern
+    - node.type.oe_showcase_page
+  optional:
+    - language.content_settings.node.oe_showcase_page

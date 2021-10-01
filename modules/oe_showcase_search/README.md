@@ -1,3 +1,3 @@
-# Open Europa Showcase Search
+# OpenEuropa Showcase Search
 
-The scope of this module is to demo the Open Europa Library Search feature.
+The scope of this module is to demo the OpenEuropa Library Search feature.

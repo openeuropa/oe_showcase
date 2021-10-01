@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: example.pdf
+  uri:
+    -
+      value: 'private://2021-09/example.pdf'
+  filemime:
+    -
+      value: application/pdf
+  filesize:
+    -
+      value: 13716
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1632392898

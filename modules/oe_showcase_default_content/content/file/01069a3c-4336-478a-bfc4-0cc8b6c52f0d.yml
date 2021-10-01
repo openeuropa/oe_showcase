@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 'State of the Union.jpeg'
+  uri:
+    -
+      value: 'public://2021-09/State of the Union.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 88321
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1632392466

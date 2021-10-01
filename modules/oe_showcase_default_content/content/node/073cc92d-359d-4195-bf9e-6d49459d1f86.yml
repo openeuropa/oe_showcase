@@ -1,0 +1,77 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 073cc92d-359d-4195-bf9e-6d49459d1f86
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Pages
+  created:
+    -
+      value: 1633066610
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /pages
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d60c6a6f-bb66-4bfb-bcc9-8d73bce87994
+          bundle: oe_links_block
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1633066635
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_links:
+            -
+              uri: 'internal:/pages/listslinks-and-accordion'
+              title: 'Lists,Links and Accordion'
+              options: {  }
+            -
+              uri: 'internal:/pages/text-featured-media'
+              title: 'Text with Featured Media'
+              options: {  }
+            -
+              uri: 'internal:/pages/rich-text-and-text-featured-media'
+              title: 'Rich Text and Text with featured Media'
+              options: {  }

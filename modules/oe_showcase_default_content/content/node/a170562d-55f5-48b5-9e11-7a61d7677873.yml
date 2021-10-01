@@ -1,0 +1,440 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a170562d-55f5-48b5-9e11-7a61d7677873
+  bundle: oe_showcase_page
+  default_langcode: en
+  depends:
+    92b23df3-273d-4a51-9e33-b7ea68e12d64: file
+    01069a3c-4336-478a-bfc4-0cc8b6c52f0d: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Lists,Links and Accordion'
+  created:
+    -
+      value: 1632391985
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /pages/listslinks-and-accordion
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4533a12d-978f-46db-b8aa-fa7b765e8123
+          bundle: oe_list_item_block
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1632392050
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_list_item_block_layout:
+            -
+              value: one_column
+          field_oe_paragraphs:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 85c1b4c3-54ed-42ed-a6b3-d6d6b5fd69e7
+                  bundle: oe_list_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392050
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  oe_paragraphs_variant:
+                    -
+                      value: default
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_link:
+                    -
+                      uri: 'internal:/'
+                      title: ''
+                      options: {  }
+                  field_oe_text_long:
+                    -
+                      value: 'This item is a link to the front page.'
+                      format: plain_text
+                  field_oe_title:
+                    -
+                      value: 'Home page'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 274748cf-0466-4bec-a18d-026926d120e0
+                  bundle: oe_list_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392107
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  oe_paragraphs_variant:
+                    -
+                      value: highlight
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_image:
+                    -
+                      entity: 92b23df3-273d-4a51-9e33-b7ea68e12d64
+                      alt: ''
+                      title: ''
+                      width: 265
+                      height: 184
+                  field_oe_link:
+                    -
+                      uri: 'https://ec.europa.eu/commission/presscorner/home/en'
+                      title: ''
+                      options: {  }
+                  field_oe_text_long:
+                    -
+                      value: 'Press material from the Commission Spokesperson''s Service.'
+                      format: plain_text
+                  field_oe_title:
+                    -
+                      value: 'Press corner'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 952b6246-efd3-4b33-b70e-71b8f0abffa9
+                  bundle: oe_list_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392380
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  oe_paragraphs_variant:
+                    -
+                      value: thumbnail_primary
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_image:
+                    -
+                      entity: 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
+                      alt: ''
+                      title: ''
+                      width: 639
+                      height: 426
+                  field_oe_link:
+                    -
+                      uri: 'https://ec.europa.eu/commission/presscorner/detail/en/speech_21_4701'
+                      title: ''
+                      options: {  }
+                  field_oe_title:
+                    -
+                      value: '2021 State of the Union Address by President von der Leyen'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 34c8d08c-c60e-46d4-b95d-566dcacc87fd
+                  bundle: oe_list_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392470
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  oe_paragraphs_variant:
+                    -
+                      value: date
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_date:
+                    -
+                      value: '2021-09-22'
+                  field_oe_link:
+                    -
+                      uri: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_21_4783'
+                      title: ''
+                      options: {  }
+                  field_oe_text_long:
+                    -
+                      value: 'The European Commission has today adopted a comprehensive review of EU insurance rules (known as “Solvency II”) so that insurance companies can scale up long-term investment in Europe''s recovery from the COVID-19 pandemic.'
+                      format: plain_text
+                  field_oe_title:
+                    -
+                      value: 'Reviewing EU insurance rules: encouraging insurers to invest in Europe''s future'
+          field_oe_title:
+            -
+              value: 'Lorem ipsum dolor sit amet'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2fe60bae-eaae-42f3-ac2f-0f9589cc272d
+          bundle: oe_accordion
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1632392530
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_paragraphs:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: a1b59e84-c170-4f7f-9cc9-4ce65750553a
+                  bundle: oe_accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392530
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: arrow-down
+                  field_oe_text:
+                    -
+                      value: 'Logo, visual identity'
+                  field_oe_text_long:
+                    -
+                      value: "<p>This page is to help partner organisations and contractors of the European Commission understand how to use the European Commission's logo and visual identity.</p>\r\n\r\n<p>The visual identity gives the European Commission a recognisable and coherent image. A full manual on the visual identity is available below. This establishes the basic principles to be applied to the entire range of communication products.</p>\r\n\r\n<p>The visual identity is constructed around the European Commission's logo. This logo is&nbsp;based on 2 key elements: the European flag and a graphic element inspired by the headquarters of the European Commission.</p>\r\n"
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 91d326af-fe00-4acd-9b64-6c6ff5f10e5f
+                  bundle: oe_accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392583
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: arrow-down
+                  field_oe_text:
+                    -
+                      value: Usage
+                  field_oe_text_long:
+                    -
+                      value: "<p>The logo of the European Commission may be used by third parties only if:</p>\r\n\r\n<ul>\r\n\t<li>permission is requested and granted before the logo is used</li>\r\n\t<li>there is no likelihood of the user of the logo being confused with the European Commission</li>\r\n\t<li>it is not used in connection with objectives or activities which are incompatible with the aims and principles of the European Commission</li>\r\n\t<li>it is not used to imply or suggest unintended endorsement or promotion of the objectives and activities of the user of the logo by the European Commission</li>\r\n</ul>\r\n"
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: c223352c-2df5-4b23-9836-7e21ec1a49e7
+                  bundle: oe_accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392656
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: arrow-down
+                  field_oe_text:
+                    -
+                      value: 'Request permission'
+                  field_oe_text_long:
+                    -
+                      value: "<p>To request permission for the use of the European Commission's logo, please email the&nbsp;<a href=\"mailto:comm-visual-identity@ec.europa.eu\">unit responsible for visual identity</a>.</p>\r\n"
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 264e1a5d-350e-434e-9df4-cd41e4004b87
+                  bundle: oe_accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1632392673
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: arrow-down
+                  field_oe_text:
+                    -
+                      value: 'Download the logo'
+                  field_oe_text_long:
+                    -
+                      value: "<p>The European Commission logo can be downloaded in all its variations. Please note that inappropriate and/or unauthorised use of logos can lead to legal consequences.&nbsp;</p>\r\n\r\n<p>All zip files contain 3 versions of the logo (4-colour, pantone and black and&nbsp;white).</p>\r\n\r\n<p>At:&nbsp;https://ec.europa.eu/info/resources-partners/european-commission-visual-identity_en</p>\r\n"
+                      format: full_html
+  field_description:
+    -
+      value: 'Demonstration of a Showcase Page with Lists, Links and Accordions paragraphs.'

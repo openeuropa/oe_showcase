@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5bd6ec36-6035-4c6f-bd76-0431589cd7c8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: LQU9BWkA66xEaKfV_f74OO3Uyu1KMVLOsIi9WQYTjSg.jpg
+  uri:
+    -
+      value: 'public://oembed_thumbnails/LQU9BWkA66xEaKfV_f74OO3Uyu1KMVLOsIi9WQYTjSg.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 15083
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1632391465

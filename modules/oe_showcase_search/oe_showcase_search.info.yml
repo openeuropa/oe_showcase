@@ -7,7 +7,6 @@ dependencies:
   - drupal:views
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
-  - openeuropa:oe_showcase_default_content
   - search_api:search_api
   - search_api_db:search_api_db
   - search_api_autocomplete:search_api_autocomplete
@@ -30,3 +29,17 @@ config_devel:
     - search_api.server.showcase_search_server
     - search_api_autocomplete.search.showcase_search
     - views.view.showcase_search
+    - core.entity_form_display.node.oe_showcase_search_demo.default
+    - core.entity_view_display.node.oe_showcase_search_demo.default
+    - core.entity_view_display.node.oe_showcase_search_demo.search_result
+    - core.entity_view_display.node.oe_showcase_search_demo.teaser
+    - field.field.node.oe_showcase_search_demo.body
+    - field.field.node.oe_showcase_search_demo.field_category
+    - field.field.node.oe_showcase_search_demo.field_image
+    - field.storage.node.field_category
+    - field.storage.node.field_image
+    - node.type.oe_showcase_search_demo
+    - pathauto.pattern.search_demo_url_alias_pattern
+    - taxonomy.vocabulary.categories
+  optional:
+    - language.content_settings.node.oe_showcase_search_demo
