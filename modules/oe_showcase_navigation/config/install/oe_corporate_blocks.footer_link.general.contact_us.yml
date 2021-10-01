@@ -3,6 +3,6 @@ status: true
 dependencies: {  }
 id: contact_us
 label: 'Contact us'
-url: /node/28
+url: /pages/contact-us
 section: contact_us
 weight: 0
