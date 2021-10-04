@@ -14,11 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.oe_rich_text
     - paragraphs.paragraphs_type.oe_text_feature_media
   module:
-    - composite_reference
     - entity_reference_revisions
-third_party_settings:
-  composite_reference:
-    composite: false
 id: node.oe_showcase_page.field_body
 field_name: field_body
 entity_type: node
