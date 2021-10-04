@@ -24,9 +24,10 @@ install:
   - taxonomy
   - user
   - views
-  - oe_corporate_blocks
-  - oe_authentication
-  - oe_whitelabel_helper
+  - menu_ui
+  - views_ui
+  - field_ui
+  - ckeditor
 themes:
   - seven
   - oe_whitelabel
