@@ -28,6 +28,7 @@ install:
   - views_ui
   - field_ui
   - ckeditor
+  - pathauto
 themes:
   - seven
   - oe_whitelabel
