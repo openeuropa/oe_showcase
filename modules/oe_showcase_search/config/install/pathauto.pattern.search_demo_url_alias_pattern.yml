@@ -6,7 +6,7 @@ dependencies:
 id: search_demo_url_alias_pattern
 label: 'Search Demo URL Alias Pattern'
 type: 'canonical_entities:node'
-pattern: 'search demo/[node:title]'
+pattern: 'search-demo/[node:title]'
 selection_criteria:
   2367048e-d2e3-4519-9fbf-1f91fdb94239:
     id: node_type

@@ -1,0 +1,71 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d44566ea-d45b-40f6-8f1a-e3c4f5588912
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Contact us'
+  created:
+    -
+      value: 1633106627
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /pages/contact-us
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c7e506b9-072c-4554-b2de-cce6a87d523d
+          bundle: oe_rich_text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1633106656
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_text_long:
+            -
+              value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut finibus ex. Phasellus mollis odio sed vehicula ullamcorper. Duis convallis, augue non posuere ultrices, ante purus varius leo, vitae porttitor erat velit at nisl. Nulla sollicitudin lorem lorem, ac interdum felis pellentesque volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum id tellus at eleifend. Suspendisse potenti. Vivamus sit amet posuere justo, vel aliquam neque. Integer nec tincidunt massa. Donec suscipit ornare consequat. Etiam et ligula eros. Cras non egestas tellus, maximus feugiat sem.</p>\r\n\r\n<p>Aliquam rutrum metus magna, et iaculis leo rhoncus sit amet. Donec commodo eros et est laoreet dapibus. Donec laoreet enim sit amet venenatis varius. Cras hendrerit eget elit et consequat. Duis pulvinar mauris id massa accumsan congue. Vivamus justo tortor, porta at quam vitae, suscipit convallis eros. Ut volutpat ullamcorper metus, sed ullamcorper felis porttitor sit amet. Praesent molestie iaculis urna, ut bibendum mi sagittis vehicula. Fusce massa massa, pulvinar sed ante et, venenatis fringilla nulla. Nullam varius, libero accumsan varius placerat, nibh diam imperdiet sapien, vitae ultricies sapien dolor eu enim. Maecenas lacinia a leo at finibus. Fusce est metus, imperdiet maximus arcu in, lacinia fermentum dolor. Donec cursus sem et consequat euismod. Integer sodales sit amet tortor sed congue.</p>\r\n\r\n<p>Aenean commodo arcu vel iaculis fermentum. Pellentesque id vulputate felis. Mauris nibh ligula, tincidunt sed purus sed, viverra sagittis risus. Suspendisse posuere turpis nec lorem accumsan finibus. Curabitur suscipit neque quis eros facilisis dapibus. In tellus est, pulvinar at porttitor vitae, lacinia nec ante. Pellentesque massa nisi, commodo nec erat at, tempor hendrerit mauris. Mauris a sem erat.</p>\r\n\r\n<p>Morbi ut sapien in turpis posuere auctor. Cras lobortis ex augue, id placerat est porttitor at. Proin eget ante non orci rhoncus tincidunt. Ut venenatis lorem diam. Vivamus elementum vestibulum augue, quis porttitor lorem pretium ac. Aliquam erat volutpat. Ut nunc orci, tristique vel ultrices sit amet, faucibus at nibh. Aenean convallis ac diam sit amet iaculis. Pellentesque mi sem, venenatis quis egestas vitae, hendrerit viverra tellus. Aliquam ut tellus non purus facilisis mollis. Vivamus non libero in nisl pulvinar porttitor.</p>\r\n"
+              format: full_html
+  field_description:
+    -
+      value: "This is a demo contact page in English.\r\n\r\n"
