@@ -19,7 +19,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'Lists,Links and Accordion'
+      value: 'Lists, Links and Accordion'
   created:
     -
       value: 1632391985
@@ -34,7 +34,7 @@ default:
       value: true
   path:
     -
-      alias: /pages/listslinks-and-accordion
+      alias: /pages/lists-links-and-accordion
       langcode: en
       pathauto: 1
   content_translation_source:

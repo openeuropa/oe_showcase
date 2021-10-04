@@ -64,8 +64,8 @@ default:
               value: false
           field_oe_links:
             -
-              uri: 'internal:/pages/listslinks-and-accordion'
-              title: 'Lists,Links and Accordion'
+              uri: 'internal:/pages/lists-links-and-accordion'
+              title: 'Lists, Links and Accordion'
               options: {  }
             -
               uri: 'internal:/pages/text-featured-media'
