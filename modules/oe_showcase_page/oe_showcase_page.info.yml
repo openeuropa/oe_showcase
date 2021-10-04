@@ -4,7 +4,7 @@ description: 'Demo showcase page'
 core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
-  - openeuropa:oe_paragraphs_document
+  - oe_paragraphs:oe_paragraphs_document
   - oe_paragraphs:oe_paragraphs_media
   - drupal:menu_ui
   - drupal:editor
