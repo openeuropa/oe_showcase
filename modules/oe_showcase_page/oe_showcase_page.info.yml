@@ -22,6 +22,7 @@ config_devel:
     - filter.format.full_html
     - block.block.pagetitle
     - easy_breadcrumb.settings
+    - editor.editor.full_html
     - pathauto.pattern.page_url_alias_pattern
     - node.type.oe_showcase_page
   optional:
