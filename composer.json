@@ -8,6 +8,7 @@
     "require": {
         "php": ">=7.3",
         "drupal/better_exposed_filters": "^5.0@beta",
+        "drupal/component_blocks": "^1.2.1",
         "drupal/composite_reference": "^1.0@alpha",
         "drupal/core": "^8.9 || ^9.1",
         "drupal/easy_breadcrumb": "^2.0",

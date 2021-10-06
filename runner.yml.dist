@@ -19,6 +19,7 @@ drupal:
     - "./vendor/bin/drush en ui_patterns_library -y"
     - "./vendor/bin/drush en ui_patterns_settings -y"
     - "./vendor/bin/drush en components -y"
+    - "./vendor/bin/drush en component_blocks -y"
     - "./vendor/bin/drush en oe_authentication  -y"
     - "./vendor/bin/drush en easy_breadcrumb -y"
     - "./vendor/bin/drush en oe_bootstrap_theme_helper -y"
