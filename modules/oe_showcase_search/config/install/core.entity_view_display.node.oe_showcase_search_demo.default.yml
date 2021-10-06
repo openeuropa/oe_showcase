@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.oe_showcase_search_demo.field_image
     - node.type.oe_showcase_search_demo
   module:
-    - image
+    - oe_whitelabel_helper
     - text
     - user
 id: node.oe_showcase_search_demo.default
@@ -33,11 +33,9 @@ content:
   field_image:
     weight: 103
     label: above
-    settings:
-      image_style: ''
-      image_link: ''
+    settings: {  }
     third_party_settings: {  }
-    type: image
+    type: image_data_provider
     region: content
   links:
     weight: 100

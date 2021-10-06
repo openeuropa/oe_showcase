@@ -9,9 +9,94 @@ dependencies:
     - image.style.medium
     - node.type.oe_showcase_search_demo
   module:
+    - component_blocks
     - image
+    - layout_builder
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          656ce522-9196-4064-a170-855386c8a9fb:
+            uuid: 656ce522-9196-4064-a170-855386c8a9fb
+            region: content
+            configuration:
+              id: 'component_blocks:node:card'
+              label: 'Card with fields from Content'
+              provider: component_blocks
+              label_display: '0'
+              variant: null
+              variables:
+                title:
+                  source: title
+                  value: ''
+                  label: ''
+                  type: string_data_provider
+                subtitle:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                text:
+                  source: body
+                  value: ''
+                  label: ''
+                  type: text_data_provider
+                image:
+                  source: field_image
+                  value: ''
+                  label: ''
+                  type: image_data_provider
+                content:
+                  source: field_category
+                  value: ''
+                  label: ''
+                  type: reference_badge_data_provider
+                card_header:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                card_footer:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                horizontal_grid:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                extra_classes_body:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                extra_classes_header:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                extra_classes_footer:
+                  source: __fixed
+                  value: ''
+                  label: ''
+                badges:
+                  source: __fixed
+                  value: ''
+                  label: ''
+              settings:
+                variant: ''
+                border_variant: ''
+                text_color: ''
+                horizontal: '1'
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 id: node.oe_showcase_search_demo.search_result
 targetEntityType: node
 bundle: oe_showcase_search_demo
@@ -22,7 +107,7 @@ content:
     type: text_trimmed
     weight: 101
     settings:
-      trim_length: 600
+      trim_length: 500
     third_party_settings: {  }
     region: content
   field_category:

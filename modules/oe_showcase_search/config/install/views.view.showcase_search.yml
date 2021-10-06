@@ -2,12 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - search_api.index.showcase_search_index
   module:
     - better_exposed_filters
     - search_api
-    - text
 id: showcase_search
 label: 'Showcase Search'
 module: views
@@ -103,19 +101,17 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: search_api
+        type: fields
         options:
-          view_modes:
-            'entity:node':
-              oe_showcase_search_demo: search_result
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
-        body:
+        search_api_rendered_item:
+          id: search_api_rendered_item
           table: search_api_index_showcase_search_index
-          field: body
-          id: body
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
+          field: search_api_rendered_item
           relationship: none
           group_type: group
           admin_label: ''
@@ -152,7 +148,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -160,26 +156,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
+          view_modes:
+            'entity:node':
+              oe_showcase_search_demo: search_result
+          plugin_id: search_api_rendered_item
       filters:
         search_api_language:
           id: search_api_language
@@ -261,14 +241,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
-        - 'config:field.storage.node.body'
         - 'config:search_api.index.showcase_search_index'
   showcase_search_page:
     display_plugin: page
@@ -286,12 +264,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
-        - 'config:field.storage.node.body'
         - 'config:search_api.index.showcase_search_index'
