@@ -5,6 +5,8 @@
  * Showcase search module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -15,4 +17,14 @@ function oe_showcase_search_theme() {
       'base hook' => 'node',
     ],
   ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for form_views_exposed.
+ */
+function oe_showcase_search_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['sort_bef_combine']['#context']['#display_id'] === 'showcase_search_page') {
+    $form['#attributes']['class'][] = 'float-lg-end';
+    $form['#attributes']['class'][] = 'd-md-block';
+  }
 }
