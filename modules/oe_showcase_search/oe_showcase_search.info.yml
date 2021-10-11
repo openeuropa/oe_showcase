@@ -42,5 +42,6 @@ config_devel:
     - node.type.oe_showcase_search_demo
     - pathauto.pattern.search_demo_url_alias_pattern
     - taxonomy.vocabulary.categories
+    - block.block.whitelabelsearchblock
   optional:
     - language.content_settings.node.oe_showcase_search_demo
