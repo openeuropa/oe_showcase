@@ -14,5 +14,9 @@ function oe_showcase_search_theme() {
       'render element' => 'elements',
       'base hook' => 'node',
     ],
+    'taxonomy_term__badge' => [
+      'render element' => 'elements',
+      'base hook' => 'taxonomy_term',
+    ],
   ];
 }
