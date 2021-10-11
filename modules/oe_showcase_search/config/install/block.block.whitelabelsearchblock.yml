@@ -20,7 +20,7 @@ settings:
     action: search
     classes: null
   input:
-    name: search
+    name: search_api_fulltext
     label: search
     classes: null
     placeholder: Search
