@@ -22,7 +22,7 @@ content:
     type: text_trimmed
     weight: 101
     settings:
-      trim_length: 500
+      trim_length: 350
     third_party_settings: {  }
     region: content
   field_category:
