@@ -21,18 +21,14 @@ settings:
     classes: null
   input:
     name: search_api_fulltext
-    label: search
+    label: Search
     classes: null
     placeholder: Search
   button:
     label: Search
-    type: submit
     classes: null
-    icon:
-      name: ''
-      position: ''
   view_options:
     id: showcase_search
     display: showcase_search_page
-    enable_autocomplete: 1
+    enable_autocomplete: true
 visibility: {  }
