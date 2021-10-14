@@ -4,8 +4,27 @@ default:
       paths:
         - "%paths.base%/tests/features"
       contexts:
-        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\ConfigContext
         - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\Tests\oe_authentication\Behat\AuthenticationContext
+        - Drupal\Tests\oe_authentication\Behat\CleanupContext
+        - Drupal\Tests\cas_mock_server\Context\CasMockServerContext:
+            attributes_map:
+              firstName: First name
+              lastName: Last name
+              departmentNumber: Department
+              domain: Organisation
+              groups: Groups
+        - Drupal\Tests\oe_paragraphs\Behat\CleanupContext
+        - Drupal\Tests\oe_paragraphs\Behat\DrupalContext
+        - Drupal\Tests\oe_paragraphs\Behat\FieldsContext
+        - Drupal\Tests\oe_paragraphs\Behat\ParagraphsContext
+        - OpenEuropa\Behat\TransformationContext:
+            pages:
+              content management: "/admin/content"
+              showcase page creation: "/node/add/oe_showcase_page"
+              document creation: "/media/add/document"
   extensions:
     Drupal\MinkExtension:
       goutte: ~
@@ -13,6 +32,7 @@ default:
       ajax_timeout: 10
       javascript_session: selenium2
       base_url: "${drupal.base_url}"
+      files_path: "%paths.base%/tests/fixtures/"
     Drupal\DrupalExtension:
       api_driver: "drupal"
       drupal:

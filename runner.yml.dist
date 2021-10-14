@@ -45,7 +45,9 @@ drupal:
     # Index content.
     - "./vendor/bin/drush sapi-i"
     - "./vendor/bin/drush en config_devel -y"
-    - "./vendor/bin/drush cset oe_authentication.settings assurance_level LOW -y"
+    # Enable the modules which are applicable for a development environments.
+    - "./vendor/bin/drush en oe_authentication_eulogin_mock -y"
+    - "./vendor/bin/drush cas-mock-server:start"
     - "./vendor/bin/drush cr"
   settings:
     settings:
