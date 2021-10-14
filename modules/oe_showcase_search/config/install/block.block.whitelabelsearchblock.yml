@@ -3,6 +3,8 @@ status: true
 dependencies:
   theme:
     - oe_whitelabel
+  config:
+    - views.view.showcase_search
 id: whitelabelsearchblock
 theme: oe_whitelabel
 region: header_right
