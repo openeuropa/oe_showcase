@@ -9,7 +9,7 @@ Feature: Create a OpenEuropa Showcase Page.
       | Username     | E-mail                       | Password  | First name | Last name | Department    | Organisation |
       | showcaseuser | showcaseuser@showcase.com.eu | Qwerty098 | User       | Showcase  | DIGIT.A.3.001 | eu.europa.ec |
 
-  @eulogin @cleanup:user
+  @cleanup:user
   Scenario: Login/Logout with eCAS mockup server of internal users
     Given the site is configured to make users active on creation
     When I am on the homepage
@@ -24,8 +24,20 @@ Feature: Create a OpenEuropa Showcase Page.
     Then I should see "You have been logged in."
     And I should see the link "Log out"
     And I should not see the link "Log in"
+    
+    # Logout
+    When I click "Log out"
+    And I should see "You are about to be logged out of EU Login."
+    And I should see the link "No, stay logged in!"
+    # Redirected to the Ecas mockup server.
+    And I press the "Log me out" button
+    # Redirected back to Drupal.
+    And I should see "You have logged out from EU Login."
+    And I should not see the link "My account"
+    And I should not see the link "Log out"
+    And I should see the link "Log in"
   
-  @DrupalLogin @cleanup:user @cleanup:media
+  @DrupalLogin @cleanup:media
   Scenario: Create demo page using the Showcase Page content type.
   Given I am logged in as a user with the "access toolbar, create oe_showcase_page content, edit any oe_showcase_page content, delete any oe_showcase_page content, access content overview, create document media, delete any document media, edit any document media, create media, delete any media, update any media" permission
 
