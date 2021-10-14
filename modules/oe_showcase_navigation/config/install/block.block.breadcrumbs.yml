@@ -7,7 +7,7 @@ dependencies:
     - oe_whitelabel
 id: breadcrumbs
 theme: oe_whitelabel
-region: header
+region: breadcrumbs
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
