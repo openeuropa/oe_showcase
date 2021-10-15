@@ -5,8 +5,6 @@
  * Showcase search module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
-
 /**
  * Implements hook_theme().
  */
@@ -17,29 +15,4 @@ function oe_showcase_search_theme() {
       'base hook' => 'node',
     ],
   ];
-}
-
-/**
- * Implements hook_form_FORM_ID_alter() for form_views_exposed.
- */
-function oe_showcase_search_form_facets_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (isset($form['actions'])) {
-    $form['actions']['#attributes']['class'][] = 'mt-4';
-  }
-  if (isset($form['actions']['submit'])) {
-    $submit_classes = ['me-2', 'btn', 'btn-primary'];
-    foreach ($submit_classes as $submit_class) {
-      if (!in_array($submit_class, $form['actions']['submit']['#attributes']['class'], TRUE)) {
-        $form['actions']['submit']['#attributes']['class'][] = $submit_class;
-      }
-    }
-  }
-  if (isset($form['actions']['reset'])) {
-    $reset_classes = ['btn', 'btn-secondary'];
-    foreach ($reset_classes as $reset_class) {
-      if (!in_array($reset_class, $form['actions']['reset']['#attributes']['class'], TRUE)) {
-        $form['actions']['reset']['#attributes']['class'][] = $reset_class;
-      }
-    }
-  }
 }
