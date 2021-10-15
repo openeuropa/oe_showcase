@@ -23,6 +23,7 @@ drupal:
     - "./vendor/bin/drush en easy_breadcrumb -y"
     - "./vendor/bin/drush en oe_bootstrap_theme_helper -y"
     - "./vendor/bin/drush en oe_whitelabel_helper -y"
+    - "./vendor/bin/drush en oe_whitelabel_search -y"
     - "./vendor/bin/drush config-set system.theme default oe_whitelabel -y"
     - "./vendor/bin/drush config-set system.theme admin seven -y"
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"

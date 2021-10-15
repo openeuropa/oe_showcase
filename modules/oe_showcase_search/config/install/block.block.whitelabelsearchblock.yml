@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - oe_whitelabel
+  config:
+    - views.view.showcase_search
+id: whitelabelsearchblock
+theme: oe_whitelabel
+region: header_right
+weight: 0
+provider: null
+plugin: whitelabel_search_block
+settings:
+  id: whitelabel_search_block
+  label: 'Search Block'
+  provider: oe_whitelabel_search
+  label_display: '0'
+  form:
+    action: search
+    classes: null
+  input:
+    name: search_api_fulltext
+    label: Search
+    classes: null
+    placeholder: Search
+  button:
+    label: Search
+    classes: null
+  view_options:
+    id: showcase_search
+    display: showcase_search_page
+    enable_autocomplete: true
+visibility: {  }
