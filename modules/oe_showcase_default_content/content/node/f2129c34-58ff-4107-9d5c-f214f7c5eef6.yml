@@ -59,6 +59,9 @@ default:
           behavior_settings:
             -
               value: {  }
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
