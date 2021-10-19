@@ -57,7 +57,7 @@ display:
               secondary_label: 'Advanced options'
               secondary_open: false
             sort:
-              plugin_id: default
+              plugin_id: oe_whitelabel_float_end_sort
               advanced:
                 combine: true
                 combine_rewrite: "Post date Asc|Descending\r\nPost date Desc|Ascending\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
