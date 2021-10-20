@@ -1,8 +1,8 @@
 # OpenEuropa Showcase Page
 
-The OpenEuropa Showcase Page is part of the Showcase profile implementation, it amins to demo several fetures of the [OpenEuropa Showcase](https://github.com/openeuropa/oe_showcase) module and [OpenEuropa Whitelabel](https://github.com/openeuropa/oe_whitelabel) by providing a content type to create pages with multiple content configuration using several paragraphs components that can be placed in any order.
+The OpenEuropa Showcase Page is part of the Showcase profile implementation, it aims to demo several features of the [OpenEuropa Showcase](https://github.com/openeuropa/oe_showcase) module and [OpenEuropa Whitelabel](https://github.com/openeuropa/oe_whitelabel) by providing a content type to create pages with multiple content configuration using several paragraph components that can be placed in any order.
 
-The available paragraphs types are:
+The available paragraph types are:
 - Accordion
 - Accordion item
 - Links block
@@ -37,13 +37,13 @@ $ ./vendor/bin/drush en oe_showcase_page
 ```
 ## Usage
 ### Adding paragraphs to a page:
-To add paragraphs to a page, create a new page or edit an existing one and on the body field click on the dropdown arrow to reveal the enabed paragraphs types.
+To add paragraphs to a page, create a new page or edit an existing one, then on the body field click on the dropdown arrow to reveal the enabled paragraphs types.
 
-Select the desired pragraph ie Accordion (which contains several accordion items), fill out the required fields (Title and Body), to add a new Accordion item, click on [Add Accordion Item], to add other paragraphs types click on the dropdown and select the other component desired.
-You may also rearrange the order of each paragraph by dragging and dropping them using the left move cursor icon.
+Select the desired paragraph, e.g. Accordion (which contains several accordion items), fill out the required fields (Title and Body) To add a new Accordion item, click on [Add Accordion Item]. To add other paragraphs types click on the dropdown and select the desired component.
+The order of each paragraph can also be rearranged  by dragging and dropping them using the left move cursor icon.
 
 ### Configuration
-To add new paragraphs types to the body field other then the ones enabled by default, edit the body field by going on Administration > Structure > Content Types > OE Showcase Page > Manage Fields > Edit Body
+To add new paragraphs types to the body field (other then the ones enabled by default): Edit the body field by going to Administration > Structure > Content Types > OE Showcase Page > Manage Fields > Edit Body
 `/admin/structure/types/manage/oe_showcase_page/fields/node.oe_showcase_page.field_body` on the Reference Type section enable the desired paragraph.
 
 To export configuration using drush type:
