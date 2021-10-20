@@ -1,0 +1,18 @@
+name: OpenEuropa Library News
+type: module
+description: 'Demo news feature based on search_api'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - drupal:views
+  - facets_summary:facets_summary
+  - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
+  - search_api:search_api
+  - search_api_db:search_api_db
+  - search_api_autocomplete:search_api_autocomplete
+  - better_exposed_filters:better_exposed_filters
+
+themes:
+  - bartik
+  - seven
