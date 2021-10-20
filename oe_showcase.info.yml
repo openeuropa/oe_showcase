@@ -26,6 +26,12 @@ dependencies:
   - ui_patterns_settings
   - user
   - views
+  - menu_ui
+  - views_ui
+  - field_ui
+  - ckeditor
+  - pathauto
+  - oe_showcase_user_profile
   - oe_authentication
   - oe_bootstrap_theme_helper
   - oe_corporate_blocks
