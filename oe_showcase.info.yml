@@ -36,6 +36,7 @@ install:
   - oe_showcase_navigation
   - oe_showcase_page
   - oe_showcase_search
+  - oe_showcase_user_profile
   - oe_whitelabel_helper
   - oe_whitelabel_search
   - options
