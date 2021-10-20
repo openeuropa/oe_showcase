@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: c574d28f-948e-4a71-a8f7-5897db9beef5
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Romanos Firou'
+  pass:
+    -
+      value: $S$EIDNePdNABB9HUYokxxdexdcbHi5fw8fo7cy9a9E.rfHMAxZUcpQ
+      existing: ''
+      pre_hashed: false
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605400
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

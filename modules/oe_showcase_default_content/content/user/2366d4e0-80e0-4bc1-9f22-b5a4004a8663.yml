@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Shel Caryl'
+  pass:
+    -
+      value: $S$EBDFEXLr.flziETA7HEkaxph4JAjqsuWYttbGbBMQ3NbspOQ8tTM
+      existing: ''
+      pre_hashed: false
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605440
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
