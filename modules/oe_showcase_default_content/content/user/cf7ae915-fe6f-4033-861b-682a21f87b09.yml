@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: cf7ae915-fe6f-4033-861b-682a21f87b09
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Jarrett Autumn'
+  pass:
+    -
+      value: $S$ELFSe7WGWz4M8dGwxGWjZLyjEx7ZlikT.BeS1YrvAdcMSJ8UaRMe
+      existing: ''
+      pre_hashed: false
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605474
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0

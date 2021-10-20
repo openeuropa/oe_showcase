@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: e509f27f-988b-41c0-a0fa-12a82107bf74
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Lisbet Henri'
+  pass:
+    -
+      value: $S$ETZJI3q9MrbkUe/zrZ4EwTwesvdWfHAXwXShHJx9B1zs5r69WD/b
+      existing: ''
+      pre_hashed: false
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605422
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
