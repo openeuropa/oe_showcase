@@ -1,0 +1,5 @@
+restrict_to_roles:
+  authenticated: authenticated
+  anonymous: 0
+enable_all_users: 1
+enable_admin_users: 1
