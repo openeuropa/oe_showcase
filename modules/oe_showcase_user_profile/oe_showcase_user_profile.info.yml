@@ -1,0 +1,21 @@
+name: OpenEuropa Showcase user profile
+type: module
+description: 'Demo user profile'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - drupal:user_fields_visibility
+  - drupal:purge_users
+  - openeuropa:oe_authentication
+  - drupal:legal
+  - drupal:user_field_anonymize
+  - search_api:search_api
+  - search_api_db:search_api_db
+
+config_devel:
+  install:
+    - purge_users.settings
+    - user_field_anonymize.configuration
+    - search_api.index.showcase_users_index
+    - search_api.server.showcase_users_server
+    - views.view.showcase_users
