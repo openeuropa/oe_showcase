@@ -1,0 +1,38 @@
+name: OpenEuropa Library News
+type: module
+description: 'Demo news feature based on search_api'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - drupal:views
+  - facets_summary:facets_summary
+  - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
+  - search_api:search_api
+  - search_api_db:search_api_db
+  - search_api_autocomplete:search_api_autocomplete
+  - better_exposed_filters:better_exposed_filters
+
+themes:
+  - bartik
+  - seven
+
+config_devel:
+  install:
+    - field.storage.node.field_news_publication_date
+    - field.storage.node.field_news_image
+    - field.storage.node.field_news_introduction
+    - field.storage.node.field_news_content
+    - field.field.node.oe_news_simple.field_news_publication_date
+    - field.field.node.oe_news_simple.field_news_image
+    - field.field.node.oe_news_simple.field_news_introduction
+    - field.field.node.oe_news_simple.field_news_content
+    - node.type.oe_news_simple
+    - core.entity_form_display.node.oe_news_simple.default
+    - core.entity_view_display.node.oe_news_simple.teaser
+    - core.entity_view_display.node.oe_news_simple.search_result
+    - core.entity_view_display.node.oe_news_simple.search_index
+    - core.entity_view_display.node.oe_news_simple.full
+    - core.entity_view_display.node.oe_news_simple.default
+  optional:
+    - language.content_settings.node.oe_news_simple
