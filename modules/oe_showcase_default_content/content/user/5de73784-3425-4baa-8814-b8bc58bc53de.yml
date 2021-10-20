@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 5de73784-3425-4baa-8814-b8bc58bc53de
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Cristian Eliza'
+  pass:
+    -
+      value: $S$E38Wyo6NNvW49wQkLz/5plLXfLecgSNvSlfR3p0VGdGf2r0uunSQ
+      existing: ''
+      pre_hashed: false
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605371
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
