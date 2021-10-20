@@ -1,0 +1,26 @@
+uuid: a6a247fb-bb97-4438-9d0c-e00c8852e3d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_introduction
+    - node.type.oe_news_simple
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    plain_text: '0'
+id: node.oe_news_simple.field_news_introduction
+field_name: field_news_introduction
+entity_type: node
+bundle: oe_news_simple
+label: Introduction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
