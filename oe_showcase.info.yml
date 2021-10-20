@@ -5,18 +5,27 @@ core_version_requirement: ^8.9 || ^9.1
 dependencies:
   - block
   - ckeditor
-  - config
   - components
+  - config
   - content_translation
   - datetime
   - easy_breadcrumb
   - editor
+  - field_ui
   - file
   - filter
   - image
   - language
   - menu_link_content
+  - menu_ui
   - node
+  - oe_authentication
+  - oe_bootstrap_theme_helper
+  - oe_corporate_blocks
+  - oe_multilingual
+  - oe_showcase_user_profile
+  - oe_whitelabel_helper
+  - oe_whitelabel_search
   - options
   - oe_paragraphs_banner
   - path
