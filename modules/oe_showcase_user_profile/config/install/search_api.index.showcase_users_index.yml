@@ -1,0 +1,39 @@
+uuid: 778d3ea5-bb3e-4dba-8511-ab2cf1f21704
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+    - search_api
+  config:
+    - search_api.server.showcase_users_server
+id: showcase_users_index
+name: 'Showcase users index'
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: Created
+    datasource_id: 'entity:user'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - user
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: showcase_users_server
