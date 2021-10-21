@@ -4,4 +4,4 @@ dependencies: {  }
 id: news_full_time_format
 label: 'News full-time format'
 locked: false
-pattern: 'Y,m,d - H:i'
+pattern: 'Y, F j, I - H:i'
