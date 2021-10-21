@@ -1,6 +1,6 @@
 # OpenEuropa Showcase Page
 
-The OpenEuropa Showcase Page is part of the Showcase profile implementation, it aims to demo several features of the [OpenEuropa Showcase](https://github.com/openeuropa/oe_showcase) module and [OpenEuropa Whitelabel](https://github.com/openeuropa/oe_whitelabel) by providing a content type to create pages with multiple content configuration using several paragraph components that can be placed in any order.
+The OpenEuropa Showcase Page is part of the Showcase profile implementation, it aims to demo several features of the [OpenEuropa Showcase](https://github.com/openeuropa/oe_showcase) profile and [OpenEuropa Whitelabel](https://github.com/openeuropa/oe_whitelabel) by providing a content type to create pages with multiple content configuration using several paragraph components that can be placed in any order.
 
 The available paragraph types are:
 - Accordion
