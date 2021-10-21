@@ -49,6 +49,10 @@ default:
       title: ''
       width: 200
       height: 200
+  field_news_introduction:
+    -
+      value: "<p>Nulla vehicula justo ut lectus elementum, a tincidunt felis varius. Curabitur a mattis dolor, ut egestas lacus. Nam a dui quis metus consequat rutrum in a magna. Nulla bibendum lobortis cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin aliquam odio lectus, bibendum pretium risus viverra in. Cras facilisis purus ut dolor euismod ullamcorper. Ut eget turpis non nibh ullamcorper sodales. Ut id efficitur justo. Quisque eget efficitur tellus, vel varius turpis. Proin fringilla eros eu viverra viverra. Suspendisse vel velit fringilla nibh euismod tempor. Suspendisse ligula purus, congue sed ligula id, eleifend eleifend arcu.</p>\r\n"
+      format: full_html
   field_news_publication_date:
     -
       value: '2021-11-04T16:44:46'
