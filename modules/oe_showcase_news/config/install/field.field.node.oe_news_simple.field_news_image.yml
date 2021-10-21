@@ -5,7 +5,14 @@ dependencies:
     - field.storage.node.field_news_image
     - node.type.oe_news_simple
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.oe_news_simple.field_news_image
 field_name: field_news_image
 entity_type: node
@@ -13,7 +20,7 @@ bundle: oe_news_simple
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
