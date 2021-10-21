@@ -10,7 +10,6 @@ dependencies:
   - components
   - content_translation
   - datetime
-  - easy_breadcrumb
   - editor
   - file
   - filter
