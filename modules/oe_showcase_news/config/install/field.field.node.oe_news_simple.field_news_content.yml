@@ -18,7 +18,7 @@ bundle: oe_news_simple
 label: Content
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
