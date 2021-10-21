@@ -1,12 +1,11 @@
-uuid: 94b86e38-6995-42a3-b9b5-8dd3292b47f3
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_news_introduction
-field_name: field_news_introduction
+id: node.field_news_content
+field_name: field_news_content
 entity_type: node
 type: text_long
 settings: {  }

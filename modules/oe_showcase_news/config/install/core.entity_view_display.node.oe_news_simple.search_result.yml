@@ -1,61 +1,62 @@
-uuid: 38e38b78-f0d9-4ffb-b6c4-93c9b0be8bf2
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.search_result
     - field.field.node.oe_news_simple.field_news_content
     - field.field.node.oe_news_simple.field_news_image
     - field.field.node.oe_news_simple.field_news_introduction
     - field.field.node.oe_news_simple.field_news_publication_date
+    - image.style.medium
     - node.type.oe_news_simple
   module:
     - datetime
     - image
     - text
     - user
-id: node.oe_news_simple.full
+_core:
+  default_config_hash: dZK8TkNFMLuct1yQo8552qdBXL7l2hFNIsjkfgwMFlg
+id: node.oe_news_simple.search_result
 targetEntityType: node
 bundle: oe_news_simple
-mode: full
+mode: search_result
 content:
   field_news_content:
-    weight: 103
-    label: above
-    settings: {  }
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 350
     third_party_settings: {  }
-    type: text_default
+    type: text_trimmed
     region: content
   field_news_image:
-    weight: 101
+    weight: 0
     label: above
     settings:
-      image_style: ''
+      image_style: medium
       image_link: ''
     third_party_settings: {  }
     type: image
     region: content
-  field_news_introduction:
-    weight: 102
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_news_publication_date:
-    weight: 104
+    weight: 4
     label: above
     settings:
-      format_type: medium
-      timezone_override: ''
+      timezone_override: Europe/Brussels
+      format_type: news_full_time_format
     third_party_settings: {  }
     type: datetime_default
     region: content
   links:
-    weight: 100
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
+  search_api_excerpt:
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_news_introduction: true
   langcode: true
-  search_api_excerpt: true
