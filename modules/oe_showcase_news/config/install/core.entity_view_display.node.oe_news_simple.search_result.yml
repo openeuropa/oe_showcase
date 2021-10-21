@@ -14,8 +14,6 @@ dependencies:
     - image
     - text
     - user
-_core:
-  default_config_hash: dZK8TkNFMLuct1yQo8552qdBXL7l2hFNIsjkfgwMFlg
 id: node.oe_news_simple.search_result
 targetEntityType: node
 bundle: oe_news_simple
