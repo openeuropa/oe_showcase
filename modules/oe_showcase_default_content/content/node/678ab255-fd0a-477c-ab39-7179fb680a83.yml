@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 678ab255-fd0a-477c-ab39-7179fb680a83
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    54554a06-f933-4d5d-8ca9-90c17b7d409a: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Nam viverra'
+  created:
+    -
+      value: 1634831047
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Aenean elementum iaculis luctus. Nam viverra, leo id commodo iaculis, urna neque aliquam enim, et mollis nulla est eget turpis. Mauris id semper urna. Vestibulum ultricies augue elit, et posuere enim molestie a. Curabitur at enim vitae risus mollis gravida. Mauris ut ligula eu lectus sollicitudin tempor quis vitae massa. Etiam convallis pharetra dui, non feugiat ligula maximus et. Vestibulum congue lacinia ornare. Nullam auctor sem ut libero pulvinar accumsan. Cras sed risus at turpis euismod condimentum vitae non enim. Suspendisse condimentum pulvinar imperdiet. Nunc ac nulla sed leo imperdiet condimentum vel ac sem. Suspendisse eget quam tincidunt, lacinia nisl ut, molestie quam.</p>\r\n\r\n<p>Praesent mollis mauris eget eleifend feugiat. Phasellus commodo mauris at tellus tempor, commodo vehicula ipsum bibendum. Ut a libero vel dui semper tristique a scelerisque tellus. Morbi ac sodales nulla. Ut orci nisi, luctus in porttitor eu, luctus id massa. Nulla eu suscipit lectus. Quisque at interdum nisi. Sed mollis consectetur orci, et eleifend risus cursus et.</p>\r\n\r\n<p>Vivamus nulla diam, vestibulum id aliquam sed, malesuada sed metus. Donec mattis ut tellus eu dapibus. Donec mi tortor, volutpat eu orci sed, pretium pretium nibh. Vestibulum porttitor eu tortor non varius. Fusce dictum malesuada laoreet. Sed luctus nunc vitae lorem cursus, eget sodales tortor tristique. Donec pretium facilisis ligula. Maecenas nec lorem vestibulum, blandit tellus ac, porttitor tellus. Aliquam sit amet laoreet magna. Aenean felis ex, ornare vel interdum ac, mattis et arcu.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: 54554a06-f933-4d5d-8ca9-90c17b7d409a
+      alt: 'News 10'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>Aenean lacinia scelerisque enim, quis viverra lacus accumsan vel. Aliquam venenatis nunc ac sodales feugiat. Praesent efficitur magna ut rhoncus pretium. Quisque id nulla felis. Donec eros mauris, cursus sed nulla tristique, scelerisque accumsan nisi. Mauris consequat interdum eros ac tempor. Maecenas feugiat sapien eget felis condimentum, eu dignissim neque consectetur. Etiam congue elit eget lacus gravida aliquet. Aenean nec venenatis arcu, et accumsan risus. Fusce id maximus turpis. Integer scelerisque nulla nunc, euismod posuere nulla cursus a. Fusce accumsan, enim vel pharetra vestibulum, nisi lorem tempus lorem, congue tincidunt mauris odio ut lacus. In ornare ex dui, sit amet tristique sapien tincidunt a.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-10-05T15:44:07'

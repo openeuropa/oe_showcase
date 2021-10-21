@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1cba7490-865d-4b49-8d17-0beaa3576403
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    0df642d3-5a87-4bb7-8ba5-e1c21ad89615: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Curabitur sit amet'
+  created:
+    -
+      value: 1634830908
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Fusce porttitor maximus elit ut sollicitudin. Proin id cursus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse ullamcorper elit justo, quis gravida neque pretium ut. Integer ac mauris pharetra, venenatis risus nec, egestas ligula. Aliquam ipsum est, cursus a pretium a, cursus et urna. Vestibulum eget porttitor lacus. Pellentesque id dictum arcu.</p>\r\n\r\n<p>Donec viverra turpis enim, quis laoreet orci tempor et. Donec molestie velit maximus neque vulputate, et rhoncus tellus tempus. Proin iaculis euismod imperdiet. Maecenas consequat odio non efficitur aliquam. Nunc eleifend, nisl vitae faucibus ullamcorper, massa elit consequat dui, vel porttitor felis tortor eu ipsum. Praesent est nunc, sodales ut diam sit amet, ornare molestie quam. Nulla purus nisl, tempus at lectus a, rutrum suscipit leo. Quisque id pellentesque lorem. Vivamus tempor elementum tortor, eget rutrum purus scelerisque vitae. Mauris scelerisque urna at erat sodales, vitae euismod purus pharetra.</p>\r\n\r\n<p>Quisque malesuada, magna quis blandit ultricies, lorem neque vulputate urna, eu accumsan ante purus sed ligula. Mauris laoreet, magna eget imperdiet accumsan, urna ipsum venenatis nisi, eget viverra elit nulla id turpis. Mauris vehicula, turpis sed rutrum rhoncus, turpis orci tempus ipsum, non euismod eros mauris et mauris. Duis lorem libero, porta vel arcu quis, placerat elementum ante. Proin quis felis nec libero semper tincidunt. Nunc commodo enim nisi, sit amet tempus urna hendrerit ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque vel lobortis augue, nec sodales lorem. Pellentesque vel lacus et risus consequat tincidunt tempor at urna. Ut eget ante vitae libero gravida tincidunt. Mauris commodo felis ac ipsum auctor iaculis. Sed ut ex pellentesque magna interdum volutpat. Vivamus tortor justo, vehicula ac interdum nec, ultricies eu purus. Duis mollis urna nunc, vel accumsan enim finibus nec. Duis felis augue, faucibus et libero a, placerat aliquam ex. Nulla lobortis eu nulla eget vestibulum.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: 0df642d3-5a87-4bb7-8ba5-e1c21ad89615
+      alt: 'News 7'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>Nulla posuere ligula accumsan magna pulvinar lacinia. Sed venenatis tempor nulla, eget ultrices nunc ullamcorper eget. Duis ut arcu nunc. Vivamus iaculis metus ex, ut imperdiet tellus accumsan accumsan. Curabitur sit amet ex eget magna eleifend facilisis vitae ut risus. Sed et ullamcorper dui. Etiam quis scelerisque tortor, vel finibus tortor. Donec egestas scelerisque odio in commodo.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-12-06T16:41:48'

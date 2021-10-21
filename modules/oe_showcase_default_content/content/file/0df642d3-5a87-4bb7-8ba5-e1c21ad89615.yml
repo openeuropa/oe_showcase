@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0df642d3-5a87-4bb7-8ba5-e1c21ad89615
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: 1018-367x267.jpg
+  uri:
+    -
+      value: 'public://node/oe_showcase_news/field_news_image/1018-367x267.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 14292
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634830933

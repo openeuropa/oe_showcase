@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 80538c4c-7efe-4960-806b-2c0786668f65
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    82d1a32c-e01d-40be-825c-172f217d0523: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Proin quis congue mi'
+  created:
+    -
+      value: 1634830624
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Proin eget fermentum mauris, id blandit elit. Morbi non ipsum nec leo posuere convallis. Nunc commodo pulvinar aliquam. Quisque auctor a nisl a tincidunt. Nunc eu auctor quam, pellentesque sagittis neque. Donec tincidunt enim vitae augue viverra elementum. Quisque molestie ultricies tincidunt. Cras bibendum nulla vel justo auctor, vitae vehicula diam finibus. Suspendisse mi mi, facilisis et sapien vitae, dapibus euismod orci. Sed scelerisque libero sed risus commodo, vel tincidunt dui consequat. Nunc massa turpis, pellentesque ac lorem ac, feugiat dignissim ligula. Phasellus facilisis vestibulum nisi quis gravida.</p>\r\n\r\n<p>Donec cursus interdum metus quis auctor. In sit amet tempus nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam cursus ex sollicitudin dolor tincidunt semper. In nec rhoncus velit. Etiam egestas, lorem non eleifend ultrices, justo nisl rutrum lacus, nec facilisis orci est sed justo. Aliquam dictum placerat urna at mollis. In feugiat gravida metus vitae cursus. Nullam interdum luctus varius. Aenean molestie ornare augue, quis blandit dui iaculis quis. Maecenas volutpat varius semper.</p>\r\n\r\n<p>Duis ut commodo tortor, eget tristique tellus. Integer pulvinar molestie rutrum. Pellentesque nec neque odio. Curabitur vitae congue orci. Mauris rhoncus mauris at volutpat consequat. Duis vehicula urna sit amet blandit interdum. Nunc elementum dictum ante, eu vulputate ante dictum eget. Quisque non risus dictum, luctus nibh vitae, ornare sem. Donec facilisis gravida quam, eu bibendum neque scelerisque id. Maecenas dapibus risus consectetur, pharetra mauris vitae, maximus est. Quisque at convallis arcu.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: 82d1a32c-e01d-40be-825c-172f217d0523
+      alt: 'News 2'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>Proin quis congue mi. Integer augue velit, lobortis vitae ex eu, eleifend pharetra erat. Cras at tellus sed nisi iaculis molestie. Sed ullamcorper sagittis diam et faucibus. Etiam eu eleifend est, aliquam imperdiet ipsum. Integer blandit lorem ut blandit dignissim. Donec semper imperdiet purus, a tempus elit cursus sit amet.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-10-20T15:37:04'
