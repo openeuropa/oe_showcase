@@ -33,8 +33,9 @@ config_devel:
     - core.entity_view_display.node.oe_news_simple.teaser
     - core.entity_view_display.node.oe_news_simple.search_result
     - core.entity_view_display.node.oe_news_simple.default
+    - core.base_field_override.node.oe_news_simple.title
+    - core.base_field_override.node.oe_news_simple.menu_link
+    - core.base_field_override.node.oe_news_simple.path
     - user.role.editor
-    - system.action.user_remove_role_action.editor
-    - system.action.user_add_role_action.editor
   optional:
     - language.content_settings.node.oe_news_simple
