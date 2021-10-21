@@ -32,6 +32,6 @@ config_devel:
     - core.entity_view_display.node.oe_news_simple.search_result
     - core.entity_view_display.node.oe_news_simple.default
     - user.role.editor
-    - pathauto.pattern.oe_showcase_news_alias_pattern
+    - pathauto.pattern.news_url_alias_pattern
   optional:
     - language.content_settings.node.oe_news_simple
