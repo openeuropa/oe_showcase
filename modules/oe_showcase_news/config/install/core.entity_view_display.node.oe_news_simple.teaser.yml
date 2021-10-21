@@ -10,8 +10,6 @@ dependencies:
     - node.type.oe_news_simple
   module:
     - user
-_core:
-  default_config_hash: bK4ylVZSVGqJfywTwUWx4VjYTYh-aMwhqjeyJSX7xWE
 id: node.oe_news_simple.teaser
 targetEntityType: node
 bundle: oe_news_simple
