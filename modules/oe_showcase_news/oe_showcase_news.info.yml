@@ -19,6 +19,7 @@ themes:
 
 config_devel:
   install:
+    - core.date_format.news_full_time_format
     - field.storage.node.field_news_publication_date
     - field.storage.node.field_news_image
     - field.storage.node.field_news_introduction
