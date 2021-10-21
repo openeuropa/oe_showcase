@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0708ba1e-f163-4758-a201-e5c087079b1b
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    7426cb67-eb33-4e15-bf43-75c00d070c6b: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  created:
+    -
+      value: 1634829183
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac scelerisque ipsum. Nam suscipit vulputate mi sit amet vestibulum. Duis sit amet posuere lectus. Duis nec mauris sed nisi interdum lacinia vel ac arcu. Praesent a odio eu odio vulputate finibus sit amet ac nunc. Sed purus nisi, laoreet aliquet est nec, hendrerit pulvinar nisl. Morbi laoreet posuere dictum.</p>\r\n\r\n<p>Vestibulum sagittis tortor ligula, ut ullamcorper mauris vulputate non. Morbi ultricies in velit et fermentum. Pellentesque non quam et orci efficitur rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In vel tellus imperdiet, ornare quam non, pretium orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar maximus hendrerit. Fusce consectetur gravida felis id finibus.</p>\r\n\r\n<p>In viverra, sapien at venenatis scelerisque, justo nisi vulputate purus, at accumsan nulla elit efficitur quam. Sed purus est, sollicitudin ac aliquet quis, sollicitudin sed lacus. Pellentesque a mollis ex. Sed in vestibulum dui. Duis id erat neque. Praesent malesuada nulla sollicitudin urna ornare, eget posuere turpis feugiat. Donec fringilla vulputate magna, at fringilla odio. Nam vitae felis hendrerit dolor consectetur egestas. Etiam vitae hendrerit ante. Etiam blandit purus non varius ultrices.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: 7426cb67-eb33-4e15-bf43-75c00d070c6b
+      alt: 'News 1'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac scelerisque ipsum. Nam suscipit vulputate mi sit amet vestibulum. Duis sit amet posuere lectus. Duis nec mauris sed nisi interdum lacinia vel ac arcu. Praesent a odio eu odio vulputate finibus sit amet ac nunc. Sed purus nisi, laoreet aliquet est nec, hendrerit pulvinar nisl. Morbi laoreet posuere dictum.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-10-11T15:13:03'

@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1d31f8a5-8551-4a15-b5b6-7b522df2312e
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    44e2b68b-e1eb-40ba-ba62-47a2326d94aa: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Orci varius natoque'
+  created:
+    -
+      value: 1634830770
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Phasellus facilisis hendrerit elit, ac sagittis nulla viverra sit amet. Pellentesque malesuada, tellus et elementum molestie, dui quam dictum elit, at dignissim quam felis nec justo. Cras urna arcu, euismod at leo feugiat, vestibulum porttitor massa. Maecenas vulputate purus ipsum, eu ultrices dolor facilisis vitae. Nulla egestas dolor in libero fermentum fermentum. Pellentesque laoreet enim nec dapibus dignissim. Phasellus id nisl mi. Ut egestas odio quis sapien consequat varius. Nullam pulvinar at turpis sagittis vestibulum. Sed placerat mi et commodo hendrerit. Pellentesque vel diam viverra, varius augue rhoncus, dignissim tortor. Ut porta arcu euismod elit pellentesque tempus. Suspendisse ultricies ex vel nulla tincidunt elementum.</p>\r\n\r\n<p>Aliquam arcu metus, venenatis in varius eget, condimentum at mauris. Donec at purus felis. In dignissim ex sed mi semper, vulputate aliquam urna maximus. Quisque sed nulla suscipit, aliquam risus ac, fringilla dui. Quisque quis hendrerit nisi, id egestas augue. Donec non sapien est. Nam vel dictum mi, sit amet iaculis nibh. Quisque finibus neque in ante laoreet egestas. Duis cursus mauris eget lacus iaculis, placerat bibendum est mollis. Vivamus vestibulum posuere ultrices. Vestibulum justo mi, fermentum non blandit eu, volutpat ultrices est. Vestibulum fermentum leo felis, et dapibus odio auctor at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed elit lorem, lobortis et sodales vitae, rhoncus non leo. Nunc interdum in arcu quis commodo.</p>\r\n\r\n<p>Nulla non vestibulum dui, at pulvinar lacus. Vestibulum faucibus venenatis sem, in dapibus nunc mattis et. Sed efficitur commodo nulla, quis ornare arcu viverra consectetur. Vivamus quam mi, facilisis ac eros et, venenatis aliquet est. Mauris ultricies vel velit ac dignissim. Phasellus ullamcorper eleifend lectus, nec aliquet mi ultricies ac. Cras ultrices varius elit, egestas feugiat sem facilisis eget. Sed tincidunt commodo massa ac luctus. Curabitur ac magna suscipit, aliquet justo nec, condimentum ante. Vestibulum vehicula tellus erat, sit amet volutpat odio interdum euismod. Nam ac elit laoreet, pulvinar sem eu, maximus tortor.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: 44e2b68b-e1eb-40ba-ba62-47a2326d94aa
+      alt: 'News 4'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>. Quisque finibus neque in ante laoreet egestas. Duis cursus mauris eget lacus iaculis, placerat bibendum est mollis. Vivamus vestibulum posuere ultrices. Vestibulum justo mi, fermentum non blandit eu, volutpat ultrices est. Vestibulum fermentum leo felis, et dapibus odio auctor at.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-09-07T15:39:30'

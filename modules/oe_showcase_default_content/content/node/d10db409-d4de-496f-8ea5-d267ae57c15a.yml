@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d10db409-d4de-496f-8ea5-d267ae57c15a
+  bundle: oe_news_simple
+  default_langcode: en
+  depends:
+    d9fd8509-a1f7-4037-825f-5a4a5c5c19a1: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Aliquam vestibulum mattis'
+  created:
+    -
+      value: 1634830821
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_news_content:
+    -
+      value: "<p>Nunc nec nunc pharetra, faucibus nibh at, volutpat ipsum. Aenean venenatis pharetra efficitur. Phasellus scelerisque nisl nulla, vel elementum nibh vulputate at. Proin dolor nulla, pulvinar nec mauris non, sodales convallis est. Vivamus quis augue tempus, posuere dolor vitae, facilisis risus. Pellentesque pellentesque nisi sed tellus tincidunt, sed porta sapien feugiat. Curabitur quis suscipit justo. Proin sit amet auctor nibh. Proin bibendum mattis enim eget hendrerit. Nulla euismod semper dolor, non scelerisque tellus vehicula eget. Morbi vehicula nibh elit, quis gravida libero ultricies quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum congue ligula. Integer et finibus nulla. Nam tincidunt pretium eleifend. Proin imperdiet efficitur ex, ac condimentum quam mollis at.</p>\r\n\r\n<p>In eleifend sapien purus, quis aliquet massa fermentum vitae. Donec at finibus ante. Aliquam vitae varius ex. Duis eget magna a tortor ullamcorper mollis sed sit amet enim. Vestibulum porttitor massa at velit porttitor, volutpat blandit mauris malesuada. Ut in eros vel risus scelerisque sodales. Duis ornare accumsan lacus. Duis sit amet feugiat felis, at porttitor sapien. Morbi posuere molestie mi condimentum pellentesque. Cras feugiat purus id tempus tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras laoreet lacus magna. Suspendisse nec justo sit amet ipsum molestie interdum quis eu sapien.</p>\r\n\r\n<p>Nam dignissim sapien quis tincidunt ultrices. Donec accumsan est ut odio dictum lobortis. Aliquam vel erat fringilla, posuere purus vulputate, mattis ipsum. Duis purus arcu, porttitor eget quam vitae, sodales consequat dui. Duis turpis dolor, pellentesque quis lacinia in, dictum et nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed pellentesque, erat non feugiat varius, turpis nibh ullamcorper dui, id ullamcorper ex diam vel purus. Ut placerat et velit nec vestibulum. Aenean blandit, metus sit amet lacinia euismod, magna mauris laoreet justo, sit amet rutrum lacus ante in dolor. Aliquam neque lectus, pretium eu sem id, tempor posuere enim. Fusce aliquet ex ut tortor placerat, et maximus dui consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elit nulla, cursus eget consectetur sit amet, dapibus at nisi. Suspendisse porttitor metus id auctor volutpat.</p>\r\n"
+      format: full_html
+  field_news_image:
+    -
+      entity: d9fd8509-a1f7-4037-825f-5a4a5c5c19a1
+      alt: 'News 5'
+      title: ''
+      width: 367
+      height: 267
+  field_news_introduction:
+    -
+      value: "<p>Praesent a tellus volutpat, dignissim purus id, rhoncus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ut nisl nibh. Sed est turpis, facilisis a semper at, pretium tempus ante. Mauris a viverra orci, mattis convallis orci. Praesent at massa orci. Maecenas scelerisque massa vel rhoncus dictum. Curabitur ut ex mi.</p>\r\n"
+      format: full_html
+  field_news_publication_date:
+    -
+      value: '2021-08-10T15:40:21'
