@@ -18,6 +18,7 @@
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/ui_patterns": "^1.2",
         "drupal/ui_patterns_settings": "^1.1",
+        "drupal/user_field_anonymize": "1.x-dev",
         "drupal/user_fields_visibility": "1.x-dev",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
