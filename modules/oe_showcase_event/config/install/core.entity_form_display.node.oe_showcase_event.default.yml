@@ -2,10 +2,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_content
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_date
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_document
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_image
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_location
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_registra
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_url
+    - image.style.thumbnail
     - node.type.oe_showcase_event
   module:
+    - address
+    - datetime_range
+    - file
+    - image
+    - link_attributes
     - path
+    - rdf_skos
+    - text
 id: node.oe_showcase_event.default
 targetEntityType: node
 bundle: oe_showcase_event
@@ -17,11 +32,83 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_oe_showcase_event_type:
-    weight: 121
+  field_oe_showcase_event_content:
+    weight: 124
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_oe_showcase_event_date:
+    weight: 122
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: daterange_default
+    region: content
+  field_oe_showcase_event_document:
+    weight: 125
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_oe_showcase_event_image:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_oe_showcase_event_location:
+    weight: 128
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_oe_showcase_event_registra:
+    weight: 127
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_oe_showcase_event_type:
+    weight: 121
+    settings:
+      sort: id
+    third_party_settings: {  }
+    type: skos_concept_entity_reference_options_select
+    region: content
+  field_oe_showcase_event_url:
+    weight: 126
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
     region: content
   langcode:
     type: language_select
@@ -67,9 +154,9 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5

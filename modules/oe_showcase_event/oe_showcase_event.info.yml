@@ -6,13 +6,35 @@ package: OpenEuropa
 
 dependencies:
   - rdf_skos:rdf_skos
-  - drupal:address
-  - drupal:link_attributes
+  - address:address
+  - link_attributes:link_attributes
+  - drupal:datetime_range
+  - drupal:file
+  - drupal:image
 
 config_devel:
   install:
     - node.type.oe_showcase_event
-    - language.content_settings.node.oe_showcase_event
     - field.storage.node.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
+    - core.entity_view_display.node.oe_showcase_event.default
     - core.entity_form_display.node.oe_showcase_event.default
+    - core.entity_view_display.node.oe_showcase_event.search_result
+    - core.entity_view_display.node.oe_showcase_event.search_index
+    - core.entity_view_display.node.oe_showcase_event.default
+    - field.storage.node.field_oe_showcase_event_url
+    - field.storage.node.field_oe_showcase_event_registra
+    - field.storage.node.field_oe_showcase_event_location
+    - field.storage.node.field_oe_showcase_event_image
+    - field.storage.node.field_oe_showcase_event_document
+    - field.storage.node.field_oe_showcase_event_date
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_url
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_registra
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_location
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_image
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_document
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_date
+    - field.storage.node.field_oe_showcase_event_content
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_content
+  optional:
+    - language.content_settings.node.oe_showcase_event

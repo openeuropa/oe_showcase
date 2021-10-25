@@ -2,42 +2,20 @@
 
 /**
  * @file
- * OpenEuropa Corporate Site Information installation file.
+ * The OpenEuropa Contact Forms installation file.
  */
 
 declare(strict_types = 1);
 
-use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\Core\Entity\EntityDefinitionUpdateManager;
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-
 /**
  * Implements hook_install().
  */
-function oe_showcase_event_install($is_syncing): void {
-  // Install the newly defined SKOS Concept defined fields.
-  $manager = \Drupal::entityDefinitionUpdateManager();
-  $definition = BaseFieldDefinition::create('entity_reference')
-    ->setLabel(t('Public Event Types'))
-    ->setDescription(t('The public event types.'))
-    ->setSetting('target_type', 'skos_concept')
-    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-    ->setSetting('handler', 'default')
-    ->setDisplayOptions('view', [
-      'label' => 'above',
-      'type' => 'entity_reference_label',
-    ]);
-
-  $manager->installFieldStorageDefinition('oe_showcase_event_public_event_type', 'skos_concept', 'rdf_skos', $definition);
-  \Drupal::logger('oe_showcase_event')->info('The following SKOS field definition has been installed: @definition.', ['@definition' => 'oe_showcase_event_public_event_type']);
-
+function oe_showcase_event_install($is_syncing) {
   // Configure the RDF SKOS graphs.
-  if ($is_syncing) {
-    return;
+  if (!$is_syncing) {
+    $graphs = [
+      'public-event-type' => 'http://publications.europa.eu/resource/dataset/public-event-type',
+    ];
+    \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
   }
-
-  \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs([
-    'public_event_type' => 'http://publications.europa.eu/resource/authority/public-event-type',
-  ]);
 }

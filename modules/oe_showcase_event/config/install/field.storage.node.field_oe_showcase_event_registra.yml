@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-    - rdf_skos
-id: node.field_oe_showcase_event_type
-field_name: field_oe_showcase_event_type
+id: node.field_oe_showcase_event_registra
+field_name: field_oe_showcase_event_registra
 entity_type: node
-type: skos_concept_entity_reference
-settings:
-  target_type: skos_concept
-module: rdf_skos
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

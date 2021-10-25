@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oe_showcase_event_registra
+    - node.type.oe_showcase_event
+  module:
+    - link
+id: node.oe_showcase_event.field_oe_showcase_event_registra
+field_name: field_oe_showcase_event_registra
+entity_type: node
+bundle: oe_showcase_event
+label: 'Event Registration URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -3,14 +3,13 @@ status: true
 dependencies:
   module:
     - node
-    - rdf_skos
-id: node.field_oe_showcase_event_type
-field_name: field_oe_showcase_event_type
+    - text
+id: node.field_oe_showcase_event_content
+field_name: field_oe_showcase_event_content
 entity_type: node
-type: skos_concept_entity_reference
-settings:
-  target_type: skos_concept
-module: rdf_skos
+type: text_with_summary
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

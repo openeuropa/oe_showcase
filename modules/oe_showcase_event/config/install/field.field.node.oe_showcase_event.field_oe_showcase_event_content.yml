@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oe_showcase_event_content
+    - node.type.oe_showcase_event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    plain_text: '0'
+id: node.oe_showcase_event.field_oe_showcase_event_content
+field_name: field_oe_showcase_event_content
+entity_type: node
+bundle: oe_showcase_event
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

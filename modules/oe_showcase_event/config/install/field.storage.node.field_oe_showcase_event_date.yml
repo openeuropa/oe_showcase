@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - datetime_range
     - node
-    - rdf_skos
-id: node.field_oe_showcase_event_type
-field_name: field_oe_showcase_event_type
+id: node.field_oe_showcase_event_date
+field_name: field_oe_showcase_event_date
 entity_type: node
-type: skos_concept_entity_reference
+type: daterange
 settings:
-  target_type: skos_concept
-module: rdf_skos
+  datetime_type: datetime
+module: datetime_range
 locked: false
 cardinality: 1
 translatable: true
