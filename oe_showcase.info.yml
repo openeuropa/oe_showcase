@@ -4,12 +4,12 @@ description: 'Install with commonly used features for OpenEuropa Showcase profil
 core_version_requirement: ^8.9 || ^9.1
 dependencies:
   - block
-  - block_content
   - ckeditor
   - config
   - components
   - content_translation
   - datetime
+  - easy_breadcrumb
   - editor
   - file
   - filter
@@ -31,6 +31,7 @@ dependencies:
   - oe_corporate_blocks
   - oe_multilingual
   - oe_whitelabel_helper
+  - oe_whitelabel_search
 install:
   - dblog
   - dynamic_page_cache
