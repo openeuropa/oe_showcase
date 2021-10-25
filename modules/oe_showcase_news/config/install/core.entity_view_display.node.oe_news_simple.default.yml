@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.field.node.oe_news_simple.field_news_content
     - field.field.node.oe_news_simple.field_news_image
-    - field.field.node.oe_news_simple.field_news_introduction
     - field.field.node.oe_news_simple.field_news_publication_date
     - node.type.oe_news_simple
   module:
@@ -18,14 +17,14 @@ bundle: oe_news_simple
 mode: default
 content:
   field_news_content:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_news_image:
-    weight: 101
+    weight: 1
     label: above
     settings:
       image_style: ''
@@ -33,15 +32,8 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_news_introduction:
-    weight: 102
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_news_publication_date:
-    weight: 104
+    weight: 2
     label: above
     settings:
       timezone_override: Europe/Brussels
@@ -50,7 +42,7 @@ content:
     type: datetime_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

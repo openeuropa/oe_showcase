@@ -7,7 +7,7 @@ dependencies:
 id: node.field_news_content
 field_name: field_news_content
 entity_type: node
-type: text_long
+type: text_with_summary
 settings: {  }
 module: text
 locked: false
