@@ -5,7 +5,6 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.oe_news_simple.field_news_content
     - field.field.node.oe_news_simple.field_news_image
-    - field.field.node.oe_news_simple.field_news_introduction
     - field.field.node.oe_news_simple.field_news_publication_date
     - image.style.medium
     - node.type.oe_news_simple
@@ -20,13 +19,13 @@ bundle: oe_news_simple
 mode: search_result
 content:
   field_news_content:
-    weight: 3
-    label: hidden
+    type: text_summary_or_trimmed
+    weight: 4
+    region: content
+    label: above
     settings:
       trim_length: 350
     third_party_settings: {  }
-    type: text_trimmed
-    region: content
   field_news_image:
     weight: 0
     label: above
@@ -37,7 +36,7 @@ content:
     type: image
     region: content
   field_news_publication_date:
-    weight: 4
+    weight: 3
     label: above
     settings:
       timezone_override: Europe/Brussels
@@ -56,5 +55,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_news_introduction: true
   langcode: true

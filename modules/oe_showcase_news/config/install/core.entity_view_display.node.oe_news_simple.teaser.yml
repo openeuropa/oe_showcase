@@ -5,7 +5,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.oe_news_simple.field_news_content
     - field.field.node.oe_news_simple.field_news_image
-    - field.field.node.oe_news_simple.field_news_introduction
     - field.field.node.oe_news_simple.field_news_publication_date
     - node.type.oe_news_simple
   module:
@@ -23,7 +22,6 @@ content:
 hidden:
   field_news_content: true
   field_news_image: true
-  field_news_introduction: true
   field_news_publication_date: true
   langcode: true
   search_api_excerpt: true
