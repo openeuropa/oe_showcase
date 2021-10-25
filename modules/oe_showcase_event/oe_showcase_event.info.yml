@@ -1,0 +1,18 @@
+name: OpenEuropa Showcase Event
+type: module
+description: 'Demo showcase event'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+
+dependencies:
+  - rdf_skos:rdf_skos
+  - drupal:address
+  - drupal:link_attributes
+
+config_devel:
+  install:
+    - node.type.oe_showcase_event
+    - language.content_settings.node.oe_showcase_event
+    - field.storage.node.field_oe_showcase_event_type
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_type
+    - core.entity_form_display.node.oe_showcase_event.default
