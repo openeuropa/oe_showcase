@@ -1,4 +1,4 @@
-name: OpenEuropa Library Search
+name: OpenEuropa Showcase Library Search
 type: module
 description: 'Demo search feature based on search_api'
 core_version_requirement: ^8.9 || ^9.1

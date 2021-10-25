@@ -15,20 +15,10 @@ drupal:
     port: "8890"
   post_install:
     # Prepare the instance.
-    - "./vendor/bin/drush en ui_patterns -y"
-    - "./vendor/bin/drush en ui_patterns_library -y"
-    - "./vendor/bin/drush en ui_patterns_settings -y"
-    - "./vendor/bin/drush en components -y"
-    - "./vendor/bin/drush en oe_authentication -y"
-    - "./vendor/bin/drush en oe_corporate_blocks -y"
-    - "./vendor/bin/drush en easy_breadcrumb -y"
-    - "./vendor/bin/drush en oe_bootstrap_theme_helper -y"
-    - "./vendor/bin/drush en oe_whitelabel_helper -y"
-    - "./vendor/bin/drush en oe_whitelabel_search -y"
-    - "./vendor/bin/drush oe-multilingual:import-local-translations"
     - "./vendor/bin/drush config-set system.theme default oe_whitelabel -y"
     - "./vendor/bin/drush config-set system.theme admin seven -y"
     - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
+    - "./vendor/bin/drush oe-multilingual:import-local-translations"
     # Don't aggregate or some pages will not be showed properly.
     - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
     - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"

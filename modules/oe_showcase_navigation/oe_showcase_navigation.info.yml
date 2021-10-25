@@ -1,4 +1,4 @@
-name: OpenEuropa Library Navigation
+name: OpenEuropa Showcase Library Navigation
 type: module
 description: 'Demo navigation feature based on theme oe_whitelabel and easybreadcrumbs.'
 core_version_requirement: ^8.9 || ^9.1
