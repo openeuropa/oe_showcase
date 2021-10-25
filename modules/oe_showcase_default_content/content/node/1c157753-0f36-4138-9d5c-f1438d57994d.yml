@@ -41,6 +41,7 @@ default:
     -
       value: "<p>Ut posuere ligula tincidunt varius aliquet. Morbi feugiat neque mi, non efficitur nibh consequat condimentum. Ut auctor nulla lacus, eget pulvinar nibh facilisis nec. Morbi non justo eu lectus pulvinar blandit. Aliquam accumsan nisl quis elit elementum, quis varius nisl blandit. Donec aliquet condimentum dolor non semper. Cras lobortis nulla eu sagittis tempor. Nunc eu sapien et turpis consectetur venenatis. Duis odio eros, congue vel ultrices et, tincidunt imperdiet risus. Praesent non leo eget justo tempor scelerisque. Donec nec scelerisque purus. Sed facilisis dui eget sem tincidunt ultrices.</p>\r\n\r\n<p>Aliquam interdum arcu vel lorem imperdiet, eu blandit ligula consectetur. Morbi sed laoreet nisl. Aliquam iaculis turpis at justo tristique, eget pulvinar arcu rutrum. Maecenas sed nunc id urna posuere commodo ut sed turpis. Quisque pellentesque facilisis erat. In vestibulum mi sit amet nisi porta, eget maximus enim malesuada. Nunc feugiat, lorem et dignissim vulputate, felis justo laoreet nulla, vitae interdum est lorem vel dolor. Pellentesque hendrerit odio id risus lacinia hendrerit. Cras eget scelerisque mi, in efficitur ipsum. Phasellus consequat lectus et turpis bibendum, eu elementum purus viverra. Nunc vitae erat ante. Vestibulum nec orci vestibulum, congue magna at, fermentum lorem.</p>\r\n\r\n<p>Duis euismod magna a eros sagittis, pulvinar ultrices est cursus. Donec sit amet metus metus. Suspendisse placerat dui eu eleifend suscipit. Praesent faucibus auctor turpis sed tincidunt. Cras mollis augue pulvinar porttitor sagittis. Fusce a tincidunt ipsum. Pellentesque sit amet purus ultricies, porttitor ante vitae, ultrices nulla. Aliquam condimentum arcu eu velit aliquam, id sagittis arcu ornare. Fusce ultrices imperdiet arcu vitae mollis. Nunc hendrerit vitae orci sed semper. Curabitur pharetra sem a lacus hendrerit, quis hendrerit nisi vestibulum. Ut molestie enim ac posuere condimentum. In ac urna feugiat, pharetra urna eu, vestibulum mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc facilisis sollicitudin diam vel molestie.</p>\r\n"
       format: full_html
+      summary: "Duis euismod magna a eros sagittis, pulvinar ultrices est cursus. Donec sit amet metus metus. Suspendisse placerat dui eu eleifend suscipit. Praesent faucibus auctor turpis sed tincidunt. Cras mollis augue pulvinar porttitor sagittis. Fusce a tincidunt ipsum. Pellentesque sit amet purus ultricies, porttitor ante vitae, ultrices nulla. Aliquam condimentum arcu eu velit aliquam, id sagittis arcu ornare. Fusce ultrices imperdiet arcu vitae mollis. Nunc hendrerit vitae orci sed semper."
   field_news_image:
     -
       entity: f4a1b04c-7e28-421f-9c04-3935b187df6f
@@ -48,10 +49,6 @@ default:
       title: ''
       width: 367
       height: 267
-  field_news_introduction:
-    -
-      value: "<p>Duis euismod magna a eros sagittis, pulvinar ultrices est cursus. Donec sit amet metus metus. Suspendisse placerat dui eu eleifend suscipit. Praesent faucibus auctor turpis sed tincidunt. Cras mollis augue pulvinar porttitor sagittis. Fusce a tincidunt ipsum. Pellentesque sit amet purus ultricies, porttitor ante vitae, ultrices nulla. Aliquam condimentum arcu eu velit aliquam, id sagittis arcu ornare. Fusce ultrices imperdiet arcu vitae mollis. Nunc hendrerit vitae orci sed semper.</p>\r\n"
-      format: full_html
   field_news_publication_date:
     -
       value: '2021-10-25T15:38:03'

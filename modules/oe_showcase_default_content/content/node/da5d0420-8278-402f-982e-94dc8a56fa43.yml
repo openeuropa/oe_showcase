@@ -41,6 +41,7 @@ default:
     -
       value: "<p>Mauris ac nulla mauris. Phasellus mollis velit eu ante finibus euismod. Donec mollis nibh eget urna commodo congue dapibus quis lectus. Suspendisse potenti. Nam tortor lacus, tincidunt in risus ac, venenatis accumsan lorem. Proin ut nisi quam. Pellentesque consectetur nunc vitae dui egestas fermentum. Mauris ut ultricies augue, id pellentesque est. Suspendisse quis nunc purus. Ut sit amet libero sit amet tellus ultricies posuere. Integer at dolor eu arcu pellentesque gravida. Sed laoreet consectetur volutpat. Vestibulum eget aliquet neque. Donec quis ornare nibh.</p>\r\n\r\n<p>Curabitur est augue, lacinia et neque at, commodo iaculis eros. Sed vel massa vel nulla faucibus suscipit sit amet sed magna. Ut eu viverra nisl. Pellentesque ut orci sit amet nisi condimentum fermentum non in leo. Nulla quis dui at odio posuere blandit eget in purus. Phasellus tristique lacus nec nibh accumsan consectetur. Phasellus consequat elit finibus aliquet dictum. Pellentesque at est euismod, pretium mi a, pellentesque lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent facilisis tempor fringilla. Fusce sed consectetur tellus, a auctor ex. Donec eget lectus commodo, consectetur nisl sed, placerat est. Phasellus congue lacus quis lacus tristique, at suscipit ligula lobortis.</p>\r\n\r\n<p>Donec sit amet tempor ligula. Sed et justo elementum, consectetur tellus a, dictum risus. Integer rhoncus sit amet tortor ac aliquam. Duis augue erat, semper ut arcu eu, tincidunt suscipit tellus. Suspendisse potenti. Vivamus eu nunc eget velit facilisis placerat sit amet sed magna. Curabitur tortor orci, consectetur nec ultrices ac, dapibus ac leo. In luctus blandit magna, in pellentesque odio egestas sit amet. Morbi consectetur dapibus sem, et scelerisque nunc gravida vel. Etiam rhoncus sit amet urna euismod tristique. Integer sagittis massa vitae ipsum condimentum, eget commodo turpis mattis. Donec bibendum est in risus rhoncus faucibus. Aliquam luctus, sapien eget luctus consequat, mi nibh elementum sapien, id dictum augue nisi in augue. Cras sed quam sit amet massa ultrices eleifend. In hac habitasse platea dictumst.</p>\r\n"
       format: full_html
+      summary: "Ut a aliquet turpis, in tempus mauris. Ut fermentum risus in luctus viverra. Curabitur id justo sit amet nibh semper blandit. Sed consequat diam quis nulla posuere faucibus. Nullam fermentum mauris id est scelerisque dictum. Ut luctus sit amet augue et vehicula. Suspendisse vulputate orci lacinia est ullamcorper venenatis."
   field_news_image:
     -
       entity: 8b902b0b-d406-4038-bafb-01940dd1bc42
@@ -48,10 +49,6 @@ default:
       title: ''
       width: 367
       height: 267
-  field_news_introduction:
-    -
-      value: "<p>Ut a aliquet turpis, in tempus mauris. Ut fermentum risus in luctus viverra. Curabitur id justo sit amet nibh semper blandit. Sed consequat diam quis nulla posuere faucibus. Nullam fermentum mauris id est scelerisque dictum. Ut luctus sit amet augue et vehicula. Suspendisse vulputate orci lacinia est ullamcorper venenatis.</p>\r\n"
-      format: full_html
   field_news_publication_date:
     -
       value: '2021-11-02T16:41:02'
