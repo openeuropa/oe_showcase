@@ -34,5 +34,7 @@ config_devel:
     - user.role.editor
     - pathauto.pattern.news_url_alias_pattern
     - block.block.page_title_news
+    - search_api.server.showcase_news_server
+    - search_api.index.showcase_news_index
   optional:
     - language.content_settings.node.oe_news_simple

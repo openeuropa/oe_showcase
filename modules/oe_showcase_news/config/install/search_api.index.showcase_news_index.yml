@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.showcase_news_server
+  module:
+    - search_api
+    - node
+id: showcase_news_index
+name: 'Showcase news index'
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - oe_news_simple
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignore_character:
+    all_fields: false
+    fields: {  }
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: showcase_news_server
