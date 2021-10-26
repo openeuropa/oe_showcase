@@ -21,6 +21,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      oe_showcase_event: oe_showcase_event
       oe_showcase_page: oe_showcase_page
       oe_showcase_search_demo: oe_showcase_search_demo
     negate: false
