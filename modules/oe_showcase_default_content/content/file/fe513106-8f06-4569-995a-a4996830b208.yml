@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: fe513106-8f06-4569-995a-a4996830b208
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_XUV94E.gif
+  uri:
+    -
+      value: 'public://2021-10/generateImage_XUV94E.gif'
+  filemime:
+    -
+      value: image/gif
+  filesize:
+    -
+      value: 2403
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 06ff84a6-d9b6-405c-922a-c94cfdec4a73
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_DElekF.jpg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_DElekF.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 2582
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

@@ -1,0 +1,99 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c0632c3e-a49b-4d98-be1a-8198e4dba418
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    a63659df-571d-4024-af8f-54ca9e8fbb7c: file
+    e70dc9cf-6535-4151-91fc-578558f9fc71: file
+    fe513106-8f06-4569-995a-a4996830b208: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Facilisis Minim Nibh'
+  created:
+    -
+      value: 1635228661
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Ad imputo ut. Blandit capto dignissim esca inhibeo oppeto pagus vereor vero ymo. Autem pagus rusticus. Augue esca ille in jumentum letalis nibh paulatim suscipere validus. Gemino jugis letalis metuo olim patria ymo. Abdo damnum dolore eligo huic interdico jugis plaga tamen. Camur consequat eu ex incassum iustum secundum utinam vulputate ymo. Acsi facilisi inhibeo patria refoveo saepius.\n\nParatus premo quidem. Inhibeo occuro quibus usitas. Dolore haero ille interdico letalis ludus nostrud nunc tamen voco. Erat refoveo sagaciter secundum singularis. Camur patria quibus utrum validus vero vulputate.\n\nBrevitas distineo esse ille olim os persto. Abdo causa erat facilisi macto vel. Abigo acsi exputo genitus ludus nibh nutus patria. Amet causa duis eros gravis illum incassum jus ratis. Dignissim ideo iusto letalis mauris suscipit. Camur cogo duis fere singularis utinam verto vicis virtus zelus. Abico damnum distineo minim paulatim pertineo saepius tation virtus.\n\nCogo dolore quis. Aliquip antehabeo aptent dolus erat imputo iriure. Comis ille lucidus nisl sudo volutpat zelus. Autem premo rusticus vero. Ad brevitas capto et haero plaga quis saepius valetudo validus.\n\nMelior natu patria. Defui enim esca modo nunc patria suscipit. Abico bene eligo euismod letalis te tincidunt valde. Abluo hos os pneum validus virtus.\n\nAd mauris probo. Euismod singularis sit velit virtus. Comis conventio elit hendrerit sudo tego. Appellatio brevitas distineo eum exerci feugiat jumentum pneum veniam virtus. Dolor eros gravis ille immitto tamen typicus vulpes.\n\nEu paulatim tum. Quis saluto sed similis sino veniam. Augue caecus euismod oppeto rusticus similis sudo uxor veniam. Cui luctus quibus utinam venio. Aptent comis feugiat gemino ideo ludus nibh quidem quidne tum. Autem camur interdico olim pertineo praemitto suscipere utrum verto. Abigo incassum turpis venio. Ad diam feugiat natu nutus obruo ut.\n\nMeus molior pertineo sudo torqueo. Comis pala suscipere turpis veniam vulputate. Abluo gemino hos ludus uxor vel vulpes. Fere secundum te ut. Macto minim modo oppeto quadrum utrum validus. Dolor gemino hos iriure macto meus nisl pagus quia. Acsi causa ex interdico paratus proprius refero secundum velit. Aptent erat gilvus ibidem pala praesent scisco utrum. Damnum ibidem neque pertineo praemitto proprius sudo tation venio.\n\nImmitto ludus magna nibh nulla paratus quadrum sed te tego. Nostrud proprius te valetudo. Eligo imputo pala quis verto. Acsi cogo ea ibidem loquor quibus ulciscor. Gemino interdico mauris quis sagaciter sino.\n\nCommodo diam ea ex luptatum odio similis suscipere validus vicis. Acsi aliquam appellatio caecus exputo mos nunc pneum ratis. Abigo appellatio augue caecus defui olim pala sit ulciscor. Abbas autem causa dolor eligo gemino genitus haero ludus rusticus. Amet augue brevitas dolus genitus melior similis. Ea euismod importunus pagus similis ullamcorper vulpes ymo.\n\nAmet duis exputo immitto lobortis luctus meus modo typicus vicis. Fere gravis humo illum immitto jugis os saluto te utinam. Abico jugis modo molior quibus. Distineo genitus pecus zelus. Abigo camur pertineo quis veniam ymo. Comis consectetuer cui dignissim macto melior saluto. Dolor proprius quia similis sino ut. Defui jugis obruo ratis sudo. Autem distineo eum occuro persto tego.\n\nEu neque tego. Bene cui facilisis humo nimis os pecus refoveo velit vulpes. Enim obruo utrum. Blandit commodo iustum valde vulpes ymo. Imputo macto zelus. Abbas nisl singularis. Antehabeo elit refoveo secundum. Antehabeo eligo nibh quae saluto suscipit. Humo ibidem jugis loquor metuo nobis nutus. Consequat iustum nunc quae singularis tamen ullamcorper volutpat.\n\n"
+      format: plain_text
+      summary: "Ad imputo ut. Blandit capto dignissim esca inhibeo oppeto pagus vereor vero ymo. Autem pagus rusticus. Augue esca ille in jumentum letalis nibh paulatim suscipere validus. Gemino jugis letalis metuo olim patria ymo. Abdo damnum dolore eligo huic interdico jugis plaga tamen. Camur consequat eu ex incassum iustum secundum utinam vulputate ymo. Acsi facilisi inhibeo patria refoveo saepius.\n\nParatus premo quidem. Inhibeo occuro quibus usitas. Dolore haero ille interdico letalis ludus nostrud nunc tamen voco. Erat refoveo sagaciter secundum singularis. Camur patria quibus utrum validus vero vulputate.\n\nBrevitas distineo esse ille olim os persto. Abdo causa erat facilisi macto vel. Abigo acsi exputo genitus ludus nibh nutus patria. Amet causa duis eros gravis illum incassum jus ratis. Dignissim ideo iusto letalis mauris suscipit. Camur cogo duis fere singularis utinam verto vicis virtus zelus. Abico damnum distineo minim paulatim pertineo saepius tation virtus.\n\nCogo dolore quis. Aliquip antehabeo aptent dolus erat imputo iriure. Comis ille lucidus nisl sudo volutpat zelus. Autem premo rusticus vero. Ad brevitas capto et haero plaga quis saepius valetudo validus.\n\nMelior natu patria. Defui enim esca modo nunc patria suscipit. Abico bene eligo euismod letalis te tincidunt valde. Abluo hos os pneum validus virtus.\n\nAd mauris probo. Euismod singularis sit velit virtus. Comis conventio elit hendrerit sudo tego. Appellatio brevitas distineo eum exerci feugiat jumentum pneum veniam virtus. Dolor eros gravis ille immitto tamen typicus vulpes.\n\nEu paulatim tum. Quis saluto sed similis sino veniam. Augue caecus euismod oppeto rusticus similis sudo uxor veniam. Cui luctus quibus utinam venio. Aptent comis feugiat gemino ideo ludus nibh quidem quidne tum. Autem camur interdico olim pertineo praemitto suscipere utrum verto. Abigo incassum turpis venio. Ad diam feugiat natu nutus obruo ut.\n\nMeus molior pertineo sudo torqueo. Comis pala suscipere turpis veniam vulputate. Abluo gemino hos ludus uxor vel vulpes. Fere secundum te ut. Macto minim modo oppeto quadrum utrum validus. Dolor gemino hos iriure macto meus nisl pagus quia. Acsi causa ex interdico paratus proprius refero secundum velit. Aptent erat gilvus ibidem pala praesent scisco utrum. Damnum ibidem neque pertineo praemitto proprius sudo tation venio.\n\nImmitto ludus magna nibh nulla paratus quadrum sed te tego. Nostrud proprius te valetudo. Eligo imputo pala quis verto. Acsi cogo ea ibidem loquor quibus ulciscor. Gemino interdico mauris quis sagaciter sino.\n\nCommodo diam ea ex luptatum odio similis suscipere validus vicis. Acsi aliquam appellatio caecus exputo mos nunc pneum ratis. Abigo appellatio augue caecus defui olim pala sit ulciscor. Abbas autem causa dolor eligo gemino genitus haero ludus rusticus. Amet augue brevitas dolus genitus melior similis. Ea euismod importunus pagus similis ullamcorper vulpes ymo.\n\nAmet duis exputo immitto lobortis luctus meus modo typicus vicis. Fere gravis humo illum immitto jugis os saluto te utinam. Abico jugis modo molior quibus. Distineo genitus pecus zelus. Abigo camur pertineo quis veniam ymo. Comis consectetuer cui dignissim macto melior saluto. Dolor proprius quia similis sino ut. Defui jugis obruo ratis sudo. Autem distineo eum occuro persto tego.\n\nEu neque tego. Bene cui facilisis humo nimis os pecus refoveo velit vulpes. Enim obruo utrum. Blandit commodo iustum valde vulpes ymo. Imputo macto zelus. Abbas nisl singularis. Antehabeo elit refoveo secundum. Antehabeo eligo nibh quae saluto suscipit. Humo ibidem jugis loquor metuo nobis nutus. Consequat iustum nunc quae singularis tamen ullamcorper volutpat.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-08-23T23:54:46'
+      end_value: '2021-08-24T23:54:46'
+  field_oe_showcase_event_document:
+    -
+      entity: a63659df-571d-4024-af8f-54ca9e8fbb7c
+      display: false
+      description: 'Abico commodo gilvus lenis lucidus patria pecus valde. Meus tation vicis voco.'
+    -
+      entity: e70dc9cf-6535-4151-91fc-578558f9fc71
+      display: false
+      description: 'Brevitas eum jumentum lucidus modo molior quae vulpes. Consectetuer cui facilisi luptatum tego tum.'
+  field_oe_showcase_event_image:
+    -
+      entity: fe513106-8f06-4569-995a-a4996830b208
+      alt: 'Aliquip gemino iaceo inhibeo minim scisco si suscipere tum.'
+      title: 'Brevitas conventio decet tincidunt.'
+      width: 529
+      height: 236
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.thagudraped.edu'
+      title: ''
+      options: {  }
+  field_oe_showcase_event_location:
+    -
+      langcode: ''
+      country_code: FR
+      administrative_area: ''
+      locality: Strasbourg
+      dependent_locality: ''
+      postal_code: '67000'
+      sorting_code: ''
+      address_line1: '8 rue Boecklin'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.pricraslo.biz'
+      title: 'Abluo luctus refoveo. Genitus melior odio pecus si verto virtus.'
+      options: {  }

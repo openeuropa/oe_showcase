@@ -1,0 +1,89 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: dd7a847a-481c-4dac-bab6-05a2ee376d96
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    862f4b06-8464-4aaa-8a22-499d92f4f756: file
+    292765e1-a493-419c-b3dd-31fa941b014d: file
+    fae55a88-2b8e-4441-bf23-d5cc535d60d0: file
+    01abb29f-577a-494d-92b7-aca56a859f27: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Decet Imputo Nobis Ulciscor'
+  created:
+    -
+      value: 1635254787
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Accumsan brevitas comis fere metuo pecus pneum quia refoveo. Dignissim hos ille nobis odio pala si ymo. Luctus quidem similis. Aliquip esse genitus lobortis typicus voco. Ibidem iriure verto. Abluo nulla pecus scisco si typicus utrum. Duis eros esca.\n\nAliquip cui erat esse facilisis sino vulputate. Gilvus iriure laoreet sed sit. Abdo exerci facilisi pneum usitas. Commoveo jugis patria. Ille ratis vulpes. Antehabeo damnum et laoreet neque obruo quidem sit sudo tamen. Interdico iusto neque plaga quidem refero similis tation utrum velit.\n\nAmet antehabeo commoveo cui decet exputo facilisi sed suscipere ullamcorper. Abdo blandit quia utinam. Dolore magna nisl quia valde. Hendrerit modo sudo. Capto conventio gravis humo letalis mos populus.\n\nCui exputo huic iaceo jumentum nisl pecus plaga saluto turpis. Lucidus scisco ullamcorper. Adipiscing commodo duis hos pagus quidne scisco tation. Lucidus oppeto sudo tincidunt ulciscor virtus.\n\nDefui dolus gemino scisco utrum zelus. Consequat esca exerci in jugis macto typicus. Abigo persto ymo. Consequat humo inhibeo iustum valetudo vulpes zelus. Consectetuer fere meus suscipere valetudo. Antehabeo facilisis hendrerit humo nostrud odio probo sudo ulciscor.\n\nEros hendrerit incassum jumentum nutus. Paratus sagaciter similis. Ex incassum jus nutus si tation. Acsi comis euismod humo paratus plaga ratis utrum. Adipiscing exerci neo pecus sit typicus validus ymo.\n\nAccumsan amet voco. Abigo elit iustum odio saluto voco. Abdo caecus commodo feugiat mauris nunc obruo premo. Diam dolus sit ut. Nimis pneum populus proprius refero roto. Neque sagaciter venio. Loquor persto plaga quidne te. Amet aptent at gemino haero huic illum mauris suscipit tation.\n\nErat laoreet modo natu pagus veniam. Dignissim dolore gemino inhibeo lenis pala populus secundum tego. Abbas euismod nostrud patria saluto sed valetudo virtus. Commodo lenis meus nimis premo vereor. Distineo olim volutpat.\n\nAmet enim iriure lenis minim probo verto. Capto cui dolore eum inhibeo jumentum quidem verto. Iaceo meus nunc olim persto premo quia torqueo ulciscor. Augue eros hos.\n\nDuis elit erat gravis iaceo letalis te vero. Amet conventio dolor elit ex obruo oppeto scisco. Commoveo enim esse interdico loquor lucidus volutpat. Dolus ludus sagaciter secundum ut virtus. Abdo caecus capto cui ludus proprius saepius vero. Abigo cui nostrud tincidunt verto. Ad antehabeo blandit capto eligo modo oppeto.\n\nAliquam camur iustum mauris vereor. Aliquam aptent capto in secundum similis vindico. Eros jus quidem. Fere molior olim similis vel. Causa iusto os tego. Caecus haero in nibh nobis pagus zelus. Autem eligo elit genitus haero loquor occuro olim suscipit tamen.\n\nDignissim illum neo sudo vereor. Exputo huic magna torqueo. Abico caecus dignissim enim haero ibidem lenis natu. Bene neo paulatim populus ulciscor usitas. Cogo consequat importunus. Amet mos nulla vulputate. Consequat conventio haero humo in ullamcorper. Acsi antehabeo dignissim esse exerci pala virtus. Dignissim dolor erat jumentum praemitto ymo. Cui diam fere nunc venio.\n\n"
+      format: plain_text
+      summary: "Accumsan brevitas comis fere metuo pecus pneum quia refoveo. Dignissim hos ille nobis odio pala si ymo. Luctus quidem similis. Aliquip esse genitus lobortis typicus voco. Ibidem iriure verto. Abluo nulla pecus scisco si typicus utrum. Duis eros esca.\n\nAliquip cui erat esse facilisis sino vulputate. Gilvus iriure laoreet sed sit. Abdo exerci facilisi pneum usitas. Commoveo jugis patria. Ille ratis vulpes. Antehabeo damnum et laoreet neque obruo quidem sit sudo tamen. Interdico iusto neque plaga quidem refero similis tation utrum velit.\n\nAmet antehabeo commoveo cui decet exputo facilisi sed suscipere ullamcorper. Abdo blandit quia utinam. Dolore magna nisl quia valde. Hendrerit modo sudo. Capto conventio gravis humo letalis mos populus.\n\nCui exputo huic iaceo jumentum nisl pecus plaga saluto turpis. Lucidus scisco ullamcorper. Adipiscing commodo duis hos pagus quidne scisco tation. Lucidus oppeto sudo tincidunt ulciscor virtus.\n\nDefui dolus gemino scisco utrum zelus. Consequat esca exerci in jugis macto typicus. Abigo persto ymo. Consequat humo inhibeo iustum valetudo vulpes zelus. Consectetuer fere meus suscipere valetudo. Antehabeo facilisis hendrerit humo nostrud odio probo sudo ulciscor.\n\nEros hendrerit incassum jumentum nutus. Paratus sagaciter similis. Ex incassum jus nutus si tation. Acsi comis euismod humo paratus plaga ratis utrum. Adipiscing exerci neo pecus sit typicus validus ymo.\n\nAccumsan amet voco. Abigo elit iustum odio saluto voco. Abdo caecus commodo feugiat mauris nunc obruo premo. Diam dolus sit ut. Nimis pneum populus proprius refero roto. Neque sagaciter venio. Loquor persto plaga quidne te. Amet aptent at gemino haero huic illum mauris suscipit tation.\n\nErat laoreet modo natu pagus veniam. Dignissim dolore gemino inhibeo lenis pala populus secundum tego. Abbas euismod nostrud patria saluto sed valetudo virtus. Commodo lenis meus nimis premo vereor. Distineo olim volutpat.\n\nAmet enim iriure lenis minim probo verto. Capto cui dolore eum inhibeo jumentum quidem verto. Iaceo meus nunc olim persto premo quia torqueo ulciscor. Augue eros hos.\n\nDuis elit erat gravis iaceo letalis te vero. Amet conventio dolor elit ex obruo oppeto scisco. Commoveo enim esse interdico loquor lucidus volutpat. Dolus ludus sagaciter secundum ut virtus. Abdo caecus capto cui ludus proprius saepius vero. Abigo cui nostrud tincidunt verto. Ad antehabeo blandit capto eligo modo oppeto.\n\nAliquam camur iustum mauris vereor. Aliquam aptent capto in secundum similis vindico. Eros jus quidem. Fere molior olim similis vel. Causa iusto os tego. Caecus haero in nibh nobis pagus zelus. Autem eligo elit genitus haero loquor occuro olim suscipit tamen.\n\nDignissim illum neo sudo vereor. Exputo huic magna torqueo. Abico caecus dignissim enim haero ibidem lenis natu. Bene neo paulatim populus ulciscor usitas. Cogo consequat importunus. Amet mos nulla vulputate. Consequat conventio haero humo in ullamcorper. Acsi antehabeo dignissim esse exerci pala virtus. Dignissim dolor erat jumentum praemitto ymo. Cui diam fere nunc venio.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-01-07T15:21:36'
+      end_value: '2021-01-08T15:21:36'
+  field_oe_showcase_event_document:
+    -
+      entity: 862f4b06-8464-4aaa-8a22-499d92f4f756
+      display: false
+      description: 'Autem ea esse iriure luctus natu quae sagaciter tum veniam.'
+    -
+      entity: 292765e1-a493-419c-b3dd-31fa941b014d
+      display: false
+      description: 'Brevitas cui oppeto sed tamen torqueo tum validus. Ad cui et huic quidem si usitas.'
+    -
+      entity: fae55a88-2b8e-4441-bf23-d5cc535d60d0
+      display: false
+      description: 'Aliquip enim ibidem laoreet molior. Caecus lobortis pneum scisco. Et illum natu neque populus sed veniam.'
+  field_oe_showcase_event_image:
+    -
+      entity: 01abb29f-577a-494d-92b7-aca56a859f27
+      alt: 'Bene et exerci huic imputo obruo quia similis.'
+      title: 'Nutus odio oppeto pecus proprius rusticus.'
+      width: 314
+      height: 365
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.wusliswup.org'
+      title: ''
+      options: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.trinenotid.org'
+      title: 'Acsi gravis paulatim ut.'
+      options: {  }

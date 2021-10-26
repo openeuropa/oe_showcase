@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6e538347-42b6-42f0-b957-833dcbb17483
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_NiHplF.jpeg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_NiHplF.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 10624
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

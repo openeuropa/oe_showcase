@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 40b2ac16-a5e8-4b92-b96a-255e607097b9
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_is78zG.png
+  uri:
+    -
+      value: 'public://2021-10/generateImage_is78zG.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1251
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

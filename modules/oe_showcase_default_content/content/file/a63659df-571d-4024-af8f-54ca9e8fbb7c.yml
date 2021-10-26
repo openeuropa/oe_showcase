@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: a63659df-571d-4024-af8f-54ca9e8fbb7c
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: vu90tTovll.txt
+  uri:
+    -
+      value: 'public://2021-10/vu90tTovll.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 832
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

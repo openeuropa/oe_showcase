@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 01abb29f-577a-494d-92b7-aca56a859f27
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_PxHajE.jpg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_PxHajE.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 6191
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

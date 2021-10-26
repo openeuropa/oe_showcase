@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e70dc9cf-6535-4151-91fc-578558f9fc71
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: qomSoc3EbX.txt
+  uri:
+    -
+      value: 'public://2021-10/qomSoc3EbX.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 724
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581
