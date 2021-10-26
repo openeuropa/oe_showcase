@@ -65,6 +65,13 @@ display:
                 collapsible: false
                 collapsible_label: 'Sort options'
                 is_secondary: false
+            filter:
+              rendered_item:
+                plugin_id: default
+                advanced:
+                  placeholder_text: 'Search news'
+                  collapsible: false
+                  is_secondary: false
       pager:
         type: full
         options:
@@ -191,6 +198,52 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
+        rendered_item:
+          id: rendered_item
+          table: search_api_index_showcase_news_index
+          field: rendered_item
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: rendered_item_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: rendered_item_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: rendered_item
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_text
       sorts:
         field_news_publication_date:
           id: field_news_publication_date
@@ -260,6 +313,10 @@ display:
           conjunction: AND
           plugin_id: search_api_fulltext
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
