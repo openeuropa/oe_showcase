@@ -11,6 +11,9 @@ dependencies:
   - drupal:datetime_range
   - drupal:file
   - drupal:image
+  - facets_form_date_range:facets_form_date_range
+  - search_api:search_api
+  - search_api_db:search_api_db
 
 config_devel:
   install:
