@@ -17,14 +17,14 @@ bundle: oe_news_simple
 mode: default
 content:
   field_news_content:
-    weight: 3
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_news_image:
-    weight: 1
+    weight: 2
     label: above
     settings:
       image_style: ''
@@ -33,7 +33,7 @@ content:
     type: image
     region: content
   field_news_publication_date:
-    weight: 2
+    weight: 3
     label: above
     settings:
       timezone_override: Europe/Brussels

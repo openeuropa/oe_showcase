@@ -1,16 +1,61 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api.server.showcase_news_server
   module:
-    - search_api
     - node
+    - search_api
+  config:
+    - field.storage.node.field_news_content
+    - field.storage.node.field_news_publication_date
+    - search_api.server.showcase_news_server
+    - core.entity_view_mode.node.search_result
 id: showcase_news_index
 name: 'Showcase news index'
 description: ''
 read_only: false
-field_settings: {  }
+field_settings:
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_news_content:
+    label: Content
+    datasource_id: 'entity:node'
+    property_path: field_news_content
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_news_content
+  field_news_publication_date:
+    label: 'Publication date'
+    datasource_id: 'entity:node'
+    property_path: field_news_publication_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_news_publication_date
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          oe_news_simple: search_result
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:

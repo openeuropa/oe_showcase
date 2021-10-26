@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_news_content
+    - field.storage.node.field_news_contentsearch_api.index.showcase_news_index
     - node.type.oe_news_simple
   module:
     - allowed_formats
@@ -18,7 +18,7 @@ bundle: oe_news_simple
 label: Content
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

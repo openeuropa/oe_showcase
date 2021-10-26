@@ -5,7 +5,7 @@ dependencies:
     - search_api_db
 id: showcase_news_server
 name: 'Showcase news server'
-description: ''
+description: "Demo Showcase news server\r\n"
 backend: search_api_db
 backend_config:
   database: 'default:default'
