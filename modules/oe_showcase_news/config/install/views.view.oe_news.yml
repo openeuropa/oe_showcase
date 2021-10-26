@@ -271,9 +271,9 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.showcase_news_index'
-  page_1:
+  showcase_news_page:
     display_plugin: page
-    id: page_1
+    id: showcase_news_page
     display_title: Page
     position: 1
     display_options:
@@ -288,6 +288,10 @@ display:
         weight: 40
         context: '0'
         menu_name: main
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
