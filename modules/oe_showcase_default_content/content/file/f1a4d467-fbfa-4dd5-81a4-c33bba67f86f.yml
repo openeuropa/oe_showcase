@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f1a4d467-fbfa-4dd5-81a4-c33bba67f86f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: HbuPYDkd74IZgkeV31hyw3gt6fYrmya-TKsnlhH0bOQ.jpg
+  uri:
+    -
+      value: 'public://media_avportal_thumbnails/HbuPYDkd74IZgkeV31hyw3gt6fYrmya-TKsnlhH0bOQ.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 165341
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257083

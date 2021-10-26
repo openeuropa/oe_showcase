@@ -18,6 +18,7 @@ dependencies:
 
 config_devel:
   install:
+    - block.block.pagetitle
     - node.type.oe_showcase_event
     - field.storage.node.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type

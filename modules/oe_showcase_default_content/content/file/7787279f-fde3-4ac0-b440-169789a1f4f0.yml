@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7787279f-fde3-4ac0-b440-169789a1f4f0
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_Ehz46E.jpg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_Ehz46E.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 9377
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

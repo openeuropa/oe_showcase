@@ -1,0 +1,28 @@
+
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 3245e8cf-add8-40c0-9bb6-cf26fa3edee2
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: tlxPLZvHfz.txt
+  uri:
+    -
+      value: 'public://2021-10/tlxPLZvHfz.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 846
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

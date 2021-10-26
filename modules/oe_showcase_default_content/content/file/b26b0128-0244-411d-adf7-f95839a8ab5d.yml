@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b26b0128-0244-411d-adf7-f95839a8ab5d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: qJbO9Yy8xC.txt
+  uri:
+    -
+      value: 'public://2021-10/qJbO9Yy8xC.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 1023
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

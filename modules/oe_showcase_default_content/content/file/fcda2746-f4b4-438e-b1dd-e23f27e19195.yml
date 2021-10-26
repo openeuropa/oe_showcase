@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: fcda2746-f4b4-438e-b1dd-e23f27e19195
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_K3sDiE.jpg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_K3sDiE.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 6065
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

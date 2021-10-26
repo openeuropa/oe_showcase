@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: acf50a8c-415a-48f5-bd06-de5e06c8c66f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: bsfwMNLUyh.txt
+  uri:
+    -
+      value: 'public://2021-10/bsfwMNLUyh.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 989
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

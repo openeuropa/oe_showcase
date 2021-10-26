@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 6a563115-b610-432f-9f84-f9c2f2aba892
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: vcKOctqWdo.txt
+  uri:
+    -
+      value: 'public://2021-10/vcKOctqWdo.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 882
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

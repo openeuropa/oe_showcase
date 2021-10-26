@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 825fc340-ab86-48c5-acbb-c81b61e516e8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: fWD6mrtWqS.txt
+  uri:
+    -
+      value: 'public://2021-10/fWD6mrtWqS.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 766
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298
