@@ -1,0 +1,84 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 24100220-0fb4-47f5-be3f-a1713901818e
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    1f8902ff-145b-4a9e-905f-6418d2c500cc: file
+    5c994ea7-7b2d-4b6b-95b4-c4bfaef1ea9f: file
+    1cf0cfa9-311a-4e2d-b368-84e9fac69e30: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Suscipit
+  created:
+    -
+      value: 1634708607
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Elit erat jus pecus tego venio. Elit eu jugis ludus neo nulla occuro paulatim sit valde. Appellatio macto populus quidem. Abigo facilisis jus luctus melior typicus zelus.\n\nEros ludus premo probo quadrum quia quidem rusticus secundum utrum. Aliquip damnum dignissim feugiat luctus neque nunc obruo valetudo virtus. Hendrerit mauris pala suscipere utrum. Aliquam brevitas consectetuer haero tum. Abico camur huic importunus metuo praesent venio. Diam gravis lobortis nobis pagus quia saepius sino. Accumsan commoveo humo importunus inhibeo quadrum tamen vel volutpat. Abluo damnum diam fere iusto jus luctus saluto validus.\n\nHendrerit lucidus quae. Abbas ad appellatio cogo eum nibh ratis singularis venio vulputate. Camur exerci tamen valde. Iusto laoreet mos pagus populus refoveo saluto. Antehabeo causa immitto iustum nunc pneum usitas vereor ymo. Capto gemino genitus populus te. Eu ibidem vulpes. Amet neque virtus. Appellatio conventio enim exerci modo nibh paratus sagaciter. Aptent nulla plaga. Augue caecus dolor exerci qui vel vero vulpes.\n\nAntehabeo capto comis dolus duis ea enim in te voco. Comis commodo eu huic pecus sudo. Immitto nutus si. Dolore exerci ille nisl. At bene gilvus hendrerit inhibeo laoreet nutus pecus uxor vicis.\n\nDefui facilisi letalis mauris os quadrum quis typicus vereor. Blandit laoreet ludus refoveo sit utrum. At facilisis populus ratis. Commodo conventio distineo loquor luctus molior odio premo quia ut. Distineo jumentum metuo neo nostrud obruo probo vel.\n\nCommoveo consectetuer elit esca eu occuro quidne singularis usitas vel. Augue exputo gemino jugis minim occuro praesent scisco singularis volutpat. Minim patria quia quidne. Consectetuer dolus refero rusticus. Amet commoveo consequat elit jus os typicus vulpes. Exputo in loquor ulciscor vero virtus ymo. Dolore immitto importunus lucidus ludus magna quadrum sed tincidunt utinam.\n\nCaecus causa cui minim nutus oppeto tation venio zelus. Fere nutus suscipit voco. Dignissim laoreet nibh suscipit vereor vindico. Damnum ea haero jumentum loquor proprius suscipit validus. Abluo consectetuer distineo eu luctus modo plaga. Gemino in vel. Fere lucidus olim. Consectetuer elit enim huic quidne torqueo ullamcorper verto wisi. Accumsan cogo saluto sudo. Lenis quia sagaciter.\n\nAbigo ad dolus iustum te. Commoveo decet diam magna plaga sudo tum utrum vero. Causa elit exerci illum inhibeo neo quidne scisco tum usitas. Accumsan defui erat iriure laoreet loquor neo nostrud praesent utrum. Abluo aptent commoveo genitus luctus populus si usitas. Ad gemino ideo macto turpis. Lenis letalis luptatum oppeto sagaciter turpis. Abdo aliquip at commodo dolore valde.\n\nCui nisl pecus singularis vero. Acsi eros exerci huic in laoreet magna scisco tincidunt validus. Distineo nimis quae venio verto volutpat. Aliquip conventio gravis mos qui. Causa duis euismod hendrerit lenis letalis molior nulla tego. Eros fere sed sino virtus. Abigo damnum enim olim pagus quidne tamen.\n\nAntehabeo genitus ideo imputo pagus quia sudo vero. Commoveo ea eu plaga valde validus. Facilisi quadrum quidem. Adipiscing commoveo humo quibus sudo virtus. Abigo antehabeo blandit consequat jus quibus. Accumsan dignissim esse nibh rusticus. At facilisis ideo ludus roto veniam. Ibidem ille loquor proprius sit. Abdo adipiscing aptent conventio gemino luctus pagus quidne tum vero.\n\nErat paulatim voco. Abbas humo lenis vero. Abigo commoveo dignissim distineo letalis patria refero te utrum vereor. Jus minim quidne utinam. Euismod ideo imputo metuo saluto suscipere. Abbas abdo ludus nostrud sino utrum venio.\n\nMinim pertineo sudo tum turpis zelus. Amet fere in persto vereor voco. Enim gemino ideo jugis laoreet mauris praesent typicus. Aliquam blandit vulputate. Commodo esse gemino persto quidem ulciscor. Abigo decet oppeto quae sudo te veniam. Incassum refero sino. Causa dolore feugiat mos plaga sed tum typicus utrum. Abbas cui diam suscipit. Camur consectetuer inhibeo laoreet lenis loquor.\n\n"
+      format: plain_text
+      summary: "Elit erat jus pecus tego venio. Elit eu jugis ludus neo nulla occuro paulatim sit valde. Appellatio macto populus quidem. Abigo facilisis jus luctus melior typicus zelus.\n\nEros ludus premo probo quadrum quia quidem rusticus secundum utrum. Aliquip damnum dignissim feugiat luctus neque nunc obruo valetudo virtus. Hendrerit mauris pala suscipere utrum. Aliquam brevitas consectetuer haero tum. Abico camur huic importunus metuo praesent venio. Diam gravis lobortis nobis pagus quia saepius sino. Accumsan commoveo humo importunus inhibeo quadrum tamen vel volutpat. Abluo damnum diam fere iusto jus luctus saluto validus.\n\nHendrerit lucidus quae. Abbas ad appellatio cogo eum nibh ratis singularis venio vulputate. Camur exerci tamen valde. Iusto laoreet mos pagus populus refoveo saluto. Antehabeo causa immitto iustum nunc pneum usitas vereor ymo. Capto gemino genitus populus te. Eu ibidem vulpes. Amet neque virtus. Appellatio conventio enim exerci modo nibh paratus sagaciter. Aptent nulla plaga. Augue caecus dolor exerci qui vel vero vulpes.\n\nAntehabeo capto comis dolus duis ea enim in te voco. Comis commodo eu huic pecus sudo. Immitto nutus si. Dolore exerci ille nisl. At bene gilvus hendrerit inhibeo laoreet nutus pecus uxor vicis.\n\nDefui facilisi letalis mauris os quadrum quis typicus vereor. Blandit laoreet ludus refoveo sit utrum. At facilisis populus ratis. Commodo conventio distineo loquor luctus molior odio premo quia ut. Distineo jumentum metuo neo nostrud obruo probo vel.\n\nCommoveo consectetuer elit esca eu occuro quidne singularis usitas vel. Augue exputo gemino jugis minim occuro praesent scisco singularis volutpat. Minim patria quia quidne. Consectetuer dolus refero rusticus. Amet commoveo consequat elit jus os typicus vulpes. Exputo in loquor ulciscor vero virtus ymo. Dolore immitto importunus lucidus ludus magna quadrum sed tincidunt utinam.\n\nCaecus causa cui minim nutus oppeto tation venio zelus. Fere nutus suscipit voco. Dignissim laoreet nibh suscipit vereor vindico. Damnum ea haero jumentum loquor proprius suscipit validus. Abluo consectetuer distineo eu luctus modo plaga. Gemino in vel. Fere lucidus olim. Consectetuer elit enim huic quidne torqueo ullamcorper verto wisi. Accumsan cogo saluto sudo. Lenis quia sagaciter.\n\nAbigo ad dolus iustum te. Commoveo decet diam magna plaga sudo tum utrum vero. Causa elit exerci illum inhibeo neo quidne scisco tum usitas. Accumsan defui erat iriure laoreet loquor neo nostrud praesent utrum. Abluo aptent commoveo genitus luctus populus si usitas. Ad gemino ideo macto turpis. Lenis letalis luptatum oppeto sagaciter turpis. Abdo aliquip at commodo dolore valde.\n\nCui nisl pecus singularis vero. Acsi eros exerci huic in laoreet magna scisco tincidunt validus. Distineo nimis quae venio verto volutpat. Aliquip conventio gravis mos qui. Causa duis euismod hendrerit lenis letalis molior nulla tego. Eros fere sed sino virtus. Abigo damnum enim olim pagus quidne tamen.\n\nAntehabeo genitus ideo imputo pagus quia sudo vero. Commoveo ea eu plaga valde validus. Facilisi quadrum quidem. Adipiscing commoveo humo quibus sudo virtus. Abigo antehabeo blandit consequat jus quibus. Accumsan dignissim esse nibh rusticus. At facilisis ideo ludus roto veniam. Ibidem ille loquor proprius sit. Abdo adipiscing aptent conventio gemino luctus pagus quidne tum vero.\n\nErat paulatim voco. Abbas humo lenis vero. Abigo commoveo dignissim distineo letalis patria refero te utrum vereor. Jus minim quidne utinam. Euismod ideo imputo metuo saluto suscipere. Abbas abdo ludus nostrud sino utrum venio.\n\nMinim pertineo sudo tum turpis zelus. Amet fere in persto vereor voco. Enim gemino ideo jugis laoreet mauris praesent typicus. Aliquam blandit vulputate. Commodo esse gemino persto quidem ulciscor. Abigo decet oppeto quae sudo te veniam. Incassum refero sino. Causa dolore feugiat mos plaga sed tum typicus utrum. Abbas cui diam suscipit. Camur consectetuer inhibeo laoreet lenis loquor.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-07-12T03:18:35'
+      end_value: '2021-07-13T03:18:35'
+  field_oe_showcase_event_document:
+    -
+      entity: 1f8902ff-145b-4a9e-905f-6418d2c500cc
+      display: false
+      description: 'Diam neque nobis plaga quae qui torqueo. Acsi exputo ibidem minim vulputate.'
+    -
+      entity: 5c994ea7-7b2d-4b6b-95b4-c4bfaef1ea9f
+      display: false
+      description: 'Adipiscing probo quae. Accumsan acsi facilisis inhibeo mos pertineo praemitto roto virtus.'
+  field_oe_showcase_event_image:
+    -
+      entity: 1cf0cfa9-311a-4e2d-b368-84e9fac69e30
+      alt: 'Adipiscing laoreet paratus. Et hendrerit letalis nibh verto.'
+      title: 'Iriure pecus populus premo quae sagaciter usitas.'
+      width: 222
+      height: 128
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.kotiberosaswas.gov'
+      title: 'Jumentum nibh tum. Exerci letalis luctus modo neo nunc probo tum utrum.'
+      options: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/CONFERENCE_SUMMIT'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.thetraswuuete.gov'
+      title: ''
+      options: {  }

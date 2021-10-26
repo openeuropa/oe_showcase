@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 292765e1-a493-419c-b3dd-31fa941b014d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: hDiBLj8Elc.txt
+  uri:
+    -
+      value: 'public://2021-10/hDiBLj8Elc.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 1030
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

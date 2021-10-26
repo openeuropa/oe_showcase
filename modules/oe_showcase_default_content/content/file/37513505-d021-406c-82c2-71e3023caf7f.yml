@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 37513505-d021-406c-82c2-71e3023caf7f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_Uz8OSD.gif
+  uri:
+    -
+      value: 'public://2021-10/generateImage_Uz8OSD.gif'
+  filemime:
+    -
+      value: image/gif
+  filesize:
+    -
+      value: 1773
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

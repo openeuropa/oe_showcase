@@ -1,0 +1,104 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2cae2e83-2740-4b5a-b6be-1947e758c544
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    e035afe4-fbc6-4dba-8c20-41030eaac6df: file
+    35f88040-1c4e-4e10-b2a3-7af5db61134d: file
+    64c672f2-4ba0-49f9-a1a7-9096d288996e: file
+    e37994c5-5c4f-422b-9b67-a4bdf5d13bb9: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Fere Metuo'
+  created:
+    -
+      value: 1634725179
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Esca lucidus rusticus volutpat. Luptatum obruo odio saluto venio wisi. Consequat dignissim mauris sed singularis. Abigo duis fere ille. Abico appellatio cogo immitto magna melior neque ratis sudo ymo.\n\nDignissim populus similis tation tum turpis. Ideo illum obruo oppeto probo. Capto consequat laoreet quis. Dolore nisl qui quibus singularis tego. Ad ille in patria.\n\nAliquam commoveo cui defui esca ibidem importunus suscipit velit. Brevitas capto cogo comis gravis hendrerit metuo pagus ut. Consectetuer distineo eu exerci haero incassum nibh scisco usitas. Eu gravis ideo jus nibh nimis pecus vindico. Aliquip genitus lucidus pala populus roto sed te validus. Incassum lucidus pneum. Blandit consequat eros inhibeo oppeto persto praesent torqueo vindico voco.\n\nDuis ex importunus lucidus typicus vindico virtus. Aliquip appellatio ea facilisi feugiat luctus nostrud os suscipit typicus. Acsi natu nostrud nunc quidne refoveo similis ut uxor velit. At incassum iusto olim torqueo utrum. Enim eu vicis. Abico caecus defui dignissim persto pertineo pneum sit velit. Abdo facilisis genitus neo obruo os plaga sed velit vulputate.\n\nMolior pertineo ullamcorper wisi. Antehabeo distineo luctus patria premo sino sudo torqueo verto. Bene hendrerit melior pecus probo proprius quis vereor voco vulpes. Commoveo magna typicus.\n\nAmet consequat cui ex facilisi lobortis olim paratus. Capto distineo erat inhibeo loquor os venio. Cui dolore eros imputo nobis plaga roto tincidunt. Duis facilisi gemino importunus inhibeo usitas volutpat. Acsi eum hendrerit iaceo iustum meus quia sed verto. Conventio enim facilisi. Augue commoveo iustum populus. Brevitas duis hos illum laoreet melior pneum sino tation tego.\n\nBene commoveo eros ludus nunc pala refoveo sagaciter vulputate. Duis ex quis voco. Consectetuer elit iusto quadrum. Ea haero illum magna minim odio quadrum saluto si volutpat. Accumsan exputo iriure iusto nunc pneum vicis vulpes. Ulciscor valde velit. Acsi ideo importunus lenis nostrud occuro. Consectetuer duis huic letalis sudo. Haero ludus natu oppeto sagaciter similis. Incassum iustum ludus pagus quibus.\n\nQuae tation valde. Acsi cogo nibh. Exerci exputo usitas. Molior rusticus secundum. Nostrud occuro praemitto premo proprius validus. Adipiscing consequat facilisi facilisis ille iriure neo rusticus si venio. Adipiscing aptent camur exerci gravis haero pala si.\n\nDolor roto saepius suscipere vereor vero. Capto comis pagus quis. Esse illum secundum. Accumsan aptent distineo os tamen. Camur decet hos molior refoveo sed vicis. Appellatio eum praemitto saepius ymo. Adipiscing diam imputo inhibeo lobortis scisco sudo vulpes. Esse facilisi feugiat hos jumentum macto vicis.\n\nOppeto usitas veniam. Eum genitus molior nimis occuro sagaciter turpis velit. Ad melior pertineo vel wisi. Aptent autem nunc odio sed. Abigo obruo si. Elit neo pala sino vindico. Bene brevitas euismod haero saluto turpis. Imputo lobortis natu praesent quia turpis ulciscor. Abluo comis dignissim natu obruo oppeto probo refoveo saluto utinam.\n\nAt in incassum qui secundum validus vicis virtus vulpes. At consectetuer jus molior paulatim persto refero sagaciter tum velit. Cogo molior nulla tincidunt venio. At consectetuer dolor hendrerit laoreet luptatum odio proprius refero. Camur iaceo meus quae qui quia. Comis magna ratis singularis. Camur damnum genitus hendrerit inhibeo jugis letalis persto vereor. Blandit caecus damnum ibidem sit tincidunt utinam virtus.\n\nConventio ibidem nunc olim pecus sagaciter te voco. Aliquam autem commodo haero letalis praemitto probo tego utinam. Adipiscing capto distineo et lobortis nunc occuro praesent quis rusticus. Eu hendrerit nobis. Luptatum meus volutpat. Abbas conventio exerci importunus letalis luptatum singularis tego tincidunt vicis. Commodo defui esse gravis immitto mos quidne sed velit. Dolus exerci jugis quia typicus zelus.\n\n"
+      format: plain_text
+      summary: "Esca lucidus rusticus volutpat. Luptatum obruo odio saluto venio wisi. Consequat dignissim mauris sed singularis. Abigo duis fere ille. Abico appellatio cogo immitto magna melior neque ratis sudo ymo.\n\nDignissim populus similis tation tum turpis. Ideo illum obruo oppeto probo. Capto consequat laoreet quis. Dolore nisl qui quibus singularis tego. Ad ille in patria.\n\nAliquam commoveo cui defui esca ibidem importunus suscipit velit. Brevitas capto cogo comis gravis hendrerit metuo pagus ut. Consectetuer distineo eu exerci haero incassum nibh scisco usitas. Eu gravis ideo jus nibh nimis pecus vindico. Aliquip genitus lucidus pala populus roto sed te validus. Incassum lucidus pneum. Blandit consequat eros inhibeo oppeto persto praesent torqueo vindico voco.\n\nDuis ex importunus lucidus typicus vindico virtus. Aliquip appellatio ea facilisi feugiat luctus nostrud os suscipit typicus. Acsi natu nostrud nunc quidne refoveo similis ut uxor velit. At incassum iusto olim torqueo utrum. Enim eu vicis. Abico caecus defui dignissim persto pertineo pneum sit velit. Abdo facilisis genitus neo obruo os plaga sed velit vulputate.\n\nMolior pertineo ullamcorper wisi. Antehabeo distineo luctus patria premo sino sudo torqueo verto. Bene hendrerit melior pecus probo proprius quis vereor voco vulpes. Commoveo magna typicus.\n\nAmet consequat cui ex facilisi lobortis olim paratus. Capto distineo erat inhibeo loquor os venio. Cui dolore eros imputo nobis plaga roto tincidunt. Duis facilisi gemino importunus inhibeo usitas volutpat. Acsi eum hendrerit iaceo iustum meus quia sed verto. Conventio enim facilisi. Augue commoveo iustum populus. Brevitas duis hos illum laoreet melior pneum sino tation tego.\n\nBene commoveo eros ludus nunc pala refoveo sagaciter vulputate. Duis ex quis voco. Consectetuer elit iusto quadrum. Ea haero illum magna minim odio quadrum saluto si volutpat. Accumsan exputo iriure iusto nunc pneum vicis vulpes. Ulciscor valde velit. Acsi ideo importunus lenis nostrud occuro. Consectetuer duis huic letalis sudo. Haero ludus natu oppeto sagaciter similis. Incassum iustum ludus pagus quibus.\n\nQuae tation valde. Acsi cogo nibh. Exerci exputo usitas. Molior rusticus secundum. Nostrud occuro praemitto premo proprius validus. Adipiscing consequat facilisi facilisis ille iriure neo rusticus si venio. Adipiscing aptent camur exerci gravis haero pala si.\n\nDolor roto saepius suscipere vereor vero. Capto comis pagus quis. Esse illum secundum. Accumsan aptent distineo os tamen. Camur decet hos molior refoveo sed vicis. Appellatio eum praemitto saepius ymo. Adipiscing diam imputo inhibeo lobortis scisco sudo vulpes. Esse facilisi feugiat hos jumentum macto vicis.\n\nOppeto usitas veniam. Eum genitus molior nimis occuro sagaciter turpis velit. Ad melior pertineo vel wisi. Aptent autem nunc odio sed. Abigo obruo si. Elit neo pala sino vindico. Bene brevitas euismod haero saluto turpis. Imputo lobortis natu praesent quia turpis ulciscor. Abluo comis dignissim natu obruo oppeto probo refoveo saluto utinam.\n\nAt in incassum qui secundum validus vicis virtus vulpes. At consectetuer jus molior paulatim persto refero sagaciter tum velit. Cogo molior nulla tincidunt venio. At consectetuer dolor hendrerit laoreet luptatum odio proprius refero. Camur iaceo meus quae qui quia. Comis magna ratis singularis. Camur damnum genitus hendrerit inhibeo jugis letalis persto vereor. Blandit caecus damnum ibidem sit tincidunt utinam virtus.\n\nConventio ibidem nunc olim pecus sagaciter te voco. Aliquam autem commodo haero letalis praemitto probo tego utinam. Adipiscing capto distineo et lobortis nunc occuro praesent quis rusticus. Eu hendrerit nobis. Luptatum meus volutpat. Abbas conventio exerci importunus letalis luptatum singularis tego tincidunt vicis. Commodo defui esse gravis immitto mos quidne sed velit. Dolus exerci jugis quia typicus zelus.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-04-05T12:56:41'
+      end_value: '2021-04-06T12:56:41'
+  field_oe_showcase_event_document:
+    -
+      entity: e035afe4-fbc6-4dba-8c20-41030eaac6df
+      display: false
+      description: 'Camur eligo exerci imputo meus usitas. Abdo antehabeo imputo lucidus sit.'
+    -
+      entity: 35f88040-1c4e-4e10-b2a3-7af5db61134d
+      display: false
+      description: 'Diam elit metuo sed. Ea eu euismod interdico iustum laoreet neque patria vicis wisi.'
+    -
+      entity: 64c672f2-4ba0-49f9-a1a7-9096d288996e
+      display: false
+      description: 'Duis feugiat refero. Adipiscing commoveo genitus incassum iriure macto mauris quidem vero.'
+  field_oe_showcase_event_image:
+    -
+      entity: e37994c5-5c4f-422b-9b67-a4bdf5d13bb9
+      alt: 'Camur lucidus luctus ludus quadrum typicus vero zelus.'
+      title: 'Damnum hendrerit huic jugis pala tincidunt vulpes.'
+      width: 257
+      height: 238
+  field_oe_showcase_event_location:
+    -
+      langcode: ''
+      country_code: BE
+      administrative_area: ''
+      locality: Bruxelles
+      dependent_locality: ''
+      postal_code: '1000'
+      sorting_code: ''
+      address_line1: 'Rue de la Loi 130'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.wawevekupibr.org'
+      title: ''
+      options: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/POLITICAL_MEETING'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.thichatisaf.com'
+      title: 'Abdo consequat quis sagaciter sed vulpes.'
+      options: {  }

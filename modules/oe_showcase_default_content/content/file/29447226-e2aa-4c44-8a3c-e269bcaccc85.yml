@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 29447226-e2aa-4c44-8a3c-e269bcaccc85
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: jH1DcwVI84.txt
+  uri:
+    -
+      value: 'public://2021-10/jH1DcwVI84.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 969
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

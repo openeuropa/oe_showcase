@@ -1,0 +1,28 @@
+
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 64c672f2-4ba0-49f9-a1a7-9096d288996e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: w5NuxKLt6u.txt
+  uri:
+    -
+      value: 'public://2021-10/w5NuxKLt6u.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 979
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

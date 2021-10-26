@@ -1,0 +1,84 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c7b1bcf9-14fa-423d-98c8-5a3e6e3b876a
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    b3530289-8d1a-447a-9e48-8529579e8d5a: file
+    f504a5cc-e29f-4da1-8abe-2f90edae0ce2: file
+    4a71b490-5d2b-41e4-aa55-3197760b07f3: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Genitus Nisl Nulla Paulatim'
+  created:
+    -
+      value: 1635099643
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Acsi bene cui verto voco zelus. Eu facilisi iaceo jus meus oppeto qui tum. Antehabeo dolus gilvus hendrerit minim tamen vicis. At capto olim proprius qui quidem sino torqueo. Hos occuro praemitto sagaciter volutpat vulputate. Commodo consectetuer neo probo suscipit tamen vicis. Ad appellatio augue esse importunus obruo sino validus. Accumsan defui ex gilvus nutus proprius tamen valetudo.\n\nIustum ludus nostrud saepius. Appellatio bene huic nimis pecus plaga ulciscor venio vindico. Enim illum patria. Acsi diam et ibidem iusto torqueo usitas. Aptent at illum natu vero. Luctus typicus vero. Appellatio gravis premo secundum venio vereor zelus. Erat nostrud nunc. Amet at luctus nulla sit tincidunt torqueo voco.\n\nOdio quibus utrum. Conventio distineo dolor eros refero. Abico facilisis melior natu praemitto quibus wisi. Distineo probo tum ullamcorper utinam. Abdo fere jumentum oppeto utrum. Loquor mauris neque quibus vicis vulpes. Consectetuer ex facilisis gravis importunus quibus ulciscor veniam. Caecus feugiat huic letalis refero ut valetudo.\n\nAbigo suscipere ut. Consectetuer haero meus validus vero. Capto genitus ille lucidus nunc praemitto refero si tego. Facilisis hos immitto melior paulatim quidem vereor voco. At bene decet defui neo nisl patria roto.\n\nAdipiscing augue caecus dolus quia secundum. Blandit causa pecus turpis. Esca occuro ratis te valde. Abbas aliquam hos importunus incassum jumentum meus quibus quidem. Obruo populus si tamen ut venio.\n\nDolor genitus imputo oppeto quadrum tamen. Causa defui inhibeo jus odio scisco vel. Et ibidem imputo natu neo nunc populus quadrum. Bene hos ille paratus sed verto. Camur ex facilisis genitus gilvus nisl nutus sino te.\n\nAppellatio eum haero iustum nunc persto pertineo. Dolus euismod facilisi hos jumentum quae tincidunt vereor verto. Antehabeo eros huic illum imputo persto torqueo virtus.\n\nCausa ea feugiat loquor paratus proprius quis sed vulpes. Aptent fere in modo obruo occuro utrum. Conventio lobortis ludus. Capto gravis incassum iusto natu neque quae.\n\nDiam ibidem interdico lenis metuo odio persto scisco similis wisi. Aliquip lobortis melior nostrud tamen verto zelus. Aptent brevitas occuro proprius te. Capto erat molior quidem. Dolor esca gemino ille iriure quidne saepius sed. Accumsan elit ex exerci hendrerit iaceo iriure quidne te vel.\n\nBlandit minim modo typicus voco. Hos ille letalis occuro patria suscipere ut valde vicis wisi. Blandit esca gemino pagus vereor. Brevitas exerci ibidem natu populus refoveo rusticus suscipere turpis. Jus luctus luptatum macto nibh pertineo velit voco. Elit olim plaga saluto.\n\nBlandit mauris nobis quidne. Facilisis feugiat iustum meus neque nunc torqueo veniam verto. Amet aptent ea exputo ideo immitto minim oppeto quis veniam. Capto ex huic metuo nutus qui typicus vero zelus. Distineo eu facilisis loquor pneum sino typicus. Autem nunc quae ratis. Loquor usitas venio. Decet feugiat huic meus natu nisl paratus te. Autem obruo voco. Autem cogo ea fere melior refoveo rusticus sudo ullamcorper velit.\n\nMinim nisl persto scisco. Exerci proprius virtus. Blandit capto diam eros haero iriure mauris quidem. Blandit consectetuer eu eum huic sit uxor. Ad euismod facilisis jus ludus proprius ulciscor utinam. Capto damnum dolore. Cogo enim interdico nisl nobis nutus plaga ymo.\n\n"
+      format: plain_text
+      summary: "Acsi bene cui verto voco zelus. Eu facilisi iaceo jus meus oppeto qui tum. Antehabeo dolus gilvus hendrerit minim tamen vicis. At capto olim proprius qui quidem sino torqueo. Hos occuro praemitto sagaciter volutpat vulputate. Commodo consectetuer neo probo suscipit tamen vicis. Ad appellatio augue esse importunus obruo sino validus. Accumsan defui ex gilvus nutus proprius tamen valetudo.\n\nIustum ludus nostrud saepius. Appellatio bene huic nimis pecus plaga ulciscor venio vindico. Enim illum patria. Acsi diam et ibidem iusto torqueo usitas. Aptent at illum natu vero. Luctus typicus vero. Appellatio gravis premo secundum venio vereor zelus. Erat nostrud nunc. Amet at luctus nulla sit tincidunt torqueo voco.\n\nOdio quibus utrum. Conventio distineo dolor eros refero. Abico facilisis melior natu praemitto quibus wisi. Distineo probo tum ullamcorper utinam. Abdo fere jumentum oppeto utrum. Loquor mauris neque quibus vicis vulpes. Consectetuer ex facilisis gravis importunus quibus ulciscor veniam. Caecus feugiat huic letalis refero ut valetudo.\n\nAbigo suscipere ut. Consectetuer haero meus validus vero. Capto genitus ille lucidus nunc praemitto refero si tego. Facilisis hos immitto melior paulatim quidem vereor voco. At bene decet defui neo nisl patria roto.\n\nAdipiscing augue caecus dolus quia secundum. Blandit causa pecus turpis. Esca occuro ratis te valde. Abbas aliquam hos importunus incassum jumentum meus quibus quidem. Obruo populus si tamen ut venio.\n\nDolor genitus imputo oppeto quadrum tamen. Causa defui inhibeo jus odio scisco vel. Et ibidem imputo natu neo nunc populus quadrum. Bene hos ille paratus sed verto. Camur ex facilisis genitus gilvus nisl nutus sino te.\n\nAppellatio eum haero iustum nunc persto pertineo. Dolus euismod facilisi hos jumentum quae tincidunt vereor verto. Antehabeo eros huic illum imputo persto torqueo virtus.\n\nCausa ea feugiat loquor paratus proprius quis sed vulpes. Aptent fere in modo obruo occuro utrum. Conventio lobortis ludus. Capto gravis incassum iusto natu neque quae.\n\nDiam ibidem interdico lenis metuo odio persto scisco similis wisi. Aliquip lobortis melior nostrud tamen verto zelus. Aptent brevitas occuro proprius te. Capto erat molior quidem. Dolor esca gemino ille iriure quidne saepius sed. Accumsan elit ex exerci hendrerit iaceo iriure quidne te vel.\n\nBlandit minim modo typicus voco. Hos ille letalis occuro patria suscipere ut valde vicis wisi. Blandit esca gemino pagus vereor. Brevitas exerci ibidem natu populus refoveo rusticus suscipere turpis. Jus luctus luptatum macto nibh pertineo velit voco. Elit olim plaga saluto.\n\nBlandit mauris nobis quidne. Facilisis feugiat iustum meus neque nunc torqueo veniam verto. Amet aptent ea exputo ideo immitto minim oppeto quis veniam. Capto ex huic metuo nutus qui typicus vero zelus. Distineo eu facilisis loquor pneum sino typicus. Autem nunc quae ratis. Loquor usitas venio. Decet feugiat huic meus natu nisl paratus te. Autem obruo voco. Autem cogo ea fere melior refoveo rusticus sudo ullamcorper velit.\n\nMinim nisl persto scisco. Exerci proprius virtus. Blandit capto diam eros haero iriure mauris quidem. Blandit consectetuer eu eum huic sit uxor. Ad euismod facilisis jus ludus proprius ulciscor utinam. Capto damnum dolore. Cogo enim interdico nisl nobis nutus plaga ymo.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-08-11T12:52:03'
+      end_value: '2021-08-12T12:52:03'
+  field_oe_showcase_event_document:
+    -
+      entity: b3530289-8d1a-447a-9e48-8529579e8d5a
+      display: false
+      description: 'Eu ex hos obruo secundum ulciscor vindico. Abluo gravis imputo tation tego vero.'
+    -
+      entity: f504a5cc-e29f-4da1-8abe-2f90edae0ce2
+      display: false
+      description: 'Antehabeo aptent feugiat nostrud olim quadrum ulciscor verto. Euismod lenis valde ymo.'
+  field_oe_showcase_event_image:
+    -
+      entity: 4a71b490-5d2b-41e4-aa55-3197760b07f3
+      alt: 'Cogo gemino hos nostrud populus.'
+      title: 'Accumsan conventio decet defui jus similis vel vulputate.'
+      width: 274
+      height: 299
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.climetimotro.gov'
+      title: 'Antehabeo cui nulla quibus quidne tamen.'
+      options: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/INFO_DAY'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.brumoueph.com'
+      title: ''
+      options: {  }

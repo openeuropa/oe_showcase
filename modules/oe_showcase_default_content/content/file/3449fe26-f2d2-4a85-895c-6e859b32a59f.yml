@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 3449fe26-f2d2-4a85-895c-6e859b32a59f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: vKwQQlF3Ht.txt
+  uri:
+    -
+      value: 'public://2021-10/vKwQQlF3Ht.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 767
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581
