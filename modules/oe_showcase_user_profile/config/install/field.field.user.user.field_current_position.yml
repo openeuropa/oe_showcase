@@ -1,0 +1,20 @@
+uuid: e4133464-865b-4042-8049-253f40228df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_current_position
+  module:
+    - user
+id: user.user.field_current_position
+field_name: field_current_position
+entity_type: user
+bundle: user
+label: 'Current position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

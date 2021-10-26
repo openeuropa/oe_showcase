@@ -1,0 +1,36 @@
+uuid: 1d30ce98-40f8-45db-a434-10072a046b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nationality
+  module:
+    - rdf_skos
+    - user
+id: user.user.field_nationality
+field_name: field_nationality
+entity_type: user
+bundle: user
+label: Nationality
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:skos_concept'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    concept_schemes:
+      - 'http://publications.europa.eu/resource/authority/country'
+    field:
+      field_name: field_nationality
+      entity_type: user
+      bundle: user
+      concept_schemes:
+        - 'http://publications.europa.eu/resource/authority/country'
+field_type: skos_concept_entity_reference
