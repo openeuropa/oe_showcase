@@ -1,0 +1,97 @@
+uuid: 7124e015-e8f2-45d2-9a84-f1516ade91a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_city_country
+    - field.field.user.user.field_current_position
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_nationality
+    - field.field.user.user.field_profile_image
+    - field.field.user.user.field_working_languages
+  module:
+    - address
+    - datetime
+    - image
+    - rdf_skos
+    - text
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_bio:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_city_country:
+    type: address_default
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_current_position:
+    type: string
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_date_of_birth:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_gender:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skos_concept_entity_reference_label
+    region: content
+  field_nationality:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skos_concept_entity_reference_label
+    region: content
+  field_profile_image:
+    type: image
+    weight: 1
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_working_languages:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skos_concept_entity_reference_label
+    region: content
+  member_for:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true
