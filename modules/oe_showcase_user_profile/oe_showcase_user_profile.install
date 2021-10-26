@@ -12,7 +12,19 @@ use Drupal\legal\Entity\Conditions;
 /**
  * Implements hook_install().
  */
-function oe_showcase_user_profile_install() {
+function oe_showcase_user_profile_install($is_syncing) {
+  if ($is_syncing) {
+    return;
+  }
+
+  // Configure the RDF SKOS graphs.
+  $graphs = [
+    'country' => 'http://publications.europa.eu/resource/authority/country',
+    'language' => 'http://publications.europa.eu/resource/authority/language',
+    'human-sex' => 'http://publications.europa.eu/resource/dataset/human-sex',
+  ];
+  \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
+
   // Add a legal term for testing.
   Conditions::create([
     'version'    => 1,
