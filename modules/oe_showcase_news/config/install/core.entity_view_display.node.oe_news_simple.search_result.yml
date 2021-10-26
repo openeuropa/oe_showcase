@@ -19,7 +19,7 @@ bundle: oe_news_simple
 mode: search_result
 content:
   field_news_content:
-    type: text_summary_or_trimmed
+    type: text_trimmed
     weight: 4
     region: content
     label: hidden
@@ -31,9 +31,8 @@ content:
     label: hidden
     settings:
       image_style: medium
-      image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
     region: content
   field_news_publication_date:
     weight: 3
