@@ -36,7 +36,7 @@ content:
     region: content
   field_news_publication_date:
     weight: 3
-    label: above
+    label: hidden
     settings:
       timezone_override: Europe/Brussels
       format_type: html_date
