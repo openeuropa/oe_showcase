@@ -1,0 +1,96 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9116b696-686d-4630-a6ea-6bd8e1c5d543
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    a42d980f-7888-49c3-9e64-061f50906dc9: file
+    8bf3d8fe-c036-4ceb-b2a6-42eaa599dc3b: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Jus
+  created:
+    -
+      value: 1635073957
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Ea ideo interdico refoveo rusticus te vulpes. Appellatio at laoreet metuo occuro populus. Conventio cui decet dignissim humo mauris nutus paulatim. Damnum dolor fere iriure pertineo quia tamen typicus. Appellatio dignissim euismod in sagaciter velit venio vero. Aliquip cogo consectetuer et euismod luptatum metuo quibus verto volutpat. Decet genitus iusto veniam.\r\n\r\nAliquip blandit gilvus jumentum odio pneum praemitto typicus velit venio. Abdo aliquip esca ideo probo qui ratis saepius si. Abdo commoveo dignissim euismod gravis ille imputo. Augue blandit iusto neque tation vero vicis. Immitto interdico valetudo verto. Abluo antehabeo camur commoveo molior saepius tamen tincidunt volutpat.\r\n\r\nAliquip aptent huic neque. Abdo huic iaceo modo obruo sed similis ut. Ad decet melior meus nibh nulla nunc quae sudo turpis. Aliquip consectetuer damnum distineo premo singularis.\r\n\r\nAcsi jugis vereor vindico. Facilisi humo ille nunc vero virtus vulputate. Laoreet validus volutpat. Huic quidne sed. Appellatio bene gilvus hos in neo nibh usitas valde veniam. Causa quia validus. Dolore euismod incassum iusto.\r\n\r\nAmet augue capto eligo esca jus quibus rusticus. Dolore enim facilisis gravis huic in letalis te vel vicis. Acsi appellatio letalis quadrum suscipit vel venio. Aliquam augue blandit et molior mos quadrum secundum. Aliquam brevitas camur gilvus inhibeo lobortis lucidus quidne vicis voco. Cogo eum fere iusto luctus obruo occuro quis tum vel.\r\n\r\nDolore enim huic luptatum ullamcorper. Ad exputo luctus proprius roto uxor vel. Commoveo dignissim gemino genitus metuo nunc qui typicus vulputate. Accumsan appellatio iaceo iriure lucidus nostrud qui venio vulputate. Ille sudo vel. Conventio hendrerit nobis sagaciter suscipere uxor verto. Blandit damnum meus minim nisl vicis.\r\n\r\nDamnum dignissim iaceo ibidem incassum lenis praesent rusticus. Antehabeo dignissim distineo ea jumentum rusticus vulputate. Abigo eu inhibeo nobis occuro praemitto rusticus tego uxor. Abigo macto magna oppeto quidem velit vindico. Imputo loquor plaga quidne similis. Hendrerit iusto roto. Autem cui huic. Abluo exputo lobortis nunc.\r\n\r\nAbluo humo incassum natu occuro sagaciter si tego veniam. Diam haero imputo praesent turpis verto. Augue brevitas conventio occuro quidne ulciscor. Iriure luptatum praesent vel vereor. Acsi adipiscing autem comis consectetuer imputo lucidus paulatim praemitto. Brevitas humo jus ludus macto scisco. Abdo bene defui ea eligo mauris nisl paratus. Blandit caecus distineo eros tation verto.\r\n\r\nGilvus ille scisco. Premo sagaciter vulputate. Commodo hendrerit meus patria populus. Defui et ullamcorper vel vero. Ad exerci nimis qui tamen validus. Appellatio erat mauris meus oppeto scisco sudo uxor vel. Gemino jus meus modo odio sudo tation. Erat et iriure melior. Commodo consectetuer decet sudo torqueo.\r\n\r\nDignissim distineo neo nulla persto si valetudo validus verto wisi. Defui erat gemino luctus paratus refero rusticus suscipit typicus. Antehabeo esse ille iusto nibh. Gilvus jugis saepius tamen turpis venio zelus.\r\n\r\nCamur dolore genitus pneum saepius scisco. Humo nibh qui quia quibus uxor. Oppeto praesent vel. Adipiscing appellatio feugiat huic iaceo meus natu odio tum verto. Adipiscing at hos pertineo validus velit. Bene esse facilisis interdico neo premo probo ratis scisco.\r\n\r\nAbigo exerci interdico ludus pertineo quia quis ullamcorper. Amet conventio letalis pala quae ut. Euismod luptatum mos nisl te vel vindico. Accumsan consectetuer eum immitto iustum luctus neo quadrum quibus uxor. Caecus genitus iaceo pneum. Abluo enim et facilisi jus nimis qui quis. Distineo dolor humo.\r\n\r\n"
+      format: plain_text
+      summary: "Ea ideo interdico refoveo rusticus te vulpes. Appellatio at laoreet metuo occuro populus. Conventio cui decet dignissim humo mauris nutus paulatim. Damnum dolor fere iriure pertineo quia tamen typicus. Appellatio dignissim euismod in sagaciter velit venio vero. Aliquip cogo consectetuer et euismod luptatum metuo quibus verto volutpat. Decet genitus iusto veniam.\r\n\r\nAliquip blandit gilvus jumentum odio pneum praemitto typicus velit venio. Abdo aliquip esca ideo probo qui ratis saepius si. Abdo commoveo dignissim euismod gravis ille imputo. Augue blandit iusto neque tation vero vicis. Immitto interdico valetudo verto. Abluo antehabeo camur commoveo molior saepius tamen tincidunt volutpat.\r\n\r\nAliquip aptent huic neque. Abdo huic iaceo modo obruo sed similis ut. Ad decet melior meus nibh nulla nunc quae sudo turpis. Aliquip consectetuer damnum distineo premo singularis.\r\n\r\nAcsi jugis vereor vindico. Facilisi humo ille nunc vero virtus vulputate. Laoreet validus volutpat. Huic quidne sed. Appellatio bene gilvus hos in neo nibh usitas valde veniam. Causa quia validus. Dolore euismod incassum iusto.\r\n\r\nAmet augue capto eligo esca jus quibus rusticus. Dolore enim facilisis gravis huic in letalis te vel vicis. Acsi appellatio letalis quadrum suscipit vel venio. Aliquam augue blandit et molior mos quadrum secundum. Aliquam brevitas camur gilvus inhibeo lobortis lucidus quidne vicis voco. Cogo eum fere iusto luctus obruo occuro quis tum vel.\r\n\r\nDolore enim huic luptatum ullamcorper. Ad exputo luctus proprius roto uxor vel. Commoveo dignissim gemino genitus metuo nunc qui typicus vulputate. Accumsan appellatio iaceo iriure lucidus nostrud qui venio vulputate. Ille sudo vel. Conventio hendrerit nobis sagaciter suscipere uxor verto. Blandit damnum meus minim nisl vicis.\r\n\r\nDamnum dignissim iaceo ibidem incassum lenis praesent rusticus. Antehabeo dignissim distineo ea jumentum rusticus vulputate. Abigo eu inhibeo nobis occuro praemitto rusticus tego uxor. Abigo macto magna oppeto quidem velit vindico. Imputo loquor plaga quidne similis. Hendrerit iusto roto. Autem cui huic. Abluo exputo lobortis nunc.\r\n\r\nAbluo humo incassum natu occuro sagaciter si tego veniam. Diam haero imputo praesent turpis verto. Augue brevitas conventio occuro quidne ulciscor. Iriure luptatum praesent vel vereor. Acsi adipiscing autem comis consectetuer imputo lucidus paulatim praemitto. Brevitas humo jus ludus macto scisco. Abdo bene defui ea eligo mauris nisl paratus. Blandit caecus distineo eros tation verto.\r\n\r\nGilvus ille scisco. Premo sagaciter vulputate. Commodo hendrerit meus patria populus. Defui et ullamcorper vel vero. Ad exerci nimis qui tamen validus. Appellatio erat mauris meus oppeto scisco sudo uxor vel. Gemino jus meus modo odio sudo tation. Erat et iriure melior. Commodo consectetuer decet sudo torqueo.\r\n\r\nDignissim distineo neo nulla persto si valetudo validus verto wisi. Defui erat gemino luctus paratus refero rusticus suscipit typicus. Antehabeo esse ille iusto nibh. Gilvus jugis saepius tamen turpis venio zelus.\r\n\r\nCamur dolore genitus pneum saepius scisco. Humo nibh qui quia quibus uxor. Oppeto praesent vel. Adipiscing appellatio feugiat huic iaceo meus natu odio tum verto. Adipiscing at hos pertineo validus velit. Bene esse facilisis interdico neo premo probo ratis scisco.\r\n\r\nAbigo exerci interdico ludus pertineo quia quis ullamcorper. Amet conventio letalis pala quae ut. Euismod luptatum mos nisl te vel vindico. Accumsan consectetuer eum immitto iustum luctus neo quadrum quibus uxor. Caecus genitus iaceo pneum. Abluo enim et facilisi jus nimis qui quis. Distineo dolor humo.\r\n\r\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2021-08-11T16:47:34'
+      end_value: '2021-08-12T16:47:34'
+  field_oe_showcase_event_document:
+    -
+      entity: a42d980f-7888-49c3-9e64-061f50906dc9
+      display: true
+      description: ''
+  field_oe_showcase_event_image:
+    -
+      entity: 8bf3d8fe-c036-4ceb-b2a6-42eaa599dc3b
+      alt: 'Abigo bene comis enim nimis odio quis ut.'
+      title: ''
+      width: 462
+      height: 541
+  field_oe_showcase_event_location:
+    -
+      langcode: ''
+      country_code: BE
+      administrative_area: ''
+      locality: Bruxelles
+      dependent_locality: ''
+      postal_code: '1000'
+      sorting_code: ''
+      address_line1: 'Rue de la Loi 130'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.chatrosh.com'
+      title: 'Blandit iusto valetudo. Conventio et genitus lucidus magna os probo sed ut.'
+      options:
+        attributes: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.mubrupubrochew.gov'
+      title: 'Appellatio gemino ille importunus mauris nutus tum utinam.'
+      options:
+        attributes: {  }

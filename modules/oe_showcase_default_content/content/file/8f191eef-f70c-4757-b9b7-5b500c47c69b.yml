@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 8f191eef-f70c-4757-b9b7-5b500c47c69b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_sp0YZF.jpeg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_sp0YZF.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 3315
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

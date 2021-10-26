@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 239a8044-718c-400a-a4da-3f5b88d1dc9b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: iE3OU6yuE8.txt
+  uri:
+    -
+      value: 'public://2021-10/iE3OU6yuE8.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 1077
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

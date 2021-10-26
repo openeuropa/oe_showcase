@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: ad6744b6-a910-4ac4-9e30-6c4aa856e85f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: s3GlJoRE4W.txt
+  uri:
+    -
+      value: 'public://2021-10/s3GlJoRE4W.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 756
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

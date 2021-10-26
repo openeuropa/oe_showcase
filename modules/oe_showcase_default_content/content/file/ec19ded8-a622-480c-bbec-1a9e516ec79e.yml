@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: ec19ded8-a622-480c-bbec-1a9e516ec79e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: kWeXaiZ4QP.txt
+  uri:
+    -
+      value: 'public://2021-10/kWeXaiZ4QP.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 996
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

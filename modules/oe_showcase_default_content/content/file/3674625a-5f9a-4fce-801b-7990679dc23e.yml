@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 3674625a-5f9a-4fce-801b-7990679dc23e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: kMoU5LAd9S.txt
+  uri:
+    -
+      value: 'public://2021-10/kMoU5LAd9S.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 549
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

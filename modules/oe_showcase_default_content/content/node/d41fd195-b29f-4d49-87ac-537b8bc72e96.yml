@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d41fd195-b29f-4d49-87ac-537b8bc72e96
+  bundle: oe_showcase_event
+  default_langcode: en
+  depends:
+    13b27cc1-486b-4e7f-8466-c69abe48ffe2: file
+    10b44021-ac31-4baa-a529-5f6189724936: file
+    '': skos_concept
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Caecus Inhibeo Jus Venio'
+  created:
+    -
+      value: 1635082595
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_oe_showcase_event_content:
+    -
+      value: "Fere feugiat illum nisl. Abigo augue capto humo jus probo refero utinam voco ymo. Conventio esse eu jugis lucidus nisl persto populus ut vulpes. Decet obruo patria paulatim saluto. Ad distineo exerci ludus melior pecus scisco ymo.\n\nEsse persto sagaciter validus. Appellatio dolor gemino lobortis lucidus premo volutpat. Aptent eu eum ille inhibeo magna nisl persto secundum ymo. Bene facilisis illum importunus nisl. In nimis qui vereor. Appellatio saluto utinam. Commoveo dignissim validus. Erat iustum roto.\n\nAmet appellatio enim praesent roto tation. At elit validus. Aptent praesent si ullamcorper utrum venio zelus. Abico blandit elit illum populus refero turpis. Aliquam distineo hendrerit incassum jumentum laoreet luctus obruo volutpat. Aliquam aliquip capto defui nisl. Abbas abico esca eum probo vereor. Aliquip brevitas dignissim valetudo. Abdo jus patria. Natu odio persto.\n\nNostrud paratus saluto vel. Appellatio commodo consequat huic immitto nostrud te tincidunt. Adipiscing iustum macto olim pagus refero usitas. Genitus turpis uxor.\n\nIn iriure mauris persto quia scisco uxor. Adipiscing brevitas eum lenis luctus mos persto vel vindico zelus. Adipiscing causa consequat dolore eros facilisi gravis torqueo tum. Abbas aliquip brevitas ideo in scisco sit. Amet dolore eros genitus ludus tego.\n\nAbluo sed suscipit valetudo vero. Abdo consectetuer defui nunc. Abbas capto cogo dolus duis imputo odio tincidunt. Qui tation valde. Eligo gemino immitto secundum.\n\nDolus eligo erat saepius secundum tincidunt torqueo. Comis diam gemino macto persto sit velit verto vindico zelus. Aliquip consectetuer diam obruo. Aliquip exerci huic humo interdico pecus proprius sed si similis.\n\nDolus jus metuo natu neque os praesent tum. Antehabeo cogo letalis. Defui macto molior plaga quibus sit tation wisi. Nulla proprius vicis.\n\nAntehabeo conventio iriure iustum meus pertineo usitas. Distineo eu gilvus in laoreet molior sit utinam vereor vindico. Commoveo dolor duis ex exputo quadrum quia roto singularis tincidunt. Abluo aliquam causa erat importunus metuo plaga sed te tego. Abigo antehabeo humo in interdico tation te.\n\nAbluo consectetuer dolor exputo immitto loquor lucidus olim quidne. Camur eligo pertineo proprius. Abico erat ille ymo zelus. Dignissim ibidem molior neque sit vero. Immitto incassum lenis os. Duis inhibeo ratis. Amet bene cogo eros esca occuro pneum quae. Eligo genitus ibidem natu nutus pagus si valde.\n\nImputo tamen torqueo uxor. Abigo abluo cui paulatim quidne tincidunt usitas. Ex huic iriure melior populus. Interdico nulla probo suscipit te valetudo. Iustum nobis sit ulciscor. Accumsan consectetuer consequat letalis pala pertineo plaga uxor.\n\nAntehabeo exputo loquor praesent. Abico erat inhibeo jugis. Aptent diam exputo hendrerit importunus premo refoveo similis tego tincidunt. Abbas abdo diam neo plaga sudo. Ea letalis metuo natu populus. Gravis olim ratis turpis. Commoveo interdico jumentum minim oppeto pneum premo scisco similis.\n\n"
+      format: plain_text
+      summary: "Fere feugiat illum nisl. Abigo augue capto humo jus probo refero utinam voco ymo. Conventio esse eu jugis lucidus nisl persto populus ut vulpes. Decet obruo patria paulatim saluto. Ad distineo exerci ludus melior pecus scisco ymo.\n\nEsse persto sagaciter validus. Appellatio dolor gemino lobortis lucidus premo volutpat. Aptent eu eum ille inhibeo magna nisl persto secundum ymo. Bene facilisis illum importunus nisl. In nimis qui vereor. Appellatio saluto utinam. Commoveo dignissim validus. Erat iustum roto.\n\nAmet appellatio enim praesent roto tation. At elit validus. Aptent praesent si ullamcorper utrum venio zelus. Abico blandit elit illum populus refero turpis. Aliquam distineo hendrerit incassum jumentum laoreet luctus obruo volutpat. Aliquam aliquip capto defui nisl. Abbas abico esca eum probo vereor. Aliquip brevitas dignissim valetudo. Abdo jus patria. Natu odio persto.\n\nNostrud paratus saluto vel. Appellatio commodo consequat huic immitto nostrud te tincidunt. Adipiscing iustum macto olim pagus refero usitas. Genitus turpis uxor.\n\nIn iriure mauris persto quia scisco uxor. Adipiscing brevitas eum lenis luctus mos persto vel vindico zelus. Adipiscing causa consequat dolore eros facilisi gravis torqueo tum. Abbas aliquip brevitas ideo in scisco sit. Amet dolore eros genitus ludus tego.\n\nAbluo sed suscipit valetudo vero. Abdo consectetuer defui nunc. Abbas capto cogo dolus duis imputo odio tincidunt. Qui tation valde. Eligo gemino immitto secundum.\n\nDolus eligo erat saepius secundum tincidunt torqueo. Comis diam gemino macto persto sit velit verto vindico zelus. Aliquip consectetuer diam obruo. Aliquip exerci huic humo interdico pecus proprius sed si similis.\n\nDolus jus metuo natu neque os praesent tum. Antehabeo cogo letalis. Defui macto molior plaga quibus sit tation wisi. Nulla proprius vicis.\n\nAntehabeo conventio iriure iustum meus pertineo usitas. Distineo eu gilvus in laoreet molior sit utinam vereor vindico. Commoveo dolor duis ex exputo quadrum quia roto singularis tincidunt. Abluo aliquam causa erat importunus metuo plaga sed te tego. Abigo antehabeo humo in interdico tation te.\n\nAbluo consectetuer dolor exputo immitto loquor lucidus olim quidne. Camur eligo pertineo proprius. Abico erat ille ymo zelus. Dignissim ibidem molior neque sit vero. Immitto incassum lenis os. Duis inhibeo ratis. Amet bene cogo eros esca occuro pneum quae. Eligo genitus ibidem natu nutus pagus si valde.\n\nImputo tamen torqueo uxor. Abigo abluo cui paulatim quidne tincidunt usitas. Ex huic iriure melior populus. Interdico nulla probo suscipit te valetudo. Iustum nobis sit ulciscor. Accumsan consectetuer consequat letalis pala pertineo plaga uxor.\n\nAntehabeo exputo loquor praesent. Abico erat inhibeo jugis. Aptent diam exputo hendrerit importunus premo refoveo similis tego tincidunt. Abbas abdo diam neo plaga sudo. Ea letalis metuo natu populus. Gravis olim ratis turpis. Commoveo interdico jumentum minim oppeto pneum premo scisco similis.\n\n"
+  field_oe_showcase_event_date:
+    -
+      value: '2020-11-24T16:52:30'
+      end_value: '2020-11-25T16:52:30'
+  field_oe_showcase_event_document:
+    -
+      entity: 13b27cc1-486b-4e7f-8466-c69abe48ffe2
+      display: false
+      description: 'Adipiscing euismod turpis. Abbas hendrerit paratus quis secundum valde vindico.'
+  field_oe_showcase_event_image:
+    -
+      entity: 10b44021-ac31-4baa-a529-5f6189724936
+      alt: 'At autem gravis interdico magna natu patria zelus.'
+      title: 'Sagaciter secundum utrum. Eros eum facilisi genitus ibidem patria quidne.'
+      width: 152
+      height: 301
+  field_oe_showcase_event_registra:
+    -
+      uri: 'http://www.pruwuchacl.info'
+      title: ''
+      options: {  }
+  field_oe_showcase_event_type:
+    - 'http://publications.europa.eu/resource/authority/public-event-type/INFO_DAY'
+  field_oe_showcase_event_url:
+    -
+      uri: 'http://www.phebeswatochecr.info'
+      title: ''
+      options: {  }

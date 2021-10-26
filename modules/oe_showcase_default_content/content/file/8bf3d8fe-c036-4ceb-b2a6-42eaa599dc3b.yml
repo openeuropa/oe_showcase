@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 8bf3d8fe-c036-4ceb-b2a6-42eaa599dc3b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_efpcAD.jpeg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_efpcAD.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 10182
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298

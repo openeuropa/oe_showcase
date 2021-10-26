@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 763d1797-e8ca-42a7-8a2e-192b97abafe1
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_QdpqbD.jpeg
+  uri:
+    -
+      value: 'public://2021-10/generateImage_QdpqbD.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 6867
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635257298
