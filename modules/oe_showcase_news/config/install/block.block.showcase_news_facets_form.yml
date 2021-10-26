@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_published_on
+  module:
+    - facets_form
+    - system
+  theme:
+    - oe_whitelabel
+id: showcase_news_facets_form
+theme: oe_whitelabel
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'facets_form:search_api:views_page__oe_news__showcase_news_page'
+settings:
+  id: 'facets_form:search_api:views_page__oe_news__showcase_news_page'
+  label: 'Filter Options'
+  provider: facets_form
+  label_display: visible
+  live_total: false
+  button:
+    label:
+      submit: Refine
+      reset: Clear
+  facets: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false

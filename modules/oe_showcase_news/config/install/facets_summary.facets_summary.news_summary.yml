@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_news_index
+    - views.view.oe_news
+  module:
+    - search_api
+id: news_summary
+name: 'News summary'
+facets:
+  news_published_on:
+    checked: true
+    label: 'Published on'
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__oe_news__showcase_news_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
