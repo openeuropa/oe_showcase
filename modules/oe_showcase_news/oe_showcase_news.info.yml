@@ -33,5 +33,10 @@ config_devel:
     - search_api.server.showcase_news_server
     - search_api.index.showcase_news_index
     - views.view.oe_news
+    - facets_summary.facets_summary.news_summary
+    - facets.facet.news_published_on
+    - block.block.showcase_news_summary
+    - block.block.showcase_news_facets_form
+    - block.block.exposedformoe_newsshowcase_news_page
   optional:
     - language.content_settings.node.oe_news_simple
