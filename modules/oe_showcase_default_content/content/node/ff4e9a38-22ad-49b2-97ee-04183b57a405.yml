@@ -94,11 +94,15 @@ default:
     -
       uri: 'http://www.socrosput.net'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.crohaveceh.org'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank

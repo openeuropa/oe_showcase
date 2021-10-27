@@ -74,7 +74,9 @@ default:
     -
       uri: 'http://www.thagudraped.edu'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_location:
     -
       langcode: ''
@@ -96,4 +98,6 @@ default:
     -
       uri: 'http://www.pricraslo.biz'
       title: 'Abluo luctus refoveo. Genitus melior odio pecus si verto virtus.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank

@@ -94,11 +94,15 @@ default:
     -
       uri: 'http://www.wawevekupibr.org'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/POLITICAL_MEETING'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.thichatisaf.com'
       title: 'Abdo consequat quis sagaciter sed vulpes.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank

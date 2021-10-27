@@ -69,11 +69,15 @@ default:
     -
       uri: 'http://www.stodruvu.biz'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/COMPETITION_AWARD_CEREMONY'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.slegubruk.biz'
       title: 'Abdo appellatio in pneum premo refero vel velit.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank

@@ -74,11 +74,15 @@ default:
     -
       uri: 'http://www.swepepestisluve.com'
       title: 'Blandit ex haero hos macto minim olim scisco suscipere veniam.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.tholihupat.com'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank

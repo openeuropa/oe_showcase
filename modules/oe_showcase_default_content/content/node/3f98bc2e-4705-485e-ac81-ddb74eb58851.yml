@@ -74,11 +74,15 @@ default:
     -
       uri: 'http://www.droweceuomacl.info'
       title: 'Jugis ludus modo te turpis.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/INFO_DAY'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.sliuufrat.info'
       title: 'Abico at genitus. Abbas ad exputo gilvus laoreet oppeto praesent proprius virtus.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank

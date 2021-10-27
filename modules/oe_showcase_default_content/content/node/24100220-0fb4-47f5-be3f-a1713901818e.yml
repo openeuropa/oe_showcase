@@ -74,11 +74,15 @@ default:
     -
       uri: 'http://www.kotiberosaswas.gov'
       title: 'Jumentum nibh tum. Exerci letalis luctus modo neo nunc probo tum utrum.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/CONFERENCE_SUMMIT'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.thetraswuuete.gov'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
