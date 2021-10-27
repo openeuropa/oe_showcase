@@ -23,8 +23,7 @@ config_devel:
     - core.entity_view_display.node.oe_showcase_event.default
     - core.entity_form_display.node.oe_showcase_event.default
     - core.entity_view_display.node.oe_showcase_event.search_result
-    - core.entity_view_display.node.oe_showcase_event.search_index
-    - core.entity_view_display.node.oe_showcase_event.default
+    - core.entity_view_display.node.oe_showcase_event.teaser
     - field.storage.node.field_oe_showcase_event_url
     - field.storage.node.field_oe_showcase_event_registra
     - field.storage.node.field_oe_showcase_event_location

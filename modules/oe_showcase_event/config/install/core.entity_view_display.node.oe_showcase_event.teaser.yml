@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.search_index
+    - core.entity_view_mode.node.teaser
     - field.field.node.oe_showcase_event.field_oe_showcase_event_content
     - field.field.node.oe_showcase_event.field_oe_showcase_event_date
     - field.field.node.oe_showcase_event.field_oe_showcase_event_document
@@ -18,12 +18,13 @@ dependencies:
     - file
     - image
     - link
+    - rdf_skos
     - text
     - user
-id: node.oe_showcase_event.search_index
+id: node.oe_showcase_event.teaser
 targetEntityType: node
 bundle: oe_showcase_event
-mode: search_index
+mode: teaser
 content:
   field_oe_showcase_event_content:
     weight: 101
@@ -78,6 +79,14 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_oe_showcase_event_type:
+    type: skos_concept_entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   field_oe_showcase_event_url:
     weight: 106
     label: above
@@ -92,10 +101,9 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
-  field_oe_showcase_event_type: true
   langcode: true
   search_api_excerpt: true
