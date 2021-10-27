@@ -1,6 +1,6 @@
 name: OpenEuropa Showcase Event
 type: module
-description: 'Demo showcase event'
+description: 'Demo showcase event feature.'
 core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 
