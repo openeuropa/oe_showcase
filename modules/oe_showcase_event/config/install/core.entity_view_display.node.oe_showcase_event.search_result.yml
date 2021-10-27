@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.oe_showcase_event.field_oe_showcase_event_registra
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_url
+    - image.style.medium
     - node.type.oe_showcase_event
   module:
     - address
@@ -55,8 +56,8 @@ content:
     weight: 105
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: medium
+      image_link: content
     third_party_settings: {  }
     type: image
     region: content

@@ -37,7 +37,7 @@ default:
       value: true
   path:
     -
-      alias: ''
+      alias: /events/decet-imputo-nobis-ulciscor
       langcode: en
       pathauto: 1
   content_translation_source:
