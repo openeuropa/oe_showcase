@@ -36,7 +36,7 @@ default:
       value: true
   path:
     -
-      alias: ''
+      alias: /events/genitus-nisl-nulla-paulatim
       langcode: en
       pathauto: 1
   content_translation_source:
