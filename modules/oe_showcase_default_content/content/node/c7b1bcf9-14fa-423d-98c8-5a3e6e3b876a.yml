@@ -74,11 +74,15 @@ default:
     -
       uri: 'http://www.climetimotro.gov'
       title: 'Antehabeo cui nulla quibus quidne tamen.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/INFO_DAY'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.brumoueph.com'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank

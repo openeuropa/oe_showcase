@@ -79,11 +79,15 @@ default:
     -
       uri: 'http://www.wusliswup.org'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.trinenotid.org'
       title: 'Acsi gravis paulatim ut.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank

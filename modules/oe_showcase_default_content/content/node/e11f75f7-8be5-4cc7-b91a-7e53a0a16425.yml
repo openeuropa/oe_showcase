@@ -94,11 +94,15 @@ default:
     -
       uri: 'http://www.clibralototh.com'
       title: 'Esca facilisis macto neque quae rusticus valde.'
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/PARTNER_MEETING'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.shuhoconeuika.biz'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank

@@ -89,11 +89,15 @@ default:
     -
       uri: 'http://www.papriswis.info'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
   field_oe_showcase_event_type:
     - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.claswedres.biz'
       title: ''
-      options: {  }
+      options:
+        attributes:
+          target: _blank
