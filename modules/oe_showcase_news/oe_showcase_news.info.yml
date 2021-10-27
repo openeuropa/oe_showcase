@@ -39,8 +39,8 @@ config_devel:
     - views.view.oe_news
     - facets_summary.facets_summary.news_summary
     - facets.facet.news_published_on
-    - block.block.showcase_news_summary
     - block.block.showcase_news_facets_form
     - block.block.exposedformoe_newsshowcase_news_page
+    - block.block.newssummary
   optional:
     - language.content_settings.node.oe_news_simple
