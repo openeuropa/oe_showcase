@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Showcase event module.
+ */
+
+/**
+ * Implements link_attributes_plugin_alter().
+ */
+function oe_showcase_event_link_attributes_plugin_alter(&$plugins) {
+  // Set a default value for the target attribute.
+  $plugins['target']['default_value'] = '_blank';
+}
