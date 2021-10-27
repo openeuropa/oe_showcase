@@ -5,14 +5,21 @@ dependencies:
     - field.storage.node.field_oe_showcase_event_image
     - node.type.oe_showcase_event
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.oe_showcase_event.field_oe_showcase_event_image
 field_name: field_oe_showcase_event_image
 entity_type: node
 bundle: oe_showcase_event
 label: Image
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

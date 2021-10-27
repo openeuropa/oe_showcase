@@ -13,7 +13,7 @@ bundle: oe_showcase_event
 label: 'Event Type'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -22,6 +22,7 @@ settings:
     target_bundles: null
     sort:
       field: _none
+      direction: ASC
     auto_create: false
     concept_schemes:
       - 'http://publications.europa.eu/resource/authority/public-event-type'
