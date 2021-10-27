@@ -1,4 +1,4 @@
-name: OpenEuropa Library News
+name: OpenEuropa Showcase News
 type: module
 description: 'Demo News feature based on search_api'
 core_version_requirement: ^8.9 || ^9.1
