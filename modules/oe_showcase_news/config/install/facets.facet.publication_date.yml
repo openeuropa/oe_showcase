@@ -4,11 +4,12 @@ dependencies:
   config:
     - search_api.index.showcase_news_index
     - views.view.oe_news
+    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
   module:
     - search_api
-id: news_published_on
-name: 'Published on'
-url_alias: news_published_on
+id: publication_date
+name: 'Publication date'
+url_alias: publication_date
 weight: 0
 min_count: 1
 show_only_one_result: false
@@ -22,7 +23,7 @@ widget:
       from: From
       to: To
     date_format:
-      type: news_full_time_format
+      type: medium
       custom: ''
     show_numbers: false
 query_operator: or

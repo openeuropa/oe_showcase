@@ -4,14 +4,15 @@ dependencies:
   config:
     - search_api.index.showcase_news_index
     - views.view.oe_news
+    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
   module:
     - search_api
-id: news_summary
-name: 'News summary'
+id: news_facets_summary
+name: 'News Facets Summary'
 facets:
-  news_published_on:
+  publication_date:
     checked: true
-    label: 'Published on'
+    label: 'Publication date'
     separator: ', '
     weight: 0
     show_count: false
