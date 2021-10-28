@@ -55,11 +55,9 @@ function oe_showcase_news_uninstall(): void {
     'core.date_format.news_full_time_format',
     'field.storage.node.field_news_publication_date',
     'field.storage.node.field_news_image',
-    'field.storage.node.field_news_introduction',
     'field.storage.node.field_news_content',
     'field.field.node.oe_news_simple.field_news_content',
     'field.field.node.oe_news_simple.field_news_image',
-    'field.field.node.oe_news_simple.field_news_introduction',
     'field.field.node.oe_news_simple.field_news_publication_date',
     'node.type.oe_news_simple',
     'core.entity_form_display.node.oe_news_simple.default',
@@ -73,6 +71,7 @@ function oe_showcase_news_uninstall(): void {
     'language.content_settings.node.oe_news_simple',
     'system.action.user_add_role_action.editor',
     'system.action.user_remove_role_action.editor',
+    'pathauto.pattern.news_url_alias_pattern',
     'block.block.page_title_news',
   ];
   foreach ($config_list as $config_name) {
