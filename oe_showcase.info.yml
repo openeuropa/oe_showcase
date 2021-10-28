@@ -55,3 +55,8 @@ install:
 themes:
   - seven
   - oe_whitelabel
+config_devel:
+  install:
+    - purge_users.settings
+    - user_field_anonymize.configuration
+    - user.settings

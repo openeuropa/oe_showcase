@@ -18,8 +18,6 @@ dependencies:
 
 config_devel:
   install:
-    - purge_users.settings
-    - user_field_anonymize.configuration
     - search_api.index.showcase_users_index
     - search_api.server.showcase_users_server
     - views.view.showcase_users
