@@ -14,6 +14,7 @@ dependencies:
   - facets_form_date_range:facets_form_date_range
   - search_api:search_api
   - search_api_db:search_api_db
+  - drupal:ckeditor
 
 config_devel:
   install:
