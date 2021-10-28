@@ -48,5 +48,17 @@ config_devel:
     - field.storage.node.field_oe_showcase_event_content
     - field.field.node.oe_showcase_event.field_oe_showcase_event_content
     - pathauto.pattern.event_url_alias_pattern
+    - search_api.index.showcase_events_index
+    - views.view.showcase_events
+    - facets.facet.event_type
+    - facets.facet.event_date
+    - facets.facet.country
+    - facets.facet.city
+    - block.block.oe_showcase_event_list_page_facets
+    - block.block.oe_showcase_event_list_page_sorting
+    - block.block.oe_showcase_event_list_page_filter
+    - core.entity_view_display.node.oe_showcase_event.search_result
+    - block.block.showcase_facets_form
+    
   optional:
     - language.content_settings.node.oe_showcase_event

@@ -12,3 +12,23 @@ function oe_showcase_event_link_attributes_plugin_alter(&$plugins): void {
   // Set a default value for the target attribute.
   $plugins['target']['default_value'] = '_blank';
 }
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_event_theme($existing, $type, $theme, $path) {
+  return [
+    'block__oe_showcase_event_list_page_filter' => [
+      'render element' => 'elements',
+      'base hook' => 'view',
+    ],
+    'block__oe_showcase_event_list_page_sorting' => [
+      'render element' => 'elements',
+      'base hook' => 'view',
+    ],
+    'node__oe_showcase_events' => [
+      'render element' => 'elements',
+      'base hook' => 'node',
+    ],
+  ];
+}

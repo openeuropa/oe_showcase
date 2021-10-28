@@ -1,0 +1,127 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oe_showcase_event_content
+    - field.storage.node.field_oe_showcase_event_date
+    - field.storage.node.field_oe_showcase_event_location
+    - field.storage.node.field_oe_showcase_event_type
+    - search_api.server.showcase_search_server
+    - core.entity_view_mode.node.search_result
+  module:
+    - node
+    - search_api
+id: showcase_events_index
+name: 'Showcase Events Index'
+description: ''
+read_only: false
+field_settings:
+  administrative_area:
+    label: 'Event Location » The top-level administrative subdivision of the country'
+    datasource_id: 'entity:node'
+    property_path: 'field_oe_showcase_event_location:administrative_area'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_location
+  country_code:
+    label: 'Event Location » The two-letter country code'
+    datasource_id: 'entity:node'
+    property_path: 'field_oe_showcase_event_location:country_code'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_location
+  field_oe_showcase_event_content:
+    label: Content
+    datasource_id: 'entity:node'
+    property_path: field_oe_showcase_event_content
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_content
+  field_oe_showcase_event_date:
+    label: 'Event Date'
+    datasource_id: 'entity:node'
+    property_path: field_oe_showcase_event_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_date
+  field_oe_showcase_event_type:
+    label: 'Event Type'
+    datasource_id: 'entity:node'
+    property_path: field_oe_showcase_event_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_type
+  locality:
+    label: 'Event Location » The locality (i.e. city)'
+    datasource_id: 'entity:node'
+    property_path: 'field_oe_showcase_event_location:locality'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_oe_showcase_event_location
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          oe_showcase_event: search_result
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - oe_showcase_event
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    all_fields: false
+    fields:
+      - administrative_area
+      - country_code
+      - field_oe_showcase_event_content
+      - field_oe_showcase_event_type
+      - locality
+      - rendered_item
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: showcase_search_server

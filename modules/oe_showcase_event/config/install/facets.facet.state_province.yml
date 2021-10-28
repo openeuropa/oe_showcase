@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_events_index
+    - views.view.showcase_events
+  module:
+    - search_api
+id: state_province
+name: State/Province
+url_alias: state_province
+weight: 2
+min_count: 1
+show_only_one_result: false
+field_identifier: administrative_area
+facet_source_id: 'search_api:views_page__showcase_events__oe_showcase_event_list_page'
+widget:
+  type: facets_form_dropdown
+  config:
+    default_option_label: 'Select state/province'
+    child_items_prefix: '-'
+    disabled_on_empty: true
+    show_numbers: false
+query_operator: or
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  dependent_processor:
+    processor_id: dependent_processor
+    weights:
+      build: 5
+    settings:
+      city:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+      country:
+        enable: true
+        condition: not_empty
+        values: ''
+        negate: false
+      event_date:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+      event_type:
+        enable: false
+        condition: null
+        values: ''
+        negate: false
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: true

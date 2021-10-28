@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.showcase_events
+  module:
+    - system
+    - views
+  theme:
+    - oe_whitelabel
+id: oe_showcase_event_list_page_filter
+theme: oe_whitelabel
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page'
+settings:
+  id: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Filter Options'
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false

@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_events_index
+    - views.view.showcase_events
+  module:
+    - search_api
+id: event_type
+name: 'Event Type'
+url_alias: event_type
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_oe_showcase_event_type
+facet_source_id: 'search_api:views_page__showcase_events__oe_showcase_event_list_page'
+widget:
+  type: facets_form_checkbox
+  config:
+    disabled_on_empty: false
+    indent_class: indented
+    show_numbers: false
+query_operator: or
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: true

@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_events_index
+    - views.view.showcase_events
+  module:
+    - search_api
+id: event_date
+name: 'Event Date'
+url_alias: event_date
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_oe_showcase_event_date
+facet_source_id: 'search_api:views_page__showcase_events__oe_showcase_event_list_page'
+widget:
+  type: facets_form_date_range
+  config:
+    date_type: date
+    label:
+      from: 'Start date'
+      to: 'End date'
+    date_format:
+      type: medium
+      custom: ''
+    show_numbers: false
+query_operator: or
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false
