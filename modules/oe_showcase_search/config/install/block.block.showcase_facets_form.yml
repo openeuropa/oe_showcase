@@ -26,6 +26,7 @@ settings:
       submit: Refine
       reset: Clear
   facets: {  }
+  live_total: true
 visibility:
   request_path:
     id: request_path

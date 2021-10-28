@@ -2,20 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets_summary.facets_summary.news_summary
+    - facets_summary.facets_summary.news_facets_summary
+    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
   module:
     - facets_summary
     - system
   theme:
     - oe_whitelabel
-id: newssummary
+id: newsfacetssummary
 theme: oe_whitelabel
 region: content_top
-weight: -3
+weight: 0
 provider: null
-plugin: 'facets_summary_block:news_summary'
+plugin: 'facets_summary_block:news_facets_summary'
 settings:
-  id: 'facets_summary_block:news_summary'
+  id: 'facets_summary_block:news_facets_summary'
   label: 'News search results'
   provider: facets_summary
   label_display: visible
