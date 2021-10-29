@@ -23,7 +23,7 @@
         "openeuropa/oe_media": "^1.13",
         "openeuropa/oe_multilingual": "^1.8",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "1.x-dev"
+        "openeuropa/oe_whitelabel": "0.281020211720"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
@@ -76,6 +76,12 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
+                "dist": {
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
+                    "type": "tar"
+                }
+            },
+            "openeuropa/oe_whitelabel": {
                 "dist": {
                     "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
                     "type": "tar"

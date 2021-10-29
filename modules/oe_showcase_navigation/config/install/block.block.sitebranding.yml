@@ -5,15 +5,18 @@ dependencies:
     - system
   theme:
     - oe_whitelabel
-id: breadcrumbs
+id: sitebranding
 theme: oe_whitelabel
-region: breadcrumbs
+region: header_top
 weight: 0
 provider: null
-plugin: system_breadcrumb_block
+plugin: system_branding_block
 settings:
-  id: system_breadcrumb_block
-  label: Breadcrumbs
+  id: system_branding_block
+  label: 'Site branding'
   provider: system
   label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
 visibility: {  }
