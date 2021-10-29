@@ -4,12 +4,22 @@
  * Search result template.
  */
 #}
-
+{% set title = {
+  tag: 'a href=' ~ url,
+  content:  label,
+} %}
 {{ pattern('card', {
   variant: 'search',
-  title: label,
+  title: title,
   text: content.body,
   image: content.field_image[0],
-  content: content.field_category
+  badges: content.field_category,
+  content: {
+    '#type': 'html_tag',
+    '#tag': 'span',
+    '#attributes': {
+      class: 'text-muted text-nowrap me-4-5',
+    },
+    '#value': node.getCreatedTime|bcl_timeago,
+  }
 }) }}
-<hr class="d-md-none mb-4-5">
