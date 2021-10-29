@@ -72,7 +72,7 @@ function oe_showcase_event_uninstall(): void {
     'search_api.index.showcase_events_index',
     'views.view.showcase_events',
     'language.content_settings.node.oe_showcase_event',
-    'core.date_format.showcase_date_time'
+    'core.date_format.showcase_date_time',
   ];
 
   // Clear configuration.
@@ -80,4 +80,3 @@ function oe_showcase_event_uninstall(): void {
     Drupal::configFactory()->getEditable($config_name)->delete();
   }
 }
-

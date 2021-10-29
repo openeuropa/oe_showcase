@@ -33,6 +33,9 @@ function oe_showcase_event_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ * Implements hook_form_alter().
+ */
 function oe_showcase_event_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'facets_form') {
     if (isset($form['facets']['country'][0]['country']['#options'])) {
@@ -42,12 +45,13 @@ function oe_showcase_event_form_alter(&$form, &$form_state, $form_id) {
       $countries_list = $country_manager->getList();
 
       foreach ($options as $key => $value) {
-        if ($key){
+        if ($key) {
           $options[$key] = $countries_list[$key];
         }
       }
+
       // Update facet options.
-      $form['facets']['country'][0]['country']['#options'] = $options; 
+      $form['facets']['country'][0]['country']['#options'] = $options;
     }
-   }
+  }
 }

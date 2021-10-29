@@ -66,4 +66,3 @@ config_devel:
     - core.date_format.showcase_date_time
   optional:
     - language.content_settings.node.oe_showcase_event
-
