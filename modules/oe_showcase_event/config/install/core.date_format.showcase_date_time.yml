@@ -1,0 +1,7 @@
+langcode: und
+status: true
+dependencies: {  }
+id: showcase_date_time
+label: 'Showcase Date time'
+locked: false
+pattern: 'Y.m.d - H:i'

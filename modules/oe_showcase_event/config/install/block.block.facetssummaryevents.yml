@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.facets_summary_events
+  module:
+    - facets_summary
+    - system
+  theme:
+    - oe_whitelabel
+id: facetssummaryevents
+theme: oe_whitelabel
+region: content_top
+weight: -3
+provider: null
+plugin: 'facets_summary_block:facets_summary_events'
+settings:
+  id: 'facets_summary_block:facets_summary_events'
+  label: 'Search results'
+  provider: facets_summary
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false

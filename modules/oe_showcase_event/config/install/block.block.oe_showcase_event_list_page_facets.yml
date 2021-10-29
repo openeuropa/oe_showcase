@@ -6,7 +6,6 @@ dependencies:
     - facets.facet.country
     - facets.facet.event_date
     - facets.facet.event_type
-    - facets.facet.state_province
   module:
     - facets_form
     - system
@@ -33,7 +32,6 @@ settings:
     - country
     - event_date
     - event_type
-    - state_province
 visibility:
   request_path:
     id: request_path

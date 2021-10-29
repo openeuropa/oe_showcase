@@ -13,11 +13,13 @@ dependencies:
   - drupal:image
   - search_api:search_api
   - search_api_db:search_api_db
+  - drupal:menu_ui
+  - drupal:editor
+  - drupal:ckeditor
   - facets:facets
   - facets_form:facets_form
   - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
-  - drupal:ckeditor
 
 themes:
   - bartik
@@ -25,14 +27,24 @@ themes:
 
 config_devel:
   install:
-    - block.block.oe_showcase_event_page_title.yml
-    - node.type.oe_showcase_event
-    - field.storage.node.field_oe_showcase_event_type
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_type
+    - block.block.oe_showcase_event_page_title
+    - block.block.oe_showcase_event_list_page_facets
+    - block.block.oe_showcase_event_list_page_sorting
+    - block.block.oe_showcase_event_list_page_filter
+    - block.block.facetssummaryevents
+    - core.entity_view_display.node.oe_showcase_event.search_result
     - core.entity_view_display.node.oe_showcase_event.default
     - core.entity_form_display.node.oe_showcase_event.default
     - core.entity_view_display.node.oe_showcase_event.search_result
     - core.entity_view_display.node.oe_showcase_event.teaser
+    - facets.facet.event_type
+    - facets.facet.event_date
+    - facets.facet.country
+    - facets.facet.city
+    - facets.facet_source.search_api__views_page__showcase_events__oe_showcase_event_list_page
+    - facets_summary.facets_summary.facets_summary_events
+    - field.storage.node.field_oe_showcase_event_type
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_type
     - field.storage.node.field_oe_showcase_event_url
     - field.storage.node.field_oe_showcase_event_registra
     - field.storage.node.field_oe_showcase_event_location
@@ -47,18 +59,11 @@ config_devel:
     - field.field.node.oe_showcase_event.field_oe_showcase_event_date
     - field.storage.node.field_oe_showcase_event_content
     - field.field.node.oe_showcase_event.field_oe_showcase_event_content
+    - node.type.oe_showcase_event
     - pathauto.pattern.event_url_alias_pattern
     - search_api.index.showcase_events_index
     - views.view.showcase_events
-    - facets.facet.event_type
-    - facets.facet.event_date
-    - facets.facet.country
-    - facets.facet.city
-    - block.block.oe_showcase_event_list_page_facets
-    - block.block.oe_showcase_event_list_page_sorting
-    - block.block.oe_showcase_event_list_page_filter
-    - core.entity_view_display.node.oe_showcase_event.search_result
-    - block.block.showcase_facets_form
-    
+    - core.date_format.showcase_date_time
   optional:
     - language.content_settings.node.oe_showcase_event
+

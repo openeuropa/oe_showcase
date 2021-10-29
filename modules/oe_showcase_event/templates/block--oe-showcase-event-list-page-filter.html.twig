@@ -33,6 +33,10 @@
   ]
 %}
 
+{%
+  set attributes = attributes.removeClass('float-lg-end')
+%}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}

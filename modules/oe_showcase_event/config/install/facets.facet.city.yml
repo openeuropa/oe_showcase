@@ -11,7 +11,7 @@ name: City
 url_alias: city
 weight: 3
 min_count: 1
-show_only_one_result: false
+show_only_one_result: true
 field_identifier: locality
 facet_source_id: 'search_api:views_page__showcase_events__oe_showcase_event_list_page'
 widget:
@@ -19,7 +19,7 @@ widget:
   config:
     default_option_label: 'Select city'
     child_items_prefix: '-'
-    disabled_on_empty: true
+    disabled_on_empty: false
     show_numbers: false
 query_operator: or
 use_hierarchy: false
@@ -30,15 +30,27 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: false
 processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: 20
+    settings:
+      sort: DESC
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: DESC
   dependent_processor:
     processor_id: dependent_processor
     weights:
       build: 5
     settings:
       country:
-        enable: false
-        condition: null
-        values: ''
+        enable: true
+        condition: not_empty
+        values: 'Select country'
         negate: false
       event_date:
         enable: false
@@ -48,11 +60,6 @@ processor_configs:
       event_type:
         enable: false
         condition: null
-        values: ''
-        negate: false
-      state_province:
-        enable: true
-        condition: not_empty
         values: ''
         negate: false
   display_value_widget_order:
@@ -69,4 +76,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
-show_title: true
+show_title: false

@@ -26,9 +26,28 @@ function oe_showcase_event_theme($existing, $type, $theme, $path) {
       'render element' => 'elements',
       'base hook' => 'view',
     ],
-    'node__oe_showcase_events' => [
+    'node__oe_showcase_event__search_result' => [
       'render element' => 'elements',
       'base hook' => 'node',
     ],
   ];
+}
+
+function oe_showcase_event_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'facets_form') {
+    if (isset($form['facets']['country'][0]['country']['#options'])) {
+      // Set Country fullname for facet options.
+      $options = $form['facets']['country'][0]['country']['#options'];
+      $country_manager = \Drupal::service('country_manager');
+      $countries_list = $country_manager->getList();
+
+      foreach ($options as $key => $value) {
+        if ($key){
+          $options[$key] = $countries_list[$key];
+        }
+      }
+      // Update facet options.
+      $form['facets']['country'][0]['country']['#options'] = $options; 
+    }
+   }
 }

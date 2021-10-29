@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_events_index
+    - views.view.showcase_events
+  module:
+    - search_api
+id: facets_summary_events
+name: 'Facets Summary Events'
+facets:
+  city:
+    checked: true
+    label: City
+    separator: ', '
+    weight: 0
+    show_count: false
+  country:
+    checked: true
+    label: Country
+    separator: ', '
+    weight: 0
+    show_count: false
+  event_type:
+    checked: true
+    label: 'Event Type'
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__showcase_events__oe_showcase_event_list_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
