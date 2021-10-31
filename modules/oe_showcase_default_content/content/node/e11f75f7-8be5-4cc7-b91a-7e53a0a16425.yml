@@ -98,7 +98,8 @@ default:
         attributes:
           target: _blank
   field_oe_showcase_event_type:
-    - 'http://publications.europa.eu/resource/authority/public-event-type/PARTNER_MEETING'
+    -
+      target_id: 'http://publications.europa.eu/resource/authority/public-event-type/PARTNER_MEETING'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.shuhoconeuika.biz'

@@ -73,7 +73,8 @@ default:
         attributes:
           target: _blank
   field_oe_showcase_event_type:
-    - 'http://publications.europa.eu/resource/authority/public-event-type/COMPETITION_AWARD_CEREMONY'
+    -
+      target_id: 'http://publications.europa.eu/resource/authority/public-event-type/COMPETITION_AWARD_CEREMONY'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.wasedrobasapra.org'

@@ -93,7 +93,8 @@ default:
       additional_name: ''
       family_name: ''
   field_oe_showcase_event_type:
-    - 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
+    -
+      target_id: 'http://publications.europa.eu/resource/authority/public-event-type/EXHIBITION'
   field_oe_showcase_event_url:
     -
       uri: 'http://www.pricraslo.biz'
