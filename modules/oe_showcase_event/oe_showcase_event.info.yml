@@ -11,19 +11,14 @@ dependencies:
   - drupal:datetime_range
   - drupal:file
   - drupal:image
-  - search_api:search_api
-  - search_api_db:search_api_db
   - drupal:menu_ui
   - drupal:editor
   - drupal:ckeditor
-  - facets:facets
-  - facets_form:facets_form
-  - facets_summary:facets_summary
+  - drupal:views
   - facets_form_date_range:facets_form_date_range
-
-themes:
-  - bartik
-  - seven
+  - search_api:search_api
+  - search_api_db:search_api_db
+  - better_exposed_filters:better_exposed_filters
 
 config_devel:
   install:
@@ -31,7 +26,6 @@ config_devel:
     - block.block.oe_showcase_event_list_page_facets
     - block.block.oe_showcase_event_list_page_sorting
     - block.block.oe_showcase_event_list_page_filter
-    - block.block.facetssummaryevents
     - core.entity_view_display.node.oe_showcase_event.search_result
     - core.entity_view_display.node.oe_showcase_event.default
     - core.entity_form_display.node.oe_showcase_event.default
@@ -42,7 +36,6 @@ config_devel:
     - facets.facet.country
     - facets.facet.city
     - facets.facet_source.search_api__views_page__showcase_events__oe_showcase_event_list_page
-    - facets_summary.facets_summary.facets_summary_events
     - field.storage.node.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
     - field.storage.node.field_oe_showcase_event_url
@@ -62,6 +55,7 @@ config_devel:
     - node.type.oe_showcase_event
     - pathauto.pattern.event_url_alias_pattern
     - search_api.index.showcase_events_index
+    - search_api.server.showcase_events_server
     - views.view.showcase_events
     - core.date_format.showcase_date_time
   optional:
