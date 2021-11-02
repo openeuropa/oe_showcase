@@ -16,9 +16,13 @@ dependencies:
   - search_api:search_api
   - search_api_db:search_api_db
 
+themes:
+  - bartik
+  - seven
+
 config_devel:
   install:
-    - block.block.pagetitle
+    - block.block.oe_showcase_event_page_title.yml
     - node.type.oe_showcase_event
     - field.storage.node.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
