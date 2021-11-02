@@ -39,7 +39,7 @@ content:
       separator: '-'
       format_type: html_date
       timezone_override: ''
-      format_type: showcase_date_time
+      format_type: short
       separator: '-'
     third_party_settings: {  }
     type: daterange_default

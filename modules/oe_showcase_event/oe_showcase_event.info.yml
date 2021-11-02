@@ -11,52 +11,51 @@ dependencies:
   - drupal:datetime_range
   - drupal:file
   - drupal:image
-  - drupal:menu_ui
-  - drupal:editor
-  - drupal:ckeditor
   - drupal:views
+  - facets_summary:facets_summary
   - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
   - search_api:search_api
   - search_api_db:search_api_db
+  - search_api_autocomplete:search_api_autocomplete
   - better_exposed_filters:better_exposed_filters
+  - drupal:ckeditor
 
 config_devel:
   install:
-    - block.block.oe_showcase_event_page_title
-    - block.block.oe_showcase_event_list_page_facets
-    - block.block.oe_showcase_event_list_page_sorting
-    - block.block.oe_showcase_event_list_page_filter
-    - core.entity_view_display.node.oe_showcase_event.search_result
-    - core.entity_view_display.node.oe_showcase_event.default
-    - core.entity_form_display.node.oe_showcase_event.default
-    - core.entity_view_display.node.oe_showcase_event.search_result
-    - core.entity_view_display.node.oe_showcase_event.teaser
-    - facets.facet.event_type
-    - facets.facet.event_date
-    - facets.facet.country
-    - facets.facet.city
-    - facets.facet_source.search_api__views_page__showcase_events__oe_showcase_event_list_page
-    - field.storage.node.field_oe_showcase_event_type
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_type
-    - field.storage.node.field_oe_showcase_event_url
-    - field.storage.node.field_oe_showcase_event_registra
-    - field.storage.node.field_oe_showcase_event_location
-    - field.storage.node.field_oe_showcase_event_image
-    - field.storage.node.field_oe_showcase_event_document
-    - field.storage.node.field_oe_showcase_event_date
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_url
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_registra
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_location
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_image
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_document
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_date
-    - field.storage.node.field_oe_showcase_event_content
-    - field.field.node.oe_showcase_event.field_oe_showcase_event_content
-    - node.type.oe_showcase_event
-    - pathauto.pattern.event_url_alias_pattern
-    - search_api.index.showcase_events_index
-    - search_api.server.showcase_events_server
-    - views.view.showcase_events
-    - core.date_format.showcase_date_time
+    - block.block.oe_showcase_event_list_page_facets.yml
+    - block.block.oe_showcase_event_list_page_filter.yml
+    - block.block.oe_showcase_event_list_page_sorting.yml
+    - block.block.oe_showcase_event_page_title.yml
+    - core.entity_form_display.node.oe_showcase_event.default.yml
+    - core.entity_view_display.node.oe_showcase_event.default.yml
+    - core.entity_view_display.node.oe_showcase_event.search_result.yml
+    - core.entity_view_display.node.oe_showcase_event.teaser.yml
+    - facets.facet.city.yml
+    - facets.facet.country.yml
+    - facets.facet.event_date.yml
+    - facets.facet.event_type.yml
+    - facets.facet_source.search_api__views_page__showcase_events__oe_showcase_event_list_page.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_content.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_date.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_document.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_image.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_location.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_registra.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_type.yml
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_url.yml
+    - field.storage.node.field_oe_showcase_event_content.yml
+    - field.storage.node.field_oe_showcase_event_date.yml
+    - field.storage.node.field_oe_showcase_event_document.yml
+    - field.storage.node.field_oe_showcase_event_image.yml
+    - field.storage.node.field_oe_showcase_event_location.yml
+    - field.storage.node.field_oe_showcase_event_registra.yml
+    - field.storage.node.field_oe_showcase_event_type.yml
+    - field.storage.node.field_oe_showcase_event_url.yml
+    - node.type.oe_showcase_event.yml
+    - pathauto.pattern.event_url_alias_pattern.yml
+    - search_api.index.showcase_events_index.yml
+    - search_api.server.showcase_events_server.yml
+    - views.view.showcase_events.yml
   optional:
     - language.content_settings.node.oe_showcase_event
