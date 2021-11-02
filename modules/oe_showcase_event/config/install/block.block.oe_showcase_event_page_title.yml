@@ -3,30 +3,32 @@ status: true
 dependencies:
   module:
     - ctools
-    - system
+    - node
   theme:
     - oe_whitelabel
-id: pagetitle
+id: oe_showcase_event_page_title
 theme: oe_whitelabel
 region: content
-weight: -5
+weight: 0
 provider: null
 plugin: page_title_block
 settings:
   id: page_title_block
-  label: 'Page title'
+  label: 'Event Page title'
   provider: core
   label_display: '0'
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      oe_showcase_page: oe_showcase_page
-      oe_showcase_search_demo: oe_showcase_search_demo
+      oe_showcase_event: oe_showcase_event
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
+  node_type:
+    id: node_type
+    bundles:
+      oe_showcase_event: oe_showcase_event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

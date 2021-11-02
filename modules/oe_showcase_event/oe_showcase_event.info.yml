@@ -11,14 +11,21 @@ dependencies:
   - drupal:datetime_range
   - drupal:file
   - drupal:image
-  - facets_form_date_range:facets_form_date_range
   - search_api:search_api
   - search_api_db:search_api_db
+  - facets:facets
+  - facets_form:facets_form
+  - facets_summary:facets_summary
+  - facets_form_date_range:facets_form_date_range
   - drupal:ckeditor
+
+themes:
+  - bartik
+  - seven
 
 config_devel:
   install:
-    - block.block.pagetitle
+    - block.block.oe_showcase_event_page_title.yml
     - node.type.oe_showcase_event
     - field.storage.node.field_oe_showcase_event_type
     - field.field.node.oe_showcase_event.field_oe_showcase_event_type
