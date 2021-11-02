@@ -20,7 +20,6 @@ themes:
 
 config_devel:
   install:
-    - core.date_format.news_full_time_format
     - field.storage.node.field_news_publication_date
     - field.storage.node.field_news_image
     - field.storage.node.field_news_content
@@ -32,9 +31,7 @@ config_devel:
     - core.entity_view_display.node.oe_news_simple.teaser
     - core.entity_view_display.node.oe_news_simple.search_result
     - core.entity_view_display.node.oe_news_simple.default
-    - core.base_field_override.node.oe_news_simple.title
-    - core.base_field_override.node.oe_news_simple.menu_link
-    - core.base_field_override.node.oe_news_simple.path
     - user.role.editor
+    - pathauto.pattern.oe_showcase_news_alias_pattern
   optional:
     - language.content_settings.node.oe_news_simple

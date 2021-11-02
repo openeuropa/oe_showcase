@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: oe_showcase_news_alias_pattern
+label: 'OE Showcase News Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'news/[node:title]'
+selection_criteria:
+  2c705871-5380-4cb5-9c0b-8012abcff375:
+    id: node_type
+    bundles:
+      oe_news_simple: oe_news_simple
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2c705871-5380-4cb5-9c0b-8012abcff375
+selection_logic: and
+weight: -5
+relationships: {  }
