@@ -20,7 +20,7 @@ bundle: oe_news_simple
 label: Image
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -34,11 +34,11 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: 292ecfb2-1ce0-419b-acde-50a925f5478b
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 620
+    height: 600
   handler: 'default:file'
   handler_settings: {  }
 field_type: image

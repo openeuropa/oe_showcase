@@ -14,4 +14,4 @@ id: node.oe_news_simple
 target_entity_type_id: node
 target_bundle: oe_news_simple
 default_langcode: site_default
-language_alterable: true
+language_alterable: false
