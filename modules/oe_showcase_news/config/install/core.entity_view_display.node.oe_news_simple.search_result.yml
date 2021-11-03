@@ -39,7 +39,7 @@ content:
     label: hidden
     settings:
       timezone_override: Europe/Brussels
-      format_type: news_full_time_format
+      format_type: html_date
     third_party_settings: {  }
     type: datetime_default
     region: content

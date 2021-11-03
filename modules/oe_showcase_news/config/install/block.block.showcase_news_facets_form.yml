@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - facets.facet.publication_date
-    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
   module:
     - facets_form
     - system
