@@ -12,6 +12,42 @@ dependencies:
   - oe_showcase_page:oe_showcase_page
 
 default_content:
+  file:
+    # OE Showcase Search
+    - 06abc8c8-f94c-43ed-902d-82d8d748880f
+    - 09ff8f73-2813-4faf-a68d-5d18af78a947
+    - 1b89e684-b091-4534-b89e-cbfa1db1330c
+    - 292ecfb2-1ce0-419b-acde-50a925f5478b
+    - 32d67535-ff47-42dc-a88d-4a36f09849ed
+    - 45f0db6b-f83f-4a87-9235-f519dd0f6f15
+    - 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+    - 59898f57-0e39-4223-bfdb-69cd65561c46
+    - 6221418a-d630-4de9-a849-79190f45b9c6
+    - 62a50b02-ea44-4c32-9111-e73d87ba03db
+    - 95a68394-b896-4a4b-aef4-7c0e23629a9d
+    - a30cef67-ab82-4a9d-a2cd-e49fa881edb1
+    - a455f8c4-0221-4cd0-bd77-50447ced1201
+    - a503bcff-795e-4766-b6c4-3119fe82e571
+    - adef7fd3-ff01-45c3-a837-2377f4dde8d8
+    - c3443ba2-3860-49c5-9f56-9f9412f74186
+    - c5f00a24-bb15-4873-aabf-84206a7752a9
+    - e03324cd-20ea-4226-b8a3-f004ae9f0829
+    - e807a764-c26e-4d60-a288-d8925a98f961
+    - f224340d-27ac-4768-ba2e-04615d81a179
+    - ffcc05ec-0f4f-47e1-9de9-af68727199fc
+    # OE Showcase Page
+    - 5bd6ec36-6035-4c6f-bd76-0431589cd7c8
+    - 5a26c21c-63d1-42ab-bc7e-3864ad77b446
+    - 92b23df3-273d-4a51-9e33-b7ea68e12d64
+    - 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
+    - 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
+    - 6d160789-df45-4cf9-ab0c-3b0547a2170c
+  media:
+    # OE Showcase Page
+    - 8fec7b57-dff0-4a75-b032-a2076ceeccbb
+    - 4ad702f7-8953-445e-82ba-bdb314ac9377
+    - 6850c50d-1848-4b59-8594-7e5cadecf39e
+    - ee957f04-6035-4e1c-bc4e-3669250c0c30
   node:
     # OE Showcase Search
     - 752f5d7a-27ed-4e47-8d0f-90b1e568bddf
@@ -63,59 +99,6 @@ default_content:
     - a530e826-5dd6-476b-80ab-cb43d8a0e004
     - ea582677-9263-4795-b339-44ee28cf8d95
     - f63f9269-b08b-47dc-ad12-5fa53a026a54
-  file:
-    # OE Showcase Search
-    - 06abc8c8-f94c-43ed-902d-82d8d748880f
-    - 09ff8f73-2813-4faf-a68d-5d18af78a947
-    - 1b89e684-b091-4534-b89e-cbfa1db1330c
-    - 292ecfb2-1ce0-419b-acde-50a925f5478b
-    - 32d67535-ff47-42dc-a88d-4a36f09849ed
-    - 45f0db6b-f83f-4a87-9235-f519dd0f6f15
-    - 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
-    - 59898f57-0e39-4223-bfdb-69cd65561c46
-    - 6221418a-d630-4de9-a849-79190f45b9c6
-    - 62a50b02-ea44-4c32-9111-e73d87ba03db
-    - 95a68394-b896-4a4b-aef4-7c0e23629a9d
-    - a30cef67-ab82-4a9d-a2cd-e49fa881edb1
-    - a455f8c4-0221-4cd0-bd77-50447ced1201
-    - a503bcff-795e-4766-b6c4-3119fe82e571
-    - adef7fd3-ff01-45c3-a837-2377f4dde8d8
-    - c3443ba2-3860-49c5-9f56-9f9412f74186
-    - c5f00a24-bb15-4873-aabf-84206a7752a9
-    - e03324cd-20ea-4226-b8a3-f004ae9f0829
-    - e807a764-c26e-4d60-a288-d8925a98f961
-    - f224340d-27ac-4768-ba2e-04615d81a179
-    - ffcc05ec-0f4f-47e1-9de9-af68727199fc
-    # OE Showcase News
-    - 0df642d3-5a87-4bb7-8ba5-e1c21ad89615
-    - 19913cd4-c10c-4b39-aa16-3033b0faa6fe
-    - 44e2b68b-e1eb-40ba-ba62-47a2326d94aa
-    - 54554a06-f933-4d5d-8ca9-90c17b7d409a
-    - 7426cb67-eb33-4e15-bf43-75c00d070c6b
-    - 82d1a32c-e01d-40be-825c-172f217d0523
-    - 8b902b0b-d406-4038-bafb-01940dd1bc42
-    - b2c311fc-bd11-4563-85f0-6a352fb8bf03
-    - d7b419b6-37c1-419c-a3ea-9d39d3bea016
-    - d9fd8509-a1f7-4037-825f-5a4a5c5c19a1
-    - f4a1b04c-7e28-421f-9c04-3935b187df6f
-    # OE Showcase Page
-    - 5bd6ec36-6035-4c6f-bd76-0431589cd7c8
-    - 5a26c21c-63d1-42ab-bc7e-3864ad77b446
-    - 92b23df3-273d-4a51-9e33-b7ea68e12d64
-    - 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
-    - 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
-    - 6d160789-df45-4cf9-ab0c-3b0547a2170c
-    - 3ebdd3bc-44b7-42ec-9126-91ccd393ad6e
-    - b833a7eb-c451-4001-8d6e-e7eb677499a8
-  media:
-    # OE Showcase Page
-    - 8fec7b57-dff0-4a75-b032-a2076ceeccbb
-    - 4ad702f7-8953-445e-82ba-bdb314ac9377
-    - 6850c50d-1848-4b59-8594-7e5cadecf39e
-    - ee957f04-6035-4e1c-bc4e-3669250c0c30
-    - 35b7b482-8668-4ac3-82c0-a43554dda051
-    - 36b24637-901a-46df-8e8d-b7bc0618a2fc
-
   menu_link_content:
     # OE Showcase Page
     - 1b3e4017-2567-4c10-86e1-5171f99a31ef

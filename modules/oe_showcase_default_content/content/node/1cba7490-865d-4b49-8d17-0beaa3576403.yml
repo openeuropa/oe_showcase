@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: 1cba7490-865d-4b49-8d17-0beaa3576403
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    0df642d3-5a87-4bb7-8ba5-e1c21ad89615: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       value: "Nulla posuere ligula accumsan magna pulvinar lacinia. Sed venenatis tempor nulla, eget ultrices nunc ullamcorper eget. Duis ut arcu nunc. Vivamus iaculis metus ex, ut imperdiet tellus accumsan accumsan. Curabitur sit amet ex eget magna eleifend facilisis vitae ut risus. Sed et ullamcorper dui. Etiam quis scelerisque tortor, vel finibus tortor. Donec egestas scelerisque odio in commodo."
   field_news_image:
     -
-      entity: 0df642d3-5a87-4bb7-8ba5-e1c21ad89615
-      alt: 'News 7'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-12-06T16:41:48'

@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: d10db409-d4de-496f-8ea5-d267ae57c15a
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    d9fd8509-a1f7-4037-825f-5a4a5c5c19a1: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Praesent a tellus volutpat, dignissim purus id, rhoncus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ut nisl nibh. Sed est turpis, facilisis a semper at, pretium tempus ante. Mauris a viverra orci, mattis convallis orci. Praesent at massa orci. Maecenas scelerisque massa vel rhoncus dictum. Curabitur ut ex mi."
   field_news_image:
     -
-      entity: d9fd8509-a1f7-4037-825f-5a4a5c5c19a1
-      alt: 'News 5'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-08-10T15:40:21'

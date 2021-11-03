@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: da5d0420-8278-402f-982e-94dc8a56fa43
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    8b902b0b-d406-4038-bafb-01940dd1bc42: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Ut a aliquet turpis, in tempus mauris. Ut fermentum risus in luctus viverra. Curabitur id justo sit amet nibh semper blandit. Sed consequat diam quis nulla posuere faucibus. Nullam fermentum mauris id est scelerisque dictum. Ut luctus sit amet augue et vehicula. Suspendisse vulputate orci lacinia est ullamcorper venenatis."
   field_news_image:
     -
-      entity: 8b902b0b-d406-4038-bafb-01940dd1bc42
-      alt: 'News 6'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-11-02T16:41:02'

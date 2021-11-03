@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: a3a7e829-00db-4860-a889-ae7bd46fa435
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    19913cd4-c10c-4b39-aa16-3033b0faa6fe: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Donec commodo nibh in erat tempus euismod. Duis ante eros, commodo sit amet pulvinar ut, volutpat id tortor. Nulla rutrum malesuada massa, quis dignissim diam bibendum at. Mauris pretium ultricies malesuada. Nam non vulputate lectus. Nam vel vulputate turpis, at fermentum erat. Nam ut felis libero. Nulla ultrices lorem vel erat malesuada, ac tempor augue lobortis. In tortor eros, pretium nec mi at, volutpat lobortis massa. Ut et ex sapien. Vestibulum posuere nisl mauris, eu efficitur dolor volutpat sed."
   field_news_image:
     -
-      entity: 19913cd4-c10c-4b39-aa16-3033b0faa6fe
-      alt: 'News 8'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-12-09T16:42:33'

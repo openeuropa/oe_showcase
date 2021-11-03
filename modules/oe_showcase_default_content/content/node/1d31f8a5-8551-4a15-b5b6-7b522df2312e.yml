@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: 1d31f8a5-8551-4a15-b5b6-7b522df2312e
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    44e2b68b-e1eb-40ba-ba62-47a2326d94aa: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Quisque finibus neque in ante laoreet egestas. Duis cursus mauris eget lacus iaculis, placerat bibendum est mollis. Vivamus vestibulum posuere ultrices. Vestibulum justo mi, fermentum non blandit eu, volutpat ultrices est. Vestibulum fermentum leo felis, et dapibus odio auctor at."
   field_news_image:
     -
-      entity: 44e2b68b-e1eb-40ba-ba62-47a2326d94aa
-      alt: 'News 4'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-09-07T15:39:30'
