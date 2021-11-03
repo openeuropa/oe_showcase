@@ -22,13 +22,13 @@ content:
     type: text_summary_or_trimmed
     weight: 4
     region: content
-    label: above
+    label: hidden
     settings:
       trim_length: 350
     third_party_settings: {  }
   field_news_image:
     weight: 0
-    label: above
+    label: hidden
     settings:
       image_style: medium
       image_link: ''
@@ -40,7 +40,7 @@ content:
     label: above
     settings:
       timezone_override: Europe/Brussels
-      format_type: news_full_time_format
+      format_type: html_date
     third_party_settings: {  }
     type: datetime_default
     region: content
