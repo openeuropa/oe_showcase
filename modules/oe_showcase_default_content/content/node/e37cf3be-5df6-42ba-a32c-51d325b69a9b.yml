@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: e37cf3be-5df6-42ba-a32c-51d325b69a9b
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    b2c311fc-bd11-4563-85f0-6a352fb8bf03: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Nulla vehicula justo ut lectus elementum, a tincidunt felis varius. Curabitur a mattis dolor, ut egestas lacus. Nam a dui quis metus consequat rutrum in a magna. Nulla bibendum lobortis cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin aliquam odio lectus, bibendum pretium risus viverra in. Cras facilisis purus ut dolor euismod ullamcorper. Ut eget turpis non nibh ullamcorper sodales. Ut id efficitur justo. Quisque eget efficitur tellus, vel varius turpis. Proin fringilla eros eu viverra viverra. Suspendisse vel velit fringilla nibh euismod tempor. Suspendisse ligula purus, congue sed ligula id, eleifend eleifend arcu."
   field_news_image:
     -
-      entity: b2c311fc-bd11-4563-85f0-6a352fb8bf03
-      alt: 'News 11'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-11-04T16:44:46'

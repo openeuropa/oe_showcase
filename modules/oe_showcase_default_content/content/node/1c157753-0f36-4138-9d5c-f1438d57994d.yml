@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: 1c157753-0f36-4138-9d5c-f1438d57994d
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    f4a1b04c-7e28-421f-9c04-3935b187df6f: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Duis euismod magna a eros sagittis, pulvinar ultrices est cursus. Donec sit amet metus metus. Suspendisse placerat dui eu eleifend suscipit. Praesent faucibus auctor turpis sed tincidunt. Cras mollis augue pulvinar porttitor sagittis. Fusce a tincidunt ipsum. Pellentesque sit amet purus ultricies, porttitor ante vitae, ultrices nulla. Aliquam condimentum arcu eu velit aliquam, id sagittis arcu ornare. Fusce ultrices imperdiet arcu vitae mollis. Nunc hendrerit vitae orci sed semper."
   field_news_image:
     -
-      entity: f4a1b04c-7e28-421f-9c04-3935b187df6f
-      alt: 'News 3'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-10-25T15:38:03'

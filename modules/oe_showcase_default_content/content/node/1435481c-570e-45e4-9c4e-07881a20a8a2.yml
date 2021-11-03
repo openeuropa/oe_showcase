@@ -3,9 +3,9 @@ _meta:
   entity_type: node
   uuid: 1435481c-570e-45e4-9c4e-07881a20a8a2
   bundle: oe_news_simple
-  default_langcode: en
+  default_langcode: und
   depends:
-    d7b419b6-37c1-419c-a3ea-9d39d3bea016: file
+    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -44,11 +44,11 @@ default:
       summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eu convallis urna. Duis sapien purus, bibendum vel facilisis ut, interdum eget quam. Sed nec tellus non est pulvinar interdum. In luctus leo eu ligula ullamcorper, at pellentesque ipsum consequat. Proin vulputate sed augue eu iaculis. Sed mollis pharetra nibh id facilisis. Nulla eget sem vitae ipsum tristique condimentum eu sit amet erat. Maecenas ac dui dignissim, aliquet lacus id, porttitor velit. Nam et purus non velit ultrices pulvinar."
   field_news_image:
     -
-      entity: d7b419b6-37c1-419c-a3ea-9d39d3bea016
-      alt: 'News 9'
+      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
+      alt: 'default image'
       title: ''
-      width: 367
-      height: 267
+      width: 200
+      height: 200
   field_news_publication_date:
     -
       value: '2021-10-29T15:43:26'
