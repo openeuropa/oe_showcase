@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_news_content
-    - search_api.index.showcase_news_index
     - node.type.oe_news_simple
   module:
     - allowed_formats

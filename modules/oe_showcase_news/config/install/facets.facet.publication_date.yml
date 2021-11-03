@@ -4,7 +4,6 @@ dependencies:
   config:
     - search_api.index.showcase_news_index
     - views.view.oe_news
-    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
   module:
     - search_api
 id: publication_date
@@ -18,7 +17,7 @@ facet_source_id: 'search_api:views_page__oe_news__showcase_news_page'
 widget:
   type: facets_form_date_range
   config:
-    date_type: datetime
+    date_type: date
     label:
       from: From
       to: To
