@@ -7,7 +7,7 @@ _meta:
   depends:
     a63659df-571d-4024-af8f-54ca9e8fbb7c: file
     e70dc9cf-6535-4151-91fc-578558f9fc71: file
-    fe513106-8f06-4569-995a-a4996830b208: file
+    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -65,11 +65,11 @@ default:
       description: 'Brevitas eum jumentum lucidus modo molior quae vulpes. Consectetuer cui facilisi luptatum tego tum.'
   field_oe_showcase_event_image:
     -
-      entity: fe513106-8f06-4569-995a-a4996830b208
-      alt: 'Aliquip gemino iaceo inhibeo minim scisco si suscipere tum.'
-      title: 'Brevitas conventio decet tincidunt.'
-      width: 529
-      height: 236
+      entity: 01abb29f-577a-494d-92b7-aca56a859f27
+      alt: 'Bene et exerci huic imputo obruo quia similis.'
+      title: 'Nutus odio oppeto pecus proprius rusticus.'
+      width: 314
+      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.thagudraped.edu'
