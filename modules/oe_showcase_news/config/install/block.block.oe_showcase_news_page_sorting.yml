@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.oe_news
+  module:
+    - system
+    - views
+  theme:
+    - oe_whitelabel
+id: oe_showcase_news_page_sorting
+theme: oe_whitelabel
+region: content_top
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:oe_news-showcase_news_page_sorting'
+settings:
+  id: 'views_exposed_filter_block:oe_news-showcase_news_page_sorting'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false

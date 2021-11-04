@@ -30,9 +30,9 @@ display:
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          skip_access: 0
+          bypass_access: 0
+          preserve_facet_query_args: 1
       exposed_form:
         type: bef
         options:
@@ -309,7 +309,131 @@ display:
         type: none
       defaults:
         cache: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        exposed_form: false
       exposed_block: true
+      sorts: {  }
+      filters:
+        rendered_item:
+          id: rendered_item
+          table: search_api_index_showcase_news_index
+          field: rendered_item
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: rendered_item_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: rendered_item_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+            placeholder: 'News title'
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_text
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 1000
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              rendered_item:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.showcase_news_index'
+  showcase_news_page_sorting:
+    display_plugin: page
+    id: showcase_news_page_sorting
+    display_title: 'Page - Exposed Sorting'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: news
+      menu:
+        type: none
+        title: News
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 40
+        context: '0'
+        menu_name: main
+      cache:
+        type: none
+      defaults:
+        cache: false
+        filters: false
+        filter_groups: false
+      exposed_block: true
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:

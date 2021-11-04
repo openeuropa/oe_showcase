@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.oe_news
+  module:
+    - system
+    - views
+  theme:
+    - oe_whitelabel
+id: oe_showcase_news_page_fulltext_filter
+theme: oe_whitelabel
+region: sidebar_left
+weight: -8
+provider: null
+plugin: 'views_exposed_filter_block:oe_news-showcase_news_page'
+settings:
+  id: 'views_exposed_filter_block:oe_news-showcase_news_page'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Filter Options'
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false

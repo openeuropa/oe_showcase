@@ -38,11 +38,12 @@ config_devel:
     - search_api.server.showcase_news_server
     - search_api.index.showcase_news_index
     - views.view.oe_news
+    - search_api_autocomplete.search.oe_news
     - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
-    - facets_summary.facets_summary.news_facets_summary
     - facets.facet.publication_date
-    - block.block.newsfacetssummary
     - block.block.showcase_news_facets_form
-    - block.block.exposedformoe_newsshowcase_news_page
+    - block.block.oe_showcase_news_page_sorting
+    - block.block.oe_showcase_news_page_fulltext_filter
+    - block.block.showcase_facets_form
   optional:
     - language.content_settings.node.oe_news_simple
