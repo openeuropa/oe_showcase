@@ -28,7 +28,7 @@ mode: teaser
 content:
   field_oe_showcase_event_content:
     weight: 101
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -53,7 +53,7 @@ content:
     region: content
   field_oe_showcase_event_image:
     weight: 105
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
