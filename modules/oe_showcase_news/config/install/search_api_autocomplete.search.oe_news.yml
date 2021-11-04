@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_news_index
+    - views.view.oe_news
+  module:
+    - views
+    - search_api_autocomplete
+id: oe_news
+label: 'Showcase News'
+index_id: showcase_news_index
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:oe_news':
+    displays:
+      default: false
+      selected:
+        - showcase_news_page
+options:
+  limit: 5
+  min_length: 3
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

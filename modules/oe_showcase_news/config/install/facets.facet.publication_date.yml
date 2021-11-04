@@ -1,11 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - search_api.index.showcase_news_index
-    - views.view.oe_news
-  module:
-    - search_api
+dependencies: {  }
 id: publication_date
 name: 'Publication date'
 url_alias: publication_date
