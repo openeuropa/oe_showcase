@@ -8,7 +8,7 @@ _meta:
     e035afe4-fbc6-4dba-8c20-41030eaac6df: file
     35f88040-1c4e-4e10-b2a3-7af5db61134d: file
     64c672f2-4ba0-49f9-a1a7-9096d288996e: file
-    e37994c5-5c4f-422b-9b67-a4bdf5d13bb9: file
+    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -70,11 +70,11 @@ default:
       description: 'Duis feugiat refero. Adipiscing commoveo genitus incassum iriure macto mauris quidem vero.'
   field_oe_showcase_event_image:
     -
-      entity: e37994c5-5c4f-422b-9b67-a4bdf5d13bb9
-      alt: 'Camur lucidus luctus ludus quadrum typicus vero zelus.'
-      title: 'Damnum hendrerit huic jugis pala tincidunt vulpes.'
-      width: 257
-      height: 238
+      entity: 01abb29f-577a-494d-92b7-aca56a859f27
+      alt: 'Bene et exerci huic imputo obruo quia similis.'
+      title: 'Nutus odio oppeto pecus proprius rusticus.'
+      width: 314
+      height: 365
   field_oe_showcase_event_location:
     -
       langcode: ''

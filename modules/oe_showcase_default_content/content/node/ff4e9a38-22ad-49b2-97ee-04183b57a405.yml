@@ -8,7 +8,7 @@ _meta:
     c62245cd-f374-4a05-8be7-58478af39ae9: file
     8f8c8f42-118a-4acb-9e21-b12cc6dace31: file
     df668e9c-0a7c-48f5-96f9-4e50a1d30ee3: file
-    40b2ac16-a5e8-4b92-b96a-255e607097b9: file
+    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -70,11 +70,11 @@ default:
       description: 'Bene dolore vicis. Adipiscing jugis macto quidem sagaciter. Antehabeo cui dignissim eu magna singularis suscipit.'
   field_oe_showcase_event_image:
     -
-      entity: 40b2ac16-a5e8-4b92-b96a-255e607097b9
-      alt: 'Aptent hendrerit mauris paratus patria proprius singularis utrum vulputate.'
-      title: 'Blandit premo zelus. Abico capto dignissim elit jugis letalis ludus neque quia.'
-      width: 246
-      height: 267
+      entity: 01abb29f-577a-494d-92b7-aca56a859f27
+      alt: 'Bene et exerci huic imputo obruo quia similis.'
+      title: 'Nutus odio oppeto pecus proprius rusticus.'
+      width: 314
+      height: 365
   field_oe_showcase_event_location:
     -
       langcode: ''

@@ -7,7 +7,7 @@ _meta:
   depends:
     b3530289-8d1a-447a-9e48-8529579e8d5a: file
     f504a5cc-e29f-4da1-8abe-2f90edae0ce2: file
-    4a71b490-5d2b-41e4-aa55-3197760b07f3: file
+    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -65,11 +65,11 @@ default:
       description: 'Antehabeo aptent feugiat nostrud olim quadrum ulciscor verto. Euismod lenis valde ymo.'
   field_oe_showcase_event_image:
     -
-      entity: 4a71b490-5d2b-41e4-aa55-3197760b07f3
-      alt: 'Cogo gemino hos nostrud populus.'
-      title: 'Accumsan conventio decet defui jus similis vel vulputate.'
-      width: 274
-      height: 299
+      entity: 01abb29f-577a-494d-92b7-aca56a859f27
+      alt: 'Bene et exerci huic imputo obruo quia similis.'
+      title: 'Nutus odio oppeto pecus proprius rusticus.'
+      width: 314
+      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.climetimotro.gov'
