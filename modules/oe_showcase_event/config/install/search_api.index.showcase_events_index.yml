@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_oe_showcase_event_location
     - field.storage.node.field_oe_showcase_event_content
     - field.storage.node.field_oe_showcase_event_date
-    - field.storage.node.field_oe_showcase_event_location
     - field.storage.node.field_oe_showcase_event_type
     - search_api.server.showcase_events_server
     - core.entity_view_mode.node.search_result

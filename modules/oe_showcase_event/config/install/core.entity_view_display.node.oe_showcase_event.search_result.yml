@@ -37,10 +37,8 @@ content:
     label: inline
     settings:
       separator: '-'
-      format_type: html_date
-      timezone_override: ''
       format_type: short
-      separator: '-'
+      timezone_override: ''
     third_party_settings: {  }
     type: daterange_default
     region: content

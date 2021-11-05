@@ -22,7 +22,6 @@ settings:
   label: 'Facet form: View Showcase Events, display Page'
   provider: facets_form
   label_display: '0'
-  live_total: false
   button:
     label:
       submit: Refine
@@ -32,6 +31,7 @@ settings:
     - country
     - event_date
     - event_type
+  live_total: false
 visibility:
   request_path:
     id: request_path

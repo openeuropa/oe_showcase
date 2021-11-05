@@ -18,14 +18,6 @@ function oe_showcase_event_link_attributes_plugin_alter(&$plugins): void {
  */
 function oe_showcase_event_theme($existing, $type, $theme, $path) {
   return [
-    'block__oe_showcase_event_list_page_filter' => [
-      'render element' => 'elements',
-      'base hook' => 'view',
-    ],
-    'block__oe_showcase_event_list_page_sorting' => [
-      'render element' => 'elements',
-      'base hook' => 'view',
-    ],
     'node__oe_showcase_event__search_result' => [
       'render element' => 'elements',
       'base hook' => 'node',
@@ -49,6 +41,9 @@ function oe_showcase_event_form_alter(&$form, &$form_state, $form_id) {
           $options[$key] = $countries_list[$key];
         }
       }
+
+      // Order countries.
+      ksort($options);
 
       // Update facet options.
       $form['facets']['country'][0]['country']['#options'] = $options;

@@ -11,11 +11,11 @@ dependencies:
 id: oe_showcase_event_list_page_sorting
 theme: oe_whitelabel
 region: content_top
-weight: -4
+weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page'
+plugin: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page_sorting'
 settings:
-  id: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page'
+  id: 'views_exposed_filter_block:showcase_events-oe_showcase_event_list_page_sorting'
   label: ''
   provider: views
   label_display: '0'

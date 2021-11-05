@@ -1,11 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - search_api.index.showcase_events_index
-    - views.view.showcase_events
-  module:
-    - search_api
+dependencies: {  }
 id: event_date
 name: 'Event Date'
 url_alias: event_date
