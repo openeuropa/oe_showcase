@@ -59,7 +59,7 @@ display:
               plugin_id: oe_whitelabel_float_end_sort
               advanced:
                 combine: true
-                combine_rewrite: "Post date Asc|Date asc\r\nPost date Desc|Date desc\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
+                combine_rewrite: "Event date Asc|Date asc\r\nEvent date Desc|Date desc\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
                 reset: false
                 reset_label: ''
                 collapsible: false
@@ -104,52 +104,7 @@ display:
             'entity:node':
               oe_showcase_event: search_result
       fields: {  }
-      filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_showcase_events_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: title
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-            placeholder: 'Event title'
-            expose_fields: false
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
-          plugin_id: search_api_fulltext
+      filters: {  }
       sorts:
         field_oe_showcase_event_date:
           id: field_oe_showcase_event_date
@@ -187,7 +142,6 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -207,7 +161,7 @@ display:
         type: none
       defaults:
         cache: false
-        sorts: false
+        sorts: true
       menu:
         type: normal
         title: Events
@@ -217,46 +171,6 @@ display:
         weight: 5
         context: '0'
         menu_name: main
-      sorts: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'user.node_grants:view'
-      tags:
-        - 'config:search_api.index.showcase_events_index'
-  oe_showcase_event_list_page_sorting:
-    display_plugin: page
-    id: oe_showcase_event_list_page_sorting
-    display_title: 'Page - Exposed Sorting'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: events
-      exposed_block: true
-      cache:
-        type: none
-      defaults:
-        cache: false
-        filters: false
-        filter_groups: false
-      menu:
-        type: none
-        title: Events
-        description: 'Showcase Events Search page'
-        expanded: false
-        parent: ''
-        weight: 5
-        context: '0'
-        menu_name: main
-      display_description: ''
-      filters: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
       max-age: -1
       contexts:

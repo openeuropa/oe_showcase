@@ -25,7 +25,6 @@ config_devel:
   install:
     - block.block.oe_showcase_event_list_page_facets
     - block.block.oe_showcase_event_list_page_filter
-    - block.block.oe_showcase_event_list_page_sorting
     - block.block.oe_showcase_event_page_title
     - core.entity_form_display.node.oe_showcase_event.default
     - core.entity_view_display.node.oe_showcase_event.default
