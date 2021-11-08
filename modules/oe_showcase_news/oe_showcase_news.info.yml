@@ -42,8 +42,6 @@ config_devel:
     - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
     - facets.facet.publication_date
     - block.block.showcase_news_facets_form
-    - block.block.oe_showcase_news_page_sorting
-    - block.block.oe_showcase_news_page_fulltext_filter
     - block.block.showcase_facets_form
   optional:
     - language.content_settings.node.oe_news_simple
