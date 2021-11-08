@@ -12,7 +12,7 @@ dependencies:
 id: showcase_facets_form
 theme: oe_whitelabel
 region: sidebar_left
-weight: -7
+weight: 0
 provider: null
 plugin: 'facets_form:search_api:views_page__showcase_search__showcase_search_page'
 settings:
@@ -20,12 +20,12 @@ settings:
   label: 'Filter Options'
   provider: facets_form
   label_display: visible
+  live_total: true
   button:
     label:
       submit: Refine
       reset: Clear
   facets: {  }
-  live_total: true
 visibility:
   request_path:
     id: request_path
