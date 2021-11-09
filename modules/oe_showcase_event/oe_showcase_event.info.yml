@@ -5,16 +5,16 @@ core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 
 dependencies:
-  - rdf_skos:rdf_skos
   - address:address
-  - link_attributes:link_attributes
+  - drupal:ckeditor
   - drupal:datetime_range
   - drupal:file
   - drupal:image
   - facets_form_date_range:facets_form_date_range
+  - link_attributes:link_attributes
+  - rdf_skos:rdf_skos
   - search_api:search_api
   - search_api_db:search_api_db
-  - drupal:ckeditor
 
 config_devel:
   install:
