@@ -6,7 +6,6 @@ _meta:
   default_langcode: en
   depends:
     a66c790c-51a7-4d2d-a9fd-c60ff418f5c9: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -58,13 +57,6 @@ default:
       entity: a66c790c-51a7-4d2d-a9fd-c60ff418f5c9
       display: false
       description: 'Hendrerit illum refero singularis tation. Aptent defui dolus fere luptatum meus mos sit tincidunt vel.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.stodruvu.biz'

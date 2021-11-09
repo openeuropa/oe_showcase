@@ -6,7 +6,6 @@ _meta:
   default_langcode: en
   depends:
     f573f88f-73e1-453e-a8de-11ff76c0afba: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -58,13 +57,6 @@ default:
       entity: f573f88f-73e1-453e-a8de-11ff76c0afba
       display: false
       description: 'Abluo amet esca probo ullamcorper. Abico caecus eu importunus letalis quadrum tamen ulciscor vel veniam.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.kawriclerugur.gov'

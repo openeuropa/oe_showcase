@@ -7,7 +7,6 @@ _meta:
   depends:
     8b7a4e47-6102-4eaa-b47a-9226557c76e3: file
     256602c7-cd62-4bcc-9783-6b5d6a2674d9: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -63,13 +62,6 @@ default:
       entity: 256602c7-cd62-4bcc-9783-6b5d6a2674d9
       display: false
       description: 'Damnum ideo letalis probo si sit. Gravis nunc roto tamen.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.droweceuomacl.info'

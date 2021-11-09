@@ -7,7 +7,6 @@ _meta:
   depends:
     29447226-e2aa-4c44-8a3c-e269bcaccc85: file
     b2d4fdc7-a736-429a-a1e2-f90b71d93c63: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -63,13 +62,6 @@ default:
       entity: b2d4fdc7-a736-429a-a1e2-f90b71d93c63
       display: false
       description: 'Facilisis genitus lobortis mauris melior nutus premo tincidunt veniam vero.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.swepepestisluve.com'

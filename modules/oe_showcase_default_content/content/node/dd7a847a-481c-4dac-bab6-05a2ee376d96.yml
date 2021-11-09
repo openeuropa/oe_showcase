@@ -8,7 +8,6 @@ _meta:
     862f4b06-8464-4aaa-8a22-499d92f4f756: file
     292765e1-a493-419c-b3dd-31fa941b014d: file
     fae55a88-2b8e-4441-bf23-d5cc535d60d0: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -68,13 +67,6 @@ default:
       entity: fae55a88-2b8e-4441-bf23-d5cc535d60d0
       display: false
       description: 'Aliquip enim ibidem laoreet molior. Caecus lobortis pneum scisco. Et illum natu neque populus sed veniam.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.wusliswup.org'

@@ -7,7 +7,6 @@ _meta:
   depends:
     b3530289-8d1a-447a-9e48-8529579e8d5a: file
     f504a5cc-e29f-4da1-8abe-2f90edae0ce2: file
-    01abb29f-577a-494d-92b7-aca56a859f27: file
     '': skos_concept
 default:
   revision_uid:
@@ -63,13 +62,6 @@ default:
       entity: f504a5cc-e29f-4da1-8abe-2f90edae0ce2
       display: false
       description: 'Antehabeo aptent feugiat nostrud olim quadrum ulciscor verto. Euismod lenis valde ymo.'
-  field_oe_showcase_event_image:
-    -
-      entity: 01abb29f-577a-494d-92b7-aca56a859f27
-      alt: 'Bene et exerci huic imputo obruo quia similis.'
-      title: 'Nutus odio oppeto pecus proprius rusticus.'
-      width: 314
-      height: 365
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.climetimotro.gov'
