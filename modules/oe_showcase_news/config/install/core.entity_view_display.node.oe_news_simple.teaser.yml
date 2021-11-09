@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.oe_news_simple.field_news_content
+    - field.field.node.oe_news_simple.field_news_image
+    - field.field.node.oe_news_simple.field_news_publication_date
+    - node.type.oe_news_simple
+  module:
+    - user
+id: node.oe_news_simple.teaser
+targetEntityType: node
+bundle: oe_news_simple
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_news_content: true
+  field_news_image: true
+  field_news_publication_date: true
+  langcode: true
+  search_api_excerpt: true

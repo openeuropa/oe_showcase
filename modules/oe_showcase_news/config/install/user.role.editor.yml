@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'create oe_news_simple content'
+  - 'delete any oe_news_simple content'
+  - 'delete oe_news_simple revisions'
+  - 'delete own oe_news_simple content'
+  - 'edit any oe_news_simple content'
+  - 'edit own oe_news_simple content'
+  - 'revert oe_news_simple revisions'
+  - 'view oe_news_simple revisions'

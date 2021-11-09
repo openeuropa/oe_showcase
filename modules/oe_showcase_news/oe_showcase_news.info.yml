@@ -1,0 +1,33 @@
+name: OpenEuropa Showcase News
+type: module
+description: 'Demo News feature based on search_api'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+dependencies:
+  - better_exposed_filters:better_exposed_filters
+  - drupal:ckeditor
+  - drupal:views
+  - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
+  - facets_summary:facets_summary
+  - search_api:search_api
+  - search_api_autocomplete:search_api_autocomplete
+  - search_api_db:search_api_db
+
+config_devel:
+  install:
+    - field.storage.node.field_news_publication_date
+    - field.storage.node.field_news_image
+    - field.storage.node.field_news_content
+    - field.field.node.oe_news_simple.field_news_content
+    - field.field.node.oe_news_simple.field_news_image
+    - field.field.node.oe_news_simple.field_news_publication_date
+    - node.type.oe_news_simple
+    - core.entity_form_display.node.oe_news_simple.default
+    - core.entity_view_display.node.oe_news_simple.teaser
+    - core.entity_view_display.node.oe_news_simple.search_result
+    - core.entity_view_display.node.oe_news_simple.default
+    - user.role.editor
+    - pathauto.pattern.oe_showcase_news_alias_pattern
+  optional:
+    - language.content_settings.node.oe_news_simple
