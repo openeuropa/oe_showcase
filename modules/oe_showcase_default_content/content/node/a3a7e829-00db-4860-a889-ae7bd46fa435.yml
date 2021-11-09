@@ -4,8 +4,6 @@ _meta:
   uuid: a3a7e829-00db-4860-a889-ae7bd46fa435
   bundle: oe_news_simple
   default_langcode: und
-  depends:
-    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -42,13 +40,6 @@ default:
       value: "<p>Donec nibh ipsum, vehicula accumsan lorem in, cursus sollicitudin arcu. Cras venenatis justo sed vehicula vulputate. Fusce risus orci, vulputate ac luctus eu, laoreet ut nisl. Vivamus vel facilisis purus. Maecenas tempor, ligula quis elementum vestibulum, ligula erat tempus turpis, in placerat orci velit a risus. Aenean a ultricies dui. Nullam mauris diam, vehicula in gravida at, facilisis eget nulla. Curabitur ultricies sodales vehicula.</p>\r\n\r\n<p>Proin non interdum dolor. In tempus ante a leo volutpat rutrum. Sed pretium lobortis leo, ut suscipit tortor congue non. Pellentesque egestas ultricies blandit. Sed bibendum nisl ut eleifend posuere. Cras et nisi pretium, ultrices lacus et, molestie lacus. Cras iaculis dapibus nisi vel dictum. Nulla porta et tortor vitae sodales. Etiam finibus orci ipsum, eu accumsan dui ornare eget. Mauris tincidunt mauris enim, nec egestas nibh rhoncus a. Donec laoreet velit ut varius placerat.</p>\r\n\r\n<p>Nulla velit mauris, malesuada non metus eget, feugiat blandit tortor. Etiam ac varius lectus, non ornare risus. Etiam feugiat efficitur orci sed maximus. Phasellus iaculis semper mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis maximus tortor. Sed condimentum metus libero, aliquam hendrerit arcu egestas ut. Suspendisse suscipit laoreet tellus a tincidunt. Maecenas rhoncus metus cursus pharetra aliquam. Duis lacinia ac tortor et porta. Etiam rutrum sapien urna, id feugiat leo hendrerit quis. Curabitur vitae mauris sed dolor laoreet porta. Nam placerat massa non mauris placerat tincidunt.</p>\r\n\r\n<p>Donec efficitur, sem non vulputate dapibus, augue ex ultricies mauris, ut tincidunt est massa et nisl. Duis lobortis porta ligula, quis facilisis risus euismod quis. In hac habitasse platea dictumst. Proin sit amet mi tincidunt, scelerisque nisl id, dictum nibh. Maecenas sit amet nunc dolor. Vivamus dapibus faucibus odio ac eleifend. Suspendisse ex quam, dictum vitae aliquet eleifend, consequat nec tellus. Cras sagittis tortor neque, sit amet dictum lorem lacinia faucibus. Sed hendrerit bibendum fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vulputate vulputate elementum.</p>\r\n"
       format: full_html
       summary: "Donec commodo nibh in erat tempus euismod. Duis ante eros, commodo sit amet pulvinar ut, volutpat id tortor. Nulla rutrum malesuada massa, quis dignissim diam bibendum at. Mauris pretium ultricies malesuada. Nam non vulputate lectus. Nam vel vulputate turpis, at fermentum erat. Nam ut felis libero. Nulla ultrices lorem vel erat malesuada, ac tempor augue lobortis. In tortor eros, pretium nec mi at, volutpat lobortis massa. Ut et ex sapien. Vestibulum posuere nisl mauris, eu efficitur dolor volutpat sed."
-  field_news_image:
-    -
-      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
-      alt: 'default image'
-      title: ''
-      width: 200
-      height: 200
   field_news_publication_date:
     -
       value: '2021-12-09T16:42:33'

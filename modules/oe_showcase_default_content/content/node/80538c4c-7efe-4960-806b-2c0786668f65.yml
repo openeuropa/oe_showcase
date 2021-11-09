@@ -4,8 +4,6 @@ _meta:
   uuid: 80538c4c-7efe-4960-806b-2c0786668f65
   bundle: oe_news_simple
   default_langcode: und
-  depends:
-    4679ead4-9c46-4e09-b1af-8f2b576f6bfb: file
 default:
   revision_uid:
     -
@@ -42,13 +40,6 @@ default:
       value: "<p>Proin eget fermentum mauris, id blandit elit. Morbi non ipsum nec leo posuere convallis. Nunc commodo pulvinar aliquam. Quisque auctor a nisl a tincidunt. Nunc eu auctor quam, pellentesque sagittis neque. Donec tincidunt enim vitae augue viverra elementum. Quisque molestie ultricies tincidunt. Cras bibendum nulla vel justo auctor, vitae vehicula diam finibus. Suspendisse mi mi, facilisis et sapien vitae, dapibus euismod orci. Sed scelerisque libero sed risus commodo, vel tincidunt dui consequat. Nunc massa turpis, pellentesque ac lorem ac, feugiat dignissim ligula. Phasellus facilisis vestibulum nisi quis gravida.</p>\r\n\r\n<p>Donec cursus interdum metus quis auctor. In sit amet tempus nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam cursus ex sollicitudin dolor tincidunt semper. In nec rhoncus velit. Etiam egestas, lorem non eleifend ultrices, justo nisl rutrum lacus, nec facilisis orci est sed justo. Aliquam dictum placerat urna at mollis. In feugiat gravida metus vitae cursus. Nullam interdum luctus varius. Aenean molestie ornare augue, quis blandit dui iaculis quis. Maecenas volutpat varius semper.</p>\r\n\r\n<p>Duis ut commodo tortor, eget tristique tellus. Integer pulvinar molestie rutrum. Pellentesque nec neque odio. Curabitur vitae congue orci. Mauris rhoncus mauris at volutpat consequat. Duis vehicula urna sit amet blandit interdum. Nunc elementum dictum ante, eu vulputate ante dictum eget. Quisque non risus dictum, luctus nibh vitae, ornare sem. Donec facilisis gravida quam, eu bibendum neque scelerisque id. Maecenas dapibus risus consectetur, pharetra mauris vitae, maximus est. Quisque at convallis arcu.</p>\r\n"
       format: full_html
       summary: "Proin quis congue mi. Integer augue velit, lobortis vitae ex eu, eleifend pharetra erat. Cras at tellus sed nisi iaculis molestie. Sed ullamcorper sagittis diam et faucibus. Etiam eu eleifend est, aliquam imperdiet ipsum. Integer blandit lorem ut blandit dignissim. Donec semper imperdiet purus, a tempus elit cursus sit amet."
-  field_news_image:
-    -
-      entity: 4679ead4-9c46-4e09-b1af-8f2b576f6bfb
-      alt: 'default image'
-      title: ''
-      width: 200
-      height: 200
   field_news_publication_date:
     -
       value: '2021-10-20T15:37:04'
