@@ -44,18 +44,27 @@ class IntegrationTest extends BrowserTestBase {
    */
   public function testIntegration(): void {
     $assert_session = $this->assertSession();
-    // Add an admin user.
+    // Log in as admin.
     $user = $this->drupalCreateUser([], '', TRUE);
     $this->drupalLogin($user);
     $this->drupalGet("admin/people/create");
     $page = $this->getSession()->getPage();
+    // Fill user fields.
     $page->fillField('Email address', 'example@example.com');
     $page->fillField('Username', 'Example user');
     $page->fillField('Password', '123456');
     $page->fillField('Confirm password', '123456');
+    $page->fillField('edit-field-date-of-birth-0-value-date', '2000-10-10');
+    $page->fillField('Bio', 'Biography');
+    $page->selectFieldOption('Country', 'Spain');
+    $page->fillField('Current position', 'Example position');
     $page->pressButton('Create new account');
-    $page->hasContent('Created a new user account for Example user.');
+    // Check field values.
     $page->clickLink('Example user');
+    $assert_session->pageTextContains('2000-10-10');
+    $assert_session->pageTextContains('Biography');
+    $assert_session->pageTextContains('Spain');
+    $assert_session->pageTextContains('Example position');
   }
 
 }
