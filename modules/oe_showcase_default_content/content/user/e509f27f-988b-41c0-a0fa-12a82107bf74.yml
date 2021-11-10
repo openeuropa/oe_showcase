@@ -3,6 +3,8 @@ _meta:
   entity_type: user
   uuid: e509f27f-988b-41c0-a0fa-12a82107bf74
   default_langcode: en
+  depends:
+    0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb: file
 default:
   preferred_langcode:
     -
@@ -15,9 +17,12 @@ default:
       value: 'Lisbet Henri'
   pass:
     -
-      value: $S$ETZJI3q9MrbkUe/zrZ4EwTwesvdWfHAXwXShHJx9B1zs5r69WD/b
+      value: $S$E.0Emz6KGD7tnbt7.025NWTyaB0BPc53og4sDQdGPT09khkaVq/s
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: lisbet@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -33,8 +38,52 @@ default:
   login:
     -
       value: 0
+  field_oe_firstname:
+    -
+      value: Lisbet
+  field_oe_lastname:
+    -
+      value: Henri
+  field_oe_department:
+    -
+      value: 'Research and Development'
+  field_oe_organisation:
+    -
+      value: external
   path:
     -
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: "<p>Bio curabitur tristique dolor quis placerat finibus. Phasellus blandit sapien nulla. Ut sed tincidunt felis. Nunc ac placerat arcu, sit amet venenatis felis. Praesent nec condimentum tortor. Aliquam erat volutpat. Fusce augue quam, condimentum cursus magna in, rutrum tristique nulla. Integer eu enim dapibus, semper erat nec, cursus justo. Quisque tristique quam ipsum, sed imperdiet sapien eleifend quis.</p>\r\n"
+      format: full_html
+  field_city_country:
+    -
+      langcode: ''
+      country_code: FI
+      administrative_area: ''
+      locality: Helsinki
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: 'Lead developer'
+  field_date_of_birth:
+    -
+      value: '2000-06-28'
+  field_profile_image:
+    -
+      entity: 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
+      alt: profile
+      title: ''
+      width: 2704
+      height: 3752
