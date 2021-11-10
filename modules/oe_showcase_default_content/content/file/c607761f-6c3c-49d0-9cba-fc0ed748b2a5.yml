@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: c607761f-6c3c-49d0-9cba-fc0ed748b2a5
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Jarret_Autumn.jpg
+  uri:
+    -
+      value: 'public://2021-11/Jarret_Autumn.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 3690578
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1636056422
