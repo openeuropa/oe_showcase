@@ -18,6 +18,8 @@ dependencies:
     - rdf_skos
     - text
     - user
+_core:
+  default_config_hash: ekVwS0h8OQEnh20AuZRY9uPmVJzmjyUKwz5nA2W7mQM
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -32,7 +34,7 @@ content:
     third_party_settings: {  }
   field_city_country:
     type: address_default
-    weight: 4
+    weight: 5
     region: content
     label: above
     settings: {  }
@@ -47,15 +49,15 @@ content:
     third_party_settings: {  }
   field_date_of_birth:
     type: datetime_default
-    weight: 3
+    weight: 4
     region: content
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: html_date
     third_party_settings: {  }
   field_gender:
-    weight: 5
+    weight: 3
     label: above
     settings:
       link: true
