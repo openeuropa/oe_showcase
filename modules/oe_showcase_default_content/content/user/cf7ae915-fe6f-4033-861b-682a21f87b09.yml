@@ -3,6 +3,8 @@ _meta:
   entity_type: user
   uuid: cf7ae915-fe6f-4033-861b-682a21f87b09
   default_langcode: en
+  depends:
+    c607761f-6c3c-49d0-9cba-fc0ed748b2a5: file
 default:
   preferred_langcode:
     -
@@ -15,9 +17,12 @@ default:
       value: 'Jarrett Autumn'
   pass:
     -
-      value: $S$ELFSe7WGWz4M8dGwxGWjZLyjEx7ZlikT.BeS1YrvAdcMSJ8UaRMe
+      value: $S$E/AceX5lwCGhV0quK.RlCgGYEy0tgFG3Dl77ZWG6CrSqQhiIPEDn
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: email@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -33,8 +38,52 @@ default:
   login:
     -
       value: 0
+  field_oe_firstname:
+    -
+      value: Jarrett
+  field_oe_lastname:
+    -
+      value: Autumn
+  field_oe_department:
+    -
+      value: Marketing
+  field_oe_organisation:
+    -
+      value: external
   path:
     -
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: "<p>Bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit eros, finibus in pulvinar ut, semper in massa. Aenean interdum tellus lectus, eu lobortis libero ultrices eget. Phasellus quis cursus purus. Ut sollicitudin felis vel purus finibus, ac fringilla ex venenatis. Aliquam erat volutpat.</p>\r\n"
+      format: full_html
+  field_city_country:
+    -
+      langcode: ''
+      country_code: CA
+      administrative_area: ''
+      locality: Toronto
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Manager
+  field_date_of_birth:
+    -
+      value: '1990-02-03'
+  field_profile_image:
+    -
+      entity: c607761f-6c3c-49d0-9cba-fc0ed748b2a5
+      alt: profile
+      title: ''
+      width: 3476
+      height: 5214

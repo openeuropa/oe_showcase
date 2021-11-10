@@ -3,6 +3,8 @@ _meta:
   entity_type: user
   uuid: c574d28f-948e-4a71-a8f7-5897db9beef5
   default_langcode: en
+  depends:
+    4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15: file
 default:
   preferred_langcode:
     -
@@ -15,9 +17,12 @@ default:
       value: 'Romanos Firou'
   pass:
     -
-      value: $S$EIDNePdNABB9HUYokxxdexdcbHi5fw8fo7cy9a9E.rfHMAxZUcpQ
+      value: $S$EzGZeAfPN0kIrnRTuObKZP8BxMxnnQzfku6vUD/m5Xt8b9GLWXDM
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: romanos@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -33,8 +38,52 @@ default:
   login:
     -
       value: 0
+  field_oe_firstname:
+    -
+      value: Romanos
+  field_oe_lastname:
+    -
+      value: Firou
+  field_oe_department:
+    -
+      value: Marketing
+  field_oe_organisation:
+    -
+      value: external
   path:
     -
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: "<p>Bio nam scelerisque elementum dui, blandit iaculis elit rhoncus ac. Ut leo odio, dignissim ac tellus sed, bibendum auctor purus. Ut ultricies turpis sit amet enim hendrerit, sit amet vulputate elit commodo. Proin orci leo, feugiat nec lectus vitae, suscipit dictum elit. Suspendisse elit magna, tincidunt sit amet arcu facilisis, porttitor interdum eros. Maecenas arcu nunc, iaculis eu orci nec, viverra consequat ipsum.</p>\r\n"
+      format: full_html
+  field_city_country:
+    -
+      langcode: ''
+      country_code: GR
+      administrative_area: ''
+      locality: Patras
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Developer
+  field_date_of_birth:
+    -
+      value: '1998-11-23'
+  field_profile_image:
+    -
+      entity: 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
+      alt: profile
+      title: ''
+      width: 4684
+      height: 4000

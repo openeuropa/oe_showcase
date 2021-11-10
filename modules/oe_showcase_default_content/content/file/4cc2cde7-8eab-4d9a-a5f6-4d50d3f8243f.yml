@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Shel_Caryl.jpg
+  uri:
+    -
+      value: 'public://2021-11/Shel_Caryl.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 4789044
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1636406078

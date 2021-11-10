@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d27d25a7-91b2-4042-902d-9f99296d8702
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Cristian_Eliza.jpg
+  uri:
+    -
+      value: 'public://2021-11/Cristian_Eliza.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 2197494
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1636409349
