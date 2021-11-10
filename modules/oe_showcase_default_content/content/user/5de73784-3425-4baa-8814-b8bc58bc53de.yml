@@ -3,6 +3,8 @@ _meta:
   entity_type: user
   uuid: 5de73784-3425-4baa-8814-b8bc58bc53de
   default_langcode: en
+  depends:
+    d27d25a7-91b2-4042-902d-9f99296d8702: file
 default:
   preferred_langcode:
     -
@@ -15,9 +17,12 @@ default:
       value: 'Cristian Eliza'
   pass:
     -
-      value: $S$E38Wyo6NNvW49wQkLz/5plLXfLecgSNvSlfR3p0VGdGf2r0uunSQ
+      value: $S$EoTk8UNnBgRaSQOCPOyZwpuW4opuIRG9.3pX9SQmKDwZsqKr939b
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: cristian@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -33,8 +38,52 @@ default:
   login:
     -
       value: 0
+  field_oe_firstname:
+    -
+      value: Cristian
+  field_oe_lastname:
+    -
+      value: Eliza
+  field_oe_department:
+    -
+      value: 'Research and Development'
+  field_oe_organisation:
+    -
+      value: Eurofound
   path:
     -
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: "<p>Bio maecenas ac justo fermentum, auctor velit sed, consequat tortor. Vivamus dictum, lacus nec iaculis pulvinar, tortor leo ultrices sapien, in mollis sapien neque in sapien. Vivamus porttitor felis in pulvinar maximus. Nullam libero orci, lacinia ac tincidunt vitae, pulvinar sit amet odio. Curabitur et nulla non dolor iaculis interdum at ut lorem. Vestibulum molestie tempus elit vel fermentum. In eu posuere massa. Nunc a pretium nisl. Nunc eget vehicula ex, id viverra enim.</p>\r\n\r\n<p>Sed magna est, tempor vitae placerat vel, vulputate a ex. Mauris ac faucibus massa.</p>\r\n"
+      format: full_html
+  field_city_country:
+    -
+      langcode: ''
+      country_code: DE
+      administrative_area: ''
+      locality: Munich
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Developer
+  field_date_of_birth:
+    -
+      value: '1997-05-17'
+  field_profile_image:
+    -
+      entity: d27d25a7-91b2-4042-902d-9f99296d8702
+      alt: profile
+      title: ''
+      width: 2400
+      height: 3000
