@@ -6,14 +6,6 @@
  */
 
 /**
- * Implements link_attributes_plugin_alter().
- */
-function oe_showcase_event_link_attributes_plugin_alter(&$plugins): void {
-  // Set a default value for the target attribute.
-  $plugins['target']['default_value'] = '_blank';
-}
-
-/**
  * Implements hook_theme().
  */
 function oe_showcase_event_theme($existing, $type, $theme, $path) {
@@ -23,30 +15,4 @@ function oe_showcase_event_theme($existing, $type, $theme, $path) {
       'base hook' => 'node',
     ],
   ];
-}
-
-/**
- * Implements hook_form_alter().
- */
-function oe_showcase_event_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'facets_form') {
-    if (isset($form['facets']['country'][0]['country']['#options'])) {
-      // Set Country fullname for facet options.
-      $options = $form['facets']['country'][0]['country']['#options'];
-      $country_manager = \Drupal::service('country_manager');
-      $countries_list = $country_manager->getList();
-
-      foreach ($options as $key => $value) {
-        if ($key) {
-          $options[$key] = $countries_list[$key];
-        }
-      }
-
-      // Order countries.
-      ksort($options);
-
-      // Update facet options.
-      $form['facets']['country'][0]['country']['#options'] = $options;
-    }
-  }
 }
