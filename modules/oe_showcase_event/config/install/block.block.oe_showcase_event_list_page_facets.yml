@@ -1,13 +1,7 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.city
-    - facets.facet.country
-    - facets.facet.event_date
-    - facets.facet.event_type
   module:
-    - facets_form
     - system
   theme:
     - oe_whitelabel

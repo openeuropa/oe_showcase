@@ -59,21 +59,13 @@ display:
               plugin_id: oe_whitelabel_float_end_sort
               advanced:
                 combine: true
-                combine_rewrite: "Event date Asc|Date asc\r\nEvent date Desc|Date desc\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
+                combine_rewrite: "Date Asc|Date Asc\r\nDate Desc|Date Desc\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
                 reset: false
                 reset_label: ''
                 collapsible: false
                 collapsible_label: 'Sort options'
                 is_secondary: false
-            filter:
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
+            filter: {  }
       pager:
         type: full
         options:
@@ -116,7 +108,7 @@ display:
           order: ASC
           exposed: true
           expose:
-            label: 'Event Date'
+            label: Date
           plugin_id: search_api
         title:
           id: title
