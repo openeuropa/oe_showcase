@@ -4,48 +4,22 @@
  * Search result template.
  */
 #}
-{% set badges = [] %}
-{% if content.field_oe_showcase_event_type is not empty %}
-  {% set badge_attr = create_attribute({'class': ['me-2']}) %}
-  {% for key,item in content.field_oe_showcase_event_type %}
-    {% if key|first != '#' %}
-      {% set badges = badges|merge([{
-        '#type': 'pattern',
-        '#id': 'badge',
-        '#fields': {
-          label: item['#title'],
-          attributes: badge_attr
-        }
-      }]) %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-{% if content.field_oe_showcase_event_image[0] is defined and content.field_oe_showcase_event_image[0]['#markup'] is not empty %}
-  {% set image = {
-    path: content.field_oe_showcase_event_image[0]['#markup'],
-    position: "top",
-  } %}
-{% endif %}
+{% set title = {
+  tag: 'a href=' ~ url,
+  content:  label,
+} %}
 {{ pattern('card', {
-  horizontal: true,
-  horizontal_grid: {
-    left_col_classes: "col-md-3",
-    right_col_classes: "col-md-9",
-    gutter: 0,
-  },
-  title: {
-    content: label,
-    classes: "mb-4",
-  },
-  subtitle: {
-    content: content.field_oe_showcase_event_date|render|striptags,
-    classes: "mb-4",
-  },
-  text: {
-    content: content.field_oe_showcase_event_content|render|striptags,
-    classes: "mb-4",
-  },
-  attributes: attributes.addClass(["border-0", "mb-5"]),
-  image: image,
-  content: badges|render
+  variant: 'search',
+  title: title,
+  text: content.field_oe_showcase_event_content,
+  image: content.field_oe_showcase_event_image[0],
+  badges: content.field_oe_showcase_event_type,
+  content: {
+    '#type': 'html_tag',
+    '#tag': 'span',
+    '#attributes': {
+      class: 'text-muted text-nowrap me-4-5',
+    },
+    '#value': node.getCreatedTime|bcl_timeago,
+  }
 }) }}
