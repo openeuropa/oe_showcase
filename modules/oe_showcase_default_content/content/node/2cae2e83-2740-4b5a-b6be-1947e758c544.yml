@@ -5,9 +5,7 @@ _meta:
   bundle: oe_showcase_event
   default_langcode: en
   depends:
-    e035afe4-fbc6-4dba-8c20-41030eaac6df: file
-    35f88040-1c4e-4e10-b2a3-7af5db61134d: file
-    64c672f2-4ba0-49f9-a1a7-9096d288996e: file
+    68ad2b7c-1564-40ca-b464-5ac0c6e30e86: file
     '': skos_concept
 default:
   revision_uid:
@@ -56,17 +54,9 @@ default:
       end_value: '2021-04-06T12:56:41'
   field_oe_showcase_event_document:
     -
-      entity: e035afe4-fbc6-4dba-8c20-41030eaac6df
+      entity: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
       display: false
-      description: 'Camur eligo exerci imputo meus usitas. Abdo antehabeo imputo lucidus sit.'
-    -
-      entity: 35f88040-1c4e-4e10-b2a3-7af5db61134d
-      display: false
-      description: 'Diam elit metuo sed. Ea eu euismod interdico iustum laoreet neque patria vicis wisi.'
-    -
-      entity: 64c672f2-4ba0-49f9-a1a7-9096d288996e
-      display: false
-      description: 'Duis feugiat refero. Adipiscing commoveo genitus incassum iriure macto mauris quidem vero.'
+      description: 'Diam neque nobis plaga quae qui torqueo. Acsi exputo ibidem minim vulputate.'
   field_oe_showcase_event_location:
     -
       langcode: ''

@@ -5,8 +5,7 @@ _meta:
   bundle: oe_showcase_event
   default_langcode: en
   depends:
-    29447226-e2aa-4c44-8a3c-e269bcaccc85: file
-    b2d4fdc7-a736-429a-a1e2-f90b71d93c63: file
+    68ad2b7c-1564-40ca-b464-5ac0c6e30e86: file
     '': skos_concept
 default:
   revision_uid:
@@ -55,13 +54,9 @@ default:
       end_value: '2021-05-27T01:44:11'
   field_oe_showcase_event_document:
     -
-      entity: 29447226-e2aa-4c44-8a3c-e269bcaccc85
+      entity: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
       display: false
-      description: 'Jus odio plaga sudo. Appellatio cui elit feugiat incassum quidne suscipere tation utrum vulputate.'
-    -
-      entity: b2d4fdc7-a736-429a-a1e2-f90b71d93c63
-      display: false
-      description: 'Facilisis genitus lobortis mauris melior nutus premo tincidunt veniam vero.'
+      description: 'Diam neque nobis plaga quae qui torqueo. Acsi exputo ibidem minim vulputate.'
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.swepepestisluve.com'

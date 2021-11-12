@@ -5,8 +5,7 @@ _meta:
   bundle: oe_showcase_event
   default_langcode: en
   depends:
-    1f8902ff-145b-4a9e-905f-6418d2c500cc: file
-    5c994ea7-7b2d-4b6b-95b4-c4bfaef1ea9f: file
+    68ad2b7c-1564-40ca-b464-5ac0c6e30e86: file
     '': skos_concept
 default:
   revision_uid:
@@ -55,13 +54,9 @@ default:
       end_value: '2021-07-13T03:18:35'
   field_oe_showcase_event_document:
     -
-      entity: 1f8902ff-145b-4a9e-905f-6418d2c500cc
+      entity: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
       display: false
       description: 'Diam neque nobis plaga quae qui torqueo. Acsi exputo ibidem minim vulputate.'
-    -
-      entity: 5c994ea7-7b2d-4b6b-95b4-c4bfaef1ea9f
-      display: false
-      description: 'Adipiscing probo quae. Accumsan acsi facilisis inhibeo mos pertineo praemitto roto virtus.'
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.kotiberosaswas.gov'

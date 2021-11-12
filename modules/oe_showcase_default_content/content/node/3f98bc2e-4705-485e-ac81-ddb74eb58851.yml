@@ -5,8 +5,7 @@ _meta:
   bundle: oe_showcase_event
   default_langcode: en
   depends:
-    8b7a4e47-6102-4eaa-b47a-9226557c76e3: file
-    256602c7-cd62-4bcc-9783-6b5d6a2674d9: file
+    68ad2b7c-1564-40ca-b464-5ac0c6e30e86: file
     '': skos_concept
 default:
   revision_uid:
@@ -55,13 +54,9 @@ default:
       end_value: '2021-10-11T23:25:33'
   field_oe_showcase_event_document:
     -
-      entity: 8b7a4e47-6102-4eaa-b47a-9226557c76e3
+      entity: 68ad2b7c-1564-40ca-b464-5ac0c6e30e86
       display: false
-      description: 'Defui magna quidne refoveo typicus usitas ut virtus. Consectetuer dolus erat feugiat pagus refero valetudo validus.'
-    -
-      entity: 256602c7-cd62-4bcc-9783-6b5d6a2674d9
-      display: false
-      description: 'Damnum ideo letalis probo si sit. Gravis nunc roto tamen.'
+      description: 'Diam neque nobis plaga quae qui torqueo. Acsi exputo ibidem minim vulputate.'
   field_oe_showcase_event_registra:
     -
       uri: 'http://www.droweceuomacl.info'
