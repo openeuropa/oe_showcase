@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1f8902ff-145b-4a9e-905f-6418d2c500cc
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: uX7yCLp17j.txt
+  uri:
+    -
+      value: 'public://2021-10/uX7yCLp17j.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 922
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

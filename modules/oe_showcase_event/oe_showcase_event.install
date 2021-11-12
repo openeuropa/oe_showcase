@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * The OpenEuropa Contact Forms installation file.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_event_install($is_syncing): void {
+  // Configure the RDF SKOS graphs.
+  if (!$is_syncing) {
+    $graphs = [
+      'public-event-type' => 'http://publications.europa.eu/resource/dataset/public-event-type',
+    ];
+    \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
+  }
+}

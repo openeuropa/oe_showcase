@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5c994ea7-7b2d-4b6b-95b4-c4bfaef1ea9f
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: c813yfX8Dn.txt
+  uri:
+    -
+      value: 'public://2021-10/c813yfX8Dn.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 913
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

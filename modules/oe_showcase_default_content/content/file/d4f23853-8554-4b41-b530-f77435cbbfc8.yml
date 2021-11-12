@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d4f23853-8554-4b41-b530-f77435cbbfc8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: pHrn4HZ8w7.txt
+  uri:
+    -
+      value: 'public://2021-10/pHrn4HZ8w7.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 960
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

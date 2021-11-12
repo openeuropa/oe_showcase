@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e37994c5-5c4f-422b-9b67-a4bdf5d13bb9
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_w9h91G.png
+  uri:
+    -
+      value: 'public://2021-10/generateImage_w9h91G.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1249
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

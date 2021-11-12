@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Showcase event module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_event_theme($existing, $type, $theme, $path) {
+  return [
+    'node__oe_showcase_event__search_result' => [
+      'render element' => 'elements',
+      'base hook' => 'node',
+    ],
+  ];
+}

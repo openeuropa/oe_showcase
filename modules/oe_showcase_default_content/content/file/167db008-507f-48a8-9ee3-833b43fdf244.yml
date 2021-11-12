@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 167db008-507f-48a8-9ee3-833b43fdf244
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: rOIeq8mYjD.txt
+  uri:
+    -
+      value: 'public://2021-10/rOIeq8mYjD.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 799
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

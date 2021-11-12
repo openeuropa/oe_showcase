@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b2d4fdc7-a736-429a-a1e2-f90b71d93c63
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: xbB9WlO9YQ.txt
+  uri:
+    -
+      value: 'public://2021-10/xbB9WlO9YQ.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 951
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

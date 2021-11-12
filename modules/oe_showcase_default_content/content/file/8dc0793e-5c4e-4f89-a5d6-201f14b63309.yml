@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 8dc0793e-5c4e-4f89-a5d6-201f14b63309
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: gfh4Hfeu0E.txt
+  uri:
+    -
+      value: 'public://2021-10/gfh4Hfeu0E.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 795
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

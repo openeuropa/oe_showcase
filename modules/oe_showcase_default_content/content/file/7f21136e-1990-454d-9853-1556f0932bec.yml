@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7f21136e-1990-454d-9853-1556f0932bec
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: yIrwzXC6zO.txt
+  uri:
+    -
+      value: 'public://2021-10/yIrwzXC6zO.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 976
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

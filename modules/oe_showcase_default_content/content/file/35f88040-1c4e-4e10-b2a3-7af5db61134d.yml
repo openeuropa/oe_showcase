@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 35f88040-1c4e-4e10-b2a3-7af5db61134d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: w1ujb6vQFQ.txt
+  uri:
+    -
+      value: 'public://2021-10/w1ujb6vQFQ.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 991
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581

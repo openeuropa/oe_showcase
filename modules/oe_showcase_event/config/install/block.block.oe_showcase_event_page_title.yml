@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+  theme:
+    - oe_whitelabel
+id: oe_showcase_event_page_title
+theme: oe_whitelabel
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Event Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      oe_showcase_event: oe_showcase_event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      oe_showcase_event: oe_showcase_event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

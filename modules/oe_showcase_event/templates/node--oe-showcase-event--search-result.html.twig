@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Search result template.
+ */
+#}
+{% set title = {
+  tag: 'a href=' ~ url,
+  content:  label,
+} %}
+{{ pattern('card', {
+  variant: 'search',
+  title: title,
+  text: content.field_oe_showcase_event_content,
+  image: content.field_oe_showcase_event_image[0],
+  badges: content.field_oe_showcase_event_type,
+  content: {
+    '#type': 'html_tag',
+    '#tag': 'span',
+    '#attributes': {
+      class: 'text-muted text-nowrap me-4-5',
+    },
+    '#value': node.getCreatedTime|bcl_timeago,
+  }
+}) }}

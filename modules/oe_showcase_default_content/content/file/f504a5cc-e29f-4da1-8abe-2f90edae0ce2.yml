@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f504a5cc-e29f-4da1-8abe-2f90edae0ce2
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: sWSl5fKpqR.txt
+  uri:
+    -
+      value: 'public://2021-10/sWSl5fKpqR.txt'
+  filemime:
+    -
+      value: text/plain
+  filesize:
+    -
+      value: 880
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1635279581
