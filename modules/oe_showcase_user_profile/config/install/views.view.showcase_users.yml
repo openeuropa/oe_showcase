@@ -1,4 +1,3 @@
-uuid: 802d501f-1c9f-492d-a262-4b7e9db17510
 langcode: en
 status: true
 dependencies:
@@ -25,7 +24,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: search_api_query

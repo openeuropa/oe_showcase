@@ -1,4 +1,3 @@
-uuid: 71d34aef-9466-429b-9f49-a4f1ac3d2e08
 langcode: en
 status: true
 dependencies:
@@ -15,11 +14,45 @@ dependencies:
   module:
     - address
     - datetime
+    - field_group
     - image
-    - path
     - rdf_skos
     - text
     - user
+third_party_settings:
+  field_group:
+    group_personal_information:
+      children:
+        - field_date_of_birth
+        - field_gender
+        - field_city_country
+        - field_nationality
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: personal-information
+        description: ''
+        required_fields: true
+      label: 'Personal Information'
+    group_professional_information:
+      children:
+        - field_current_position
+        - field_working_languages
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: professional-information
+        description: ''
+        required_fields: true
+      label: 'Professional Information'
 id: user.user.default
 targetEntityType: user
 bundle: user

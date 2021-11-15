@@ -1,4 +1,3 @@
-uuid: 778d3ea5-bb3e-4dba-8511-ab2cf1f21704
 langcode: en
 status: true
 dependencies:
@@ -36,4 +35,5 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
+  track_changes_in_references: true
 server: showcase_users_server
