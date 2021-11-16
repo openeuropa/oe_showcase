@@ -22,6 +22,11 @@ class IntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected $profile = 'oe_showcase';
+  
+  /**
+   * {@inheritdoc}
+   */
+  protected $strictConfigSchema = FALSE;
 
   /**
    * {@inheritdoc}
