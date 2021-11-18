@@ -1,0 +1,33 @@
+uuid: 43b1fbf7-d695-4c5f-85f9-2b1eb60f6150
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_users_index
+    - views.view.showcase_users
+  module:
+    - views
+    - search_api_autocomplete
+id: showcase_users
+label: 'Showcase users'
+index_id: showcase_users_index
+suggester_settings:
+  server:
+    fields:
+      - field_oe_firstname
+      - field_oe_lastname
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:showcase_users':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null
