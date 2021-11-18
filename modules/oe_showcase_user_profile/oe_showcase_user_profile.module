@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Showcase user profile module.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function oe_showcase_user_profile_theme_suggestions_user_alter(&$suggestions, $variables, $hook) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestions[] = 'user__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_user_profile_theme() {
+  return [
+    'user__search_result' => [
+      'render element' => 'elements',
+      'base hook' => 'user',
+    ],
+  ];
+}
