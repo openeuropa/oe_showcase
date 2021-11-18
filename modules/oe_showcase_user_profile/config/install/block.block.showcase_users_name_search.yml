@@ -1,0 +1,39 @@
+uuid: 9d1a0eab-7d1f-4ef1-b59c-36cdfc20ef3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_whitelabel_search
+    - system
+  theme:
+    - oe_whitelabel
+id: showcase_users_name_search
+theme: oe_whitelabel
+region: sidebar_left
+weight: -6
+provider: null
+plugin: whitelabel_search_block
+settings:
+  id: whitelabel_search_block
+  label: 'Filter options'
+  provider: oe_whitelabel_search
+  label_display: visible
+  form:
+    action: users
+  input:
+    name: name
+    label: Name
+    classes: ''
+    placeholder: null
+  button:
+    label: Search
+    classes: ''
+  view_options:
+    id: showcase_users
+    display: showcase_users_page
+    enable_autocomplete: true
+visibility:
+  request_path:
+    id: request_path
+    pages: /users
+    negate: false
