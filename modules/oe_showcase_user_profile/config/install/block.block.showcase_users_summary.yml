@@ -1,0 +1,27 @@
+uuid: 1ec6f08c-2b9b-4a7a-ae5d-a4a4cb6b04ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.showcase_users_summary
+  module:
+    - facets_summary
+    - system
+  theme:
+    - oe_whitelabel
+id: showcase_users_summary
+theme: oe_whitelabel
+region: content_top
+weight: 0
+provider: null
+plugin: 'facets_summary_block:showcase_users_summary'
+settings:
+  id: 'facets_summary_block:showcase_users_summary'
+  label: Users
+  provider: facets_summary
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /users
+    negate: false
