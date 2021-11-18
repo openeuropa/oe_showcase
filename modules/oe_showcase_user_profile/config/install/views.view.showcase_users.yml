@@ -1,3 +1,4 @@
+uuid: aee48201-e59c-44e1-9fca-32ad3e0808d3
 langcode: en
 status: true
 dependencies:
@@ -5,7 +6,10 @@ dependencies:
     - search_api.index.showcase_users_index
     - system.menu.main
   module:
+    - better_exposed_filters
     - search_api
+_core:
+  default_config_hash: l5wDyEhpPkJ-cmhNAssum5nMBOUAj7eecaMm3iq7jPc
 id: showcase_users
 label: 'Showcase users'
 module: views
@@ -33,7 +37,7 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -42,6 +46,37 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: oe_whitelabel_float_end_sort
+              advanced:
+                combine: true
+                combine_rewrite: "Created Asc|Ascending\r\nCreated Desc|Descending\r\nFirst Name Asc|A-Z\r\nFirst Name Desc|Z-A"
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
+            filter:
+              search_api_fulltext:
+                plugin_id: bef_hidden
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
       pager:
         type: mini
         options:
@@ -53,7 +88,7 @@ display:
             previous: Previous
             next: Next
           expose:
-            items_per_page: true
+            items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
@@ -63,7 +98,11 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:user':
+              user: search_result
       fields:
         name:
           id: name
@@ -136,7 +175,54 @@ display:
             multi_separator: ', '
           entity_type: user
           plugin_id: search_api_field
-      filters: {  }
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_showcase_users_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+            placeholder: 'Search by name or surname'
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: direct
+          min_length: null
+          fields:
+            - field_oe_firstname
+            - field_oe_lastname
+          plugin_id: search_api_fulltext
       sorts:
         created:
           id: created
@@ -146,9 +232,21 @@ display:
           group_type: group
           admin_label: ''
           order: DESC
-          exposed: false
+          exposed: true
           expose:
-            label: ''
+            label: Created
+          plugin_id: search_api
+        field_oe_firstname:
+          id: field_oe_firstname
+          table: search_api_index_showcase_users_index
+          field: field_oe_firstname
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: true
+          expose:
+            label: 'First Name'
           plugin_id: search_api
       title: 'User list'
       header: {  }
@@ -162,12 +260,15 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags:
         - 'config:search_api.index.showcase_users_index'
-  page_1:
+  showcase_users_page:
     display_plugin: page
-    id: page_1
+    id: showcase_users_page
     display_title: Page
     position: 1
     display_options:
@@ -182,11 +283,19 @@ display:
         weight: 9
         context: '0'
         menu_name: main
+      exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags:
         - 'config:search_api.index.showcase_users_index'
