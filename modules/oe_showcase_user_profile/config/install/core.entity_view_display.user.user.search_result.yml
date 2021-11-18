@@ -1,0 +1,76 @@
+uuid: 446ec359-d01c-4d65-ac2d-0451256c7716
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.search_result
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_city_country
+    - field.field.user.user.field_current_position
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_nationality
+    - field.field.user.user.field_profile_image
+    - field.field.user.user.field_working_languages
+    - image.style.medium
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 4b8Q2_uQyde0g4gYtSfHe5kdHwzl3XQaCDaiOWVM01I
+id: user.user.search_result
+targetEntityType: user
+bundle: user
+mode: search_result
+content:
+  field_current_position:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_oe_firstname:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_oe_lastname:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_oe_organisation:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_profile_image:
+    type: image_url
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: medium
+    third_party_settings: {  }
+hidden:
+  field_bio: true
+  field_city_country: true
+  field_date_of_birth: true
+  field_gender: true
+  field_nationality: true
+  field_oe_department: true
+  field_working_languages: true
+  langcode: true
+  member_for: true
+  search_api_excerpt: true
