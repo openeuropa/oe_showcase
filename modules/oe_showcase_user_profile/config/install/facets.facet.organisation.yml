@@ -1,0 +1,60 @@
+uuid: 868e842c-6ec1-4c17-815e-6fe6942b2c31
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_users_index
+    - views.view.showcase_users
+  module:
+    - search_api
+id: organisation
+name: Organisation
+url_alias: organisation
+weight: -2
+min_count: 1
+show_only_one_result: false
+field_identifier: field_oe_organisation
+facet_source_id: 'search_api:views_page__showcase_users__showcase_users_page'
+widget:
+  type: facets_form_dropdown
+  config:
+    default_option_label: Choose
+    child_items_prefix: '-'
+    disabled_on_empty: false
+    show_numbers: true
+query_operator: or
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: 20
+    settings:
+      sort: DESC
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: true

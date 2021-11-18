@@ -1,0 +1,36 @@
+uuid: a27ef432-44fa-4668-aefe-620287877632
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.showcase_users_index
+    - views.view.showcase_users
+  module:
+    - search_api
+id: showcase_users_summary
+name: 'Showcase users summary'
+facets:
+  current_position:
+    checked: true
+    label: 'Current position'
+    separator: ', '
+    weight: 0
+    show_count: false
+  organisation:
+    checked: true
+    label: Organisation
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_page__showcase_users__showcase_users_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+  show_count:
+    processor_id: show_count
+    weights:
+      build: '5'
+    settings: {  }
