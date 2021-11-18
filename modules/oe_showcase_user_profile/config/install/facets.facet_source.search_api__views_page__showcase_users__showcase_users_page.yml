@@ -1,0 +1,9 @@
+uuid: 0d8d7568-9e61-43a9-a7a5-d95a446a837f
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__showcase_users__showcase_users_page
+name: 'search_api:views_page__showcase_users__showcase_users_page'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }
