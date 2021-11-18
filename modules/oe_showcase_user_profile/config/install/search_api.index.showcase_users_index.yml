@@ -1,11 +1,15 @@
+uuid: c41acbe2-888e-427f-956a-824ef8c052eb
 langcode: en
 status: true
 dependencies:
   module:
     - user
+    - oe_authentication_user_fields
     - search_api
   config:
     - search_api.server.showcase_users_server
+_core:
+  default_config_hash: e6fNikU4DIIAOalTM70ZTNy2w8n6SPCnp9ip66yRLEQ
 id: showcase_users_index
 name: 'Showcase users index'
 description: ''
@@ -19,6 +23,30 @@ field_settings:
     dependencies:
       module:
         - user
+  field_oe_firstname:
+    label: 'First Name'
+    datasource_id: 'entity:user'
+    property_path: field_oe_firstname
+    type: text
+    dependencies:
+      module:
+        - oe_authentication_user_fields
+  field_oe_lastname:
+    label: 'Last Name'
+    datasource_id: 'entity:user'
+    property_path: field_oe_lastname
+    type: text
+    dependencies:
+      module:
+        - oe_authentication_user_fields
+  field_oe_organisation:
+    label: Organisation
+    datasource_id: 'entity:user'
+    property_path: field_oe_organisation
+    type: string
+    dependencies:
+      module:
+        - oe_authentication_user_fields
 datasource_settings:
   'entity:user':
     languages:
@@ -27,6 +55,14 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_oe_firstname
+      - field_oe_lastname
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:
