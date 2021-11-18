@@ -1,0 +1,32 @@
+uuid: 97032f2b-bf02-422f-9256-3138c859f196
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.organisation
+  module:
+    - facets_form
+    - system
+  theme:
+    - oe_whitelabel
+id: showcase_users_facets
+theme: oe_whitelabel
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'facets_form:search_api:views_page__showcase_users__showcase_users_page'
+settings:
+  id: 'facets_form:search_api:views_page__showcase_users__showcase_users_page'
+  label: 'Showcase users facet form'
+  provider: facets_form
+  label_display: '0'
+  button:
+    label:
+      submit: Refine
+      reset: Clear
+  facets: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /users
+    negate: false
