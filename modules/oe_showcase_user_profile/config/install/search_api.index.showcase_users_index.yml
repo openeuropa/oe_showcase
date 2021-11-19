@@ -1,4 +1,3 @@
-uuid: c41acbe2-888e-427f-956a-824ef8c052eb
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - search_api
   config:
     - search_api.server.showcase_users_server
-_core:
-  default_config_hash: e6fNikU4DIIAOalTM70ZTNy2w8n6SPCnp9ip66yRLEQ
 id: showcase_users_index
 name: 'Showcase users index'
 description: ''
