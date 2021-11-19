@@ -5,11 +5,17 @@
  * Showcase search module.
  */
 
+declare(strict_types = 1);
+
 /**
  * Implements hook_theme().
  */
 function oe_showcase_search_theme() {
   return [
+    'views_view_unformatted__showcase_search__page' => [
+      'render element' => 'elements',
+      'base hook' => 'views_view_unformatted',
+    ],
     'node__search_result' => [
       'render element' => 'elements',
       'base hook' => 'node',
