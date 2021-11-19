@@ -1,4 +1,3 @@
-uuid: aee48201-e59c-44e1-9fca-32ad3e0808d3
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
   module:
     - better_exposed_filters
     - search_api
-_core:
-  default_config_hash: l5wDyEhpPkJ-cmhNAssum5nMBOUAj7eecaMm3iq7jPc
 id: showcase_users
 label: 'Showcase users'
 module: views
