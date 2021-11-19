@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Lisbet_Henry.jpg
+  uri:
+    -
+      value: 'public://2021-11/Lisbet_Henry.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 1004319
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1636406986

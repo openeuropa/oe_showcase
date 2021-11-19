@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * User search result template.
+ */
+#}
+{% if content.field_profile_image[0] is defined and content.field_profile_image[0]['#markup'] is not empty %}
+  {% set image = {
+    path: content.field_profile_image[0]['#markup'],
+    position: "top",
+  } %}
+{% endif %}
+
+{% set full_name = content.field_oe_firstname[0]['#context']['value'] ~ ' ' ~ content.field_oe_lastname[0]['#context']['value'] %}
+{% set professional_info = content.field_oe_organisation[0]['#context']['value'] ~ ' ' ~ content.field_current_position[0]['#context']['value'] %}
+{{ pattern('card', {
+  horizontal: true,
+  horizontal_grid: {
+    left_col_classes: "col-md-3",
+    right_col_classes: "col-md-9",
+    gutter: 0,
+  },
+  title: {
+    content: full_name,
+    classes: "mb-3",
+  },
+  text: {
+    content: professional_info,
+    tag: "div",
+    classes: "text-muted",
+  },
+  attributes: attributes.addClass(["border-0", "mb-5"]),
+  image: image,
+}) }}
