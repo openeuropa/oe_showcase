@@ -4,9 +4,17 @@
  * Search result template.
  */
 #}
+{% set link = pattern('link', {
+  'label': label,
+  'path': url,
+  'attributes': create_attribute({
+    'class': 'text-underline-hover',
+  })
+})
+%}
 {% set title = {
-  tag: 'a href=' ~ url,
-  content:  label,
+  tag: 'h5',
+  content:  link,
 } %}
 {{ pattern('card', {
   variant: 'search',
