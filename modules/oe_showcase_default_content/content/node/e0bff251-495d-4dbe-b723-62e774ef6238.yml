@@ -4,9 +4,6 @@ _meta:
   uuid: e0bff251-495d-4dbe-b723-62e774ef6238
   bundle: oe_showcase_page
   default_langcode: en
-  depends:
-    6850c50d-1848-4b59-8594-7e5cadecf39e: media
-    ee957f04-6035-4e1c-bc4e-3669250c0c30: media
 default:
   revision_uid:
     -
@@ -19,7 +16,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'Rich Text and Document'
+      value: 'Item 02'
   created:
     -
       value: 1632392782
@@ -62,9 +59,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -78,66 +72,6 @@ default:
           field_oe_title:
             -
               value: 'Lorem ipsum dolor sit amet'
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 8821d50d-aa84-4877-8679-5563158d5130
-          bundle: oe_document
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1632392867
-          behavior_settings:
-            -
-              value: {  }
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_oe_media:
-            -
-              entity: 6850c50d-1848-4b59-8594-7e5cadecf39e
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 89ad5848-cf40-4cc1-9097-4ffd1dcede09
-          bundle: oe_document
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1632392936
-          behavior_settings:
-            -
-              value: {  }
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_oe_media:
-            -
-              entity: ee957f04-6035-4e1c-bc4e-3669250c0c30
   field_description:
     -
       value: 'Demonstration of a Showcase Page with Rich text and Document paragraphs.'

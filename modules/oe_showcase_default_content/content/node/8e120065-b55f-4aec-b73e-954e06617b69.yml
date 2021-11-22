@@ -16,7 +16,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'Rich Text'
+      value: 'Item 01'
   created:
     -
       value: 1632390938
@@ -59,9 +59,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
