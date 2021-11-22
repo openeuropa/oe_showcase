@@ -12,7 +12,7 @@ default:
       value: true
   title:
     -
-      value: 'Rich Text'
+      value: 'Item 01'
   menu_name:
     -
       value: main
@@ -29,7 +29,7 @@ default:
       value: false
   weight:
     -
-      value: 1
+      value: -49
   expanded:
     -
       value: false
