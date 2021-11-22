@@ -1,4 +1,4 @@
-name: OpenEuropa Showcase user profile
+name: OpenEuropa Showcase User Profile
 type: module
 description: 'Demo user profile'
 core_version_requirement: ^8.9 || ^9.1
