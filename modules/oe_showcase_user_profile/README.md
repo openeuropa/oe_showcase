@@ -1,3 +1,3 @@
 # OpenEuropa Showcase User Profile
 
-The scope of this module is to demo the OpenEuropa user profile feature.
+The scope of this module is to showcase the OpenEuropa User Profile feature.
