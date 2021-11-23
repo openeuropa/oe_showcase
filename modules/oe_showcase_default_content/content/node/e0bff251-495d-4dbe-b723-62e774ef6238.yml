@@ -26,12 +26,9 @@ default:
   sticky:
     -
       value: false
-  revision_translation_affected:
-    -
-      value: true
   path:
     -
-      alias: /rich-text-and-document
+      alias: /item-02
       langcode: en
       pathauto: 0
   content_translation_source:
@@ -59,9 +56,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und

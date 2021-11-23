@@ -31,7 +31,7 @@ default:
       value: true
   path:
     -
-      alias: /rich-text
+      alias: /item-01
       langcode: en
       pathauto: 0
   content_translation_source:
