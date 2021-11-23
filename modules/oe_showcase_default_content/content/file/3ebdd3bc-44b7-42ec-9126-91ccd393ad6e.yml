@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 3ebdd3bc-44b7-42ec-9126-91ccd393ad6e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: European-Commission_flag_palace.jpeg
+  uri:
+    -
+      value: 'public://2021-11/European-Commission_flag_palace.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 119236
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637659378

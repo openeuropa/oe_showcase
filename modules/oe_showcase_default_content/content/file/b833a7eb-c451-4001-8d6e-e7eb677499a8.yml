@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b833a7eb-c451-4001-8d6e-e7eb677499a8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: European_Union_Flags_2a.jpeg
+  uri:
+    -
+      value: 'public://2021-11/European_Union_Flags_2a.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 387988
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1637659649
