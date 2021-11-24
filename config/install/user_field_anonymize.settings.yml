@@ -67,5 +67,5 @@ field_options:
   boolean:
     field_type: boolean
     plugin_id: user_field_anonymize_default
-enable_admin_users: false
-enable_all_users: false
+enable_admin_users: true
+enable_all_users: true
