@@ -53,7 +53,7 @@ display:
             previous: Previous
             next: Next
           expose:
-            items_per_page: true
+            items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
@@ -63,7 +63,11 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:user':
+              user: default
       fields:
         name:
           id: name
@@ -150,7 +154,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: 'User list'
+      title: Users
       header: {  }
       footer: {  }
       empty: {  }
@@ -182,6 +186,7 @@ display:
         weight: 9
         context: '0'
         menu_name: main
+      exposed_block: true
     cache_metadata:
       max-age: -1
       contexts:
