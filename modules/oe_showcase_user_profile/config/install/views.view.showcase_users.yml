@@ -5,6 +5,7 @@ dependencies:
     - search_api.index.showcase_users_index
     - system.menu.main
   module:
+    - better_exposed_filters
     - search_api
 id: showcase_users
 label: 'Showcase users'
@@ -33,7 +34,7 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -42,6 +43,28 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: oe_whitelabel_float_end_sort
+              advanced:
+                combine: true
+                combine_rewrite: "Post date Asc|Descending\r\nPost date Desc|Ascending\r\nTitle Asc|A-Z\r\nTitle Desc|Z-A"
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
       pager:
         type: mini
         options:
@@ -150,9 +173,21 @@ display:
           group_type: group
           admin_label: ''
           order: DESC
-          exposed: false
+          exposed: true
           expose:
-            label: ''
+            label: Created
+          plugin_id: search_api
+        name:
+          id: name
+          table: search_api_index_showcase_users_index
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Name
           plugin_id: search_api
       title: Users
       header: {  }
@@ -167,6 +202,8 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags:
         - 'config:search_api.index.showcase_users_index'
   page_1:
@@ -193,5 +230,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
       tags:
         - 'config:search_api.index.showcase_users_index'
