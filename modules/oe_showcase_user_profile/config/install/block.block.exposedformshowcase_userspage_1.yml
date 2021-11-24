@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.showcase_users
+  module:
+    - system
+    - views
+  theme:
+    - oe_whitelabel
+id: exposedformshowcase_userspage_1
+theme: oe_whitelabel
+region: content_top
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:showcase_users-page_1'
+settings:
+  id: 'views_exposed_filter_block:showcase_users-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /users
+    negate: false
