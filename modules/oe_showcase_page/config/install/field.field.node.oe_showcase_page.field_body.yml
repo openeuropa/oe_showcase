@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.oe_list_item_block
     - paragraphs.paragraphs_type.oe_quote
     - paragraphs.paragraphs_type.oe_rich_text
+    - paragraphs.paragraphs_type.oe_social_media_follow
     - paragraphs.paragraphs_type.oe_text_feature_media
   module:
     - entity_reference_revisions
@@ -81,7 +82,7 @@ settings:
         weight: 26
       oe_social_media_follow:
         weight: 27
-        enabled: false
+        enabled: true
       oe_text_feature_media:
         enabled: true
         weight: 28

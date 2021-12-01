@@ -27,6 +27,8 @@ drupal:
     # Remove existing settings for breadcrumb to allow new configuration.
     - "./vendor/bin/drush config-delete easy_breadcrumb.settings"
     # Enable the modules.
+    - "./vendor/bin/drush en oe_bootstrap_theme_paragraphs -y"
+    - "./vendor/bin/drush en oe_paragraphs_banner oe_paragraphs_media -y"
     - "./vendor/bin/drush en oe_showcase_search -y"
     - "./vendor/bin/drush en oe_showcase_navigation -y"
     - "./vendor/bin/drush en oe_showcase_page -y"
