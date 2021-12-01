@@ -28,6 +28,7 @@ settings:
     placeholder: Search
   button:
     label: Search
+    label_icon: icon
     classes: null
   view_options:
     id: showcase_search
