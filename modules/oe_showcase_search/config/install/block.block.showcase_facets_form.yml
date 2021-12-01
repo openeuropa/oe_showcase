@@ -20,7 +20,7 @@ settings:
   label: 'Filter Options'
   provider: facets_form
   label_display: visible
-  live_total: true
+  live_total: false
   button:
     label:
       submit: Refine

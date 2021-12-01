@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - oe_whitelabel_search
   theme:
     - oe_whitelabel
   config:
