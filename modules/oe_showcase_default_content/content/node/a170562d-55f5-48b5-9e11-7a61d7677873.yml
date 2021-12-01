@@ -5,6 +5,7 @@ _meta:
   bundle: oe_showcase_page
   default_langcode: en
   depends:
+    e10d6f62-ac65-42de-af4e-6773d0bc7267: media
     35b7b482-8668-4ac3-82c0-a43554dda051: media
     36b24637-901a-46df-8e8d-b7bc0618a2fc: media
     3ebdd3bc-44b7-42ec-9126-91ccd393ad6e: file
@@ -66,7 +67,7 @@ default:
               value: {  }
           oe_paragraphs_variant:
             -
-              value: default
+              value: oe_banner_primary
           content_translation_source:
             -
               value: und
@@ -86,7 +87,57 @@ default:
               options: {  }
           field_oe_text:
             -
-              value: 'Page banner centered'
+              value: 'Page banner and centered'
+          field_oe_title:
+            -
+              value: 'This is a primary banner'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 08cfc06a-5a13-4dc6-9587-568f0c5a93ee
+          bundle: oe_banner
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1638359722
+          behavior_settings:
+            -
+              value: {  }
+          oe_paragraphs_variant:
+            -
+              value: oe_banner_image_shade
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_banner_full_width:
+            -
+              value: false
+          field_oe_banner_type:
+            -
+              value: hero_left
+          field_oe_link:
+            -
+              uri: 'https://example.com'
+              title: 'Call to action'
+              options: {  }
+          field_oe_media:
+            -
+              entity: e10d6f62-ac65-42de-af4e-6773d0bc7267
+          field_oe_text:
+            -
+              value: 'Hero size and left aligned'
+          field_oe_title:
+            -
+              value: 'This is an image shade banner'
     -
       entity:
         _meta:
@@ -235,42 +286,6 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 5c8c856d-419f-4a18-ae5c-ee74a2a41c32
-          bundle: oe_links_block
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1637659157
-          behavior_settings:
-            -
-              value: {  }
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_oe_links:
-            -
-              uri: 'http://example.com'
-              title: 'Link example one'
-              options: {  }
-            -
-              uri: 'http://example.com'
-              title: 'Link example two'
-              options: {  }
-          field_oe_text:
-            -
-              value: 'This is a links block'
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
           uuid: f17ed9dc-e985-4286-8ca0-e84440d892d5
           bundle: oe_list_item_block
           default_langcode: en
@@ -407,9 +422,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -435,9 +447,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -472,9 +481,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -509,9 +515,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -546,9 +549,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -565,3 +565,156 @@ default:
                     -
                       value: "<p>Quisque dignissim quam eget tincidunt euismod. Quisque euismod nulla vel tellus dignissim, ac pellentesque mi varius. Nam eget nisl vitae leo condimentum semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pulvinar ornare arcu non ultricies. In ex sapien, tincidunt a eleifend quis, accumsan nec metus. Vivamus eget erat eget magna semper ullamcorper. Vestibulum posuere elit tortor, nec suscipit orci tristique eu.</p>\r\n"
                       format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5c8c856d-419f-4a18-ae5c-ee74a2a41c32
+          bundle: oe_links_block
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637659157
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_links:
+            -
+              uri: 'http://example.com'
+              title: 'Link example one'
+              options: {  }
+            -
+              uri: 'http://example.com'
+              title: 'Link example two'
+              options: {  }
+          field_oe_text:
+            -
+              value: 'This is a links block'
+          oe_bt_links_block_background:
+            -
+              value: transparent
+          oe_bt_links_block_orientation:
+            -
+              value: vertical
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e856fa27-6b26-439d-aa9d-fe3b60dd7f14
+          bundle: oe_social_media_follow
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1638355198
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_social_media_links:
+            -
+              uri: 'http://example.com'
+              title: 'Facebook example'
+              options: {  }
+              link_type: facebook
+            -
+              uri: 'http://example.com'
+              title: 'Linkedin example'
+              options: {  }
+              link_type: linkedin
+            -
+              uri: 'http://example.com'
+              title: 'Youtube example'
+              options: {  }
+              link_type: youtube
+          field_oe_social_media_see_more:
+            -
+              uri: 'http://example.com'
+              title: 'More channels'
+              options: {  }
+          field_oe_social_media_variant:
+            -
+              value: vertical
+          field_oe_title:
+            -
+              value: 'This is a social follow links block'
+          oe_bt_links_block_background:
+            -
+              value: gray
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 796dac7e-8da2-4abe-a70c-f362dc3e0a3c
+          bundle: oe_social_media_follow
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1638355663
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_social_media_links:
+            -
+              uri: 'http://example.com'
+              title: 'Facebook example'
+              options: {  }
+              link_type: facebook
+            -
+              uri: 'http://example.com'
+              title: 'Linkedin example'
+              options: {  }
+              link_type: linkedin
+            -
+              uri: 'http://example.com'
+              title: 'Youtube example'
+              options: {  }
+              link_type: youtube
+          field_oe_social_media_see_more:
+            -
+              uri: 'http://example.com'
+              title: 'More channels'
+              options: {  }
+          field_oe_social_media_variant:
+            -
+              value: horizontal
+          field_oe_title:
+            -
+              value: 'Variant horizontal'
+          oe_bt_links_block_background:
+            -
+              value: gray
