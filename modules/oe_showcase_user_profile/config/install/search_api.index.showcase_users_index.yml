@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+    - oe_authentication_user_fields
+    - search_api
+  config:
+    - search_api.server.showcase_users_server
+id: showcase_users_index
+name: 'Showcase users index'
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: Created
+    datasource_id: 'entity:user'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - user
+  field_oe_firstname:
+    label: 'First Name'
+    datasource_id: 'entity:user'
+    property_path: field_oe_firstname
+    type: text
+    dependencies:
+      module:
+        - oe_authentication_user_fields
+  field_oe_lastname:
+    label: 'Last Name'
+    datasource_id: 'entity:user'
+    property_path: field_oe_lastname
+    type: text
+    dependencies:
+      module:
+        - oe_authentication_user_fields
+  field_oe_organisation:
+    label: Organisation
+    datasource_id: 'entity:user'
+    property_path: field_oe_organisation
+    type: string
+    dependencies:
+      module:
+        - oe_authentication_user_fields
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_oe_firstname
+      - field_oe_lastname
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+  track_changes_in_references: true
+server: showcase_users_server

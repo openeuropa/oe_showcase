@@ -33,6 +33,7 @@ dependencies:
   - oe_multilingual
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_showcase_user_profile
 install:
   - dblog
   - dynamic_page_cache
@@ -41,3 +42,8 @@ install:
 themes:
   - seven
   - oe_whitelabel
+config_devel:
+  install:
+    - purge_users.settings
+    - user_field_anonymize.configuration
+    - user.settings

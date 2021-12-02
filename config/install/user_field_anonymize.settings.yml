@@ -1,0 +1,4 @@
+restrict_to_roles:
+  - authenticated
+enable_all_users: true
+enable_admin_users: true
