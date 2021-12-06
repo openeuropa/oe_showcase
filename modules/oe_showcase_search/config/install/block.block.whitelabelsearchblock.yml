@@ -20,14 +20,12 @@ settings:
   label_display: '0'
   form:
     action: search
-    classes: null
   input:
     name: search_api_fulltext
     label: Search
     classes: null
     placeholder: Search
   button:
-    label: Search
     classes: null
   view_options:
     id: showcase_search
