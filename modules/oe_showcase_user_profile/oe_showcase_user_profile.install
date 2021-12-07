@@ -7,8 +7,6 @@
 
 declare(strict_types = 1);
 
-use Drupal\legal\Entity\Conditions;
-
 /**
  * Implements hook_install().
  */
