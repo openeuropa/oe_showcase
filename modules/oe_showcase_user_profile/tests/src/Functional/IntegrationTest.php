@@ -5,13 +5,17 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase_user_profile\Functional;
 
 use Drupal\Tests\BrowserTestBase;
+use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
+use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Simple test to ensure the user fields are created and visible.
+ * Tests the User Profile feature integration.
  *
  * @group oe_showcase_user_profile
  */
 class IntegrationTest extends BrowserTestBase {
+
+  use AuthenticationTrait;
 
   /**
    * {@inheritdoc}
@@ -27,49 +31,69 @@ class IntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected $strictConfigSchema = FALSE;
+  
+  /**
+   * A user with permission to administer site configuration.
+   *
+   * @var \Drupal\user\UserInterface
+   */
+  protected $user;
 
   /**
    * {@inheritdoc}
    */
   protected static $modules = [
-    'system',
-    'user',
-    'node',
     'block',
     'config',
-    'oe_showcase_user_profile',
     'datetime',
     'image',
+    'oe_showcase_user_profile',
     'path',
-    'file',
+    'system',
+    'user',
   ];
+  
+ /**
+  * {@inheritdoc}
+  */
+  protected function setUp(): void {
+    parent::setUp();
+    // Disable EU Login.
+    $this->disableForcedLogin();
+
+    // Create user.
+    $this->user = $this->drupalCreateUser([], NULL, TRUE);
+
+    // Login.
+    $this->drupalLogin($this->user);
+  }
 
   /**
    * Tests that the Project page renders correctly.
    */
   public function testIntegration(): void {
+    // Assert session.
     $assert_session = $this->assertSession();
-    // Log in as admin.
-    $user = $this->drupalCreateUser([], '', TRUE);
-    $this->drupalLogin($user);
+
+    // Go to people management to create a new user.
     $this->drupalGet("admin/people/create");
+
     $page = $this->getSession()->getPage();
+
     // Fill user fields.
     $page->fillField('Email address', 'example@example.com');
     $page->fillField('Username', 'Example user');
     $page->fillField('Password', '123456');
     $page->fillField('Confirm password', '123456');
-    $page->fillField('edit-field-date-of-birth-0-value-date', '2000-10-10');
-    $page->fillField('Bio', 'Biography');
-    $page->selectFieldOption('Country', 'Spain');
-    $page->fillField('Current position', 'Example position');
+    $page->fillField('First Name', 'Exampleson');
+    $page->fillField('Last Name', 'McModel');
+    $page->fillField('Department', 'Cleaning Department');
+    $page->fillField('Organisation', 'Cleaning Co.');
     $page->pressButton('Create new account');
+
     // Check field values.
     $page->clickLink('Example user');
-    $assert_session->pageTextContains('2000-10-10');
-    $assert_session->pageTextContains('Biography');
-    $assert_session->pageTextContains('Spain');
-    $assert_session->pageTextContains('Example position');
+    $this->assertSession()->statusCodeEquals(200);
   }
 
 }
