@@ -12,8 +12,8 @@ use Drupal\legal\Entity\Conditions;
 /**
  * Implements hook_install().
  */
-function oe_showcase_user_profile_install($is_syncing) {
-  if ($is_syncing) {
+function oe_showcase_user_profile_install($is_syncing): void {
+  if (!$is_syncing) {
     return;
   }
 
@@ -24,15 +24,4 @@ function oe_showcase_user_profile_install($is_syncing) {
     'human-sex' => 'http://publications.europa.eu/resource/dataset/human-sex',
   ];
   \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
-
-  // Add a legal term for testing.
-  Conditions::create([
-    'version'    => 1,
-    'revision'   => 1,
-    'language'   => 'en',
-    'conditions' => '<p>Please accept the terms of use.</p>',
-    'format'     => 'full_html',
-    'date'       => time(),
-    'extras'     => serialize([]),
-  ])->save();
 }
