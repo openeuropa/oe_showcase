@@ -6,7 +6,6 @@ namespace Drupal\Tests\oe_showcase_user_profile\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
-use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Tests the User Profile feature integration.
@@ -26,12 +25,12 @@ class IntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected $profile = 'oe_showcase';
-  
+
   /**
    * {@inheritdoc}
    */
   protected $strictConfigSchema = FALSE;
-  
+
   /**
    * A user with permission to administer site configuration.
    *
@@ -52,10 +51,10 @@ class IntegrationTest extends BrowserTestBase {
     'system',
     'user',
   ];
-  
- /**
-  * {@inheritdoc}
-  */
+
+  /**
+   * {@inheritdoc}
+   */
   protected function setUp(): void {
     parent::setUp();
     // Disable EU Login.
