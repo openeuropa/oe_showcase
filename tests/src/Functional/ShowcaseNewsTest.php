@@ -5,13 +5,9 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase\Functional;
 
 use Drupal\Tests\BrowserTestBase;
-use Drupal\node\Entity\Node;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\node\Traits\ContentTypeCreationTrait;
-use Symfony\Component\DomCrawler\Crawler;
 use Drupal\Tests\sparql_entity_storage\Traits\SparqlConnectionTrait;
-use Drupal\Core\File\FileSystemInterface;
-use Drupal\file\Entity\File;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -65,6 +61,12 @@ class ShowcaseNewsTest extends BrowserTestBase {
    * @var \Drupal\user\UserInterface
    */
   protected $editor1;
+
+  /**
+   * A user with permission to create News items.
+   *
+   * @var \Drupal\user\UserInterface
+   */
   protected $editor2;
 
   /**
@@ -129,7 +131,7 @@ class ShowcaseNewsTest extends BrowserTestBase {
     // Assert session.
     $assert_session = $this->assertSession();
     $now = \Drupal::time()->getRequestTime();
-    
+
     $this->drupalLogin($this->editor1);
     $this->drupalGet('node/add/oe_news_simple');
     $page = $this->getSession()->getPage();
@@ -137,28 +139,9 @@ class ShowcaseNewsTest extends BrowserTestBase {
     // Fill user fields.
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
-    
-    // Create document media.
-    $pdf_file = file_save_data(file_get_contents(__DIR__ . '/fixtures/example_1.jpeg'), 'public://example_1.jpeg');
-    $pdf_file->setPermanent();
-    $pdf_file->save();
-    
-    $date = $now - 86400;
-    $page->fillField('field_news_publication_date[0][value][date]', '2021-12-12');
-    $page->fillField('field_news_publication_date[0][value][time]', '00:00:00');
-    
-    // $test_image = current($this->drupalGetTestFiles('image'));
-    // $page->fillField('files[field_news_image_0]', \Drupal::service('file_system')->realpath($test_image->uri));
-    
-    
-    // $field = $this->getSession()->getPage()->findField('files[field_news_image_0]');
-    // $field->attachFile($this->container->get('file_system')->realpath($test_image->uri));
-    // $page->fillField('field_news_image[0][alt]', 'sdfsdfsdfs');
-    
-    
-    
+
     $page->pressButton('Save');
-    
+
     $this->drupalGet('admin/content');
     $page = $this->getSession()->getPage();
     $page->clickLink('Example title');
@@ -166,13 +149,11 @@ class ShowcaseNewsTest extends BrowserTestBase {
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     // $assert_session->pageTextContains('Publication date 12/12/2021 - 00:00');
-    
-    
     // Edit node by another editor.
     // Assert session.
     $this->drupalLogout();
     $this->drupalLogin($this->editor2);
-    
+
     // Check that the node exists in the database.
     $node = $this->drupalGetNodeByTitle('Example title');
 
@@ -184,12 +165,13 @@ class ShowcaseNewsTest extends BrowserTestBase {
     $page->fillField('Title', 'Example title editor 2');
     $page->fillField('Content', 'Example Content editor 2');
     $page->pressButton('Save');
-    
+
     $this->drupalGet('admin/content');
     $page = $this->getSession()->getPage();
     $page->clickLink('Example title editor 2');
-    
+
     $assert_session->pageTextContains('Example title editor 2');
     $assert_session->pageTextContains('Example Content editor 2');
   }
+
 }
