@@ -72,6 +72,11 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
+        "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3139335": "https://www.drupal.org/files/issues/2021-02-05/3139335-4.patch"
+            }
+        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
