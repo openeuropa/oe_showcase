@@ -4,16 +4,17 @@ description: 'Demo News feature based on search_api'
 core_version_requirement: ^8.9 || ^9.1
 package: OpenEuropa
 dependencies:
-  - drupal:views
-  - facets_summary:facets_summary
-  - facets_form_date_range:facets_form_date_range
-  - facets_form_live_total:facets_form_live_total
-  - search_api:search_api
-  - search_api_db:search_api_db
-  - search_api_autocomplete:search_api_autocomplete
+  - allowed_formats:allowed_formats
   - better_exposed_filters:better_exposed_filters
   - drupal:ckeditor
   - drupal:menu_ui
+  - drupal:views
+  - facets_form_date_range:facets_form_date_range
+  - facets_form_live_total:facets_form_live_total
+  - facets_summary:facets_summary
+  - search_api:search_api
+  - search_api_autocomplete:search_api_autocomplete
+  - search_api_db:search_api_db
 
 themes:
   - bartik

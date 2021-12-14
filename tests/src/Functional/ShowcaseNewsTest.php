@@ -28,19 +28,7 @@ class ShowcaseNewsTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected static $modules = [
-    'block',
-    'config',
-    'datetime',
-    'image',
     'oe_showcase_news',
-    'path',
-    'system',
-    'user',
-    'allowed_formats',
-    'ui_patterns',
-    'ui_patterns_library',
-    'ui_patterns_settings',
-    'oe_paragraphs',
   ];
 
   /**
