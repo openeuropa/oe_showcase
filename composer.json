@@ -23,7 +23,7 @@
         "openeuropa/oe_media": "^1.13",
         "openeuropa/oe_multilingual": "^1.8",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "0.601.202112031716"
+        "openeuropa/oe_whitelabel": "dev-OEL-597"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
