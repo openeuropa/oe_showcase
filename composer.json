@@ -14,8 +14,6 @@
         "drupal/facets_form": "1.x-dev",
         "drupal/search_api": "^1.20",
         "drupal/search_api_autocomplete": "^1.5",
-        "drupal/ui_patterns": "^1.2",
-        "drupal/ui_patterns_settings": "^1.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/oe_authentication": "^1.4",
