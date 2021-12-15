@@ -10,7 +10,7 @@
  */
 function oe_showcase_news_theme() {
   return [
-    'node__oe_news_simple' => [
+    'node__search_result' => [
       'render element' => 'elements',
       'base hook' => 'node',
     ],
