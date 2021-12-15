@@ -11,9 +11,8 @@
 {{ pattern('card', {
   variant: 'search',
   title: title,
-  text: content.body,
-  image: content.field_image[0],
-  badges: content.field_category,
+  text: content.field_news_content,
+  image: content.field_news_image[0],
   content: {
     '#type': 'html_tag',
     '#tag': 'span',
