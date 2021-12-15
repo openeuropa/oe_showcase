@@ -6,7 +6,7 @@ dependencies:
     - node.type.oe_showcase_page
     - paragraphs.paragraphs_type.oe_accordion
     - paragraphs.paragraphs_type.oe_accordion_item
-    - paragraphs.paragraphs_type.oe_document
+    - paragraphs.paragraphs_type.oe_banner
     - paragraphs.paragraphs_type.oe_links_block
     - paragraphs.paragraphs_type.oe_list_item
     - paragraphs.paragraphs_type.oe_list_item_block
@@ -30,9 +30,9 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      oe_document: oe_document
       oe_accordion: oe_accordion
       oe_accordion_item: oe_accordion_item
+      oe_banner: oe_banner
       oe_links_block: oe_links_block
       oe_list_item: oe_list_item
       oe_list_item_block: oe_list_item_block
@@ -46,6 +46,9 @@ settings:
       oe_accordion_item:
         enabled: true
         weight: 17
+      oe_banner:
+        enabled: true
+        weight: 18
       oe_content_row:
         weight: 18
         enabled: false
@@ -53,8 +56,8 @@ settings:
         weight: 19
         enabled: false
       oe_document:
-        enabled: true
         weight: 15
+        enabled: false
       oe_fact:
         weight: 20
         enabled: false

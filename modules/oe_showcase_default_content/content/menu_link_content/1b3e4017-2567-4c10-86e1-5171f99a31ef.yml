@@ -10,7 +10,7 @@ default:
       value: true
   title:
     -
-      value: Pages
+      value: 'Dropdown link'
   menu_name:
     -
       value: main
@@ -27,7 +27,7 @@ default:
       value: false
   weight:
     -
-      value: 0
+      value: -47
   expanded:
     -
       value: true

@@ -70,14 +70,6 @@ default:
               value: false
           field_oe_links:
             -
-              uri: 'internal:/pages/lists-links-and-accordion'
-              title: 'Lists, Links and Accordion'
-              options: {  }
-            -
-              uri: 'internal:/pages/text-featured-media'
-              title: 'Text with Featured Media'
-              options: {  }
-            -
-              uri: 'internal:/pages/rich-text-and-text-featured-media'
-              title: 'Rich Text and Text with featured Media'
+              uri: 'internal:/pages/example-page'
+              title: 'Example page'
               options: {  }
