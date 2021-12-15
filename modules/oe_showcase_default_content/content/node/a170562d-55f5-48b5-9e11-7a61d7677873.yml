@@ -5,8 +5,10 @@ _meta:
   bundle: oe_showcase_page
   default_langcode: en
   depends:
-    92b23df3-273d-4a51-9e33-b7ea68e12d64: file
-    01069a3c-4336-478a-bfc4-0cc8b6c52f0d: file
+    35b7b482-8668-4ac3-82c0-a43554dda051: media
+    36b24637-901a-46df-8e8d-b7bc0618a2fc: media
+    3ebdd3bc-44b7-42ec-9126-91ccd393ad6e: file
+    b833a7eb-c451-4001-8d6e-e7eb677499a8: file
 default:
   revision_uid:
     -
@@ -19,7 +21,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'Lists, Links and Accordion'
+      value: 'Example page'
   created:
     -
       value: 1632391985
@@ -34,7 +36,7 @@ default:
       value: true
   path:
     -
-      alias: /pages/lists-links-and-accordion
+      alias: /pages/example-page
       langcode: en
       pathauto: 1
   content_translation_source:
@@ -49,7 +51,227 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 4533a12d-978f-46db-b8aa-fa7b765e8123
+          uuid: 55a63760-94a1-4f6f-b356-4558dc7c0c4d
+          bundle: oe_banner
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637657509
+          behavior_settings:
+            -
+              value: {  }
+          oe_paragraphs_variant:
+            -
+              value: default
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_banner_full_width:
+            -
+              value: false
+          field_oe_banner_type:
+            -
+              value: page_center
+          field_oe_link:
+            -
+              uri: 'http://example.com'
+              title: 'Call to action'
+              options: {  }
+          field_oe_text:
+            -
+              value: 'Page banner centered'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fcab206d-444b-4660-8dfb-50ac69c879d3
+          bundle: oe_text_feature_media
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637657604
+          behavior_settings:
+            -
+              value: {  }
+          oe_paragraphs_variant:
+            -
+              value: default
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_link:
+            -
+              uri: 'http://example.com'
+              title: More..
+              options: {  }
+          field_oe_media:
+            -
+              entity: 35b7b482-8668-4ac3-82c0-a43554dda051
+          field_oe_plain_text_long:
+            -
+              value: 'Presentation of the credentials of the new Heads of Mission to Ursula von der Leyen, President of the European Commission'
+          field_oe_text_long:
+            -
+              value: "<p>Fusce gravida consequat magna volutpat bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sodales suscipit arcu in dapibus. Curabitur felis ante, gravida ut rutrum non, pellentesque ut turpis. Ut ultricies diam id sapien feugiat, vehicula viverra leo luctus. Ut at dapibus arcu. Etiam hendrerit leo tincidunt mauris viverra iaculis. Duis quis leo maximus, ultricies dolor ac, venenatis enim.</p>\r\n"
+              format: full_html
+          field_oe_title:
+            -
+              value: 'This is a text with featured media'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 85616ac9-5d86-4d31-b581-a8ab41196f16
+          bundle: oe_text_feature_media
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637658937
+          behavior_settings:
+            -
+              value: {  }
+          oe_paragraphs_variant:
+            -
+              value: right_featured
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_feature_media_title:
+            -
+              value: 'Variant with text on the right side'
+          field_oe_media:
+            -
+              entity: 36b24637-901a-46df-8e8d-b7bc0618a2fc
+          field_oe_plain_text_long:
+            -
+              value: 'Euro with miniature figurines'
+          field_oe_text_long:
+            -
+              value: "<p>In mauris velit, tristique at turpis nec, ornare dapibus nunc. Vivamus quis quam tincidunt, tempor elit eget, maximus diam. Mauris ultrices lobortis quam, vel placerat tellus hendrerit in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam diam odio, laoreet eget est ac, scelerisque suscipit lacus. Quisque et lectus nec purus auctor fringilla sit amet in erat. Ut non nisl porta, vehicula tortor vel, feugiat velit. Sed commodo ipsum sit amet ante vulputate, non bibendum lorem ultrices. Nulla sit amet orci viverra, molestie nibh sit amet, efficitur urna. Maecenas dapibus cursus sapien sit amet congue.</p>\r\n"
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a50dcd5a-9d4a-450b-8793-8e3b7acd3283
+          bundle: oe_quote
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637659032
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_plain_text_long:
+            -
+              value: 'Fusce gravida consequat magna volutpat bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+          field_oe_text:
+            -
+              value: 'Curabitur Felis'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0ca11273-b489-4d9e-97da-897af91cdc29
+          bundle: oe_rich_text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637659108
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_text_long:
+            -
+              value: "<p>In mauris velit, tristique at turpis nec, ornare dapibus nunc. Vivamus quis quam tincidunt, tempor elit eget, maximus diam. Mauris ultrices lobortis quam, vel placerat tellus hendrerit in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam diam odio, laoreet eget est ac, scelerisque suscipit lacus. Quisque et lectus nec purus auctor fringilla sit amet in erat. Ut non nisl porta, vehicula tortor vel, feugiat velit. Sed commodo ipsum sit amet ante vulputate, non bibendum lorem ultrices. Nulla sit amet orci viverra, molestie nibh sit amet, efficitur urna. Maecenas dapibus cursus sapien sit amet congue.</p>\r\n"
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5c8c856d-419f-4a18-ae5c-ee74a2a41c32
+          bundle: oe_links_block
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1637659157
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_links:
+            -
+              uri: 'http://example.com'
+              title: 'Link example one'
+              options: {  }
+            -
+              uri: 'http://example.com'
+              title: 'Link example two'
+              options: {  }
+          field_oe_text:
+            -
+              value: 'This is a links block'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f17ed9dc-e985-4286-8ca0-e84440d892d5
           bundle: oe_list_item_block
           default_langcode: en
         default:
@@ -58,13 +280,10 @@ default:
               value: true
           created:
             -
-              value: 1632392050
+              value: 1637659225
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -73,14 +292,14 @@ default:
               value: false
           field_oe_list_item_block_layout:
             -
-              value: one_column
+              value: two_columns
           field_oe_paragraphs:
             -
               entity:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: 85c1b4c3-54ed-42ed-a6b3-d6d6b5fd69e7
+                  uuid: e183d0e3-0394-4382-b458-c6b91cf56a70
                   bundle: oe_list_item
                   default_langcode: en
                 default:
@@ -89,55 +308,10 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392050
+                      value: 1637659225
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
-                  oe_paragraphs_variant:
-                    -
-                      value: default
-                  content_translation_source:
-                    -
-                      value: und
-                  content_translation_outdated:
-                    -
-                      value: false
-                  field_oe_link:
-                    -
-                      uri: 'internal:/'
-                      title: ''
-                      options: {  }
-                  field_oe_text_long:
-                    -
-                      value: 'This item is a link to the front page.'
-                      format: plain_text
-                  field_oe_title:
-                    -
-                      value: 'Home page'
-            -
-              entity:
-                _meta:
-                  version: '1.0'
-                  entity_type: paragraph
-                  uuid: 274748cf-0466-4bec-a18d-026926d120e0
-                  bundle: oe_list_item
-                  default_langcode: en
-                default:
-                  status:
-                    -
-                      value: true
-                  created:
-                    -
-                      value: 1632392107
-                  behavior_settings:
-                    -
-                      value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   oe_paragraphs_variant:
                     -
                       value: highlight
@@ -149,29 +323,29 @@ default:
                       value: false
                   field_oe_image:
                     -
-                      entity: 92b23df3-273d-4a51-9e33-b7ea68e12d64
-                      alt: ''
+                      entity: 3ebdd3bc-44b7-42ec-9126-91ccd393ad6e
+                      alt: Flag
                       title: ''
-                      width: 265
-                      height: 184
+                      width: 1366
+                      height: 768
                   field_oe_link:
                     -
-                      uri: 'https://ec.europa.eu/commission/presscorner/home/en'
+                      uri: 'route:<nolink>'
                       title: ''
                       options: {  }
                   field_oe_text_long:
                     -
-                      value: 'Press material from the Commission Spokesperson''s Service.'
+                      value: 'Suspendisse consequat vulputate enim, at pretium justo elementum quis. Nullam tincidunt fringilla dui, fringilla tincidunt turpis feugiat vel. Ut luctus porta metus, fringilla efficitur lectus feugiat sed.'
                       format: plain_text
                   field_oe_title:
                     -
-                      value: 'Press corner'
+                      value: 'Link item title one'
             -
               entity:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: 952b6246-efd3-4b33-b70e-71b8f0abffa9
+                  uuid: 38b85759-d908-4c20-a552-3412edd54dab
                   bundle: oe_list_item
                   default_langcode: en
                 default:
@@ -180,16 +354,13 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392380
+                      value: 1637659509
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   oe_paragraphs_variant:
                     -
-                      value: thumbnail_primary
+                      value: highlight
                   content_translation_source:
                     -
                       value: und
@@ -198,73 +369,32 @@ default:
                       value: false
                   field_oe_image:
                     -
-                      entity: 01069a3c-4336-478a-bfc4-0cc8b6c52f0d
-                      alt: ''
+                      entity: b833a7eb-c451-4001-8d6e-e7eb677499a8
+                      alt: flag
                       title: ''
-                      width: 639
-                      height: 426
+                      width: 1920
+                      height: 1080
                   field_oe_link:
                     -
-                      uri: 'https://ec.europa.eu/commission/presscorner/detail/en/speech_21_4701'
-                      title: ''
-                      options: {  }
-                  field_oe_title:
-                    -
-                      value: '2021 State of the Union Address by President von der Leyen'
-            -
-              entity:
-                _meta:
-                  version: '1.0'
-                  entity_type: paragraph
-                  uuid: 34c8d08c-c60e-46d4-b95d-566dcacc87fd
-                  bundle: oe_list_item
-                  default_langcode: en
-                default:
-                  status:
-                    -
-                      value: true
-                  created:
-                    -
-                      value: 1632392470
-                  behavior_settings:
-                    -
-                      value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
-                  oe_paragraphs_variant:
-                    -
-                      value: date
-                  content_translation_source:
-                    -
-                      value: und
-                  content_translation_outdated:
-                    -
-                      value: false
-                  field_oe_date:
-                    -
-                      value: '2021-09-22'
-                  field_oe_link:
-                    -
-                      uri: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_21_4783'
+                      uri: 'route:<nolink>'
                       title: ''
                       options: {  }
                   field_oe_text_long:
                     -
-                      value: 'The European Commission has today adopted a comprehensive review of EU insurance rules (known as “Solvency II”) so that insurance companies can scale up long-term investment in Europe''s recovery from the COVID-19 pandemic.'
+                      value: 'Nunc placerat dolor lacus, eget tincidunt nunc dignissim eu. Praesent pretium metus est, ut dictum neque vulputate sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
                       format: plain_text
                   field_oe_title:
                     -
-                      value: 'Reviewing EU insurance rules: encouraging insurers to invest in Europe''s future'
+                      value: 'Link item title two'
           field_oe_title:
             -
-              value: 'Lorem ipsum dolor sit amet'
+              value: 'This is a Listing item block'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 2fe60bae-eaae-42f3-ac2f-0f9589cc272d
+          uuid: b5aba02e-831a-45cd-bd37-d51fa7ced155
           bundle: oe_accordion
           default_langcode: en
         default:
@@ -273,7 +403,7 @@ default:
               value: true
           created:
             -
-              value: 1632392530
+              value: 1637659699
           behavior_settings:
             -
               value: {  }
@@ -292,7 +422,7 @@ default:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: a1b59e84-c170-4f7f-9cc9-4ce65750553a
+                  uuid: 959dc21d-99d7-416c-bc68-754a099d3dd5
                   bundle: oe_accordion_item
                   default_langcode: en
                 default:
@@ -301,7 +431,7 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392530
+                      value: 1637659699
                   behavior_settings:
                     -
                       value: {  }
@@ -319,17 +449,17 @@ default:
                       value: arrow-down
                   field_oe_text:
                     -
-                      value: 'Logo, visual identity'
+                      value: 'Integer ullamcorper elementum porta Vestibulum in maximus mauris'
                   field_oe_text_long:
                     -
-                      value: "<p>This page is to help partner organisations and contractors of the European Commission understand how to use the European Commission's logo and visual identity.</p>\r\n\r\n<p>The visual identity gives the European Commission a recognisable and coherent image. A full manual on the visual identity is available below. This establishes the basic principles to be applied to the entire range of communication products.</p>\r\n\r\n<p>The visual identity is constructed around the European Commission's logo. This logo is&nbsp;based on 2 key elements: the European flag and a graphic element inspired by the headquarters of the European Commission.</p>\r\n"
+                      value: "<p>Nam accumsan ornare est, pulvinar mollis sapien. Aenean tristique, massa sit amet imperdiet malesuada, ligula magna interdum mauris, id hendrerit erat ante quis neque. Donec convallis arcu id efficitur scelerisque. Mauris quis massa semper nisi tempus gravida. Nunc scelerisque dolor nec sapien venenatis dapibus. Sed laoreet augue vel sapien luctus, in vestibulum lacus viverra. Aliquam viverra cursus dapibus. In hac habitasse platea dictumst. Aliquam quis massa sed orci pulvinar congue id sit amet ante. Sed vestibulum tincidunt nunc, in laoreet est dictum sit amet. Nulla sit amet mollis tortor, et tincidunt massa. Pellentesque feugiat velit quis nulla interdum, id efficitur odio commodo. Mauris sed bibendum nunc. Donec nec nisl consectetur, lacinia dui vel, rutrum lorem.</p>\r\n"
                       format: full_html
             -
               entity:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: 91d326af-fe00-4acd-9b64-6c6ff5f10e5f
+                  uuid: 9fc14d54-7407-44f3-83fb-69dda3693362
                   bundle: oe_accordion_item
                   default_langcode: en
                 default:
@@ -338,7 +468,7 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392583
+                      value: 1637659742
                   behavior_settings:
                     -
                       value: {  }
@@ -356,17 +486,17 @@ default:
                       value: arrow-down
                   field_oe_text:
                     -
-                      value: Usage
+                      value: 'Sed molestie nisl nunc, ut euismod dolor posuere et'
                   field_oe_text_long:
                     -
-                      value: "<p>The logo of the European Commission may be used by third parties only if:</p>\r\n\r\n<ul>\r\n\t<li>permission is requested and granted before the logo is used</li>\r\n\t<li>there is no likelihood of the user of the logo being confused with the European Commission</li>\r\n\t<li>it is not used in connection with objectives or activities which are incompatible with the aims and principles of the European Commission</li>\r\n\t<li>it is not used to imply or suggest unintended endorsement or promotion of the objectives and activities of the user of the logo by the European Commission</li>\r\n</ul>\r\n"
+                      value: "<p>Nullam semper molestie lectus in ultricies. Vestibulum vel odio ipsum. Praesent at aliquam dolor. Donec consectetur lectus sed mi viverra, quis facilisis arcu euismod. Vivamus pharetra orci non elementum finibus. Pellentesque nec ultrices ex.</p>\r\n"
                       format: full_html
             -
               entity:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: c223352c-2df5-4b23-9836-7e21ec1a49e7
+                  uuid: cea50428-0f7c-4177-85e8-0fd58db56e48
                   bundle: oe_accordion_item
                   default_langcode: en
                 default:
@@ -375,7 +505,7 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392656
+                      value: 1637659759
                   behavior_settings:
                     -
                       value: {  }
@@ -393,17 +523,17 @@ default:
                       value: arrow-down
                   field_oe_text:
                     -
-                      value: 'Request permission'
+                      value: 'Ut magna turpis, imperdiet non nunc eu, maximus vestibulum urna'
                   field_oe_text_long:
                     -
-                      value: "<p>To request permission for the use of the European Commission's logo, please email the&nbsp;<a href=\"mailto:comm-visual-identity@ec.europa.eu\">unit responsible for visual identity</a>.</p>\r\n"
+                      value: "<p>Nulla ipsum diam, viverra quis molestie sit amet, cursus at enim. Nullam tempor leo placerat tellus faucibus congue. Suspendisse consequat lectus sit amet posuere tincidunt. Integer vehicula eleifend ligula ut tincidunt. Suspendisse condimentum, leo a tristique aliquet, erat tellus vehicula lectus, a hendrerit lacus lorem sit amet lacus. Aliquam tristique, libero id vestibulum elementum, sapien sapien imperdiet nibh, facilisis aliquam nulla quam a elit. Morbi pulvinar ex nec nisl varius, a laoreet neque varius. Duis eros massa, dapibus in eleifend eu, volutpat in nibh.</p>\r\n"
                       format: full_html
             -
               entity:
                 _meta:
                   version: '1.0'
                   entity_type: paragraph
-                  uuid: 264e1a5d-350e-434e-9df4-cd41e4004b87
+                  uuid: e00fff01-3ce1-4be7-a8f7-69a451bb845a
                   bundle: oe_accordion_item
                   default_langcode: en
                 default:
@@ -412,7 +542,7 @@ default:
                       value: true
                   created:
                     -
-                      value: 1632392673
+                      value: 1637659778
                   behavior_settings:
                     -
                       value: {  }
@@ -430,11 +560,8 @@ default:
                       value: arrow-down
                   field_oe_text:
                     -
-                      value: 'Download the logo'
+                      value: 'Fusce sit amet cursus odio, molestie luctus lorem'
                   field_oe_text_long:
                     -
-                      value: "<p>The European Commission logo can be downloaded in all its variations. Please note that inappropriate and/or unauthorised use of logos can lead to legal consequences.&nbsp;</p>\r\n\r\n<p>All zip files contain 3 versions of the logo (4-colour, pantone and black and&nbsp;white).</p>\r\n\r\n<p>At:&nbsp;https://ec.europa.eu/info/resources-partners/european-commission-visual-identity_en</p>\r\n"
+                      value: "<p>Quisque dignissim quam eget tincidunt euismod. Quisque euismod nulla vel tellus dignissim, ac pellentesque mi varius. Nam eget nisl vitae leo condimentum semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pulvinar ornare arcu non ultricies. In ex sapien, tincidunt a eleifend quis, accumsan nec metus. Vivamus eget erat eget magna semper ullamcorper. Vestibulum posuere elit tortor, nec suscipit orci tristique eu.</p>\r\n"
                       format: full_html
-  field_description:
-    -
-      value: 'Demonstration of a Showcase Page with Lists, Links and Accordions paragraphs.'

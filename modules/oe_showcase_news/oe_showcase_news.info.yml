@@ -17,25 +17,17 @@ dependencies:
 config_devel:
   install:
     - field.storage.node.field_news_publication_date
-    - field.storage.node.field_news_image
-    - field.storage.node.field_news_content
-    - field.field.node.oe_news_simple.field_news_content
-    - field.field.node.oe_news_simple.field_news_image
-    - field.field.node.oe_news_simple.field_news_publication_date
-    - node.type.oe_news_simple
-    - core.entity_form_display.node.oe_news_simple.default
-    - core.entity_view_display.node.oe_news_simple.teaser
-    - core.entity_view_display.node.oe_news_simple.search_result
-    - core.entity_view_display.node.oe_news_simple.default
-    - user.role.editor
-    - pathauto.pattern.news_url_alias_pattern
-    - block.block.page_title_news
-    - search_api.server.showcase_news_server
-    - search_api.index.showcase_news_index
-    - views.view.oe_news
-    - search_api_autocomplete.search.oe_news
-    - facets.facet_source.search_api__views_page__oe_news__showcase_news_page
-    - facets.facet.publication_date
-    - block.block.showcase_news_facets_form
+      - field.storage.node.field_news_image
+      - field.storage.node.field_news_content
+      - field.field.node.oe_news_simple.field_news_content
+      - field.field.node.oe_news_simple.field_news_image
+      - field.field.node.oe_news_simple.field_news_publication_date
+      - node.type.oe_news_simple
+      - core.entity_form_display.node.oe_news_simple.default
+      - core.entity_view_display.node.oe_news_simple.teaser
+      - core.entity_view_display.node.oe_news_simple.search_result
+      - core.entity_view_display.node.oe_news_simple.default
+      - user.role.editor
+      - pathauto.pattern.oe_showcase_news_alias_pattern
   optional:
     - language.content_settings.node.oe_news_simple

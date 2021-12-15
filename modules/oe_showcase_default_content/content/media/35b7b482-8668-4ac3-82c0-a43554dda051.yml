@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 35b7b482-8668-4ac3-82c0-a43554dda051
+  bundle: av_portal_photo
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Presentation of the credentials of the new Heads of Mission to Ursula von der Leyen, President of the European Commission'
+  created:
+    -
+      value: 1637657681
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  oe_media_avportal_photo:
+    -
+      value: P-044672/00-46

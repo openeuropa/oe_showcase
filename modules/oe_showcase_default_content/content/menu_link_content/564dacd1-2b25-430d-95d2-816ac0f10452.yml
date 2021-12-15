@@ -1,25 +1,24 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 82ebc03e-63af-470f-97eb-26c4b8a0a8d1
+  uuid: 564dacd1-2b25-430d-95d2-816ac0f10452
   bundle: menu_link_content
   default_langcode: en
   depends:
-    1b3e4017-2567-4c10-86e1-5171f99a31ef: menu_link_content
-    0cc679ae-1aaf-481e-b700-675c15c6db68: node
+    8e120065-b55f-4aec-b73e-954e06617b69: node
 default:
   enabled:
     -
       value: true
   title:
     -
-      value: 'Rich Text and Text with featured Media'
+      value: 'Item 01'
   menu_name:
     -
       value: main
   link:
     -
-      target_uuid: 0cc679ae-1aaf-481e-b700-675c15c6db68
+      target_uuid: 8e120065-b55f-4aec-b73e-954e06617b69
       title: ''
       options: {  }
   external:
@@ -30,13 +29,10 @@ default:
       value: false
   weight:
     -
-      value: 5
+      value: -49
   expanded:
     -
       value: false
-  parent:
-    -
-      value: 'menu_link_content:1b3e4017-2567-4c10-86e1-5171f99a31ef'
   revision_translation_affected:
     -
       value: true
