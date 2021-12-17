@@ -30,8 +30,8 @@
         },
         subtitle: {
           content: node.getCreatedTime|bcl_timeago,
-          classes: "text-muted text-nowrap me-4-5",
-          tag: 'span',
+          classes: "text-muted me-3 mb-4 mt-4",
+          tag: 'div',
         },
         content: content.field_news_content,
         attributes: attributes.addClass(["bg-transparent", "border-0", "card"]),
@@ -40,5 +40,6 @@
     </div>
   </div>
 </div>
-
-{{ content.field_news_content }}
+<div class="container mt-md-4-75 mt-4">
+  {{ content.field_news_content }}  
+</div>
