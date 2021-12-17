@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Search result template.
+ */
+#}
+{% set badges = [] %}
+{% if content.field_news_image[0] is defined and content.field_news_image[0]['#markup'] is not empty %}
+  {% set image = {
+  classes: "card-img-top",
+    path: content.field_news_image[0]['#markup'],
+    position: "top",
+  } %}
+{% endif %}
+<div class="bcl-content-banner vw-100 pt-lg-4-75 pb-md-4-75 pb-4 pt-4 bg-lighter">
+  <div class="container">
+    <div class="row">
+      {{ pattern('card', {
+        horizontal: true,
+        classes: 'bg-transparent border-0 card',
+        horizontal_grid: {
+          left_col_classes: "col-md-3",
+          right_col_classes: "col-md-9",
+          gutter: 0,
+        },
+        title: {
+          content: label,
+          classes: "fw-bold card-title",
+          tag: 'h2',
+        },
+        subtitle: {
+          content: node.getCreatedTime|bcl_timeago,
+          classes: "text-muted text-nowrap me-4-5",
+          tag: 'span',
+        },
+        content: content.field_news_content,
+        attributes: attributes.addClass(["bg-transparent", "border-0", "card"]),
+        image: image,
+      }) }}
+    </div>
+  </div>
+</div>
+
+{{ content.field_news_content }}
