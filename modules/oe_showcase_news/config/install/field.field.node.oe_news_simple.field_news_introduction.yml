@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_introduction
+    - node.type.oe_news_simple
+id: node.oe_news_simple.field_news_introduction
+field_name: field_news_introduction
+entity_type: node
+bundle: oe_news_simple
+label: Introduction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

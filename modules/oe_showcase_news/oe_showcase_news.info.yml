@@ -22,6 +22,8 @@ config_devel:
     - field.field.node.oe_news_simple.field_news_content
     - field.field.node.oe_news_simple.field_news_image
     - field.field.node.oe_news_simple.field_news_publication_date
+    - field.storage.node.field_news_introduction
+    - field.field.node.oe_news_simple.field_news_introduction
     - node.type.oe_news_simple
     - core.entity_form_display.node.oe_news_simple.default
     - core.entity_view_display.node.oe_news_simple.teaser
