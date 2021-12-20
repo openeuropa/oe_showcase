@@ -3,12 +3,22 @@
   <php>
     <ini name="error_reporting" value="32767"/>
     <ini name="memory_limit" value="-1"/>
-    <env name="SIMPLETEST_BASE_URL" value="http://web:8080/${drupal.root}"/>
+    <env name="SIMPLETEST_IGNORE_DIRECTORIES" value="vendor,node_modules,test-site,${drupal.root}"/>
+    <env name="SIMPLETEST_BASE_URL" value="${drupal.base_url}"/>
+    <env name="SIMPLETEST_DB" value="mysql://${drupal.database.user}:${drupal.database.password}@${drupal.database.host}:${drupal.database.port}/${drupal.database.name}"/>
+    <env name="SIMPLETEST_SPARQL_DB" value="sparql://${drupal.sparql.host}:${drupal.sparql.port}/?module=sparql_entity_storage"/>
+    <env name="DTT_BASE_URL" value="${drupal.base_url}"/>
+    <env name="DTT_MINK_DRIVER_ARGS" value='["${selenium.browser}", null, "${selenium.host}:${selenium.port}/wd/hub"]'/>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value='disabled'/>
   </php>
   <testsuites>
-    <testsuite name="OpenEuropa Showcase">
-      <directory>./modules/**/tests/</directory>
-      <directory>./tests/</directory>
+    <testsuite name="existing-site-no-javascript">
+      <directory>./tests/src/ExistingSite/</directory>
+      <directory>./modules/**/tests/src/ExistingSite/</directory>
+    </testsuite>
+    <testsuite name="existing-site-javascript">
+      <directory>./tests/src/ExistingSiteJavascript/</directory>
+      <directory>./modules/**/tests/src/ExistingSiteJavascript/</directory>
     </testsuite>
   </testsuites>
 </phpunit>

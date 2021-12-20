@@ -37,7 +37,8 @@
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
-        "phpspec/prophecy-phpunit": "^1 || ^2"
+        "phpspec/prophecy-phpunit": "^1 || ^2",
+        "weitzman/drupal-test-traits": "^1.5"
     },
     "scripts": {
         "post-install-cmd": "./vendor/bin/run drupal:site-setup",
