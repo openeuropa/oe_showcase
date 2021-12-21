@@ -2,7 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase\ExistingSite;
+namespace Drupal\Tests\oe_showcase_news\ExistingSite;
+
+use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
 /**
  * Tests the news content type.
@@ -22,23 +24,6 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
    * @var \Drupal\user\UserInterface
    */
   protected $editor2;
-
-  /**
-   * The test user permissions.
-   *
-   * @var array
-   */
-  protected $userPermissions = [
-    'access content overview',
-    'create oe_news_simple content',
-    'delete any oe_news_simple content',
-    'delete oe_news_simple revisions',
-    'delete own oe_news_simple content',
-    'edit any oe_news_simple content',
-    'edit own oe_news_simple content',
-    'revert oe_news_simple revisions',
-    'view oe_news_simple revisions',
-  ];
 
   /**
    * {@inheritdoc}
@@ -90,7 +75,7 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
 
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
-    // $assert_session->pageTextContains('Publication date 12/12/2021 - 00:00');
+
     // Edit node by another editor.
     // Assert session.
     $this->drupalLogout();
@@ -98,10 +83,6 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
 
     // Check that the node exists in the database.
     $node = $this->getNodeByTitle('Example title');
-
-    $this->assertNotEmpty($node, 'Node found in database.');
-    // $this->drupalGet('node/' . $node->id() . '/edit');
-    // Better:
     $this->drupalGet($node->toUrl('edit-form'));
     $page = $this->getSession()->getPage();
 
