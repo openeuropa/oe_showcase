@@ -89,7 +89,6 @@ class IntegrationTest extends BrowserTestBase {
     $page->fillField('Department', 'Cleaning Department');
     $page->fillField('Organisation', 'Cleaning Co.');
     $page->fillField('Bio', 'User description bio.');
-    
     $page->pressButton('Create new account');
 
     // Check field values.
@@ -97,7 +96,7 @@ class IntegrationTest extends BrowserTestBase {
     $this->drupalGet("user/" . $user->id() . "/edit");
     $page = $this->getSession()->getPage();
     $this->assertSession()->statusCodeEquals(200);
-    
+
     // Assert user information.
     $assert_session->fieldValueEquals('First Name', 'Exampleson');
     $assert_session->fieldValueEquals('Last Name', 'McModel');
