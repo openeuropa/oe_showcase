@@ -81,18 +81,29 @@ class IntegrationTest extends BrowserTestBase {
 
     // Fill user fields.
     $page->fillField('Email address', 'example@example.com');
-    $page->fillField('Username', 'Example user');
+    $page->fillField('Username', 'example_user');
     $page->fillField('Password', '123456');
     $page->fillField('Confirm password', '123456');
     $page->fillField('First Name', 'Exampleson');
     $page->fillField('Last Name', 'McModel');
     $page->fillField('Department', 'Cleaning Department');
     $page->fillField('Organisation', 'Cleaning Co.');
+    $page->fillField('Bio', 'User description bio.');
+    
     $page->pressButton('Create new account');
 
     // Check field values.
-    $page->clickLink('Example user');
+    $user = user_load_by_name('example_user');
+    $this->drupalGet("user/" . $user->id() . "/edit");
+    $page = $this->getSession()->getPage();
     $this->assertSession()->statusCodeEquals(200);
+    
+    // Assert user information.
+    $assert_session->fieldValueEquals('First Name', 'Exampleson');
+    $assert_session->fieldValueEquals('Last Name', 'McModel');
+    $assert_session->fieldValueEquals('Organisation', 'Cleaning Co.');
+    $assert_session->fieldValueEquals('Department', 'Cleaning Department');
+    $assert_session->fieldValueEquals('Bio', 'User description bio.');
   }
 
 }
