@@ -29,6 +29,17 @@ services:
     environment:
       - SPARQL_UPDATE=true
       - DBA_PASSWORD=dba
+  selenium:
+    image: registry.fpfis.eu/fpfis/selenium:standalone-chrome-3.141.59-oxygen
+    shm_size: 2g
+    environment:
+      - DISPLAY=:99
+      - SE_OPTS=-debug
+      - SCREEN_WIDTH=1280
+      - SCREEN_HEIGHT=800
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
+
 pipeline:
   composer-install:
     group: prepare
@@ -37,19 +48,6 @@ pipeline:
       - /cache:/cache
     commands:
       - composer install --ansi --no-suggest --no-progress
-
-  composer-update-lowest:
-    group: post-prepare
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
-    volumes:
-      - /cache:/cache
-    commands:
-      - composer update --prefer-lowest --ansi --no-suggest --no-progress
-    when:
-      event:
-        exclude: tag
-      matrix:
-        COMPOSER_BOUNDARY: lowest
 
   site-install:
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
@@ -72,39 +70,11 @@ pipeline:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
-      - ./vendor/bin/phpunit
+      - ./vendor/bin/phpunit --testdox
     when:
       event:
         exclude: tag
-
-  behat:
-    group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
-    commands:
-      - ./vendor/bin/behat --strict
-    when:
-      event:
-        exclude: tag
-
-  before-release:
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
-    commands:
-      - ./vendor/bin/run release:create-archive --tag=${DRONE_TAG}
-    when:
-      event: tag
-
-  github-release:
-    image: registry.fpfis.eu/drone-plugins/github-release
-    secrets: [ github_token ]
-    files: oe_showcase-${DRONE_TAG}.tar.gz
-    when:
-      event: tag
-      matrix:
-        COMPOSER_BOUNDARY: highest
 
 matrix:
-  COMPOSER_BOUNDARY:
-    - lowest
-    - highest
   PHP_VERSION:
     - 7.3

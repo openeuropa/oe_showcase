@@ -6,7 +6,6 @@ dependencies:
   - block
   - ckeditor
   - config
-  - components
   - content_translation
   - datetime
   - easy_breadcrumb

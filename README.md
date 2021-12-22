@@ -81,7 +81,7 @@ Your test site will be available at [http://localhost:8080/build](http://localho
 Run tests as follows:
 
 ```
-$ docker-compose exec web ./vendor/bin/behat
+$ docker-compose exec web ./vendor/bin/phpunit
 ```
 
 #### Step debugging
