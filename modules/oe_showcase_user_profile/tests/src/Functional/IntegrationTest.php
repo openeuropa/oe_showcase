@@ -95,7 +95,6 @@ class IntegrationTest extends BrowserTestBase {
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '2021-12-18');
     $page->fillField('Current position', 'Web Developer');
-    $page->selectFieldOption('Gender', 'http://publications.europa.eu/resource/authority/human-sex/MALE');
 
     $page->pressButton('Create new account');
 
