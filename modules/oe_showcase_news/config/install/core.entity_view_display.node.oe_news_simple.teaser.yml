@@ -8,19 +8,26 @@ dependencies:
     - field.field.node.oe_news_simple.field_news_publication_date
     - node.type.oe_news_simple
   module:
+    - text
     - user
 id: node.oe_news_simple.teaser
 targetEntityType: node
 bundle: oe_news_simple
 mode: teaser
 content:
+  field_news_content:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_news_content: true
   field_news_image: true
   field_news_publication_date: true
   langcode: true
