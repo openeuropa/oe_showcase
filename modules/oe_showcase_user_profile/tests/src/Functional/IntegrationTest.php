@@ -86,9 +86,12 @@ class IntegrationTest extends BrowserTestBase {
     $page->fillField('Confirm password', '123456');
     $page->fillField('First Name', 'Exampleson');
     $page->fillField('Last Name', 'McModel');
-    $page->fillField('Department', 'Cleaning Department');
-    $page->fillField('Organisation', 'Cleaning Co.');
+    $page->fillField('Department', 'Development');
+    $page->fillField('Organisation', 'DIGIT');
     $page->fillField('Bio', 'User description bio.');
+    $page->fillField('Date', '2021-12-18');
+    $page->fillField('Current position', 'Web Developer');
+
     $page->pressButton('Create new account');
 
     // Check field values.
@@ -100,9 +103,17 @@ class IntegrationTest extends BrowserTestBase {
     // Assert user information.
     $assert_session->fieldValueEquals('First Name', 'Exampleson');
     $assert_session->fieldValueEquals('Last Name', 'McModel');
-    $assert_session->fieldValueEquals('Organisation', 'Cleaning Co.');
-    $assert_session->fieldValueEquals('Department', 'Cleaning Department');
+    $assert_session->fieldValueEquals('Organisation', 'DIGIT');
+    $assert_session->fieldValueEquals('Department', 'Development');
     $assert_session->fieldValueEquals('Bio', 'User description bio.');
+    
+    // Assert user is listed.
+    $this->drupalGet("users");
+    $this->assertSession()->statusCodeEquals(200);
+    $assert_session->pageTextContains('Bio');
+    $assert_session->pageTextContains('User description bio.');
+    $assert_session->pageTextContains('2021-12-18');
+    $assert_session->pageTextContains('Web Developer');
   }
 
 }
