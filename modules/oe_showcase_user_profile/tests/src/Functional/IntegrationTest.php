@@ -106,7 +106,7 @@ class IntegrationTest extends BrowserTestBase {
     $assert_session->fieldValueEquals('Organisation', 'DIGIT');
     $assert_session->fieldValueEquals('Department', 'Development');
     $assert_session->fieldValueEquals('Bio', 'User description bio.');
-    
+
     // Assert user is listed.
     $this->drupalGet("users");
     $this->assertSession()->statusCodeEquals(200);
