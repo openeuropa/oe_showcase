@@ -60,22 +60,16 @@ content:
   field_gender:
     weight: 7
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      sort: id
     third_party_settings: {  }
-    type: skos_concept_entity_reference_autocomplete
+    type: skos_concept_entity_reference_options_select
     region: content
   field_nationality:
     weight: 9
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      sort: id
     third_party_settings: {  }
-    type: skos_concept_entity_reference_autocomplete
+    type: skos_concept_entity_reference_options_select
     region: content
   field_profile_image:
     type: image_image
@@ -88,12 +82,9 @@ content:
   field_working_languages:
     weight: 11
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      sort: id
     third_party_settings: {  }
-    type: skos_concept_entity_reference_autocomplete
+    type: skos_concept_entity_reference_options_select
     region: content
   language:
     weight: 1

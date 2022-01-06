@@ -6,6 +6,7 @@ namespace Drupal\Tests\oe_showcase_user_profile\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
+use Drupal\Tests\sparql_entity_storage\Traits\SparqlConnectionTrait;
 
 /**
  * Tests the User Profile feature integration.
@@ -15,6 +16,7 @@ use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 class IntegrationTest extends BrowserTestBase {
 
   use AuthenticationTrait;
+  use SparqlConnectionTrait;
 
   /**
    * {@inheritdoc}
@@ -56,6 +58,7 @@ class IntegrationTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   protected function setUp(): void {
+    $this->setUpSparql();
     parent::setUp();
     // Disable EU Login.
     $this->disableForcedLogin();
@@ -91,6 +94,7 @@ class IntegrationTest extends BrowserTestBase {
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '2021-12-18');
     $page->fillField('Current position', 'Web Developer');
+    $page->selectFieldOption('Gender', '_none');
 
     $page->pressButton('Create new account');
 
