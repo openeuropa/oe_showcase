@@ -10,7 +10,10 @@ declare(strict_types = 1);
 /**
  * Implements hook_install().
  */
-function oe_showcase_user_profile_install(): void {
+function oe_showcase_user_profile_install($is_syncing): void {
+  if (!$is_syncing) {
+    return;
+  }
 
   // Configure the RDF SKOS graphs.
   $graphs = [
