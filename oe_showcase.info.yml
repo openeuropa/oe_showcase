@@ -2,12 +2,15 @@ name: OpenEuropa Showcase Profile
 type: profile
 description: 'Install with commonly used features for OpenEuropa Showcase profile.'
 core_version_requirement: ^8.9 || ^9.1
-dependencies:
+
+install:
   - block
   - ckeditor
   - config
   - content_translation
   - datetime
+  - dblog
+  - dynamic_page_cache
   - easy_breadcrumb
   - editor
   - file
@@ -16,27 +19,29 @@ dependencies:
   - language
   - menu_link_content
   - node
-  - options
+  - oe_authentication
+  - oe_bootstrap_theme_helper
+  - oe_corporate_blocks
+  - oe_multilingual
   - oe_paragraphs_banner
+  - oe_showcase_default_content
+  - oe_showcase_navigation
+  - oe_showcase_page
+  - oe_showcase_search
+  - oe_whitelabel_helper
+  - oe_whitelabel_search
+  - options
+  - page_cache
   - path
   - pathauto
   - taxonomy
+  - toolbar
   - ui_patterns
   - ui_patterns_library
   - ui_patterns_settings
   - user
   - views
-  - oe_authentication
-  - oe_bootstrap_theme_helper
-  - oe_corporate_blocks
-  - oe_multilingual
-  - oe_whitelabel_helper
-  - oe_whitelabel_search
-install:
-  - dblog
-  - dynamic_page_cache
-  - page_cache
-  - toolbar
+
 themes:
   - seven
   - oe_whitelabel
