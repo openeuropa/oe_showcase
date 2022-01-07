@@ -26,11 +26,6 @@ drupal:
     - "cp -R modules/oe_showcase_default_content/content/default_images/. build/sites/default/files/."
     # Remove existing settings for breadcrumb to allow new configuration.
     - "./vendor/bin/drush config-delete easy_breadcrumb.settings"
-    # Enable the modules.
-    - "./vendor/bin/drush en oe_showcase_search -y"
-    - "./vendor/bin/drush en oe_showcase_navigation -y"
-    - "./vendor/bin/drush en oe_showcase_page -y"
-    - "./vendor/bin/drush en oe_showcase_default_content -y"
     # Set home page.
     - "./vendor/bin/drush config-set system.site page.front /home -y"
     # Index content.
