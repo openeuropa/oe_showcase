@@ -7,6 +7,7 @@ dependencies:
   - default_content:default_content
   - drupal:content_translation
   - drupal:language
+  - drupal:pathauto
   - oe_showcase_navigation:oe_showcase_navigation
   - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page

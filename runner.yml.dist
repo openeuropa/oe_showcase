@@ -15,23 +15,12 @@ drupal:
     port: "8890"
   post_install:
     # Prepare the instance.
-    - "./vendor/bin/drush config-set system.theme default oe_whitelabel -y"
-    - "./vendor/bin/drush config-set system.theme admin seven -y"
-    - "./vendor/bin/drush config-set node.settings use_admin_theme 1 -y"
     - "./vendor/bin/drush oe-multilingual:import-local-translations"
-    # Don't aggregate or some pages will not be showed properly.
-    - "./vendor/bin/drush -y config-set system.performance css.preprocess 0"
-    - "./vendor/bin/drush -y config-set system.performance js.preprocess 0"
     # Move file assets.
     - "cp -R modules/oe_showcase_default_content/content/default_images/. build/sites/default/files/."
-    # Remove existing settings for breadcrumb to allow new configuration.
-    - "./vendor/bin/drush config-delete easy_breadcrumb.settings"
-    # Set home page.
-    - "./vendor/bin/drush config-set system.site page.front /home -y"
     # Index content.
     - "./vendor/bin/drush sapi-i"
     - "./vendor/bin/drush en config_devel -y"
-    - "./vendor/bin/drush cset oe_authentication.settings assurance_level LOW -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:
