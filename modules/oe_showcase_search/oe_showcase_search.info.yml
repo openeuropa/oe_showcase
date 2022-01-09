@@ -19,21 +19,14 @@ themes:
 
 config_devel:
   install:
-    - block.block.showcase_exposed_sort_form
-    - block.block.showcase_facets_form
-    - block.block.showcase_facets_summary
-    - facets.facet.category
-    - facets.facet.published_on
-    - facets.facet_source.search_api__views_page__showcase_search__showcase_search_page
-    - facets_summary.facets_summary.showcase_summary
-    - search_api.index.showcase_search_index
-    - search_api.server.showcase_search_server
-    - search_api_autocomplete.search.showcase_search
-    - views.view.showcase_search
     - core.entity_form_display.node.oe_showcase_search_demo.default
     - core.entity_view_display.node.oe_showcase_search_demo.default
     - core.entity_view_display.node.oe_showcase_search_demo.search_result
     - core.entity_view_display.node.oe_showcase_search_demo.teaser
+    - facets.facet.category
+    - facets.facet.published_on
+    - facets.facet_source.search_api__views_page__showcase_search__showcase_search_page
+    - facets_summary.facets_summary.showcase_summary
     - field.field.node.oe_showcase_search_demo.body
     - field.field.node.oe_showcase_search_demo.field_category
     - field.field.node.oe_showcase_search_demo.field_image
@@ -41,7 +34,10 @@ config_devel:
     - field.storage.node.field_image
     - node.type.oe_showcase_search_demo
     - pathauto.pattern.search_demo_url_alias_pattern
+    - search_api.index.showcase_search_index
+    - search_api.server.showcase_search_server
+    - search_api_autocomplete.search.showcase_search
     - taxonomy.vocabulary.categories
-    - block.block.whitelabelsearchblock
+    - views.view.showcase_search
   optional:
     - language.content_settings.node.oe_showcase_search_demo

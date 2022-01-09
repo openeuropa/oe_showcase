@@ -10,6 +10,7 @@ install:
   - content_translation
   - datetime
   - dblog
+  - default_content
   - dynamic_page_cache
   - easy_breadcrumb
   - editor
@@ -18,12 +19,19 @@ install:
   - image
   - language
   - menu_link_content
+  - menu_ui
   - node
   - oe_authentication
   - oe_bootstrap_theme_helper
+  - oe_bootstrap_theme_paragraphs
+  - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
   - oe_multilingual
+  - oe_paragraphs
   - oe_paragraphs_banner
+  - oe_paragraphs_document
+  - oe_paragraphs_media
+  - oe_paragraphs_timeline
   - oe_showcase_default_content
   - oe_showcase_navigation
   - oe_showcase_page
@@ -44,4 +52,35 @@ install:
 
 themes:
   - seven
+  - oe_bootstrap_theme
   - oe_whitelabel
+
+config_devel:
+  install:
+    - block.block.breadcrumbs
+    - block.block.corporateeulogoblock
+    - block.block.eufooterblock
+    - block.block.euloginlinkblock
+    - block.block.languageswitcherinterfacetext
+    - block.block.mainnavigation
+    - block.block.pagetitle
+    - block.block.showcase_exposed_sort_form
+    - block.block.showcase_facets_form
+    - block.block.showcase_facets_summary
+    - block.block.sitebranding
+    - block.block.whitelabelsearchblock
+    - easy_breadcrumb.settings
+    - editor.editor.full_html
+    - filter.format.full_html
+    - node.settings
+    - oe_authentication.settings
+    - oe_corporate_blocks.footer_link.general.about_us
+    - oe_corporate_blocks.footer_link.general.contact_us
+    - oe_corporate_blocks.footer_link.social.facebook
+    - oe_corporate_blocks.footer_link.social.linkedin
+    - oe_corporate_blocks.footer_link.social.twitter
+    - pathauto.settings
+    - system.site
+    - system.theme
+    - user.role.anonymous
+    - user.role.authenticated
