@@ -14,6 +14,6 @@ plugin: oe_corporate_blocks_eu_footer
 settings:
   id: oe_corporate_blocks_eu_footer
   label: 'EU Footer block'
-  provider: oe_corporate_blocks
   label_display: '0'
+  provider: oe_corporate_blocks
 visibility: {  }

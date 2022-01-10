@@ -233,6 +233,7 @@ display:
           exposed: true
           expose:
             label: 'Published on'
+            field_identifier: created
           plugin_id: search_api
         title:
           id: title
@@ -245,6 +246,7 @@ display:
           exposed: true
           expose:
             label: Title
+            field_identifier: title
           plugin_id: search_api
       title: Search
       header: {  }

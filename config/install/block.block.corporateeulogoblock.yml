@@ -14,6 +14,6 @@ plugin: whitelabel_eu_logo_block
 settings:
   id: whitelabel_eu_logo_block
   label: 'Corporate EU Logo Block'
-  provider: oe_whitelabel_helper
   label_display: '0'
+  provider: oe_whitelabel_helper
 visibility: {  }
