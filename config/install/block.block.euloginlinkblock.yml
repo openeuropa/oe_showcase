@@ -14,6 +14,6 @@ plugin: oe_authentication_login_block
 settings:
   id: oe_authentication_login_block
   label: 'EU Login Link Block'
-  provider: oe_authentication
   label_display: '0'
+  provider: oe_authentication
 visibility: {  }

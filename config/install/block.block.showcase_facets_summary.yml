@@ -17,8 +17,8 @@ plugin: 'facets_summary_block:showcase_summary'
 settings:
   id: 'facets_summary_block:showcase_summary'
   label: 'Search results'
-  provider: facets_summary
   label_display: visible
+  provider: facets_summary
 visibility:
   request_path:
     id: request_path

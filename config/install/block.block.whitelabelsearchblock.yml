@@ -5,8 +5,6 @@ dependencies:
     - oe_whitelabel_search
   theme:
     - oe_whitelabel
-  config:
-    - views.view.showcase_search
 id: whitelabelsearchblock
 theme: oe_whitelabel
 region: header_right
@@ -16,8 +14,8 @@ plugin: whitelabel_search_block
 settings:
   id: whitelabel_search_block
   label: 'Search Block'
-  provider: oe_whitelabel_search
   label_display: '0'
+  provider: oe_whitelabel_search
   form:
     action: search
   input:
