@@ -1,13 +1,12 @@
 name: OpenEuropa Showcase User Profile
 type: module
-description: 'Demo for the OpenEuropa Showcase User Profile feature.'
+description: Provides a demo of the OpenEuropa Showcase User Profile feature.
 core_version_requirement: ^8.9 || ^9.1
-package: OpenEuropa
+package: OpenEuropa Showcase
 dependencies:
   - better_exposed_filters:better_exposed_filters
   - drupal:address
   - drupal:allowed_formats
-  - drupal:field_group
   - drupal:legal
   - drupal:purge_users
   - drupal:user_field_anonymize
