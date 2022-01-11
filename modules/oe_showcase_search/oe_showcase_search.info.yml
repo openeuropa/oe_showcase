@@ -1,8 +1,8 @@
-name: OpenEuropa Showcase Library Search
+name: OpenEuropa Showcase Search
 type: module
-description: 'Demo search feature based on search_api'
+description: Provides a demo search content type and search functionality based on search_api.
 core_version_requirement: ^8.9 || ^9.1
-package: OpenEuropa
+package: OpenEuropa Showcase
 dependencies:
   - drupal:views
   - facets_summary:facets_summary

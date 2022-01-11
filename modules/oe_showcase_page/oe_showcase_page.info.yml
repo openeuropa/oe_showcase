@@ -1,8 +1,8 @@
 name: OpenEuropa Showcase Page
 type: module
-description: 'Demo showcase page'
+description: Provides a demo page content type.
 core_version_requirement: ^8.9 || ^9.1
-package: OpenEuropa
+package: OpenEuropa Showcase
 dependencies:
   - drupal:ckeditor
   - drupal:editor
