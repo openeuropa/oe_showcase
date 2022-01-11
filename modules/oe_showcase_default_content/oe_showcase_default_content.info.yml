@@ -1,12 +1,13 @@
-name: OpenEuropa Showcase default content
+name: OpenEuropa Showcase Default Content
 type: module
-description: Provide default content to oe_showcase pages
-package: OpenEuropa
+description: Provide default content for showcasing.
+package: OpenEuropa Showcase
 core_version_requirement: ^8.9 || ^9.1
 dependencies:
   - default_content:default_content
   - drupal:content_translation
   - drupal:language
+  - drupal:pathauto
   - oe_showcase_navigation:oe_showcase_navigation
   - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page

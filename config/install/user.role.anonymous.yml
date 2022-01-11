@@ -1,6 +1,10 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - media
+    - search_api_autocomplete
+    - system
 id: anonymous
 label: 'Anonymous user'
 weight: 0

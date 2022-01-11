@@ -2,12 +2,16 @@ name: OpenEuropa Showcase Profile
 type: profile
 description: 'Install with commonly used features for OpenEuropa Showcase profile.'
 core_version_requirement: ^8.9 || ^9.1
-dependencies:
+
+install:
   - block
   - ckeditor
   - config
   - content_translation
   - datetime
+  - dblog
+  - default_content
+  - dynamic_page_cache
   - easy_breadcrumb
   - editor
   - file
@@ -15,28 +19,63 @@ dependencies:
   - image
   - language
   - menu_link_content
+  - menu_ui
   - node
-  - options
+  - oe_authentication
+  - oe_bootstrap_theme_helper
+  - oe_bootstrap_theme_paragraphs
+  - oe_content:oe_content_timeline_field
+  - oe_corporate_blocks
+  - oe_multilingual
+  - oe_paragraphs
   - oe_paragraphs_banner
+  - oe_paragraphs_document
+  - oe_paragraphs_media
+  - oe_paragraphs_timeline
+  - oe_showcase_default_content
+  - oe_showcase_navigation
+  - oe_showcase_page
+  - oe_showcase_search
+  - oe_whitelabel_helper
+  - oe_whitelabel_search
+  - options
+  - page_cache
   - path
   - pathauto
   - taxonomy
+  - toolbar
   - ui_patterns
   - ui_patterns_library
   - ui_patterns_settings
   - user
   - views
-  - oe_authentication
-  - oe_bootstrap_theme_helper
-  - oe_corporate_blocks
-  - oe_multilingual
-  - oe_whitelabel_helper
-  - oe_whitelabel_search
-install:
-  - dblog
-  - dynamic_page_cache
-  - page_cache
-  - toolbar
+
 themes:
   - seven
+  - oe_bootstrap_theme
   - oe_whitelabel
+
+config_devel:
+  install:
+    - block.block.breadcrumbs
+    - block.block.corporateeulogoblock
+    - block.block.eufooterblock
+    - block.block.euloginlinkblock
+    - block.block.languageswitcherinterfacetext
+    - block.block.mainnavigation
+    - block.block.pagetitle
+    - block.block.showcase_exposed_sort_form
+    - block.block.showcase_facets_form
+    - block.block.showcase_facets_summary
+    - block.block.sitebranding
+    - block.block.whitelabelsearchblock
+    - easy_breadcrumb.settings
+    - editor.editor.full_html
+    - filter.format.full_html
+    - node.settings
+    - oe_authentication.settings
+    - pathauto.settings
+    - system.site
+    - system.theme
+    - user.role.anonymous
+    - user.role.authenticated
