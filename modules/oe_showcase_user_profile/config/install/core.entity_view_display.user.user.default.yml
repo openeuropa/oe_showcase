@@ -14,213 +14,10 @@ dependencies:
   module:
     - address
     - datetime
-    - field_group
     - image
     - rdf_skos
     - text
     - user
-third_party_settings:
-  field_group:
-    group_personal_information:
-      children:
-        - field_gender
-        - field_date_of_birth
-        - field_city_country
-        - field_nationality
-      parent_name: ''
-      weight: 2
-      format_type: fieldset
-      region: content
-      format_settings:
-        show_empty_fields: false
-        id: ''
-        classes: personal-information
-        description: ''
-      label: 'Personal Information'
-    group_professional_information:
-      children:
-        - field_current_position
-        - field_working_languages
-      parent_name: ''
-      weight: 3
-      format_type: fieldset
-      region: content
-      format_settings:
-        show_empty_fields: false
-        id: ''
-        classes: professional-information
-        description: ''
-      label: 'Professional Information'
-    group_user_profile:
-      children:
-        - field_profile_image
-        - field_bio
-      parent_name: ''
-      weight: 0
-      format_type: pattern_formatter
-      region: content
-      format_settings:
-        pattern: card
-        pattern_mapping:
-          'fields:field_bio':
-            destination: text
-            weight: 0
-            plugin: fields
-            source: field_bio
-          'fields:field_profile_image':
-            destination: image
-            weight: 1
-            plugin: fields
-            source: field_profile_image
-        pattern_settings:
-          accordion:
-            open_item_id: ''
-            flush: 0
-          alert:
-            style: ''
-            dismissible: 0
-            animated_dismiss: 0
-          badge:
-            background: ''
-            rounded_pill: 0
-            dismissible: 0
-          blockquote:
-            alignment: ''
-          button:
-            variant: ''
-            size: ''
-            type: ''
-            icon_position: ''
-            button_id: ''
-            outline: 0
-            disabled: 0
-            text_nowrap: 0
-            clean_class: 0
-            show_spinner: 0
-          button_group:
-            size: ''
-            toolbar: 0
-            vertical: 0
-          card:
-            style: ''
-            border_variant: ''
-            text_color: ''
-            horizontal: '1'
-          card_layout:
-            grid_columns: ''
-            responsiveness: ''
-            responsive_columns: ''
-            gutter: ''
-            equal_height: 0
-          carousel:
-            prev_label: ''
-            next_label: ''
-            fade: 0
-            with_controls: 0
-            with_indicators: 0
-            autoplay: 0
-            autoinit: 0
-            disable_touch: 0
-          collapse:
-            style: ''
-            size: ''
-            link: 0
-            outline: 0
-          dropdown:
-            direction: ''
-            alignment: ''
-            dropdown_id: ''
-            link: 0
-            dark: 0
-            remove_wrapper: 0
-          featured_media:
-            ratio: ''
-            alignment: ''
-          grid_row:
-            col: ''
-            col_sm: ''
-            col_md: ''
-            col_lg: ''
-            col_xl: ''
-            spacing_margin_bottom: ''
-            with_container: 0
-            no_gutters: 0
-          icon:
-            name: ''
-            size: ''
-            transformation: ''
-          link:
-            link_style: ''
-            icon_position: ''
-            link_id: ''
-            disabled: 0
-            remove_icon_spacers: 0
-          list:
-            list_type: ''
-          list_group:
-            type: ''
-            horizontal: ''
-            flush: 0
-          listing:
-            columns: ''
-          modal:
-            btn_style: ''
-            size: ''
-            modal_id: ''
-          nav:
-            style: ''
-            alignment: ''
-            fill: ''
-            attributes: ''
-          navbar:
-            collapse_id: ''
-            background: ''
-            expand: ''
-            color_set: ''
-            disable_collapse: 0
-          offcanvas:
-            placement: ''
-            icon_position: ''
-            with_body_scroll: 0
-            with_backdrop: 0
-            with_trigger: 0
-          popover:
-            style: ''
-            size: ''
-            placement: ''
-            outline: 0
-          progress:
-            style: ''
-            striped: 0
-            animated: 0
-          spinner:
-            type: ''
-            variant: ''
-            size: ''
-          table:
-            table_responsive: ''
-            style: ''
-            alignment: ''
-            border: ''
-            striped: 0
-            hoverable: 0
-            small: 0
-            caption_top: 0
-            borderless: 0
-          tooltip:
-            style: ''
-            size: ''
-            placement: ''
-            link: 0
-            outline: 0
-          banner:
-            shade: 0
-            hero: 0
-            full_width: 0
-            centered: 0
-        show_empty_fields: 0
-        pattern_variant: horizontal
-      label: 'User Profile'
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -228,66 +25,66 @@ mode: default
 content:
   field_bio:
     type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
     weight: 20
     region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_city_country:
     type: address_default
-    weight: 50
-    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 50
+    region: content
   field_current_position:
     type: string
-    weight: 70
-    region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 70
+    region: content
   field_date_of_birth:
     type: datetime_default
-    weight: 40
-    region: content
     label: above
     settings:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
+    weight: 40
+    region: content
   field_gender:
-    weight: 30
+    type: skos_concept_entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: skos_concept_entity_reference_label
+    weight: 30
     region: content
   field_nationality:
-    weight: 60
+    type: skos_concept_entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: skos_concept_entity_reference_label
+    weight: 60
     region: content
   field_profile_image:
     type: image_url
-    weight: 10
-    region: content
     label: above
     settings:
       image_style: large
     third_party_settings: {  }
+    weight: 10
+    region: content
   field_working_languages:
-    weight: 80
+    type: skos_concept_entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: skos_concept_entity_reference_label
+    weight: 80
     region: content
 hidden:
   langcode: true

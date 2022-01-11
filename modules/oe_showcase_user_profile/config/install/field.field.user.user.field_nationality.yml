@@ -26,6 +26,7 @@ settings:
     auto_create: false
     concept_schemes:
       - 'http://publications.europa.eu/resource/authority/country'
+    concept_subset: non_deprecated_countries
     field:
       field_name: field_nationality
       entity_type: user

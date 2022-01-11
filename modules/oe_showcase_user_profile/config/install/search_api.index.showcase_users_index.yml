@@ -1,11 +1,11 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api.server.showcase_users_server
   module:
     - user
     - search_api
-  config:
-    - search_api.server.showcase_users_server
 id: showcase_users_index
 name: 'Showcase users index'
 description: ''
@@ -41,7 +41,7 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
   track_changes_in_references: true
 server: showcase_users_server

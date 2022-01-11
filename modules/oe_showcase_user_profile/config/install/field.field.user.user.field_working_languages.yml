@@ -22,10 +22,10 @@ settings:
     target_bundles: null
     sort:
       field: _none
-      direction: ASC
     auto_create: false
     concept_schemes:
       - 'http://publications.europa.eu/resource/authority/language'
+    concept_subset: languages_web
     field:
       field_name: field_working_languages
       entity_type: user

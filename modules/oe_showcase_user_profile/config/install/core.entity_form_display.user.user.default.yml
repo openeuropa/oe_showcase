@@ -58,19 +58,25 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_gender:
+    type: skos_concept_entity_reference_autocomplete
     weight: 7
-    settings:
-      sort: id
-    third_party_settings: {  }
-    type: skos_concept_entity_reference_options_select
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_nationality:
+    type: skos_concept_entity_reference_autocomplete
     weight: 9
-    settings:
-      sort: id
-    third_party_settings: {  }
-    type: skos_concept_entity_reference_options_select
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_profile_image:
     type: image_image
     weight: 4
@@ -80,12 +86,15 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_working_languages:
+    type: skos_concept_entity_reference_autocomplete
     weight: 11
-    settings:
-      sort: id
-    third_party_settings: {  }
-    type: skos_concept_entity_reference_options_select
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   language:
     weight: 1
     region: content
