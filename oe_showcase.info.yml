@@ -26,6 +26,7 @@ install:
   - oe_bootstrap_theme_paragraphs
   - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
+  - oe_corporate_countries
   - oe_multilingual
   - oe_paragraphs
   - oe_paragraphs_banner
