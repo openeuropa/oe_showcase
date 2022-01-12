@@ -40,10 +40,13 @@ install:
   - oe_showcase_user_profile
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_whitelabel_user_profile
   - options
   - page_cache
   - path
   - pathauto
+  - rdf_skos
+  - rdf_skos_language_mapping
   - taxonomy
   - toolbar
   - ui_patterns
