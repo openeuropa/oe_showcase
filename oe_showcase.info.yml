@@ -1,6 +1,6 @@
 name: OpenEuropa Showcase Profile
 type: profile
-description: 'Install with commonly used features for OpenEuropa Showcase profile.'
+description: Install with commonly used features for OpenEuropa Showcase profile.
 core_version_requirement: ^8.9 || ^9.1
 
 install:
@@ -27,6 +27,7 @@ install:
   - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
   - oe_corporate_countries
+  - oe_corporate_countries_address
   - oe_multilingual
   - oe_paragraphs
   - oe_paragraphs_banner
