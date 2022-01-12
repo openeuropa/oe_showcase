@@ -36,14 +36,14 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '1990-01-01');
     $page->fillField('Current position', 'Web Developer');
-    $page->selectFieldOption('Gender', 'male');
-    $page->selectFieldOption('Country', 'Belgium');
-    $page->selectFieldOption('Nationality', 'France');
-    $page->selectFieldOption('Working Languages', 'French');
+    $page->fillField('Gender', 'male');
+    $page->fillField('Country', 'BE');
+    $page->fillField('Nationality', 'France');
+    $page->fillField('Working Languages', 'French');
     $page->pressButton('Create new account');
 
-    /** @var \Drupal\user\Entity\User $user */
     $user = user_load_by_name('example_user');
+    $this->assertNotEmpty($user);
     $this->markEntityForCleanup($user);
     $this->drupalGet("user/{$user->id()}/edit");
 
@@ -52,11 +52,10 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldValueEquals('Organisation', 'DIGIT');
     $assert_session->fieldValueEquals('Department', 'Development');
     $assert_session->fieldValueEquals('Bio', 'User description bio.');
-    $assert_session->fieldValueEquals('Gender', 'http://publications.europa.eu/resource/authority/human-sex/MALE');
+    $assert_session->fieldValueEquals('Gender', 'male (http://publications.europa.eu/resource/authority/human-sex/MALE)');
     $assert_session->fieldValueEquals('Country', 'BE');
-    $assert_session->fieldValueEquals('Nationality', 'http://publications.europa.eu/resource/authority/country/FRA');
-    $working_languages = $assert_session->fieldExists('Working Languages');
-    $this->assertSame(['http://publications.europa.eu/resource/authority/language/FRA'], $working_languages->getValue());
+    $assert_session->fieldValueEquals('Nationality', 'France (http://publications.europa.eu/resource/authority/country/FRA)');
+    $assert_session->fieldValueEquals('Working Languages', 'French (http://publications.europa.eu/resource/authority/language/FRA)');
 
     $this->drupalGet('users');
     $assert_session->pageTextContains('User description bio.');
