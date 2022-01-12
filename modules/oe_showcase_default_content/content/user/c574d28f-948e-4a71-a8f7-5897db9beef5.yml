@@ -4,7 +4,10 @@ _meta:
   uuid: c574d28f-948e-4a71-a8f7-5897db9beef5
   default_langcode: en
   depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/GRC': skos_concept
     4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15: file
+    'http://publications.europa.eu/resource/authority/language/ELL': skos_concept
 default:
   preferred_langcode:
     -
@@ -17,7 +20,7 @@ default:
       value: 'Romanos Firou'
   pass:
     -
-      value: $S$EzGZeAfPN0kIrnRTuObKZP8BxMxnnQzfku6vUD/m5Xt8b9GLWXDM
+      value: $S$EKOAqBq/F42QMpxW0hQUodvtWtvFSkfB3M6yg49sowhNzPWhsW8c
       existing: ''
       pre_hashed: false
   mail:
@@ -61,7 +64,7 @@ default:
       format: full_html
   field_city_country:
     -
-      langcode: ''
+      langcode: en
       country_code: GR
       administrative_area: ''
       locality: Patras
@@ -80,6 +83,12 @@ default:
   field_date_of_birth:
     -
       value: '1998-11-23'
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/GRC'
   field_profile_image:
     -
       entity: 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
@@ -87,3 +96,6 @@ default:
       title: ''
       width: 4684
       height: 4000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/ELL'

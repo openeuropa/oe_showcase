@@ -4,7 +4,10 @@ _meta:
   uuid: e509f27f-988b-41c0-a0fa-12a82107bf74
   default_langcode: en
   depends:
+    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/FIN': skos_concept
     0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb: file
+    'http://publications.europa.eu/resource/authority/language/FIN': skos_concept
 default:
   preferred_langcode:
     -
@@ -17,7 +20,7 @@ default:
       value: 'Lisbet Henri'
   pass:
     -
-      value: $S$E.0Emz6KGD7tnbt7.025NWTyaB0BPc53og4sDQdGPT09khkaVq/s
+      value: $S$Eo6kdx0ZXjSXnWdZh6arKoEjlZbg6YG9ocYbpwjUMibt4gvCDmEx
       existing: ''
       pre_hashed: false
   mail:
@@ -61,7 +64,7 @@ default:
       format: full_html
   field_city_country:
     -
-      langcode: ''
+      langcode: en
       country_code: FI
       administrative_area: ''
       locality: Helsinki
@@ -80,6 +83,12 @@ default:
   field_date_of_birth:
     -
       value: '2000-06-28'
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/FIN'
   field_profile_image:
     -
       entity: 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
@@ -87,3 +96,6 @@ default:
       title: ''
       width: 2704
       height: 3752
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FIN'
