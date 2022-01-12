@@ -32,7 +32,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "^1.0.0-alpha-3"
+        "openeuropa/oe_whitelabel": "dev-EPIC-User_profile"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -84,12 +84,6 @@
         },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
-                "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
-                }
-            },
-            "openeuropa/oe_whitelabel": {
                 "dist": {
                     "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
                     "type": "tar"
