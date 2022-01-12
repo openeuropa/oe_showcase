@@ -4,7 +4,10 @@ _meta:
   uuid: 5de73784-3425-4baa-8814-b8bc58bc53de
   default_langcode: en
   depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/DEU': skos_concept
     d27d25a7-91b2-4042-902d-9f99296d8702: file
+    'http://publications.europa.eu/resource/authority/language/DEU': skos_concept
 default:
   preferred_langcode:
     -
@@ -17,7 +20,7 @@ default:
       value: 'Cristian Eliza'
   pass:
     -
-      value: $S$EoTk8UNnBgRaSQOCPOyZwpuW4opuIRG9.3pX9SQmKDwZsqKr939b
+      value: $S$EZAuMnTU1TW3/BwNVxSb3wyGMQF5JRpCOG2VjDdEU1QC1GCJlgra
       existing: ''
       pre_hashed: false
   mail:
@@ -61,7 +64,7 @@ default:
       format: full_html
   field_city_country:
     -
-      langcode: ''
+      langcode: en
       country_code: DE
       administrative_area: ''
       locality: Munich
@@ -80,6 +83,12 @@ default:
   field_date_of_birth:
     -
       value: '1997-05-17'
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/DEU'
   field_profile_image:
     -
       entity: d27d25a7-91b2-4042-902d-9f99296d8702
@@ -87,3 +96,6 @@ default:
       title: ''
       width: 2400
       height: 3000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/DEU'

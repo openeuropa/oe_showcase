@@ -4,7 +4,10 @@ _meta:
   uuid: 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
   default_langcode: en
   depends:
+    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/FRA': skos_concept
     4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f: file
+    'http://publications.europa.eu/resource/authority/language/FRA': skos_concept
 default:
   preferred_langcode:
     -
@@ -17,7 +20,7 @@ default:
       value: 'Shel Caryl'
   pass:
     -
-      value: $S$EgGgf.PD2SsSpQL9h9wqp6sAa0Lfbsx5ol333GmXAswovRNXWkx2
+      value: $S$Ew3AVzztVQkvuqFv5dozPh5.mXsvN5WMMdEjBl.i2ovDSLgPjHuY
       existing: ''
       pre_hashed: false
   mail:
@@ -61,7 +64,7 @@ default:
       format: full_html
   field_city_country:
     -
-      langcode: ''
+      langcode: en
       country_code: FR
       administrative_area: ''
       locality: Paris
@@ -80,6 +83,12 @@ default:
   field_date_of_birth:
     -
       value: '1997-12-07'
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/FRA'
   field_profile_image:
     -
       entity: 4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f
@@ -87,3 +96,6 @@ default:
       title: ''
       width: 4000
       height: 6000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FRA'

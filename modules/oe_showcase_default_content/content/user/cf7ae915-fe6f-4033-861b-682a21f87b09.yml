@@ -4,7 +4,11 @@ _meta:
   uuid: cf7ae915-fe6f-4033-861b-682a21f87b09
   default_langcode: en
   depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/CAN': skos_concept
     c607761f-6c3c-49d0-9cba-fc0ed748b2a5: file
+    'http://publications.europa.eu/resource/authority/language/ENG': skos_concept
+    'http://publications.europa.eu/resource/authority/language/FRA': skos_concept
 default:
   preferred_langcode:
     -
@@ -17,7 +21,7 @@ default:
       value: 'Jarrett Autumn'
   pass:
     -
-      value: $S$E/AceX5lwCGhV0quK.RlCgGYEy0tgFG3Dl77ZWG6CrSqQhiIPEDn
+      value: $S$EvGIfGg.X1POIviBFSWmQdYwIkfZsCmKtwfaW0rPkRz9vU33bY86
       existing: ''
       pre_hashed: false
   mail:
@@ -61,7 +65,7 @@ default:
       format: full_html
   field_city_country:
     -
-      langcode: ''
+      langcode: en
       country_code: CA
       administrative_area: ''
       locality: Toronto
@@ -80,6 +84,12 @@ default:
   field_date_of_birth:
     -
       value: '1990-02-03'
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/CAN'
   field_profile_image:
     -
       entity: c607761f-6c3c-49d0-9cba-fc0ed748b2a5
@@ -87,3 +97,8 @@ default:
       title: ''
       width: 3476
       height: 5214
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/ENG'
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FRA'
