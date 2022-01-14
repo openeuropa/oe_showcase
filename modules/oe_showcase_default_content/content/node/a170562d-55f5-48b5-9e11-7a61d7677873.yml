@@ -407,9 +407,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -435,9 +432,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -472,9 +466,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -509,9 +500,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -546,9 +534,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -565,3 +550,54 @@ default:
                     -
                       value: "<p>Quisque dignissim quam eget tincidunt euismod. Quisque euismod nulla vel tellus dignissim, ac pellentesque mi varius. Nam eget nisl vitae leo condimentum semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pulvinar ornare arcu non ultricies. In ex sapien, tincidunt a eleifend quis, accumsan nec metus. Vivamus eget erat eget magna semper ullamcorper. Vestibulum posuere elit tortor, nec suscipit orci tristique eu.</p>\r\n"
                       format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 145cf387-d762-4653-99b6-6a9778fa9f5c
+          bundle: oe_timeline
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1642180783
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_timeline:
+            -
+              label: 'First label'
+              title: 'First title'
+              body: 'content content content content content content content content'
+              format: plain_text
+            -
+              label: 'Second label'
+              title: 'second title'
+              body: 'content content content content content content '
+              format: plain_text
+            -
+              label: 'Third label'
+              title: 'Third title'
+              body: 'content content content content '
+              format: plain_text
+            -
+              label: 'Fourth label'
+              title: 'fourth title'
+              body: 'content content content content'
+              format: plain_text
+          field_oe_timeline_expand:
+            -
+              value: 3
