@@ -595,7 +595,7 @@ default:
               format: plain_text
             -
               label: 'Sed condimentum vel purus eu fermentum'
-              title: 'n dignissim vulputate libero ut suscipit'
+              title: 'Dignissim vulputate libero ut suscipit'
               body: 'Vivamus finibus erat a erat mattis facilisis.'
               format: plain_text
           field_oe_timeline_expand:
