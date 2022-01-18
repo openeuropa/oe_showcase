@@ -579,24 +579,24 @@ default:
               value: false
           field_oe_timeline:
             -
-              label: 'First label'
-              title: 'First title'
-              body: 'content content content content content content content content'
+              label: 'Nunc vestibulum lorem'
+              title: 'Morbi a eros sit amet'
+              body: 'Aenean et enim vulputate, porttitor tortor quis, mollis odio.'
               format: plain_text
             -
-              label: 'Second label'
-              title: 'second title'
-              body: 'content content content content content content '
+              label: 'Etiam non eros'
+              title: 'Nam quam metus'
+              body: 'Nulla at finibus nisi, nec consectetur ex.'
               format: plain_text
             -
-              label: 'Third label'
-              title: 'Third title'
-              body: 'content content content content '
+              label: 'Ut scelerisque arcu tellus'
+              title: 'Sed accumsan lacus lacus'
+              body: 'Nam et urna vulputate eros sagittis consequat a ut lorem.'
               format: plain_text
             -
-              label: 'Fourth label'
-              title: 'fourth title'
-              body: 'content content content content'
+              label: 'Sed condimentum vel purus eu fermentum'
+              title: 'n dignissim vulputate libero ut suscipit'
+              body: 'Vivamus finibus erat a erat mattis facilisis.'
               format: plain_text
           field_oe_timeline_expand:
             -
