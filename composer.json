@@ -32,7 +32,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "dev-OEL-484"
+        "openeuropa/oe_whitelabel": "dev-EPIC-User_profile"
     },
     "require-dev": {
         "composer/installers": "~1.11",
