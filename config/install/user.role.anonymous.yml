@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - media
+    - rdf_skos
     - search_api_autocomplete
     - system
 id: anonymous
@@ -11,5 +12,7 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'access user profiles'
   - 'use search_api_autocomplete for showcase_search'
   - 'view media'
+  - 'view published skos concept entities'
