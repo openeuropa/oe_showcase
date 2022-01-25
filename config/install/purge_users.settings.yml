@@ -12,7 +12,7 @@ enabled_inactive_users: false
 enabled_blocked_users: false
 purge_included_users_roles:
   authenticated: authenticated
-purge_excluded_users_roles: []
+purge_excluded_users_roles: {  }
 purge_on_cron: false
 inactive_user_notify_subject: 'Your account is deleted'
 inactive_user_notify_text: "Dear User, \r\n\r\nYour account has been deleted due the website’s policy to automatically remove users who match certain criteria. If you have concerns regarding the deletion, please talk to the administrator of the website. \r\n\r\nThank you"
