@@ -12,12 +12,12 @@ dependencies:
   - drupal:user_field_anonymize
   - drupal:user_fields_visibility
   - drupal:views
+  - oe_corporate_countries:oe_corporate_countries_address
   - oe_whitelabel_helper
   - openeuropa:oe_authentication
   - openeuropa:oe_authentication_user_fields
   - rdf_skos:rdf_skos
-  - search_api:search_api
-  - search_api_db:search_api_db
+  - rdf_skos:rdf_skos_language_mapping
 
 config_devel:
   install:
@@ -39,6 +39,3 @@ config_devel:
     - field.storage.user.field_nationality
     - field.storage.user.field_profile_image
     - field.storage.user.field_working_languages
-    - search_api.index.showcase_users_index
-    - search_api.server.showcase_users_server
-    - views.view.showcase_users
