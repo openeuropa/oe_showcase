@@ -6,11 +6,14 @@ dependencies:
     - field.field.user.user.field_city_country
     - field.field.user.user.field_current_position
     - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
     - field.field.user.user.field_gender
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_nationality
+    - field.field.user.user.field_organization
     - field.field.user.user.field_profile_image
     - field.field.user.user.field_working_languages
-    - image.style.large
+    - image.style.oe_bootstrap_theme_medium_no_crop
   module:
     - address
     - datetime
@@ -28,14 +31,14 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 6
     region: content
   field_city_country:
     type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 50
+    weight: 7
     region: content
   field_current_position:
     type: string
@@ -43,7 +46,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 70
+    weight: 9
     region: content
   field_date_of_birth:
     type: datetime_default
@@ -52,7 +55,15 @@ content:
       timezone_override: ''
       format_type: html_date
     third_party_settings: {  }
-    weight: 40
+    weight: 5
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_gender:
     type: skos_concept_entity_reference_label
@@ -60,7 +71,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 30
+    weight: 3
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_nationality:
     type: skos_concept_entity_reference_label
@@ -68,15 +87,24 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 60
+    weight: 4
     region: content
-  field_profile_image:
-    type: image_url
+  field_organization:
+    type: string
     label: above
     settings:
-      image_style: large
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 8
+    region: content
+  field_profile_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: oe_bootstrap_theme_medium_no_crop
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_working_languages:
     type: skos_concept_entity_reference_label
@@ -84,7 +112,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 80
+    weight: 10
     region: content
 hidden:
   langcode: true

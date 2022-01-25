@@ -6,6 +6,11 @@ dependencies:
   module:
     - datetime
     - user
+    - user_field_anonymize
+third_party_settings:
+  user_field_anonymize:
+    enabled: false
+    value: {  }
 id: user.user.field_date_of_birth
 field_name: field_date_of_birth
 entity_type: user

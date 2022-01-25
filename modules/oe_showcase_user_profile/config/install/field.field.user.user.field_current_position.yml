@@ -5,6 +5,11 @@ dependencies:
     - field.storage.user.field_current_position
   module:
     - user
+    - user_field_anonymize
+third_party_settings:
+  user_field_anonymize:
+    enabled: false
+    value: {  }
 id: user.user.field_current_position
 field_name: field_current_position
 entity_type: user

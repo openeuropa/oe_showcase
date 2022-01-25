@@ -15,7 +15,6 @@ dependencies:
   - oe_corporate_countries:oe_corporate_countries_address
   - oe_whitelabel_helper
   - openeuropa:oe_authentication
-  - openeuropa:oe_authentication_user_fields
   - rdf_skos:rdf_skos
   - rdf_skos:rdf_skos_language_mapping
 
@@ -27,15 +26,21 @@ config_devel:
     - field.field.user.user.field_city_country
     - field.field.user.user.field_current_position
     - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
     - field.field.user.user.field_gender
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_nationality
+    - field.field.user.user.field_organization
     - field.field.user.user.field_profile_image
     - field.field.user.user.field_working_languages
     - field.storage.user.field_bio
     - field.storage.user.field_city_country
     - field.storage.user.field_current_position
     - field.storage.user.field_date_of_birth
+    - field.storage.user.field_first_name
     - field.storage.user.field_gender
+    - field.storage.user.field_last_name
     - field.storage.user.field_nationality
+    - field.storage.user.field_organization
     - field.storage.user.field_profile_image
     - field.storage.user.field_working_languages
