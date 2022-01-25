@@ -67,7 +67,6 @@ config_devel:
     - block.block.corporateeulogoblock
     - block.block.eufooterblock
     - block.block.euloginlinkblock
-    - block.block.exposedformshowcase_userspage_1
     - block.block.languageswitcherinterfacetext
     - block.block.mainnavigation
     - block.block.pagetitle
