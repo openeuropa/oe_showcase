@@ -16,7 +16,7 @@
         "drupal/facets_form": "1.x-dev",
         "drupal/file_link": "^2.0.6",
         "drupal/legal": "^2.0",
-        "drupal/purge_users": "^3.0",
+        "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/user_field_anonymize": "1.x-dev",
