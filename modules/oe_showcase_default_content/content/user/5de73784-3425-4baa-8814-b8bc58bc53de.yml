@@ -20,7 +20,7 @@ default:
       value: 'Cristian Eliza'
   pass:
     -
-      value: $S$EZAuMnTU1TW3/BwNVxSb3wyGMQF5JRpCOG2VjDdEU1QC1GCJlgra
+      value: $S$EWwoO39E.UUj6oPxLx3KY/YGrSgYvfI9lPc9x8HDAA54CdmaIHLE
       existing: ''
       pre_hashed: false
   mail:
@@ -41,18 +41,6 @@ default:
   login:
     -
       value: 0
-  field_oe_firstname:
-    -
-      value: Cristian
-  field_oe_lastname:
-    -
-      value: Eliza
-  field_oe_department:
-    -
-      value: 'Research and Development'
-  field_oe_organisation:
-    -
-      value: Eurofound
   path:
     -
       alias: ''
@@ -60,8 +48,8 @@ default:
       pathauto: 0
   field_bio:
     -
-      value: "<p>Bio maecenas ac justo fermentum, auctor velit sed, consequat tortor. Vivamus dictum, lacus nec iaculis pulvinar, tortor leo ultrices sapien, in mollis sapien neque in sapien. Vivamus porttitor felis in pulvinar maximus. Nullam libero orci, lacinia ac tincidunt vitae, pulvinar sit amet odio. Curabitur et nulla non dolor iaculis interdum at ut lorem. Vestibulum molestie tempus elit vel fermentum. In eu posuere massa. Nunc a pretium nisl. Nunc eget vehicula ex, id viverra enim.</p>\r\n\r\n<p>Sed magna est, tempor vitae placerat vel, vulputate a ex. Mauris ac faucibus massa.</p>\r\n"
-      format: full_html
+      value: "Bio maecenas ac justo fermentum, auctor velit sed, consequat tortor. Vivamus dictum, lacus nec iaculis pulvinar, tortor leo ultrices sapien, in mollis sapien neque in sapien. Vivamus porttitor felis in pulvinar maximus. Nullam libero orci, lacinia ac tincidunt vitae, pulvinar sit amet odio. Curabitur et nulla non dolor iaculis interdum at ut lorem. Vestibulum molestie tempus elit vel fermentum. In eu posuere massa. Nunc a pretium nisl. Nunc eget vehicula ex, id viverra enim.\r\n"
+      format: plain_text
   field_city_country:
     -
       langcode: en
@@ -83,12 +71,21 @@ default:
   field_date_of_birth:
     -
       value: '1997-05-17'
+  field_first_name:
+    -
+      value: Cristian
   field_gender:
     -
       entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_last_name:
+    -
+      value: Eliza
   field_nationality:
     -
       entity: 'http://publications.europa.eu/resource/authority/country/DEU'
+  field_organization:
+    -
+      value: Eurofound
   field_profile_image:
     -
       entity: d27d25a7-91b2-4042-902d-9f99296d8702

@@ -20,7 +20,7 @@ default:
       value: 'Lisbet Henri'
   pass:
     -
-      value: $S$Eo6kdx0ZXjSXnWdZh6arKoEjlZbg6YG9ocYbpwjUMibt4gvCDmEx
+      value: $S$E3hJ7TFy/QoDBGK/VQmuXmp098YIbXyUFLjsTK3DtTCGlndWUiO1
       existing: ''
       pre_hashed: false
   mail:
@@ -41,18 +41,6 @@ default:
   login:
     -
       value: 0
-  field_oe_firstname:
-    -
-      value: Lisbet
-  field_oe_lastname:
-    -
-      value: Henri
-  field_oe_department:
-    -
-      value: 'Research and Development'
-  field_oe_organisation:
-    -
-      value: external
   path:
     -
       alias: ''
@@ -60,8 +48,8 @@ default:
       pathauto: 0
   field_bio:
     -
-      value: "<p>Bio curabitur tristique dolor quis placerat finibus. Phasellus blandit sapien nulla. Ut sed tincidunt felis. Nunc ac placerat arcu, sit amet venenatis felis. Praesent nec condimentum tortor. Aliquam erat volutpat. Fusce augue quam, condimentum cursus magna in, rutrum tristique nulla. Integer eu enim dapibus, semper erat nec, cursus justo. Quisque tristique quam ipsum, sed imperdiet sapien eleifend quis.</p>\r\n"
-      format: full_html
+      value: 'Bio curabitur tristique dolor quis placerat finibus. Phasellus blandit sapien nulla. Ut sed tincidunt felis. Nunc ac placerat arcu, sit amet venenatis felis. Praesent nec condimentum tortor. Aliquam erat volutpat. Fusce augue quam, condimentum cursus magna in, rutrum tristique nulla. Integer eu enim dapibus, semper erat nec, cursus justo. Quisque tristique quam ipsum, sed imperdiet sapien eleifend quis.'
+      format: plain_text
   field_city_country:
     -
       langcode: en
@@ -83,12 +71,21 @@ default:
   field_date_of_birth:
     -
       value: '2000-06-28'
+  field_first_name:
+    -
+      value: Lisbet
   field_gender:
     -
       entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
+  field_last_name:
+    -
+      value: Henri
   field_nationality:
     -
       entity: 'http://publications.europa.eu/resource/authority/country/FIN'
+  field_organization:
+    -
+      value: external
   field_profile_image:
     -
       entity: 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb

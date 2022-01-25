@@ -21,7 +21,7 @@ default:
       value: 'Jarrett Autumn'
   pass:
     -
-      value: $S$EvGIfGg.X1POIviBFSWmQdYwIkfZsCmKtwfaW0rPkRz9vU33bY86
+      value: $S$EQ8SDLpx238NbcOc2Fk7/dCJJ6mg4Mhq2DVS/HDr9r92qiu51YVr
       existing: ''
       pre_hashed: false
   mail:
@@ -42,18 +42,6 @@ default:
   login:
     -
       value: 0
-  field_oe_firstname:
-    -
-      value: Jarrett
-  field_oe_lastname:
-    -
-      value: Autumn
-  field_oe_department:
-    -
-      value: Marketing
-  field_oe_organisation:
-    -
-      value: external
   path:
     -
       alias: ''
@@ -61,8 +49,8 @@ default:
       pathauto: 0
   field_bio:
     -
-      value: "<p>Bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit eros, finibus in pulvinar ut, semper in massa. Aenean interdum tellus lectus, eu lobortis libero ultrices eget. Phasellus quis cursus purus. Ut sollicitudin felis vel purus finibus, ac fringilla ex venenatis. Aliquam erat volutpat.</p>\r\n"
-      format: full_html
+      value: 'Bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit eros, finibus in pulvinar ut, semper in massa. Aenean interdum tellus lectus, eu lobortis libero ultrices eget. Phasellus quis cursus purus. Ut sollicitudin felis vel purus finibus, ac fringilla ex venenatis. Aliquam erat volutpat.'
+      format: plain_text
   field_city_country:
     -
       langcode: en
@@ -84,12 +72,21 @@ default:
   field_date_of_birth:
     -
       value: '1990-02-03'
+  field_first_name:
+    -
+      value: Jarrett
   field_gender:
     -
       entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_last_name:
+    -
+      value: Autumn
   field_nationality:
     -
       entity: 'http://publications.europa.eu/resource/authority/country/CAN'
+  field_organization:
+    -
+      value: external
   field_profile_image:
     -
       entity: c607761f-6c3c-49d0-9cba-fc0ed748b2a5
