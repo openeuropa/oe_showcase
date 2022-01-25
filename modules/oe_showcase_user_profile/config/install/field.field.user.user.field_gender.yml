@@ -6,6 +6,11 @@ dependencies:
   module:
     - rdf_skos
     - user
+    - user_field_anonymize
+third_party_settings:
+  user_field_anonymize:
+    enabled: false
+    value: {  }
 id: user.user.field_gender
 field_name: field_gender
 entity_type: user

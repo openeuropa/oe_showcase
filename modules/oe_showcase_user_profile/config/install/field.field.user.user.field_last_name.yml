@@ -2,28 +2,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_bio
+    - field.storage.user.field_last_name
   module:
-    - allowed_formats
-    - text
     - user
     - user_field_anonymize
 third_party_settings:
-  allowed_formats:
-    plain_text: plain_text
-    full_html: '0'
   user_field_anonymize:
     enabled: false
     value: {  }
-id: user.user.field_bio
-field_name: field_bio
+id: user.user.field_last_name
+field_name: field_last_name
 entity_type: user
 bundle: user
-label: Bio
+label: 'Last name'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string

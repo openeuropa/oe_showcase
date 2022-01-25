@@ -2,22 +2,23 @@ langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - field_permissions
     - user
 third_party_settings:
   field_permissions:
     permission_type: user_fields_visibility
-id: user.field_date_of_birth
-field_name: field_date_of_birth
+id: user.field_last_name
+field_name: field_last_name
 entity_type: user
-type: datetime
+type: string
 settings:
-  datetime_type: date
-module: datetime
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
-translatable: false
+translatable: true
 indexes: {  }
 persist_with_no_fields: false
 custom_storage: false

@@ -6,6 +6,16 @@ dependencies:
   module:
     - image
     - user
+    - user_field_anonymize
+third_party_settings:
+  user_field_anonymize:
+    enabled: false
+    value:
+      uuid: ''
+      alt: ''
+      title: ''
+      width: null
+      height: null
 id: user.user.field_profile_image
 field_name: field_profile_image
 entity_type: user
