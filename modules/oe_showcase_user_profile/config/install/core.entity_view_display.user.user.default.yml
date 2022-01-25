@@ -13,7 +13,7 @@ dependencies:
     - field.field.user.user.field_organization
     - field.field.user.user.field_profile_image
     - field.field.user.user.field_working_languages
-    - image.style.oe_bootstrap_theme_medium_no_crop
+    - image.style.medium
   module:
     - address
     - datetime
@@ -102,7 +102,7 @@ content:
     label: above
     settings:
       image_link: ''
-      image_style: oe_bootstrap_theme_medium_no_crop
+      image_style: medium
     third_party_settings: {  }
     weight: 0
     region: content
