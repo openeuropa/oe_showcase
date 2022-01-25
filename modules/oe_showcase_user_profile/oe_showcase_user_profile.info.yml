@@ -1,23 +1,46 @@
 name: OpenEuropa Showcase User Profile
 type: module
-description: 'Demo for the OpenEuropa Showcase User Profile feature.'
+description: Provides a demo of the OpenEuropa Showcase User Profile feature.
 core_version_requirement: ^8.9 || ^9.1
-package: OpenEuropa
+package: OpenEuropa Showcase
 dependencies:
   - better_exposed_filters:better_exposed_filters
+  - drupal:address
+  - drupal:allowed_formats
   - drupal:legal
   - drupal:purge_users
   - drupal:user_field_anonymize
   - drupal:user_fields_visibility
   - drupal:views
+  - oe_corporate_countries:oe_corporate_countries_address
   - oe_whitelabel_helper
   - openeuropa:oe_authentication
-  - search_api:search_api
-  - search_api_db:search_api_db
+  - rdf_skos:rdf_skos
+  - rdf_skos:rdf_skos_language_mapping
 
 config_devel:
   install:
-    - block.block.exposedformshowcase_userspage_1.yml
-    - search_api.index.showcase_users_index
-    - search_api.server.showcase_users_server
-    - views.view.showcase_users
+    - core.entity_form_display.user.user.default
+    - core.entity_view_display.user.user.default
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_city_country
+    - field.field.user.user.field_current_position
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_nationality
+    - field.field.user.user.field_organization
+    - field.field.user.user.field_profile_image
+    - field.field.user.user.field_working_languages
+    - field.storage.user.field_bio
+    - field.storage.user.field_city_country
+    - field.storage.user.field_current_position
+    - field.storage.user.field_date_of_birth
+    - field.storage.user.field_first_name
+    - field.storage.user.field_gender
+    - field.storage.user.field_last_name
+    - field.storage.user.field_nationality
+    - field.storage.user.field_organization
+    - field.storage.user.field_profile_image
+    - field.storage.user.field_working_languages

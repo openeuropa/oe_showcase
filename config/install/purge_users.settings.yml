@@ -6,21 +6,21 @@ user_inactive_value: ''
 user_inactive_period: days
 user_blocked_value: ''
 user_blocked_period: days
-enabled_never_loggedin_users: 0
-enabled_loggedin_users: 1
-enabled_inactive_users: 0
-enabled_blocked_users: 0
+enabled_never_loggedin_users: false
+enabled_loggedin_users: true
+enabled_inactive_users: false
+enabled_blocked_users: false
 purge_included_users_roles:
   authenticated: authenticated
-purge_excluded_users_roles:
-purge_on_cron: 0
+purge_excluded_users_roles: {  }
+purge_on_cron: false
 inactive_user_notify_subject: 'Your account is deleted'
 inactive_user_notify_text: "Dear User, \r\n\r\nYour account has been deleted due the website’s policy to automatically remove users who match certain criteria. If you have concerns regarding the deletion, please talk to the administrator of the website. \r\n\r\nThank you"
-send_email_notification: 1
+send_email_notification: true
 purge_user_cancel_method: user_cancel_site_policy
-disregard_blocked_users: 0
+disregard_blocked_users: false
 user_before_deletion_subject: 'Your account will be deleted'
 user_before_deletion_text: "Dear User, \r\n\r\nYour account will be deleted soon due the website’s policy to automatically remove users who match certain criteria. If you have concerns regarding the deletion, please talk to the administrator of the website.  \r\n\r\nThank you"
-send_email_user_before_notification: 1
+send_email_user_before_notification: true
 user_before_notification_value: '10'
 user_before_notification_period: days

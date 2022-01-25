@@ -3,6 +3,11 @@ _meta:
   entity_type: user
   uuid: e509f27f-988b-41c0-a0fa-12a82107bf74
   default_langcode: en
+  depends:
+    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/FIN': skos_concept
+    0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb: file
+    'http://publications.europa.eu/resource/authority/language/FIN': skos_concept
 default:
   preferred_langcode:
     -
@@ -15,9 +20,12 @@ default:
       value: 'Lisbet Henri'
   pass:
     -
-      value: $S$ETZJI3q9MrbkUe/zrZ4EwTwesvdWfHAXwXShHJx9B1zs5r69WD/b
+      value: $S$E3hJ7TFy/QoDBGK/VQmuXmp098YIbXyUFLjsTK3DtTCGlndWUiO1
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: lisbet@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -38,3 +46,53 @@ default:
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: 'Bio curabitur tristique dolor quis placerat finibus. Phasellus blandit sapien nulla. Ut sed tincidunt felis. Nunc ac placerat arcu, sit amet venenatis felis. Praesent nec condimentum tortor. Aliquam erat volutpat. Fusce augue quam, condimentum cursus magna in, rutrum tristique nulla. Integer eu enim dapibus, semper erat nec, cursus justo. Quisque tristique quam ipsum, sed imperdiet sapien eleifend quis.'
+      format: plain_text
+  field_city_country:
+    -
+      langcode: en
+      country_code: FI
+      administrative_area: ''
+      locality: Helsinki
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: 'Lead developer'
+  field_date_of_birth:
+    -
+      value: '2000-06-28'
+  field_first_name:
+    -
+      value: Lisbet
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
+  field_last_name:
+    -
+      value: Henri
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/FIN'
+  field_organization:
+    -
+      value: external
+  field_profile_image:
+    -
+      entity: 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
+      alt: profile
+      title: ''
+      width: 2704
+      height: 3752
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FIN'

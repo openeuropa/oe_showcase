@@ -3,6 +3,11 @@ _meta:
   entity_type: user
   uuid: 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
   default_langcode: en
+  depends:
+    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/FRA': skos_concept
+    4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f: file
+    'http://publications.europa.eu/resource/authority/language/FRA': skos_concept
 default:
   preferred_langcode:
     -
@@ -15,9 +20,12 @@ default:
       value: 'Shel Caryl'
   pass:
     -
-      value: $S$EBDFEXLr.flziETA7HEkaxph4JAjqsuWYttbGbBMQ3NbspOQ8tTM
+      value: $S$EIR/eomvdXZbMO./o25gQVyr80kMUeiHY8YKWAlipdMuCiucdmcq
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: shel@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -38,3 +46,53 @@ default:
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: 'Bio donec dictum lectus ut posuere facilisis. Donec at mauris sed ipsum dignissim elementum. Vestibulum dolor urna, vehicula nec metus et, tristique tempus eros. Praesent imperdiet placerat tortor eu laoreet.'
+      format: plain_text
+  field_city_country:
+    -
+      langcode: en
+      country_code: FR
+      administrative_area: ''
+      locality: Paris
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: 'Project manager'
+  field_date_of_birth:
+    -
+      value: '1997-12-07'
+  field_first_name:
+    -
+      value: Shel
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
+  field_last_name:
+    -
+      value: Caryl
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/FRA'
+  field_organization:
+    -
+      value: EMA
+  field_profile_image:
+    -
+      entity: 4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f
+      alt: profile
+      title: ''
+      width: 4000
+      height: 6000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FRA'

@@ -7,6 +7,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.3",
+        "drupal/address": "^1.9",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/core-recommended": "^9.1",
         "drupal/default_content": "^2.0@alpha",
@@ -15,11 +16,9 @@
         "drupal/facets_form": "1.x-dev",
         "drupal/file_link": "^2.0.6",
         "drupal/legal": "^2.0",
-        "drupal/purge_users": "^3.0",
+        "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
-        "drupal/ui_patterns": "^1.2",
-        "drupal/ui_patterns_settings": "^1.1",
         "drupal/user_field_anonymize": "1.x-dev",
         "drupal/user_fields_visibility": "1.x-dev",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
@@ -29,14 +28,11 @@
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_content": "^2.6.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
+        "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "^1.0.0-alpha-3"
-    },
-    "suggest": {
-        "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
-        "npm-asset/jquery-ui-touch-punch": "Required to use drupal/jquery_ui_touch_punch module for BEF."
+        "openeuropa/oe_whitelabel": "dev-EPIC-User_profile"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -83,12 +79,6 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
-                "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
-                }
-            },
-            "openeuropa/oe_whitelabel": {
                 "dist": {
                     "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
                     "type": "tar"

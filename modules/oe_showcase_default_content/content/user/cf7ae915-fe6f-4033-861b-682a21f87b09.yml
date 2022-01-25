@@ -3,6 +3,12 @@ _meta:
   entity_type: user
   uuid: cf7ae915-fe6f-4033-861b-682a21f87b09
   default_langcode: en
+  depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/CAN': skos_concept
+    c607761f-6c3c-49d0-9cba-fc0ed748b2a5: file
+    'http://publications.europa.eu/resource/authority/language/ENG': skos_concept
+    'http://publications.europa.eu/resource/authority/language/FRA': skos_concept
 default:
   preferred_langcode:
     -
@@ -15,9 +21,12 @@ default:
       value: 'Jarrett Autumn'
   pass:
     -
-      value: $S$ELFSe7WGWz4M8dGwxGWjZLyjEx7ZlikT.BeS1YrvAdcMSJ8UaRMe
+      value: $S$EQ8SDLpx238NbcOc2Fk7/dCJJ6mg4Mhq2DVS/HDr9r92qiu51YVr
       existing: ''
       pre_hashed: false
+  mail:
+    -
+      value: email@example.com
   timezone:
     -
       value: Europe/Brussels
@@ -38,3 +47,55 @@ default:
       alias: ''
       langcode: en
       pathauto: 0
+  field_bio:
+    -
+      value: 'Bio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit eros, finibus in pulvinar ut, semper in massa. Aenean interdum tellus lectus, eu lobortis libero ultrices eget. Phasellus quis cursus purus. Ut sollicitudin felis vel purus finibus, ac fringilla ex venenatis. Aliquam erat volutpat.'
+      format: plain_text
+  field_city_country:
+    -
+      langcode: en
+      country_code: CA
+      administrative_area: ''
+      locality: Toronto
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Manager
+  field_date_of_birth:
+    -
+      value: '1990-02-03'
+  field_first_name:
+    -
+      value: Jarrett
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_last_name:
+    -
+      value: Autumn
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/CAN'
+  field_organization:
+    -
+      value: external
+  field_profile_image:
+    -
+      entity: c607761f-6c3c-49d0-9cba-fc0ed748b2a5
+      alt: profile
+      title: ''
+      width: 3476
+      height: 5214
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/ENG'
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/FRA'

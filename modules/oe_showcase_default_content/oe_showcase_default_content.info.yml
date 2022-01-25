@@ -9,8 +9,9 @@ dependencies:
   - drupal:language
   - drupal:pathauto
   - oe_showcase_navigation:oe_showcase_navigation
-  - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page
+  - oe_showcase_page:oe_showcase_user_profile
+  - oe_showcase_search:oe_showcase_search
 
 default_content:
   node:
@@ -84,6 +85,12 @@ default_content:
     - 6d160789-df45-4cf9-ab0c-3b0547a2170c
     - 3ebdd3bc-44b7-42ec-9126-91ccd393ad6e
     - b833a7eb-c451-4001-8d6e-e7eb677499a8
+    # User profile images
+    - 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
+    - 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
+    - 4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f
+    - c607761f-6c3c-49d0-9cba-fc0ed748b2a5
+    - d27d25a7-91b2-4042-902d-9f99296d8702
   media:
     # OE Showcase Page
     - 8fec7b57-dff0-4a75-b032-a2076ceeccbb

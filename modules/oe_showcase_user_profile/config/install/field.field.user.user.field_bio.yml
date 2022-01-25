@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_bio
+  module:
+    - allowed_formats
+    - text
+    - user
+    - user_field_anonymize
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    full_html: '0'
+  user_field_anonymize:
+    enabled: false
+    value: {  }
+id: user.user.field_bio
+field_name: field_bio
+entity_type: user
+bundle: user
+label: Bio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

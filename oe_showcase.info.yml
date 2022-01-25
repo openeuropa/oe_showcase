@@ -1,6 +1,6 @@
 name: OpenEuropa Showcase Profile
 type: profile
-description: 'Install with commonly used features for OpenEuropa Showcase profile.'
+description: Install with commonly used features for OpenEuropa Showcase profile.
 core_version_requirement: ^8.9 || ^9.1
 
 install:
@@ -26,6 +26,8 @@ install:
   - oe_bootstrap_theme_paragraphs
   - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
+  - oe_corporate_countries
+  - oe_corporate_countries_address
   - oe_multilingual
   - oe_paragraphs
   - oe_paragraphs_banner
@@ -39,10 +41,13 @@ install:
   - oe_showcase_user_profile
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_whitelabel_user_profile
   - options
   - page_cache
   - path
   - pathauto
+  - rdf_skos
+  - rdf_skos_language_mapping
   - taxonomy
   - toolbar
   - ui_patterns
@@ -73,10 +78,14 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - filter.format.full_html
+    - legal.settings
     - node.settings
     - oe_authentication.settings
     - pathauto.settings
+    - purge_users.settings
     - system.site
     - system.theme
     - user.role.anonymous
     - user.role.authenticated
+    - user.settings
+    - user_field_anonymize.settings
