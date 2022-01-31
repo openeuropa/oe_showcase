@@ -150,14 +150,11 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_working_languages:
-    type: skos_concept_entity_reference_autocomplete
+    type: skos_concept_entity_reference_options_select
     weight: 14
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: 'Working language'
+      sort: label
     third_party_settings: {  }
   language:
     weight: 0
