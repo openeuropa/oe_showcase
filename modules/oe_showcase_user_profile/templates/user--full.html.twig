@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override for user in 'full' view mode.
+ */
+#}
+{% spaceless %}
+<article{{ attributes }}>
+  {{ pattern('content_banner', {
+    image: pattern_image,
+    title: content.field_first_name|field_value|render ~ ' ' ~ content.field_last_name|field_value|render,
+    meta: [
+      content.group_professional_information.field_organization|field_value,
+      content.group_professional_information.field_current_position|field_value,
+    ],
+    content: content.field_bio|field_value,
+    attributes: create_attribute().addClass('mb-4'),
+  }) }}
+
+  {# @todo Replace this with a pattern or a field group formatter. #}
+  {% for group_name, group_label in {
+    group_personal_information: 'Personal information',
+    group_professional_information: 'Professional information',
+  } %}
+    {% if content[group_name] %}
+      <section class="my-3">
+        <h3 class="fw-bold mb-4">{{ group_label }}</h3>
+        {% for field_name, field in content[group_name] if key|first != '#' and field|field_value %}
+          <div class="row">
+            <div class="col-12 col-md-4">
+              {# Use regular <div> instead of <p>, to support fields with <p> in the field value. #}
+              <div class="mb-3">
+                {{ field|field_label }}
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="mb-3">
+                {{ field|field_value|safe_join(', ') }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  {% endfor %}
+</article>
+{% endspaceless %}
