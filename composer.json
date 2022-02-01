@@ -26,6 +26,7 @@
         "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
+        "drupal/twig_field_value": "^2.0",
         "drupal/user_field_anonymize": "1.x-dev",
         "drupal/user_fields_visibility": "1.x-dev",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",

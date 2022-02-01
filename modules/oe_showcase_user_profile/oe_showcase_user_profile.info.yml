@@ -9,6 +9,7 @@ dependencies:
   - drupal:field_group
   - drupal:legal
   - drupal:purge_users
+  - drupal:twig_field_value
   - drupal:user_field_anonymize
   - drupal:user_fields_visibility
   - drupal:views
