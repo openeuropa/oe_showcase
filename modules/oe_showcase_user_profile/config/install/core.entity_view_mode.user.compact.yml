@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - user
-id: user.teaser
-label: Teaser
+id: user.compact
+label: Compact
 targetEntityType: user
 cache: true

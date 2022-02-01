@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.user.teaser
+    - core.entity_view_mode.user.compact
     - field.field.user.user.field_bio
     - field.field.user.user.field_city_country
     - field.field.user.user.field_current_position
@@ -18,16 +18,14 @@ dependencies:
   module:
     - image
     - user
-_core:
-  default_config_hash: gz9WEz0i4H_ECMMuX5JOU07Bpw1o-gO2seVhxJdKVLM
-id: user.user.teaser
+id: user.user.compact
 targetEntityType: user
 bundle: user
-mode: teaser
+mode: compact
 content:
   field_current_position:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -35,7 +33,7 @@ content:
     region: content
   field_first_name:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -43,7 +41,7 @@ content:
     region: content
   field_last_name:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -51,7 +49,7 @@ content:
     region: content
   field_organization:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -59,7 +57,7 @@ content:
     region: content
   field_profile_image:
     type: image_url
-    label: hidden
+    label: above
     settings:
       image_style: medium
     third_party_settings: {  }
