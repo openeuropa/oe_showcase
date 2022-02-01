@@ -20,7 +20,7 @@ function oe_showcase_user_profile_theme_suggestions_user_alter(array &$suggestio
  */
 function oe_showcase_user_profile_theme(): array {
   return [
-    'user__compact' => [
+    'user__teaser' => [
       'render element' => 'elements',
       'base hook' => 'user',
     ],

@@ -4,28 +4,22 @@
  * Search result template.
  */
 #}
+{% set title = {
+  tag: 'a href=' ~ url,
+  content:  label,
+} %}
 {{ pattern('card', {
   variant: 'search',
-  horizontal: true,
-  horizontal_grid: {
-    left_col_classes: 'col-md-3 col-lg-2 rounded mw-listing-img',
-    right_col_classes: 'col-md-9 col-lg-10',
-  },
-  extra_classes_body: 'p-0 pb-md-0 pb-3',
-  title: label,
-  url: url,
+  title: title,
   text: content.body,
-  image: {
-    path: content.field_image[0]['#markup'],
-  },
+  image: content.field_image[0],
   badges: content.field_category,
-  meta: [
-    node.getCreatedTime|bcl_timeago,
-  ],
-  attributes: create_attribute({'class': [
-    'listing-item',
-    'border-bottom',
-    'border-md-0',
-    'border-0',
-  ]}),
+  content: {
+    '#type': 'html_tag',
+    '#tag': 'span',
+    '#attributes': {
+      class: 'text-muted text-nowrap me-4-5',
+    },
+    '#value': node.getCreatedTime|bcl_timeago,
+  }
 }) }}

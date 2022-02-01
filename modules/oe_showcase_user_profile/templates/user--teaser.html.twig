@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * User teaser template.
+ */
+#}
+{% set _title %}
+  <a class="text-underline-hover" href="{{  path('entity.user.canonical', {'user': user.id})  }}">
+    {{ user.field_first_name.value }} {{ user.field_last_name.value }}
+  </a>
+{% endset %}
+{% set _content_value %}
+  {{ user.field_organization.value }} {{ user.field_current_position.value }}
+{% endset %}
+<div class="mb-4">
+  {{ pattern('card', {
+    variant: 'search',
+    title: _title,
+    content: {
+      '#type': 'html_tag',
+      '#tag': 'span',
+      '#attributes': {
+        class: 'text-muted',
+      },
+      '#value': _content_value,
+    },
+    image: content.field_profile_image[0],
+  }) }}
+</div>
