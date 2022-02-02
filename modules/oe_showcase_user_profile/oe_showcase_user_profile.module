@@ -13,15 +13,14 @@ use Drupal\user\Entity\User;
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function oe_showcase_user_profile_theme_suggestions_user_alter(array &$suggestions, array $variables): void {
-  $view_mode = $variables['elements']['#view_mode'];
-  $suggestions[] = 'user__' . $view_mode;
+function oe_showcase_user_profile_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
 }
 
 /**
  * Implements hook_theme().
  */
-function oe_showcase_user_profile_theme(): array {
+function oe_showcase_user_profile_theme() {
   return [
     'user__teaser' => [
       'render element' => 'elements',
@@ -33,7 +32,7 @@ function oe_showcase_user_profile_theme(): array {
 /**
  * Implements hook_user_format_name_alter().
  */
-function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountInterface $account): void {
+function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountInterface $account) {
   if (!$account instanceof User) {
     return;
   }
