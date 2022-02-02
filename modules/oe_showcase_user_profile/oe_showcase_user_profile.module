@@ -34,8 +34,18 @@ function oe_showcase_user_profile_theme(): array {
  * Implements hook_user_format_name_alter().
  */
 function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountInterface $account): void {
-  if ($account instanceof User &&
-    (isset($account->get('field_first_name')->value) || isset($account->get('field_first_name')->value))) {
-    $name = $account->get('field_first_name')->value . ' ' . $account->get('field_last_name')->value;
+  if (!$account instanceof User) {
+    return;
   }
+  $username = [];
+  if (!$account->get('field_first_name')->isEmpty()) {
+    $username[] = $account->get('field_first_name')->value;
+  }
+  if (!$account->get('field_last_name')->isEmpty()) {
+    $username[] = $account->get('field_last_name')->value;
+  }
+  if (empty($username)) {
+    return;
+  }
+  $name = implode(' ', $username);
 }
