@@ -6,7 +6,7 @@
 #}
 {% set _title %}
   <a class="text-underline-hover" href="{{  path('entity.user.canonical', {'user': user.id})  }}">
-    {{ user.field_first_name.value }} {{ user.field_last_name.value }}
+    {{ user.label }}
   </a>
 {% endset %}
 {% set _content_value %}

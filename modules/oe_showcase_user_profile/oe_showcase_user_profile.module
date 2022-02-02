@@ -7,6 +7,9 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
@@ -25,4 +28,13 @@ function oe_showcase_user_profile_theme(): array {
       'base hook' => 'user',
     ],
   ];
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountInterface $account): void {
+  if ($account instanceof User) {
+    $name = $account->get('field_first_name')->value . ' ' . $account->get('field_last_name')->value;
+  }
 }
