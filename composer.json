@@ -10,6 +10,7 @@
         "drupal/better_exposed_filters": "^5.0",
         "drupal/core-recommended": "^9.1",
         "drupal/default_content": "^2.0@alpha",
+        "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/facets": "^1.8.0",
         "drupal/facets_form": "1.x-dev",
@@ -26,7 +27,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "^1.0.0-alpha4"
+        "openeuropa/oe_whitelabel": "0.779.202202021800"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
