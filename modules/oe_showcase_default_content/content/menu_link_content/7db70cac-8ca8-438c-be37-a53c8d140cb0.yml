@@ -1,25 +1,25 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 28e16576-588c-46e4-9ff3-c1b5ada00715
+  uuid: 7db70cac-8ca8-438c-be37-a53c8d140cb0
   bundle: menu_link_content
   default_langcode: en
   depends:
     1b3e4017-2567-4c10-86e1-5171f99a31ef: menu_link_content
-    a170562d-55f5-48b5-9e11-7a61d7677873: node
+    1cc33b96-38ad-4e28-90ce-201c75fb9fa4: node
 default:
   enabled:
     -
       value: true
   title:
     -
-      value: 'Example page'
+      value: 'Inpage Navigation'
   menu_name:
     -
       value: main
   link:
     -
-      target_uuid: a170562d-55f5-48b5-9e11-7a61d7677873
+      target_uuid: 1cc33b96-38ad-4e28-90ce-201c75fb9fa4
       title: ''
       options: {  }
   external:
@@ -30,7 +30,7 @@ default:
       value: false
   weight:
     -
-      value: -50
+      value: -49
   expanded:
     -
       value: false
