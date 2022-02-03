@@ -26,7 +26,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/composer-artifacts": "^0.1",
         "openeuropa/oe_authentication": "^1.5",
-        "openeuropa/oe_content": "^2.6.0",
+        "openeuropa/oe_content": "2.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
