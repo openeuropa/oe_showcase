@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Showcase user profile module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function oe_showcase_user_profile_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_user_profile_theme() {
+  return [
+    'user__teaser' => [
+      'render element' => 'elements',
+      'base hook' => 'user',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountInterface $account) {
+  if (!$account instanceof User) {
+    return;
+  }
+  $username = [];
+  if (!$account->get('field_first_name')->isEmpty()) {
+    $username[] = $account->get('field_first_name')->value;
+  }
+  if (!$account->get('field_last_name')->isEmpty()) {
+    $username[] = $account->get('field_last_name')->value;
+  }
+  if (empty($username)) {
+    return;
+  }
+  $name = implode(' ', $username);
+}
