@@ -1,0 +1,5 @@
+services:
+  oe_showcase_user_profile.event_subscriber:
+    class: Drupal\oe_showcase_user_profile\EventSubscriber\EuLoginAttributesToUserFieldsSubscriber
+    tags:
+      - { name: event_subscriber }
