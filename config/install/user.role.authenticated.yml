@@ -15,6 +15,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access user profiles'
+  - 'cancel account'
   - 'set own profile fields visibility'
   - 'set user profile anonymity'
   - 'use search_api_autocomplete for showcase_search'
