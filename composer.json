@@ -33,7 +33,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "1.0.0-alpha4"
+        "openeuropa/oe_whitelabel": "0.1.202202071145"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -109,11 +109,6 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"
-            }
-        },
-        "patches": {
-            "openeuropa/oe_whitelabel": {
-                "EPIC-User_profile": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-alpha4...EPIC-User_profile.diff"
             }
         }
     },
