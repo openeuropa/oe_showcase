@@ -13,9 +13,10 @@ dependencies:
     - field.field.user.user.field_organization
     - field.field.user.user.field_profile_image
     - field.field.user.user.field_working_languages
-    - image.style.thumbnail
+    - image.style.medium
   module:
     - address
+    - allowed_formats
     - datetime
     - field_group
     - image
@@ -36,15 +37,14 @@ third_party_settings:
       label: 'Personal information'
       region: content
       parent_name: ''
-      weight: 2
-      format_type: details
+      weight: 1
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
         description: ''
-        required_fields: false
+        required_fields: true
     group_professional_information_:
       children:
         - field_organization
@@ -53,13 +53,12 @@ third_party_settings:
       label: 'Professional information ￼'
       region: content
       parent_name: ''
-      weight: 3
-      format_type: details
+      weight: 2
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
         description: ''
         required_fields: true
 id: user.user.default
@@ -67,11 +66,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  account:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_bio:
     type: text_textarea
     weight: 10
@@ -79,7 +73,10 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_city_country:
     type: address_default
     weight: 11
@@ -143,11 +140,11 @@ content:
     third_party_settings: {  }
   field_profile_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: medium
     third_party_settings: {  }
   field_working_languages:
     type: skos_concept_entity_reference_options_select
@@ -156,12 +153,9 @@ content:
     settings:
       sort: label
     third_party_settings: {  }
-  language:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  account: true
   langcode: true
+  language: true
   path: true
   timezone: true
