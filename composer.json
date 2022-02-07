@@ -30,6 +30,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
+        "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_whitelabel": "0.1.202202080830"
     },
     "suggest": {
@@ -42,7 +43,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-dev": "^9.1",
         "drush/drush": "~10.3",
-        "openeuropa/code-review": "^1.6",
+        "openeuropa/code-review": "^1.7 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^1.5"
@@ -56,13 +57,17 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "openeuropa/oe_whitelabel":{
-            "type": "vcs",
-            "url": "https://github.com/openeuropa/oe_whitelabel"
-        },
         "assets":{
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        "openeuropa/oe_whitelabel":{
+            "type": "path",
+            "url": "oe_whitelabel"
+        },
+        "openeuropa/oe_starter_content": {
+            "type": "git",
+            "url": "https://github.com/openeuropa/oe_starter_content"
         }
     },
     "autoload": {
@@ -79,20 +84,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "artifacts": {
-            "openeuropa/oe_bootstrap_theme": {
-                "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
-                }
-            },
-            "openeuropa/oe_whitelabel": {
-                "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
-                }
-            }
-        },
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
