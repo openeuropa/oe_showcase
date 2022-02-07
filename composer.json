@@ -111,6 +111,11 @@
             "locations": {
                 "web-root": "./build"
             }
+        },
+        "patches": {
+            "openeuropa/oe_bootstrap_theme": {
+                "remove_table_themeing": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202031130...OEL-1130.patch"
+            }
         }
     },
     "config": {
