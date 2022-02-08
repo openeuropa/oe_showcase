@@ -36,7 +36,6 @@ class EuLoginAttributesToUserFieldsSubscriber implements EventSubscriberInterfac
    */
   public static function getSubscribedEvents() {
     return [
-      CasHelper::EVENT_POST_LOGIN => 'updateUserData',
       CasHelper::EVENT_PRE_REGISTER => 'processUserProperties',
     ];
   }
