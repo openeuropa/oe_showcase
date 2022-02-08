@@ -50,7 +50,7 @@ third_party_settings:
         - field_organization
         - field_current_position
         - field_working_languages
-      label: 'Professional information ￼'
+      label: 'Professional information'
       region: content
       parent_name: ''
       weight: 2
