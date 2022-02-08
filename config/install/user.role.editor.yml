@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.oe_news
+  module:
+    - node
+    - system
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'administer content types'
+  - 'access content overview'
+  - 'administer nodes'
+  - 'access toolbar'
+  - 'create oe_news content'
+  - 'delete all revisions'
+  - 'delete any oe_news content'
+  - 'delete oe_news revisions'
+  - 'delete own oe_news content'
+  - 'edit any oe_news content'
+  - 'edit own oe_news content'
+  - 'revert all revisions'
+  - 'revert oe_news revisions'
+  - 'view all revisions'
+  - 'view oe_news revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
