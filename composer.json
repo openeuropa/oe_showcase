@@ -28,7 +28,6 @@
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
         "openeuropa/oe_starter_content": "1.x-dev",
-        "openeuropa/oe_whitelabel": "*"
     },
     "suggest": {
         "oomphinc/composer-installers-extender": "Required to use drupal/jquery_ui_touch_punch module.",
@@ -95,6 +94,11 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"
+            }
+        },
+        "patches": {
+            "openeuropa/oe_whitelabel": {
+                "Adds oe_whitelabel_news. To testing only. Remove once content banner is released.": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...OEL-1017.patch"
             }
         }
     },

@@ -38,6 +38,7 @@ install:
   - oe_showcase_search
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_whitelabel_news
   - options
   - page_cache
   - path
