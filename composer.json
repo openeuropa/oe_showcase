@@ -15,6 +15,7 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/facets": "^1.8.0",
         "drupal/facets_form": "1.x-dev",
+        "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
         "drupal/legal": "^2.0",
         "drupal/purge_users": "dev-3.x",
@@ -109,6 +110,14 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./build"
+            }
+        },
+        "patches": {
+            "openeuropa/oe_bootstrap_theme": {
+                "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...1.x.diff"
             }
         }
     },

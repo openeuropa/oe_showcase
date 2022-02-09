@@ -7,6 +7,7 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\user\Entity\User;
 
@@ -47,4 +48,24 @@ function oe_showcase_user_profile_user_format_name_alter(string &$name, AccountI
     return;
   }
   $name = implode(' ', $username);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the user form.
+ */
+function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $field_names = [
+    'field_first_name',
+    'field_last_name',
+    'field_organization',
+  ];
+  foreach ($field_names as $field_name) {
+    $form[$field_name]['widget'][0]['value']['#disabled'] = TRUE;
+    // Don't overwrite existing description.
+    $description = $form[$field_name]['widget'][0]['value']['#description'] ?? '';
+    $text = t('This value is coming from ECAS and cannot be changed here.');
+    $form[$field_name]['widget'][0]['value']['#description'] = ($description !== '')
+      ? $description . '<br/>' . $text
+      : $text;
+  }
 }

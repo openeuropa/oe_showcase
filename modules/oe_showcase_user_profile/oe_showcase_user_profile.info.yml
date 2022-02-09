@@ -6,6 +6,7 @@ package: OpenEuropa Showcase
 dependencies:
   - drupal:address
   - drupal:allowed_formats
+  - drupal:field_group
   - drupal:legal
   - drupal:purge_users
   - drupal:user_field_anonymize

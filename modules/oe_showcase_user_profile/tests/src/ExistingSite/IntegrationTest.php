@@ -23,56 +23,42 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
-    $this->drupalGet('admin/people/create');
 
-    $page->fillField('Email address', 'example@example.com');
-    $page->fillField('Username', 'example_user');
-    $page->fillField('Password', '123456');
-    $page->fillField('Confirm password', '123456');
-    $page->fillField('First name', 'Exampleson');
-    $page->fillField('Last name', 'McModel');
-    $page->fillField('Organization', 'DIGIT');
+    // Emulate a EU login created user.
+    // @todo Use cas mock.
+    $user = $this->createUser([], NULL, FALSE, [
+      'mail' => 'example@example.com',
+      'field_first_name' => 'John',
+      'field_last_name' => 'Doe',
+      'field_organization' => 'DIGIT',
+    ]);
+    $this->markEntityForCleanup($user);
+
+    $this->drupalGet("user/{$user->id()}/edit");
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '1990-01-01');
     $page->fillField('Current position', 'Web Developer');
     $page->selectFieldOption('Gender', 'male');
     $page->fillField('Country', 'BE');
     $page->fillField('Nationality', 'France');
-    $page->fillField('Working Languages', 'French');
-    $page->pressButton('Create new account');
+    $page->fillField('Working Languages', 'http://publications.europa.eu/resource/authority/language/FRA');
+    $assert_session->buttonExists('Cancel account');
+    $page->pressButton('Save');
 
-    $user = user_load_by_name('example_user');
-    $user->get('allowed_options')->setValue([
-      'authenticated' => 'authenticated',
-    ]);
-    $user->get('visible_fields')->setValue([
-      'field_bio' => 'field_bio',
-      'field_city_country' => 'field_city_country',
-      'field_current_position' => 'field_current_position',
-      'field_date_of_birth' => 'field_date_of_birth',
-      'field_first_name' => 'field_first_name',
-      'field_gender' => 'field_gender',
-      'field_last_name' => 'field_last_name',
-      'field_nationality' => 'field_nationality',
-      'field_organization' => 'field_organization',
-      'field_profile_image' => 'field_profile_image',
-      'field_working_languages' => 'field_working_languages',
-    ]);
-    $user->save();
-    $this->assertNotEmpty($user);
-    $this->markEntityForCleanup($user);
     $this->drupalGet("user/{$user->id()}/edit");
-
-    $assert_session->fieldValueEquals('First name', 'Exampleson');
-    $assert_session->fieldValueEquals('Last name', 'McModel');
+    $assert_session->fieldValueEquals('First name', 'John');
+    $assert_session->fieldValueEquals('Last name', 'Doe');
     $assert_session->fieldValueEquals('Organization', 'DIGIT');
     $assert_session->fieldValueEquals('Bio', 'User description bio.');
     $assert_session->fieldValueEquals('Gender', 'http://publications.europa.eu/resource/authority/human-sex/MALE');
     $assert_session->fieldValueEquals('Country', 'BE');
     $assert_session->fieldValueEquals('Nationality', 'France (http://publications.europa.eu/resource/authority/country/FRA)');
-    $assert_session->fieldValueEquals('Working Languages', 'French (http://publications.europa.eu/resource/authority/language/FRA)');
+    $working_language = $assert_session->optionExists('Working Languages', 'French');
+    $this->assertSame('selected', $working_language->getAttribute('selected'));
+    $page->pressButton('Save');
 
     $this->drupalGet("user/{$user->id()}");
+    $assert_session->pageTextContains('John Doe');
     $assert_session->pageTextContains('User description bio.');
     $assert_session->pageTextContains('male');
     $assert_session->pageTextContains('1990-01-01');
@@ -80,6 +66,12 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('France');
     $assert_session->pageTextContains('French');
+
+    $this->drupalLogin($user);
+    $this->drupalGet("user/{$user->id()}/edit");
+    $page->pressButton('Cancel account');
+    $page->pressButton('Confirm');
+    $assert_session->pageTextContains('A confirmation request to cancel your account has been sent to your email address.');
   }
 
 }

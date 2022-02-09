@@ -7,13 +7,13 @@ dependencies:
     - oe_whitelabel
 id: tabs
 theme: oe_whitelabel
-region: content
+region: header
 weight: 0
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'User settings'
+  label: Tabs
   label_display: '0'
   provider: core
   primary: true
