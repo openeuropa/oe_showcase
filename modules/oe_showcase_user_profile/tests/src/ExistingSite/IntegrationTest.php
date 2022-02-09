@@ -32,23 +32,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'field_last_name' => 'Doe',
       'field_organization' => 'DIGIT',
     ]);
-    $user->get('allowed_options')->setValue([
-      'authenticated' => 'authenticated',
-    ]);
-    $user->get('visible_fields')->setValue([
-      'field_bio' => 'field_bio',
-      'field_city_country' => 'field_city_country',
-      'field_current_position' => 'field_current_position',
-      'field_date_of_birth' => 'field_date_of_birth',
-      'field_first_name' => 'field_first_name',
-      'field_gender' => 'field_gender',
-      'field_last_name' => 'field_last_name',
-      'field_nationality' => 'field_nationality',
-      'field_organization' => 'field_organization',
-      'field_profile_image' => 'field_profile_image',
-      'field_working_languages' => 'field_working_languages',
-    ]);
-    $user->save();
     $this->markEntityForCleanup($user);
 
     $this->drupalGet("user/{$user->id()}/edit");
