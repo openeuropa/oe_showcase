@@ -2,8 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.rich_text
+    - filter.format.simple_rich_text
     - node.type.oe_news
   module:
+    - filter
     - node
     - system
 id: editor
@@ -25,6 +28,8 @@ permissions:
   - 'edit own oe_news content'
   - 'revert all revisions'
   - 'revert oe_news revisions'
+  - 'use text format rich_text'
+  - 'use text format simple_rich_text'
   - 'view all revisions'
   - 'view oe_news revisions'
   - 'view own unpublished content'

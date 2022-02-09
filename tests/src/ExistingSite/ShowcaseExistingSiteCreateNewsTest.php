@@ -1,0 +1,90 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace Drupal\Tests\oe_showcase\ExistingSite;
+
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
+use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\TestFileCreationTrait;
+
+/**
+ * Class to test News content type on existing site tests.
+ */
+class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
+
+  use MediaTypeCreationTrait;
+  use TestFileCreationTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+
+    // Create user.
+    $user = $this->createUser([]);
+    $this->drupalLogin($user);
+  }
+
+  /**
+   * Check creation News content through the UI.
+   */
+  public function testCreateNews() {
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    // Create a sample media entity to be embedded.
+    File::create([
+      'uri' => $this->getTestFiles('image')[0]->uri,
+    ])->save();
+    $media_image = Media::create([
+      'bundle' => 'image',
+      'name' => 'Starter Image test',
+      'oe_media_image' => [
+        [
+          'target_id' => 1,
+          'alt' => 'Starter Image test alt',
+          'title' => 'Starter Image test title',
+        ],
+      ],
+    ]);
+    $media_image->save();
+
+    // Don't have permissions to create a News.
+    $this->drupalGet('node/add/oe_news');
+    $assert_session->pageTextContains('You are not authorized to access this page.');
+    $assert_session->statusCodeEquals(403);
+
+    // Create editor user.
+    $user = $this->createUser([]);
+    $user->addRole('editor');
+    $user->save();
+    $this->drupalLogin($user);
+
+    // Assert values.
+    // Assert we have enough permissions.
+    $this->drupalGet('node/add/oe_news');
+    $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
+    $page->fillField('Title', 'Example title');
+    $page->fillField('Content', 'Example Content');
+    $page->fillField('Introduction', 'Example Introduction');
+    $page->fillField('Date', '2022-01-24');
+    $page->fillField('Time', '00:00:00');
+    $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
+    $page->fillField('Use existing media', $media_name);
+    $page->pressButton('Save');
+
+    // Assert media document has been created.
+    $assert_session->pageTextContains('News Example title has been created.');
+    $assert_session->pageTextContains('Example title');
+    $assert_session->pageTextContains('Example Content');
+    $assert_session->pageTextContains('Example Introduction');
+    $assert_session->pageTextContains('24 January 2022');
+    $assert_session->responseContains('default-image4_2.jpeg');
+    $assert_session->responseContains('Starter Image test');
+    $assert_session->responseContains('Starter Image test alt');
+  }
+
+}
