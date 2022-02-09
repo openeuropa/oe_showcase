@@ -61,5 +61,11 @@ function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterfac
   ];
   foreach ($field_names as $field_name) {
     $form[$field_name]['widget'][0]['value']['#disabled'] = TRUE;
+    // Don't overwrite existing description.
+    $description = $form[$field_name]['widget'][0]['value']['#description'] ?? '';
+    $text = t('This value is coming from ECAS and cannot be changed here.');
+    $form[$field_name]['widget'][0]['value']['#description'] = ($description !== '')
+      ? $description . '<br/>' . $text
+      : $text;
   }
 }
