@@ -21,7 +21,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityForCleanup($admin);
     $this->drupalLogin($admin);
 
-    /** @var \Drupal\Tests\WebAssert $assert_session */
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
@@ -84,6 +83,12 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('France');
     $assert_session->pageTextContains('French');
+
+    $this->drupalLogin($user);
+    $this->drupalGet("user/{$user->id()}/edit");
+    $page->pressButton('Cancel account');
+    $page->pressButton('Confirm');
+    $assert_session->pageTextContains('A confirmation request to cancel your account has been sent to your email address.');
   }
 
 }
