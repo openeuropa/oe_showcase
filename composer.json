@@ -114,7 +114,10 @@
         },
         "patches": {
             "openeuropa/oe_bootstrap_theme": {
-                "remove_table_themeing": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202031130...OEL-1130.patch"
+                "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...1.x.diff"
             }
         }
     },
