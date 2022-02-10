@@ -7,6 +7,7 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
@@ -80,15 +81,19 @@ function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterfac
  * Implements hook_preprocess_HOOK().
  */
 function oe_showcase_user_profile_preprocess_user__full(array &$variables): void {
-  // Set an image value object for the header banner pattern.
-  $image_element = $variables['elements']['field_profile_image'][0] ?? NULL;
-  $variables['pattern_image'] = NULL;
-  if ($image_element !== NULL) {
-    $image_item = $image_element['#item'] ?? NULL;
-    if ($image_item instanceof ImageItem) {
-      $variables['pattern_image'] = isset($image_element['#image_style'])
-        ? ImageValueObject::fromStyledImageItem($image_item, $image_element['#image_style'])
-        : ImageValueObject::fromImageItem($image_item);
-    }
+  /** @var \Drupal\user\UserInterface $user */
+  $user = $variables['user'];
+  $image_item = $user->get('field_profile_image')->get(0);
+  if (!$image_item instanceof ImageItem) {
+    // No profile image found.
+    return;
   }
+  $variables['pattern_image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
+  // Get cache info from the render element instead of the image item.
+  // This assumes that the image field display is configured exactly as in
+  // config/install/core.entity_view_display.user.user.full.yml in this module.
+  // @todo Once OEL-1166 is fixed in oe_bootstrap_theme, get cache info directly
+  //   from the ImageValueObject, and hide the image field in field ui.
+  $cacheability = CacheableMetadata::createFromRenderArray($variables['elements']['field_profile_image'][0]);
+  $cacheability->applyTo($variables);
 }
