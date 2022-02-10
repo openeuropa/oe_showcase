@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 /**
- * Smoke test to verify that tests are running. To be removed.
+ * Contact form tests.
  */
 class ContactFormTest extends ShowcaseExistingSiteTestBase {
 
@@ -13,18 +13,14 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
    * Check creation contact form content through the UI.
    */
   public function testCreateContactForm() {
-    // Mark test content for deletion after the test has finished.
-    $this->markEntityTypeForCleanup('contact_form');
-
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // Create user.
-    $user_page_creator = $this->createUser([
+    // User page creator.
+    $this->drupalLogin($this->createUser([
       'create oe_showcase_page content',
       'access corporate contact form',
-    ]);
-    $this->drupalLogin($user_page_creator);
+    ]));
     $this->drupalGet('node/add/oe_showcase_page');
 
     // Create oe_showcase_page.
@@ -46,10 +42,9 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $assert_session->elementTextContains('css', '.alert-content', 'Example contact form page has been created.');
 
     // User submitting the contact form.
-    $user_submitting = $this->createUser([
+    $this->drupalLogin($this->createUser([
       'access corporate contact form',
-    ]);
-    $this->drupalLogin($user_submitting);
+    ]));
 
     // Submit the form.
     $this->drupalGet('/pages/example-contact-form-page');
@@ -60,9 +55,8 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Send message');
 
     // Assert values were sent.
-    $assert_session->elementTextContains('css', '.alert-content', 'Alpaca');
-    $assert_session->elementTextContains('css', '.alert-content', 'Example subject');
-    $assert_session->elementTextContains('css', '.alert-content', 'Example Message text');
+    $assert_session->pageTextContains('Alpaca');
+    $assert_session->pageTextContains('Example Message text');
   }
 
 }
