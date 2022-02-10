@@ -1,0 +1,20 @@
+name: OpenEuropa Showcase Contact form
+type: module
+description: Provides a demo for the contact form.
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa Showcase
+dependencies:
+  - block_field:block_field
+  - oe_contact_forms:oe_contact_forms
+  - paragraphs:paragraphs
+
+themes:
+  - bartik
+  - seven
+
+config_devel:
+  install:
+    - contact.form.example_contact_form
+    - field.field.paragraph.contact_form.field_contact_block
+    - field.storage.paragraph.field_contact_block
+    - paragraphs.paragraphs_type.contact_form
