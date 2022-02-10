@@ -17,7 +17,6 @@
     attributes: create_attribute().addClass('mb-4'),
   }) }}
 
-  {# @todo Replace this with a pattern or a field group formatter. #}
   {% for group_name, group_label in {
     group_personal_information: 'Personal information',
     group_professional_information: 'Professional information',
@@ -25,21 +24,20 @@
     {% if content[group_name] %}
       <section class="my-3">
         <h3 class="fw-bold mb-4">{{ group_label }}</h3>
-        {% for field_name, field in content[group_name] if key|first != '#' and field|field_value %}
-          <div class="row">
-            <div class="col-12 col-md-4">
-              {# Use regular <div> instead of <p>, to support fields with <p> in the field value. #}
-              <div class="mb-3">
-                {{ field|field_label }}
-              </div>
-            </div>
-            <div class="col-12 col-md-8">
-              <div class="mb-3">
-                {{ field|field_value|safe_join(', ') }}
-              </div>
-            </div>
-          </div>
+        {% set _items = [] %}
+        {% for _field_name, _field in content[group_name] if _key|first != '#' and _field|field_value %}
+          {% set _value %}
+            {{ _field|field_value|safe_join(', ') }}
+          {% endset %}
+          {% set _items = _items|merge([{
+            term: _field|field_label,
+            definition: _value,
+          }]) %}
         {% endfor %}
+        {{ pattern('description_list', {
+          orientation: 'horizontal',
+          items: _items,
+        }) }}
       </section>
     {% endif %}
   {% endfor %}
