@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: contact_form
+label: 'Contact form'
+icon_uuid: null
+icon_default: null
+description: 'Allows to create contact forms in a paragraph.'
+behavior_plugins: {  }

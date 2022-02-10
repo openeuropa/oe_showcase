@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+    - oe_contact_forms
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send message'
+    show_preview: true
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+  oe_contact_forms:
+    is_corporate_form: true
+    topic_label: ''
+    email_subject: 'Email subject'
+    header: ''
+    privacy_policy: 'entity:node/8'
+    includes_fields_in_auto_reply: false
+    allow_canonical_url: false
+    expose_as_block: true
+    optional_fields:
+      oe_country_residence: '0'
+      oe_telephone: '0'
+    topics:
+      -
+        topic_name: Llama
+        topic_email_address: webmaster@example.com
+      -
+        topic_name: Alpaca
+        topic_email_address: webmaster2@example.com
+      -
+        topic_name: Vicuña
+        topic_email_address: webmaster3@example.com
+id: example_contact_form
+label: 'Example contact form'
+recipients:
+  - webmaster@example.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''
