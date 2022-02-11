@@ -57,6 +57,9 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     // Assert values were sent.
     $assert_session->pageTextContains('Alpaca');
     $assert_session->pageTextContains('Example Message text');
+
+    // Assert honeypot is enabled and working for the contact form.
+    $assert_session->fieldExists('url');
   }
 
 }
