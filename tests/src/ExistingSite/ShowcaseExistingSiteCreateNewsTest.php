@@ -36,21 +36,21 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('media');
     $this->markEntityTypeForCleanup('file');
-    
+
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
     // Create a sample media entity to be embedded.
-    File::create([
+    $file = File::create([
       'uri' => $this->getTestFiles('image')[0]->uri,
-    ])->save();
-
+    ]);
+    $file->save();
     $media_image = Media::create([
       'bundle' => 'image',
       'name' => 'Starter Image test',
       'oe_media_image' => [
         [
-          'target_id' => 1,
+          'target_id' => $file->id(),
           'alt' => 'Starter Image test alt',
           'title' => 'Starter Image test title',
         ],
@@ -82,12 +82,13 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Use existing media', $media_name);
     $page->pressButton('Save');
 
-    // Assert that the NEWS have been created.
+    // Assert that news have been created.
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
     $assert_session->pageTextContains('24 January 2022');
+    $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
   }
