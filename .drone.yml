@@ -77,4 +77,4 @@ pipeline:
 
 matrix:
   PHP_VERSION:
-    - 7.3
+    - 7.4
