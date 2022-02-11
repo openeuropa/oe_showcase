@@ -32,6 +32,11 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
    * Check creation News content through the UI.
    */
   public function testCreateNews() {
+    // Mark test content for deletion after the test has finished.
+    $this->markEntityTypeForCleanup('node');
+    $this->markEntityTypeForCleanup('media');
+    $this->markEntityTypeForCleanup('file');
+    
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
@@ -39,6 +44,7 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     File::create([
       'uri' => $this->getTestFiles('image')[0]->uri,
     ])->save();
+
     $media_image = Media::create([
       'bundle' => 'image',
       'name' => 'Starter Image test',
@@ -76,13 +82,12 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Use existing media', $media_name);
     $page->pressButton('Save');
 
-    // Assert media document has been created.
+    // Assert that the NEWS have been created.
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
     $assert_session->pageTextContains('24 January 2022');
-    $assert_session->responseContains('default-image4_2.jpeg');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
   }
