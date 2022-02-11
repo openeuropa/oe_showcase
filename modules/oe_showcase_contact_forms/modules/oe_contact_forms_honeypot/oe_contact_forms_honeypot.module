@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Honeypot for Contact Forms module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add Honeypot features to all contact message forms.
+ */
+function oe_contact_forms_honeypot_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $build_info = $form_state->getBuildInfo();
+  if (!isset($build_info['base_form_id']) || $build_info['base_form_id'] !== 'contact_message_form') {
+    return;
+  }
+  honeypot_add_form_protection($form, $form_state, [
+    'honeypot',
+    'time_restriction',
+  ]);
+}
