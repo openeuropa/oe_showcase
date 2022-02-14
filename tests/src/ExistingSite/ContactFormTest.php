@@ -24,8 +24,8 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/add/oe_showcase_page');
 
     // Create oe_showcase_page.
-    $page->fillField('title[0][value]', 'Example contact form page');
-    $page->fillField('field_description[0][value]', 'Example contact form page with corporate block.');
+    $page->fillField('Title', 'Example contact form page');
+    $page->fillField('Description', 'Example contact form page with corporate block.');
     $page->pressButton('Add Contact form');
 
     // Add contact form paragraph.
@@ -48,9 +48,9 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
 
     // Submit the form.
     $this->drupalGet('/pages/example-contact-form-page');
-    $page->fillField('subject[0][value]', 'Example subject');
-    $page->fillField('message[0][value]', 'Example Message text');
-    $page->selectFieldOption('oe_topic', 'Alpaca');
+    $page->fillField('Subject', 'Example subject');
+    $page->fillField('Message', 'Example Message text');
+    $page->selectFieldOption('Topic', 'Alpaca');
     $page->checkField('privacy_policy');
     $page->pressButton('Send message');
 
