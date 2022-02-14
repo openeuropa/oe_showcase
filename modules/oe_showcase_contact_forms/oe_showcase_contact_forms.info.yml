@@ -8,10 +8,6 @@ dependencies:
   - oe_contact_forms:oe_contact_forms
   - paragraphs:paragraphs
 
-themes:
-  - bartik
-  - seven
-
 config_devel:
   install:
     - contact.form.example_contact_form
