@@ -13,6 +13,10 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
    * Check creation contact form content through the UI.
    */
   public function testCreateContactForm() {
+    // Mark test content for deletion after the test has finished.
+    $this->markEntityTypeForCleanup('node');
+    $this->markEntityTypeForCleanup('paragraph');
+
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
@@ -33,7 +37,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     /** @var \Drupal\contact\ContactFormInterface $contact_form */
     $contact_form = $entity_storage->load('example_contact_form');
     $page->selectFieldOption(
-      'field_body[0][subform][field_contact_block][0][plugin_id]',
+      'field_body[0][subform][contact_block][0][plugin_id]',
       'oe_contact_forms_corporate_block:' . $contact_form->uuid(),
     );
     $page->pressButton('Save');

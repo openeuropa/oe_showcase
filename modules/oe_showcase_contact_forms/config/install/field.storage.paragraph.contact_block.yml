@@ -4,8 +4,8 @@ dependencies:
   module:
     - block_field
     - paragraphs
-id: paragraph.field_contact_block
-field_name: field_contact_block
+id: paragraph.contact_block
+field_name: contact_block
 entity_type: paragraph
 type: block_field
 settings: {  }
