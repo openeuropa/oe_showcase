@@ -16,6 +16,7 @@
         "drupal/facets": "^1.8.0",
         "drupal/facets_form": "1.x-dev",
         "drupal/file_link": "^2.0.6",
+        "drupal/honeypot": "^2.0",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
