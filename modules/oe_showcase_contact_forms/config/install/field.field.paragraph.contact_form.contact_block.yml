@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_contact_block
+    - field.storage.paragraph.contact_block
     - paragraphs.paragraphs_type.contact_form
   module:
     - block_field
-id: paragraph.contact_form.field_contact_block
-field_name: field_contact_block
+id: paragraph.contact_form.contact_block
+field_name: contact_block
 entity_type: paragraph
 bundle: contact_form
 label: 'Contact block'

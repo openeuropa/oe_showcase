@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.contact_form.field_contact_block
+    - field.field.paragraph.contact_form.contact_block
     - paragraphs.paragraphs_type.contact_form
   module:
     - block_field
@@ -11,7 +11,7 @@ targetEntityType: paragraph
 bundle: contact_form
 mode: default
 content:
-  field_contact_block:
+  contact_block:
     type: block_field
     label: hidden
     settings: {  }
