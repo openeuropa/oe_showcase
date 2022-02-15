@@ -11,8 +11,8 @@ dependencies:
 config_devel:
   install:
     - contact.form.example_contact_form
+    - core.entity_form_display.paragraph.contact_form.default
+    - core.entity_view_display.paragraph.contact_form.default
     - field.field.paragraph.contact_form.contact_block
     - field.storage.paragraph.contact_block
     - paragraphs.paragraphs_type.contact_form
-    - core.entity_form_display.paragraph.contact_form.default
-    - core.entity_view_display.paragraph.contact_form.default
