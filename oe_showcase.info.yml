@@ -37,7 +37,6 @@ install:
   - oe_showcase_page
   - oe_showcase_search
   - oe_showcase_contact_forms
-  - oe_showcase_contact_forms_honeypot
   - oe_whitelabel_helper
   - oe_whitelabel_search
   - options
