@@ -8,6 +8,7 @@ install:
   - ckeditor
   - config
   - content_translation
+  - contact_forms_honeypot
   - datetime
   - dblog
   - default_content
