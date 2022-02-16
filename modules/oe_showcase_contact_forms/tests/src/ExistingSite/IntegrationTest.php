@@ -59,6 +59,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $assert_session->pageTextContains('Alpaca');
     $assert_session->pageTextContains('345345345');
+    $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('Example Message text');
   }
 
