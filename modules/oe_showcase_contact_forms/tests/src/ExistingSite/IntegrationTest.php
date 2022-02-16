@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase\ExistingSite;
+use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
 /**
  * Contact form tests.
  */
-class ContactFormTest extends ShowcaseExistingSiteTestBase {
+class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
   /**
    * Check creation contact form content through the UI.
@@ -20,10 +20,10 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // User page creator.
     $this->drupalLogin($this->createUser([
       'create oe_showcase_page content',
       'access corporate contact form',
+      'view published skos concept entities',
     ]));
     $this->drupalGet('node/add/oe_showcase_page');
 
@@ -42,24 +42,22 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     );
     $page->pressButton('Save');
 
-    // Assert contact form was created successfully.
-    $assert_session->elementTextContains('css', '.alert-content', 'Example contact form page has been created.');
-
-    // User submitting the contact form.
     $this->drupalLogin($this->createUser([
       'access corporate contact form',
     ]));
 
-    // Submit the form.
     $this->drupalGet('/pages/example-contact-form-page');
     $page->fillField('Subject', 'Example subject');
     $page->fillField('Message', 'Example Message text');
     $page->selectFieldOption('Topic', 'Alpaca');
     $page->checkField('privacy_policy');
+    $page->fillField('Phone', '345345345');
+    $page->selectFieldOption('Country of residence', 'http://publications.europa.eu/resource/authority/country/BEL');
     $page->pressButton('Send message');
 
-    // Assert values were sent.
     $assert_session->pageTextContains('Alpaca');
+    $assert_session->pageTextContains('http://publications.europa.eu/resource/authority/country/BEL');
+    $assert_session->pageTextContains('345345345');
     $assert_session->pageTextContains('Example Message text');
   }
 
