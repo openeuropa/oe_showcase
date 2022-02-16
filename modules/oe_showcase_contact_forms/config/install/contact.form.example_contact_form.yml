@@ -21,8 +21,8 @@ third_party_settings:
     allow_canonical_url: false
     expose_as_block: true
     optional_fields:
-      oe_country_residence: '0'
-      oe_telephone: '0'
+      oe_country_residence: oe_country_residence
+      oe_telephone: oe_telephone
     topics:
       -
         topic_name: Llama
@@ -31,7 +31,7 @@ third_party_settings:
         topic_name: Alpaca
         topic_email_address: webmaster2@example.com
       -
-        topic_name: Vicuña
+        topic_name: Vicugna
         topic_email_address: webmaster3@example.com
 id: example_contact_form
 label: 'Example contact form'
