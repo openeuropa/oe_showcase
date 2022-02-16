@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.contact_block
+    - paragraphs.paragraphs_type.contact_form
+  module:
+    - block_field
+id: paragraph.contact_form.contact_block
+field_name: contact_block
+entity_type: paragraph
+bundle: contact_form
+label: 'Contact block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: categories
+  selection_settings:
+    categories:
+      'Corporate forms': 'Corporate forms'
+      Block: '0'
+      Blocks: '0'
+      'Chaos Tools': '0'
+      core: '0'
+      'Corporate blocks': '0'
+      Facets: '0'
+      'Facets summary (Experimental)': '0'
+      Forms: '0'
+      'Lists (Views)': '0'
+      Menus: '0'
+      'OE Authentication': '0'
+      OpenEuropa: '0'
+      System: '0'
+      User: '0'
+      Views: '0'
+field_type: block_field

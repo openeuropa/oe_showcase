@@ -8,6 +8,7 @@
     "require": {
         "php": ">=7.3",
         "drupal/better_exposed_filters": "^5.0",
+        "drupal/block_field": "^1.0@RC",
         "drupal/core-recommended": "^9.1",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
@@ -22,6 +23,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/composer-artifacts": "^0.1",
         "openeuropa/oe_authentication": "^1.5",
+        "openeuropa/oe_contact_forms": "^1.1",
         "openeuropa/oe_content": "^2.6.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_media": "^1.14",
