@@ -14,6 +14,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    */
   public function testCreateContactForm() {
     // Mark test content for deletion after the test has finished.
+    $this->markEntityTypeForCleanup('user');
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
 
@@ -44,6 +45,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalLogin($this->createUser([
       'access corporate contact form',
+      'view published skos concept entities',
     ]));
 
     $this->drupalGet('/pages/example-contact-form-page');
