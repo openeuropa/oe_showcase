@@ -58,7 +58,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Send message');
 
     $assert_session->pageTextContains('Alpaca');
-    $assert_session->pageTextContains('http://publications.europa.eu/resource/authority/country/BEL');
     $assert_session->pageTextContains('345345345');
     $assert_session->pageTextContains('Example Message text');
   }
