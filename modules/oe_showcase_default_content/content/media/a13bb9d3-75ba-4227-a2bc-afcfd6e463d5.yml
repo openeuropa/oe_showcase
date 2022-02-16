@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: a13bb9d3-75ba-4227-a2bc-afcfd6e463d5
+  bundle: webtools_chart
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Chart example'
+  created:
+    -
+      value: 1645012053
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  oe_media_webtools:
+    -
+      value: "{\r\n  \"service\": \"chart\",\r\n  \"version\": \"2.0\",\r\n  \"data\": {\r\n    \"title\": {\r\n      \"text\": \"Air transport of passengers\"\r\n    },\r\n    \"subtitle\": {\r\n      \"text\": \"By number of passengers\"\r\n    },\r\n    \"xAxis\": {\r\n      \"categories\": [\r\n        2007,\r\n        2008,\r\n        2009,\r\n        2010,\r\n        2011,\r\n        2012,\r\n        2013,\r\n        2014,\r\n        2015,\r\n        2016,\r\n        2017,\r\n        2018\r\n      ],\r\n      \"labels\": {\r\n        \"enabled\": true\r\n      }\r\n    },\r\n    \"series\": [\r\n      {\r\n        \"type\": \"line\",\r\n        \"animation\": false,\r\n        \"data\": [\r\n          3155771,\r\n          3687329,\r\n          4062704,\r\n          4655898,\r\n          5098360,\r\n          4754530,\r\n          4782257,\r\n          4802282,\r\n          5145856,\r\n          5384160,\r\n          6077854,\r\n          7037081\r\n        ],\r\n        \"name\": \"Latvia\"\r\n      }\r\n    ]\r\n  }\r\n}"
