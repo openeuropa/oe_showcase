@@ -113,7 +113,7 @@
                 "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
             },
             "openeuropa/oe_whitelabel": {
-                "OEL-1133-theming branch": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...OEL-1133-theming.patch"
+                "OEL-1133-theming branch": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...OEL-1133-theming.diff"
             }
         }
     },
