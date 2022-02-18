@@ -23,7 +23,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/composer-artifacts": "^0.1",
         "openeuropa/oe_authentication": "^1.5",
-        "openeuropa/oe_contact_forms": "dev-OEL-1134",
+        "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "^2.6.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_media": "^1.14",
@@ -113,7 +113,7 @@
                 "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
             },
             "openeuropa/oe_whitelabel": {
-                "OEL-1133 branch": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...OEL-1133.patch"
+                "OEL-1133-theming branch": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...OEL-1133-theming.patch"
             }
         }
     },
