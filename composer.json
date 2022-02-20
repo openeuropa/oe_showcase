@@ -117,7 +117,7 @@
         },
         "patches": {
             "openeuropa/oe_whitelabel": {
-                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202221259...1.x.diff"
+                "Adds oe_whitelabel_event. To testing only.": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202221259...OEL-1026.diff"
             }
         }
     },
