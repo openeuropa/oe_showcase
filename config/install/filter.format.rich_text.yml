@@ -8,7 +8,7 @@ filters:
   filter_html:
     id: filter_html
     provider: filter
-    status: false
+    status: true
     weight: -10
     settings:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid>'
