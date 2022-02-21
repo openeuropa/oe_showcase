@@ -91,11 +91,6 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     // Assert values.
     // Assert we have enough permissions.
     $this->drupalGet('node/add/oe_event');
-//    ini_set('xdebug.var_display_max_depth', '10');
-//    ini_set('xdebug.var_display_max_children', '256');
-//    ini_set('xdebug.var_display_max_data', '100024');
-//    var_dump($this->getSession()->getPage()->getContent());
-//    die();
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
