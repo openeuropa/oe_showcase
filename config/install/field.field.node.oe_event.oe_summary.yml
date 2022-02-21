@@ -5,7 +5,13 @@ dependencies:
     - field.storage.node.oe_summary
     - node.type.oe_event
   module:
+    - allowed_formats
     - text
+    - oe_starter_content_event
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_rich_text
 id: node.oe_event.oe_summary
 field_name: oe_summary
 entity_type: node
