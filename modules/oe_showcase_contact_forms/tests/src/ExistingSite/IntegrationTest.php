@@ -18,6 +18,10 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
 
+    // Disable the time limit to avoid honeypot error due to
+    // the quick submission form.
+    \Drupal::configFactory()->getEditable('honeypot.settings')->set('time_limit', 0)->save();
+
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
