@@ -6,7 +6,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/block_field": "^1.0@RC",
         "drupal/core-recommended": "^9.1",
@@ -23,7 +23,7 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/composer-artifacts": "^0.1",
         "openeuropa/oe_authentication": "^1.5",
-        "openeuropa/oe_contact_forms": "^1.1",
+        "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "^2.6.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_media": "^1.14",
@@ -113,7 +113,7 @@
                 "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
             },
             "openeuropa/oe_whitelabel": {
-                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...1.x.patch"
+                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...1.x.diff"
             }
         }
     },
