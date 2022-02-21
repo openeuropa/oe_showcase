@@ -1,0 +1,18 @@
+name: OpenEuropa Showcase Contact form
+type: module
+description: Provides a demo for the contact form feature.
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa Showcase
+dependencies:
+  - block_field:block_field
+  - oe_whitelabel:oe_whitelabel_contact_forms
+  - paragraphs:paragraphs
+
+config_devel:
+  install:
+    - contact.form.example_contact_form
+    - core.entity_form_display.paragraph.contact_form.default
+    - core.entity_view_display.paragraph.contact_form.default
+    - field.field.paragraph.contact_form.contact_block
+    - field.storage.paragraph.contact_block
+    - paragraphs.paragraphs_type.contact_form
