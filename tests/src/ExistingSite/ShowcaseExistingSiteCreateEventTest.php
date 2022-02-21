@@ -77,7 +77,7 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     ]);
     $media_image->save();
 
-    // Don't have permissions to create an Event node.
+    // Assert editors don't have permissions to create Event items.
     $this->drupalGet('node/add/oe_event');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
@@ -88,8 +88,7 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     $user->save();
     $this->drupalLogin($user);
 
-    // Assert values.
-    // Assert we have enough permissions.
+    // Assert that editors have access to the Simple/Rich text formats.
     $this->drupalGet('node/add/oe_event');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
