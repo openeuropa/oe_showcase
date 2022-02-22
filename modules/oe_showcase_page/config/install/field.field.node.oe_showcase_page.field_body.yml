@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_body
     - node.type.oe_showcase_page
+    - paragraphs.paragraphs_type.contact_form
     - paragraphs.paragraphs_type.oe_accordion
     - paragraphs.paragraphs_type.oe_accordion_item
     - paragraphs.paragraphs_type.oe_banner
@@ -35,6 +36,7 @@ settings:
       oe_accordion_item: oe_accordion_item
       oe_banner: oe_banner
       oe_content_row: oe_content_row
+      contact_form: contact_form
       oe_links_block: oe_links_block
       oe_list_item: oe_list_item
       oe_list_item_block: oe_list_item_block
@@ -44,6 +46,9 @@ settings:
       oe_timeline: oe_timeline
     negate: 0
     target_bundles_drag_drop:
+      contact_form:
+        weight: 19
+        enabled: true
       oe_accordion:
         weight: 16
         enabled: true
@@ -58,6 +63,9 @@ settings:
         enabled: true
       oe_contextual_navigation:
         weight: 19
+        enabled: false
+      oe_description_list:
+        weight: 25
         enabled: false
       oe_document:
         weight: 15

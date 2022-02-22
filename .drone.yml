@@ -47,6 +47,7 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
+      - composer self-update --1
       - composer install --ansi --no-suggest --no-progress
 
   site-install:
@@ -77,4 +78,4 @@ pipeline:
 
 matrix:
   PHP_VERSION:
-    - 7.3
+    - 7.4

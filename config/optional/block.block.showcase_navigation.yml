@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - oe_whitelabel
-id: mainnavigation
+id: showcase_navigation
 theme: oe_whitelabel
 region: header_left
 weight: 0
