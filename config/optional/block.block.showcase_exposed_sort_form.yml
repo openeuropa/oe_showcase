@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.showcase_search
+  module:
+    - system
+    - views
+  theme:
+    - oe_whitelabel
+id: showcase_exposed_sort_form
+theme: oe_whitelabel
+region: content_top
+weight: -4
+provider: null
+plugin: 'views_exposed_filter_block:showcase_search-showcase_search_page'
+settings:
+  id: 'views_exposed_filter_block:showcase_search-showcase_search_page'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
