@@ -4,13 +4,12 @@
  * Search result template.
  */
 #}
-{% set title = {
-  tag: 'a href=' ~ url,
-  content:  label,
-} %}
+{% set _title %}
+  <a class="text-underline-hover" href="{{ url }}">{{ label }}</a>
+{% endset %}
 {{ pattern('card', {
   variant: 'search',
-  title: title,
+  title: _title,
   text: content.body,
   image: content.field_image[0],
   badges: content.field_category,

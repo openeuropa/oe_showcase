@@ -6,7 +6,7 @@ dependencies:
     - system
   theme:
     - oe_whitelabel
-id: pagetitle
+id: showcase_pagetitle
 theme: oe_whitelabel
 region: content
 weight: -5

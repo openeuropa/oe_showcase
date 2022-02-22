@@ -6,10 +6,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "drupal/address": "~1.9",
+        "drupal/allowed_formats": "^1.4",
         "drupal/better_exposed_filters": "^5.0",
-        "drupal/core-recommended": "^9.1",
+        "drupal/block_field": "^1.0@RC",
+        "drupal/core-recommended": "^9.2",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
@@ -17,6 +19,7 @@
         "drupal/facets_form": "1.x-dev",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
+        "drupal/honeypot": "^2.0",
         "drupal/legal": "^2.0",
         "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
@@ -28,21 +31,23 @@
         "oomphinc/composer-installers-extender": "^2.0",
         "openeuropa/composer-artifacts": "^0.1",
         "openeuropa/oe_authentication": "^1.5",
+        "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "2.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
-        "openeuropa/oe_whitelabel": "0.1.202202071145"
+        "openeuropa/oe_starter_content": "1.x-dev",
+        "openeuropa/oe_whitelabel": "0.1.202202221259"
     },
     "require-dev": {
         "composer/installers": "~1.11",
         "drupal/config_devel": "^1.2",
-        "drupal/core-composer-scaffold": "^9.1",
-        "drupal/core-dev": "^9.1",
+        "drupal/core-composer-scaffold": "^9.2",
+        "drupal/core-dev": "^9.2",
         "drush/drush": "~10.3",
-        "openeuropa/code-review": "^1.6",
+        "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^1.5"
@@ -59,13 +64,17 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
+        "assets":{
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
         "openeuropa/oe_whitelabel":{
             "type": "vcs",
             "url": "https://github.com/openeuropa/oe_whitelabel"
         },
-        "assets":{
-            "type": "composer",
-            "url": "https://asset-packagist.org"
+        "openeuropa/oe_starter_content": {
+            "type": "git",
+            "url": "https://github.com/openeuropa/oe_starter_content"
         }
     },
     "autoload": {
@@ -113,11 +122,8 @@
             }
         },
         "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202202072010...1.x.patch"
-            },
             "openeuropa/oe_whitelabel": {
-                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202080830...1.x.diff"
+                "latest 1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202202221259...1.x.diff"
             }
         }
     },
