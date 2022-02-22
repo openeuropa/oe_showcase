@@ -11,7 +11,7 @@ dependencies:
     - node
     - system
     - oe_starter_content_news
-    - node.type.oe_event
+    - oe_starter_content_event
     - toolbar
 id: editor
 label: Editor
