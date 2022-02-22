@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+    - filter.format.simple_rich_text
+    - node.type.oe_news
+  module:
+    - filter
+    - node
+    - system
+    - oe_starter_content_news
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'administer nodes'
+  - 'access toolbar'
+  - 'create oe_news content'
+  - 'create image media'
+  - 'create av_portal_photo media'
+  - 'delete own av_portal_photo media'
+  - 'delete own image media'
+  - 'delete oe_news revisions'
+  - 'delete own oe_news content'
+  - 'edit any oe_news content'
+  - 'edit own oe_news content'
+  - 'revert oe_news revisions'
+  - 'use text format rich_text'
+  - 'use text format simple_rich_text'
+  - 'view oe_news revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
