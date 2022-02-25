@@ -1,0 +1,45 @@
+name: OpenEuropa Showcase Event
+type: module
+description: 'Demo showcase event feature.'
+core_version_requirement: ^8.9 || ^9.1
+package: OpenEuropa
+
+dependencies:
+  - address:address
+  - drupal:ckeditor
+  - drupal:datetime_range
+  - drupal:file
+  - drupal:image
+  - facets_form_date_range:facets_form_date_range
+  - link_attributes:link_attributes
+  - rdf_skos:rdf_skos
+  - search_api:search_api
+  - search_api_db:search_api_db
+
+config_devel:
+  install:
+    - block.block.oe_showcase_event_page_title.yml
+    - node.type.oe_showcase_event
+    - field.storage.node.field_oe_showcase_event_type
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_type
+    - core.entity_view_display.node.oe_showcase_event.default
+    - core.entity_form_display.node.oe_showcase_event.default
+    - core.entity_view_display.node.oe_showcase_event.search_result
+    - core.entity_view_display.node.oe_showcase_event.teaser
+    - field.storage.node.field_oe_showcase_event_url
+    - field.storage.node.field_oe_showcase_event_registra
+    - field.storage.node.field_oe_showcase_event_location
+    - field.storage.node.field_oe_showcase_event_image
+    - field.storage.node.field_oe_showcase_event_document
+    - field.storage.node.field_oe_showcase_event_date
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_url
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_registra
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_location
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_image
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_document
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_date
+    - field.storage.node.field_oe_showcase_event_content
+    - field.field.node.oe_showcase_event.field_oe_showcase_event_content
+    - pathauto.pattern.event_url_alias_pattern
+  optional:
+    - language.content_settings.node.oe_showcase_event

@@ -10,6 +10,7 @@ dependencies:
   - oe_showcase_navigation:oe_showcase_navigation
   - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page
+  - oe_showcase_page:oe_showcase_event
 
 default_content:
   node:
@@ -44,6 +45,19 @@ default_content:
     - a170562d-55f5-48b5-9e11-7a61d7677873
     - e0bff251-495d-4dbe-b723-62e774ef6238
     - 073cc92d-359d-4195-bf9e-6d49459d1f86
+    # OE Showcase Event
+    - 16d165c4-7361-4f9e-9e26-98050e08f5aa
+    - 24100220-0fb4-47f5-be3f-a1713901818e
+    - 2cae2e83-2740-4b5a-b6be-1947e758c544
+    - 3f98bc2e-4705-485e-ac81-ddb74eb58851
+    - 4588e09b-43d3-464c-be71-2a175579e8aa
+    - addc76a2-1549-4617-a0b1-d22abff7c633
+    - c0632c3e-a49b-4d98-be1a-8198e4dba418
+    - c7b1bcf9-14fa-423d-98c8-5a3e6e3b876a
+    - ceaabd20-2937-4d56-af28-aaf75dabcc06
+    - dd7a847a-481c-4dac-bab6-05a2ee376d96
+    - e11f75f7-8be5-4cc7-b91a-7e53a0a16425
+    - ff4e9a38-22ad-49b2-97ee-04183b57a405
   taxonomy_term:
     - 78e5b83b-cb54-447c-94c6-72bb1472ad31
     - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
