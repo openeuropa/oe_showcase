@@ -20,7 +20,6 @@
         "drupal/honeypot": "^2.0",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
-        "drupal/twig_field_value": "^2.0",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
