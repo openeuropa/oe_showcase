@@ -6,6 +6,7 @@
 #}
 {% spaceless %}
 <article{{ attributes }}>
+  {# @todo Remove the 'px-0' once OEL-1226 is fixed. #}
   {{ pattern('content_banner', {
     image: pattern_image,
     title: content.field_first_name|field_value|render ~ ' ' ~ content.field_last_name|field_value|render,
@@ -14,7 +15,7 @@
       content.group_professional_information.field_current_position|field_value,
     ],
     content: content.field_bio|field_value,
-    attributes: create_attribute().addClass('mb-4'),
+    attributes: create_attribute().addClass('mb-4', 'px-0'),
   }) }}
   {{ _self.description_list_section('Personal information', content.group_personal_information ?? {}) }}
   {{ _self.description_list_section('Professional information', content.group_professional_information ?? {}) }}
