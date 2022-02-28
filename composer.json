@@ -72,11 +72,6 @@
             "url": "https://github.com/openeuropa/oe_starter_content"
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Drupal\\oe_showcase\\": "./src/"
-        }
-    },
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\oe_showcase\\": "./tests/src/"
