@@ -83,9 +83,10 @@ function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterfac
 function oe_showcase_user_profile_preprocess_user__full(array &$variables): void {
   /** @var \Drupal\user\UserInterface $user */
   $user = $variables['user'];
-  $image_item = $user->get('field_profile_image')->get(0);
-  if (!$image_item instanceof ImageItem) {
-    // No profile image found.
+  $image_item_list = $user->get('field_profile_image');
+  $image_item = $image_item_list->get(0);
+  if (!$image_item instanceof ImageItem || !$image_item_list->access()) {
+    // No profile image found, or no view access.
     return;
   }
   $variables['pattern_image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
