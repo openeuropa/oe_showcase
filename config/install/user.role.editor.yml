@@ -5,11 +5,14 @@ dependencies:
     - filter.format.rich_text
     - filter.format.simple_rich_text
     - node.type.oe_news
+    - node.type.oe_event
   module:
     - filter
     - node
     - system
     - oe_starter_content_news
+    - oe_starter_content_event
+    - toolbar
 id: editor
 label: Editor
 weight: 2
@@ -17,8 +20,8 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'administer nodes'
   - 'access toolbar'
+  - 'administer nodes'
   - 'create oe_news content'
   - 'create image media'
   - 'create av_portal_photo media'
@@ -32,5 +35,18 @@ permissions:
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
   - 'view oe_news revisions'
+  - 'create oe_event content'
+  - 'delete any oe_event content'
+  - 'delete oe_event revisions'
+  - 'delete own oe_event content'
+  - 'edit any oe_event content'
+  - 'edit own oe_event content'
+  - 'revert oe_event revisions'
+  - 'view oe_event revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
+  - 'create document media'
+  - 'delete any document media'
+  - 'delete own document media'
+  - 'edit any document media'
+  - 'edit own document media'

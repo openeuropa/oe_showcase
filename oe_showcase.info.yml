@@ -44,6 +44,7 @@ install:
   - oe_whitelabel_helper
   - oe_whitelabel_search
   - oe_whitelabel_news
+  - oe_whitelabel_event
   - options
   - page_cache
   - path
@@ -82,6 +83,8 @@ config_devel:
     - editor.editor.rich_text
     - field.field.node.oe_news.body
     - field.field.node.oe_news.oe_summary
+    - field.field.node.oe_event.body
+    - field.field.node.oe_event.oe_summary
     - filter.format.full_html
     - filter.format.rich_text
     - filter.format.simple_rich_text
