@@ -4,7 +4,7 @@
  * Theme override for user in 'full' view mode.
  */
 #}
-{% spaceless %}
+{% apply spaceless %}
 <article{{ attributes }}>
   {# @todo Remove the 'px-0' once OEL-1226 is fixed. #}
   {{ pattern('content_banner', {
@@ -42,4 +42,4 @@
     {% endif %}
   </section>
 {% endmacro description_list_section %}
-{% endspaceless %}
+{% endapply %}
