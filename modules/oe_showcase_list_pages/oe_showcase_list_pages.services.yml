@@ -1,0 +1,5 @@
+services:
+  oe_showcase_list_pages.list_page_allowed_types_subscriber:
+    class: Drupal\oe_showcase_list_pages\EventSubscriber\ListPageAllowedTypesSubscriber
+    tags:
+      - { name: 'event_subscriber' }

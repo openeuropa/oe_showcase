@@ -1,0 +1,8 @@
+name: OpenEuropa Showcase List Pages
+description: Provides custom logic related to list pages.
+package: OpenEuropa Showcase
+type: module
+core_version_requirement: ^9.1
+
+dependencies:
+  - oe_list_pages:oe_list_pages
