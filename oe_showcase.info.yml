@@ -105,3 +105,5 @@ config_devel:
     - user.role.editor
     - user.settings
     - user_field_anonymize.settings
+  optional:
+    - block.block.oe_whitelabel_local_tasks
