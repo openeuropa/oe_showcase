@@ -24,8 +24,8 @@ install:
   - oe_authentication
   - oe_bootstrap_theme_helper
   - oe_bootstrap_theme_paragraphs
-  - oe_content:oe_content_timeline_field
   - oe_contact_forms_honeypot
+  - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
   - oe_multilingual
   - oe_paragraphs
@@ -33,15 +33,16 @@ install:
   - oe_paragraphs_document
   - oe_paragraphs_media
   - oe_paragraphs_timeline
+  - oe_showcase_contact_forms
   - oe_showcase_default_content
+  - oe_showcase_list_pages
   - oe_showcase_navigation
   - oe_showcase_page
   - oe_showcase_search
-  - oe_showcase_contact_forms
-  - oe_whitelabel_helper
-  - oe_whitelabel_search
-  - oe_whitelabel_news
   - oe_whitelabel_event
+  - oe_whitelabel_helper
+  - oe_whitelabel_news
+  - oe_whitelabel_search
   - options
   - page_cache
   - path
