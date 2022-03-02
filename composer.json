@@ -14,6 +14,7 @@
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
+        "drupal/extra_field": "^2.1",
         "drupal/facets": "1.8.0 as 2.0.1",
         "drupal/facets_form": "1.x-dev",
         "drupal/file_link": "^2.0.6",

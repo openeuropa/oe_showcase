@@ -6,3 +6,4 @@ core_version_requirement: ^9.1
 
 dependencies:
   - oe_list_pages:oe_list_pages
+  - extra_field:extra_field
