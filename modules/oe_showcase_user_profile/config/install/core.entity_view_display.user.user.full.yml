@@ -102,11 +102,11 @@ content:
     weight: 5
     region: content
   field_date_of_birth:
-    type: datetime_default
+    type: datetime_custom
     label: above
     settings:
       timezone_override: ''
-      format_type: html_date
+      date_format: 'd F Y'
     third_party_settings: {  }
     weight: 5
     region: content
