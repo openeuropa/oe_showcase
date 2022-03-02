@@ -18,6 +18,7 @@
         "drupal/facets_form": "1.x-dev",
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
+        "drupal/paragraphs": "^1.13",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
@@ -85,6 +86,11 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
+        "patches": {
+            "drupal/paragraphs": {
+                "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
+            }
+        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
