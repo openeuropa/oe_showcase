@@ -43,9 +43,6 @@ class ListPageAllowedTypesSubscriber implements EventSubscriberInterface {
   public function alterBundles(ListPageSourceAlterEvent $event) {
     $allowed = [
       'node' => [
-        'oe_event',
-        'oe_news',
-        'oe_showcase_page',
         'oe_showcase_search_demo',
       ],
     ];
