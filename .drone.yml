@@ -47,12 +47,13 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
-      - composer self-update --1
-      - composer install --ansi --no-suggest --no-progress
+      - composer self-update --2
+      - composer install --ansi --no-progress
 
   site-install:
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
+      - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
     when:
       event:
