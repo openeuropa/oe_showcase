@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Multilingual
 type: module
 description: OpenEuropa Showcase Multilingual.
-core_version_requirement: ^8.9 || ^9.1
+core_version_requirement: ^9.2
 package: OpenEuropa Showcase
 
 dependencies:
