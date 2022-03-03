@@ -24,7 +24,7 @@
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "openeuropa/composer-artifacts": "^0.1",
+        "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "^2.6.0",
@@ -46,7 +46,7 @@
         "drupal/core-dev": "^9.2",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
-        "openeuropa/task-runner-drupal-project-symlink": "^1.0",
+        "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^1.5"
     },
@@ -94,14 +94,14 @@
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
                 }
             },
             "openeuropa/oe_whitelabel": {
                 "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
                 }
             }
         },
@@ -123,6 +123,15 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "openeuropa/composer-artifacts": true,
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpro/grumphp": true,
+            "oomphinc/composer-installers-extender": true
+        }
     }
 }

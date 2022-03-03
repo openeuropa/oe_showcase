@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Profile
 type: profile
 description: 'Install with commonly used features for OpenEuropa Showcase profile.'
-core_version_requirement: ^8.9 || ^9.1
+core_version_requirement: ^9.2
 
 install:
   - block
