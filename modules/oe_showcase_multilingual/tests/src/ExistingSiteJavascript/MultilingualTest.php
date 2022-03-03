@@ -41,17 +41,15 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
       'status' => 1,
     ];
     $node = $this->createNode($values);
-
-    // Go to the translation page, assert the enabled languages are present.
     $this->drupalGet('/node/' . $node->id() . '/translations');
-    $rows = $page->findAll('css', 'table tbody tr');
+
     // Assert all 24 EU languages are available.
+    $rows = $page->findAll('css', 'table tbody tr');
     $this->assertCount(24, $rows);
-    $this->assertSession()->linkNotExists('Translate locally');
-    // Assert translations can be added to each language.
+    $assert_session->linkNotExists('Translate locally');
     $this->assertCount(23, $page->findAll('xpath', '//a[text()=\'Add\']'));
 
-    // Add a translation and assert that the values are present.
+    // Add a translation.
     $node->addTranslation('pt-pt', ['title' => 'Translated to PT'] + $node->toArray());
     $node->save();
     $this->drupalGet($node->toUrl());
@@ -66,18 +64,19 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
     $modal = $page->find('xpath', '//div[@id=\'languageModal\']');
     $this->assertFalse($modal->isVisible());
 
-    // Change the interface language to an untranslated item
-    // to show the language switcher block.
+    // Show the language switcher block by selecting an untranslated language.
     $this->clickLink('português');
     $this->getSession()->wait(10000);
     $this->clickLink('français');
-    $language_switcher_block = $page->find('xpath', '//div[@id="block-openeuropa-content-language-switcher"]');
+    $language_switcher_block = $page->find(
+      'xpath',
+      '//div[@id="block-openeuropa-content-language-switcher"]'
+    );
     $this->assertTrue($language_switcher_block->isVisible());
 
-    // Click on one language to assert the correct values are in the page.
+    // Assert a valid translation is available.
     $language_switcher_block->findLink('português')->click();
     $assert_session->pageTextContains('Translated to PT');
-
   }
 
 }
