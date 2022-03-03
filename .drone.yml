@@ -47,7 +47,6 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
-      - composer self-update --2
       - composer install --ansi --no-progress
 
   site-install:
