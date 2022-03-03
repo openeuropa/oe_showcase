@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 19ad1a33-3506-4444-a28c-81e2cec14469
+  bundle: oe_list_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'My List Page'
+  created:
+    -
+      value: 1646136244
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  emr_entity_metas:
+    - null
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false

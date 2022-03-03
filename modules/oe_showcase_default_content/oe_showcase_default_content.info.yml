@@ -45,6 +45,8 @@ default_content:
     - a170562d-55f5-48b5-9e11-7a61d7677873
     - e0bff251-495d-4dbe-b723-62e774ef6238
     - 073cc92d-359d-4195-bf9e-6d49459d1f86
+    # OE List page
+    - 19ad1a33-3506-4444-a28c-81e2cec14469
   taxonomy_term:
     - 78e5b83b-cb54-447c-94c6-72bb1472ad31
     - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
