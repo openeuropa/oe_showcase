@@ -11,7 +11,7 @@ dependencies:
 
 config_devel:
   install:
-    - core.entity_view_display.node.oe_showcase_page.teaser
+    - core.entity_view_display.node.oe_list_page.default
     - facets.facet.category_dis
     - facets.facet.category_form
     - facets.facet.content_display
