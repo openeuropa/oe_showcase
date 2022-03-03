@@ -7,6 +7,8 @@
 
 declare(strict_types = 1);
 
+use Drupal\node\Entity\Node;
+
 /**
  * Implements hook_install().
  */
@@ -20,7 +22,6 @@ function oe_showcase_list_pages_install($is_syncing) {
     'type'        => 'oe_list_page',
     'title'       => 'Demo listing',
   ]);
-  $list_page->save();
 
   /** @var \Drupal\emr\Entity\EntityMetaInterface $list_page_entity_meta */
   $list_page_entity_meta = $list_page->get('emr_entity_metas')->getEntityMeta('oe_list_page');
