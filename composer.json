@@ -30,7 +30,7 @@
         "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "^2.6.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
-        "openeuropa/oe_list_pages": "^0.15.0",
+        "openeuropa/oe_list_pages": "^0.15",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
