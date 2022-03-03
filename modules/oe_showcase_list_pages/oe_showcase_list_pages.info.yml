@@ -15,4 +15,3 @@ config_devel:
     - facets.facet.content_form
     - facets.facet.date_display
     - facets.facet.date_form
-    - facets.facet_source.search_api__oe_list_pages__node__oe_showcase_search_demo
