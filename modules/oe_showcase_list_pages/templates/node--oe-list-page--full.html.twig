@@ -1,0 +1,57 @@
+{#
+This template is copied and adapted from https://github.com/openeuropa/oe_theme/blob/3.x/templates/content/node--oe-list-page--full.html.twig
+#}
+{% set display_submitted = false %}
+{% set button_attributes = create_attribute().addClass(['d-lg-none', 'w-100', 'mb-4']) %}
+{% set toogle_button = {
+  'label': 'Filters',
+  'variant': 'light',
+  'size': 'lg',
+  'icon': 'filter',
+  'icon_position': 'before',
+  'attributes': button_attributes
+} %}
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes }}>
+    {{ content['content_moderation_control'] }}
+
+    {% set filters = content['extra_field_oe_list_page_filters:node:oe_list_page']|render %}
+
+    <div class="row">
+      {% if filters %}
+        <div class="col-12 col-lg-3">
+          {{ pattern('offcanvas', {
+            'variant': 'search',
+            'title': 'Filter options',
+            'body': filters,
+            'placement': 'start',
+            'body_scroll': false,
+            'backdrop': true,
+            'toggle': toogle_button,
+          }) }}
+        </div>
+      {% endif %}
+      <div class="col-12 col-lg-9 col-xxl-8">
+        <h2 class="u-type-heading-2 u-border-bottom u-border-width-2 u-pb-s">
+          {{ label }}
+          <span> ({{ content['extra_field_oe_list_page_total_count:node:oe_list_page'] }})</span>
+        </h2>
+        <div class="u-type-heading-5 u-type-color-grey-100 u-mt-m u-mv-m">{{ content['extra_field_oe_list_page_pager_info:node:oe_list_page'] }}</div>
+        {{ content['extra_field_oe_list_page_selected_filters:node:oe_list_page'] }}
+        {{ content['extra_field_oe_list_page_results:node:oe_list_page'] }}
+      </div>
+    </div>
+
+    {{ content|without('extra_field_oe_list_page_filters:node:oe_list_page', 'extra_field_oe_list_page_results:node:oe_list_page', 'extra_field_oe_list_page_selected_filters:node:oe_list_page', 'extra_field_oe_list_page_total_count:node:oe_list_page', 'extra_field_oe_list_page_pager_info:node:oe_list_page', 'content_moderation_control') }}
+  </div>
+
+</article>

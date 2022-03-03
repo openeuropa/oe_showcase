@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Showcase search module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function oe_showcase_list_pages_theme() {
+  return [
+    // This template should reside in whitelabel theme.
+    'node__oe_list_page__full' => [
+      'render element' => 'elements',
+      'base hook' => 'node',
+    ],
+  ];
+}
