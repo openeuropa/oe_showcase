@@ -21,6 +21,7 @@
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
         "drupal/legal": "^2.0",
+        "drupal/paragraphs": "^1.13",
         "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
@@ -29,7 +30,7 @@
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "openeuropa/composer-artifacts": "^0.1",
+        "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_contact_forms": "dev-master",
         "openeuropa/oe_content": "^2.8.0",
@@ -37,9 +38,9 @@
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
-        "openeuropa/oe_paragraphs": "^1.11",
+        "openeuropa/oe_paragraphs": "dev-master",
         "openeuropa/oe_starter_content": "1.x-dev",
-        "openeuropa/oe_whitelabel": "0.1.202202240940"
+        "openeuropa/oe_whitelabel": "0.1.202203021707"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -48,7 +49,7 @@
         "drupal/core-dev": "^9.2",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
-        "openeuropa/task-runner-drupal-project-symlink": "^1.0",
+        "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^1.5"
     },
@@ -88,17 +89,22 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
+        "patches": {
+            "drupal/paragraphs": {
+                "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
+            }
+        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
                 }
             },
             "openeuropa/oe_whitelabel": {
                 "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
                 }
             }
         },
@@ -120,6 +126,15 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "openeuropa/composer-artifacts": true,
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpro/grumphp": true,
+            "oomphinc/composer-installers-extender": true
+        }
     }
 }
