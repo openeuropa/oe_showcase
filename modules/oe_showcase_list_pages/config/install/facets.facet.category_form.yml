@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: category_form
-name: 'Category form'
+name: 'Category'
 url_alias: category_form
 weight: 0
 min_count: 1
