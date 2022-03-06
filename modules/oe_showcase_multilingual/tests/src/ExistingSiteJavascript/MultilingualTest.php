@@ -12,7 +12,7 @@ use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascri
 class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   /**
-   * Create a page node and test language switcher block.
+   * Test node translation.
    */
   public function testOeMultilingualTranslation(): void {
     // Mark test content for deletion after the test has finished.
@@ -66,7 +66,7 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Show the language switcher block by selecting an untranslated language.
     $this->clickLink('português');
-    $this->getSession()->wait(10000);
+    $this->assertSession()->waitForElementVisible('css', '#languageModal');
     $this->clickLink('français');
     $language_switcher_block = $page->find(
       'xpath',
