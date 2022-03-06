@@ -9,4 +9,4 @@ dependencies:
 
 config_devel:
   optional:
-    - block.block.openeuropa_content_language_switcher:
+    - block.block.openeuropa_content_language_switcher
