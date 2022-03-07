@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 60ebd440-6ed6-4d63-8fec-b9a6b479bdff
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: maps-embed-no-bg.png
+  uri:
+    -
+      value: 'public://media-icons/generic/maps-embed-no-bg.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 8111
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1645012208

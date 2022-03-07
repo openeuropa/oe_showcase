@@ -1,0 +1,137 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e9b437d9-e7a7-4742-8164-5a6e22616aa3
+  bundle: oe_showcase_page
+  default_langcode: en
+  depends:
+    a13bb9d3-75ba-4227-a2bc-afcfd6e463d5: media
+    8ffb1c22-891e-457d-9aab-ee657258e5ad: media
+    fb407daf-7c0e-432f-9d40-165100bc589e: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Webtools
+  created:
+    -
+      value: 1645012291
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /pages/webtools
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c80d4694-1698-4602-bd26-62bf120fb33c
+          bundle: oe_chart
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1645012310
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_media:
+            -
+              entity: a13bb9d3-75ba-4227-a2bc-afcfd6e463d5
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7ca9df14-7ac0-4387-8407-e95ed60ba775
+          bundle: oe_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1645012319
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_media:
+            -
+              entity: 8ffb1c22-891e-457d-9aab-ee657258e5ad
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a7750b33-15d8-420f-9646-598a65b70090
+          bundle: oe_social_feed
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1645012325
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_media:
+            -
+              entity: fb407daf-7c0e-432f-9d40-165100bc589e
