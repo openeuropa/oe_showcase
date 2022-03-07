@@ -22,6 +22,7 @@
         "drupal/honeypot": "^2.0",
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
+        "drupal/json_field": "^1.0@RC",
         "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
@@ -40,6 +41,7 @@
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "dev-master",
         "openeuropa/oe_starter_content": "1.x-dev",
+        "openeuropa/oe_webtools": "^1.14",
         "openeuropa/oe_whitelabel": "0.1.202203021707"
     },
     "require-dev": {
@@ -73,11 +75,6 @@
         "openeuropa/oe_starter_content": {
             "type": "git",
             "url": "https://github.com/openeuropa/oe_starter_content"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Drupal\\oe_showcase\\": "./src/"
         }
     },
     "autoload-dev": {

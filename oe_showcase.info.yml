@@ -18,6 +18,7 @@ install:
   - filter
   - image
   - language
+  - json_field
   - menu_link_content
   - menu_ui
   - node
@@ -32,8 +33,11 @@ install:
   - oe_multilingual
   - oe_paragraphs
   - oe_paragraphs_banner
+  - oe_paragraphs_chart
   - oe_paragraphs_document
+  - oe_paragraphs_map
   - oe_paragraphs_media
+  - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
   - oe_showcase_default_content
   - oe_showcase_navigation
@@ -41,6 +45,7 @@ install:
   - oe_showcase_search
   - oe_showcase_contact_forms
   - oe_showcase_user_profile
+  - oe_webtools
   - oe_whitelabel_helper
   - oe_whitelabel_search
   - oe_whitelabel_news

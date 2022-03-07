@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: ca1f9a80-ec63-4b06-bef9-cc0c9b0f3b58
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    1b3e4017-2567-4c10-86e1-5171f99a31ef: menu_link_content
+    e9b437d9-e7a7-4742-8164-5a6e22616aa3: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Webtools
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: e9b437d9-e7a7-4742-8164-5a6e22616aa3
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -45
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:1b3e4017-2567-4c10-86e1-5171f99a31ef'
+  revision_translation_affected:
+    -
+      value: true
