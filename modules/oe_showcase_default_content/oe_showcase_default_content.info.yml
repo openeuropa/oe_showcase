@@ -46,6 +46,7 @@ default_content:
     - a170562d-55f5-48b5-9e11-7a61d7677873
     - e0bff251-495d-4dbe-b723-62e774ef6238
     - 073cc92d-359d-4195-bf9e-6d49459d1f86
+    - e9b437d9-e7a7-4742-8164-5a6e22616aa3
   taxonomy_term:
     - 78e5b83b-cb54-447c-94c6-72bb1472ad31
     - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
@@ -85,6 +86,9 @@ default_content:
     - 6d160789-df45-4cf9-ab0c-3b0547a2170c
     - 3ebdd3bc-44b7-42ec-9126-91ccd393ad6e
     - b833a7eb-c451-4001-8d6e-e7eb677499a8
+    - 0e8be6ce-cf6b-4e7a-8990-3628cda4459a
+    - 1cd0baf4-59f0-4620-8908-826eff0bce60
+    - 60ebd440-6ed6-4d63-8fec-b9a6b479bdff
     # User profile images
     - 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
     - 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
@@ -99,6 +103,9 @@ default_content:
     - ee957f04-6035-4e1c-bc4e-3669250c0c30
     - 35b7b482-8668-4ac3-82c0-a43554dda051
     - 36b24637-901a-46df-8e8d-b7bc0618a2fc
+    - 8ffb1c22-891e-457d-9aab-ee657258e5ad
+    - a13bb9d3-75ba-4227-a2bc-afcfd6e463d5
+    - fb407daf-7c0e-432f-9d40-165100bc589e
 
   menu_link_content:
     # OE Showcase Page
@@ -107,6 +114,7 @@ default_content:
     - 3635a89b-02c4-4375-99ec-daab7606c9bd
     - 564dacd1-2b25-430d-95d2-816ac0f10452
     - 9d2ee108-3061-48c1-871c-614aa2df2928
+    - ca1f9a80-ec63-4b06-bef9-cc0c9b0f3b58
   user:
     - 5de73784-3425-4baa-8814-b8bc58bc53de
     - 2366d4e0-80e0-4bc1-9f22-b5a4004a8663

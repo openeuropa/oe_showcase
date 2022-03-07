@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 8ffb1c22-891e-457d-9aab-ee657258e5ad
+  bundle: webtools_map
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Map example'
+  created:
+    -
+      value: 1645012201
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  oe_media_webtools:
+    -
+      value: "{\r\n  \"service\": \"map\",\r\n  \"version\": \"3.0\",\r\n  \"contact\": {\r\n    \"address\": \"Rue Montoyer 15 Brussels - Belgique\",\r\n    \"options\": {\r\n      \"display\" : \"thumb\",\r\n      \"color\" : \"#f20071\",\r\n      \"width\" : \"250px\",\r\n      \"height\": \"180px\",\r\n      \"target\": \"_blank\"\r\n    }\r\n  }\r\n}"

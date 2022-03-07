@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1cd0baf4-59f0-4620-8908-826eff0bce60
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: charts-embed-no-bg.png
+  uri:
+    -
+      value: 'public://media-icons/generic/charts-embed-no-bg.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 3106
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1645012140
