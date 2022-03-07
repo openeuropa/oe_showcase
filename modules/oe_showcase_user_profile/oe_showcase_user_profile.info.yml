@@ -9,6 +9,7 @@ dependencies:
   - drupal:field_group
   - drupal:legal
   - drupal:purge_users
+  - drupal:twig_field_value
   - drupal:user_field_anonymize
   - drupal:user_fields_visibility
   - drupal:views
@@ -22,6 +23,7 @@ config_devel:
   install:
     - core.entity_form_display.user.user.default
     - core.entity_view_display.user.user.default
+    - core.entity_view_display.user.user.full
     - core.entity_view_display.user.user.teaser
     - core.entity_view_mode.user.teaser
     - field.field.user.user.field_bio

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase_user_profile\Functional;
+namespace Drupal\Tests\oe_showcase_user_profile\ExistingSite;
 
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
@@ -61,7 +61,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('John Doe');
     $assert_session->pageTextContains('User description bio.');
     $assert_session->pageTextContains('male');
-    $assert_session->pageTextContains('1990-01-01');
+    $assert_session->pageTextContains('01 January 1990');
     $assert_session->pageTextContains('Web Developer');
     $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('France');

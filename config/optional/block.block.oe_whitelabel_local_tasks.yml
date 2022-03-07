@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - oe_whitelabel
-id: tabs
+id: oe_whitelabel_local_tasks
 theme: oe_whitelabel
 region: header
 weight: 0

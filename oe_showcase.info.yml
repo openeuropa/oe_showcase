@@ -83,6 +83,7 @@ config_devel:
     - block.block.showcase_facets_summary
     - block.block.sitebranding
     - block.block.whitelabelsearchblock
+    - contact.settings
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
@@ -105,3 +106,5 @@ config_devel:
     - user.role.editor
     - user.settings
     - user_field_anonymize.settings
+  optional:
+    - block.block.oe_whitelabel_local_tasks
