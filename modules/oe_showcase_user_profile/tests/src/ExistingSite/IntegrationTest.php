@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase_user_profile\Functional;
+namespace Drupal\Tests\oe_showcase_user_profile\ExistingSite;
 
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
