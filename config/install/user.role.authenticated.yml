@@ -3,13 +3,21 @@ status: true
 dependencies:
   module:
     - media
+    - rdf_skos
     - search_api_autocomplete
     - system
+    - user_field_anonymize
+    - user_fields_visibility
 id: authenticated
 label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'set own profile fields visibility'
+  - 'set user profile anonymity'
   - 'use search_api_autocomplete for showcase_search'
   - 'view media'
+  - 'view published skos concept entities'

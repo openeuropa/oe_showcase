@@ -1,0 +1,98 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 5de73784-3425-4baa-8814-b8bc58bc53de
+  default_langcode: en
+  depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/DEU': skos_concept
+    d27d25a7-91b2-4042-902d-9f99296d8702: file
+    'http://publications.europa.eu/resource/authority/language/DEU': skos_concept
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Cristian Eliza'
+  pass:
+    -
+      value: $S$EWwoO39E.UUj6oPxLx3KY/YGrSgYvfI9lPc9x8HDAA54CdmaIHLE
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: cristian@example.com
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605371
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_bio:
+    -
+      value: "Bio maecenas ac justo fermentum, auctor velit sed, consequat tortor. Vivamus dictum, lacus nec iaculis pulvinar, tortor leo ultrices sapien, in mollis sapien neque in sapien. Vivamus porttitor felis in pulvinar maximus. Nullam libero orci, lacinia ac tincidunt vitae, pulvinar sit amet odio. Curabitur et nulla non dolor iaculis interdum at ut lorem. Vestibulum molestie tempus elit vel fermentum. In eu posuere massa. Nunc a pretium nisl. Nunc eget vehicula ex, id viverra enim.\r\n"
+      format: plain_text
+  field_city_country:
+    -
+      langcode: en
+      country_code: DE
+      administrative_area: ''
+      locality: Munich
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Developer
+  field_date_of_birth:
+    -
+      value: '1997-05-17'
+  field_first_name:
+    -
+      value: Cristian
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_last_name:
+    -
+      value: Eliza
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/DEU'
+  field_organization:
+    -
+      value: Eurofound
+  field_profile_image:
+    -
+      entity: d27d25a7-91b2-4042-902d-9f99296d8702
+      alt: profile
+      title: ''
+      width: 2400
+      height: 3000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/DEU'

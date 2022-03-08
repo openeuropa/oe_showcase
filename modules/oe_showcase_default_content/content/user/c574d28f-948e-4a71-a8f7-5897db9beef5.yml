@@ -1,0 +1,98 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: c574d28f-948e-4a71-a8f7-5897db9beef5
+  default_langcode: en
+  depends:
+    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
+    'http://publications.europa.eu/resource/authority/country/GRC': skos_concept
+    4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15: file
+    'http://publications.europa.eu/resource/authority/language/ELL': skos_concept
+default:
+  preferred_langcode:
+    -
+      value: en
+  preferred_admin_langcode:
+    -
+      value: en
+  name:
+    -
+      value: 'Romanos Firou'
+  pass:
+    -
+      value: $S$ErbOHD9pWdb5VvoP0hia3.AJ9N6lyIUtPZfSWQGhHutZrrpRKOkD
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: romanos@example.com
+  timezone:
+    -
+      value: Europe/Brussels
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1634605400
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_bio:
+    -
+      value: 'Bio nam scelerisque elementum dui, blandit iaculis elit rhoncus ac. Ut leo odio, dignissim ac tellus sed, bibendum auctor purus. Ut ultricies turpis sit amet enim hendrerit, sit amet vulputate elit commodo. Proin orci leo, feugiat nec lectus vitae, suscipit dictum elit. Suspendisse elit magna, tincidunt sit amet arcu facilisis, porttitor interdum eros. Maecenas arcu nunc, iaculis eu orci nec, viverra consequat ipsum.'
+      format: plain_text
+  field_city_country:
+    -
+      langcode: en
+      country_code: GR
+      administrative_area: ''
+      locality: Patras
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: ''
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_current_position:
+    -
+      value: Developer
+  field_date_of_birth:
+    -
+      value: '1998-11-23'
+  field_first_name:
+    -
+      value: Romanos
+  field_gender:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
+  field_last_name:
+    -
+      value: Firou
+  field_nationality:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/country/GRC'
+  field_organization:
+    -
+      value: external
+  field_profile_image:
+    -
+      entity: 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
+      alt: profile
+      title: ''
+      width: 4684
+      height: 4000
+  field_working_languages:
+    -
+      entity: 'http://publications.europa.eu/resource/authority/language/ELL'

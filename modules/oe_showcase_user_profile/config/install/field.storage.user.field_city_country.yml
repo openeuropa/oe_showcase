@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - field_permissions
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: user_fields_visibility
+id: user.field_city_country
+field_name: field_city_country
+entity_type: user
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * The OpenEuropa Showcase User Profile installation file.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_user_profile_install($is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+
+  $graphs = [
+    'country' => 'http://publications.europa.eu/resource/authority/country',
+    'language' => 'http://publications.europa.eu/resource/authority/language',
+    'human-sex' => 'http://publications.europa.eu/resource/dataset/human-sex',
+  ];
+  \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
+}

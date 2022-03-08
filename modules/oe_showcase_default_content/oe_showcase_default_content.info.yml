@@ -9,8 +9,9 @@ dependencies:
   - drupal:language
   - drupal:pathauto
   - oe_showcase_navigation:oe_showcase_navigation
-  - oe_showcase_search:oe_showcase_search
   - oe_showcase_page:oe_showcase_page
+  - oe_showcase_page:oe_showcase_user_profile
+  - oe_showcase_search:oe_showcase_search
 
 default_content:
   node:
@@ -88,6 +89,12 @@ default_content:
     - 0e8be6ce-cf6b-4e7a-8990-3628cda4459a
     - 1cd0baf4-59f0-4620-8908-826eff0bce60
     - 60ebd440-6ed6-4d63-8fec-b9a6b479bdff
+    # User profile images
+    - 0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb
+    - 4c7d24fb-3c06-425c-a8fa-4b3f9e9fda15
+    - 4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f
+    - c607761f-6c3c-49d0-9cba-fc0ed748b2a5
+    - d27d25a7-91b2-4042-902d-9f99296d8702
   media:
     # OE Showcase Page
     - 8fec7b57-dff0-4a75-b032-a2076ceeccbb
@@ -108,3 +115,9 @@ default_content:
     - 564dacd1-2b25-430d-95d2-816ac0f10452
     - 9d2ee108-3061-48c1-871c-614aa2df2928
     - ca1f9a80-ec63-4b06-bef9-cc0c9b0f3b58
+  user:
+    - 5de73784-3425-4baa-8814-b8bc58bc53de
+    - 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
+    - c574d28f-948e-4a71-a8f7-5897db9beef5
+    - cf7ae915-fe6f-4033-861b-682a21f87b09
+    - e509f27f-988b-41c0-a0fa-12a82107bf74

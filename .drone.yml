@@ -71,7 +71,7 @@ pipeline:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
     commands:
-      - ./vendor/bin/phpunit --testdox
+      - ./vendor/bin/phpunit
     when:
       event:
         exclude: tag

@@ -1,0 +1,173 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.field_bio
+    - field.field.user.user.field_city_country
+    - field.field.user.user.field_current_position
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_nationality
+    - field.field.user.user.field_organization
+    - field.field.user.user.field_profile_image
+    - field.field.user.user.field_working_languages
+    - image.style.medium
+  module:
+    - address
+    - datetime
+    - field_group
+    - image
+    - rdf_skos
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_personal_information:
+      children:
+        - field_gender
+        - field_nationality
+        - field_date_of_birth
+        - field_city_country
+      label: 'Personal information'
+      parent_name: ''
+      region: content
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        pattern: ''
+        pattern_mapping: {  }
+        pattern_variant: ''
+    group_professional_information:
+      children:
+        - field_organization
+        - field_current_position
+        - field_working_languages
+      label: 'Professional information'
+      parent_name: ''
+      region: content
+      weight: 8
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        pattern: ''
+        pattern_mapping: {  }
+        pattern_variant: ''
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  field_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_city_country:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_current_position:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_date_of_birth:
+    type: datetime_custom
+    label: above
+    settings:
+      timezone_override: ''
+      date_format: 'd F Y'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_gender:
+    type: skos_concept_entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_nationality:
+    type: skos_concept_entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_organization:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_profile_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_working_languages:
+    type: skos_concept_entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  langcode: true
+  member_for: true
+  search_api_excerpt: true

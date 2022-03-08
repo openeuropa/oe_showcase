@@ -1,0 +1,71 @@
+restrict_to_roles:
+  - authenticated
+field_options:
+  datetime:
+    field_type: datetime
+    plugin_id: user_field_anonymize_date
+  entity_reference_revisions:
+    field_type: entity_reference_revisions
+    plugin_id: user_field_anonymize_default
+  file_link:
+    field_type: file_link
+    plugin_id: user_field_anonymize_default
+  image:
+    field_type: image
+    plugin_id: user_field_anonymize_image
+  link:
+    field_type: link
+    plugin_id: user_field_anonymize_default
+  list_float:
+    field_type: list_float
+    plugin_id: user_field_anonymize_default
+  list_string:
+    field_type: list_string
+    plugin_id: user_field_anonymize_default
+  list_integer:
+    field_type: list_integer
+    plugin_id: user_field_anonymize_default
+  skos_concept_entity_reference:
+    field_type: skos_concept_entity_reference
+    plugin_id: user_field_anonymize_default
+  text_with_summary:
+    field_type: text_with_summary
+    plugin_id: user_field_anonymize_default
+  text:
+    field_type: text
+    plugin_id: user_field_anonymize_default
+  text_long:
+    field_type: text_long
+    plugin_id: user_field_anonymize_default
+  typed_link:
+    field_type: typed_link
+    plugin_id: user_field_anonymize_default
+  integer:
+    field_type: integer
+    plugin_id: user_field_anonymize_default
+  entity_reference:
+    field_type: entity_reference
+    plugin_id: user_field_anonymize_default
+  float:
+    field_type: float
+    plugin_id: user_field_anonymize_default
+  email:
+    field_type: email
+    plugin_id: user_field_anonymize_default
+  timestamp:
+    field_type: timestamp
+    plugin_id: user_field_anonymize_default
+  string:
+    field_type: string
+    plugin_id: user_field_anonymize_default
+  string_long:
+    field_type: string_long
+    plugin_id: user_field_anonymize_default
+  decimal:
+    field_type: decimal
+    plugin_id: user_field_anonymize_default
+  boolean:
+    field_type: boolean
+    plugin_id: user_field_anonymize_default
+enable_admin_users: true
+enable_all_users: true
