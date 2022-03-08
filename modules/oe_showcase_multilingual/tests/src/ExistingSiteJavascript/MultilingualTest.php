@@ -54,8 +54,7 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
     $node->save();
     $this->drupalGet($node->toUrl());
     $this->clickLink('English');
-    $this->getSession()->wait(10000);
-    $modal = $page->find('xpath', '//div[@id=\'languageModal\']');
+    $modal = $assert_session->waitForElementVisible('xpath', '//div[@id=\'languageModal\']');
     $this->assertTrue($modal->isVisible());
     $this->clickLink('português');
     $assert_session->pageTextContains('Translated to PT');
