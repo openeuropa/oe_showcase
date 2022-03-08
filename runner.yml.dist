@@ -20,7 +20,7 @@ drupal:
     - "./vendor/bin/drush sapi-i"
     # Enable development related modules.
     - "./vendor/bin/drush en config_devel -y"
-    # Prepare the instance.
+    # Import translation.
     - "./vendor/bin/drush cr"
     - "./vendor/bin/drush oe-multilingual:import-local-translations"
   settings:
