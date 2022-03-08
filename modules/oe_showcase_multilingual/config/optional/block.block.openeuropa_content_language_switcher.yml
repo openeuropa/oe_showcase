@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - oe_multilingual
+  theme:
+    - oe_whitelabel
+id: openeuropa_content_language_switcher
+theme: oe_whitelabel
+region: content
+weight: -6
+provider: null
+plugin: oe_multilingual_content_language_switcher
+settings:
+  id: oe_multilingual_content_language_switcher
+  label: 'OpenEuropa Content Language Switcher'
+  label_display: '0'
+  provider: oe_multilingual
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      oe_event: oe_event
+      oe_news: oe_news
+      oe_showcase_page: oe_showcase_page
+      oe_showcase_search_demo: oe_showcase_search_demo
