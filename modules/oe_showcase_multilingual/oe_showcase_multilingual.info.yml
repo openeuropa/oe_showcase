@@ -5,6 +5,7 @@ core_version_requirement: ^9.2
 package: OpenEuropa Showcase
 
 dependencies:
+  - drupal:config_translation
   - openeuropa:oe_multilingual
 
 config_devel:
