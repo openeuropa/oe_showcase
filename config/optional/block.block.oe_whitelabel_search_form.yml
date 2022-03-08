@@ -17,14 +17,14 @@ settings:
   label_display: '0'
   provider: oe_whitelabel_search
   form:
-    action: '#'
+    action: 'search'
   input:
-    name: text
+    name: search_api_fulltext
     label: Search
-    classes: ''
+    classes: null
     placeholder: Search
   button:
-    classes: ''
+    classes: null
   view_options:
     enable_autocomplete: true
     id: showcase_search
