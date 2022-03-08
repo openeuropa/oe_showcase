@@ -14,14 +14,15 @@ drupal:
     host: "sparql"
     port: "8890"
   post_install:
-    # Prepare the instance.
-    - "./vendor/bin/drush oe-multilingual:import-local-translations"
     # Move file assets.
     - "cp -R modules/oe_showcase_default_content/content/default_images/. build/sites/default/files/."
     # Index content.
     - "./vendor/bin/drush sapi-i"
+    # Enable development related modules.
     - "./vendor/bin/drush en config_devel -y"
+    # Prepare the instance.
     - "./vendor/bin/drush cr"
+    - "./vendor/bin/drush oe-multilingual:import-local-translations"
   settings:
     settings:
       file_scan_ignore_directories:
