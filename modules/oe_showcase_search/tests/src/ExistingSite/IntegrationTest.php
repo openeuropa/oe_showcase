@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase_search\ExistingSite;
 
+use Drupal\Core\Url;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
 /**
@@ -19,7 +20,24 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
 
     // Assert the correct elements are in place.
-    // @todo Use the search box as entry point one OEL-1284 is resolved.
+    $this->drupalGet(Url::fromRoute('<front>'));
+    $search_form = $assert->elementExists('css', '#oe-whitelabel-search-form');
+    $search_input = $search_form->findField('Search');
+    $this->assertNotNull($search_input);
+    $this->assertTrue($search_input->hasClass('form-autocomplete'));
+    $this->assertTrue($search_input->hasClass('required'));
+    $search_input->setValue('Imputo');
+    $search_button = $search_form->find('css', '#submit');
+    $this->assertNotNull($search_button);
+    $search_button->click();
+
+    $view = $assert->elementExists('css', '.views-element-container');
+    $items = $view->findAll('css', '.card-title');
+    $this->assertCount(2, $items);
+    $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
+    $this->assertSame('Gemino Imputo', $items[1]->getText());
+
+    // @todo Use 'Clear' once OEL-1315 is resolved.
     $this->drupalGet('/search');
     $offcanvas = $assert->elementExists('css', '#bcl-offcanvas');
     $title = $offcanvas->find('css', 'h4');
@@ -34,7 +52,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSame('Search results (19)', $title->getText());
     $assert->fieldExists('Sort by');
 
-    $view = $assert->elementExists('css', '.views-element-container');
     $items = $view->findAll('css', '.card-title');
     $this->assertCount(5, $items);
     $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
