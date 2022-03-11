@@ -31,6 +31,13 @@ function oe_showcase_post_update_00001(array &$sandbox): void {
     'field.field.node.oe_sc_news.body',
     'field.field.node.oe_sc_news.oe_summary',
     'user.role.editor',
+    'core.entity_form_display.node.oe_showcase_page.default',
+    'core.entity_view_display.node.oe_showcase_page.default',
+    'core.entity_view_display.node.oe_showcase_page.teaser',
+    'core.entity_form_display.node.oe_showcase_search_demo.default',
+    'core.entity_view_display.node.oe_showcase_search_demo.default',
+    'core.entity_view_display.node.oe_showcase_search_demo.search_result',
+    'core.entity_view_display.node.oe_showcase_search_demo.teaser',
   ];
   // Import/create config.
   ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00001/', $configs, TRUE);
