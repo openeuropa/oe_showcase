@@ -60,15 +60,16 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSame('Abico Diam Jugis', $items[3]->getText());
     $this->assertSame('Obruo', $items[4]->getText());
 
+    // @todo Assert "Last" once OEL-1316 is fixed.
     $pagination = $assert->elementExists('css', 'ul.pagination');
     $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(6, $links);
-    $this->assertSame('Current page 1', $links[0]->getText());
-    $this->assertSame('Page 2', $links[1]->getText());
-    $this->assertSame('Page 3', $links[2]->getText());
-    $this->assertSame('Page 4', $links[3]->getText());
-    $this->assertSame('Next page Next ›', $links[4]->getText());
-    $this->assertSame('Last page Last »', $links[5]->getText());
+    $this->assertCount(5, $links);
+    $this->assertSame('1', $links[0]->getText());
+    $this->assertTrue($links[0]->hasClass('active'));
+    $this->assertSame('2', $links[1]->getText());
+    $this->assertSame('3', $links[2]->getText());
+    $this->assertSame('4', $links[3]->getText());
+    $this->assertSame('Next ›', $links[4]->getText());
 
     // Assert using filters alters the result.
     $page->checkField('Category 2');
@@ -85,7 +86,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSame('Comis Incassum', $items[3]->getText());
     $this->assertSame('Appellatio Immitto', $items[4]->getText());
     $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(4, $links);
+    $this->assertCount(3, $links);
 
     $page->fillField('Date', '2021-08-01');
     $page->pressButton('Refine');
@@ -104,7 +105,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $items = $view->findAll('css', '.card-title');
     $this->assertCount(5, $items);
     $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(6, $links);
+    $this->assertCount(5, $links);
 
     // Assert sorting changes order of items.
     $page->selectFieldOption('Sort by', 'Published on Asc');
@@ -118,7 +119,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSame('Macto Neque Virtus', $items[4]->getText());
 
     // Assert items after using pager.
-    $page->clickLink('Page 2');
+    $page->clickLink('2');
     $view = $assert->elementExists('css', '.views-element-container');
     $items = $view->findAll('css', '.card-title');
     $this->assertCount(5, $items);
@@ -130,15 +131,14 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $pagination = $assert->elementExists('css', 'ul.pagination');
     $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(8, $links);
-    $this->assertSame('First page « First', $links[0]->getText());
-    $this->assertSame('Previous page ‹ Previous', $links[1]->getText());
-    $this->assertSame('Page 1', $links[2]->getText());
-    $this->assertSame('Current page 2', $links[3]->getText());
-    $this->assertSame('Page 3', $links[4]->getText());
-    $this->assertSame('Page 4', $links[5]->getText());
-    $this->assertSame('Next page Next ›', $links[6]->getText());
-    $this->assertSame('Last page Last »', $links[7]->getText());
+    $this->assertCount(6, $links);
+    $this->assertSame('‹ Previous', $links[0]->getText());
+    $this->assertSame('1', $links[1]->getText());
+    $this->assertSame('2', $links[2]->getText());
+    $this->assertTrue($links[2]->hasClass('active'));
+    $this->assertSame('3', $links[3]->getText());
+    $this->assertSame('4', $links[4]->getText());
+    $this->assertSame('Next ›', $links[5]->getText());
   }
 
 }
