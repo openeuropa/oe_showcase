@@ -15,7 +15,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
   /**
    * Test the search page.
    */
-  public function testCreateShowCasePage() {
+  public function testSearchFeature() {
     $assert = $this->assertSession();
     $page = $this->getSession()->getPage();
 
