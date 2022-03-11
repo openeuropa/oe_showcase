@@ -40,9 +40,9 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.12",
-        "openeuropa/oe_starter_content": "1.x-dev#5a4a77b",
+        "openeuropa/oe_starter_content": "dev-OEL-1290",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "^1.0.0-alpha5"
+        "openeuropa/oe_whitelabel": "dev-OEL-1291"
     },
     "require-dev": {
         "composer/installers": "~1.11",

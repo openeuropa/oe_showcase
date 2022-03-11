@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - node.type.oe_news
+    - field.storage.node.oe_summary
+    - node.type.oe_sc_news
   module:
     - allowed_formats
     - text
@@ -11,18 +11,16 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rich_text
-id: node.oe_news.body
-field_name: body
+      - simple_rich_text
+id: node.oe_sc_news.oe_summary
+field_name: oe_summary
 entity_type: node
-bundle: oe_news
-label: Content
+bundle: oe_sc_news
+label: Introduction
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  display_summary: true
-  required_summary: false
-field_type: text_with_summary
+settings: {  }
+field_type: text_long

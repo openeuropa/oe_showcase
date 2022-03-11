@@ -59,7 +59,7 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $media_image->save();
 
     // Assert editors don't have permissions to create News items.
-    $this->drupalGet('node/add/oe_news');
+    $this->drupalGet('node/add/oe_sc_news');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
 
@@ -70,7 +70,7 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($user);
 
     // Assert that editors have access to the Simple/Rich text formats.
-    $this->drupalGet('node/add/oe_news');
+    $this->drupalGet('node/add/oe_sc_news');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
