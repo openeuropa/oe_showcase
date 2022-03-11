@@ -32,6 +32,6 @@ function oe_showcase_post_update_00001(array &$sandbox): void {
     'field.field.node.oe_sc_news.oe_summary',
     'user.role.editor',
   ];
-  //Import/create config.
+  // Import/create config.
   ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00001/', $configs, TRUE);
 }
