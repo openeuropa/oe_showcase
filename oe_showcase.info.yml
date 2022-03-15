@@ -49,8 +49,8 @@ install:
   - oe_webtools
   - oe_whitelabel_helper
   - oe_whitelabel_search
-  - oe_whitelabel_news
-  - oe_whitelabel_event
+  - oe_whitelabel_starter_news
+  - oe_whitelabel_starter_event
   - options
   - page_cache
   - path
