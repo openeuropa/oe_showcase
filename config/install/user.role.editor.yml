@@ -4,14 +4,16 @@ dependencies:
   config:
     - filter.format.rich_text
     - filter.format.simple_rich_text
-    - node.type.oe_sc_news
+    - media.type.av_portal_photo
+    - media.type.document
+    - media.type.image
     - node.type.oe_sc_event
+    - node.type.oe_sc_news
   module:
     - filter
+    - media
     - node
     - system
-    - oe_starter_content_news
-    - oe_starter_content_event
     - toolbar
 id: editor
 label: Editor
@@ -22,31 +24,31 @@ permissions:
   - 'access content overview'
   - 'access toolbar'
   - 'administer nodes'
-  - 'create oe_sc_news content'
-  - 'create image media'
   - 'create av_portal_photo media'
-  - 'delete own av_portal_photo media'
-  - 'delete own image media'
+  - 'create document media'
+  - 'create image media'
+  - 'create oe_sc_event content'
+  - 'create oe_sc_news content'
+  - 'delete any document media'
+  - 'delete any oe_sc_event content'
+  - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
+  - 'delete own av_portal_photo media'
+  - 'delete own document media'
+  - 'delete own image media'
+  - 'delete own oe_sc_event content'
   - 'delete own oe_sc_news content'
+  - 'edit any document media'
+  - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
+  - 'edit own document media'
+  - 'edit own oe_sc_event content'
   - 'edit own oe_sc_news content'
+  - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
-  - 'view oe_sc_news revisions'
-  - 'create oe_sc_event content'
-  - 'delete any oe_sc_event content'
-  - 'delete oe_sc_event revisions'
-  - 'delete own oe_sc_event content'
-  - 'edit any oe_sc_event content'
-  - 'edit own oe_sc_event content'
-  - 'revert oe_sc_event revisions'
   - 'view oe_sc_event revisions'
+  - 'view oe_sc_news revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
-  - 'create document media'
-  - 'delete any document media'
-  - 'delete own document media'
-  - 'edit any document media'
-  - 'edit own document media'
