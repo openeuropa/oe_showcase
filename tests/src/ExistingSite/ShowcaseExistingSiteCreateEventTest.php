@@ -99,7 +99,7 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-01-24');
     $page->fillField('oe_sc_event_dates[0][end_value][time]', '22:00:00');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
-    $page->fillField('oe_featured_media[0][target_id]', $media_name);
+    $page->fillField('oe_featured_media[0][featured_media][target_id]', $media_name);
     $document_name = $media_document->getName() . ' (' . $media_document->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $document_name);
     $page->pressButton('Save');
