@@ -105,3 +105,4 @@ config_devel:
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
     - block.block.showcase_pagetitle
+    - block.block.openeuropa_content_language_switcher
