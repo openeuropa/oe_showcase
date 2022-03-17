@@ -96,6 +96,7 @@ config_devel:
     - user.settings
     - user_field_anonymize.settings
   optional:
+    - block.block.oe_whitelabel_search_form
     - block.block.seven_breadcrumbs
     - block.block.seven_content
     - block.block.seven_help
@@ -107,5 +108,4 @@ config_devel:
     - block.block.showcase_exposed_sort_form
     - block.block.showcase_facets_form
     - block.block.showcase_facets_summary
-    - block.block.showcase_navigation
     - block.block.showcase_pagetitle
