@@ -24,7 +24,7 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      oe_event: oe_event
-      oe_news: oe_news
+      oe_sc_event: oe_sc_event
+      oe_sc_news: oe_sc_news
       oe_showcase_page: oe_showcase_page
       oe_showcase_search_demo: oe_showcase_search_demo

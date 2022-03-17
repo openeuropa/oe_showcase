@@ -78,7 +78,7 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     $media_image->save();
 
     // Assert editors don't have permissions to create Event items.
-    $this->drupalGet('node/add/oe_event');
+    $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
 
@@ -89,17 +89,17 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($user);
 
     // Assert that editors have access to the Simple/Rich text formats.
-    $this->drupalGet('node/add/oe_event');
+    $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
-    $page->fillField('oe_event_dates[0][value][date]', '2022-01-24');
-    $page->fillField('oe_event_dates[0][value][time]', '20:00:00');
-    $page->fillField('oe_event_dates[0][end_value][date]', '2022-01-24');
-    $page->fillField('oe_event_dates[0][end_value][time]', '22:00:00');
+    $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-24');
+    $page->fillField('oe_sc_event_dates[0][value][time]', '20:00:00');
+    $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-01-24');
+    $page->fillField('oe_sc_event_dates[0][end_value][time]', '22:00:00');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
-    $page->fillField('oe_featured_media[0][target_id]', $media_name);
+    $page->fillField('oe_featured_media[0][featured_media][target_id]', $media_name);
     $document_name = $media_document->getName() . ' (' . $media_document->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $document_name);
     $page->pressButton('Save');

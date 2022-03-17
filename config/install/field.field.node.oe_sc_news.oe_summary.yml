@@ -3,19 +3,18 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_summary
-    - node.type.oe_news
+    - node.type.oe_sc_news
   module:
     - allowed_formats
     - text
-    - oe_starter_content_news
 third_party_settings:
   allowed_formats:
     allowed_formats:
       - simple_rich_text
-id: node.oe_news.oe_summary
+id: node.oe_sc_news.oe_summary
 field_name: oe_summary
 entity_type: node
-bundle: oe_news
+bundle: oe_sc_news
 label: Introduction
 description: ''
 required: false
