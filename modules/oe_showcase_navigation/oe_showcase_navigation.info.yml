@@ -6,7 +6,6 @@ package: OpenEuropa Showcase
 dependencies:
   - drupal:views
   - oe_corporate_blocks:oe_corporate_blocks
-  - oe_whitelabel:oe_whitelabel_multilingual
 
 config_devel:
   install:
