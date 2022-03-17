@@ -74,6 +74,8 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertTrue($language_switcher_block->isVisible());
 
     // Assert a valid translation is available.
+    $button = $page->findButton('Choisir une autre langue');
+    $button->click();
     $language_switcher_block->findLink('português')->click();
     $assert_session->pageTextContains('Translated to PT');
   }
