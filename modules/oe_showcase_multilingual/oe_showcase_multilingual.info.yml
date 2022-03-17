@@ -7,3 +7,4 @@ package: OpenEuropa Showcase
 dependencies:
   - drupal:config_translation
   - openeuropa:oe_multilingual
+  - oe_whitelabel:oe_whitelabel_multilingual
