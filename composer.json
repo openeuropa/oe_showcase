@@ -42,7 +42,7 @@
         "openeuropa/oe_paragraphs": "^1.12",
         "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "^1.0.0-alpha5"
+        "openeuropa/oe_whitelabel": "0.1167.202203181307"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -93,10 +93,6 @@
             },
             "openeuropa/oe_bootstrap_theme" : {
                 "1.x latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-alpha7..1.x.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "1.x latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-alpha5..1.x.diff",
-                "Add oe_whitelabel_multilingual theming. Can be removed once OEL-1167 is merged.": "https://github.com/openeuropa/oe_whitelabel/compare/1.x..OEL-1167.diff"
             }
         },
         "artifacts": {
