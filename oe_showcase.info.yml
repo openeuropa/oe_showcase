@@ -106,4 +106,5 @@ config_devel:
     - block.block.seven_page_title
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
+    - block.block.showcase_content_language_switcher
     - block.block.showcase_pagetitle
