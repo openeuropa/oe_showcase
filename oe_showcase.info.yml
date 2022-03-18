@@ -97,7 +97,6 @@ config_devel:
     - user.settings
     - user_field_anonymize.settings
   optional:
-    - block.block.oe_whitelabel_search_form
     - block.block.seven_breadcrumbs
     - block.block.seven_content
     - block.block.seven_help
