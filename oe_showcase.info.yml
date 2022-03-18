@@ -104,8 +104,4 @@ config_devel:
     - block.block.seven_page_title
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
-    - block.block.showcase_exposed_sort_form
-    - block.block.showcase_facets_form
-    - block.block.showcase_facets_summary
-    - block.block.showcase_navigation
     - block.block.showcase_pagetitle
