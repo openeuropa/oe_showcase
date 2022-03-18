@@ -97,6 +97,7 @@ config_devel:
     - user.settings
     - user_field_anonymize.settings
   optional:
+    - block.block.oe_whitelabel_search_form
     - block.block.seven_breadcrumbs
     - block.block.seven_content
     - block.block.seven_help
@@ -106,4 +107,3 @@ config_devel:
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
     - block.block.showcase_pagetitle
-    - block.block.openeuropa_content_language_switcher
