@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - oe_multilingual
   theme:
     - oe_whitelabel
@@ -16,4 +17,11 @@ settings:
   label: 'Content Language Switcher'
   label_display: '0'
   provider: oe_multilingual
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      oe_showcase_page: oe_showcase_page
