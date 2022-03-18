@@ -69,7 +69,7 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->clickLink('français');
     $language_switcher_block = $page->find(
       'xpath',
-      '//div[@id="block-openeuropa-content-language-switcher"]'
+      '//div[@id="block-showcase-content-language-switcher"]'
     );
     $this->assertTrue($language_switcher_block->isVisible());
 
