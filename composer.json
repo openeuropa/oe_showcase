@@ -42,7 +42,7 @@
         "openeuropa/oe_paragraphs": "^1.12",
         "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "0.1167.202203181307"
+        "openeuropa/oe_whitelabel": "0.1167.202203181408"
     },
     "require-dev": {
         "composer/installers": "~1.11",
