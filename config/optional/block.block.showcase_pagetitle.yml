@@ -20,13 +20,13 @@ settings:
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      oe_showcase_page: oe_showcase_page
-      oe_showcase_search_demo: oe_showcase_search_demo
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      oe_showcase_page: oe_showcase_page
+      oe_showcase_search_demo: oe_showcase_search_demo
   request_path:
     id: request_path
-    pages: '<front>'
     negate: true
+    pages: '<front>'

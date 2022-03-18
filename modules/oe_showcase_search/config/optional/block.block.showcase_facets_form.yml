@@ -20,14 +20,14 @@ settings:
   label: 'Filter Options'
   label_display: visible
   provider: facets_form
-  live_total: false
   button:
     label:
       submit: Refine
       reset: Clear
   facets: {  }
+  live_total: false
 visibility:
   request_path:
     id: request_path
-    pages: /search
     negate: false
+    pages: /search

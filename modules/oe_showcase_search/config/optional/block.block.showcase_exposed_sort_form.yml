@@ -23,5 +23,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /search
     negate: false
+    pages: /search
