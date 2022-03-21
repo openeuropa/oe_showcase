@@ -17,7 +17,7 @@ settings:
   label_display: '0'
   provider: oe_whitelabel_search
   form:
-    action: 'search'
+    action: search
   input:
     name: search_api_fulltext
     label: Search

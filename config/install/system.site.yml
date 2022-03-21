@@ -1,12 +1,2 @@
-langcode: en
-name: OpenEuropa
-mail: info@example.org
-slogan: ''
 page:
-  403: ''
-  404: ''
   front: /home
-admin_compact_mode: false
-weight_select_max: 100
-default_langcode: en
-uuid: 39dcac29-8361-435e-a623-218f5cbf18d7

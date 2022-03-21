@@ -51,6 +51,7 @@ install:
   - oe_whitelabel_search
   - oe_whitelabel_starter_news
   - oe_whitelabel_starter_event
+  - oe_whitelabel_multilingual
   - options
   - page_cache
   - path
