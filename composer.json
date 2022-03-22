@@ -6,7 +6,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "drupal/address": "~1.9",
         "drupal/allowed_formats": "^1.4",
         "drupal/better_exposed_filters": "^5.0",
@@ -53,12 +53,14 @@
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpspec/prophecy-phpunit": "^1 || ^2",
+        "phpmd/phpmd": "^2.11",
         "weitzman/drupal-test-traits": "^1.5"
     },
     "_readme": [
         "oomphinc/composer-installers-extender is required to use drupal/jquery_ui_touch_punch module.",
         "npm-asset/jquery-ui-touch-punch is required for BEF to work in mobile.",
-        "openeuropa/oe_content is required for the 'timeline_field' field type."
+        "openeuropa/oe_content is required for the 'timeline_field' field type.",
+        "Explicit requirement for phpmd/phpmd due to PHP 8.0 compatibility."
     ],
     "scripts": {
         "post-install-cmd": "./vendor/bin/run drupal:site-setup",
