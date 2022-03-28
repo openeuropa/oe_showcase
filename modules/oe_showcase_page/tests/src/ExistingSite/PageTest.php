@@ -89,21 +89,54 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'T.S Eliot'
     );
 
-    // Add a listing item.
-    $page->pressButton('Add Listing item');
-    $page->fillField(
-      'field_body[3][subform][field_oe_link][0][uri]',
-      '<front>'
+    // Add a listing item block.
+    $page->pressButton('Add Listing item block');
+
+    $page->selectFieldOption(
+      'field_body[3][variant]',
+      'default'
+    );
+
+    $page->selectFieldOption(
+      'field_body[3][subform][field_oe_list_item_block_layout]',
+      'two_columns'
     );
 
     $page->fillField(
       'field_body[3][subform][field_oe_title][0][value]',
+      'List item block example'
+    );
+
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_link][0][uri]',
+      '<front>'
+    );
+
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Home Page'
     );
 
     $page->fillField(
-      'field_body[3][subform][field_oe_text_long][0][value]',
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
       'Listing item description'
+    );
+
+    $page->pressButton('Add Listing item');
+
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_link][0][uri]',
+      'https://example1.com'
+    );
+
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
+      'Example 1 Page'
+    );
+
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]',
+      'Listing item description for example 1'
     );
 
     // Save node.
@@ -133,9 +166,12 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
 
-    // Assert Listing item.
-    $assert_session->pageTextContains('Home');
+    // Assert Listing item block.
+    $assert_session->pageTextContains('List item block example');
+    $assert_session->pageTextContains('Home Page');
     $assert_session->pageTextContains('Listing item description');
+    $assert_session->pageTextContains('Example 1 Page');
+    $assert_session->pageTextContains('Listing item description for example 1');
   }
 
 }
