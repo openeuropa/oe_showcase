@@ -9,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.oe_banner
     - paragraphs.paragraphs_type.oe_chart
     - paragraphs.paragraphs_type.oe_content_row
+    - paragraphs.paragraphs_type.oe_description_list
+    - paragraphs.paragraphs_type.oe_facts_figures
     - paragraphs.paragraphs_type.oe_links_block
     - paragraphs.paragraphs_type.oe_list_item_block
     - paragraphs.paragraphs_type.oe_map
@@ -38,7 +40,10 @@ settings:
       oe_chart: oe_chart
       contact_form: contact_form
       oe_content_row: oe_content_row
+      oe_description_list: oe_description_list
+      oe_facts_figures: oe_facts_figures
       oe_links_block: oe_links_block
+      oe_list_item: oe_list_item
       oe_list_item_block: oe_list_item_block
       oe_map: oe_map
       oe_quote: oe_quote
@@ -71,7 +76,7 @@ settings:
         enabled: false
       oe_description_list:
         weight: 23
-        enabled: false
+        enabled: true
       oe_document:
         weight: 24
         enabled: false
@@ -80,7 +85,7 @@ settings:
         enabled: false
       oe_facts_figures:
         weight: 26
-        enabled: false
+        enabled: true
       oe_links_block:
         weight: 27
         enabled: true

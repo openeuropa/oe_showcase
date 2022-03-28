@@ -284,6 +284,9 @@ default:
           behavior_settings:
             -
               value: {  }
+          oe_paragraphs_variant:
+            -
+              value: default
           content_translation_source:
             -
               value: und
@@ -568,9 +571,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -724,9 +724,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -763,9 +760,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -802,9 +796,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -841,9 +832,6 @@ default:
                   behavior_settings:
                     -
                       value: {  }
-                  revision_translation_affected:
-                    -
-                      value: true
                   content_translation_source:
                     -
                       value: und
@@ -868,3 +856,54 @@ default:
           oe_bt_n_columns:
             -
               value: 3
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5633664f-2c3d-421c-89d1-147e1becb398
+          bundle: oe_description_list
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1648457626
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_description_list_items:
+            -
+              term: Name
+              description: 'Rowan Leuthar'
+              format: plain_text
+            -
+              term: E-mail
+              description: test@domain.tld
+              format: plain_text
+            -
+              term: 'Phone number'
+              description: '+34 999 888 777'
+              format: plain_text
+            -
+              term: City
+              description: Brussels
+              format: plain_text
+            -
+              term: Message
+              description: 'Sed in libero ut nibh placerat accumsan. Vivamus quis mi. Sed lectus. Nullam tincidunt adipiscing enim. Nam eget dui.'
+              format: plain_text
+          field_oe_title:
+            -
+              value: 'Description List example'
+          oe_bt_orientation:
+            -
+              value: horizontal
