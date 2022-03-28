@@ -6,12 +6,10 @@ dependencies:
     - node.type.oe_showcase_page
     - paragraphs.paragraphs_type.contact_form
     - paragraphs.paragraphs_type.oe_accordion
-    - paragraphs.paragraphs_type.oe_accordion_item
     - paragraphs.paragraphs_type.oe_banner
     - paragraphs.paragraphs_type.oe_chart
     - paragraphs.paragraphs_type.oe_content_row
     - paragraphs.paragraphs_type.oe_links_block
-    - paragraphs.paragraphs_type.oe_list_item
     - paragraphs.paragraphs_type.oe_list_item_block
     - paragraphs.paragraphs_type.oe_map
     - paragraphs.paragraphs_type.oe_quote
@@ -36,20 +34,18 @@ settings:
   handler_settings:
     target_bundles:
       oe_accordion: oe_accordion
-      oe_accordion_item: oe_accordion_item
       oe_banner: oe_banner
-      oe_content_row: oe_content_row
-      contact_form: contact_form
-      oe_links_block: oe_links_block
-      oe_list_item: oe_list_item
       oe_chart: oe_chart
+      contact_form: contact_form
+      oe_content_row: oe_content_row
+      oe_links_block: oe_links_block
       oe_list_item_block: oe_list_item_block
+      oe_map: oe_map
       oe_quote: oe_quote
       oe_rich_text: oe_rich_text
+      oe_social_feed: oe_social_feed
       oe_text_feature_media: oe_text_feature_media
       oe_timeline: oe_timeline
-      oe_map: oe_map
-      oe_social_feed: oe_social_feed
     negate: 0
     target_bundles_drag_drop:
       contact_form:
@@ -60,7 +56,7 @@ settings:
         enabled: true
       oe_accordion_item:
         weight: 17
-        enabled: true
+        enabled: false
       oe_banner:
         weight: 18
         enabled: true
@@ -90,7 +86,7 @@ settings:
         enabled: true
       oe_list_item:
         weight: 28
-        enabled: true
+        enabled: false
       oe_list_item_block:
         weight: 29
         enabled: true
