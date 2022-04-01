@@ -98,6 +98,7 @@ config_devel:
     - legal.settings
     - node.settings
     - oe_authentication.settings
+    - pathauto.pattern.project_url_alias_pattern
     - pathauto.settings
     - purge_users.settings
     - system.site
