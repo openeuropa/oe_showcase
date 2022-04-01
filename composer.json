@@ -44,7 +44,7 @@
         "openeuropa/oe_paragraphs": "^1.12",
         "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "dev-OEL-1297"
+        "openeuropa/oe_whitelabel": "dev-EPIC-1293-Project"
     },
     "require-dev": {
         "composer/installers": "~1.11",
