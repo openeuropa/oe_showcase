@@ -81,7 +81,8 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('oe_project_funding_programme[0][target_id]', 'Anti Fraud Information System (AFIS) (http://publications.europa.eu/resource/authority/eu-programme/AFIS2020)');
     $page->fillField('Reference', '3425353');
     $page->pressButton('Add new organisation');
-    $page->fillField('Name', 'Coordinator 1');
+    // @todo: Improve this field locator.
+    $page->fillField('oe_project_coordinators[form][0][name][0][value]', 'Coordinator 1');
     $page->pressButton('Create organisation');
 
     // Summary, objective, impacts and achievements and milestones.
@@ -92,11 +93,21 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Participants.
     $page->pressButton('Add new participant');
-    $page->fillField('Name', 'Developer participant name');
+    // @todo: Improve this field locator.
+    $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
     $page->fillField('Acronym', 'Developer participant acronym');
     $page->fillField('Country', 'BE');
     $page->fillField('Contribution to the budget', '19.9');
     $page->pressButton('Create participant');
+
+    // Lead contributors.
+    $page->pressButton('edit-oe-cx-lead-contributors-actions-ief-add');
+    // @todo: Improve this field locator.
+    $page->fillField('oe_cx_lead_contributors[form][0][name][0][value]', 'Lead contributors name');
+    $page->fillField('Acronym', 'Lead contributors acronym');
+    $page->fillField('Country', 'BE');
+    $page->fillField('oe_cx_lead_contributors[form][0][oe_cx_contribution_budget][0][value]', '22.9');
+    $page->pressButton('Create organisation');
     $page->pressButton('Save');
 
     // Assert values as anonymous user.
@@ -139,12 +150,21 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Assert participants.
     $assert_session->pageTextContains('Participants');
-    $assert_session->pageTextContains('Name');
     $assert_session->pageTextContains('Developer participant acronym');
+    $assert_session->pageTextContains('Developer participant name');
     $assert_session->pageTextContains('Address');
     $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('Contribution to the budget');
     $assert_session->pageTextContains('€19,90');
+
+    // Assert lead contributors.
+    $assert_session->pageTextContains('Lead contributors');
+    $assert_session->pageTextContains('Lead contributors acronym');
+    $assert_session->pageTextContains('Lead contributors name');
+    $assert_session->pageTextContains('Address');
+    $assert_session->pageTextContains('Belgium');
+    $assert_session->pageTextContains('Contribution to the budget');
+    $assert_session->pageTextContains('€22,90');
   }
 
 }
