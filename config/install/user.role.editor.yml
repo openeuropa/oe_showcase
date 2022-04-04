@@ -14,6 +14,7 @@ dependencies:
     - filter
     - media
     - node
+    - oe_content_entity_organisation
     - system
     - toolbar
 id: editor
@@ -28,12 +29,16 @@ permissions:
   - 'create av_portal_photo media'
   - 'create document media'
   - 'create image media'
+  - 'create oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'create oe_organisation oe_stakeholder corporate entity'
   - 'create oe_project content'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'delete any document media'
   - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
+  - 'delete oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'delete oe_organisation oe_stakeholder corporate entity'
   - 'delete oe_project revisions'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
@@ -47,6 +52,8 @@ permissions:
   - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
+  - 'edit oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'edit oe_organisation oe_stakeholder corporate entity'
   - 'edit own document media'
   - 'edit own oe_project content'
   - 'edit own oe_sc_event content'
@@ -60,4 +67,6 @@ permissions:
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
   - 'view own unpublished content'
+  - 'view published oe_organisation'
   - 'view the administration theme'
+  - 'view unpublished oe_organisation'
