@@ -81,7 +81,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('oe_project_funding_programme[0][target_id]', 'Anti Fraud Information System (AFIS) (http://publications.europa.eu/resource/authority/eu-programme/AFIS2020)');
     $page->fillField('Reference', '3425353');
     $page->pressButton('Add new organisation');
-    // @todo: Improve this field locator.
+    // @todo Improve the field locator.
     $page->fillField('oe_project_coordinators[form][0][name][0][value]', 'Coordinator 1');
     $page->pressButton('Create organisation');
 
@@ -93,7 +93,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Participants.
     $page->pressButton('Add new participant');
-    // @todo: Improve this field locator.
+    // @todo Improve the field locator.
     $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
     $page->fillField('Acronym', 'Developer participant acronym');
     $page->fillField('Country', 'BE');
@@ -102,7 +102,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Lead contributors.
     $page->pressButton('edit-oe-cx-lead-contributors-actions-ief-add');
-    // @todo: Improve this field locator.
+    // @todo Improve the field locator.
     $page->fillField('oe_cx_lead_contributors[form][0][name][0][value]', 'Lead contributors name');
     $page->fillField('Acronym', 'Lead contributors acronym');
     $page->fillField('Country', 'BE');
