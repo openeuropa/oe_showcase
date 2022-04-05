@@ -52,6 +52,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Set page description.
     $page->fillField('field_description[0][value]', 'Page demo description');
 
+    // Check the list of paragraphs disabled.
+    $assert_session->elementNotExists('css', '#field-body-oe-accordion-item-add-more');
+    $assert_session->elementNotExists('css', '#field-body-oe-list-item-add-more');
+    $assert_session->elementNotExists('css', '#field-body-oe-contextual-navigation-add-more');
+
     // Add Rich text paragraph.
     $page->pressButton('Add Rich text');
     $page->fillField(
