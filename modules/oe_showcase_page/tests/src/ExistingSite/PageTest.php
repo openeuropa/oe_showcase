@@ -12,13 +12,6 @@ use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 class PageTest extends ShowcaseExistingSiteTestBase {
 
   /**
-   * A user with permission to create 'oe_showcase_page' content.
-   *
-   * @var \Drupal\user\UserInterface
-   */
-  protected $user;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
@@ -28,7 +21,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'create oe_showcase_page content',
     ];
 
-    $this->user = $this->createUser($permissions);
+    $this->drupalLogin($this->createUser($permissions));
   }
 
   /**
@@ -40,7 +33,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     $assert_session = $this->assertSession();
-    $this->drupalLogin($this->user);
 
     // Create a Showcase Page node through the UI.
     $this->drupalGet('node/add/oe_showcase_page');
