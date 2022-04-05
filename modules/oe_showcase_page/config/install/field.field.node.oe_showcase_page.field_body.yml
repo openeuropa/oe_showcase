@@ -43,7 +43,6 @@ settings:
       oe_description_list: oe_description_list
       oe_facts_figures: oe_facts_figures
       oe_links_block: oe_links_block
-      oe_list_item: oe_list_item
       oe_list_item_block: oe_list_item_block
       oe_map: oe_map
       oe_quote: oe_quote
