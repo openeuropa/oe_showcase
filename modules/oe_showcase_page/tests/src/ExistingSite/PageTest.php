@@ -93,44 +93,36 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[3][variant]',
       'default'
     );
-
     $page->selectFieldOption(
       'field_body[3][subform][field_oe_list_item_block_layout]',
       'two_columns'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_title][0][value]',
       'List item block example'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_link][0][uri]',
       '<front>'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Home Page'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
       'Listing item description'
     );
 
     $page->pressButton('Add Listing item');
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_link][0][uri]',
       'https://example1.com'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
       'Example 1 Page'
     );
-
     $page->fillField(
       'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]',
       'Listing item description for example 1'
@@ -155,12 +147,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Add a Rich text paragraph at the Content row.
     $page->pressButton('Add Rich text');
-
     $page->fillField(
       'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Example title rich text 1'
     );
-
     $page->fillField(
       'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
       'Text description for rich text 1'
