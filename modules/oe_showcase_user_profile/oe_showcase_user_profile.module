@@ -81,6 +81,9 @@ function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterfac
  * Implements hook_preprocess_HOOK().
  */
 function oe_showcase_user_profile_preprocess_user__full(array &$variables): void {
+  if (!in_array($variables['elements']['#view_mode'], ['full', 'teaser'])) {
+    return;
+  }
   /** @var \Drupal\user\UserInterface $user */
   $user = $variables['user'];
   $image_item_list = $user->get('field_profile_image');
