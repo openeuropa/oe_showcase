@@ -92,6 +92,9 @@
         "patches": {
             "drupal/paragraphs": {
                 "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
+            },
+            "openeuropa/oe_bootstrap_theme": {
+                "OEL-1159": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202203290731..0.1159.202204051310.diff"
             }
         },
         "artifacts": {
