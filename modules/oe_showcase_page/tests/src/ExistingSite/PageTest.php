@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase_page\ExistingSite;
 
+use Behat\Mink\Element\NodeElement;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
 /**
@@ -12,23 +13,15 @@ use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 class PageTest extends ShowcaseExistingSiteTestBase {
 
   /**
-   * A user with permission to create 'oe_showcase_page' content.
-   *
-   * @var \Drupal\user\UserInterface
-   */
-  protected $user;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
     parent::setUp();
 
-    $permissions = [
+    $this->drupalLogin($this->createUser([
       'create oe_showcase_page content',
-    ];
-
-    $this->user = $this->createUser($permissions);
+      'view the administration theme',
+    ]));
   }
 
   /**
@@ -40,7 +33,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     $assert_session = $this->assertSession();
-    $this->drupalLogin($this->user);
 
     // Create a Showcase Page node through the UI.
     $this->drupalGet('node/add/oe_showcase_page');
@@ -51,6 +43,26 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Set page description.
     $page->fillField('field_description[0][value]', 'Page demo description');
+
+    // Check the list of allowed paragraphs.
+    $this->assertEqualsCanonicalizing(
+      [
+        'Add Accordion',
+        'Add Banner',
+        'Add Chart',
+        'Add Contact form',
+        'Add Content row',
+        'Add Links block',
+        'Add Listing item block',
+        'Add Map',
+        'Add Quote',
+        'Add Rich text',
+        'Add Social feed',
+        'Add Text with Featured media',
+        'Add Timeline',
+      ],
+      $this->getParagraphAddMoreButtonList()
+    );
 
     // Add Rich text paragraph.
     $page->pressButton('Add Rich text');
@@ -89,21 +101,78 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'T.S Eliot'
     );
 
-    // Add a listing item.
-    $page->pressButton('Add Listing item');
-    $page->fillField(
-      'field_body[3][subform][field_oe_link][0][uri]',
-      '<front>'
-    );
+    // Add a listing item block.
+    $page->pressButton('Add Listing item block');
 
+    $page->selectFieldOption(
+      'field_body[3][variant]',
+      'default'
+    );
+    $page->selectFieldOption(
+      'field_body[3][subform][field_oe_list_item_block_layout]',
+      'two_columns'
+    );
     $page->fillField(
       'field_body[3][subform][field_oe_title][0][value]',
+      'List item block example'
+    );
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_link][0][uri]',
+      '<front>'
+    );
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Home Page'
     );
-
     $page->fillField(
-      'field_body[3][subform][field_oe_text_long][0][value]',
+      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
       'Listing item description'
+    );
+
+    $page->pressButton('Add Listing item');
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_link][0][uri]',
+      'https://example1.com'
+    );
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
+      'Example 1 Page'
+    );
+    $page->fillField(
+      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]',
+      'Listing item description for example 1'
+    );
+
+    // Add a Banner paragraph.
+    $page->pressButton('Add Content row');
+
+    // Verify that only the expect paragraphs can be referenced from a content
+    // row.
+    $content_row = $assert_session->elementExists('css', 'div[data-drupal-selector="edit-field-body-4"]');
+    $this->assertEqualsCanonicalizing([
+      'Add Accordion',
+      'Add Links block',
+      'Add Listing item block',
+      'Add Quote',
+      'Add Rich text',
+      'Add Social media follow',
+    ], $this->getParagraphAddMoreButtonList($content_row));
+
+    $page->selectFieldOption(
+      'field_body[4][variant]',
+      'inpage_navigation'
+    );
+    $page->pressButton('Change variant');
+
+    // Add a Rich text paragraph at the Content row.
+    $page->pressButton('Add Rich text');
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
+      'Example title rich text 1'
+    );
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
+      'Text description for rich text 1'
     );
 
     // Save node.
@@ -133,9 +202,36 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
 
-    // Assert Listing item.
-    $assert_session->pageTextContains('Home');
+    // Assert Listing item block.
+    $assert_session->pageTextContains('List item block example');
+    $assert_session->pageTextContains('Home Page');
     $assert_session->pageTextContains('Listing item description');
+    $assert_session->pageTextContains('Example 1 Page');
+    $assert_session->pageTextContains('Listing item description for example 1');
+
+    // Assert Content row.
+    $assert_session->pageTextContains('Example title rich text 1');
+    $assert_session->pageTextContains('Text description for rich text 1');
+  }
+
+  /**
+   * Returns the list of buttons that allow to add new paragraphs.
+   *
+   * @param \Behat\Mink\Element\NodeElement|null $container
+   *   The element where to search for the list of buttons. If empty, the page
+   *   element will be used.
+   *
+   * @return array
+   *   A list of button values, e.g. "Add Accordion".
+   */
+  protected function getParagraphAddMoreButtonList(NodeElement $container = NULL): array {
+    $container = $container ?: $this->getSession()->getPage();
+    $button_wrapper = $container->findAll('css', '.paragraphs-dropbutton-wrapper');
+    $this->assertCount(1, $button_wrapper, 'Multiple or no dropdown wrappers found, but one expected.');
+
+    return array_map(function (NodeElement $button) {
+      return $button->getValue();
+    }, $button_wrapper[0]->findAll('css', 'input.field-add-more-submit'));
   }
 
 }

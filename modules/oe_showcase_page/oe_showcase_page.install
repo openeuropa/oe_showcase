@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the OE Showcase Page module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\oe_bootstrap_theme\ConfigImporter;
+
+/**
+ * Implements hook_install().
+ *
+ * Imports configuration on module install.
+ */
+function oe_showcase_page_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+
+  $configs = [
+    'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+  ];
+
+  ConfigImporter::importMultiple('oe_showcase_page', '/config/overrides/', $configs);
+}
