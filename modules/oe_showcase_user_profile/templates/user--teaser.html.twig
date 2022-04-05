@@ -15,13 +15,11 @@
 {{ pattern('card', {
   variant: 'search',
   title: _title,
-  content: {
-    '#type': 'html_tag',
-    '#tag': 'div',
-    '#attributes': {
-      class: 'text-muted',
-    },
-    '#value': _content_value,
+  meta: [
+    content.field_organization|field_value,
+    content.field_current_position|field_value,
+  ],
+  image: {
+    path: content.field_profile_image[0]['#markup'],
   },
-  image: content.field_profile_image[0],
 }) }}
