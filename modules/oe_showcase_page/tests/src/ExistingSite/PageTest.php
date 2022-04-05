@@ -162,6 +162,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[4][variant]',
       'inpage_navigation'
     );
+    $page->pressButton('Change variant');
 
     // Add a Rich text paragraph at the Content row.
     $page->pressButton('Add Rich text');
