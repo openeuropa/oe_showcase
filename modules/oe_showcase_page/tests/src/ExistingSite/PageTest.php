@@ -144,6 +144,36 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Listing item description for example 1'
     );
 
+    // Add a Banner paragraph.
+    $page->pressButton('Add Content row');
+
+    $page->selectFieldOption(
+      'field_body[4][variant]',
+      'inpage_navigation'
+    );
+
+    // Check the list of paragraphs for Content row.
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-rich-text-add-more');
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-list-item-block-add-more');
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-links-block-add-more');
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-quote-add-more');
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-social-media-follow-add-more');
+    $assert_session->elementExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-accordion-add-more');
+    $assert_session->elementNotExists('css', '#field-body-4-subform-field-oe-paragraphs-oe-contextual-navigation-add-more');
+
+    // Add a Rich text paragraph at the Content row.
+    $page->pressButton('Add Rich text');
+
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
+      'Example title rich text 1'
+    );
+
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
+      'Text description for rich text 1'
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -177,6 +207,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Listing item description');
     $assert_session->pageTextContains('Example 1 Page');
     $assert_session->pageTextContains('Listing item description for example 1');
+
+    // Assert Content row.
+    $assert_session->pageTextContains('Example title rich text 1');
+    $assert_session->pageTextContains('Text description for rich text 1');
   }
 
 }
