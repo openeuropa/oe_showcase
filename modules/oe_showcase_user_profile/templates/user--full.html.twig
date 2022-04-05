@@ -24,7 +24,7 @@
 {% macro description_list_section(group_label, group_content) %}
   <section class="my-3">
     {% set _items = [] %}
-    {% for _field_name, _field in group_content if _key|first != '#' and _field|field_value %}
+    {% for _field_name, _field in group_content if _field_name|first != '#' and _field|field_value %}
       {% set _value %}
         {{ _field|field_value|safe_join(', ') }}
       {% endset %}
