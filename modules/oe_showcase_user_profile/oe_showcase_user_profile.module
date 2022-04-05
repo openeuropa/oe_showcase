@@ -90,11 +90,6 @@ function oe_showcase_user_profile_preprocess_user__full(array &$variables): void
     return;
   }
   $variables['pattern_image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
-  // Get cache info from the render element instead of the image item.
-  // This assumes that the image field display is configured exactly as in
-  // config/install/core.entity_view_display.user.user.full.yml in this module.
-  // @todo Once OEL-1166 is fixed in oe_bootstrap_theme, get cache info directly
-  //   from the ImageValueObject, and hide the image field in field ui.
-  $cacheability = CacheableMetadata::createFromRenderArray($variables['elements']['field_profile_image'][0]);
-  $cacheability->applyTo($variables);
+  CacheableMetadata::createFromObject($variables['pattern_image'])
+    ->applyTo($variables);
 }
