@@ -8,7 +8,7 @@
 <article{{ attributes }}>
   {# @todo Remove the 'px-0' once OEL-1226 is fixed. #}
   {{ pattern('content_banner', {
-    image: pattern_image,
+    image: image,
     title: content.field_first_name|field_value|render ~ ' ' ~ content.field_last_name|field_value|render,
     meta: [
       content.group_professional_information.field_organization|field_value,

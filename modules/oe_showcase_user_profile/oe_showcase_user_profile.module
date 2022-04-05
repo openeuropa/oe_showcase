@@ -89,7 +89,7 @@ function oe_showcase_user_profile_preprocess_user__full(array &$variables): void
     // No profile image found, or no view access.
     return;
   }
-  $variables['pattern_image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
-  CacheableMetadata::createFromObject($variables['pattern_image'])
+  $variables['image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
+  CacheableMetadata::createFromObject($variables['image'])
     ->applyTo($variables);
 }
