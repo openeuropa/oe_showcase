@@ -5,7 +5,7 @@
  */
 #}
 {% set _title %}
-  <a class="text-underline-hover" href="{{ url }}">{{ label }}</a>
+  <a class="standalone" href="{{ url }}">{{ label }}</a>
 {% endset %}
 {% set _badges = [] %}
 {% for _item in content.field_category|field_value %}
