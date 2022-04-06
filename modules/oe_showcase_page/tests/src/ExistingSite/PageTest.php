@@ -248,7 +248,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Add Description list paragraph.
     $page->pressButton('Add Description list');
     $page->selectFieldOption(
-      'field_body[6][subform][oe_bt_orientation]',
+      'field_body[6][subform][oe_w_orientation]',
       'horizontal'
     );
     $page->fillField(
@@ -315,7 +315,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Facts and figures block.
     $assert_session->pageTextContains('Example Facts and Figures');
     $assert_session->pageTextContains('Read more');
-    $this->assertSession()->linkByHrefExists('http://read.more');
+    $assert_session->linkByHrefExists('http://read.more');
     $assert_session->pageTextContains('Fact 1 title');
     $assert_session->pageTextContains('Fact 1 subtitle');
     $assert_session->pageTextContains('Fact 1 description');
