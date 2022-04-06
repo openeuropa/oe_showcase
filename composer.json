@@ -7,6 +7,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.0",
+        "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.9",
         "drupal/allowed_formats": "^1.4",
         "drupal/better_exposed_filters": "^5.0",
@@ -20,9 +21,9 @@
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
+        "drupal/json_field": "^1.0@RC",
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
-        "drupal/json_field": "^1.0@RC",
         "drupal/purge_users": "dev-3.x",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
