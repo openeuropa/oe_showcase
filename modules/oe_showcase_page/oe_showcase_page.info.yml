@@ -18,7 +18,7 @@ dependencies:
   - oe_paragraphs:oe_paragraphs_social_feed
   - oe_paragraphs:oe_paragraphs_timeline
   - openeuropa:oe_webtools
-  - openeuropa:oe_bootstrap_theme_paragraphs
+  - openeuropa:oe_whitelabel_paragraphs
 
 config_devel:
   install:
