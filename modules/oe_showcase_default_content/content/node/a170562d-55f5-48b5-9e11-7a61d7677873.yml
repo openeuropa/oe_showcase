@@ -284,6 +284,9 @@ default:
           behavior_settings:
             -
               value: {  }
+          oe_paragraphs_variant:
+            -
+              value: default
           content_translation_source:
             -
               value: und
@@ -568,9 +571,6 @@ default:
           behavior_settings:
             -
               value: {  }
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -601,3 +601,309 @@ default:
           field_oe_timeline_expand:
             -
               value: 3
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 54585907-2af0-4d16-b83f-385b4036d6e8
+          bundle: oe_facts_figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1647944528
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_link:
+            -
+              uri: 'route:<nolink>'
+              title: 'Read more'
+              options: {  }
+          field_oe_paragraphs:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: a1075f34-263a-4e09-8104-c8876481e979
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944528
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: download
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Nunc condimentum sapien ut nibh finibus suscipit vitae at justo. Morbi quis odio faucibus, commodo tortor id, elementum libero.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Jira Tickets'
+                  field_oe_title:
+                    -
+                      value: '1529 JIRA Ticket'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 8b5e78f4-f85a-4cef-a94d-018c3437c625
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944751
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: search
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Turpis varius congue venenatis, erat dui feugiat felis.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Feature tickets'
+                  field_oe_title:
+                    -
+                      value: '337 Features'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: a7ec6e5d-5a41-4320-9e08-2c717186c822
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944788
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: facebook
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Cras vestibulum efficitur mi, quis porta tellus rutrum ut. Quisque at pulvinar sem.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Test tickets'
+                  field_oe_title:
+                    -
+                      value: '107 Tests'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 271e0d1e-b531-465a-b454-15ac602d699f
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944826
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: linkedin
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Aliquam lacinia diam eu sem malesuada, in interdum ante bibendum.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Test variants'
+                  field_oe_title:
+                    -
+                      value: '5670 Variants'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 350de078-cd54-4857-9114-c83c1ab971d7
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944855
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: twitter
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec lectus tortor.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Jira ticket'
+                  field_oe_title:
+                    -
+                      value: '345 Dev Ticket'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: c26ace8b-a79b-496f-8e6e-66127750a12d
+                  bundle: oe_fact
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1647944931
+                  behavior_settings:
+                    -
+                      value: {  }
+                  content_translation_source:
+                    -
+                      value: und
+                  content_translation_outdated:
+                    -
+                      value: false
+                  field_oe_icon:
+                    -
+                      value: camera
+                  field_oe_plain_text_long:
+                    -
+                      value: 'Sed efficitur bibendum rutrum. Nunc feugiat congue augue ac consectetur.'
+                  field_oe_subtitle:
+                    -
+                      value: 'Figma components'
+                  field_oe_title:
+                    -
+                      value: '43 Components'
+          field_oe_title:
+            -
+              value: 'Fact and figures'
+          oe_w_n_columns:
+            -
+              value: 3
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5633664f-2c3d-421c-89d1-147e1becb398
+          bundle: oe_description_list
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1648457626
+          behavior_settings:
+            -
+              value: {  }
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_oe_description_list_items:
+            -
+              term: Name
+              description: 'Rowan Leuthar'
+              format: plain_text
+            -
+              term: E-mail
+              description: test@domain.tld
+              format: plain_text
+            -
+              term: 'Phone number'
+              description: '+34 999 888 777'
+              format: plain_text
+            -
+              term: City
+              description: Brussels
+              format: plain_text
+            -
+              term: Message
+              description: 'Sed in libero ut nibh placerat accumsan. Vivamus quis mi. Sed lectus. Nullam tincidunt adipiscing enim. Nam eget dui.'
+              format: plain_text
+          field_oe_title:
+            -
+              value: 'Description List example'
+          oe_w_orientation:
+            -
+              value: horizontal

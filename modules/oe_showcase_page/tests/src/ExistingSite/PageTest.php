@@ -52,6 +52,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Chart',
         'Add Contact form',
         'Add Content row',
+        'Add Description list',
+        'Add Facts and figures',
         'Add Links block',
         'Add Listing item block',
         'Add Map',
@@ -175,6 +177,103 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Text description for rich text 1'
     );
 
+    // Add Facts and figures paragraph.
+    $page->pressButton('Add Facts and figures');
+    $page->fillField(
+      'field_body[5][subform][field_oe_title][0][value]',
+      'Example Facts and Figures'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_link][0][uri]',
+      'http://read.more'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_link][0][title]',
+      'Read more'
+    );
+
+    $page->selectFieldOption(
+      'field_body[5][subform][field_oe_paragraphs][0][subform][field_oe_icon]',
+      'download'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
+      'Fact 1 title'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][0][subform][field_oe_subtitle][0][value]',
+      'Fact 1 subtitle'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][0][subform][field_oe_plain_text_long][0][value]',
+      'Fact 1 description'
+    );
+
+    $page->pressButton('Add Fact');
+    $page->selectFieldOption(
+      'field_body[5][subform][field_oe_paragraphs][1][subform][field_oe_icon]',
+      'arrow-up'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
+      'Fact 2 title'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][1][subform][field_oe_subtitle][0][value]',
+      'Fact 2 subtitle'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][1][subform][field_oe_plain_text_long][0][value]',
+      'Fact 2 description'
+    );
+
+    $page->pressButton('Add Fact');
+    $page->selectFieldOption(
+     'field_body[5][subform][field_oe_paragraphs][2][subform][field_oe_icon]',
+     'arrow-down'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][2][subform][field_oe_title][0][value]',
+      'Fact 3 title'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][2][subform][field_oe_subtitle][0][value]',
+      'Fact 3 subtitle'
+    );
+    $page->fillField(
+      'field_body[5][subform][field_oe_paragraphs][2][subform][field_oe_plain_text_long][0][value]',
+      'Fact 3 description'
+    );
+
+    // Add Description list paragraph.
+    $page->pressButton('Add Description list');
+    $page->selectFieldOption(
+      'field_body[6][subform][oe_w_orientation]',
+      'horizontal'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_title][0][value]',
+      'Example Description list'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][0][term]',
+      'First term'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][0][description][value]',
+      'First term description'
+    );
+
+    $page->pressButton('field_body_6_subform_field_oe_description_list_items_add_more');
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][1][term]',
+      'Second term'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][1][description][value]',
+      'Second term description'
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -212,6 +311,27 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Content row.
     $assert_session->pageTextContains('Example title rich text 1');
     $assert_session->pageTextContains('Text description for rich text 1');
+
+    // Assert Facts and figures block.
+    $assert_session->pageTextContains('Example Facts and Figures');
+    $assert_session->pageTextContains('Read more');
+    $assert_session->linkByHrefExists('http://read.more');
+    $assert_session->pageTextContains('Fact 1 title');
+    $assert_session->pageTextContains('Fact 1 subtitle');
+    $assert_session->pageTextContains('Fact 1 description');
+    $assert_session->pageTextContains('Fact 2 title');
+    $assert_session->pageTextContains('Fact 2 subtitle');
+    $assert_session->pageTextContains('Fact 2 description');
+    $assert_session->pageTextContains('Fact 3 title');
+    $assert_session->pageTextContains('Fact 3 subtitle');
+    $assert_session->pageTextContains('Fact 3 description');
+
+    // Assert Description list.
+    $assert_session->pageTextContains('Example Description list');
+    $assert_session->pageTextContains('First term');
+    $assert_session->pageTextContains('First term description');
+    $assert_session->pageTextContains('Second term');
+    $assert_session->pageTextContains('Second term description');
   }
 
   /**
