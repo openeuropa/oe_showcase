@@ -853,7 +853,7 @@ default:
           field_oe_title:
             -
               value: 'Fact and figures'
-          oe_bt_n_columns:
+          oe_w_n_columns:
             -
               value: 3
     -
@@ -904,6 +904,6 @@ default:
           field_oe_title:
             -
               value: 'Description List example'
-          oe_bt_orientation:
+          oe_w_orientation:
             -
               value: horizontal
