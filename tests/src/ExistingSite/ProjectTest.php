@@ -23,6 +23,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
   protected function setUp() {
     parent::setUp();
 
+    // Create user, use editor role.
     $user = $this->createUser([]);
     $user->addRole('editor');
     $user->save();
