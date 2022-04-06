@@ -24,7 +24,6 @@ install:
   - node
   - oe_authentication
   - oe_bootstrap_theme_helper
-  - oe_bootstrap_theme_paragraphs
   - oe_content:oe_content_timeline_field
   - oe_contact_forms_honeypot
   - oe_corporate_blocks
@@ -52,6 +51,7 @@ install:
   - oe_whitelabel_starter_news
   - oe_whitelabel_starter_event
   - oe_whitelabel_multilingual
+  - oe_whitelabel_paragraphs
   - options
   - page_cache
   - path
