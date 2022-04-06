@@ -7,12 +7,14 @@ dependencies:
     - media.type.av_portal_photo
     - media.type.document
     - media.type.image
+    - node.type.oe_project
     - node.type.oe_sc_event
     - node.type.oe_sc_news
   module:
     - filter
     - media
     - node
+    - oe_content_entity_organisation
     - system
     - toolbar
 id: editor
@@ -27,28 +29,44 @@ permissions:
   - 'create av_portal_photo media'
   - 'create document media'
   - 'create image media'
+  - 'create oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'create oe_organisation oe_stakeholder corporate entity'
+  - 'create oe_project content'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'delete any document media'
+  - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
+  - 'delete oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'delete oe_organisation oe_stakeholder corporate entity'
+  - 'delete oe_project revisions'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
   - 'delete own av_portal_photo media'
   - 'delete own document media'
   - 'delete own image media'
+  - 'delete own oe_project content'
   - 'delete own oe_sc_event content'
   - 'delete own oe_sc_news content'
   - 'edit any document media'
+  - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
+  - 'edit oe_organisation oe_cx_project_stakeholder corporate entity'
+  - 'edit oe_organisation oe_stakeholder corporate entity'
   - 'edit own document media'
+  - 'edit own oe_project content'
   - 'edit own oe_sc_event content'
   - 'edit own oe_sc_news content'
+  - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
+  - 'view oe_project revisions'
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
   - 'view own unpublished content'
+  - 'view published oe_organisation'
   - 'view the administration theme'
+  - 'view unpublished oe_organisation'

@@ -17,15 +17,15 @@ install:
   - file
   - filter
   - image
-  - language
   - json_field
+  - language
   - menu_link_content
   - menu_ui
   - node
   - oe_authentication
   - oe_bootstrap_theme_helper
-  - oe_content:oe_content_timeline_field
   - oe_contact_forms_honeypot
+  - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
   - oe_corporate_countries
   - oe_corporate_countries_address
@@ -38,20 +38,21 @@ install:
   - oe_paragraphs_media
   - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
+  - oe_showcase_contact_forms
   - oe_showcase_default_content
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
   - oe_showcase_search
-  - oe_showcase_contact_forms
   - oe_showcase_user_profile
   - oe_webtools
+  - oe_whitelabel_extra_project
   - oe_whitelabel_helper
-  - oe_whitelabel_search
-  - oe_whitelabel_starter_news
-  - oe_whitelabel_starter_event
   - oe_whitelabel_multilingual
   - oe_whitelabel_paragraphs
+  - oe_whitelabel_search
+  - oe_whitelabel_starter_event
+  - oe_whitelabel_starter_news
   - options
   - page_cache
   - path
@@ -77,6 +78,13 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
+    - field.field.node.oe_project.body
+    - field.field.node.oe_project.oe_cx_achievements_and_milestone
+    - field.field.node.oe_project.oe_cx_impacts
+    - field.field.node.oe_project.oe_cx_objective
+    - field.field.node.oe_project.oe_project_results
+    - field.field.node.oe_project.oe_summary
+    - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
@@ -87,6 +95,7 @@ config_devel:
     - legal.settings
     - node.settings
     - oe_authentication.settings
+    - pathauto.pattern.project_url_alias_pattern
     - pathauto.settings
     - purge_users.settings
     - system.site
