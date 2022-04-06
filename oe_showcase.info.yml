@@ -50,12 +50,10 @@ install:
   - oe_whitelabel_extra_project
   - oe_whitelabel_helper
   - oe_whitelabel_multilingual
+  - oe_whitelabel_paragraphs
   - oe_whitelabel_search
   - oe_whitelabel_starter_event
   - oe_whitelabel_starter_news
-  - oe_whitelabel_extra_project
-  - oe_whitelabel_multilingual
-  - oe_whitelabel_paragraphs
   - options
   - page_cache
   - path
