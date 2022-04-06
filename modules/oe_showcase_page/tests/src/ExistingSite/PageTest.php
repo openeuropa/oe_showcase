@@ -5,6 +5,8 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase_page\ExistingSite;
 
 use Behat\Mink\Element\NodeElement;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
 /**
@@ -53,6 +55,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Contact form',
         'Add Content row',
         'Add Description list',
+        'Add Document',
         'Add Facts and figures',
         'Add Links block',
         'Add Listing item block',
@@ -153,6 +156,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $content_row = $assert_session->elementExists('css', 'div[data-drupal-selector="edit-field-body-4"]');
     $this->assertEqualsCanonicalizing([
       'Add Accordion',
+      'Add Document',
       'Add Links block',
       'Add Listing item block',
       'Add Quote',
@@ -274,6 +278,34 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Second term description'
     );
 
+    // Create a media to be referenced.
+    $file_uri = $this->container->get('file_system')->copy(
+      $this->container->get('extension.list.module')->getPath('oe_media') . '/tests/fixtures/sample.pdf',
+      'public://test.pdf'
+    );
+    $pdf = File::create(['uri' => $file_uri]);
+    $pdf->save();
+    $this->markEntityForCleanup($pdf);
+    $local_media = Media::create([
+      'bundle' => 'document',
+      'name' => 'Local PDF file',
+      'oe_media_file_type' => 'local',
+      'oe_media_file' => [
+        'target_id' => $pdf->id(),
+      ],
+    ]);
+    $local_media->save();
+    $this->markEntityForCleanup($local_media);
+
+    // Press the "Add document" button of the main reference field.
+    $assert_session
+      ->elementExists('css', 'div[data-drupal-selector="edit-field-body-add-more"]')
+      ->pressButton('Add Document');
+    $page->fillField(
+      'field_body[7][subform][field_oe_media][0][target_id]',
+      sprintf('Local PDF file (%s)', $local_media->id())
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -307,6 +339,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Listing item description');
     $assert_session->pageTextContains('Example 1 Page');
     $assert_session->pageTextContains('Listing item description for example 1');
+
+    $assert_session->pageTextContains('Local PDF file');
+    $assert_session->linkByHrefExists(\Drupal::service('file_url_generator')->generateAbsoluteString($file_uri));
 
     // Assert Content row.
     $assert_session->pageTextContains('Example title rich text 1');
