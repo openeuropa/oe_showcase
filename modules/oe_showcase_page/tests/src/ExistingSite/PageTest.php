@@ -245,6 +245,35 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Fact 3 description'
     );
 
+    // Add Description list paragraph.
+    $page->pressButton('Add Description list');
+    $page->selectFieldOption(
+      'field_body[6][subform][oe_bt_orientation]',
+      'horizontal'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_title][0][value]',
+      'Example Description list'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][0][term]',
+      'First term'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][0][description][value]',
+      'First term description'
+    );
+
+    $page->pressButton('field_body_6_subform_field_oe_description_list_items_add_more');
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][1][term]',
+      'Second term'
+    );
+    $page->fillField(
+      'field_body[6][subform][field_oe_description_list_items][1][description][value]',
+      'Second term description'
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -296,6 +325,13 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Fact 3 title');
     $assert_session->pageTextContains('Fact 3 subtitle');
     $assert_session->pageTextContains('Fact 3 description');
+
+    // Assert Description list.
+    $assert_session->pageTextContains('Example Description list');
+    $assert_session->pageTextContains('First term');
+    $assert_session->pageTextContains('First term description');
+    $assert_session->pageTextContains('Second term');
+    $assert_session->pageTextContains('Second term description');
   }
 
   /**
