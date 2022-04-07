@@ -10,7 +10,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - simple_rich_text
+      - rich_text
 id: node.oe_project.oe_cx_objective
 field_name: oe_cx_objective
 entity_type: node
