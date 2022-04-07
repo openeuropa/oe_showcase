@@ -8,6 +8,7 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\TestFileCreationTrait;
+use Drupal\views\Entity\View;
 
 /**
  * Class to test Project content type on existing site tests.
@@ -38,6 +39,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('media');
     $this->markEntityTypeForCleanup('file');
+    $this->markEntityTypeForCleanup('view');
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
@@ -165,6 +167,104 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Belgium');
     $assert_session->pageTextContains('Contribution to the budget');
     $assert_session->pageTextContains('€22,90');
+    $assert_session->pageTextContains('Project details');
+
+    $this->drupalLogin($this->createUser([], '', TRUE));
+    // Create a node, without project details.
+    $this->drupalGet('node/add/oe_project');
+    $page->fillField('Page title', 'Project page test w details');
+    $page->fillField('Teaser', 'Teaser text 2');
+    $page->fillField('Subject', 'financing (http://data.europa.eu/uxp/1000)');
+
+    // Participants.
+    $page->pressButton('Add new participant');
+    $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
+    $page->pressButton('Create participant');
+
+    // Lead contributors.
+    $page->pressButton('edit-oe-cx-lead-contributors-actions-ief-add');
+    $page->fillField('oe_cx_lead_contributors[form][0][name][0][value]', 'Lead contributors name');
+    $page->pressButton('Create organisation');
+    $page->pressButton('Save');
+
+    $this->drupalGet('project/project-page-test-w-details');
+    // Check Project details is not present when empty.
+    $assert_session->pageTextNotContains('Project details');
+    // Check the correct order.
+    $correct_order = [
+      1 => 'Lead contributors',
+      2 => 'Participants',
+    ];
+    foreach ($correct_order as $key => $value) {
+      $assert_session->elementContains('xpath', "(//ul[contains(@class, 'nav-pills')]//li[contains(@class, 'nav-item')])[" . $key . "]", $value);
+    }
+
+    // Create a project listing view page.
+    $this->createView();
+    $this->container->get('router.builder')->rebuildIfNeeded();
+    $this->drupalGet('/project-listing-page');
+    // 1st node contains the period.
+    $assert_session->elementExists('css', '.card-body:nth-child(1) .me-4-5');
+    // 2nd node doesn't contain any period, therefore no empty span.
+    $assert_session->elementNotExists('css', '.card-body:nth-child(2) .me-4-5');
+  }
+
+  /**
+   * Create a project listing page.
+   */
+  protected function createView(): void {
+    $view = View::create([
+      'id' => 'project_listing_page',
+      'base_table' => 'node_field_data',
+      'display' => [
+        'default' => [
+          'display_plugin' => 'default',
+          'id' => 'default',
+          'display_options' => [
+            'row' => [
+              'type' => 'entity:node',
+              'options' => [
+                'view_mode' => 'teaser',
+              ],
+            ],
+            'query' => [
+              'type' => 'views_query',
+            ],
+            'title' => 'Project listing',
+            'filters' => [
+              'status' => [
+                'id' => 'status',
+                'value' => '1',
+                'table' => 'node_field_data',
+                'field' => 'status',
+                'entity_type' => 'node',
+                'entity_field' => 'status',
+                'plugin_id' => 'boolean',
+              ],
+              'type' => [
+                'id' => 'type',
+                'value' => ['oe_project' => 'oe_project'],
+                'table' => 'node_field_data',
+                'field' => 'type',
+                'entity_type' => 'node',
+                'entity_field' => 'type',
+                'plugin_id' => 'bundle',
+              ],
+            ],
+          ],
+        ],
+        'page_1' => [
+          'id' => 'page_1',
+          'display_title' => 'Page',
+          'display_plugin' => 'page',
+          'position' => '1',
+          'display_options' => [
+            'path' => 'project-listing-page',
+          ],
+        ],
+      ],
+    ]);
+    $view->save();
   }
 
 }
