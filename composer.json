@@ -17,18 +17,18 @@
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/facets": "^1.8.0",
-        "drupal/facets_form": "1.x-dev",
+        "drupal/facets_form": "1.0.0-alpha2",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
         "drupal/json_field": "^1.0@RC",
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
-        "drupal/purge_users": "dev-3.x",
+        "drupal/purge_users": "dev-3.x#7a4dd2df",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
-        "drupal/user_field_anonymize": "1.x-dev",
-        "drupal/user_fields_visibility": "1.x-dev",
+        "drupal/user_field_anonymize": "1.x-dev#d5fc64ec",
+        "drupal/user_fields_visibility": "1.0.0-alpha1",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -41,7 +41,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
-        "openeuropa/oe_starter_content": "1.x-dev",
+        "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
         "openeuropa/oe_whitelabel": "1.0.0-alpha6"
     },
@@ -90,11 +90,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "patches": {
-            "drupal/paragraphs": {
-                "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
-            }
-        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
