@@ -5,20 +5,24 @@
  */
 #}
 {% set _title %}
-  <a class="text-underline-hover" href="{{ url }}">{{ label }}</a>
+  <a class="standalone" href="{{ url }}">{{ label }}</a>
 {% endset %}
+{% set _badges = [] %}
+{% for _item in content.field_category|field_value %}
+  {% set _badges = _badges|merge([{
+    label: _item,
+  }]) %}
+{% endfor %}
 {{ pattern('card', {
   variant: 'search',
   title: _title,
   text: content.body,
-  image: content.field_image[0],
-  badges: content.field_category,
-  content: {
-    '#type': 'html_tag',
-    '#tag': 'span',
-    '#attributes': {
-      class: 'text-muted text-nowrap me-4-5',
-    },
-    '#value': node.getCreatedTime|bcl_timeago,
-  }
+  image: {
+    path: image.src,
+    alt: image.alt,
+  },
+  badges: _badges,
+  meta: [
+    node.getCreatedTime|bcl_timeago,
+  ],
 }) }}

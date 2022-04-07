@@ -14,12 +14,10 @@ dependencies:
     - field.field.user.user.field_organization
     - field.field.user.user.field_profile_image
     - field.field.user.user.field_working_languages
-    - image.style.medium
   module:
     - address
     - datetime
     - field_group
-    - image
     - rdf_skos
     - text
     - user
@@ -34,7 +32,7 @@ third_party_settings:
       label: 'Personal information'
       parent_name: ''
       region: content
-      weight: 7
+      weight: 3
       format_type: html_element
       format_settings:
         classes: ''
@@ -58,7 +56,7 @@ third_party_settings:
       label: 'Professional information'
       parent_name: ''
       region: content
-      weight: 8
+      weight: 4
       format_type: html_element
       format_settings:
         classes: ''
@@ -84,7 +82,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_city_country:
     type: address_default
@@ -116,7 +114,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_gender:
     type: skos_concept_entity_reference_label
@@ -132,7 +130,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_nationality:
     type: skos_concept_entity_reference_label
@@ -150,15 +148,6 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_profile_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: medium
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_working_languages:
     type: skos_concept_entity_reference_label
     label: above
@@ -168,6 +157,7 @@ content:
     weight: 6
     region: content
 hidden:
+  field_profile_image: true
   langcode: true
   member_for: true
   search_api_excerpt: true
