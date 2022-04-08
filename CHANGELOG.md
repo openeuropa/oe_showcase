@@ -1,8 +1,16 @@
 # Change Log
 
+## [1.0.0-alpha2](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha2) (2022-04-08)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha1...1.0.0-alpha2)
+
+**Merged pull requests:**
+
+- OEL-1434: Update to alpha7 of oe\_whitelabel. [\#103](https://github.com/openeuropa/oe_showcase/pull/103) ([abel-santos-corral](https://github.com/abel-santos-corral))
+
 ## [1.0.0-alpha1](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha1) (2022-04-07)
 **Merged pull requests:**
 
+- Prepare release 1.0.0-alpha1 [\#101](https://github.com/openeuropa/oe_showcase/pull/101) ([abel-santos-corral](https://github.com/abel-santos-corral))
 - OEL-494: Allow to reference document paragraph. [\#100](https://github.com/openeuropa/oe_showcase/pull/100) ([brummbar](https://github.com/brummbar))
 - OEL-1255: Update showcase after paragraphs move to whitelabel. [\#99](https://github.com/openeuropa/oe_showcase/pull/99) ([donquixote](https://github.com/donquixote))
 - OEL-1159: Align templates with modified search variant of card pattern [\#98](https://github.com/openeuropa/oe_showcase/pull/98) ([donquixote](https://github.com/donquixote))
