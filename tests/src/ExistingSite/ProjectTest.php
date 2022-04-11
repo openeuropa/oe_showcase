@@ -176,6 +176,12 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Teaser', 'Teaser text 2');
     $page->fillField('Subject', 'financing (http://data.europa.eu/uxp/1000)');
 
+    // Assert rich text.
+    $assert_session->hiddenFieldValueEquals('oe_summary[0][format]', 'rich_text');
+    $assert_session->hiddenFieldValueEquals('oe_cx_objective[0][format]', 'rich_text');
+    $assert_session->hiddenFieldValueEquals('oe_cx_impacts[0][format]', 'rich_text');
+    $assert_session->hiddenFieldValueEquals('oe_cx_achievements_and_milestone[0][format]', 'rich_text');
+
     // Participants.
     $page->pressButton('Add new participant');
     $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
