@@ -5,6 +5,7 @@ dependencies:
     - field.storage.paragraph.field_oe_paragraphs
     - paragraphs.paragraphs_type.oe_accordion
     - paragraphs.paragraphs_type.oe_content_row
+    - paragraphs.paragraphs_type.oe_document
     - paragraphs.paragraphs_type.oe_links_block
     - paragraphs.paragraphs_type.oe_list_item_block
     - paragraphs.paragraphs_type.oe_quote
@@ -32,6 +33,7 @@ settings:
       oe_quote: oe_quote
       oe_social_media_follow: oe_social_media_follow
       oe_accordion: oe_accordion
+      oe_document: oe_document
     negate: 0
     target_bundles_drag_drop:
       contact_form:
@@ -60,7 +62,7 @@ settings:
         enabled: false
       oe_document:
         weight: 30
-        enabled: false
+        enabled: true
       oe_fact:
         weight: 31
         enabled: false
