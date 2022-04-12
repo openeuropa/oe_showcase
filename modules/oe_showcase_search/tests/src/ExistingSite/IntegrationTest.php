@@ -60,7 +60,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert->fieldExists('Category 5', $offcanvas);
 
     // Assert exposed sort widget.
-    $assert->fieldExists('Sort by');
+    $assert->fieldExists('Sort by', $this->getSearchTopRegion());
 
     $this->assertSearchResultsTitle(19);
     $this->assertActiveFilterBadges([]);
@@ -163,7 +163,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    *   Expected number of results to be reported in the title.
    */
   protected function assertSearchResultsTitle(int $expected_count): void {
-    $title = $this->assertSession()->elementExists('css', 'h4.mb-4');
+    $title = $this->getSearchTopRegion()->find('css', 'h4');
     $this->assertSame(
       sprintf('Search results (%s)', $expected_count),
       $title->getText());
@@ -176,14 +176,24 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    *   Expected badge labels.
    */
   protected function assertActiveFilterBadges(array $expected): void {
-    $badges_close_icons = $this->assertSession()
+    $badges = $this->getSearchTopRegion()
+      ->findAll('css', '.badge');
+    $this->assertElementsTexts($expected, $badges);
+  }
+
+  /**
+   * Gets the div element above the search results list.
+   *
+   * @return \Behat\Mink\Element\NodeElement
+   *   Element above the search results list.
+   */
+  protected function getSearchTopRegion(): NodeElement {
+    $element = $this->assertSession()
       ->elementExists('css', '#block-oe-whitelabel-main-page-content')
       ->getParent()
-      ->findAll('css', '.badge > .icon--close');
-    $badges = array_map(
-      static fn(NodeElement $item): NodeElement => $item->getParent(),
-      $badges_close_icons);
-    $this->assertElementsTexts($expected, $badges);
+      // Get the first child.
+      ->find('xpath', 'div');
+    return $element;
   }
 
   /**
