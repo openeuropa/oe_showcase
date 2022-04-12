@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase_search\ExistingSite;
 
+use Behat\Mink\Element\NodeElement;
 use Drupal\Core\Url;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 
@@ -19,126 +20,213 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // Assert the correct elements are in place.
+    // Visit the front page.
     $this->drupalGet(Url::fromRoute('<front>'));
+
+    // Assert that the site-wide search form exists.
     $search_form = $assert->elementExists('css', '#oe-whitelabel-search-form');
     $search_input = $search_form->findField('Search');
     $this->assertNotNull($search_input);
     $this->assertTrue($search_input->hasClass('form-autocomplete'));
     $this->assertTrue($search_input->hasClass('required'));
+
+    // Use the site-wide search form to search for 'Imputo'.
     $search_input->setValue('Imputo');
     $search_button = $search_form->find('css', '#submit');
     $this->assertNotNull($search_button);
     $search_button->click();
 
-    $view = $assert->elementExists('css', '.views-element-container');
-    $items = $view->findAll('css', '.card-title');
-    $this->assertCount(2, $items);
-    $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
-    $this->assertSame('Gemino Imputo', $items[1]->getText());
+    // Assert search results.
+    $this->assertSearchResultsTitle(2);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Imputo Neo Sagaciter',
+      'Gemino Imputo',
+    ]);
+    $this->assertPagerLinks([]);
 
+    // Go back to /search, to clear all filters.
     // @todo Use 'Clear' once OEL-1315 is resolved.
     $this->drupalGet('/search');
+
+    // Assert that filter facets exist in the sidebar.
     $offcanvas = $assert->elementExists('css', '#bcl-offcanvas');
     $title = $offcanvas->find('css', 'h4');
     $this->assertSame('Filter Options', $title->getText());
-    $assert->fieldExists('Category 1');
-    $assert->fieldExists('Category 2');
-    $assert->fieldExists('Category 3');
-    $assert->fieldExists('Category 4');
-    $assert->fieldExists('Category 5');
+    $assert->fieldExists('Category 1', $offcanvas);
+    $assert->fieldExists('Category 2', $offcanvas);
+    $assert->fieldExists('Category 3', $offcanvas);
+    $assert->fieldExists('Category 4', $offcanvas);
+    $assert->fieldExists('Category 5', $offcanvas);
 
-    $title = $assert->elementExists('css', 'h4.mb-4');
-    $this->assertSame('Search results (19)', $title->getText());
+    // Assert exposed sort widget.
     $assert->fieldExists('Sort by');
 
-    $items = $view->findAll('css', '.card-title');
-    $this->assertCount(5, $items);
-    $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
-    $this->assertSame('Distineo', $items[1]->getText());
-    $this->assertSame('Quae Vulputate', $items[2]->getText());
-    $this->assertSame('Abico Diam Jugis', $items[3]->getText());
-    $this->assertSame('Obruo', $items[4]->getText());
-
+    $this->assertSearchResultsTitle(19);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Imputo Neo Sagaciter',
+      'Distineo',
+      'Quae Vulputate',
+      'Abico Diam Jugis',
+      'Obruo',
+    ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
-    $pagination = $assert->elementExists('css', 'ul.pagination');
-    $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(5, $links);
-    $this->assertSame('1', $links[0]->getText());
-    $this->assertTrue($links[0]->hasClass('active'));
-    $this->assertSame('2', $links[1]->getText());
-    $this->assertSame('3', $links[2]->getText());
-    $this->assertSame('4', $links[3]->getText());
-    $this->assertSame('Next ›', $links[4]->getText());
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
 
-    // Assert using filters alters the result.
+    // Filter by category.
     $page->checkField('Category 2');
     $page->pressButton('Refine');
 
-    $title = $assert->elementExists('css', 'h4.mb-4');
-    $this->assertSame('Search results (8)', $title->getText());
-    $badge = $assert->elementExists('css', '.badge');
-    $this->assertSame('Category 2', $badge->getText());
-    $items = $view->findAll('css', '.card-title');
-    $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
-    $this->assertSame('Abico Diam Jugis', $items[1]->getText());
-    $this->assertSame('Voco', $items[2]->getText());
-    $this->assertSame('Comis Incassum', $items[3]->getText());
-    $this->assertSame('Appellatio Immitto', $items[4]->getText());
-    $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(3, $links);
+    $this->assertSearchResultsTitle(8);
+    $this->assertActiveFilterBadges(['Category 2']);
+    $this->assertSearchResults([
+      'Imputo Neo Sagaciter',
+      'Abico Diam Jugis',
+      'Voco',
+      'Comis Incassum',
+      'Appellatio Immitto',
+    ]);
+    $this->assertPagerLinks(['1', '2', 'Next ›']);
 
+    // Filter by date.
     $page->fillField('Date', '2021-08-01');
     $page->pressButton('Refine');
 
-    $title = $assert->elementExists('css', 'h4.mb-4');
-    $this->assertSame('Search results (1)', $title->getText());
-    // @todo Assert the second badge once OEL-662 is resolved.
-    $items = $view->findAll('css', '.card-title');
-    $this->assertSame('Imputo Neo Sagaciter', $items[0]->getText());
-    $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(0, $links);
+    $this->assertSearchResultsTitle(1);
+    // @todo Expect additional badges for the date once OEL-662 is resolved.
+    $this->assertActiveFilterBadges(['Category 2']);
+    $this->assertSearchResults(['Imputo Neo Sagaciter']);
+    $this->assertPagerLinks([]);
 
+    // Clear active filters.
     $page->clickLink('Clear');
-    $title = $assert->elementExists('css', 'h4.mb-4');
-    $this->assertSame('Search results (19)', $title->getText());
-    $items = $view->findAll('css', '.card-title');
-    $this->assertCount(5, $items);
-    $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(5, $links);
 
-    // Assert sorting changes order of items.
+    $this->assertSearchResultsTitle(19);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Imputo Neo Sagaciter',
+      'Distineo',
+      'Quae Vulputate',
+      'Abico Diam Jugis',
+      'Obruo',
+    ]);
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
+
+    // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
-    $items = $view->findAll('css', '.card-title');
-    $this->assertSame('Hendrerit', $items[0]->getText());
-    $this->assertSame('Mos', $items[1]->getText());
-    $this->assertSame('Camur Tego Vulputate', $items[2]->getText());
-    $this->assertSame('Gemino Imputo', $items[3]->getText());
-    $this->assertSame('Macto Neque Virtus', $items[4]->getText());
+    $this->assertSearchResultsTitle(19);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Hendrerit',
+      'Mos',
+      'Camur Tego Vulputate',
+      'Gemino Imputo',
+      'Macto Neque Virtus',
+    ]);
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
 
-    // Assert items after using pager.
+    // Visit the second page of search results.
     $page->clickLink('2');
-    $view = $assert->elementExists('css', '.views-element-container');
-    $items = $view->findAll('css', '.card-title');
-    $this->assertCount(5, $items);
-    $this->assertSame('Luctus Sit', $items[0]->getText());
-    $this->assertSame('Appellatio Immitto', $items[1]->getText());
-    $this->assertSame('Comis Incassum', $items[2]->getText());
-    $this->assertSame('Voco', $items[3]->getText());
-    $this->assertSame('Appellatio Camur', $items[4]->getText());
 
-    $pagination = $assert->elementExists('css', 'ul.pagination');
-    $links = $pagination->findAll('css', '.page-item');
-    $this->assertCount(6, $links);
-    $this->assertSame('‹ Previous', $links[0]->getText());
-    $this->assertSame('1', $links[1]->getText());
-    $this->assertSame('2', $links[2]->getText());
-    $this->assertTrue($links[2]->hasClass('active'));
-    $this->assertSame('3', $links[3]->getText());
-    $this->assertSame('4', $links[4]->getText());
-    $this->assertSame('Next ›', $links[5]->getText());
+    $this->assertSearchResultsTitle(19);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Luctus Sit',
+      'Appellatio Immitto',
+      'Comis Incassum',
+      'Voco',
+      'Appellatio Camur',
+    ]);
+    $this->assertPagerLinks(['‹ Previous', '1', '2', '3', '4', 'Next ›'], 2);
+  }
+
+  /**
+   * Asserts the title above the search results.
+   *
+   * @param int $expected_count
+   *   Expected number of results to be reported in the title.
+   */
+  protected function assertSearchResultsTitle(int $expected_count): void {
+    $title = $this->assertSession()->elementExists('css', 'h4.mb-4');
+    $this->assertSame(
+      sprintf('Search results (%s)', $expected_count),
+      $title->getText());
+  }
+
+  /**
+   * Asserts badges for active filters.
+   *
+   * @param string[] $expected
+   *   Expected badge labels.
+   */
+  protected function assertActiveFilterBadges(array $expected): void {
+    $badges_close_icons = $this->assertSession()
+      ->elementExists('css', '#block-oe-whitelabel-main-page-content')
+      ->getParent()
+      ->findAll('css', '.badge > .icon--close');
+    $badges = array_map(
+      static fn(NodeElement $item): NodeElement => $item->getParent(),
+      $badges_close_icons);
+    $this->assertElementsTexts($expected, $badges);
+  }
+
+  /**
+   * Asserts search result items.
+   *
+   * @param array $expected
+   *   Expected titles of search result items.
+   */
+  protected function assertSearchResults(array $expected): void {
+    $items = $this->assertSession()
+      ->elementExists('css', '.views-element-container')
+      ->findAll('css', '.card-title');
+    $this->assertElementsTexts($expected, $items);
+  }
+
+  /**
+   * Asserts link text on pager links.
+   *
+   * @param string[] $expected
+   *   Expected pager link texts.
+   * @param int $active_item_index
+   *   Index of a pager link with the 'active' class.
+   */
+  protected function assertPagerLinks(array $expected, int $active_item_index = 0): void {
+    if ($expected === []) {
+      $this->assertSession()
+        ->elementNotExists('css', 'ul.pagination');
+      return;
+    }
+    $links = $this->assertSession()
+      ->elementExists('css', 'ul.pagination')
+      ->findAll('css', '.page-item');
+    $this->assertElementsTexts($expected, $links);
+    $this->assertSame(
+      [$active_item_index],
+      array_keys(array_filter(
+        $links,
+        static fn(NodeElement $link): bool => $link->hasClass('active'),
+      )),
+      sprintf('Pager item %s is active, other items are not.', $active_item_index),
+    );
+  }
+
+  /**
+   * Asserts text contents for multiple elements at once.
+   *
+   * @param string[] $expected
+   *   Expected element texts.
+   * @param \Behat\Mink\Element\NodeElement[] $elements
+   *   Elements to compare.
+   */
+  protected function assertElementsTexts(array $expected, array $elements): void {
+    $this->assertSame($expected, array_map(
+      static fn(NodeElement $element): string => $element->getText(),
+      $elements,
+    ));
   }
 
 }
