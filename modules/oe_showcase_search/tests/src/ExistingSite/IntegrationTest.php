@@ -141,6 +141,19 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Appellatio Camur',
     ]);
     $this->assertPagerLinks(['‹ Previous', '1', '2', '3', '4', 'Next ›'], 2);
+
+    // Visit the last page.
+    $page->clickLink('4');
+
+    $this->assertSearchResultsTitle(19);
+    $this->assertActiveFilterBadges([]);
+    $this->assertSearchResults([
+      'Abico Diam Jugis',
+      'Quae Vulputate',
+      'Distineo',
+      'Imputo Neo Sagaciter',
+    ]);
+    $this->assertPagerLinks(['‹ Previous', '1', '2', '3', '4'], 4);
   }
 
   /**
