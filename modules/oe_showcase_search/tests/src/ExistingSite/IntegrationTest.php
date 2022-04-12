@@ -89,6 +89,22 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     $this->assertPagerLinks(['1', '2', 'Next ›']);
 
+    // Filter by another category.
+    $page->checkField('Category 3');
+    $page->pressButton('Refine');
+
+    // Only check some basics.
+    // Filters are combined with OR, therefore more results appear.
+    $this->assertSearchResultsTitle(12);
+    $this->assertActiveFilterBadges(['Category 2', 'Category 3']);
+
+    // Uncheck the other category.
+    $page->uncheckField('Category 3');
+    $page->pressButton('Refine');
+
+    $this->assertSearchResultsTitle(8);
+    $this->assertActiveFilterBadges(['Category 2']);
+
     // Filter by date.
     $page->fillField('Date', '2021-08-01');
     $page->pressButton('Refine');
