@@ -167,7 +167,11 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('€22,90');
     $assert_session->pageTextContains('Project details');
 
+    // Project teaser does contain the period.
+    $this->drupalGet('node/');
+    $assert_session->elementExists('css', '.card-body:nth-child(1) .text-muted');
     $this->drupalLogin($this->createUser([], '', TRUE));
+
     // Edit the node, remove project details.
     $node = $this->getNodeByTitle('Project page test');
     $this->drupalGet('node/' . $node->id() . '/edit');
@@ -203,11 +207,9 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     }
 
     $this->drupalGet('/node');
-
-    // 1st node contains the period.
-    $assert_session->elementExists('css', '.card-body:nth-child(1) .text-muted');
-    // 2nd node doesn't contain any period, therefore no empty span.
-    $assert_session->elementNotExists('css', '.card-body:nth-child(2) .text-muted');
+    dump($page->getHtml());
+    // Node doesn't contain any period, therefore no empty span.
+    $assert_session->elementNotExists('css', '.card-body:nth-child(1) .text-muted');
   }
 
 }
