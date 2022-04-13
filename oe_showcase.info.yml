@@ -48,6 +48,7 @@ install:
   - oe_webtools
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_whitelabel_list_pages
   - oe_whitelabel_starter_news
   - oe_whitelabel_starter_event
   - oe_whitelabel_multilingual
@@ -77,6 +78,8 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
+    - facets.facet.oe_sc_news_title
+    - facets.facet_source.list_facet_source__node__oe_sc_news
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
@@ -89,6 +92,8 @@ config_devel:
     - oe_authentication.settings
     - pathauto.settings
     - purge_users.settings
+    - search_api.index.oe_whitelabel_list_page_index_test
+    - search_api.server.oe_whitelabel_list_page_search_server_test
     - system.site
     - system.theme
     - user.role.anonymous

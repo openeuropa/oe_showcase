@@ -16,7 +16,8 @@
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
-        "drupal/facets": "^1.8.0",
+        "drupal/extra_field": "^2.1",
+        "drupal/facets": "1.8.0 as 2.0.1",
         "drupal/facets_form": "1.0.0-alpha2",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
@@ -38,12 +39,13 @@
         "openeuropa/oe_content": "^2.8.0",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
+        "openeuropa/oe_list_pages": "^0.16",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "1.0.0-alpha7"
+        "openeuropa/oe_whitelabel": "dev-OEL-1246"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -93,9 +95,6 @@
         "patches": {
             "openeuropa/oe_bootstrap_theme": {
                 "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-alpha8..1.x.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-alpha7..1.x.diff"
             }
         },
         "artifacts": {
