@@ -11,6 +11,8 @@ use Drupal\Tests\TestFileCreationTrait;
 
 /**
  * Class to test Project content type on existing site tests.
+ *
+ * @todo Improve the labels to not use the machine names.
  */
 class ProjectTest extends ShowcaseExistingSiteTestBase {
 
@@ -81,7 +83,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('oe_project_funding_programme[0][target_id]', 'Anti Fraud Information System (AFIS) (http://publications.europa.eu/resource/authority/eu-programme/AFIS2020)');
     $page->fillField('Reference', '3425353');
     $page->pressButton('Add new organisation');
-    // @todo Improve the field locator.
     $page->fillField('oe_project_coordinators[form][0][name][0][value]', 'Coordinator 1');
     $page->pressButton('Create organisation');
 
@@ -93,7 +94,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Participants.
     $page->pressButton('Add new participant');
-    // @todo Improve the field locator.
     $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
     $page->fillField('Acronym', 'Developer participant acronym');
     $page->fillField('Country', 'BE');
@@ -102,7 +102,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Lead contributors.
     $page->pressButton('edit-oe-cx-lead-contributors-actions-ief-add');
-    // @todo Improve the field locator.
     $page->fillField('oe_cx_lead_contributors[form][0][name][0][value]', 'Lead contributors name');
     $page->fillField('Acronym', 'Lead contributors acronym');
     $page->fillField('Country', 'BE');
@@ -113,6 +112,26 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     // Assert values as anonymous user.
     $this->drupalLogout();
     $this->drupalGet('project/project-page-test');
+
+    // Assert the in-page nav.
+    $project_details_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(1)');
+    $summary_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(2)');
+    $objective_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(3)');
+    $impacts_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(4)');
+    $lead_contributors_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(5)');
+    $participants_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(6)');
+    $project_details = $project_details_wrapper->getText();
+    $summary = $summary_wrapper->getText();
+    $objective = $objective_wrapper->getText();
+    $impacts = $impacts_wrapper->getText();
+    $lead_contributors = $lead_contributors_wrapper->getText();
+    $participants = $participants_wrapper->getText();
+    $this->assertEquals('Project details', $project_details);
+    $this->assertEquals('Summary', $summary);
+    $this->assertEquals('Objective', $objective);
+    $this->assertEquals('Impacts', $impacts);
+    $this->assertEquals('Lead contributors', $lead_contributors);
+    $this->assertEquals('Participants', $participants);
 
     // Assert teaser.
     $assert_session->pageTextContains('Project page test');
@@ -167,7 +186,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('€22,90');
     $assert_session->pageTextContains('Project details');
 
-    // Project teaser does contain the period.
+    // Check meta is present.
     $this->drupalGet('node/');
     $assert_session->elementExists('css', '.card-body:nth-child(1) .text-muted');
     $this->drupalLogin($this->createUser([], '', TRUE));
@@ -194,21 +213,26 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('project/project-page-test');
     // Check Project details is not present when empty.
     $assert_session->pageTextNotContains('Project details');
-    // Check the correct order.
-    $correct_order = [
-      1 => 'Summary',
-      2 => 'Objective',
-      3 => 'Impacts',
-      4 => 'Lead contributors',
-      5 => 'Participants',
-    ];
-    foreach ($correct_order as $key => $value) {
-      $assert_session->elementContains('xpath', "(//ul[contains(@class, 'nav-pills')]//li[contains(@class, 'nav-item')])[" . $key . "]", $value);
-    }
+
+    // Assert the in-page nav.
+    $summary_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(1)');
+    $objective_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(2)');
+    $impacts_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(3)');
+    $lead_contributors_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(4)');
+    $participants_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(5)');
+    $summary = $summary_wrapper->getText();
+    $objective = $objective_wrapper->getText();
+    $impacts = $impacts_wrapper->getText();
+    $lead_contributors = $lead_contributors_wrapper->getText();
+    $participants = $participants_wrapper->getText();
+    $this->assertEquals('Summary', $summary);
+    $this->assertEquals('Objective', $objective);
+    $this->assertEquals('Impacts', $impacts);
+    $this->assertEquals('Lead contributors', $lead_contributors);
+    $this->assertEquals('Participants', $participants);
 
     $this->drupalGet('/node');
-    dump($page->getHtml());
-    // Node doesn't contain any period, therefore no empty span.
+    // Check meta is not present.
     $assert_session->elementNotExists('css', '.card-body:nth-child(1) .text-muted');
   }
 
