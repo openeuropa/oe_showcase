@@ -44,13 +44,18 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
 
     // Create some test nodes.
+    $day = 00;
     for ($i = 0; $i < 12; $i++) {
       $date = new DrupalDateTime('20-10-2020');
       $values = [
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is content number ' . $i,
+        'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
+        'oe_publication_date' => [
+          'value' => '2022-04-' . $day++,
+        ],
         'created' => $date->getTimestamp(),
       ];
       $node = Node::create($values);
@@ -70,6 +75,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/' . $node->id() . '/edit');
     $page->checkField('Override default exposed filters');
     $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oe_sc_news_title]');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][publication_date]');
     $page->pressButton('Save');
 
     $this->drupalGet('node/' . $node->id());
@@ -83,6 +89,8 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $assert_session->elementTextEquals('css', 'button[data-bs-toggle="offcanvas"]', 'Filters');
     // Assert Filters.
     $assert_session->elementExists('css', 'input[name="oe_sc_news_title"]');
+    $assert_session->elementExists('css', 'select[name="publication_date_op"]');
+    $assert_session->elementExists('css', 'input[name="publication_date_first_date_wrapper[publication_date_first_date][date]"]');
     $assert_session->elementExists('css', 'input[data-drupal-selector="edit-submit"]');
     $assert_session->elementExists('css', 'input[data-drupal-selector="edit-reset"]');
 
@@ -98,6 +106,10 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $assert_session->elementsCount('css', 'ul.pagination > li.page-item', 3);
 
     // Assert search.
+    $page->fillField('Publication date', 'gt');
+    $page->fillField('Date', '2022-04-04');
+    $page->pressButton('Search');
+    $assert_session->elementContains('css', 'h4.mb-0', '(7)');
     $page->fillField('Title', 'News number 8');
     $page->pressButton('Search');
     $assert_session->elementContains('css', 'h4.mb-0', '(1)');
