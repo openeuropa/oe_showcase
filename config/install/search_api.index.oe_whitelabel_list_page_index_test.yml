@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.oe_publication_date
     - search_api.server.oe_whitelabel_list_page_search_server_test
   module:
     - node
@@ -11,6 +12,14 @@ name: oe_whitelabel_list_page_index_test
 description: ''
 read_only: false
 field_settings:
+  oe_publication_date:
+    label: 'Publication date'
+    datasource_id: 'entity:node'
+    property_path: oe_publication_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_publication_date
   title:
     label: Title
     datasource_id: 'entity:node'
