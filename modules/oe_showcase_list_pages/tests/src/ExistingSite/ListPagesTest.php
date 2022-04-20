@@ -13,7 +13,7 @@ use Drupal\user\Entity\Role;
 /**
  * Class to test List pages content type on existing site tests.
  */
-class IntegrationTest extends ShowcaseExistingSiteTestBase {
+class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
   use ExampleContentTrait;
 
