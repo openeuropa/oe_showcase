@@ -39,6 +39,7 @@ install:
   - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
   - oe_showcase_default_content
+  - oe_showcase_list_pages
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
@@ -78,9 +79,6 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
-    - facets.facet.oe_sc_news_title
-    - facets.facet.publication_date
-    - facets.facet_source.list_facet_source__node__oe_sc_news
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
