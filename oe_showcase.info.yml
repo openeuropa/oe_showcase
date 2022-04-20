@@ -91,8 +91,6 @@ config_devel:
     - oe_authentication.settings
     - pathauto.settings
     - purge_users.settings
-    - search_api.index.oe_whitelabel_list_page_index_test
-    - search_api.server.oe_whitelabel_list_page_search_server_test
     - system.site
     - system.theme
     - user.role.anonymous
