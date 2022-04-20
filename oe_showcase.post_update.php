@@ -28,6 +28,7 @@ function oe_showcase_post_update_10001(&$sandbox) {
 
     if ($block->getTheme() === 'oe_whitelabel') {
       $block->setRegion($region);
+      $block->enable();
       $block->save();
     }
   }
