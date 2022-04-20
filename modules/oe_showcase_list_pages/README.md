@@ -6,21 +6,32 @@ and server for the search.
 
 ## Setting up bundles and filters
 
-By default when enabling oe_list_pages the news bundle is enabled by default, title and publication date are enabled filters.
+To create list pages enable the oe_list_pages module:
+```
+drush en oe_list_pages
+```
+By default when enabling oe_list_pages the news bundle as well as the title and publication date filters are available.
 
-To add new bundles you should:
-* Go to configuration -> search API.
+### Create list pages:
+* Go to add/oe_list_page.
+* Enter a title to the list page.
+* Click on ```List Page``` link to collapse the available configuration.
+* Select Content on the ```Source entity type```.
+* Select the bundle on ```Source bundle```.
+* Check ```Override default exposed filters``` and select the desired exposed filters you may as well set default values for these filters.
+
+### Add new bundles you should:
+* Go to ```config/search/search_api```.
 * Add new index.
-* Select the desired bundle.
-* Click on save and add fields.
-* Add the desired fields.
+* Check Content on ```Datasources```.
+* Select the desired bundle(s).
+* Click on Save.
+* Click on the tab fields to add the fields do be indexed.
 * Click on save.
 
-To set up new filters:
-Filters are facets on search API module, to create new facets do the following:
-* Go to config facets.
-* Click on add facets.
+### Set up new filters:
+Filters are facets on search API module. To create new facets you should:
+* Go to ```admin/config/search/facets```.
+* Click on ```+Add facet```.
 * Select the source and the fields added previously.
 * Click on save.
-
-Then you will find your bundles and facets when you go to add/oe_list_page.
