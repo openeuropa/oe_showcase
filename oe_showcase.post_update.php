@@ -12,8 +12,9 @@ use Drupal\block\Entity\Block;
 /**
  * Set the updated regions of the oe_whitelabel navigation blocks.
  */
-function oe_showcase_post_update_10001(&$sandbox) {
+function oe_showcase_post_update_00001(&$sandbox) {
   $blocks = [
+    'oe_whitelabel_branding' => 'header_branding',
     'oe_whitelabel_eulogin' => 'header_top',
     'oe_whitelabel_language_switcher' => 'header_top',
     'oe_whitelabel_local_actions' => 'highlighted',
@@ -25,11 +26,8 @@ function oe_showcase_post_update_10001(&$sandbox) {
 
   foreach ($blocks as $block_id => $region) {
     $block = Block::load($block_id);
-
-    if ($block->getTheme() === 'oe_whitelabel') {
-      $block->setRegion($region);
-      $block->enable();
-      $block->save();
-    }
+    $block->setRegion($region);
+    $block->enable();
+    $block->save();
   }
 }
