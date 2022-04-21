@@ -55,7 +55,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     }
 
     // Index content.
-    $this->indexItems('oe_list_page_index');
+    $this->indexItems('oe_list_pages_index');
 
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', 'News list page');

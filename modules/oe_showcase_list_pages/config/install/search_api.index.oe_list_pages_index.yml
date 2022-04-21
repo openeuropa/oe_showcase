@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_publication_date
-    - search_api.server.oe_list_page_search_server
+    - search_api.server.oe_list_pages_search_server
   module:
     - node
     - search_api
-id: oe_list_page_index
-name: List page index
+id: oe_list_pages_index
+name: List pages index
 description: ''
 read_only: false
 field_settings:
@@ -57,4 +57,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: oe_list_page_search_server
+server: oe_list_pages_search_server
