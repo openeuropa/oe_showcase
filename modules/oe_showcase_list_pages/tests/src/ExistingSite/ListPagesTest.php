@@ -2,16 +2,16 @@
 
 declare(strict_types = 1);
 
-use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+namespace Drupal\Tests\oe_showcase_list_pages\ExistingSite;
 
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
-use Drupal\user\Entity\Role;
 
 /**
- * Class to test List pages content type on existing site tests.
+ * Tests list pages.
  */
 class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
@@ -23,12 +23,9 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   protected function setUp() {
     parent::setUp();
 
-    // Create admin user.
-    $role = Role::load($this->createRole([]));
-    $role->setIsAdmin(TRUE);
-    $role->save();
+    // Create editor user.
     $user = $this->createUser([]);
-    $user->addRole($role->id());
+    $user->addRole('editor');
     $user->save();
     $this->drupalLogin($user);
   }
@@ -58,7 +55,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     }
 
     // Index content.
-    $this->indexItems('oe_whitelabel_list_page_index_test');
+    $this->indexItems('oe_list_page_index');
 
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', 'News list page');
@@ -76,17 +73,17 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/' . $node->id());
 
     // Assert that the filter form exists.
-    $search_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
-    $title_input = $search_form->findField('Title');
-    $publication_date_input = $search_form->findField('Publication date');
-    $search_button = $search_form->find('css', '#edit-submit');
+    $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $title_input = $filter_form->findField('Title');
+    $publication_date_input = $filter_form->findField('Publication date');
+    $search_button = $filter_form->find('css', '#edit-submit');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
     $this->assertNotNull($publication_date_input);
 
-    // Use the site-wide search for filter news created after 4th april 2022.
+    // Filter results by date.
     $publication_date_input->setValue('gt');
-    $date_input = $search_form->findField('Date');
+    $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
     $this->assertSearchResultsTitle(8);
@@ -100,7 +97,8 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'News number 10',
       'News number 11',
     ]);
-    // Use the site-wide search for filter news with specific title.
+
+    // Filter results by title.
     $title_input->setValue('News number 8');
     $search_button->click();
     $this->assertSearchResultsTitle(1);
@@ -110,25 +108,13 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Gets the div element above the search results list.
-   *
-   * @return \Behat\Mink\Element\NodeElement
-   *   Element above the search results list.
-   */
-  protected function getSearchTopRegion(): NodeElement {
-    $element = $this->assertSession()
-      ->elementExists('css', 'div.col-xxl-8');
-    return $element;
-  }
-
-  /**
    * Asserts the title above the search results.
    *
    * @param int $expected_count
    *   Expected number of results to be reported in the title.
    */
   protected function assertSearchResultsTitle(int $expected_count): void {
-    $title = $this->getSearchTopRegion()->find('css', 'h4.mb-0');
+    $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
     $this->assertSame(
       sprintf('News list page (%s)', $expected_count),
       $title->getText());
