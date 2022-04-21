@@ -5,10 +5,10 @@ This module uses [Open Europa Listing Page](https://github.com/openeuropa/oe_lis
 and server for the search.
 
 ## Create a list page and setting up bundles and filters
-By default enables oe_list_pages, the news bundle as well as the title and publication date filters are available.
+By default this module enables oe_list_pages module, the "news" bundle as well as the fields "title" and "publication date" filters.
 
 ### Create list pages
-* Go to add/oe_list_page.
+* Go to `node/add/oe_list_page`.
 * Enter a title to the list page.
 * Expand the "List Page" section in the right panel.
 * Select the bundle on "Source bundle".
@@ -16,7 +16,7 @@ By default enables oe_list_pages, the news bundle as well as the title and publi
 
 ### To set up new bundles
 
-* Go to `config/search/search_api`.
+* Go to `config/search/search-api`.
 * Add new index.
 * Check Content on "Datasources".
 * Select the desired bundle(s).
@@ -26,7 +26,7 @@ By default enables oe_list_pages, the news bundle as well as the title and publi
 
 ### Set up new filters
 Filters are facets on search API module. To create new facets you should:
-* Go to "admin/config/search/facets".
+* Go to `admin/config/search/facets`.
 * Click on "+Add facet".
 * Select the source and the fields added previously.
 * Click on save.
