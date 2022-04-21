@@ -3,12 +3,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_publication_date
-    - search_api.server.oe_whitelabel_list_page_search_server_test
+    - search_api.server.oe_list_page_search_server
   module:
     - node
     - search_api
-id: oe_whitelabel_list_page_index_test
-name: oe_whitelabel_list_page_index_test
+id: oe_list_page_index
+name: List page index
 description: ''
 read_only: false
 field_settings:
@@ -57,4 +57,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: oe_whitelabel_list_page_search_server_test
+server: oe_list_page_search_server

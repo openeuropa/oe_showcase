@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - search_api_db
-id: oe_whitelabel_list_page_search_server_test
-name: oe_whitelabel_list_page_search_server_test
+id: oe_list_page_search_server
+name: List page server
 description: ''
 backend: search_api_db
 backend_config:
