@@ -14,6 +14,4 @@ declare(strict_types = 1);
  */
 function oe_showcase_post_update_10001(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_list_pages']);
-  // Invalidate kernel container to make site info service available.
-  \Drupal::service('kernel')->invalidateContainer();
 }
