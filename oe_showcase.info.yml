@@ -39,6 +39,7 @@ install:
   - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
   - oe_showcase_default_content
+  - oe_showcase_list_pages
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
@@ -48,6 +49,7 @@ install:
   - oe_webtools
   - oe_whitelabel_helper
   - oe_whitelabel_search
+  - oe_whitelabel_list_pages
   - oe_whitelabel_starter_news
   - oe_whitelabel_starter_event
   - oe_whitelabel_multilingual

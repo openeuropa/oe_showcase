@@ -1,0 +1,16 @@
+name: OpenEuropa Showcase list pages
+type: module
+description: Provides a demo for a list pages feature.
+core_version_requirement: ^9.2
+package: OpenEuropa Showcase
+dependencies:
+  - oe_whitelabel:oe_whitelabel_list_pages
+  - oe_content:oe_content
+
+config_devel:
+  install:
+    - facets.facet.oe_sc_news_title
+    - facets.facet.publication_date
+    - facets.facet_source.list_facet_source__node__oe_sc_news
+    - search_api.index.oe_list_pages_index
+    - search_api.server.oe_list_pages_search_server
