@@ -14,7 +14,11 @@ class SmokeTest extends ShowcaseExistingSiteTestBase {
    */
   public function testWebsiteIsUp(): void {
     $this->drupalGet('<front>');
-    $this->assertSession()->statusCodeEquals(200);
+    $assert_session = $this->assertSession();
+    $assert_session->statusCodeEquals(200);
+    // Assert only one Block social share and that is inside the content region.
+    $assert_session->elementsCount('css', 'div#block-showcase-socialshare', 1);
+    $assert_session->elementExists('xpath', '//div[@class="container mt-5"]/*//div[@id="block-showcase-socialshare"]');
   }
 
 }
