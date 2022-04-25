@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - oe_webtools_social_share
-    - system
   theme:
     - oe_whitelabel
 id: showcase_socialshare
@@ -18,7 +18,12 @@ settings:
   label_display: '0'
   provider: oe_webtools_social_share
 visibility:
-  request_path:
-    id: request_path
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    pages: '<front>'
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      oe_sc_event: oe_sc_event
+      oe_sc_news: oe_sc_news
+      oe_showcase_page: oe_showcase_page
