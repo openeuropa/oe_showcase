@@ -31,3 +31,10 @@ function oe_showcase_post_update_00001(&$sandbox) {
     $block->save();
   }
 }
+
+/**
+ * Enable OE Webtools Social Share component.
+ */
+function oe_showcase_post_update_00002(&$sandbox) {
+  \Drupal::service('module_installer')->install(['oe_webtools_social_share']);
+}
