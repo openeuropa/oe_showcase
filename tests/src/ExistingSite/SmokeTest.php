@@ -15,6 +15,9 @@ class SmokeTest extends ShowcaseExistingSiteTestBase {
   public function testWebsiteIsUp(): void {
     $this->drupalGet('<front>');
     $this->assertSession()->statusCodeEquals(200);
+    // Assert Cookie consent script is present.
+    $cck = $this->assertSession()->elementExists('css', 'script[type="application/json"]');
+    $this->assertEquals('{"utility":"cck"}', $cck->getText());
   }
 
 }
