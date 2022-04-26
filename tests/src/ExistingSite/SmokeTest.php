@@ -14,8 +14,7 @@ class SmokeTest extends ShowcaseExistingSiteTestBase {
    */
   public function testWebsiteIsUp(): void {
     $this->drupalGet('<front>');
-    $assert_session = $this->assertSession();
-    $assert_session->statusCodeEquals(200);
+    $this->assertSession()->statusCodeEquals(200);
   }
 
 }
