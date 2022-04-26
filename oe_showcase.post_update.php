@@ -33,9 +33,12 @@ function oe_showcase_post_update_00001(&$sandbox) {
 }
 
 /**
- * Enable OE Webtools Social Share & Cookie Consent component.
+ * Enable OE Webtools Social share, Cookie consent and Page feedback components.
  */
 function oe_showcase_post_update_00002(&$sandbox) {
-  \Drupal::service('module_installer')->install(['oe_webtools_social_share']);
-  \Drupal::service('module_installer')->install(['oe_webtools_cookie_consent']);
+  \Drupal::service('module_installer')->install([
+    'oe_webtools_social_share',
+    'oe_webtools_cookie_consent',
+    'oe_webtools_page_feedback',
+  ]);
 }
