@@ -12,7 +12,7 @@ name: 'List pages index'
 description: ''
 read_only: false
 field_settings:
-  publication_date:
+  oe_publication_date:
     label: 'Publication date'
     datasource_id: 'entity:node'
     property_path: oe_publication_date
