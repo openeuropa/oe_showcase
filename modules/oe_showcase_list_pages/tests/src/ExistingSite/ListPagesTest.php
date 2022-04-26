@@ -57,7 +57,21 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
-    $this->drupalGet('list-pages/news');
+    $this->drupalGet('node/add/oe_list_page');
+    $page->fillField('Title', 'News list page');
+    $page->fillField('Source entity type', 'node');
+    $page->fillField('Source bundle', 'oe_sc_news');
+    $page->pressButton('Save');
+
+    $node = $this->getNodeByTitle('News list page');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $page->checkField('Override default exposed filters');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oe_sc_news_title]');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][publication_date]');
+    $page->pressButton('Save');
+
+    $this->drupalGet('node/' . $node->id());
+
     // Assert that the filter form exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $title_input = $filter_form->findField('News title');
@@ -102,7 +116,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   protected function assertSearchResultsTitle(int $expected_count): void {
     $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
     $this->assertSame(
-      sprintf('Demo listing news (%s)', $expected_count),
+      sprintf('News list page (%s)', $expected_count),
       $title->getText());
   }
 
