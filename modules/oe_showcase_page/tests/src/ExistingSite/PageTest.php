@@ -368,8 +368,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Second term');
     $assert_session->pageTextContains('Second term description');
 
-    // Assert Social Share block.
-    $assert_session->elementExists('xpath', '//div[@class="container mt-5"]/*//div[contains(., "Share this page") and @id="block-showcase-socialshare"]');
+    $this->assertSocialShareBlock();
   }
 
   /**

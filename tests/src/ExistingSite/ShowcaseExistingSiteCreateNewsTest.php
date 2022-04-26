@@ -91,8 +91,7 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
 
-    // Assert Social Share block.
-    $assert_session->elementExists('xpath', '//div[@class="container mt-5"]/*//div[contains(., "Share this page") and @id="block-showcase-socialshare"]');
+    $this->assertSocialShareBlock();
   }
 
 }
