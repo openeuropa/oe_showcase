@@ -66,8 +66,8 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $node = $this->getNodeByTitle('News list page');
     $this->drupalGet('node/' . $node->id() . '/edit');
     $page->checkField('Override default exposed filters');
-    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oe_sc_news_title]');
-    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][publication_date]');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_news__title]');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_news__publication_date]');
     $page->pressButton('Save');
 
     $this->drupalGet('node/' . $node->id());
