@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies: {  }
 id: oelp_oe_sc_news__title
-name: 'News title'
+name: oelp_oe_sc_news__title
 weight: 0
 min_count: 1
 url_alias: oelp_oe_sc_news__title
 facet_source_id: 'list_facet_source:node:oe_sc_news'
-field_identifier: oelp_oe_sc_news__title
+field_identifier: title
 query_operator: or
 hard_limit: 0
 exclude: false

@@ -12,19 +12,19 @@ name: 'List pages index'
 description: ''
 read_only: false
 field_settings:
-  oelp_oe_sc_news__publication_date:
-    label: 'News publication date'
+  publication_date:
+    label: 'Publication date'
     datasource_id: 'entity:node'
     property_path: oe_publication_date
     type: date
     dependencies:
       config:
         - field.storage.node.oe_publication_date
-  oelp_oe_sc_news__title:
-    label: 'News title'
+  title:
+    label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: text
+    type: string
     dependencies:
       module:
         - node
@@ -47,7 +47,7 @@ processor_settings:
       preprocess_query: -20
     all_fields: false
     fields:
-      - oelp_oe_sc_news__title
+      - title
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

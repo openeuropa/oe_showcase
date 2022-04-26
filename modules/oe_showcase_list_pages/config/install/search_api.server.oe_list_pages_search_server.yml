@@ -4,7 +4,7 @@ dependencies:
   module:
     - search_api_db
 id: oe_list_pages_search_server
-name: List pages server
+name: 'List pages server'
 description: ''
 backend: search_api_db
 backend_config:

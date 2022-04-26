@@ -7,7 +7,7 @@ weight: 0
 min_count: 1
 url_alias: oelp_oe_sc_news__publication_date
 facet_source_id: 'list_facet_source:node:oe_sc_news'
-field_identifier: oelp_oe_sc_news__publication_date
+field_identifier: publication_date
 query_operator: or
 hard_limit: 0
 exclude: false
