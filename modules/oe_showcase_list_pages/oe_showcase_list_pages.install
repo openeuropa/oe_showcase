@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase List Pages install file.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_list_pages_install($is_syncing) {
+  if ($is_syncing) {
+    return;
+  }
+
+  // The default_content fails to export the emr file values, so we do it here.
+  $list_page = Node::create([
+    'type'        => 'oe_list_page',
+    'title'       => 'Demo listing news',
+  ]);
+
+  /** @var \Drupal\emr\Entity\EntityMetaInterface $list_page_entity_meta */
+  $list_page_entity_meta = $list_page->get('emr_entity_metas')->getEntityMeta('oe_list_page');
+  /** @var \Drupal\oe_list_pages\ListPageWrapper $list_page_entity_meta_wrapper */
+  $list_page_entity_meta_wrapper = $list_page_entity_meta->getWrapper();
+  $list_page_entity_meta_wrapper->setSource('node', 'oe_sc_news');
+  $list_page_entity_meta_wrapper->setConfiguration([
+    'override_exposed_filters' => 1,
+    'exposed_filters' => [
+      'oelp_oe_sc_news__publication_date' => 'oelp_oe_sc_news__publication_date',
+      'oelp_oe_sc_news__title' => 'oelp_oe_sc_news__title',
+    ],
+    'preset_filters' => [],
+    'limit' => 10,
+    'sort' => [],
+  ]);
+  $list_page->get('emr_entity_metas')->attach($list_page_entity_meta);
+  $list_page->set('path', '/list-pages/news');
+  $list_page->save();
+}

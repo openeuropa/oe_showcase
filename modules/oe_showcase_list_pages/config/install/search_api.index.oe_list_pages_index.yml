@@ -8,20 +8,20 @@ dependencies:
     - node
     - search_api
 id: oe_list_pages_index
-name: List pages index
+name: 'List pages index'
 description: ''
 read_only: false
 field_settings:
-  oe_publication_date:
-    label: 'Publication date'
+  oelp_oe_sc_news__publication_date:
+    label: 'News publication date'
     datasource_id: 'entity:node'
     property_path: oe_publication_date
     type: date
     dependencies:
       config:
         - field.storage.node.oe_publication_date
-  title:
-    label: Title
+  oelp_oe_sc_news__title:
+    label: 'News title'
     datasource_id: 'entity:node'
     property_path: title
     type: text
@@ -47,7 +47,7 @@ processor_settings:
       preprocess_query: -20
     all_fields: false
     fields:
-      - title
+      - oelp_oe_sc_news__title
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

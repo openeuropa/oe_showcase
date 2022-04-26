@@ -9,8 +9,8 @@ dependencies:
 
 config_devel:
   install:
-    - facets.facet.oe_sc_news_title
-    - facets.facet.publication_date
+    - facets.facet.oelp_oe_sc_news__title
+    - facets.facet.oelp_oe_sc_news__publication_date
     - facets.facet_source.list_facet_source__node__oe_sc_news
     - search_api.index.oe_list_pages_index
     - search_api.server.oe_list_pages_search_server
