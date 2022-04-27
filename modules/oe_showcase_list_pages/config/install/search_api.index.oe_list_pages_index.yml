@@ -8,7 +8,7 @@ dependencies:
     - node
     - search_api
 id: oe_list_pages_index
-name: List pages index
+name: 'List pages index'
 description: ''
 read_only: false
 field_settings:
