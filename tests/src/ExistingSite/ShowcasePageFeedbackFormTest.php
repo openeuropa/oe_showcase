@@ -11,7 +11,7 @@ use weitzman\DrupalTestTraits\ExistingSiteBase;
 /**
  * Tests the Page feedback form block.
  */
-class PageFeedbackFormTest extends ExistingSiteBase {
+class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
 
   use AuthenticationTrait;
   use ConfigurationBackupTrait;
