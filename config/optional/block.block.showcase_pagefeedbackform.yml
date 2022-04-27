@@ -7,8 +7,8 @@ dependencies:
     - oe_whitelabel
 id: showcase_pagefeedbackform
 theme: oe_whitelabel
-region: content
-weight: 0
+region: footer
+weight: -1
 provider: null
 plugin: oe_webtools_page_feedback_form
 settings:
