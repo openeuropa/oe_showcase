@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
-use Drupal\Component\Serialization\Json;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
 use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
@@ -77,12 +76,9 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
    * Asserts Cookie Consent block.
    */
   protected function assertCookieConsentBlock(): void {
-    $head_content = $this->cssSelect('head')[0];
+    $page = $this->getSession()->getPage();
     $this->assertSession()->elementExists('css', 'script[type="application/json"]');
-    $cookie_consent_config = [
-      'utility' => 'cck',
-    ];
-    $this->assertStringContainsString(Json::encode($cookie_consent_config), $head_content->getHtml());
+    $this->assertStringContainsString('<script type="application/json">{"utility":"cck"}</script>', $page->getHtml());
   }
 
 }
