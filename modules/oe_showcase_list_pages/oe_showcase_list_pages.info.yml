@@ -6,6 +6,8 @@ package: OpenEuropa Showcase
 dependencies:
   - oe_whitelabel:oe_whitelabel_list_pages
   - oe_content:oe_content
+  - oe_starter_content:oe_starter_content_news
+  - oe_starter_content:oe_starter_content_event
 
 config_devel:
   install:
