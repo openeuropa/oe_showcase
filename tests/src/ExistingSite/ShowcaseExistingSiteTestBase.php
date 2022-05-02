@@ -73,12 +73,4 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
     $this->assertStringContainsString(Json::encode($social_share_config), $main_content->getHtml());
   }
 
-  /**
-   * Asserts Cookie Consent block.
-   */
-  protected function assertCookieConsent(): void {
-    $this->assertSession()->elementExists('css', 'script[type="application/json"]');
-    $this->assertStringContainsString('<script type="application/json">{"utility":"cck"}</script>', $this->getSession()->getPage()->getHtml());
-  }
-
 }

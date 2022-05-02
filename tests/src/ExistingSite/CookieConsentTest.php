@@ -23,4 +23,12 @@ class CookieConsentTest extends ShowcaseExistingSiteTestBase {
     $this->assertCookieConsent();
   }
 
+  /**
+   * Asserts Cookie Consent block.
+   */
+  private function assertCookieConsent(): void {
+    $this->assertSession()->elementExists('css', 'script[type="application/json"]');
+    $this->assertStringContainsString('<script type="application/json">{"utility":"cck"}</script>', $this->getSession()->getPage()->getHtml());
+  }
+
 }
