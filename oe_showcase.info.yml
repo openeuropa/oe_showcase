@@ -17,15 +17,15 @@ install:
   - file
   - filter
   - image
-  - language
   - json_field
+  - language
   - menu_link_content
   - menu_ui
   - node
   - oe_authentication
   - oe_bootstrap_theme_helper
-  - oe_content:oe_content_timeline_field
   - oe_contact_forms_honeypot
+  - oe_content:oe_content_timeline_field
   - oe_corporate_blocks
   - oe_corporate_countries
   - oe_corporate_countries_address
@@ -38,29 +38,30 @@ install:
   - oe_paragraphs_media
   - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
+  - oe_showcase_contact_forms
   - oe_showcase_default_content
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
   - oe_showcase_search
-  - oe_showcase_contact_forms
   - oe_showcase_user_profile
   - oe_webtools
   - oe_webtools_cookie_consent
   - oe_webtools_social_share
   - oe_webtools_page_feedback
   - oe_whitelabel_helper
-  - oe_whitelabel_search
-  - oe_whitelabel_starter_news
-  - oe_whitelabel_starter_event
   - oe_whitelabel_multilingual
   - oe_whitelabel_paragraphs
+  - oe_whitelabel_search
+  - oe_whitelabel_starter_event
+  - oe_whitelabel_starter_news
   - options
   - page_cache
   - path
   - pathauto
   - rdf_skos
   - rdf_skos_language_mapping
+  - roleassign
   - taxonomy
   - toolbar
   - ui_patterns
@@ -92,12 +93,14 @@ config_devel:
     - oe_authentication.settings
     - pathauto.settings
     - purge_users.settings
+    - roleassign.settings
     - system.site
     - system.theme
     - user.role.anonymous
     - user.role.authenticated
     - user.role.configure_page_feedback_form.yml
     - user.role.editor
+    - user.role.manage_users
     - user.settings
     - user_field_anonymize.settings
   optional:
