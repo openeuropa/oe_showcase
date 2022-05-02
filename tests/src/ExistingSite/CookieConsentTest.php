@@ -10,17 +10,17 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 class CookieConsentTest extends ShowcaseExistingSiteTestBase {
 
   /**
-   * Asserts Cookie Consent enabled.
+   * Asserts Cookie Consent.
    */
   public function testCookieConsent(): void {
     $this->drupalGet('<front>');
-    $this->assertCookieConsentEnabled();
+    $this->assertCookieConsent();
 
     $this->drupalGet('node');
-    $this->assertCookieConsentEnabled();
+    $this->assertCookieConsent();
 
     $this->drupalGet('node/1');
-    $this->assertCookieConsentEnabled();
+    $this->assertCookieConsent();
   }
 
 }
