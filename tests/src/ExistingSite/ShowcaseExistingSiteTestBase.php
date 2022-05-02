@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
 use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
