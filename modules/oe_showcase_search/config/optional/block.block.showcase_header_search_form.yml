@@ -3,34 +3,35 @@ status: true
 dependencies:
   module:
     - oe_whitelabel_search
+    - system
   theme:
     - oe_whitelabel
-id: oe_whitelabel_search_form
+id: showcase_header_search_form
 theme: oe_whitelabel
-region: navigation_right
+region: header
 weight: 0
 provider: null
 plugin: whitelabel_search_block
 settings:
   id: whitelabel_search_block
-  label: 'Whitelabel Search Block'
-  label_display: '0'
+  label: 'Showcase Header Search Block'
+  label_display: visible
   provider: oe_whitelabel_search
   form:
     action: search
   input:
     name: search_api_fulltext
     label: Search
-    classes: null
+    classes: ''
     placeholder: Search
   button:
-    classes: null
+    classes: ''
   view_options:
-    enable_autocomplete: true
-    id: showcase_search
-    display: showcase_search_page
+    enable_autocomplete: false
+    id: ''
+    display: ''
 visibility:
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: "/search\r\n/search/*"
