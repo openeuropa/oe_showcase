@@ -75,10 +75,9 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
   /**
    * Asserts Cookie Consent block.
    */
-  protected function assertCookieConsentBlock(): void {
-    $page = $this->getSession()->getPage();
+  protected function assertCookieConsentEnabled(): void {
     $this->assertSession()->elementExists('css', 'script[type="application/json"]');
-    $this->assertStringContainsString('<script type="application/json">{"utility":"cck"}</script>', $page->getHtml());
+    $this->assertStringContainsString('<script type="application/json">{"utility":"cck"}</script>', $this->getSession()->getPage()->getHtml());
   }
 
 }
