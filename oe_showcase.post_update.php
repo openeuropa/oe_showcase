@@ -45,3 +45,18 @@ function oe_showcase_post_update_00002(&$sandbox) {
 
   ConfigImporter::importSingle('module', 'oe_showcase', '/config/post_updates/00002_webtools_components', 'user.role.configure_page_feedback_form');
 }
+
+/**
+ * Import the Manage users role.
+ */
+function oe_showcase_post_update_00003(&$sandbox) {
+  \Drupal::service('module_installer')->install(['roleassign']);
+  \Drupal::configFactory()->getEditable('user.settings')
+    ->set('register', 'visitors_admin_approval')
+    ->save();
+  $configs = [
+    'roleassign.settings',
+    'user.role.manage_users',
+  ];
+  ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00003_manage_users', $configs);
+}
