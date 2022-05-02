@@ -31,7 +31,6 @@ class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
 
     $this->disableForcedLogin();
     $this->backupSimpleConfig('oe_webtools_page_feedback.settings');
-    $this->languageManager = $this->container->get('language_manager');
   }
 
   /**
@@ -82,7 +81,7 @@ class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
     // inside footer region.
     $page_feedback_selector = '//footer[contains(concat(\' \', normalize-space(@class), \' \'), \' bcl-footer \')]/parent::div[1]/preceding-sibling::div[1]';
     $page_feedback = $this->getSession()->getPage()->find('xpath', $page_feedback_selector);
-    $this->assertEquals('block-showcase-pagefeedbackform', $page_feedback->getAttribute('id'));
+    $this->assertSession()->elementExists('css', '#block-showcase-pagefeedbackform + #block-oe-whitelabel-neutral-footer');
 
     // Disable the block and assert the block is not rendered.
     $this->drupalLogin($user);
