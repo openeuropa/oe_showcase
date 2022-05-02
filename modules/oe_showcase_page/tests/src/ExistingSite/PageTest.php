@@ -367,6 +367,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('First term description');
     $assert_session->pageTextContains('Second term');
     $assert_session->pageTextContains('Second term description');
+
+    $this->assertSocialShareBlock();
   }
 
   /**
