@@ -122,7 +122,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertSearchResultsTitle('News', 8);
+    $this->assertSearchResultsTitle('News list page', 8);
     $this->assertSearchResults([
       'News number 4',
       'News number 5',
@@ -137,7 +137,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter the News results by title.
     $title_input->setValue('News number 8');
     $search_button->click();
-    $this->assertSearchResultsTitle('News', 1);
+    $this->assertSearchResultsTitle('News list page', 1);
     $this->assertSearchResults([
       'News number 8',
     ]);
@@ -145,7 +145,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Assert only News nodes are part of the result.
     $title_input->setValue('Event example');
     $search_button->click();
-    $this->assertSearchResultsTitle('News', 0);
+    $this->assertSearchResultsTitle('News list page', 0);
 
     // Create an Event listing page.
     $this->drupalGet('node/add/oe_list_page');
@@ -182,7 +182,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-03');
     $search_button->click();
-    $this->assertSearchResultsTitle('Event', 1);
+    $this->assertSearchResultsTitle('Event list page', 1);
     $this->assertSearchResults([
       'Event example',
     ]);
@@ -190,7 +190,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter Event results by title.
     $title_input->setValue('Event');
     $search_button->click();
-    $this->assertSearchResultsTitle('Event', 1);
+    $this->assertSearchResultsTitle('Event list page', 1);
     $this->assertSearchResults([
       'Event example',
     ]);
@@ -198,21 +198,21 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Assert only Event nodes are part of the result.
     $title_input->setValue('News');
     $search_button->click();
-    $this->assertSearchResultsTitle('Event', 0);
+    $this->assertSearchResultsTitle('Event list page', 0);
   }
 
   /**
    * Asserts the title above the search results.
    *
-   * @param string $listing_page_content
-   *   Expected List page content type title.
+   * @param string $list_page_title
+   *   Title of the list page node.
    * @param int $expected_count
    *   Expected number of results to be reported in the title.
    */
-  protected function assertSearchResultsTitle(string $listing_page_content, int $expected_count): void {
+  protected function assertSearchResultsTitle(string $list_page_title, int $expected_count): void {
     $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
     $this->assertSame(
-      sprintf('%s list page (%s)', $listing_page_content, $expected_count),
+      sprintf('%s (%s)', $list_page_title, $expected_count),
       $title->getText());
   }
 
