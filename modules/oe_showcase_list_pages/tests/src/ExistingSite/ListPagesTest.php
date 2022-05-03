@@ -54,20 +54,22 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       $node->save();
     }
 
-    // Create one Event test node.
-    $values = [
-      'title' => 'Event example',
-      'type' => 'oe_sc_event',
-      'body' => 'This is an Event content number 1',
-      'language' => 'en',
-      'status' => NodeInterface::PUBLISHED,
-      'oe_sc_event_dates' => [
-        'value' => '2022-04-04T02:00:00',
-        'end_value' => '2022-04-04T05:00:00',
-      ],
-    ];
-    $node = Node::create($values);
-    $node->save();
+    // Create some Events test nodes.
+    for ($i = 0; $i < 12; $i++) {
+      $values = [
+        'title' => 'Event number ' . $i,
+        'type' => 'oe_sc_event',
+        'body' => 'This is an Event content number ' . $i,
+        'language' => 'en',
+        'status' => NodeInterface::PUBLISHED,
+        'oe_sc_event_dates' => [
+          'value' => sprintf('2022-04-%02dT02:00:00', $i + 1),
+          'end_value' => sprintf('2022-04-%02dT05:00:00', $i + 2),
+        ],
+      ];
+      $node = Node::create($values);
+      $node->save();
+    }
 
     // Index content.
     $this->indexItems('oe_list_pages_index');
@@ -163,9 +165,24 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalGet('node/' . $node->id());
 
-    // Assert that the unique Event item is displayed.
+    // Assert that only Event items are displayed.
     $this->assertSearchResults([
-      'Event example',
+      'Event number 0',
+      'Event number 1',
+      'Event number 2',
+      'Event number 3',
+      'Event number 4',
+      'Event number 5',
+      'Event number 6',
+      'Event number 7',
+      'Event number 8',
+      'Event number 9',
+    ]);
+    $pager = $page->find('css', 'ul.pagination > li:nth-child(2) > a');
+    $pager->click();
+    $this->assertSearchResults([
+      'Event number 10',
+      'Event number 11',
     ]);
 
     // Assert that the filter form for Events exists.
@@ -180,23 +197,30 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter results by date.
     $event_date_input->setValue('gt');
     $date_input = $filter_form->findField('Date');
-    $date_input->setValue('2022-04-03');
+    $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertSearchResultsTitle('Event list page', 1);
+    $this->assertSearchResultsTitle('Event list page', 8);
     $this->assertSearchResults([
-      'Event example',
+      'Event number 4',
+      'Event number 5',
+      'Event number 6',
+      'Event number 7',
+      'Event number 8',
+      'Event number 9',
+      'Event number 10',
+      'Event number 11',
     ]);
 
     // Filter Event results by title.
-    $title_input->setValue('Event');
+    $title_input->setValue('Event number 8',);
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 1);
     $this->assertSearchResults([
-      'Event example',
+      'Event number 8',
     ]);
 
     // Assert only Event nodes are part of the result.
-    $title_input->setValue('News');
+    $title_input->setValue('News number 1');
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 0);
   }
