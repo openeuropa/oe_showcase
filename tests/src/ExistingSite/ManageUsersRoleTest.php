@@ -6,6 +6,9 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
+
+use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
+use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 use weitzman\DrupalTestTraits\ExistingSiteBase;
 
@@ -16,6 +19,7 @@ class ManageUsersRoleTest extends ExistingSiteBase {
 
   use AuthenticationTrait;
   use ConfigurationBackupTrait;
+  use EntityCleanupTrait;
 
   /**
    * {@inheritdoc}
@@ -61,18 +65,19 @@ class ManageUsersRoleTest extends ExistingSiteBase {
 
     // Assure users with the "Manage users" role can assign
     // a limited set of roles.
-    $roles = user_role_names(FALSE);
-    $config = \Drupal::config('roleassign.settings');
-    $assignable_roles = array_intersect_key(
-      $roles, array_filter($config->get('roleassign_roles')));
-    $this->assertCount(1, $assignable_roles);
+    $this->drupalGet('admin/people/create/cas-bulk');
+    $assertions->elementTextContains('css', 'div#edit-roles', 'Editor');
+    $assertions->elementTextNotContains('css', 'div#edit-roles',
+      'Manage users');
 
     // Assure the manager can assign the Editor role.
     $this->drupalGet('admin/people');
-    $page->selectFieldOption('edit-action', 'user_add_role_action.editor');
+    $page->selectFieldOption('edit-action',
+      'user_add_role_action.editor');
     $page->checkField('edit-user-bulk-form-0');
     $page->pressButton('Apply to selected items');
-    $assertions->pageTextContains('Add the Editor role to the selected user(s) was applied to 1 item.');
+    $assertions->pageTextContains('Add the Editor role to the selected user(s)'
+      . ' was applied to 1 item.');
     $user = User::load($user->id());
     $this->assertTrue(in_array('editor', $user->getRoles()));
 
@@ -88,6 +93,30 @@ class ManageUsersRoleTest extends ExistingSiteBase {
     $assertions->linkNotExists('Role assign');
     $this->drupalGet('admin/people/roleassign');
     $assertions->pageTextContains('Access denied');
+
+    // Assert user bulk operation are not present.
+    $this->drupalGet('admin/people');
+    $assertions->optionNotExists('Action', 'Add the Manage users role to the'
+      . ' selected user(s)');
+    $assertions->optionNotExists('Action', 'Remove the Manage users role from'
+      . ' the selected user(s)');
+
+    // Assert lock permissions.
+    $user_role = Role::load('manage_users');
+    $user_role->grantPermission('administer permissions');
+    $user_role->save();
+    $this->drupalGet('admin/people/permissions');
+    $assertions->pageTextContains('Role management is disabled in OE Showcase.'
+      . ' Roles and associated permissions are only changeable by users with'
+      . ' Manage users role.');
+
+    // Assert new user needs to be approved upon registration.
+    // Create a "authenticated" user.
+    $authenticated_user = User::create();
+    $authenticated_user->setUsername('authenticated_user')
+      ->save();
+    $this->assertTrue($authenticated_user->isBlocked());
+    $authenticated_user->delete();
   }
 
 }
