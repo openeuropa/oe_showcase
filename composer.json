@@ -25,7 +25,7 @@
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
         "drupal/purge_users": "dev-3.x#7a4dd2df",
-        "drupal/roleassign": "1.x-dev@dev",
+        "drupal/roleassign": "^1.0@beta",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/user_field_anonymize": "1.x-dev#d5fc64ec",
