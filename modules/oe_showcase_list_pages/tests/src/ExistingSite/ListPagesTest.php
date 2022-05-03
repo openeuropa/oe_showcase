@@ -41,7 +41,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
 
     // Create some News test nodes.
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 12; $i++) {
       $values = [
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
@@ -101,6 +101,12 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'News number 8',
       'News number 9',
     ]);
+    $pager = $page->find('css', 'ul.pagination > li:nth-child(2) > a');
+    $pager->click();
+    $this->assertSearchResults([
+      'News number 10',
+      'News number 11',
+    ]);
 
     // Assert that the filter form for News exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
@@ -116,7 +122,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertSearchResultsTitle('News', 6);
+    $this->assertSearchResultsTitle('News', 8);
     $this->assertSearchResults([
       'News number 4',
       'News number 5',
@@ -124,6 +130,8 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'News number 7',
       'News number 8',
       'News number 9',
+      'News number 10',
+      'News number 11',
     ]);
 
     // Filter the News results by title.
