@@ -21,3 +21,7 @@ regions:
   content_top: 'Content top'
   content: 'Content'
   footer: 'Footer'
+
+config_devel:
+  install:
+    - oe_showcase_theme.settings
