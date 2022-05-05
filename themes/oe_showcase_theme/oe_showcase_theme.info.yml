@@ -1,0 +1,23 @@
+name: OpenEuropa Showcase Theme
+description: The OpenEuropa Showcase Theme.
+screenshot: screenshot.png
+type: theme
+base theme: oe_whitelabel
+core_version_requirement: ^8.9 || ^9.1
+
+# Even though the regions are the same as in oe_whitelabel, they must still be
+# specified explicitly. Otherwise, Drupal would fill in defaults from
+# ThemeExtensionList::$defaults['regions'].
+regions:
+  header_branding: 'Header branding'
+  header_top: 'Header top'
+  navigation_left: 'Navigation left'
+  navigation_right: 'Navigation right'
+  hero: 'Hero (full width)'
+  header: 'Header'
+  breadcrumbs: 'Breadcrumbs'
+  highlighted: 'Highlighted'
+  sidebar_left:  'Sidebar'
+  content_top: 'Content top'
+  content: 'Content'
+  footer: 'Footer'
