@@ -82,6 +82,7 @@ themes:
   - seven
   - oe_bootstrap_theme
   - oe_whitelabel
+  - oe_showcase_theme
 
 config_devel:
   install:
