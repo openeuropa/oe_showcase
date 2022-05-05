@@ -50,6 +50,7 @@
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-dev": "^9.2",
+        "drupal/remote_stream_wrapper": "1.5",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
@@ -61,6 +62,7 @@
         "oomphinc/composer-installers-extender is required to use drupal/jquery_ui_touch_punch module.",
         "npm-asset/jquery-ui-touch-punch is required for BEF to work in mobile.",
         "openeuropa/oe_content is required for the 'timeline_field' field type.",
+        "Explicit fixed version for drupal/remote_stream_wrapper until new release of openeuropa/media_avportal.",
         "Explicit requirement for phpmd/phpmd due to PHP 8.0 compatibility."
     ],
     "scripts": {
