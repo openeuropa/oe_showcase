@@ -6,11 +6,15 @@ package: OpenEuropa Showcase
 dependencies:
   - oe_whitelabel:oe_whitelabel_list_pages
   - oe_content:oe_content
+  - oe_starter_content:oe_starter_content_event
+  - oe_starter_content:oe_starter_content_news
 
 config_devel:
   install:
-    - facets.facet.oelp_oe_sc_news__title
+    - facets.facet.oelp_oe_sc_event__oe_sc_event_dates
+    - facets.facet.oelp_oe_sc_event__title
     - facets.facet.oelp_oe_sc_news__oe_publication_date
+    - facets.facet.oelp_oe_sc_news__title
     - facets.facet_source.list_facet_source__node__oe_sc_news
     - search_api.index.oe_list_pages_index
     - search_api.server.oe_list_pages_search_server

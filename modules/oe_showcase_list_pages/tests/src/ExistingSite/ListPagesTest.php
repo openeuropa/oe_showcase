@@ -40,12 +40,12 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // Create some test nodes.
+    // Create some News test nodes.
     for ($i = 0; $i < 12; $i++) {
       $values = [
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
-        'body' => 'This is content number ' . $i,
+        'body' => 'This is a News content number ' . $i,
         'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
@@ -54,9 +54,27 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       $node->save();
     }
 
+    // Create some Events test nodes.
+    for ($i = 0; $i < 12; $i++) {
+      $values = [
+        'title' => 'Event number ' . $i,
+        'type' => 'oe_sc_event',
+        'body' => 'This is an Event content number ' . $i,
+        'language' => 'en',
+        'status' => NodeInterface::PUBLISHED,
+        'oe_sc_event_dates' => [
+          'value' => sprintf('2022-04-%02dT02:00:00', $i + 1),
+          'end_value' => sprintf('2022-04-%02dT05:00:00', $i + 2),
+        ],
+      ];
+      $node = Node::create($values);
+      $node->save();
+    }
+
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
+    // Create the News listing page.
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', 'News list page');
     $page->fillField('Source entity type', 'node');
@@ -72,7 +90,27 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalGet('node/' . $node->id());
 
-    // Assert that the filter form exists.
+    // Assert that only News items are displayed.
+    $this->assertSearchResults([
+      'News number 0',
+      'News number 1',
+      'News number 2',
+      'News number 3',
+      'News number 4',
+      'News number 5',
+      'News number 6',
+      'News number 7',
+      'News number 8',
+      'News number 9',
+    ]);
+    $pager = $page->find('css', 'ul.pagination > li:nth-child(2) > a');
+    $pager->click();
+    $this->assertSearchResults([
+      'News number 10',
+      'News number 11',
+    ]);
+
+    // Assert that the filter form for News exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $title_input = $filter_form->findField('Title');
     $publication_date_input = $filter_form->findField('Publication date');
@@ -81,12 +119,12 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->assertNotNull($title_input);
     $this->assertNotNull($publication_date_input);
 
-    // Filter results by date.
+    // Filter the News results by date.
     $publication_date_input->setValue('gt');
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertSearchResultsTitle(8);
+    $this->assertSearchResultsTitle('News list page', 8);
     $this->assertSearchResults([
       'News number 4',
       'News number 5',
@@ -98,25 +136,107 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'News number 11',
     ]);
 
-    // Filter results by title.
+    // Filter the News results by title.
     $title_input->setValue('News number 8');
     $search_button->click();
-    $this->assertSearchResultsTitle(1);
+    $this->assertSearchResultsTitle('News list page', 1);
     $this->assertSearchResults([
       'News number 8',
     ]);
+
+    // Assert only News nodes are part of the result.
+    $title_input->setValue('Event example');
+    $search_button->click();
+    $this->assertSearchResultsTitle('News list page', 0);
+
+    // Create an Event listing page.
+    $this->drupalGet('node/add/oe_list_page');
+    $page->fillField('Title', 'Event list page');
+    $page->fillField('Source entity type', 'node');
+    $page->fillField('Source bundle', 'oe_sc_event');
+    $page->pressButton('Save');
+
+    $node = $this->getNodeByTitle('Event list page');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $page->checkField('Override default exposed filters');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_event__title]');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_event__oe_sc_event_dates]');
+    $page->pressButton('Save');
+
+    $this->drupalGet('node/' . $node->id());
+
+    // Assert that only Event items are displayed.
+    $this->assertSearchResults([
+      'Event number 0',
+      'Event number 1',
+      'Event number 2',
+      'Event number 3',
+      'Event number 4',
+      'Event number 5',
+      'Event number 6',
+      'Event number 7',
+      'Event number 8',
+      'Event number 9',
+    ]);
+    $pager = $page->find('css', 'ul.pagination > li:nth-child(2) > a');
+    $pager->click();
+    $this->assertSearchResults([
+      'Event number 10',
+      'Event number 11',
+    ]);
+
+    // Assert that the filter form for Events exists.
+    $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $title_input = $filter_form->findField('Title');
+    $event_date_input = $filter_form->findField('Event dates');
+    $search_button = $filter_form->find('css', '#edit-submit');
+    $this->assertNotNull($search_button);
+    $this->assertNotNull($title_input);
+    $this->assertNotNull($event_date_input);
+
+    // Filter results by date.
+    $event_date_input->setValue('gt');
+    $date_input = $filter_form->findField('Date');
+    $date_input->setValue('2022-04-04');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 8);
+    $this->assertSearchResults([
+      'Event number 4',
+      'Event number 5',
+      'Event number 6',
+      'Event number 7',
+      'Event number 8',
+      'Event number 9',
+      'Event number 10',
+      'Event number 11',
+    ]);
+
+    // Filter Event results by title.
+    $title_input->setValue('Event number 8',);
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 1);
+    $this->assertSearchResults([
+      'Event number 8',
+    ]);
+
+    // Assert only Event nodes are part of the result.
+    $title_input->setValue('News number 1');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 0);
   }
 
   /**
    * Asserts the title above the search results.
    *
+   * @param string $list_page_title
+   *   Title of the list page node.
    * @param int $expected_count
    *   Expected number of results to be reported in the title.
    */
-  protected function assertSearchResultsTitle(int $expected_count): void {
+  protected function assertSearchResultsTitle(string $list_page_title, int $expected_count): void {
     $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
     $this->assertSame(
-      sprintf('News list page (%s)', $expected_count),
+      sprintf('%s (%s)', $list_page_title, $expected_count),
       $title->getText());
   }
 
