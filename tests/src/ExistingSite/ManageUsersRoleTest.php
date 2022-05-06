@@ -4,43 +4,10 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
-use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
-use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
-
-use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
-use Drupal\user\Entity\Role;
-use Drupal\user\Entity\User;
-use weitzman\DrupalTestTraits\ExistingSiteBase;
-
 /**
  * Tests the Manage users Role.
  */
-class ManageUsersRoleTest extends ExistingSiteBase {
-
-  use AuthenticationTrait;
-  use ConfigurationBackupTrait;
-  use EntityCleanupTrait;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp(): void {
-    parent::setUp();
-
-    $this->disableForcedLogin();
-    $this->backupSimpleConfig('user.role.manage_users');
-    $this->backupSimpleConfig('user.settings');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function tearDown(): void {
-    $this->enableForcedLogin();
-    $this->restoreConfiguration();
-
-    parent::tearDown();
-  }
+class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
 
   /**
    * Test the "Manage users" role.
@@ -48,75 +15,70 @@ class ManageUsersRoleTest extends ExistingSiteBase {
   public function testManageUsersRole(): void {
     $page = $this->getSession()->getPage();
     $assertions = $this->assertSession();
-    // Assert users without the "Manage users" role cannot edit user accounts.
-    // Create test user.
-    $user = $this->createUser();
-    $this->drupalGet('admin/people');
-    $assertions->pageTextContains('Access denied');
 
-    // Assert the People administration page is available only for users with
-    // the 'Manage users' role.
+    // Create users.
+    // Create user manager with administer permissions.
+    $user_manager_admin_permissions = $this->createUser(['administer permissions']);
+    $user_manager_admin_permissions->addRole('manage_users');
+    $user_manager_admin_permissions->save();
+    // Create user manager.
     $user_manager = $this->createUser();
     $user_manager->addRole('manage_users');
     $user_manager->save();
+
     $this->drupalLogin($user_manager);
     $this->drupalGet('admin/people');
-    $assertions->pageTextContains('People');
 
-    // Assure users with the "Manage users" role can assign
-    // a limited set of roles.
+    // Assert user manager cannot access to
+    // permissions, roles or role assign page.
+    $access_manager = $this->container->get('access_manager');
+    $this->assertFalse($access_manager->checkNamedRoute('user.admin_permissions', [], $user_manager));
+    $this->assertFalse($access_manager->checkNamedRoute('entity.user_role.collection', [], $user_manager));
+    $this->assertFalse($access_manager->checkNamedRoute('roleassign.settings', [], $user_manager));
+
+    // Assert user manager can assign the 'Editor' role.
+    $page->selectFieldOption('Action', 'Add the Editor role to the selected user(s)');
+    $page->checkField('user_bulk_form[2]');
+    $page->pressButton('Apply to selected items');
+    $assertions->pageTextContains('Editor role to the selected user(s) was applied to 1 item.');
+    // Assert user manager cannot assign or remove the 'Manage users' role.
+    $assertions->optionNotExists('Action', 'Add the Manage users role to the selected user(s)');
+    $assertions->optionNotExists('Action', 'Remove the Manage users role from the selected user(s)');
+
+    // Assert the roles available on bulk import page for user manager.
     $this->drupalGet('admin/people/create/cas-bulk');
     $assertions->elementTextContains('css', 'div#edit-roles', 'Editor');
-    $assertions->elementTextNotContains('css', 'div#edit-roles',
-      'Manage users');
+    $assertions->elementTextNotContains('css', 'div#edit-roles', 'Manage users');
 
-    // Assure the manager can assign the Editor role.
-    $this->drupalGet('admin/people');
-    $page->selectFieldOption('edit-action',
-      'user_add_role_action.editor');
-    $page->checkField('edit-user-bulk-form-0');
-    $page->pressButton('Apply to selected items');
-    $assertions->pageTextContains('Add the Editor role to the selected user(s)'
-      . ' was applied to 1 item.');
-    $user = User::load($user->id());
-    $this->assertTrue(in_array('editor', $user->getRoles()));
-
-    // Assure users with Manage users role cannot manage permissions or roles.
-    $assertions->linkNotExists('Roles');
-    $this->drupalGet('admin/people/roles');
-    $assertions->pageTextContains('Access denied');
-    $assertions->linkNotExists('Permissions');
+    // Assert lock permissions for user manager with administer permission.
+    $this->drupalLogin($user_manager_admin_permissions);
     $this->drupalGet('admin/people/permissions');
-    $assertions->pageTextContains('Access denied');
+    $assertions->pageTextContains('Role management is disabled in OE Showcase.
+      Roles and associated permissions are only changeable by
+      users with Manage users role.');
+    $assertions->buttonNotExists('edit-submit');
 
-    // Assure users with Manage users role cannot change Role assign settings.
-    $assertions->linkNotExists('Role assign');
-    $this->drupalGet('admin/people/roleassign');
-    $assertions->pageTextContains('Access denied');
+    // Assert all checkboxes are disabled on permissions' page for
+    // user manager with administer permission.
+    $this->assertCheckboxesDisabled();
 
-    // Assert user bulk operation are not present.
-    $this->drupalGet('admin/people');
-    $assertions->optionNotExists('Action', 'Add the Manage users role to the'
-      . ' selected user(s)');
-    $assertions->optionNotExists('Action', 'Remove the Manage users role from'
-      . ' the selected user(s)');
+    // Assert new users needs to be approved upon registration.
+    $config_factory = $this->container->get('config.factory');
+    $config = $config_factory->getEditable('user.settings');
+    $this->assertEquals('visitors_admin_approval', $config->get('register'));
+  }
 
-    // Assert lock permissions.
-    $user_role = Role::load('manage_users');
-    $user_role->grantPermission('administer permissions');
-    $user_role->save();
-    $this->drupalGet('admin/people/permissions');
-    $assertions->pageTextContains('Role management is disabled in OE Showcase.'
-      . ' Roles and associated permissions are only changeable by users with'
-      . ' Manage users role.');
+  /**
+   * Assert checkboxes are disabled.
+   */
+  protected function assertCheckboxesDisabled(): void {
+    $checkboxes = $this->getSession()
+      ->getPage()
+      ->findAll('css', '.form-checkbox');
 
-    // Assert new user needs to be approved upon registration.
-    // Create a "authenticated" user.
-    $authenticated_user = User::create();
-    $authenticated_user->setUsername('authenticated_user')
-      ->save();
-    $this->assertTrue($authenticated_user->isBlocked());
-    $authenticated_user->delete();
+    foreach ($checkboxes as $checkbox) {
+      $this->assertTrue($checkbox->hasAttribute('disabled'));
+    }
   }
 
 }
