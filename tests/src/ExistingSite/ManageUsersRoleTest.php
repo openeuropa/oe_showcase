@@ -53,9 +53,7 @@ class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
     // Assert lock permissions for user manager with administer permission.
     $this->drupalLogin($user_manager_admin_permissions);
     $this->drupalGet('admin/people/permissions');
-    $assertions->pageTextContains('Role management is disabled in OE Showcase.
-      Roles and associated permissions are only changeable by
-      users with Manage users role.');
+    $assertions->pageTextContains('Role management is disabled in OE Showcase.');
     $assertions->buttonNotExists('edit-submit');
 
     // Assert all checkboxes are disabled on permissions' page for
@@ -63,6 +61,9 @@ class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
     $this->assertCheckboxesDisabled();
 
     // Assert new users needs to be approved upon registration.
+    $this->drupalLogout();
+    $this->drupalGet('user/register');
+    dump($page->getHtml());
     $config_factory = $this->container->get('config.factory');
     $config = $config_factory->getEditable('user.settings');
     $this->assertEquals('visitors_admin_approval', $config->get('register'));
