@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - oe_whitelabel_search
+    - system
   theme:
     - oe_whitelabel
 id: oe_whitelabel_search_form
@@ -16,11 +17,13 @@ settings:
   label: 'Whitelabel Search Block'
   label_display: '0'
   provider: oe_whitelabel_search
+  form:
+    action: search
+    region: navigation_right
   view_options:
     enable_autocomplete: true
     id: showcase_search
     display: showcase_search_page
-  region: navigation_right
 visibility:
   request_path:
     id: request_path
