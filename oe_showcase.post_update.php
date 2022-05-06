@@ -55,7 +55,6 @@ function oe_showcase_post_update_00003(&$sandbox) {
     ->set('register', 'visitors_admin_approval')
     ->save();
   $configs = [
-    'roleassign.settings',
     'user.role.manage_users',
   ];
   ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00003_manage_users', $configs);
