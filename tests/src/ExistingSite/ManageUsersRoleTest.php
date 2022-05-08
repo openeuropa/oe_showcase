@@ -10,6 +10,33 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
 
   /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+    $server_manager = \Drupal::service('cas_mock_server.server_manager');
+    $server_manager->start();
+    $user = [
+      'username' => 'user_blocked',
+      'email' => 'user_blocked@example.com',
+      'password' => 'mypass',
+    ];
+    $user_cas_manager = \Drupal::service('cas_mock_server.user_manager');
+    $user_cas_manager->addUser($user);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function tearDown() {
+    $user_cas_manager = \Drupal::service('cas_mock_server.user_manager');
+    $user_cas_manager->deleteUsers(['user_blocked']);
+    $server_manager = \Drupal::service('cas_mock_server.server_manager');
+    $server_manager->stop();
+    parent::tearDown();
+  }
+
+  /**
    * Test the "Manage users" role.
    */
   public function testManageUsersRole(): void {
@@ -62,11 +89,12 @@ class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
 
     // Assert new users needs to be approved upon registration.
     $this->drupalLogout();
-    $this->drupalGet('user/register');
-    dump($page->getHtml());
-    $config_factory = $this->container->get('config.factory');
-    $config = $config_factory->getEditable('user.settings');
-    $this->assertEquals('visitors_admin_approval', $config->get('register'));
+    $this->enableForcedLogin();
+    $this->drupalGet('/user/login');
+    $page->fillField('E-mail', 'user_blocked@example.com');
+    $page->fillField('Password', 'mypass');
+    $page->pressButton('Log in');
+    $assertions->pageTextContains('There was a problem validating your login, please contact a site administrator.');
   }
 
   /**
