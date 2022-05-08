@@ -12,6 +12,7 @@
         "drupal/allowed_formats": "^1.4",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/block_field": "^1.0@RC",
+        "drupal/cas_mock_server": "^1.4",
         "drupal/core-recommended": "^9.2",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
