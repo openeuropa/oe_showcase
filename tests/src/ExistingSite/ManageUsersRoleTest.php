@@ -14,14 +14,14 @@ class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
    */
   protected function setUp() {
     parent::setUp();
-    $server_manager = \Drupal::service('cas_mock_server.server_manager');
+    $server_manager = $this->container->get('cas_mock_server.server_manager');
     $server_manager->start();
     $user = [
       'username' => 'user_blocked',
       'email' => 'user_blocked@example.com',
       'password' => 'mypass',
     ];
-    $user_cas_manager = \Drupal::service('cas_mock_server.user_manager');
+    $user_cas_manager = $this->container->get('cas_mock_server.user_manager');
     $user_cas_manager->addUser($user);
   }
 
@@ -29,9 +29,9 @@ class ManageUsersRoleTest extends ShowcaseExistingSiteTestBase {
    * {@inheritdoc}
    */
   public function tearDown() {
-    $user_cas_manager = \Drupal::service('cas_mock_server.user_manager');
+    $user_cas_manager = $this->container->get('cas_mock_server.user_manager');
     $user_cas_manager->deleteUsers(['user_blocked']);
-    $server_manager = \Drupal::service('cas_mock_server.server_manager');
+    $server_manager = $this->container->get('cas_mock_server.server_manager');
     $server_manager->stop();
     parent::tearDown();
   }
