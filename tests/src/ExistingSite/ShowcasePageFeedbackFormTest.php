@@ -79,8 +79,6 @@ class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
     $this->assertSession()->elementExists('xpath', "//script[@type='application/json'][.='" . addcslashes('{"service":"dff","id":1234,"lang":"pt"}', '\\\'') . "']");
     // Assert that Page feedback form is placed before the footer
     // inside footer region.
-    $page_feedback_selector = '//footer[contains(concat(\' \', normalize-space(@class), \' \'), \' bcl-footer \')]/parent::div[1]/preceding-sibling::div[1]';
-    $page_feedback = $this->getSession()->getPage()->find('xpath', $page_feedback_selector);
     $this->assertSession()->elementExists('css', '#block-showcase-pagefeedbackform + #block-oe-whitelabel-neutral-footer');
 
     // Disable the block and assert the block is not rendered.
