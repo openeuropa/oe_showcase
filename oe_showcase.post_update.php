@@ -46,5 +46,5 @@ function oe_showcase_post_update_00002(&$sandbox) {
   $configs = [
     'user.role.configure_page_feedback_form',
   ];
-  ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00002_page_feedback', $configs);
+  ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00002_webtools_components', $configs);
 }
