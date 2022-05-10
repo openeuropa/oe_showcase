@@ -2,25 +2,13 @@
 
 /**
  * @file
- * Showcase search module.
+ * Functions to support theming in the OpenEuropa Showcase theme.
  */
 
-declare(strict_types =  1);
+declare(strict_types = 1);
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\oe_bootstrap_theme\ValueObject\ImageValueObject;
-
-/**
- * Implements hook_theme().
- */
-function oe_showcase_search_theme() {
-  return [
-    'node__search_result' => [
-      'render element' => 'elements',
-      'base hook' => 'node',
-    ],
-  ];
-}
 
 /**
  * Implements hook_preprocess_node() for 'search_result' view mode.
@@ -31,7 +19,7 @@ function oe_showcase_search_theme() {
  * specific node type. This is ok because currently only one node type uses the
  * 'search_result' view mode.
  */
-function oe_showcase_search_preprocess_node__search_result(array &$variables): void {
+function oe_showcase_theme_preprocess_node__search_result(array &$variables): void {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $variables['node'];
   $image_item_list = $node->get('field_image');
