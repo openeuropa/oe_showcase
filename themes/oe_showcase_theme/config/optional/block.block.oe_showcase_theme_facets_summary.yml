@@ -8,7 +8,7 @@ dependencies:
     - system
   theme:
     - oe_showcase_theme
-id: oe_showcase_theme_showcase_facets_summary
+id: oe_showcase_theme_facets_summary
 theme: oe_showcase_theme
 region: content_top
 weight: 0

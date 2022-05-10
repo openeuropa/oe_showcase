@@ -6,7 +6,7 @@ dependencies:
     - system
   theme:
     - oe_showcase_theme
-id: oe_showcase_theme_showcase_header_search_form
+id: oe_showcase_theme_header_search_form
 theme: oe_showcase_theme
 region: header
 weight: 0

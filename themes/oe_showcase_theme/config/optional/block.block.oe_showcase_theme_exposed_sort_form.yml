@@ -8,7 +8,7 @@ dependencies:
     - views
   theme:
     - oe_showcase_theme
-id: oe_showcase_theme_showcase_exposed_sort_form
+id: oe_showcase_theme_exposed_sort_form
 theme: oe_showcase_theme
 region: content_top
 weight: 1
