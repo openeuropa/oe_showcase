@@ -7,11 +7,8 @@
 
 declare(strict_types = 1);
 
-use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\image\Plugin\Field\FieldType\ImageItem;
-use Drupal\oe_bootstrap_theme\ValueObject\ImageValueObject;
 use Drupal\user\Entity\User;
 
 /**
@@ -19,22 +16,6 @@ use Drupal\user\Entity\User;
  */
 function oe_showcase_user_profile_theme_suggestions_user_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
-}
-
-/**
- * Implements hook_theme().
- */
-function oe_showcase_user_profile_theme() {
-  return [
-    'user__full' => [
-      'render element' => 'elements',
-      'base hook' => 'user',
-    ],
-    'user__teaser' => [
-      'render element' => 'elements',
-      'base hook' => 'user',
-    ],
-  ];
 }
 
 /**
@@ -75,24 +56,4 @@ function oe_showcase_user_profile_form_user_form_alter(&$form, FormStateInterfac
       ? $description . '<br/>' . $text
       : $text;
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function oe_showcase_user_profile_preprocess_user__full(array &$variables): void {
-  if (!in_array($variables['elements']['#view_mode'], ['full', 'teaser'])) {
-    return;
-  }
-  /** @var \Drupal\user\UserInterface $user */
-  $user = $variables['user'];
-  $image_item_list = $user->get('field_profile_image');
-  $image_item = $image_item_list->get(0);
-  if (!$image_item instanceof ImageItem || !$image_item_list->access()) {
-    // No profile image found, or no view access.
-    return;
-  }
-  $variables['image'] = ImageValueObject::fromStyledImageItem($image_item, 'medium');
-  CacheableMetadata::createFromObject($variables['image'])
-    ->applyTo($variables);
 }
