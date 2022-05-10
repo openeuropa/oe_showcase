@@ -8,8 +8,3 @@ dependencies:
   - drupal:config_translation
   - openeuropa:oe_multilingual
   - oe_whitelabel:oe_whitelabel_multilingual
-
-config_devel:
-  optional:
-    - block.block.showcase_content_language_switcher
-    - block.block.showcase_etrans
