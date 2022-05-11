@@ -112,9 +112,9 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($this->createUser(['administer permissions']));
 
     $this->drupalGet('/admin/people/permissions');
-    $assert->pageTextContains('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable through code.');
-    $assert->buttonNotExists('edit-submit');
 
+    $assert->pageTextContains('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable by users with Manage users role.');
+    $assert->buttonNotExists('edit-submit');
     // Assert all checkboxes are disabled on permissions page.
     $this->assertCheckboxesDisabled();
   }
