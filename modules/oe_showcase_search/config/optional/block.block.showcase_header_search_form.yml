@@ -19,7 +19,9 @@ settings:
   provider: oe_whitelabel_search
   form:
     action: search
-    layout: header
+    region: navigation_right
+  input:
+    name: search_api_fulltext
   view_options:
     enable_autocomplete: true
     id: showcase_search
