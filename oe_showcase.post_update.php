@@ -57,5 +57,5 @@ function oe_showcase_post_update_00003(&$sandbox) {
   $configs = [
     'user.role.manage_users',
   ];
-  ConfigImporter::importMultiple('oe_showcase', '/config/post_updates/00003_manage_users', $configs);
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00003_manage_users', $configs);
 }
