@@ -47,7 +47,7 @@ function oe_showcase_post_update_00002(&$sandbox) {
 }
 
 /**
- * Import the Manage users role.
+ * Enable roleassig, Manage users role and update settings.
  */
 function oe_showcase_post_update_00003(&$sandbox) {
   \Drupal::service('module_installer')->install(['roleassign']);
