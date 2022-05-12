@@ -258,7 +258,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $this->assertNotNull($active_link);
     $this->assertPagerLinkPageNumber($active, $active_link);
-    $this->assertEquals($active + 1, $active_link->getHtml());
+    $this->assertSame((string) ($active + 1), $active_link->getHtml());
 
     if ($last_link === NULL) {
       // The active link is also the last link, and was already covered.
