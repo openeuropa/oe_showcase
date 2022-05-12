@@ -141,7 +141,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Assert project details.
     $assert_session->pageTextContains('Project details');
-    $assert_session->pageTextContains('Project period');
     $assert_session->pageTextContains('03 March 2022');
     $assert_session->pageTextContains('03 March 2023');
     $assert_session->pageTextContains('Overall budget');
