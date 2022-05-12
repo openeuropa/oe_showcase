@@ -43,7 +43,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Imputo Neo Sagaciter',
       'Gemino Imputo',
     ]);
-    $this->assertPagerLinks([]);
+    $this->assertNoPager();
 
     // Go back to /search, to clear all filters.
     // @todo Use 'Clear' once OEL-1315 is resolved.
@@ -72,7 +72,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Obruo',
     ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
+    $this->assertPager(4);
 
     // Filter by category.
     $page->checkField('Category 2');
@@ -87,7 +87,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Comis Incassum',
       'Appellatio Immitto',
     ]);
-    $this->assertPagerLinks(['1', '2', 'Next ›', '']);
+    $this->assertPager(2);
 
     // Filter by another category.
     $page->checkField('Category 3');
@@ -113,7 +113,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // @todo Expect additional badges for the date once OEL-662 is resolved.
     $this->assertActiveFilterBadges(['Category 2']);
     $this->assertSearchResults(['Imputo Neo Sagaciter']);
-    $this->assertPagerLinks([]);
+    $this->assertNoPager();
 
     // Clear active filters.
     $page->clickLink('Clear');
@@ -127,7 +127,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Abico Diam Jugis',
       'Obruo',
     ]);
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
+    $this->assertPager(4);
 
     // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
@@ -142,7 +142,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Gemino Imputo',
       'Macto Neque Virtus',
     ]);
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
+    $this->assertPager(4);
 
     // Visit the second page of search results.
     $page->clickLink('2');
@@ -156,7 +156,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Voco',
       'Appellatio Camur',
     ]);
-    $this->assertPagerLinks(['', '‹ Previous', '1', '2', '3', '4', 'Next ›', ''], 3);
+    $this->assertPager(4, 1);
 
     // Visit the last page.
     $page->clickLink('4');
@@ -169,7 +169,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Distineo',
       'Imputo Neo Sagaciter',
     ]);
-    $this->assertPagerLinks(['', '‹ Previous', '1', '2', '3', '4'], 5);
+    $this->assertPager(4, 3);
   }
 
   /**
@@ -226,31 +226,53 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Asserts that no pager links exist.
+   */
+  protected function assertNoPager(): void {
+    $this->assertSession()
+      ->elementNotExists('css', 'ul.pagination');
+  }
+
+  /**
    * Asserts link text on pager links.
    *
-   * @param string[] $expected
-   *   Expected pager link texts.
-   * @param int $active_item_index
-   *   Index of a pager link with the 'active' class.
+   * @param int $total
+   *   Total number of pages expected.
+   * @param int $active
+   *   Active page index.
    */
-  protected function assertPagerLinks(array $expected, int $active_item_index = 0): void {
-    if ($expected === []) {
-      $this->assertSession()
-        ->elementNotExists('css', 'ul.pagination');
+  protected function assertPager(int $total, int $active = 0): void {
+    $pagination = $this->assertSession()
+      ->elementExists('css', 'ul.pagination');
+
+    $get_page_index = static function (NodeElement $link): string {
+      $href = $link->getAttribute('href');
+      $query_string = parse_url($href, PHP_URL_QUERY);
+      parse_str($query_string, $query);
+      return $query['page'];
+    };
+
+    if ($active === $total - 1) {
+      $active_link = $pagination->find('css', 'li.active:last-child > a');
+      $last_link = NULL;
+    }
+    else {
+      $active_link = $pagination->find('css', 'li.active > a');
+      $last_link = $pagination->find('css', 'li:last-child > a');
+      $this->assertNotNull($last_link);
+    }
+
+    $this->assertNotNull($active_link);
+    $this->assertEquals($active, $get_page_index($active_link));
+    $this->assertEquals($active + 1, $active_link->getHtml());
+
+    if ($last_link === NULL) {
       return;
     }
-    $links = $this->assertSession()
-      ->elementExists('css', 'ul.pagination')
-      ->findAll('css', '.page-item');
-    $this->assertElementsTexts($expected, $links);
-    $this->assertSame(
-      [$active_item_index],
-      array_keys(array_filter(
-        $links,
-        static fn(NodeElement $link): bool => $link->hasClass('active'),
-      )),
-      sprintf('Pager item %s is active, other items are not.', $active_item_index),
-    );
+
+    $this->assertEquals($total - 1, $get_page_index($last_link));
+    // The last link contains an icon.
+    $this->assertCount(1, $last_link->findAll('css', 'svg'));
   }
 
   /**
