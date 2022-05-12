@@ -72,7 +72,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Obruo',
     ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
 
     // Filter by category.
     $page->checkField('Category 2');
@@ -87,7 +87,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Comis Incassum',
       'Appellatio Immitto',
     ]);
-    $this->assertPagerLinks(['1', '2', 'Next ›']);
+    $this->assertPagerLinks(['1', '2', 'Next ›', '']);
 
     // Filter by another category.
     $page->checkField('Category 3');
@@ -127,7 +127,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Abico Diam Jugis',
       'Obruo',
     ]);
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
 
     // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
@@ -142,7 +142,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Gemino Imputo',
       'Macto Neque Virtus',
     ]);
-    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›']);
+    $this->assertPagerLinks(['1', '2', '3', '4', 'Next ›', '']);
 
     // Visit the second page of search results.
     $page->clickLink('2');
@@ -156,7 +156,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Voco',
       'Appellatio Camur',
     ]);
-    $this->assertPagerLinks(['‹ Previous', '1', '2', '3', '4', 'Next ›'], 2);
+    $this->assertPagerLinks(['', '‹ Previous', '1', '2', '3', '4', 'Next ›', ''], 3);
 
     // Visit the last page.
     $page->clickLink('4');
@@ -169,7 +169,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Distineo',
       'Imputo Neo Sagaciter',
     ]);
-    $this->assertPagerLinks(['‹ Previous', '1', '2', '3', '4'], 4);
+    $this->assertPagerLinks(['', '‹ Previous', '1', '2', '3', '4'], 5);
   }
 
   /**
