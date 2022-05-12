@@ -23,5 +23,5 @@ function oe_showcase_page_install(bool $is_syncing): void {
     'field.field.paragraph.oe_content_row.field_oe_paragraphs',
   ];
 
-  ConfigImporter::importMultiple('oe_showcase_page', '/config/overrides/', $configs);
+  ConfigImporter::importMultiple('module', 'oe_showcase_page', '/config/overrides/', $configs);
 }

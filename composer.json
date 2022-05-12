@@ -98,10 +98,7 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-alpha8..1.x.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-alpha7..1.x.diff"
+                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
             }
         },
         "artifacts": {
