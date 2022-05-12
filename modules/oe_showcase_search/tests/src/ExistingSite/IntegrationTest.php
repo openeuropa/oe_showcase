@@ -245,13 +245,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $pagination = $this->assertSession()
       ->elementExists('css', 'ul.pagination');
 
-    $get_page_index = static function (NodeElement $link): string {
-      $href = $link->getAttribute('href');
-      $query_string = parse_url($href, PHP_URL_QUERY);
-      parse_str($query_string, $query);
-      return $query['page'];
-    };
-
     if ($active === $total - 1) {
       $active_link = $pagination->find('css', 'li.active:last-child > a');
       $last_link = NULL;
@@ -263,16 +256,32 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     }
 
     $this->assertNotNull($active_link);
-    $this->assertEquals($active, $get_page_index($active_link));
+    $this->assertPagerLinkPageNumber($active, $active_link);
     $this->assertEquals($active + 1, $active_link->getHtml());
 
     if ($last_link === NULL) {
       return;
     }
 
-    $this->assertEquals($total - 1, $get_page_index($last_link));
+    $this->assertPagerLinkPageNumber($total - 1, $last_link);
     // The last link contains an icon.
     $this->assertCount(1, $last_link->findAll('css', 'svg'));
+  }
+
+  /**
+   * Asserts the page index in a pager link.
+   *
+   * @param int $expected
+   *   Expected page number.
+   * @param \Behat\Mink\Element\NodeElement $pager_link
+   *   A link element that belongs to a pager.
+   */
+  protected function assertPagerLinkPageNumber(int $expected, NodeElement $pager_link): void {
+    $href = $pager_link->getAttribute('href');
+    $query_string = parse_url($href, PHP_URL_QUERY);
+    parse_str($query_string, $query);
+    // Compare as string, to detect unexpected values.
+    $this->assertSame((string) $expected, $query['page'] ?? NULL);
   }
 
   /**
