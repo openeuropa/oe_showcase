@@ -246,6 +246,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       ->elementExists('css', 'ul.pagination');
 
     if ($active === $total - 1) {
+      // The active link is also the last link.
       $active_link = $pagination->find('css', 'li.active:last-child > a');
       $last_link = NULL;
     }
@@ -260,6 +261,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals($active + 1, $active_link->getHtml());
 
     if ($last_link === NULL) {
+      // The active link is also the last link, and was already covered.
       return;
     }
 
