@@ -17,13 +17,6 @@ class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
   use ConfigurationBackupTrait;
 
   /**
-   * Language manager.
-   *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
-   */
-  protected $languageManager;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
