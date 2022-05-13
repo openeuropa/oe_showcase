@@ -6,12 +6,11 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
-use weitzman\DrupalTestTraits\ExistingSiteBase;
 
 /**
  * Tests the Page feedback form block.
  */
-class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
+class ShowcasePageFeedbackFormTest extends ShowcaseExistingSiteTestBase {
 
   use AuthenticationTrait;
   use ConfigurationBackupTrait;
@@ -22,18 +21,7 @@ class ShowcasePageFeedbackFormTest extends ExistingSiteBase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->disableForcedLogin();
     $this->backupSimpleConfig('oe_webtools_page_feedback.settings');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function tearDown(): void {
-    $this->enableForcedLogin();
-    $this->restoreConfiguration();
-
-    parent::tearDown();
   }
 
   /**
