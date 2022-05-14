@@ -245,29 +245,13 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $pagination = $this->assertSession()
       ->elementExists('css', 'ul.pagination');
 
-    if ($active === $total - 1) {
-      // The active link is also the last link.
-      $active_link = $pagination->find('css', 'li.active:last-child > a');
-      $last_link = NULL;
-    }
-    else {
-      $active_link = $pagination->find('css', 'li.active > a');
-      $last_link = $pagination->find('css', 'li:last-child > a');
-      $this->assertNotNull($last_link);
-    }
-
+    $active_link = $pagination->find('css', 'li.active > a');
     $this->assertNotNull($active_link);
     $this->assertPagerLinkPageNumber($active, $active_link);
-    $this->assertSame((string) ($active + 1), $active_link->getHtml());
 
-    if ($last_link === NULL) {
-      // The active link is also the last link, and was already covered.
-      return;
-    }
-
+    $last_link = $pagination->find('css', 'li:last-child > a');
+    $this->assertNotNull($last_link);
     $this->assertPagerLinkPageNumber($total - 1, $last_link);
-    // The last link contains an icon.
-    $this->assertCount(1, $last_link->findAll('css', 'svg'));
   }
 
   /**
