@@ -5,9 +5,7 @@ type: theme
 base theme: oe_whitelabel
 core_version_requirement: ^8.9 || ^9.1
 
-# Even though the regions are the same as in oe_whitelabel, they must still be
-# specified explicitly. Otherwise, Drupal would fill in defaults from
-# ThemeExtensionList::$defaults['regions'].
+# Regions are meant to be 100% the same as in parent theme.
 regions:
   header_branding: 'Header branding'
   header_top: 'Header top'
