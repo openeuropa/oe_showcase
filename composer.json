@@ -45,7 +45,7 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "dev-OEL-1246"
+        "openeuropa/oe_whitelabel": "0.1.202204221923"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -94,7 +94,10 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-alpha8..1.x.diff"
+                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
+            },
+            "openeuropa/oe_whitelabel": {
+                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202204221923..EPIC-1450-List-pages.diff"
             }
         },
         "artifacts": {

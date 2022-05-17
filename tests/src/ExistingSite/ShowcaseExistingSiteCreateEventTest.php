@@ -113,6 +113,8 @@ class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
+
+    $this->assertSocialShareBlock();
   }
 
 }
