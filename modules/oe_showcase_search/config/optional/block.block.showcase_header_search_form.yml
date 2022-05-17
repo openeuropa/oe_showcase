@@ -19,7 +19,7 @@ settings:
   provider: oe_whitelabel_search
   form:
     action: search
-    region: navigation_right
+    region: header
   input:
     name: search_api_fulltext
   view_options:
