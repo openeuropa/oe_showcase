@@ -42,7 +42,7 @@ function oe_showcase_search_post_update_00002(&$sandbox) {
   ConfigImporter::importSingle(
     'module',
     'oe_showcase_search',
-    '/config/post_updates/00001',
+    '/config/post_updates/00002',
     'block.block.showcase_header_search_form'
   );
 }
