@@ -242,6 +242,4 @@ function oe_showcase_post_update_00010(): void {
     ->getEditable('system.theme')
     ->set('default', 'oe_showcase_theme')
     ->save();
-  // Do _not_ remove or revert whitelabel block overrides, because they might
-  // have already been customized by a user / site builder.
 }
