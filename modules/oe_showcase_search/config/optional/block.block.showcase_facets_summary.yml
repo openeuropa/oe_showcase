@@ -11,7 +11,7 @@ dependencies:
 id: showcase_facets_summary
 theme: oe_whitelabel
 region: content_top
-weight: -3
+weight: 0
 provider: null
 plugin: 'facets_summary_block:showcase_summary'
 settings:
