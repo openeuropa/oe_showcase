@@ -34,6 +34,7 @@ function oe_showcase_search_post_update_00002(&$sandbox) {
   if ($block !== NULL) {
     $settings = $block->get('settings');
     $settings['form']['region'] = $block->getRegion();
+    $settings['button']['label'] = 'Search';
     $block->set('settings', $settings);
     $block->save();
     return;
