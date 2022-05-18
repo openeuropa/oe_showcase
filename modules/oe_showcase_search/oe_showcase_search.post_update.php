@@ -30,15 +30,13 @@ function oe_showcase_search_post_update_00001(): void {
  * Set the updated values to the search form block.
  */
 function oe_showcase_search_post_update_00002(&$sandbox) {
-  $block = Block::load('showcase_header_search_form');
-  if ($block !== NULL) {
-    $settings = $block->get('settings');
-    $settings['form']['region'] = $block->getRegion();
-    $settings['button']['label'] = 'Search';
-    $block->set('settings', $settings);
-    $block->save();
-    return;
-  }
+  $block = Block::load('oe_whitelabel_search_form');
+  $block->setVisibilityConfig('request_path', [
+    'id' => 'request_path',
+    'negate' => TRUE,
+    'pages' => "/search\r\n/search/*",
+  ]);
+  $block->save();
 
   ConfigImporter::importSingle(
     'module',
