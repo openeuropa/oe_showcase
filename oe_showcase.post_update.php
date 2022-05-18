@@ -5,7 +5,7 @@
  * OpenEuropa Showcase post updates.
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Drupal\block\Entity\Block;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
@@ -44,4 +44,13 @@ function oe_showcase_post_update_00002(&$sandbox) {
   ]);
 
   ConfigImporter::importSingle('module', 'oe_showcase', '/config/post_updates/00002_webtools_components', 'user.role.configure_page_feedback_form');
+}
+
+/**
+ * Implements hook_post_update_NAME().
+ *
+ * Install "OpenEuropa showcase listing pages" module.
+ */
+function oe_showcase_post_update_00003(&$sandbox): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_list_pages']);
 }
