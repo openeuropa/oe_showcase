@@ -27,7 +27,7 @@ function oe_showcase_search_post_update_00001(): void {
 }
 
 /**
- * Set the updated values to the search form block.
+ * Update search form block and add second instance.
  */
 function oe_showcase_search_post_update_00002(&$sandbox) {
   $block = Block::load('oe_whitelabel_search_form');
