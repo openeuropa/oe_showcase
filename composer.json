@@ -91,6 +91,9 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
+            "drupal/facets_form": {
+                "https://www.drupal.org/project/facets_form/issues/3280012": "https://git.drupalcode.org/project/facets_form/-/commit/02d9d2d.diff"
+            },
             "openeuropa/oe_bootstrap_theme": {
                 "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
             },
