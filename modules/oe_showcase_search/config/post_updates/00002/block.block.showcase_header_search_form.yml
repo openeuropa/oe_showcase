@@ -22,6 +22,10 @@ settings:
     region: header
   input:
     name: search_api_fulltext
+    label: Search
+    placeholder: Search
+  button:
+    label: Search
   view_options:
     enable_autocomplete: true
     id: showcase_search

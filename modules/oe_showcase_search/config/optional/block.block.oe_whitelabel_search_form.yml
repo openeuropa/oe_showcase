@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - oe_whitelabel_search
+    - system
   theme:
     - oe_whitelabel
 id: oe_whitelabel_search_form
@@ -21,6 +22,10 @@ settings:
     region: navigation_right
   input:
     name: search_api_fulltext
+    label: Search
+    placeholder: Search
+  button:
+    label: ''
   view_options:
     enable_autocomplete: true
     id: showcase_search

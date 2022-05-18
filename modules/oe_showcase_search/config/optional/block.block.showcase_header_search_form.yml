@@ -22,7 +22,7 @@ settings:
     region: header
   input:
     name: search_api_fulltext
-    label: ''
+    label: Search
     placeholder: Search
   button:
     label: Search
