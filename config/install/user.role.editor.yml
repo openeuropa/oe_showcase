@@ -30,6 +30,7 @@ permissions:
   - 'create oe_sc_news content'
   - 'delete any document media'
   - 'delete any oe_sc_event content'
+  - 'delete any oe_sc_news content'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
   - 'delete own av_portal_photo media'
