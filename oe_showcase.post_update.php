@@ -54,6 +54,13 @@ function oe_showcase_post_update_00003(&$sandbox) {
   \Drupal::configFactory()->getEditable('user.settings')
     ->set('register', 'visitors_admin_approval')
     ->save();
+
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['editor'] = 'editor';
+  $roleassign_roles['manage_users'] = '0';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+
   $configs = [
     'user.role.manage_users',
   ];
