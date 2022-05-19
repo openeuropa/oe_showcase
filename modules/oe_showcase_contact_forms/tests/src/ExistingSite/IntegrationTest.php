@@ -3,11 +3,43 @@
 declare(strict_types = 1);
 
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\PathAccessTrait;
+use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
 /**
  * Contact form tests.
  */
 class IntegrationTest extends ShowcaseExistingSiteTestBase {
+
+  use PathAccessTrait;
+  use UserTrait;
+
+  /**
+   * Tests access to contact form admin pages.
+   */
+  public function testAccess(): void {
+    $manage_contact_forms_paths = [
+      'admin/structure/contact/add',
+      'admin/structure/contact/manage/export',
+      'admin/structure/contact/messages',
+    ];
+
+    // Test anonymous.
+    $this->assertSame(0, \Drupal::currentUser()->id());
+    $this->assertPathsResponseCode(403, $manage_contact_forms_paths);
+
+    // Test users with other roles.
+    $this->drupalLogin($this->createUserWithRoles([
+      'configure_page_feedback_form',
+      'editor',
+      'manage_users',
+    ]));
+    $this->assertPathsResponseCode(403, $manage_contact_forms_paths);
+
+    // Test editor.
+    $this->drupalLogin($this->createUserWithRoles(['manage_contact_forms']));
+    $this->assertPathsResponseCode(200, $manage_contact_forms_paths);
+  }
 
   /**
    * Check creation contact form content through the UI.
