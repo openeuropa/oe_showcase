@@ -79,10 +79,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     );
     $page->pressButton('Save');
 
-    $this->drupalLogin($this->createUser([
-      'access corporate contact form',
-      'view published skos concept entities',
-    ]));
+    $this->drupalLogin($this->createUser());
 
     $this->drupalGet('/pages/example-contact-form-page');
     $page->fillField('Subject', 'Example subject');
