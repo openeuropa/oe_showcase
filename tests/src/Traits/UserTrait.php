@@ -35,7 +35,7 @@ trait UserTrait {
   }
 
   /**
-   * Creates a user, assigns given roles and logs the user in.
+   * Creates a user with given roles.
    *
    * @param array $roles
    *   List of roles to add to the user.
