@@ -4,10 +4,14 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
+use Drupal\Tests\oe_showcase\Traits\UserTrait;
+
 /**
  * Tests that users can only access pages they are authorized to.
  */
 class AuthorisationTest extends ShowcaseExistingSiteTestBase {
+
+  use UserTrait;
 
   /**
    * Anonymous user cannot access restricted pages.
@@ -51,6 +55,9 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    * Manage users user cannot access restricted pages.
    */
   public function testManageUsersAccess(): void {
+    $user = $this->createUserWithRoles(['manage_users']);
+    $this->drupalLogin($user);
+
     $paths = [
       '/admin/people/roles',
       '/admin/people/role-settings',
@@ -67,10 +74,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    * Users with the "Manage users" role can assign a limited set of roles.
    */
   public function testManageUsersRoleAssign(): void {
-    $user = $this->createUser();
-    $user->addRole('manage_users');
-    $user->save();
-
+    $user = $this->createUserWithRoles(['manage_users']);
     $this->drupalLogin($user);
 
     // Test roles availability in the user listing page.
@@ -88,10 +92,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    * Users without the "Manage users" role cannot edit user accounts.
    */
   public function testOtherRolesCannotManageUsers(): void {
-    $user = $this->createUser();
-    $user->addRole('editor');
-    $user->save();
-
+    $user = $this->createUserWithRoles(['editor']);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
     $this->assertSession()->statusCodeEquals(403);

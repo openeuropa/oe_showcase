@@ -20,16 +20,12 @@ class UserManagementTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
     $assert = $this->assertSession();
 
-    $user = $this->createUser();
-    $user->addRole('manage_users');
-    $user->save();
-
     $blocked_user = $this->createUser([], 'blocked_user');
     $blocked_user->block();
     $blocked_user->save();
 
+    $user = $this->createUserWithRoles(['manage_users']);
     $this->drupalLogin($user);
-
     $this->drupalGet('/admin/people');
 
     $this->checkUsersUpdateCheckbox('blocked_user');

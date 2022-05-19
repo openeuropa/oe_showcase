@@ -34,4 +34,24 @@ trait UserTrait {
     return reset($users);
   }
 
+  /**
+   * Creates a user, assigns given roles and logs the user in.
+   *
+   * @param array $roles
+   *   List of roles to add to the user.
+   *
+   * @return \Drupal\user\UserInterface
+   *   The user created.
+   */
+  protected function createUserWithRoles(array $roles): UserInterface {
+    $user = $this->createUser();
+
+    foreach ($roles as $rolename) {
+      $user->addRole($rolename);
+    }
+    $user->save();
+
+    return $user;
+  }
+
 }
