@@ -9,6 +9,7 @@ dependencies:
     - media.type.image
     - node.type.oe_sc_event
     - node.type.oe_sc_news
+    - node.type.oe_showcase_page
   module:
     - filter
     - media
@@ -28,27 +29,35 @@ permissions:
   - 'create image media'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
+  - 'create oe_showcase_page content'
   - 'delete any document media'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
+  - 'delete any oe_showcase_page content'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
+  - 'delete oe_showcase_page revisions'
   - 'delete own av_portal_photo media'
   - 'delete own document media'
   - 'delete own image media'
   - 'delete own oe_sc_event content'
   - 'delete own oe_sc_news content'
+  - 'delete own oe_showcase_page content'
   - 'edit any document media'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
+  - 'edit any oe_showcase_page content'
   - 'edit own document media'
   - 'edit own oe_sc_event content'
   - 'edit own oe_sc_news content'
+  - 'edit own oe_showcase_page content'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
+  - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
+  - 'view oe_showcase_page revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
