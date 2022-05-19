@@ -17,7 +17,7 @@
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/facets": "^2.0",
-        "drupal/facets_form": "dev-3254498-compatibility-with-facets",
+        "drupal/facets_form": "1.0.0-alpha3",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
@@ -73,11 +73,6 @@
         {
             "type": "git",
             "url": "https://github.com/openeuropa/oe_starter_content"
-        },
-        {
-            "name": "drupal/facets_form",
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/facets_form-3254498"
         },
         {
             "type": "composer",
