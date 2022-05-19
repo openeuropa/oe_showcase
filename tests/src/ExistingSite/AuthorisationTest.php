@@ -61,6 +61,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
 
     $paths = [
       '/admin/people/roles',
+      '/admin/people/roles/add',
       '/admin/people/role-settings',
       '/admin/people/roleassign',
     ];
@@ -127,6 +128,10 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
 
     $assert->linkNotExistsExact('Edit');
     $assert->linkNotExistsExact('Delete');
+
+    $assert->linkExists('Add role');
+    $this->drupalGet('/admin/people/roles/add');
+    $assert->statusCodeEquals(200);
   }
 
   /**
