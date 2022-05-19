@@ -82,6 +82,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
 
     // Redirected back to Drupal and user is blocked.
     $assert->pageTextContains('Your account is blocked or has not been activated. Please contact a site administrator.');
+    $assert->pageTextNotContains('You have been logged in.');
     $this->assertUserAccountNotActive('chucknorris');
     $this->assertIsHomepage();
 
