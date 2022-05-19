@@ -78,15 +78,19 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   public function testManageUsersRoleAssign(): void {
     $user = $this->createUserWithRoles(['manage_users']);
     $this->drupalLogin($user);
+    $roles = [
+      'Configure Page Feedback form',
+      'Editor',
+    ];
 
     // Test roles availability in the user listing page.
     $this->drupalGet('/admin/people');
-    $this->assertRoleAvailableInAction(['Editor']);
+    $this->assertRoleAvailableInAction($roles);
     $this->assertRoleNotAvailableInAction(['Manage users']);
 
     // Test roles availability in the user import page.
     $this->drupalGet('/admin/people/create/cas-bulk');
-    $this->assertRoleOptionsAvailable(['Editor']);
+    $this->assertRoleOptionsAvailable($roles);
     $this->assertRoleOptionsNotAvailable(['Manage users']);
   }
 
@@ -94,7 +98,10 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    * Users without the "Manage users" role cannot edit user accounts.
    */
   public function testOtherRolesCannotManageUsers(): void {
-    $user = $this->createUserWithRoles(['editor']);
+    $user = $this->createUserWithRoles([
+      'configure_page_feedback_form',
+      'editor',
+    ]);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
     $this->assertSession()->statusCodeEquals(403);

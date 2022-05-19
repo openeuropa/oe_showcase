@@ -1,3 +1,4 @@
 roleassign_roles:
+  configure_page_feedback_form: configure_page_feedback_form
   editor: editor
   manage_users: '0'

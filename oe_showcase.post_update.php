@@ -57,6 +57,7 @@ function oe_showcase_post_update_00003(&$sandbox) {
 
   $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
   $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['configure_page_feedback_form'] = 'configure_page_feedback_form';
   $roleassign_roles['editor'] = 'editor';
   $roleassign_roles['manage_users'] = '0';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
