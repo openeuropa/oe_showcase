@@ -94,7 +94,6 @@ config_devel:
     - pathauto.settings
     - purge_users.settings
     - roleassign.settings
-    - system.site
     - system.theme
     - user.role.anonymous
     - user.role.authenticated
