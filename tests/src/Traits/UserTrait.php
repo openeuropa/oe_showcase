@@ -37,7 +37,7 @@ trait UserTrait {
   /**
    * Creates a user with given roles.
    *
-   * @param array $roles
+   * @param string[] $roles
    *   List of roles to add to the user.
    *
    * @return \Drupal\user\UserInterface
