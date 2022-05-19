@@ -99,6 +99,7 @@ config_devel:
     - user.role.authenticated
     - user.role.configure_page_feedback_form
     - user.role.editor
+    - user.role.manage_contact_forms
     - user.role.manage_users
     - user.settings
     - user_field_anonymize.settings

@@ -54,6 +54,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     // Test authenticated with other roles.
     $this->drupalLogin($this->createUserWithRoles([
       'configure_page_feedback_form',
+      'manage_contact_forms',
       'manage_users',
     ]));
     $this->assertPathsResponseCode(200, $public_paths);
@@ -134,6 +135,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     $roles = [
       'Configure Page Feedback form',
       'Editor',
+      'Manage contact forms',
     ];
 
     // Test roles availability in the user listing page.
@@ -154,6 +156,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     $user = $this->createUserWithRoles([
       'configure_page_feedback_form',
       'editor',
+      'manage_contact_forms',
     ]);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
