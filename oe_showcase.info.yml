@@ -8,7 +8,6 @@ install:
   - ckeditor
   - config
   - content_translation
-  - cas_mock_server
   - datetime
   - dblog
   - default_content
