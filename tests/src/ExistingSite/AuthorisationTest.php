@@ -60,10 +60,11 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($user);
 
     $paths = [
-      '/admin/people/roles',
-      '/admin/people/roles/add',
       '/admin/people/role-settings',
       '/admin/people/roleassign',
+      '/admin/people/roles',
+      '/admin/people/roles/add',
+      '/admin/people/permissions',
     ];
 
     foreach ($paths as $path) {
