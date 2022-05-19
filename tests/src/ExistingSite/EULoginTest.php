@@ -36,6 +36,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
         'lastName' => 'Norris',
         'domain' => 'eu.europa.ec',
       ]);
+
     $this->markEntityTypeForCleanup('user');
   }
 

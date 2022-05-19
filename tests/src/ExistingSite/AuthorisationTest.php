@@ -36,6 +36,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    * Authenticated user cannot access restricted pages.
    */
   public function testAuthenticatedAccess(): void {
+    $this->drupalLogin($this->createUser());
     $paths = [
       '/admin',
       '/admin/config',
@@ -96,12 +97,6 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
     $this->assertSession()->statusCodeEquals(403);
-
-    $this->drupalGet("user/{$user->id()}/edit");
-    $this->assertRoleOptionsNotAvailable([
-      'Editor',
-      'Manage users',
-    ]);
   }
 
   /**
