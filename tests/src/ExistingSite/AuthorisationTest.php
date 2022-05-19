@@ -200,6 +200,9 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       ->getPage()
       ->findAll('css', '.form-checkbox');
 
+    // Assert an arbitrary count to make sure checkboxes are there.
+    $this->assertTrue(count($checkboxes) > 30);
+
     foreach ($checkboxes as $checkbox) {
       $this->assertTrue($checkbox->hasAttribute('disabled'));
     }
