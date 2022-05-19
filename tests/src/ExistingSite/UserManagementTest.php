@@ -46,6 +46,7 @@ class UserManagementTest extends ShowcaseExistingSiteTestBase {
    */
   protected function checkUsersUpdateCheckbox(string $username): void {
     $link = $this->getSession()->getPage()->findLink($username);
+    $this->assertNotNull($link);
     // The link resides in a td.
     $row = $link->getParent()->getParent();
     $row->checkField('Update the user');

@@ -127,11 +127,9 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
    */
   protected function activateUser(string $username): void {
     $user = $this->getUserByName($username);
-
-    if ($user) {
-      $user->activate();
-      $user->save();
-    }
+    $this->assertNotNull($user);
+    $user->activate();
+    $user->save();
   }
 
   /**
