@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\user\Entity\Role;
 
 /**
  * Set the updated regions of the oe_whitelabel navigation blocks.
@@ -66,4 +67,13 @@ function oe_showcase_post_update_00003(&$sandbox) {
     'user.role.manage_users',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00003_manage_users', $configs);
+}
+
+/**
+ * Revoke editor role's administer nodes permission.
+ */
+function oe_showcase_post_update_00004(&$sandbox) {
+  $role = Role::load('editor');
+  $role->revokePermission('administer nodes');
+  $role->save();
 }
