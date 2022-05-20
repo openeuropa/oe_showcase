@@ -77,3 +77,29 @@ function oe_showcase_post_update_00004(&$sandbox) {
   $role->revokePermission('administer nodes');
   $role->save();
 }
+
+/**
+ * Manage permissions for content editing and for contact forms.
+ */
+function oe_showcase_post_update_00005(): void {
+  // Update and create roles.
+  // Also change role weights to make them alphabetic.
+  $configs = [
+    // Allow anonymous and authenticated to use corporate contact forms.
+    'user.role.anonymous',
+    'user.role.authenticated',
+    // Allow editor to manage page content, and change role weight.
+    'user.role.editor',
+    // Create new role 'Manage contact forms'.
+    'user.role.manage_contact_forms',
+    // Change weight of 'Manage users' role.
+    'user.role.manage_users',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00005_update_roles', $configs);
+
+  // Add new role to roleassign.
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['manage_contact_forms'] = 'manage_contact_forms';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+}

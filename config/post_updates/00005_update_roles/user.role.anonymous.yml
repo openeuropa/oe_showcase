@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - oe_contact_forms
+    - rdf_skos
+    - search_api_autocomplete
+    - system
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access corporate contact form'
+  - 'access user profiles'
+  - 'use search_api_autocomplete for showcase_search'
+  - 'view media'
+  - 'view published skos concept entities'
