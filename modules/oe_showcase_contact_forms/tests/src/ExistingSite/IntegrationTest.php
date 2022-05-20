@@ -45,11 +45,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    $this->drupalLogin($this->createUser([
-      'create oe_showcase_page content',
-      'access corporate contact form',
-      'view published skos concept entities',
-    ]));
+    $this->drupalLogin($this->createUserWithRoles(['editor']));
     $this->drupalGet('node/add/oe_showcase_page');
 
     // Create oe_showcase_page.
