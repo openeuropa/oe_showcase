@@ -88,12 +88,10 @@ function oe_showcase_post_update_00005(): void {
     // Allow anonymous and authenticated to use corporate contact forms.
     'user.role.anonymous',
     'user.role.authenticated',
-    // Allow editor to manage page content, and change role weight.
+    // Allow editor to manage page content.
     'user.role.editor',
     // Create new role 'Manage contact forms'.
     'user.role.manage_contact_forms',
-    // Change weight of 'Manage users' role.
-    'user.role.manage_users',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00005_update_roles', $configs);
 
