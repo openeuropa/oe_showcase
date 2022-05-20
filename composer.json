@@ -44,7 +44,7 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "0.1.202204221923"
+        "openeuropa/oe_whitelabel": "1.0.0-beta1"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -92,14 +92,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202204221923..1.x.diff"
-            }
-        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
