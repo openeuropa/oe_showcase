@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
+use Drupal\Tests\oe_showcase\Traits\PathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
 /**
@@ -11,7 +12,58 @@ use Drupal\Tests\oe_showcase\Traits\UserTrait;
  */
 class AuthorisationTest extends ShowcaseExistingSiteTestBase {
 
+  use PathAccessTrait;
   use UserTrait;
+
+  /**
+   * Tests access to node create/view/edit/delete pages.
+   */
+  public function testManageContentPages(): void {
+    $content_types = [
+      'oe_sc_event',
+      'oe_sc_news',
+      'oe_showcase_page',
+    ];
+
+    $public_paths = [];
+    $restricted_paths = [];
+    foreach ($content_types as $content_type) {
+      $node = $this->createNode([
+        'type' => $content_type,
+        'title' => 'Stub ' . $content_type . ' node',
+      ]);
+      $revision_id = $node->getRevisionId();
+      // Update the node to create a new revision.
+      $node->setNewRevision();
+      $node->save();
+      $this->assertNotEquals($revision_id, $node->getRevisionId());
+      $public_paths[] = 'node/' . $node->id();
+      $restricted_paths[] = 'node/add/' . $content_type;
+      $restricted_paths[] = 'node/' . $node->id() . '/edit';
+      $restricted_paths[] = 'node/' . $node->id() . '/delete';
+      $restricted_paths[] = 'node/' . $node->id() . '/revisions';
+      $restricted_paths[] = 'node/' . $node->id() . '/revisions/' . $revision_id . '/revert';
+      $restricted_paths[] = 'node/' . $node->id() . '/revisions/' . $revision_id . '/delete';
+    }
+
+    // Test anonymous.
+    $this->assertSame(0, \Drupal::currentUser()->id());
+    $this->assertPathsResponseCode(200, $public_paths);
+    $this->assertPathsResponseCode(403, $restricted_paths);
+
+    // Test authenticated with other roles.
+    $this->drupalLogin($this->createUserWithRoles([
+      'configure_page_feedback_form',
+      'manage_users',
+    ]));
+    $this->assertPathsResponseCode(200, $public_paths);
+    $this->assertPathsResponseCode(403, $restricted_paths);
+
+    // Test editor.
+    $this->drupalLogin($this->createUserWithRoles(['editor']));
+    $this->assertPathsResponseCode(200, $public_paths);
+    $this->assertPathsResponseCode(200, $restricted_paths);
+  }
 
   /**
    * Anonymous user cannot access restricted pages.
