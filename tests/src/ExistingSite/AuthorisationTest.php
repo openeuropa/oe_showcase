@@ -46,24 +46,8 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       $restricted_paths[] = 'node/' . $node->id() . '/revisions/' . $revision_id . '/delete';
     }
 
-    // Test anonymous.
-    $this->assertSame(0, \Drupal::currentUser()->id());
-    $this->assertPathsResponseCode(200, $public_paths);
-    $this->assertPathsResponseCode(403, $restricted_paths);
-
-    // Test authenticated with other roles.
-    $this->drupalLogin($this->createUserWithRoles([
-      'configure_page_feedback_form',
-      'manage_contact_forms',
-      'manage_users',
-    ]));
-    $this->assertPathsResponseCode(200, $public_paths);
-    $this->assertPathsResponseCode(403, $restricted_paths);
-
-    // Test editor.
-    $this->drupalLogin($this->createUserWithRoles(['editor']));
-    $this->assertPathsResponseCode(200, $public_paths);
-    $this->assertPathsResponseCode(200, $restricted_paths);
+    $this->assertPathsArePublic($public_paths);
+    $this->assertPathsRequireRole($restricted_paths, 'editor');
   }
 
   /**

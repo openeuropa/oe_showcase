@@ -23,22 +23,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'admin/structure/contact/manage/export',
       'admin/structure/contact/messages',
     ];
-
-    // Test anonymous.
-    $this->assertSame(0, \Drupal::currentUser()->id());
-    $this->assertPathsResponseCode(403, $manage_contact_forms_paths);
-
-    // Test users with other roles.
-    $this->drupalLogin($this->createUserWithRoles([
-      'configure_page_feedback_form',
-      'editor',
-      'manage_users',
-    ]));
-    $this->assertPathsResponseCode(403, $manage_contact_forms_paths);
-
-    // Test editor.
-    $this->drupalLogin($this->createUserWithRoles(['manage_contact_forms']));
-    $this->assertPathsResponseCode(200, $manage_contact_forms_paths);
+    $this->assertPathsRequireRole($manage_contact_forms_paths, 'manage_contact_forms');
   }
 
   /**
