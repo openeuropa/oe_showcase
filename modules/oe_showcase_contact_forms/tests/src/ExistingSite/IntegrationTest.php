@@ -2,6 +2,8 @@
 
 declare(strict_types = 1);
 
+namespace Drupal\Tests\oe_showcase_contact_forms\ExistingSite;
+
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\PathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
