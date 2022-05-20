@@ -13,6 +13,7 @@ weight: 4
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access site-wide contact form'
   - 'access toolbar'
   - 'administer contact forms'
   - 'export contact form messages'

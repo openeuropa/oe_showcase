@@ -24,6 +24,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'admin/structure/contact/add',
       'admin/structure/contact/manage/export',
       'admin/structure/contact/messages',
+      'contact/example_contact_form',
     ];
     $this->assertPathsRequireRole($manage_contact_forms_paths, 'manage_contact_forms');
   }
