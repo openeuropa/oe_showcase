@@ -7,7 +7,7 @@ namespace Drupal\Tests\oe_showcase\Traits;
 /**
  * Provides methods to check access to paths.
  */
-trait PathAccessTrait {
+trait AssertPathAccessTrait {
 
   /**
    * Asserts that only users with given role can visit given paths.

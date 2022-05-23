@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
-use Drupal\Tests\oe_showcase\Traits\PathAccessTrait;
+use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
 /**
@@ -12,7 +12,7 @@ use Drupal\Tests\oe_showcase\Traits\UserTrait;
  */
 class AuthorisationTest extends ShowcaseExistingSiteTestBase {
 
-  use PathAccessTrait;
+  use AssertPathAccessTrait;
   use UserTrait;
 
   /**
