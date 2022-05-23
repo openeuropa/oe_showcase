@@ -54,7 +54,7 @@ trait AssertPathAccessTrait {
     $this->drupalLogin($this->createUserWithRoles($other_roles));
     $this->assertPathsResponseCode(403, $paths);
 
-    // Test editor.
+    // Test the specified role.
     $this->drupalLogin($this->createUserWithRoles([$role]));
     $this->assertPathsResponseCode(200, $paths);
   }
