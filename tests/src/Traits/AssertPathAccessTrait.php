@@ -60,6 +60,29 @@ trait AssertPathAccessTrait {
   }
 
   /**
+   * Asserts that neither anonymous nor logged-in users can visit given paths.
+   *
+   * Side effects:
+   * - Creates user accounts.
+   * - Changes login state.
+   * - Changes currently visited page.
+   *
+   * @param string[] $paths
+   *   The paths to test.
+   */
+  protected function assertPathsAccessForbidden(array $paths): void {
+    // Test anonymous.
+    $this->drupalLogout();
+    $this->assertPathsResponseCode(403, $paths);
+
+    // Test all existing roles.
+    $all_roles = user_role_names(TRUE);
+    unset($all_roles['authenticated']);
+    $this->drupalLogin($this->createUserWithRoles(array_keys($all_roles)));
+    $this->assertPathsResponseCode(403, $paths);
+  }
+
+  /**
    * Visits a number of paths and asserts the response code.
    *
    * Side effect: Current path/page will change.
