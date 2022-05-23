@@ -76,8 +76,9 @@ trait AssertPathAccessTrait {
     $this->assertPathsResponseCode(403, $paths);
 
     // Test all existing roles.
-    $all_roles = array_keys(user_role_names(TRUE));
-    $this->drupalLogin($this->createUserWithRoles($all_roles));
+    $all_roles = user_role_names(TRUE);
+    unset($all_roles['authenticated']);
+    $this->drupalLogin($this->createUserWithRoles(array_keys($all_roles)));
     $this->assertPathsResponseCode(403, $paths);
   }
 
