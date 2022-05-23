@@ -1,11 +1,15 @@
 # Change Log
 
-## [1.0.0-alpha3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha3) (2022-05-20)
+## [1.0.0-alpha3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha3) (2022-05-23)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha2...1.0.0-alpha3)
 
 **Merged pull requests:**
 
+- OEL-1631: Simplify page node bundle label. [\#140](https://github.com/openeuropa/oe_showcase/pull/140) ([brummbar](https://github.com/brummbar))
+- OEL-1626: Improve editor permissions [\#139](https://github.com/openeuropa/oe_showcase/pull/139) ([brummbar](https://github.com/brummbar))
+- Prepare release 1.0.0-alpha3 [\#138](https://github.com/openeuropa/oe_showcase/pull/138) ([drishu](https://github.com/drishu))
 - OEL-1620: Revoke administer nodes permission to editor role. [\#136](https://github.com/openeuropa/oe_showcase/pull/136) ([escuriola](https://github.com/escuriola))
+- OEL-1614: Permissions and roles for pages and contact forms [\#135](https://github.com/openeuropa/oe_showcase/pull/135) ([donquixote](https://github.com/donquixote))
 - Update EPIC-1293-Project [\#132](https://github.com/openeuropa/oe_showcase/pull/132) ([donquixote](https://github.com/donquixote))
 - Update EPIC-1293-Project [\#128](https://github.com/openeuropa/oe_showcase/pull/128) ([donquixote](https://github.com/donquixote))
 - OEL-1371: Update project test for new version of status element [\#127](https://github.com/openeuropa/oe_showcase/pull/127) ([donquixote](https://github.com/donquixote))
