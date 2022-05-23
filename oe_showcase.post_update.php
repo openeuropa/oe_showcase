@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
+use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
 
@@ -100,4 +101,13 @@ function oe_showcase_post_update_00005(): void {
   $roleassign_roles = $roleassign_config->get('roleassign_roles');
   $roleassign_roles['manage_contact_forms'] = 'manage_contact_forms';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+}
+
+/**
+ * Simplify the page node bundle label.
+ */
+function oe_showcase_post_update_00006(): void {
+  $type = NodeType::load('oe_showcase_page');
+  $type->set('name', 'Page');
+  $type->save();
 }
