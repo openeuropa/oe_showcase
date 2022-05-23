@@ -131,7 +131,7 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
       $forbidden_paths[] = 'media/' . $this->medias[$bundle]->id() . '/delete';
     }
 
-    $this->assertPathsResponseCode(403, $forbidden_paths);
+    $this->assertPathsAccessForbidden($forbidden_paths);
   }
 
 }
