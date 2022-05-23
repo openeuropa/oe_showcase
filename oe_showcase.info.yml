@@ -94,12 +94,12 @@ config_devel:
     - pathauto.settings
     - purge_users.settings
     - roleassign.settings
-    - system.site
     - system.theme
     - user.role.anonymous
     - user.role.authenticated
-    - user.role.configure_page_feedback_form.yml
+    - user.role.configure_page_feedback_form
     - user.role.editor
+    - user.role.manage_contact_forms
     - user.role.manage_users
     - user.settings
     - user_field_anonymize.settings
@@ -112,5 +112,6 @@ config_devel:
     - block.block.seven_page_title
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
-    - block.block.showcase_pagefeedbackform.yml
+    - block.block.showcase_pagefeedbackform
     - block.block.showcase_pagetitle
+    - block.block.showcase_socialshare
