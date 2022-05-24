@@ -7,12 +7,12 @@ namespace Drupal\Tests\oe_showcase_multilingual\ExistingSiteJavascript;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 
 /**
- * Tests oe_showcase_multilingual translation is available.
+ * Tests oe_webtools_etrans block is displaying properly.
  */
 class WebToolsEtransTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   /**
-   * Test node translation.
+   * Test oe_webtools_etrans block in oe_showcase.
    */
   public function testWebToolsEtrans(): void {
     $this->markEntityTypeForCleanup('node');
