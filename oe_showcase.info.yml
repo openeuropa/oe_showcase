@@ -51,6 +51,7 @@ install:
   - oe_showcase_user_profile
   - oe_webtools
   - oe_webtools_cookie_consent
+  - oe_webtools_etrans
   - oe_webtools_page_feedback
   - oe_webtools_social_share
   - oe_whitelabel_extra_project
