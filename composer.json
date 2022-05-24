@@ -17,8 +17,8 @@
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/extra_field": "^2.1",
-        "drupal/facets": "1.8.0 as 2.0.1",
-        "drupal/facets_form": "1.0.0-alpha2",
+        "drupal/facets": "^2.0",
+        "drupal/facets_form": "1.0.0-alpha3",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
         "drupal/honeypot": "^2.0",
@@ -26,6 +26,7 @@
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
         "drupal/purge_users": "dev-3.x#7a4dd2df",
+        "drupal/roleassign": "^1.0@beta",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
         "drupal/user_field_anonymize": "1.x-dev#d5fc64ec",
@@ -49,6 +50,7 @@
     },
     "require-dev": {
         "composer/installers": "~1.11",
+        "drupal/cas_mock_server": "^1.4",
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-dev": "^9.2",
@@ -92,11 +94,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-alpha8..1.x.diff"
-            }
-        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {

@@ -76,7 +76,6 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $page->fillField('Date', '2022-01-24');
-    $page->fillField('Time', '00:00:00');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('Media item', $media_name);
     $page->pressButton('Save');
@@ -90,6 +89,8 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
+
+    $this->assertSocialShareBlock();
   }
 
 }

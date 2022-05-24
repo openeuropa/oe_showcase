@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase page module.
+ */
+
+declare(strict_types =  1);
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function oe_showcase_page_theme_registry_alter(&$theme_registry) {
+  $theme_registry['oe_webtools_social_share']['path'] = drupal_get_path('module', 'oe_showcase_page') . '/templates';
+}

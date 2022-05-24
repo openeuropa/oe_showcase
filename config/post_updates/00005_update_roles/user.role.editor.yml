@@ -12,7 +12,6 @@ dependencies:
     - media.type.webtools_chart
     - media.type.webtools_map
     - media.type.webtools_social_feed
-    - node.type.oe_list_page
     - node.type.oe_sc_event
     - node.type.oe_sc_news
     - node.type.oe_showcase_page
@@ -35,7 +34,6 @@ permissions:
   - 'create av_portal_video media'
   - 'create document media'
   - 'create image media'
-  - 'create oe_list_page content'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'create oe_showcase_page content'
@@ -47,7 +45,6 @@ permissions:
   - 'delete any av_portal_video media'
   - 'delete any document media'
   - 'delete any image media'
-  - 'delete any oe_list_page content'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
   - 'delete any oe_showcase_page content'
@@ -55,7 +52,6 @@ permissions:
   - 'delete any webtools_chart media'
   - 'delete any webtools_map media'
   - 'delete any webtools_social_feed media'
-  - 'delete oe_list_page revisions'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
   - 'delete oe_showcase_page revisions'
@@ -63,7 +59,6 @@ permissions:
   - 'edit any av_portal_video media'
   - 'edit any document media'
   - 'edit any image media'
-  - 'edit any oe_list_page content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
   - 'edit any oe_showcase_page content'
@@ -71,13 +66,11 @@ permissions:
   - 'edit any webtools_chart media'
   - 'edit any webtools_map media'
   - 'edit any webtools_social_feed media'
-  - 'revert oe_list_page revisions'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
-  - 'view oe_list_page revisions'
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
   - 'view oe_showcase_page revisions'
