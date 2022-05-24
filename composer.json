@@ -92,6 +92,11 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
+        "patches": {
+            "openeuropa/oe_whitelabel": {
+                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta2..OEL-1571.diff"
+            }
+        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
