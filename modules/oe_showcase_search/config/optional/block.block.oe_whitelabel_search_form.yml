@@ -7,7 +7,7 @@ dependencies:
     - oe_whitelabel
 id: oe_whitelabel_search_form
 theme: oe_whitelabel
-region: header_right
+region: navigation_right
 weight: 0
 provider: null
 plugin: whitelabel_search_block

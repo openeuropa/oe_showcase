@@ -2,12 +2,32 @@
 
 declare(strict_types = 1);
 
+namespace Drupal\Tests\oe_showcase_contact_forms\ExistingSite;
+
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
+use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
 /**
  * Contact form tests.
  */
 class IntegrationTest extends ShowcaseExistingSiteTestBase {
+
+  use AssertPathAccessTrait;
+  use UserTrait;
+
+  /**
+   * Tests access to contact form admin pages.
+   */
+  public function testAccess(): void {
+    $manage_contact_forms_paths = [
+      'admin/structure/contact/add',
+      'admin/structure/contact/manage/export',
+      'admin/structure/contact/messages',
+      'contact/example_contact_form',
+    ];
+    $this->assertPathsRequireRole($manage_contact_forms_paths, 'manage_contact_forms');
+  }
 
   /**
    * Check creation contact form content through the UI.
@@ -25,11 +45,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    $this->drupalLogin($this->createUser([
-      'create oe_showcase_page content',
-      'access corporate contact form',
-      'view published skos concept entities',
-    ]));
+    $this->drupalLogin($this->createUserWithRoles(['editor']));
     $this->drupalGet('node/add/oe_showcase_page');
 
     // Create oe_showcase_page.
@@ -47,10 +63,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     );
     $page->pressButton('Save');
 
-    $this->drupalLogin($this->createUser([
-      'access corporate contact form',
-      'view published skos concept entities',
-    ]));
+    $this->drupalLogin($this->createUser());
 
     $this->drupalGet('/pages/example-contact-form-page');
     $page->fillField('Subject', 'Example subject');
