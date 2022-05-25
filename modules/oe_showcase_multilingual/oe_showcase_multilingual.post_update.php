@@ -19,6 +19,6 @@ function oe_showcase_multilingual_post_update_00001(&$sandbox) {
     'module',
     'oe_showcase_multilingual',
     '/config/post_updates/00001_webtools_etrans',
-    'block.block.openeuropa_webtools_etrans'
+    'block.block.showcase_etrans'
   );
 }
