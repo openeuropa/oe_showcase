@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase_contact_forms;
+namespace Drupal\Tests\oe_showcase_contact_forms\ExistingSite;
 
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
@@ -92,12 +92,12 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Country of residence', 'http://publications.europa.eu/resource/authority/country/BEL');
     $page->pressButton('Send message');
 
-    $confirm_message = $page->find('css', 'div.alert.alert-success');
-    $this->assertStringContainsString('Alpaca', $confirm_message->getText());
-    $this->assertStringContainsString('345345345', $confirm_message->getText());
-    $this->assertStringContainsString('Belgium', $confirm_message->getText());
-    $this->assertStringContainsString('Example subject', $confirm_message->getText());
-    $this->assertStringContainsString('Example Message text', $confirm_message->getText());
+    $confirm_message = $page->find('css', 'div.alert.alert-success')->getText();
+    $this->assertStringContainsString('Alpaca', $confirm_message);
+    $this->assertStringContainsString('345345345', $confirm_message);
+    $this->assertStringContainsString('Belgium', $confirm_message);
+    $this->assertStringContainsString('Example subject', $confirm_message);
+    $this->assertStringContainsString('Example Message text', $confirm_message);
   }
 
 }
