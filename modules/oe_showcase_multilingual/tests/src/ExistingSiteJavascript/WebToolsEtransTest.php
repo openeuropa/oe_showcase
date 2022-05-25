@@ -27,7 +27,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalLogin($user);
 
-    // Assert WebToolsEtrans Block exists if node and is placed in the footer.
+    // Assert Etrans is loaded for nodes.
     $current_language = 'en';
     $values = [
       'type' => 'oe_showcase_page',
@@ -48,11 +48,9 @@ class WebToolsEtransTest extends ShowcaseExistingSiteJavascriptTestBase {
       $etrans_block->getHtml()
     );
 
-    // Assert excluded language after changing the current language.
+    // Assert the current language is excluded after language switching.
     $current_language = 'es';
-    $this->clickLink('English');
-    $this->assertSession()->waitForElementVisible('css', '#languageModal');
-    $this->clickLink('español');
+    $this->drupalGet('/es/node/' . $node->id());
 
     $etrans_block = $page->find('css', 'div.page > div#block-openeuropa-webtools-etrans');
     $assert_session->waitForId('wtEtransRequester');
@@ -63,7 +61,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteJavascriptTestBase {
       $etrans_block->getHtml()
     );
 
-    // Assert WebToolsEtrans Block is not visible out of a node.
+    // Assert Etrans is not visible outside of nodes.
     $this->drupalGet('/user/' . $user->id());
     $assert_session->elementNotExists('css', 'div#block-openeuropa-webtools-etrans');
   }
