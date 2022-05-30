@@ -8,8 +8,8 @@ dependencies:
     - oe_whitelabel
 id: showcase_etrans
 theme: oe_whitelabel
-region: footer
-weight: -2
+region: content
+weight: -4
 provider: null
 plugin: oe_webtools_etrans
 settings:
