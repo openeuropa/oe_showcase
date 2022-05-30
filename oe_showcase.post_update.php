@@ -113,9 +113,7 @@ function oe_showcase_post_update_00006(): void {
 }
 
 /**
- * Implements hook_post_update_NAME().
- *
- * Install "OpenEuropa showcase listing pages" module.
+ * Install OpenEuropa Showcase list pages module.
  */
 function oe_showcase_post_update_00007(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_list_pages']);
