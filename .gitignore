@@ -2,7 +2,6 @@
 .idea
 behat.yml
 build
-composer.lock
 docker-compose.*.yml
 grumphp.yml
 node_modules
