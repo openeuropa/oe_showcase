@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase multilingual module.
+ */
+
+declare(strict_types =  1);
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_block_access().
+ */
+function oe_showcase_multilingual_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation !== 'view' || $block->id() !== 'showcase_etrans') {
+    return AccessResult::neutral();
+  }
+
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!$node) {
+    return AccessResult::neutral();
+  }
+
+  $translations = $node->getTranslationLanguages(FALSE);
+  if (empty($translations)) {
+    return AccessResult::allowed();
+  }
+
+  return AccessResult::forbidden();
+}
