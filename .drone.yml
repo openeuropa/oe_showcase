@@ -58,7 +58,7 @@ pipeline:
       - git clone -b 1.x https://github.com/openeuropa/oe_showcase.git build-tag
       - cd build-tag
       - git fetch --all --tags
-      - git checkout ${REFERENCE}
+      - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
       - composer install --ansi --no-progress
     when:
       matrix:
@@ -122,4 +122,4 @@ pipeline:
 matrix:
   include:
     - { TYPE: install }
-    - { TYPE: update, REFERENCE: 1.0.0-alpha4 }
+    - { TYPE: update }
