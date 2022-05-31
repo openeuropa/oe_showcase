@@ -14,7 +14,7 @@ workspace:
 
 services:
   web:
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     environment:
       - DOCUMENT_ROOT=/test/oe_showcase
   mysql:
@@ -41,16 +41,31 @@ services:
       - NODE_MAX_SESSION=5
 
 pipeline:
-  composer-install:
+  build-branch:
     group: prepare
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     volumes:
       - /cache:/cache
     commands:
       - composer install --ansi --no-progress
 
-  site-install:
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+  build-tag:
+    group: prepare
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    volumes:
+      - /cache:/cache
+    commands:
+      - git clone -b 1.x https://github.com/openeuropa/oe_showcase.git build-tag
+      - cd build-tag
+      - git fetch --all --tags
+      - git checkout ${REFERENCE}
+      - composer install --ansi --no-progress
+    when:
+      matrix:
+        TYPE: update
+
+  install-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
@@ -58,9 +73,31 @@ pipeline:
       event:
         exclude: tag
 
+  install-tag:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - cd build-tag
+      - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
+      - ./vendor/bin/run drupal:site-install
+    when:
+      matrix:
+        TYPE: update
+      event:
+        exclude: tag
+
+  update-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - ./vendor/bin/drush updb -y
+    when:
+      matrix:
+        TYPE: update
+      event:
+        exclude: tag
+
   grumphp:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - ./vendor/bin/grumphp run
     when:
@@ -69,7 +106,7 @@ pipeline:
 
   phpunit:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - ./vendor/bin/run ci:site-setup
       - ./vendor/bin/drush en -y media_avportal_mock
@@ -79,5 +116,6 @@ pipeline:
         exclude: tag
 
 matrix:
-  PHP_VERSION:
-    - 8.0
+  include:
+    - { TYPE: install }
+    - { TYPE: update, REFERENCE: 1.0.0-alpha3 }
