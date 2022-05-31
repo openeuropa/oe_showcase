@@ -79,6 +79,7 @@ pipeline:
       - cd build-tag
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
+      - /scripts/backupdb.sh dump.sql --gzip
     when:
       matrix:
         TYPE: update
@@ -88,6 +89,9 @@ pipeline:
   update-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
+      - mv build-tag/dump.sql.gz .
+      - /scripts/importdb.sh dump.sql.gz
+      - ./vendor/bin/drush cr
       - ./vendor/bin/drush updb -y
     when:
       matrix:
