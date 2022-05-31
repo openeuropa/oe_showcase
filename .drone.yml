@@ -63,6 +63,8 @@ pipeline:
     when:
       matrix:
         TYPE: update
+      event:
+        exclude: tag
 
   install-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
