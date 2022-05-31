@@ -122,4 +122,4 @@ pipeline:
 matrix:
   include:
     - { TYPE: install }
-    - { TYPE: update, REFERENCE: 1.0.0-alpha3 }
+    - { TYPE: update, REFERENCE: 1.0.0-alpha4 }
