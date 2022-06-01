@@ -92,8 +92,8 @@ pipeline:
     commands:
       - mv build-tag/dump.sql.gz .
       - /scripts/importdb.sh dump.sql.gz
-      - ./vendor/bin/drush cr
       - ./vendor/bin/drush updb -y
+      - ./vendor/bin/drush cr
     when:
       matrix:
         TYPE: update
