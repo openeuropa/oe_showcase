@@ -49,7 +49,7 @@ pipeline:
     commands:
       - composer install --ansi --no-progress
 
-  build-tag:
+  build-release:
     group: prepare
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     volumes:
@@ -74,7 +74,7 @@ pipeline:
       event:
         exclude: tag
 
-  install-tag:
+  install-release:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - cd build-tag
