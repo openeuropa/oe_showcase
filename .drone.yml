@@ -55,9 +55,8 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
-      - git clone -b 1.x https://github.com/openeuropa/oe_showcase.git build-tag
+      - git clone https://github.com/openeuropa/oe_showcase.git build-tag
       - cd build-tag
-      - git fetch --all --tags
       - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
       - composer install --ansi --no-progress
     when:
