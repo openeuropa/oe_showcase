@@ -58,7 +58,7 @@ pipeline:
       - /cache:/cache
     commands:
       - git config --global --add safe.directory /test/oe_showcase
-      - currentbranch=$(git branch --show-current)
+      - git fetch --tags
       - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
       - composer install --ansi --no-progress
     when:
@@ -92,7 +92,8 @@ pipeline:
   switch-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
-      - git checkout ${currentbranch}
+      - git config --global --add safe.directory /test/oe_showcase
+      - git checkout ${DRONE_BRANCH}
       - rm -Rf vendor
       - composer install --ansi --no-progress
     when:
