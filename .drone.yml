@@ -48,15 +48,16 @@ pipeline:
       - /cache:/cache
     commands:
       - composer install --ansi --no-progress
+    when:
+      matrix:
+        TYPE: install
 
   build-release:
-    group: prepare
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     volumes:
       - /cache:/cache
     commands:
-      - git clone https://github.com/openeuropa/oe_showcase.git build-tag
-      - cd build-tag
+      - currentbranch=$(git branch --show-current)
       - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
       - composer install --ansi --no-progress
     when:
@@ -71,16 +72,28 @@ pipeline:
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
     when:
+      matrix:
+        TYPE: install
       event:
         exclude: tag
 
   install-release:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
-      - cd build-tag
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
-      - /scripts/backupdb.sh dump.sql --gzip
+    when:
+      matrix:
+        TYPE: update
+      event:
+        exclude: tag
+
+  switch-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - git checkout ${currentbranch}
+      - rm -Rf vendor
+      - composer install --ansi --no-progress
     when:
       matrix:
         TYPE: update
@@ -90,8 +103,6 @@ pipeline:
   update-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
-      - mv build-tag/dump.sql.gz .
-      - /scripts/importdb.sh dump.sql.gz
       - ./vendor/bin/drush updb -y
       - ./vendor/bin/drush cr
     when:
