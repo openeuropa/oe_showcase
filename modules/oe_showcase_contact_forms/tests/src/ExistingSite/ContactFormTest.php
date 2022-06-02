@@ -48,7 +48,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
 
-    // Disable the flood limits for contact forms.
+    // Disable the flood limits to avoid submit failure when run multiple times.
     $contact_settings = $this->container->get('config.factory')->getEditable('contact.settings');
     $flood_values = [
       'limit' => '100',
