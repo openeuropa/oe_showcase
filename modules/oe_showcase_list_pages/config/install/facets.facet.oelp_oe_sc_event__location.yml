@@ -51,6 +51,11 @@ processor_configs:
     weights:
       build: 100
     settings: {  }
+  oe_list_pages_address_format_country_code:
+    processor_id: oe_list_pages_address_format_country_code
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
