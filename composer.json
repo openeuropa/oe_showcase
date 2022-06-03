@@ -46,7 +46,7 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "dev-EPIC-1450-List-pages"
+        "openeuropa/oe_whitelabel": "1.0.0-beta2"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -96,7 +96,7 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta2..1.x.diff"
+                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta2..EPIC-1450-List-pages.diff"
             }
         },
         "artifacts": {
