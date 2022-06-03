@@ -95,6 +95,9 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
+            "drupal/facets": {
+                "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
+            },
             "openeuropa/oe_whitelabel": {
                 "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta2..EPIC-1450-List-pages.diff"
             }
