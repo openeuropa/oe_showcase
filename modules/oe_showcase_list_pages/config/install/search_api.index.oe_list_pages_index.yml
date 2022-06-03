@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.oe_sc_event_dates
+    - field.storage.node.oe_sc_event_location
     - field.storage.node.oe_publication_date
     - field.storage.node.oe_sc_event_dates
     - field.storage.node.oe_summary
@@ -47,6 +49,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.oe_summary
+  oe_sc_event_location:
+    label: Location
+    datasource_id: 'entity:node'
+    property_path: oe_sc_event_location
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.oe_sc_event_location
   title:
     label: Title
     datasource_id: 'entity:node'
