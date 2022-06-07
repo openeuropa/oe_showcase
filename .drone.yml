@@ -118,6 +118,6 @@ pipeline:
       - ./vendor/bin/phpunit
 
 matrix:
-  include:
-    - { TYPE: install }
-    - { TYPE: update }
+  TYPE:
+    - install
+    - update
