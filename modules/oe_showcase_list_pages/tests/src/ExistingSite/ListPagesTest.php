@@ -61,6 +61,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
         'body' => 'This is an Event content number ' . $i,
+        'oe_summary' => 'This is an Event introduction number ' . $i,
         'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
         'oe_sc_event_dates' => [
@@ -239,6 +240,14 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     // Assert only Event nodes are part of the result.
     $title_input->setValue('News number 1');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 0);
+
+    // Assert Event title filters only by title.
+    $title_input->setValue('This is an Event content number 10');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 0);
+    $title_input->setValue('This is an Event introduction number 10');
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 0);
   }
