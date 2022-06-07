@@ -64,8 +64,6 @@ pipeline:
     when:
       matrix:
         TYPE: update
-      event:
-        exclude: tag
 
   install-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
@@ -75,8 +73,6 @@ pipeline:
     when:
       matrix:
         TYPE: install
-      event:
-        exclude: tag
 
   install-release:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
@@ -86,8 +82,6 @@ pipeline:
     when:
       matrix:
         TYPE: update
-      event:
-        exclude: tag
 
   switch-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
@@ -99,8 +93,6 @@ pipeline:
     when:
       matrix:
         TYPE: update
-      event:
-        exclude: tag
 
   update-branch:
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
@@ -110,17 +102,12 @@ pipeline:
     when:
       matrix:
         TYPE: update
-      event:
-        exclude: tag
 
   grumphp:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - ./vendor/bin/grumphp run
-    when:
-      event:
-        exclude: tag
 
   phpunit:
     group: test
@@ -129,9 +116,6 @@ pipeline:
       - ./vendor/bin/run ci:site-setup
       - ./vendor/bin/drush en -y media_avportal_mock
       - ./vendor/bin/phpunit
-    when:
-      event:
-        exclude: tag
 
 matrix:
   include:
