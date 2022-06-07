@@ -46,6 +46,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is a News content number ' . $i,
+        'oe_summary' => 'This is a News introduction number ' . $i,
         'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
@@ -91,6 +92,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/' . $node->id());
 
     // Assert that only News items are displayed.
+    $this->assertSearchResultsTitle('News list page', 12);
     $this->assertSearchResults([
       'News number 0',
       'News number 1',
@@ -112,7 +114,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     // Assert that the filter form for News exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
-    $title_input = $filter_form->findField('Title');
+    $title_input = $filter_form->findField('Keyword');
     $publication_date_input = $filter_form->findField('Publication date');
     $search_button = $filter_form->find('css', '#edit-submit');
     $this->assertNotNull($search_button);
@@ -142,6 +144,22 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->assertSearchResultsTitle('News list page', 1);
     $this->assertSearchResults([
       'News number 8',
+    ]);
+
+    // Filter the News results by content.
+    $title_input->setValue('This is a News content number 10');
+    $search_button->click();
+    $this->assertSearchResultsTitle('News list page', 1);
+    $this->assertSearchResults([
+      'News number 10',
+    ]);
+
+    // Filter the News results by introduction.
+    $title_input->setValue('This is a News introduction number 11');
+    $search_button->click();
+    $this->assertSearchResultsTitle('News list page', 1);
+    $this->assertSearchResults([
+      'News number 11',
     ]);
 
     // Assert only News nodes are part of the result.
