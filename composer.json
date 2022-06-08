@@ -96,11 +96,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
-            }
-        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
