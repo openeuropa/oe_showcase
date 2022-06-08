@@ -15,10 +15,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteTestBase {
    * Test oe_webtools_etrans block in oe_showcase.
    */
   public function testWebToolsEtrans(): void {
-    $this->markEntityTypeForCleanup('node');
-
     $assert_session = $this->assertSession();
-    $page = $this->getSession()->getPage();
 
     $user = $this->createUser([
       'create oe_showcase_page content',
@@ -38,7 +35,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteTestBase {
     $node = $this->createNode($values);
     $this->drupalGet($node->toUrl());
 
-    $etrans_block = $page->find('css', 'main > div.container > div.row > div.col-12 > div#block-showcase-etrans');
+    $etrans_block = $assert_session->elementExists('css', 'main > div.container > div.row > div.col-12 > div#block-showcase-etrans');
     $this->assertStringContainsString(
       '{"service":"etrans","languages":{"exclude":["en"]},"renderAs":{"button":false,"icon":false,"link":true},"domain":"spd","delay":0,"renderTo":"webtools-etrans","include":"main, .bcl-header"}',
       $etrans_block->getHtml()
@@ -48,9 +45,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteTestBase {
     $node_es = $node->addTranslation('es', $node->toArray());
     $node_es->setTitle('Spanish Translation');
     $node_es->save();
-
     $this->drupalGet($node->toUrl());
-
     $assert_session->elementNotExists('css', 'main > div.container > div.row > div.col-12 > div#block-showcase-etrans');
 
     // Assert Etrans is not loaded outside nodes.
