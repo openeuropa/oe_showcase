@@ -22,13 +22,13 @@ function oe_showcase_multilingual_block_access(Block $block, $operation, Account
   /** @var \Drupal\node\NodeInterface $node */
   $node = \Drupal::routeMatch()->getParameter('node');
   if (!$node) {
-    return AccessResult::neutral();
+    return AccessResult::neutral()->addCacheContexts(['route']);
   }
 
   $translations = $node->getTranslationLanguages(FALSE);
-  if (empty($translations)) {
-    return AccessResult::allowed();
+  if (!empty($translations)) {
+    return AccessResult::forbidden()->addCacheableDependency($node);
   }
 
-  return AccessResult::forbidden();
+  return AccessResult::neutral()->addCacheableDependency($node);
 }
