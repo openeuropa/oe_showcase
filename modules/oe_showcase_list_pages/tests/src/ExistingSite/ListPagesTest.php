@@ -163,6 +163,27 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'News number 11',
     ]);
 
+    // Filter by a mix of introduction and content in shuffled order.
+    $title_input->setValue('6 content number introduction');
+    $search_button->click();
+    $this->assertSearchResultsTitle('News list page', 1);
+    $this->assertSearchResults([
+      'News number 6',
+    ]);
+    $title_input->setValue('NUMBER this');
+    $search_button->click();
+    $this->assertSearchResultsTitle('News list page', 8);
+    $this->assertSearchResults([
+      'News number 10',
+      'News number 8',
+      'News number 6',
+      'News number 4',
+      'News number 11',
+      'News number 9',
+      'News number 7',
+      'News number 5',
+    ]);
+
     // Assert only News nodes are part of the result.
     $title_input->setValue('Event example');
     $search_button->click();
