@@ -34,7 +34,6 @@ Filters are facets on search API module. To create new facets you should:
 ### Note
 
 To overcome an [issue](https://www.drupal.org/project/facets/issues/3262863) with facets 2 we used below patch:
-
 ```json
 "drupal/facets": {
     "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
