@@ -2,8 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.oe_sc_event_dates
+    - field.storage.node.body
     - field.storage.node.oe_publication_date
+    - field.storage.node.oe_sc_event_dates
+    - field.storage.node.oe_summary
     - search_api.server.oe_list_pages_search_server
   module:
     - node
@@ -13,6 +15,14 @@ name: 'List pages index'
 description: ''
 read_only: false
 field_settings:
+  body:
+    label: Content
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
   oe_publication_date:
     label: 'Publication date'
     datasource_id: 'entity:node'
@@ -29,6 +39,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.oe_sc_event_dates
+  oe_summary:
+    label: Introduction
+    datasource_id: 'entity:node'
+    property_path: oe_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.oe_summary
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -65,6 +83,8 @@ processor_settings:
       preprocess_query: -20
     all_fields: false
     fields:
+      - body
+      - oe_summary
       - title
   language_with_fallback: {  }
   rendered_item: {  }
