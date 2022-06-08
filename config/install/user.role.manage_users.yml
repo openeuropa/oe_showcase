@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - roleassign
+    - system
+    - toolbar
+id: manage_users
+label: 'Manage users'
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer users'
+  - 'assign roles'
+  - 'view the administration theme'
