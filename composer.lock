@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2a529b8af31ba145f464a4d700726cb",
+    "content-hash": "bb4d69a9d68e86453e75f940b270fc6c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1046,6 +1046,106 @@
                 "source": "https://git.drupalcode.org/project/cas",
                 "issues": "http://drupal.org/project/issues/cas",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/composite_reference",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/composite_reference.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/composite_reference-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "a6cdad4df0a7ed09c47ff61f22378b46bebb24dc"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "composer/installers": "^1.5",
+                "drupal/config_devel": "^1.2",
+                "drupal/core-composer-scaffold": "^9.2",
+                "drupal/core-dev": "^9.2",
+                "drupal/drupal-extension": "^4.0",
+                "drupal/entity_reference_revisions": "^1.3",
+                "drush/drush": "^10.3",
+                "openeuropa/code-review": "^2.0",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
+                "phpspec/prophecy-phpunit": "^1 || ^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1643904691",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\composite_reference\\": "./src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\composite_reference\\": "./tests/src"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "post-install-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ],
+                "post-update-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ]
+            },
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
+                },
+                {
+                    "name": "ieguskiza",
+                    "homepage": "https://www.drupal.org/user/2652665"
+                }
+            ],
+            "description": "Marks references as composite.",
+            "homepage": "https://www.drupal.org/project/composite_reference",
+            "support": {
+                "source": "https://git.drupalcode.org/project/composite_reference"
             }
         },
         {
@@ -2555,7 +2655,7 @@
             "extra": {
                 "drupal": {
                     "version": "2.1.0",
-                    "datestamp": "1651894953",
+                    "datestamp": "1654198317",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6048,6 +6148,92 @@
             "time": "2022-02-10T16:46:44+00:00"
         },
         {
+            "name": "openeuropa/oe_content_extra",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openeuropa/oe_content_extra",
+                "reference": "07c6995786fa925d97f4a10492025bc9a057a3de"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "amphp/parallel-functions": "~1.0.0",
+                "composer/installers": "^2.0",
+                "drupal/address": "^1.10",
+                "drupal/composite_reference": "^2.1",
+                "drupal/config_devel": "^1.8",
+                "drupal/core-composer-scaffold": "^9.2",
+                "drupal/core-dev": "^9.2",
+                "drupal/description_list_field": "^1.0@alpha",
+                "drupal/entity_reference_revisions": "^1.9",
+                "drupal/field_group": "^3.2",
+                "drupal/file_link": "^2.0.4",
+                "drupal/typed_link": "^2.0",
+                "drush/drush": "^10.3",
+                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "openeuropa/code-review": "^1.6 || ^2.0",
+                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
+                "phpspec/prophecy-phpunit": "^2"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "extra": {
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                },
+                "_readme": [
+                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
+                    "Explicit requirement for drupal/file_link due to https://www.drupal.org/project/file_link/issues/3147517. It can be removed when oe_media requires version 2.0.4 or above.",
+                    "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors."
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\oe_content_extra\\": "./src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\oe_content_extra\\": "./tests/src"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ],
+                "post-update-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ]
+            },
+            "license": [
+                "EUPL-1.2"
+            ],
+            "description": "OpenEuropa Drupal module that adds additional fields and structure to content types from oe_content.",
+            "time": "2022-06-03T14:49:07+00:00"
+        },
+        {
             "name": "openeuropa/oe_corporate_blocks",
             "version": "4.7.0",
             "source": {
@@ -7876,6 +8062,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": "symfony/error-handler",
             "time": "2021-09-24T13:30:14+00:00"
         },
         {
@@ -17555,7 +17742,8 @@
         "drupal/json_field": 5,
         "drupal/purge_users": 20,
         "drupal/roleassign": 10,
-        "drupal/user_field_anonymize": 20
+        "drupal/user_field_anonymize": 20,
+        "openeuropa/oe_content_extra": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -17563,5 +17751,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
