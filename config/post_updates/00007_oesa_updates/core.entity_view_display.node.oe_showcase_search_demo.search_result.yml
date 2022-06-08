@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.oe_showcase_search_demo.body
+    - field.field.node.oe_showcase_search_demo.field_category
+    - field.field.node.oe_showcase_search_demo.field_image
+    - node.type.oe_showcase_search_demo
+  module:
+    - text
+    - user
+id: node.oe_showcase_search_demo.search_result
+targetEntityType: node
+bundle: oe_showcase_search_demo
+mode: search_result
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 350
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_image: true
+  langcode: true
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
