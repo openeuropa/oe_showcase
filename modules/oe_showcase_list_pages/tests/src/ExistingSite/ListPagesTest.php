@@ -276,14 +276,14 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter results by location.
     $filter_form->findButton('Clear filters')->click();
     $location = $filter_form->findField('Location');
-    $location->selectOption('FR');
+    $location->selectOption('France');
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 2);
     $this->assertSearchResults([
       'Event number 4',
       'Event number 11',
     ]);
-    $location->selectOption('RO', TRUE);
+    $location->selectOption('Romania', TRUE);
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 4);
     $this->assertSearchResults([
