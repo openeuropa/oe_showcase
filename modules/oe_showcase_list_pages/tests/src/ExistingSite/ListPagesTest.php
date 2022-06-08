@@ -170,18 +170,12 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->assertSearchResults([
       'News number 6',
     ]);
-    $title_input->setValue('NUMBER this');
+    // @todo Remove "7" once we have a default order.
+    $title_input->setValue('NUMBER 7 this');
     $search_button->click();
-    $this->assertSearchResultsTitle('News list page', 8);
+    $this->assertSearchResultsTitle('News list page', 1);
     $this->assertSearchResults([
-      'News number 10',
-      'News number 8',
-      'News number 6',
-      'News number 4',
-      'News number 11',
-      'News number 9',
       'News number 7',
-      'News number 5',
     ]);
 
     // Assert only News nodes are part of the result.
