@@ -7575,16 +7575,16 @@
         },
         {
             "name": "openeuropa/oe_webtools",
-            "version": "1.17.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_webtools.git",
-                "reference": "0c0374fea37355700eeb65d0ed3c771f6b3f35ea"
+                "reference": "dccb6cb3816bb38551c0ebf7ad76a063ede30870"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_webtools/zipball/0c0374fea37355700eeb65d0ed3c771f6b3f35ea",
-                "reference": "0c0374fea37355700eeb65d0ed3c771f6b3f35ea",
+                "url": "https://api.github.com/repos/openeuropa/oe_webtools/zipball/dccb6cb3816bb38551c0ebf7ad76a063ede30870",
+                "reference": "dccb6cb3816bb38551c0ebf7ad76a063ede30870",
                 "shasum": ""
             },
             "require": {
@@ -7662,9 +7662,9 @@
             "description": "OpenEuropa Webtools integration.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_webtools/issues",
-                "source": "https://github.com/openeuropa/oe_webtools/tree/1.17.0"
+                "source": "https://github.com/openeuropa/oe_webtools/tree/master"
             },
-            "time": "2022-04-11T08:54:47+00:00"
+            "time": "2022-05-10T15:41:04+00:00"
         },
         {
             "name": "openeuropa/oe_whitelabel",
@@ -18501,7 +18501,8 @@
         "drupal/json_field": 5,
         "drupal/roleassign": 10,
         "drupal/user_field_anonymize": 15,
-        "openeuropa/oe_content_extra": 15
+        "openeuropa/oe_content_extra": 15,
+        "openeuropa/oe_webtools": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
