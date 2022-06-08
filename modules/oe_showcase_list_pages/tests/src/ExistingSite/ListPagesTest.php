@@ -56,6 +56,9 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     }
 
     // Create some Events test nodes.
+    $countries = [
+      'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
+    ];
     for ($i = 0; $i < 12; $i++) {
       $values = [
         'title' => 'Event number ' . $i,
@@ -67,6 +70,9 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
         'oe_sc_event_dates' => [
           'value' => sprintf('2022-04-%02dT02:00:00', $i + 1),
           'end_value' => sprintf('2022-04-%02dT05:00:00', $i + 2),
+        ],
+        'oe_sc_event_location' => [
+          'country_code' => $countries[$i],
         ],
       ];
       $node = Node::create($values);
@@ -193,6 +199,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $node = $this->getNodeByTitle('Event list page');
     $this->drupalGet('node/' . $node->id() . '/edit');
     $page->checkField('Override default exposed filters');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_event__location]');
     $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_event__title]');
     $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_event__oe_sc_event_dates]');
     $page->pressButton('Save');
@@ -265,6 +272,26 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $title_input->setValue('This is an Event introduction number 10');
     $search_button->click();
     $this->assertSearchResultsTitle('Event list page', 0);
+
+    // Filter results by location.
+    $filter_form->findButton('Clear filters')->click();
+    $location = $filter_form->findField('Location');
+    $location->selectOption('France');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 2);
+    $this->assertSearchResults([
+      'Event number 4',
+      'Event number 11',
+    ]);
+    $location->selectOption('Romania', TRUE);
+    $search_button->click();
+    $this->assertSearchResultsTitle('Event list page', 4);
+    $this->assertSearchResults([
+      'Event number 2',
+      'Event number 4',
+      'Event number 9',
+      'Event number 11',
+    ]);
   }
 
   /**

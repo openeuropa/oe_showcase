@@ -4,13 +4,15 @@ description: Provides a demo for a list pages feature.
 core_version_requirement: ^9.2
 package: OpenEuropa Showcase
 dependencies:
-  - oe_whitelabel:oe_whitelabel_list_pages
   - oe_content:oe_content
+  - oe_list_pages:oe_list_pages_address
   - oe_starter_content:oe_starter_content_event
   - oe_starter_content:oe_starter_content_news
+  - oe_whitelabel:oe_whitelabel_list_pages
 
 config_devel:
   install:
+    - facets.facet.oelp_oe_sc_event__location
     - facets.facet.oelp_oe_sc_event__oe_sc_event_dates
     - facets.facet.oelp_oe_sc_event__title
     - facets.facet.oelp_oe_sc_news__oe_publication_date
