@@ -115,7 +115,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     // Assert that the filter form for News exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
-    $title_input = $filter_form->findField('Keyword');
+    $title_input = $filter_form->findField('Keywords');
     $publication_date_input = $filter_form->findField('Publication date');
     $search_button = $filter_form->find('css', '#edit-submit');
     $this->assertNotNull($search_button);
