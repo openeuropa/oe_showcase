@@ -37,7 +37,7 @@
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_contact_forms": "^1.3",
         "openeuropa/oe_content": "^2.8.0",
-        "openeuropa/oe_content_extra": "dev-EPIC-1293-Project",
+        "openeuropa/oe_content_extra": "1.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
