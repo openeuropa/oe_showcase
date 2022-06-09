@@ -32,7 +32,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Use the site-wide search form to search for 'Imputo'.
     $search_input->setValue('Imputo');
-    $search_button = $search_form->find('css', '#submit');
+    $search_button = $search_form->find('css', 'button[type="submit"]');
     $this->assertNotNull($search_button);
     $search_button->click();
 

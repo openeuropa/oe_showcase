@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
 
@@ -49,9 +50,73 @@ function oe_showcase_post_update_00002(&$sandbox) {
 }
 
 /**
+ * Enable roleassign, Manage users role and update settings.
+ */
+function oe_showcase_post_update_00003(&$sandbox) {
+  \Drupal::service('module_installer')->install(['roleassign']);
+  \Drupal::configFactory()->getEditable('user.settings')
+    ->set('register', 'visitors_admin_approval')
+    ->save();
+
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['configure_page_feedback_form'] = 'configure_page_feedback_form';
+  $roleassign_roles['editor'] = 'editor';
+  $roleassign_roles['manage_users'] = '0';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+
+  $configs = [
+    'user.role.manage_users',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00003_manage_users', $configs);
+}
+
+/**
+ * Revoke editor role's administer nodes permission.
+ */
+function oe_showcase_post_update_00004(&$sandbox) {
+  $role = Role::load('editor');
+  $role->revokePermission('administer nodes');
+  $role->save();
+}
+
+/**
+ * Manage permissions for content editing and for contact forms.
+ */
+function oe_showcase_post_update_00005(): void {
+  // Update and create roles.
+  // Also change role weights to make them alphabetic.
+  $configs = [
+    // Allow anonymous and authenticated to use corporate contact forms.
+    'user.role.anonymous',
+    'user.role.authenticated',
+    // Allow editor to manage page content.
+    'user.role.editor',
+    // Create new role 'Manage contact forms'.
+    'user.role.manage_contact_forms',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00005_update_roles', $configs);
+
+  // Add new role to roleassign.
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['manage_contact_forms'] = 'manage_contact_forms';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+}
+
+/**
+ * Simplify the page node bundle label.
+ */
+function oe_showcase_post_update_00006(): void {
+  $type = NodeType::load('oe_showcase_page');
+  $type->set('name', 'Page');
+  $type->save();
+}
+
+/**
  * Update project-related settings.
  */
-function oe_showcase_post_update_00003(): void {
+function oe_showcase_post_update_00007(): void {
   // Install project-related modules.
   \Drupal::service('module_installer')->install([
     // All other relevant modules will be enabled as dependencies of this one.
@@ -121,5 +186,5 @@ function oe_showcase_post_update_00003(): void {
   }
 
   // Configure pathauto pattern.
-  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00003_project', 'pathauto.pattern.project_url_alias_pattern');
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00007_project', 'pathauto.pattern.project_url_alias_pattern');
 }
