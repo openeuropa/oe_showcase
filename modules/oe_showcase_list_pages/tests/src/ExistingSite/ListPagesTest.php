@@ -31,7 +31,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Test list pages integration.
+   * Tests list pages integration.
    */
   public function testCreateListPages() {
     // Mark test content for deletion after the test has finished.
