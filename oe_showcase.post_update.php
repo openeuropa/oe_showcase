@@ -8,8 +8,9 @@
 declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
-use Drupal\file\FileStorage;
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
@@ -125,12 +126,12 @@ function oe_showcase_post_update_00007(): void {
     'core.entity_view_display.node.oe_showcase_search_demo.search_result',
   ];
 
-  $storage = new FileStorage(drupal_get_path('module', 'mymodule') . 'path to configs');
+  $storage = new FileStorage(base_path() . '/config/post_updates/00007_oesa_updates/publication_date');
   // The new field configs with the daterange_timezone type.
-  $field_storage = $storage->read('field.storage.node.oe_event_online_dates');
-  $field_config = $storage->read('field.field.node.oe_event.oe_event_online_dates');
+  $field_storage = $storage->read('field.storage.node.oe_publication_date');
+  $field_config = $storage->read('field.field.node.oe_sc_news.oe_publication_date');
 
-  oe_shocase_change_field_type('oe_publication_date', $field_storage, $field_config);
+  oe_showcase_change_field_type('oe_publication_date', $field_storage, $field_config);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00007_oesa_updates', $configs);
 }
@@ -145,7 +146,7 @@ function oe_showcase_post_update_00007(): void {
  * @param array $new_field_config
  *   The field config to create.
  */
-function oe_shocase_change_field_type(string $field, array $new_field_storage, array $new_field_config): void {
+function oe_showcase_change_field_type(string $field, array $new_field_storage, array $new_field_config): void {
   // Check if we have any records in the field data table.
   $database = \Drupal::database();
   $count = $database->select("node__$field", 'n')
