@@ -9,26 +9,31 @@ declare(strict_types =  1);
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_block_access().
+ *
+ * Shows the E-Translation block only if the current node doesn't have any
+ * translations.
  */
 function oe_showcase_multilingual_block_access(Block $block, $operation, AccountInterface $account) {
   if ($operation !== 'view' || $block->id() !== 'showcase_etrans') {
     return AccessResult::neutral();
   }
 
+  $cache = new CacheableMetadata();
+  $cache->addCacheContexts(['route']);
+
   /** @var \Drupal\node\NodeInterface $node */
   $node = \Drupal::routeMatch()->getParameter('node');
   if (!$node) {
-    return AccessResult::neutral()->addCacheContexts(['route']);
+    return AccessResult::neutral()->addCacheableDependency($cache);
   }
 
+  $cache->addCacheableDependency($node);
   $translations = $node->getTranslationLanguages(FALSE);
-  if (!empty($translations)) {
-    return AccessResult::forbidden()->addCacheableDependency($node);
-  }
 
-  return AccessResult::neutral()->addCacheableDependency($node);
+  return AccessResult::forbiddenIf(!empty($translations))->addCacheableDependency($cache);
 }
