@@ -99,6 +99,9 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
+            "openeuropa/oe_bootstrap_theme": {
+                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202206071025..1.x.diff"
+            },
             "openeuropa/oe_whitelabel": {
                 "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202206071821..1.x.diff"
             }
@@ -115,14 +118,6 @@
                     "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
                     "type": "zip"
                 }
-            }
-        },
-        "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.0.0-beta1..OEL-1540.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta2..OEL-1540.diff"
             }
         },
         "installer-paths": {
