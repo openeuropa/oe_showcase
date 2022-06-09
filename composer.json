@@ -37,7 +37,7 @@
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_contact_forms": "^1.3",
         "openeuropa/oe_content": "^2.8.0",
-        "openeuropa/oe_content_extra": "dev-EPIC-1293-Project",
+        "openeuropa/oe_content_extra": "1.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_media": "^1.14",
@@ -45,7 +45,7 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "dev-EPIC-1293-Project"
+        "openeuropa/oe_whitelabel": "0.1.202206071821"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -96,11 +96,6 @@
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
-        "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202204221756..1.x.diff"
-            }
-        },
         "artifacts": {
             "openeuropa/oe_bootstrap_theme": {
                 "dist": {
