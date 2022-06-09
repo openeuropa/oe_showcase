@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_cx_achievements_and_milestone
+    - node.type.oe_project
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: node.oe_project.oe_cx_achievements_and_milestone
+field_name: oe_cx_achievements_and_milestone
+entity_type: node
+bundle: oe_project
+label: 'Achievements and milestones'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
