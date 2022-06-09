@@ -51,6 +51,7 @@ install:
   - oe_webtools_cookie_consent
   - oe_webtools_page_feedback
   - oe_webtools_social_share
+  - oe_whitelabel_extra_project
   - oe_whitelabel_helper
   - oe_whitelabel_list_pages
   - oe_whitelabel_multilingual
@@ -84,6 +85,13 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
+    - field.field.node.oe_project.body
+    - field.field.node.oe_project.oe_cx_achievements_and_milestone
+    - field.field.node.oe_project.oe_cx_impacts
+    - field.field.node.oe_project.oe_cx_objective
+    - field.field.node.oe_project.oe_project_results
+    - field.field.node.oe_project.oe_summary
+    - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
@@ -94,6 +102,7 @@ config_devel:
     - legal.settings
     - node.settings
     - oe_authentication.settings
+    - pathauto.pattern.project_url_alias_pattern
     - pathauto.settings
     - purge_users.settings
     - roleassign.settings

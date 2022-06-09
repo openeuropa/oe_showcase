@@ -1,10 +1,20 @@
 # Change Log
 
+## [1.0.0-alpha4](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha4) (2022-05-31)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha3...1.0.0-alpha4)
+
+**Merged pull requests:**
+
+- OEL-1661: Track composer.lock [\#146](https://github.com/openeuropa/oe_showcase/pull/146) ([drishu](https://github.com/drishu))
+- OEL-1515: Composer updated to facets 2.0.  [\#131](https://github.com/openeuropa/oe_showcase/pull/131) ([escuriola](https://github.com/escuriola))
+- Update EPIC-1450-List-pages [\#124](https://github.com/openeuropa/oe_showcase/pull/124) ([donquixote](https://github.com/donquixote))
+
 ## [1.0.0-alpha3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha3) (2022-05-23)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha2...1.0.0-alpha3)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-alpha3 [\#141](https://github.com/openeuropa/oe_showcase/pull/141) ([drishu](https://github.com/drishu))
 - OEL-1631: Simplify page node bundle label. [\#140](https://github.com/openeuropa/oe_showcase/pull/140) ([brummbar](https://github.com/brummbar))
 - OEL-1626: Improve editor permissions [\#139](https://github.com/openeuropa/oe_showcase/pull/139) ([brummbar](https://github.com/brummbar))
 - Prepare release 1.0.0-alpha3 [\#138](https://github.com/openeuropa/oe_showcase/pull/138) ([drishu](https://github.com/drishu))

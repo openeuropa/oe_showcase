@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: project_url_alias_pattern
+label: 'Project URL Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'project/[node:title]'
+selection_criteria:
+  048abab8-d49b-463d-bac0-698ca312955a:
+    id: node_type
+    negate: false
+    uuid: 048abab8-d49b-463d-bac0-698ca312955a
+    context_mapping:
+      node: node
+    bundles:
+      oe_project: oe_project
+selection_logic: and
+weight: -5
+relationships: {  }
