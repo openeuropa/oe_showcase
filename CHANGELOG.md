@@ -1,10 +1,52 @@
 # Change Log
 
+## [1.0.0-alpha4](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha4) (2022-05-31)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha3...1.0.0-alpha4)
+
+**Merged pull requests:**
+
+- OEL-1661: Track composer.lock [\#146](https://github.com/openeuropa/oe_showcase/pull/146) ([drishu](https://github.com/drishu))
+- OEL-1515: Composer updated to facets 2.0.  [\#131](https://github.com/openeuropa/oe_showcase/pull/131) ([escuriola](https://github.com/escuriola))
+- Update EPIC-1450-List-pages [\#124](https://github.com/openeuropa/oe_showcase/pull/124) ([donquixote](https://github.com/donquixote))
+
+## [1.0.0-alpha3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha3) (2022-05-23)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha2...1.0.0-alpha3)
+
+**Merged pull requests:**
+
+- Prepare release 1.0.0-alpha3 [\#141](https://github.com/openeuropa/oe_showcase/pull/141) ([drishu](https://github.com/drishu))
+- OEL-1631: Simplify page node bundle label. [\#140](https://github.com/openeuropa/oe_showcase/pull/140) ([brummbar](https://github.com/brummbar))
+- OEL-1626: Improve editor permissions [\#139](https://github.com/openeuropa/oe_showcase/pull/139) ([brummbar](https://github.com/brummbar))
+- Prepare release 1.0.0-alpha3 [\#138](https://github.com/openeuropa/oe_showcase/pull/138) ([drishu](https://github.com/drishu))
+- OEL-1620: Revoke administer nodes permission to editor role. [\#136](https://github.com/openeuropa/oe_showcase/pull/136) ([escuriola](https://github.com/escuriola))
+- OEL-1614: Permissions and roles for pages and contact forms [\#135](https://github.com/openeuropa/oe_showcase/pull/135) ([donquixote](https://github.com/donquixote))
+- Update EPIC-1293-Project [\#132](https://github.com/openeuropa/oe_showcase/pull/132) ([donquixote](https://github.com/donquixote))
+- Update EPIC-1293-Project [\#128](https://github.com/openeuropa/oe_showcase/pull/128) ([donquixote](https://github.com/donquixote))
+- OEL-1371: Update project test for new version of status element [\#127](https://github.com/openeuropa/oe_showcase/pull/127) ([donquixote](https://github.com/donquixote))
+- OEL-1463: Update pager test assertions for first/last. [\#126](https://github.com/openeuropa/oe_showcase/pull/126) ([donquixote](https://github.com/donquixote))
+- OEL-1536: Specify extension type when using ConfigImporter [\#119](https://github.com/openeuropa/oe_showcase/pull/119) ([donquixote](https://github.com/donquixote))
+- OEL-1248: Add events listing facets [\#118](https://github.com/openeuropa/oe_showcase/pull/118) ([GilNovacomm](https://github.com/GilNovacomm))
+- OEL-1498: User management role and settings [\#117](https://github.com/openeuropa/oe_showcase/pull/117) ([GilNovacomm](https://github.com/GilNovacomm))
+- OEL-1459: Activate Feedback block [\#116](https://github.com/openeuropa/oe_showcase/pull/116) ([abel-santos-corral](https://github.com/abel-santos-corral))
+- OEL-1249: News listing [\#115](https://github.com/openeuropa/oe_showcase/pull/115) ([Maxfire](https://github.com/Maxfire))
+- OEL-1446: Add cookie consent management [\#114](https://github.com/openeuropa/oe_showcase/pull/114) ([abel-santos-corral](https://github.com/abel-santos-corral))
+- OEL-1374: Search page update look & feel. [\#113](https://github.com/openeuropa/oe_showcase/pull/113) ([escuriola](https://github.com/escuriola))
+- OEL-1458: Activate block Social share module [\#112](https://github.com/openeuropa/oe_showcase/pull/112) ([abel-santos-corral](https://github.com/abel-santos-corral))
+- OEL-1453: Consolidate theme regions [\#111](https://github.com/openeuropa/oe_showcase/pull/111) ([escuriola](https://github.com/escuriola))
+- OEL-1416: Fixes after BCL 0.22.0  [\#110](https://github.com/openeuropa/oe_showcase/pull/110) ([donquixote](https://github.com/donquixote))
+- OEL-1247: Integration listing page. [\#109](https://github.com/openeuropa/oe_showcase/pull/109) ([Maxfire](https://github.com/Maxfire))
+- OEL-1317: Navbar fixes. [\#108](https://github.com/openeuropa/oe_showcase/pull/108) ([escuriola](https://github.com/escuriola))
+- Update epic Project branch [\#107](https://github.com/openeuropa/oe_showcase/pull/107) ([Maxfire](https://github.com/Maxfire))
+- OEL-1421: Fix cosmetic changes on project [\#105](https://github.com/openeuropa/oe_showcase/pull/105) ([Maxfire](https://github.com/Maxfire))
+- OEL-1425: Changes in imageValues search page. [\#102](https://github.com/openeuropa/oe_showcase/pull/102) ([escuriola](https://github.com/escuriola))
+- OEL-486: Add search feature integration test [\#87](https://github.com/openeuropa/oe_showcase/pull/87) ([drishu](https://github.com/drishu))
+
 ## [1.0.0-alpha2](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha2) (2022-04-08)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha1...1.0.0-alpha2)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-alpha2 [\#104](https://github.com/openeuropa/oe_showcase/pull/104) ([abel-santos-corral](https://github.com/abel-santos-corral))
 - OEL-1434: Update to alpha7 of oe\_whitelabel. [\#103](https://github.com/openeuropa/oe_showcase/pull/103) ([abel-santos-corral](https://github.com/abel-santos-corral))
 
 ## [1.0.0-alpha1](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha1) (2022-04-07)
