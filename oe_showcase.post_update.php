@@ -126,8 +126,8 @@ function oe_showcase_post_update_00007(): void {
     'core.entity_view_display.node.oe_showcase_search_demo.search_result',
   ];
 
-  $storage = new FileStorage(base_path() . '/config/post_updates/00007_oesa_updates/publication_date');
-  // The new field configs with the daterange_timezone type.
+  $storage = new FileStorage(drupal_get_path('profile', 'oe_showcase') . '/config/post_updates/00007_oesa_updates/');
+
   $field_storage = $storage->read('field.storage.node.oe_publication_date');
   $field_config = $storage->read('field.field.node.oe_sc_news.oe_publication_date');
 
@@ -177,7 +177,7 @@ function oe_showcase_change_field_type(string $field, array $new_field_storage, 
 
   // Delete the field and purge field data if there is any left over.
   /** @var \Drupal\field\Entity\FieldConfig $field_config */
-  $field_config = FieldConfig::load("node.oe_event.$field");
+  $field_config = FieldConfig::load("node.oe_sc_news.$field");
   $field_config->delete();
   field_purge_batch(50);
 
