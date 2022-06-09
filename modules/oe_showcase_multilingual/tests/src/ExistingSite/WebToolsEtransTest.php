@@ -17,13 +17,6 @@ class WebToolsEtransTest extends ShowcaseExistingSiteTestBase {
   public function testWebToolsEtrans(): void {
     $assert_session = $this->assertSession();
 
-    $user = $this->createUser([
-      'create oe_showcase_page content',
-      'delete own oe_showcase_page content',
-      'edit own oe_showcase_page content',
-    ]);
-    $this->drupalLogin($user);
-
     // Assert Etrans is loaded for nodes with no translations.
     $values = [
       'type' => 'oe_showcase_page',
@@ -49,6 +42,7 @@ class WebToolsEtransTest extends ShowcaseExistingSiteTestBase {
     $assert_session->elementNotExists('css', 'main > div.container > div.row > div.col-12 > div#block-showcase-etrans');
 
     // Assert Etrans is not loaded outside nodes.
+    $user = $this->createUser();
     $this->drupalGet('/user/' . $user->id());
     $assert_session->elementNotExists('css', 'main > div.container > div.row > div.col-12 > div#block-showcase-etrans');
   }
