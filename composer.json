@@ -99,6 +99,9 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
+            "openeuropa/oe_bootstrap_theme": {
+                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202206071025..1.x.diff"
+            },
             "openeuropa/oe_whitelabel": {
                 "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202206071821..1.x.diff"
             }
