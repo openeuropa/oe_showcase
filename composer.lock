@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb4d69a9d68e86453e75f940b270fc6c",
+    "content-hash": "a2b93cd23683bb631bd7213f35f44f5d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2083,6 +2083,113 @@
             }
         },
         {
+            "name": "drupal/emr",
+            "version": "1.1.0",
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/entity_meta_relation": "^1",
+                "drupal/entity_reference_revisions": "^1.6",
+                "drupal/inline_entity_form": "^1.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "composer/installers": "~1.5",
+                "drupal/config_devel": "^1.2",
+                "drupal/core-composer-scaffold": "^9.2",
+                "drupal/core-dev": "^9.2",
+                "drupal/drupal-extension": "^4.0",
+                "drush/drush": "^10.3",
+                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "openeuropa/code-review": "^2.0",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
+                "phpspec/prophecy-phpunit": "^1 || ^2"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1644315955",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                },
+                "_readme": [
+                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped."
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\emr\\": "./src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\emr\\": "./tests/src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "post-install-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ],
+                "post-update-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ]
+            },
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
+                },
+                {
+                    "name": "ademarco",
+                    "homepage": "https://www.drupal.org/user/186696"
+                },
+                {
+                    "name": "hernani",
+                    "homepage": "https://www.drupal.org/user/448086"
+                },
+                {
+                    "name": "ieguskiza",
+                    "homepage": "https://www.drupal.org/user/2652665"
+                },
+                {
+                    "name": "sardara",
+                    "homepage": "https://www.drupal.org/user/2353864"
+                }
+            ],
+            "description": "Provides an entity meta relation entity and associated behaviors for relations.",
+            "homepage": "https://www.drupal.org/project/entity_meta_relation",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_meta_relation"
+            }
+        },
+        {
             "name": "drupal/entity_browser",
             "version": "2.6.0",
             "source": {
@@ -2170,6 +2277,74 @@
                 "source": "https://git.drupalcode.org/project/entity_browser",
                 "issues": "https://www.drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/entity_meta_relation",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_meta_relation.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_meta_relation-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "cbbae389fcc64eed8c6e78a7ffb16888fa644f54"
+            },
+            "require": {
+                "drupal/core": "^9.2"
+            },
+            "require-dev": {
+                "drupal/emr": "*",
+                "drupal/emr_node": "*",
+                "drupal/entity_meta_audio": "*",
+                "drupal/entity_meta_speed": "*",
+                "drupal/entity_meta_visual": "*",
+                "drupal/entity_reference_revisions": "*",
+                "drupal/inline_entity_form": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1644315955",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
+                },
+                {
+                    "name": "ademarco",
+                    "homepage": "https://www.drupal.org/user/186696"
+                },
+                {
+                    "name": "hernani",
+                    "homepage": "https://www.drupal.org/user/448086"
+                },
+                {
+                    "name": "ieguskiza",
+                    "homepage": "https://www.drupal.org/user/2652665"
+                },
+                {
+                    "name": "sardara",
+                    "homepage": "https://www.drupal.org/user/2353864"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/entity_meta_relation",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_meta_relation"
             }
         },
         {
@@ -2281,6 +2456,50 @@
             "homepage": "https://www.drupal.org/project/externalauth",
             "support": {
                 "source": "https://git.drupalcode.org/project/externalauth"
+            }
+        },
+        {
+            "name": "drupal/extra_field",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/extra_field.git",
+                "reference": "8.x-2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/extra_field-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "4ddc699ec43ef51940e85a67a570b6b232c6efa7"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.2",
+                    "datestamp": "1654609157",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sutharsan",
+                    "homepage": "https://www.drupal.org/user/73854"
+                }
+            ],
+            "description": "Provides a plugin type for extra fields that look like real fields, but do not store data.",
+            "homepage": "https://www.drupal.org/project/extra_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/extra_field"
             }
         },
         {
@@ -6455,6 +6674,98 @@
             "time": "2022-02-10T12:00:29+00:00"
         },
         {
+            "name": "openeuropa/oe_list_pages",
+            "version": "0.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openeuropa/oe_list_pages.git",
+                "reference": "1feb06caca33395563e7d067e7b3189869a6d446"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openeuropa/oe_list_pages/zipball/1feb06caca33395563e7d067e7b3189869a6d446",
+                "reference": "1feb06caca33395563e7d067e7b3189869a6d446",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/emr": "^1.1",
+                "drupal/facets": "^2.0",
+                "drupal/multivalue_form_element": "^1.0@beta",
+                "drupal/search_api": "~1.17",
+                "php": ">=7.4",
+                "symfony/options-resolver": "^4"
+            },
+            "require-dev": {
+                "composer/installers": "^1.11",
+                "composer/xdebug-handler": "^2.0",
+                "drupal/address": "^1.8",
+                "drupal/config_devel": "^1.2",
+                "drupal/core-composer-scaffold": "^9.2",
+                "drupal/core-dev": "^9.2",
+                "drupal/ctools": "^3.7",
+                "drupal/drupal-extension": "^4.0",
+                "drupal/extra_field": "^2.1",
+                "drupal/inline_entity_form": "^1.0-rc9",
+                "drupal/token": "^1.10",
+                "drush/drush": "^10.3",
+                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "openeuropa/code-review": "^2.0",
+                "openeuropa/oe_link_lists": "^0.14",
+                "openeuropa/oe_multilingual": "^1.10",
+                "openeuropa/open_vocabularies": "^1.0-alpha6",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
+                "phpspec/prophecy-phpunit": "^2",
+                "symfony/dom-crawler": "^4.4.12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "patches": [],
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                },
+                "_readme": [
+                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.2 compatibility.",
+                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
+                    "Explicit minimum version requirement for symfony/dom-crawler due to its lower versions using the deprecated function libxml_disable_entity_loader() in PHP8.",
+                    "Explicit requirement of drupal/token module due to PHP 8 compatbility."
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\oe_list_pages\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "description": "OpenEuropa List Pages.",
+            "support": {
+                "issues": "https://github.com/openeuropa/oe_list_pages/issues",
+                "source": "https://github.com/openeuropa/oe_list_pages/tree/0.16.0"
+            },
+            "time": "2022-03-07T12:40:33+00:00"
+        },
+        {
             "name": "openeuropa/oe_media",
             "version": "1.16.0",
             "source": {
@@ -6910,16 +7221,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202206071821",
+            "version": "0.1.202206092103",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "ede037c9a5288ef08f4218386f8c855d1cdc2606"
+                "reference": "18a49338e6943cbac1cdfb696ee28d6d9c318b4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/ede037c9a5288ef08f4218386f8c855d1cdc2606",
-                "reference": "ede037c9a5288ef08f4218386f8c855d1cdc2606",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/18a49338e6943cbac1cdfb696ee28d6d9c318b4a",
+                "reference": "18a49338e6943cbac1cdfb696ee28d6d9c318b4a",
                 "shasum": ""
             },
             "require": {
@@ -6941,6 +7252,8 @@
                 "drupal/description_list_field": "^1.0@alpha",
                 "drupal/drupal-extension": "~4.1",
                 "drupal/entity_reference_revisions": "^1.9",
+                "drupal/extra_field": "^2.1",
+                "drupal/facets": "1.8.0 as 2.0.1",
                 "drupal/facets_form": "1.0.0-alpha2",
                 "drupal/field_group": "^3.2",
                 "drupal/file_link": "^2.0.6",
@@ -6960,12 +7273,13 @@
                 "openeuropa/oe_content": "^2.8.0",
                 "openeuropa/oe_content_extra": "1.x-dev",
                 "openeuropa/oe_corporate_blocks": "^4.4",
+                "openeuropa/oe_list_pages": "^0.16",
                 "openeuropa/oe_media": "^1.14",
                 "openeuropa/oe_multilingual": "^1.9",
                 "openeuropa/oe_paragraphs": "^1.13",
                 "openeuropa/oe_starter_content": "^1.0.0-beta1",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
-                "phpspec/prophecy-phpunit": "^1 || ^2",
+                "phpspec/prophecy-phpunit": "^2",
                 "symfony/dom-crawler": "^4.4.12"
             },
             "type": "drupal-theme",
@@ -6983,6 +7297,9 @@
                 "patches": {
                     "drupal/entity_reference_revisions": {
                         "https://www.drupal.org/project/entity_reference_revisions/issues/2937835": "https://www.drupal.org/files/issues/2021-03-26/entity_reference_revisions-field_formatter_label-2937835-36.patch"
+                    },
+                    "openeuropa/oe_bootstrap_theme": {
+                        "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202206071025..1.x.diff"
                     }
                 },
                 "drupal-scaffold": {
@@ -7026,9 +7343,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202206071821"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202206092103"
             },
-            "time": "2022-06-07T14:47:01+00:00"
+            "time": "2022-06-09T18:58:26+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -8781,6 +9098,73 @@
                 }
             ],
             "time": "2021-11-23T10:19:22+00:00"
+        },
+        {
+            "name": "symfony/options-resolver",
+            "version": "v4.4.37",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "41d1e741a292574887629369400820c9645e8a87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/41d1e741a292574887629369400820c9645e8a87",
+                "reference": "41d1e741a292574887629369400820c9645e8a87",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an improved replacement for the array_replace PHP function",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v4.4.37"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T09:41:36+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -17218,75 +17602,6 @@
                 }
             ],
             "time": "2022-03-22T11:09:53+00:00"
-        },
-        {
-            "name": "symfony/options-resolver",
-            "version": "v5.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "cc1147cb11af1b43f503ac18f31aa3bec213aba8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/cc1147cb11af1b43f503ac18f31aa3bec213aba8",
-                "reference": "cc1147cb11af1b43f503ac18f31aa3bec213aba8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1|^3",
-                "symfony/polyfill-php73": "~1.0",
-                "symfony/polyfill-php80": "^1.16"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\OptionsResolver\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides an improved replacement for the array_replace PHP function",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "config",
-                "configuration",
-                "options"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/options-resolver/tree/v5.4.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-01-02T09:53:40+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
