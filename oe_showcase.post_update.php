@@ -194,4 +194,22 @@ function oe_showcase_post_update_00007(): void {
  */
 function oe_showcase_post_update_00008(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_list_pages']);
+
+  // Configure permissions.
+  $permissions = [
+    'create oe_list_page content',
+    'delete any oe_list_page content',
+    'delete oe_list_page revisions',
+    'edit any oe_list_page content',
+    'revert oe_list_page revisions',
+    'view oe_list_page revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
 }
