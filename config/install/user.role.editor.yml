@@ -12,6 +12,7 @@ dependencies:
     - media.type.webtools_chart
     - media.type.webtools_map
     - media.type.webtools_social_feed
+    - node.type.oe_list_page
     - node.type.oe_project
     - node.type.oe_sc_event
     - node.type.oe_sc_news
@@ -36,6 +37,7 @@ permissions:
   - 'create av_portal_video media'
   - 'create document media'
   - 'create image media'
+  - 'create oe_list_page content'
   - 'create oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'create oe_organisation oe_stakeholder corporate entity'
   - 'create oe_project content'
@@ -50,6 +52,7 @@ permissions:
   - 'delete any av_portal_video media'
   - 'delete any document media'
   - 'delete any image media'
+  - 'delete any oe_list_page content'
   - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
@@ -58,6 +61,7 @@ permissions:
   - 'delete any webtools_chart media'
   - 'delete any webtools_map media'
   - 'delete any webtools_social_feed media'
+  - 'delete oe_list_page revisions'
   - 'delete oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'delete oe_organisation oe_stakeholder corporate entity'
   - 'delete oe_project revisions'
@@ -68,6 +72,7 @@ permissions:
   - 'edit any av_portal_video media'
   - 'edit any document media'
   - 'edit any image media'
+  - 'edit any oe_list_page content'
   - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
@@ -78,12 +83,14 @@ permissions:
   - 'edit any webtools_social_feed media'
   - 'edit oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'edit oe_organisation oe_stakeholder corporate entity'
+  - 'revert oe_list_page revisions'
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
+  - 'view oe_list_page revisions'
   - 'view oe_project revisions'
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'

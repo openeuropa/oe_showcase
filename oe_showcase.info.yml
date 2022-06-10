@@ -29,6 +29,7 @@ install:
   - oe_corporate_blocks
   - oe_corporate_countries
   - oe_corporate_countries_address
+  - oe_list_pages_address
   - oe_multilingual
   - oe_paragraphs
   - oe_paragraphs_banner
@@ -40,6 +41,7 @@ install:
   - oe_paragraphs_timeline
   - oe_showcase_contact_forms
   - oe_showcase_default_content
+  - oe_showcase_list_pages
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
@@ -47,10 +49,11 @@ install:
   - oe_showcase_user_profile
   - oe_webtools
   - oe_webtools_cookie_consent
-  - oe_webtools_social_share
   - oe_webtools_page_feedback
+  - oe_webtools_social_share
   - oe_whitelabel_extra_project
   - oe_whitelabel_helper
+  - oe_whitelabel_list_pages
   - oe_whitelabel_multilingual
   - oe_whitelabel_paragraphs
   - oe_whitelabel_search

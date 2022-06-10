@@ -17,6 +17,7 @@
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^2.0",
+        "drupal/extra_field": "^2.1",
         "drupal/facets": "^2.0",
         "drupal/facets_form": "1.0.0-alpha3",
         "drupal/field_group": "^3.2",
@@ -41,12 +42,13 @@
         "openeuropa/oe_content_extra": "1.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
+        "openeuropa/oe_list_pages": "^0.16",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "0.1.202206071821"
+        "openeuropa/oe_whitelabel": "0.1.202206092103"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -99,11 +101,11 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
-            "openeuropa/oe_bootstrap_theme": {
-                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202206071025..1.x.diff"
+            "drupal/facets": {
+                "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
             },
-            "openeuropa/oe_whitelabel": {
-                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202206071821..1.x.diff"
+            "openeuropa/oe_list_pages": {
+                "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
             }
         },
         "artifacts": {
