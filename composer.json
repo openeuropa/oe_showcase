@@ -12,6 +12,7 @@
         "drupal/allowed_formats": "^1.4",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/block_field": "^1.0@RC",
+        "drupal/composite_reference": "^2.1",
         "drupal/core-recommended": "^9.2",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
@@ -38,6 +39,7 @@
         "openeuropa/oe_authentication": "^1.5",
         "openeuropa/oe_contact_forms": "^1.3",
         "openeuropa/oe_content": "^2.8.0",
+        "openeuropa/oe_content_extra": "1.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_list_pages": "^0.16",
@@ -46,7 +48,7 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.14",
-        "openeuropa/oe_whitelabel": "dev-EPIC-1450-List-pages"
+        "openeuropa/oe_whitelabel": "0.1.202206092103"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -57,8 +59,8 @@
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
-        "phpspec/prophecy-phpunit": "^1 || ^2",
         "phpmd/phpmd": "^2.11",
+        "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^1.5"
     },
     "_readme": [
@@ -83,6 +85,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/openeuropa/oe_content_extra"
         }
     ],
     "autoload-dev": {
