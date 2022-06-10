@@ -14,7 +14,7 @@ workspace:
 
 services:
   web:
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     environment:
       - DOCUMENT_ROOT=/test/oe_showcase
   mysql:
@@ -41,43 +41,83 @@ services:
       - NODE_MAX_SESSION=5
 
 pipeline:
-  composer-install:
+  build-branch:
     group: prepare
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     volumes:
       - /cache:/cache
     commands:
       - composer install --ansi --no-progress
+    when:
+      matrix:
+        TYPE: install
 
-  site-install:
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+  build-release:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    volumes:
+      - /cache:/cache
+    commands:
+      - git config --global --add safe.directory /test/oe_showcase
+      - git fetch --tags
+      - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+      - composer install --ansi --no-progress
+    when:
+      matrix:
+        TYPE: update
+
+  install-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
     when:
-      event:
-        exclude: tag
+      matrix:
+        TYPE: install
+
+  install-release:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
+      - ./vendor/bin/run drupal:site-install
+    when:
+      matrix:
+        TYPE: update
+
+  switch-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - git config --global --add safe.directory /test/oe_showcase
+      - git checkout ${DRONE_BRANCH}
+      - rm -Rf vendor
+      - composer install --ansi --no-progress
+    when:
+      matrix:
+        TYPE: update
+
+  update-branch:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    commands:
+      - ./vendor/bin/drush updb -y
+      - ./vendor/bin/drush cr
+    when:
+      matrix:
+        TYPE: update
 
   grumphp:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - ./vendor/bin/grumphp run
-    when:
-      event:
-        exclude: tag
 
   phpunit:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:${PHP_VERSION}-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
     commands:
       - ./vendor/bin/run ci:site-setup
       - ./vendor/bin/drush en -y media_avportal_mock
       - ./vendor/bin/phpunit
-    when:
-      event:
-        exclude: tag
 
 matrix:
-  PHP_VERSION:
-    - 8.0
+  TYPE:
+    - install
+    - update

@@ -4,6 +4,7 @@ dependencies:
   module:
     - media
     - oe_contact_forms
+    - oe_content_entity_organisation
     - rdf_skos
     - search_api_autocomplete
     - system
@@ -22,4 +23,5 @@ permissions:
   - 'set user profile anonymity'
   - 'use search_api_autocomplete for showcase_search'
   - 'view media'
+  - 'view published oe_organisation'
   - 'view published skos concept entities'

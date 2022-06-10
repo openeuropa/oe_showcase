@@ -11,10 +11,20 @@ use Drupal\Tests\oe_showcase\Traits\UserTrait;
 /**
  * Contact form tests.
  */
-class IntegrationTest extends ShowcaseExistingSiteTestBase {
+class ContactFormTest extends ShowcaseExistingSiteTestBase {
 
   use AssertPathAccessTrait;
   use UserTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp():void {
+    parent::setUp();
+
+    $this->backupSimpleConfig('contact.settings');
+    $this->backupSimpleConfig('honeypot.settings');
+  }
 
   /**
    * Tests access to contact form admin pages.
@@ -37,6 +47,14 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('user');
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
+
+    // Disable the flood limits to avoid submit failure when run multiple times.
+    $contact_settings = $this->container->get('config.factory')->getEditable('contact.settings');
+    $flood_values = [
+      'limit' => '100',
+      'interval' => '1',
+    ];
+    $contact_settings->set('flood', $flood_values)->save();
 
     // Disable the time limit to avoid honeypot error due to
     // the quick submission form.
@@ -74,10 +92,12 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Country of residence', 'http://publications.europa.eu/resource/authority/country/BEL');
     $page->pressButton('Send message');
 
-    $assert_session->pageTextContains('Alpaca');
-    $assert_session->pageTextContains('345345345');
-    $assert_session->pageTextContains('Belgium');
-    $assert_session->pageTextContains('Example Message text');
+    $confirm_message = $page->find('css', 'div.alert.alert-success')->getText();
+    $this->assertStringContainsString('Alpaca', $confirm_message);
+    $this->assertStringContainsString('345345345', $confirm_message);
+    $this->assertStringContainsString('Belgium', $confirm_message);
+    $this->assertStringContainsString('Example subject', $confirm_message);
+    $this->assertStringContainsString('Example Message text', $confirm_message);
   }
 
 }

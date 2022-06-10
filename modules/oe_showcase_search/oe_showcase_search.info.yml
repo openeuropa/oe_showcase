@@ -37,6 +37,7 @@ config_devel:
     - views.view.showcase_search
   optional:
     - block.block.oe_whitelabel_search_form
+    - block.block.showcase_header_search_form
     - block.block.showcase_exposed_sort_form
     - block.block.showcase_facets_form
     - block.block.showcase_facets_summary
