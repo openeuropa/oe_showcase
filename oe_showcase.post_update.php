@@ -113,8 +113,26 @@ function oe_showcase_post_update_00006(): void {
 }
 
 /**
- * Install OpenEuropa Showcase list pages module.
+ * Install OpenEuropa Showcase list pages module, and update configuration.
  */
 function oe_showcase_post_update_00007(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_list_pages']);
+
+  // Allow editor role to manage list pages.
+  $permissions = [
+    'create oe_list_page content',
+    'delete any oe_list_page content',
+    'delete oe_list_page revisions',
+    'edit any oe_list_page content',
+    'revert oe_list_page revisions',
+    'view oe_list_page revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
 }
