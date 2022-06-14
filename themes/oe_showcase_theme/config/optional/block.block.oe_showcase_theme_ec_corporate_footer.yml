@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_corporate_blocks
+    - oe_whitelabel_helper
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_ec_corporate_footer
+theme: oe_showcase_theme
+region: footer
+weight: 0
+provider: null
+plugin: oe_corporate_blocks_ec_footer
+settings:
+  id: oe_corporate_blocks_ec_footer
+  label: 'EC Footer block'
+  label_display: '0'
+  provider: oe_corporate_blocks
+visibility:
+  oe_whitelabel_helper_current_component_library:
+    id: oe_whitelabel_helper_current_component_library
+    negate: false
+    context_mapping: {  }
+    component_library: ec

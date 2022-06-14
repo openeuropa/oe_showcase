@@ -25,3 +25,26 @@ regions:
 config_devel:
   install:
     - oe_showcase_theme.settings
+  optional:
+    - block.block.oe_showcase_theme_branding
+    - block.block.oe_showcase_theme_breadcrumbs
+    - block.block.oe_showcase_theme_content_banner
+    - block.block.oe_showcase_theme_ec_corporate_footer
+    - block.block.oe_showcase_theme_eu_corporate_footer
+    - block.block.oe_showcase_theme_eulogin
+    - block.block.oe_showcase_theme_language_switcher
+    - block.block.oe_showcase_theme_local_actions
+    - block.block.oe_showcase_theme_local_tasks
+    - block.block.oe_showcase_theme_main_navigation
+    - block.block.oe_showcase_theme_main_page_content
+    - block.block.oe_showcase_theme_messages
+    - block.block.oe_showcase_theme_neutral_footer
+    - block.block.oe_showcase_theme_search_form
+    - block.block.oe_showcase_theme_showcase_content_language_switcher
+    - block.block.oe_showcase_theme_showcase_exposed_sort_form
+    - block.block.oe_showcase_theme_showcase_facets_form
+    - block.block.oe_showcase_theme_showcase_facets_summary
+    - block.block.oe_showcase_theme_showcase_header_search_form
+    - block.block.oe_showcase_theme_showcase_pagefeedbackform
+    - block.block.oe_showcase_theme_showcase_pagetitle
+    - block.block.oe_showcase_theme_showcase_socialshare

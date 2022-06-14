@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.category
+    - facets.facet.published_on
+  module:
+    - facets_form
+    - system
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_showcase_facets_form
+theme: oe_showcase_theme
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'facets_form:search_api:views_page__showcase_search__showcase_search_page'
+settings:
+  id: 'facets_form:search_api:views_page__showcase_search__showcase_search_page'
+  label: 'Filter Options'
+  label_display: visible
+  provider: facets_form
+  button:
+    label:
+      submit: Refine
+      reset: Clear
+  facets: {  }
+  live_total: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

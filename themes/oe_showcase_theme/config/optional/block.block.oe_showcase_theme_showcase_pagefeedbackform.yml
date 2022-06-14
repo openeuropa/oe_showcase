@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_webtools_page_feedback
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_showcase_pagefeedbackform
+theme: oe_showcase_theme
+region: footer
+weight: -1
+provider: null
+plugin: oe_webtools_page_feedback_form
+settings:
+  id: oe_webtools_page_feedback_form
+  label: 'Page Feedback Form'
+  label_display: '0'
+  provider: oe_webtools_page_feedback
+visibility: {  }

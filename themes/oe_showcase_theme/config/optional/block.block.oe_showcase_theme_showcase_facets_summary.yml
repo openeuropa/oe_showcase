@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets_summary.facets_summary.showcase_summary
+  module:
+    - facets_summary
+    - system
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_showcase_facets_summary
+theme: oe_showcase_theme
+region: content_top
+weight: 0
+provider: null
+plugin: 'facets_summary_block:showcase_summary'
+settings:
+  id: 'facets_summary_block:showcase_summary'
+  label: 'Search results'
+  label_display: visible
+  provider: facets_summary
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

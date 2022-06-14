@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_whitelabel_search
+    - system
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_showcase_header_search_form
+theme: oe_showcase_theme
+region: header
+weight: 0
+provider: null
+plugin: whitelabel_search_block
+settings:
+  id: whitelabel_search_block
+  label: 'Showcase Header Search Block'
+  label_display: '0'
+  provider: oe_whitelabel_search
+  form:
+    action: search
+    region: header
+  input:
+    name: search_api_fulltext
+    label: Search
+    placeholder: Search
+  button:
+    label: Search
+  view_options:
+    enable_autocomplete: true
+    id: showcase_search
+    display: showcase_search_page
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/search\r\n/search/*"
