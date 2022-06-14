@@ -16,6 +16,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
+        "drupal/dropsolid_purge": "^1.0@beta",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/extra_field": "^2.1",
         "drupal/facets": "^2.0",
@@ -27,6 +28,7 @@
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
         "drupal/purge_users": "dev-3.x#7a4dd2df",
+        "drupal/redirect": "^1.7",
         "drupal/roleassign": "^1.0@beta",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
@@ -42,6 +44,7 @@
         "openeuropa/oe_content_extra": "1.x-dev",
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
+        "openeuropa/oe_dashboard_agent": "^0.4.0",
         "openeuropa/oe_list_pages": "^0.16",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
@@ -81,6 +84,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/openeuropa/oe_dashboard_agent"
         },
         {
             "type": "composer",

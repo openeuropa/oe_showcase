@@ -213,3 +213,14 @@ function oe_showcase_post_update_00008(&$sandbox): void {
   }
   $role->save();
 }
+
+/**
+ * Install 'dropsolid_purge', 'oe_dashboard_agent', 'redirect'.
+ */
+function oe_showcase_post_update_00009(): void {
+  \Drupal::service('module_installer')->install([
+    'dropsolid_purge',
+    'oe_dashboard_agent',
+    'redirect',
+  ]);
+}

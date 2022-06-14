@@ -11,6 +11,7 @@ install:
   - datetime
   - dblog
   - default_content
+  - dropsolid_purge
   - dynamic_page_cache
   - easy_breadcrumb
   - editor
@@ -29,6 +30,7 @@ install:
   - oe_corporate_blocks
   - oe_corporate_countries
   - oe_corporate_countries_address
+  - oe_dashboard_agent
   - oe_list_pages_address
   - oe_multilingual
   - oe_paragraphs
@@ -65,6 +67,7 @@ install:
   - pathauto
   - rdf_skos
   - rdf_skos_language_mapping
+  - redirect
   - roleassign
   - taxonomy
   - toolbar
