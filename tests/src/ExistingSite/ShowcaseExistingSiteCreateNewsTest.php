@@ -75,6 +75,10 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Title', 'Example title');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
+    // Assert that publication date was filled with a default value.
+    $publication_date = $page->find('css', 'input[name="oe_publication_date[0][value][date]"]');
+    $this->assertMatchesRegularExpression("/\d+\-\d+\-\d+/", $publication_date->getValue());
+    // Set a custom publication date.
     $page->fillField('Date', '2022-01-24');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('Media item', $media_name);
