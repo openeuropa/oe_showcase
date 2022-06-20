@@ -27,7 +27,7 @@
         "drupal/json_field": "^1.0@RC",
         "drupal/legal": "^2.0",
         "drupal/paragraphs": "^1.13",
-        "drupal/purge_users": "dev-3.x#7a4dd2df",
+        "drupal/purge_users": "^3.1",
         "drupal/redirect": "^1.7",
         "drupal/roleassign": "^1.0@beta",
         "drupal/search_api": "^1.21",
