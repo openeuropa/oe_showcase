@@ -32,7 +32,7 @@
         "drupal/roleassign": "^1.0@beta",
         "drupal/search_api": "^1.21",
         "drupal/search_api_autocomplete": "^1.5",
-        "drupal/user_field_anonymize": "1.x-dev#d5fc64ec",
+        "drupal/user_field_anonymize": "1.0.0-alpha1",
         "drupal/user_fields_visibility": "1.0.0-alpha1",
         "easyrdf/easyrdf": "1.0.0 as 0.9.1",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
