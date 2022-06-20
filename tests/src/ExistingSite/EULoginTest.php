@@ -116,7 +116,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
    * Asserts the current address is the homepage.
    */
   protected function assertIsHomepage(): void {
-    $this->assertSession()->addressEquals('/en');
+    $this->assertSession()->addressEquals('/en/home');
   }
 
   /**
