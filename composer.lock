@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eae44602be405f45351e64abfaaedefe",
+    "content-hash": "810c7b605cc80c82379e6e5b8f08e5b4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6733,11 +6733,11 @@
         },
         {
             "name": "openeuropa/oe_content_extra",
-            "version": "1.x-dev",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_content_extra",
-                "reference": "07c6995786fa925d97f4a10492025bc9a057a3de"
+                "reference": "3ad24ce093830dbf6ef513e701f62c37a7455fd7"
             },
             "require": {
                 "drupal/core": "^9.2",
@@ -6763,7 +6763,6 @@
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^2"
             },
-            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -6815,7 +6814,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that adds additional fields and structure to content types from oe_content.",
-            "time": "2022-06-03T14:49:07+00:00"
+            "time": "2022-06-21T09:01:19+00:00"
         },
         {
             "name": "openeuropa/oe_corporate_blocks",
@@ -18503,8 +18502,7 @@
         "drupal/description_list_field": 15,
         "drupal/dropsolid_purge": 10,
         "drupal/json_field": 5,
-        "drupal/roleassign": 10,
-        "openeuropa/oe_content_extra": 20
+        "drupal/roleassign": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
