@@ -8,6 +8,7 @@
 declare(strict_types = 1);
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
@@ -212,4 +213,21 @@ function oe_showcase_post_update_00008(&$sandbox): void {
     $role->grantPermission($permission);
   }
   $role->save();
+}
+
+/**
+ * Install 'dropsolid_purge', 'oe_dashboard_agent', 'redirect'.
+ */
+function oe_showcase_post_update_00009(): void {
+  \Drupal::service('module_installer')->install([
+    'dropsolid_purge',
+    'oe_dashboard_agent',
+    'redirect',
+  ]);
+
+  $storage = new FileStorage(\Drupal::service('extension.list.profile')->getPath('oe_showcase') . '/config/post_updates/00009_purge');
+  $data = $storage->read('purge.plugins');
+
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('purge.plugins')->setData($data)->save();
 }
