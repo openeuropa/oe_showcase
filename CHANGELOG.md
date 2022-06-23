@@ -1,10 +1,32 @@
 # Change Log
 
+## [1.0.0-alpha5](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha5) (2022-06-22)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha4...1.0.0-alpha5)
+
+**Merged pull requests:**
+
+- OEL-1722: Install dropsolid\_purge, oe\_dashboard\_agent, redirect. [\#159](https://github.com/openeuropa/oe_showcase/pull/159) ([donquixote](https://github.com/donquixote))
+- OEL-1703: Upgrade path for list pages epic. [\#158](https://github.com/openeuropa/oe_showcase/pull/158) ([donquixote](https://github.com/donquixote))
+- OEL-1690: Upgrade path for project epic [\#156](https://github.com/openeuropa/oe_showcase/pull/156) ([donquixote](https://github.com/donquixote))
+- OEL-1668: Update epic project [\#155](https://github.com/openeuropa/oe_showcase/pull/155) ([drishu](https://github.com/drishu))
+- OEL-1668: Use latest dev release of oewt. [\#154](https://github.com/openeuropa/oe_showcase/pull/154) ([drishu](https://github.com/drishu))
+- OEL-1675: News title facet should search in all fields. [\#153](https://github.com/openeuropa/oe_showcase/pull/153) ([drishu](https://github.com/drishu))
+- OEL-1677: Add location facet to events. [\#152](https://github.com/openeuropa/oe_showcase/pull/152) ([drishu](https://github.com/drishu))
+- OEL-1651: Get the oe\_starter\_content development branch to test the published date [\#149](https://github.com/openeuropa/oe_showcase/pull/149) ([escuriola](https://github.com/escuriola))
+- OEl-1652: Test Drupal upgrade paths [\#148](https://github.com/openeuropa/oe_showcase/pull/148) ([drishu](https://github.com/drishu))
+- OEL-1540: Fix scrollspy js file requirements when there is no items to display. [\#145](https://github.com/openeuropa/oe_showcase/pull/145) ([escuriola](https://github.com/escuriola))
+- OEL-1571: Improve Contact Forms testing. [\#143](https://github.com/openeuropa/oe_showcase/pull/143) ([escuriola](https://github.com/escuriola))
+- OEL-1514: Hide oe\_content base fields for list pages. [\#130](https://github.com/openeuropa/oe_showcase/pull/130) ([Maxfire](https://github.com/Maxfire))
+- EPIC-1293-Project [\#129](https://github.com/openeuropa/oe_showcase/pull/129) ([donquixote](https://github.com/donquixote))
+- OEL-1367: New Look & Feel for search form in search page. [\#122](https://github.com/openeuropa/oe_showcase/pull/122) ([escuriola](https://github.com/escuriola))
+- OEL-1450: EPIC-List-pages. [\#120](https://github.com/openeuropa/oe_showcase/pull/120) ([drishu](https://github.com/drishu))
+
 ## [1.0.0-alpha4](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha4) (2022-05-31)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha3...1.0.0-alpha4)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-alpha4 [\#147](https://github.com/openeuropa/oe_showcase/pull/147) ([drishu](https://github.com/drishu))
 - OEL-1661: Track composer.lock [\#146](https://github.com/openeuropa/oe_showcase/pull/146) ([drishu](https://github.com/drishu))
 - OEL-1515: Composer updated to facets 2.0.  [\#131](https://github.com/openeuropa/oe_showcase/pull/131) ([escuriola](https://github.com/escuriola))
 - Update EPIC-1450-List-pages [\#124](https://github.com/openeuropa/oe_showcase/pull/124) ([donquixote](https://github.com/donquixote))
