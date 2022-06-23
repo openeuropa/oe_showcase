@@ -50,7 +50,7 @@
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
-        "openeuropa/oe_webtools": "^1.14",
+        "openeuropa/oe_webtools": "^1.18",
         "openeuropa/oe_whitelabel": "1.0.0-beta3"
     },
     "require-dev": {

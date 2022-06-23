@@ -12,3 +12,4 @@ dependencies:
 config_devel:
   optional:
     - block.block.showcase_content_language_switcher
+    - block.block.showcase_etrans
