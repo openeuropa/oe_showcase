@@ -19,7 +19,7 @@ use Drupal\Core\Session\AccountInterface;
  * translations.
  */
 function oe_showcase_multilingual_block_access(Block $block, $operation, AccountInterface $account) {
-  if ($operation !== 'view' || $block->id() !== 'showcase_etrans') {
+  if ($operation !== 'view' || $block->id() !== 'oe_showcase_theme_etrans') {
     return AccessResult::neutral();
   }
 

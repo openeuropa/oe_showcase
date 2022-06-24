@@ -6,8 +6,8 @@ dependencies:
     - oe_webtools_etrans
   theme:
     - oe_whitelabel
-id: showcase_etrans
-theme: oe_whitelabel
+id: oe_showcase_theme_etrans
+theme: oe_showcase_theme
 region: content
 weight: -4
 provider: null
