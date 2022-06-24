@@ -35,7 +35,10 @@
       }]) %}
     {% endfor %}
     {% if _items %}
-      <h3 class="fw-bold mb-4">{{ group_label }}</h3>
+      {% include '@oe-bcl/bcl-heading/heading.html.twig' with {
+        title: group_label,
+        title_tag: 'h3',
+      } only %}
       {{ pattern('description_list', {
         orientation: 'horizontal',
         items: _items,
