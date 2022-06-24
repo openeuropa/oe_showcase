@@ -3,20 +3,20 @@ status: true
 dependencies:
   module:
     - node
-    - oe_webtools_social_share
+    - system
   theme:
-    - oe_whitelabel
-id: showcase_socialshare
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_page_title
+theme: oe_showcase_theme
 region: content
-weight: 0
+weight: -7
 provider: null
-plugin: social_share
+plugin: page_title_block
 settings:
-  id: social_share
-  label: 'Social Share'
+  id: page_title_block
+  label: 'Page title'
   label_display: '0'
-  provider: oe_webtools_social_share
+  provider: core
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -24,6 +24,9 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      oe_sc_event: oe_sc_event
-      oe_sc_news: oe_sc_news
       oe_showcase_page: oe_showcase_page
+      oe_showcase_search_demo: oe_showcase_search_demo
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

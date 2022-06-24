@@ -7,9 +7,9 @@ dependencies:
     - facets_summary
     - system
   theme:
-    - oe_whitelabel
-id: showcase_facets_summary
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_facets_summary
+theme: oe_showcase_theme
 region: content_top
 weight: 0
 provider: null
@@ -19,6 +19,7 @@ settings:
   label: 'Search results'
   label_display: visible
   provider: facets_summary
+  context_mapping: {  }
 visibility:
   request_path:
     id: request_path

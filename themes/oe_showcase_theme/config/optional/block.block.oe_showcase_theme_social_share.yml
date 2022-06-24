@@ -3,26 +3,20 @@ status: true
 dependencies:
   module:
     - node
-    - oe_webtools_etrans
+    - oe_webtools_social_share
   theme:
-    - oe_whitelabel
-id: showcase_etrans
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_social_share
+theme: oe_showcase_theme
 region: content
-weight: -4
+weight: 0
 provider: null
-plugin: oe_webtools_etrans
+plugin: social_share
 settings:
-  id: oe_webtools_etrans
-  label: 'OpenEuropa Webtools eTrans'
+  id: social_share
+  label: 'Social Share'
   label_display: '0'
-  provider: oe_webtools_etrans
-  delay: 0
-  domain: spd
-  exclude: ''
-  include: 'main, .bcl-header'
-  render_as: link
-  render_to: webtools-etrans
+  provider: oe_webtools_social_share
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -33,4 +27,3 @@ visibility:
       oe_sc_event: oe_sc_event
       oe_sc_news: oe_sc_news
       oe_showcase_page: oe_showcase_page
-      oe_showcase_search_demo: oe_showcase_search_demo

@@ -1,0 +1,47 @@
+name: OpenEuropa Showcase Theme
+description: The OpenEuropa Showcase Theme.
+type: theme
+base theme: oe_whitelabel
+core_version_requirement: ^9.2
+
+# Regions are meant to be 100% the same as in parent theme.
+regions:
+  header_branding: 'Header branding'
+  header_top: 'Header top'
+  navigation_left: 'Navigation left'
+  navigation_right: 'Navigation right'
+  hero: 'Hero (full width)'
+  header: 'Header'
+  breadcrumbs: 'Breadcrumbs'
+  highlighted: 'Highlighted'
+  sidebar_left:  'Sidebar'
+  content_top: 'Content top'
+  content: 'Content'
+  footer: 'Footer'
+
+config_devel:
+  install:
+    - oe_showcase_theme.settings
+  optional:
+    - block.block.oe_showcase_theme_branding
+    - block.block.oe_showcase_theme_breadcrumbs
+    - block.block.oe_showcase_theme_content_banner
+    - block.block.oe_showcase_theme_content_language_switcher
+    - block.block.oe_showcase_theme_ec_corporate_footer
+    - block.block.oe_showcase_theme_eu_corporate_footer
+    - block.block.oe_showcase_theme_eulogin
+    - block.block.oe_showcase_theme_exposed_sort_form
+    - block.block.oe_showcase_theme_facets_form
+    - block.block.oe_showcase_theme_facets_summary
+    - block.block.oe_showcase_theme_header_search_form
+    - block.block.oe_showcase_theme_language_switcher
+    - block.block.oe_showcase_theme_local_actions
+    - block.block.oe_showcase_theme_local_tasks
+    - block.block.oe_showcase_theme_main_navigation
+    - block.block.oe_showcase_theme_main_page_content
+    - block.block.oe_showcase_theme_messages
+    - block.block.oe_showcase_theme_neutral_footer
+    - block.block.oe_showcase_theme_page_feedback_form
+    - block.block.oe_showcase_theme_page_title
+    - block.block.oe_showcase_theme_search_form
+    - block.block.oe_showcase_theme_social_share

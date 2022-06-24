@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_authentication
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_eulogin
+theme: oe_showcase_theme
+region: header_top
+weight: -4
+provider: null
+plugin: oe_authentication_login_block
+settings:
+  id: oe_authentication_login_block
+  label: 'EU Login Link Block'
+  label_display: '0'
+  provider: oe_authentication
+visibility: {  }

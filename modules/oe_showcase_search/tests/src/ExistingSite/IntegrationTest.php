@@ -205,7 +205,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    */
   protected function getSearchTopRegion(): NodeElement {
     $element = $this->assertSession()
-      ->elementExists('css', '#block-oe-whitelabel-main-page-content')
+      ->elementExists('css', '#block-oe-showcase-theme-main-page-content')
       ->getParent()
       // Get the first child.
       ->find('xpath', 'div');

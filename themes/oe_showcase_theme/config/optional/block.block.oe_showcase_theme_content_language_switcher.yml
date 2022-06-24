@@ -3,20 +3,20 @@ status: true
 dependencies:
   module:
     - node
-    - system
+    - oe_multilingual
   theme:
-    - oe_whitelabel
-id: showcase_pagetitle
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_content_language_switcher
+theme: oe_showcase_theme
 region: content
-weight: -7
+weight: -3
 provider: null
-plugin: page_title_block
+plugin: oe_multilingual_content_language_switcher
 settings:
-  id: page_title_block
-  label: 'Page title'
+  id: oe_multilingual_content_language_switcher
+  label: 'Content Language Switcher'
   label_display: '0'
-  provider: core
+  provider: oe_multilingual
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
@@ -25,8 +25,3 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       oe_showcase_page: oe_showcase_page
-      oe_showcase_search_demo: oe_showcase_search_demo
-  request_path:
-    id: request_path
-    negate: true
-    pages: '<front>'

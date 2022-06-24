@@ -231,3 +231,15 @@ function oe_showcase_post_update_00009(): void {
   $config_factory = \Drupal::configFactory();
   $config_factory->getEditable('purge.plugins')->setData($data)->save();
 }
+
+/**
+ * Install 'oe_showcase_theme', and make it the default theme.
+ */
+function oe_showcase_post_update_00010(): void {
+  // Use oe_showcase_theme instead of oe_whitelabel.
+  \Drupal::service('theme_installer')->install(['oe_showcase_theme']);
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'oe_showcase_theme')
+    ->save();
+}

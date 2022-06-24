@@ -7,9 +7,9 @@ dependencies:
     - system
     - views
   theme:
-    - oe_whitelabel
-id: showcase_exposed_sort_form
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_exposed_sort_form
+theme: oe_showcase_theme
 region: content_top
 weight: 1
 provider: null

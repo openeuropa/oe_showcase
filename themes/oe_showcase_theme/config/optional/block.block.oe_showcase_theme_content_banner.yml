@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_content_banner
+theme: oe_showcase_theme
+region: hero
+weight: -6
+provider: null
+plugin: oe_w_content_banner
+settings:
+  id: oe_w_content_banner
+  label: 'Content banner'
+  label_display: '0'
+  provider: node
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility: {  }

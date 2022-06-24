@@ -4,9 +4,9 @@ dependencies:
   module:
     - oe_webtools_page_feedback
   theme:
-    - oe_whitelabel
-id: showcase_pagefeedbackform
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_page_feedback_form
+theme: oe_showcase_theme
 region: footer
 weight: -1
 provider: null

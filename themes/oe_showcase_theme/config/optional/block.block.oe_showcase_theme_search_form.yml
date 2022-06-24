@@ -5,9 +5,9 @@ dependencies:
     - oe_whitelabel_search
     - system
   theme:
-    - oe_whitelabel
-id: oe_whitelabel_search_form
-theme: oe_whitelabel
+    - oe_showcase_theme
+id: oe_showcase_theme_search_form
+theme: oe_showcase_theme
 region: navigation_right
 weight: 0
 provider: null
