@@ -18,6 +18,10 @@ config_devel:
     - facets.facet.oelp_oe_sc_event__title
     - facets.facet.oelp_oe_sc_news__oe_publication_date
     - facets.facet.oelp_oe_sc_news__title
+    - facets.facet.oelp_oe_sc_project__budget
+    - facets.facet.oelp_oe_sc_project__end_date
+    - facets.facet.oelp_oe_sc_project__start_date
+    - facets.facet.oelp_oe_sc_project__type
     - facets.facet_source.list_facet_source__node__oe_sc_news
     - search_api.index.oe_list_pages_index
     - search_api.server.oe_list_pages_search_server
