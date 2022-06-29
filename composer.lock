@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccb266c8c3f5a9a89c2172ddca54ff08",
+    "content-hash": "0be67a1b7a0d9715e9d9866f9d32c70a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1743,6 +1743,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
+            }
+        },
+        {
+            "name": "drupal/daterange_compact",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/daterange_compact.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/daterange_compact-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "0b8467a0797aa4504020c37151edd92da94727a8"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1625600195",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "erik.erskine",
+                    "homepage": "https://www.drupal.org/user/375884"
+                }
+            ],
+            "description": "Provides a compact formatter for date range fields.",
+            "homepage": "https://www.drupal.org/project/daterange_compact",
+            "support": {
+                "source": "https://git.drupalcode.org/project/daterange_compact"
             }
         },
         {
@@ -7668,21 +7712,22 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202206241900",
+            "version": "0.1.202206291849",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "f3b5dab652295c78c231c4e034e2c899042bbc50"
+                "reference": "fe55f1b203c8a6be7877776b93de7a1b167b68a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/f3b5dab652295c78c231c4e034e2c899042bbc50",
-                "reference": "f3b5dab652295c78c231c4e034e2c899042bbc50",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/fe55f1b203c8a6be7877776b93de7a1b167b68a9",
+                "reference": "fe55f1b203c8a6be7877776b93de7a1b167b68a9",
                 "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
                 "drupal/core": "^9.2",
+                "drupal/daterange_compact": "^2.0",
                 "drupal/twig_field_value": "^2.0",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
                 "openeuropa/oe_bootstrap_theme": "0.1.202206231430",
@@ -7787,9 +7832,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202206241900"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202206291849"
             },
-            "time": "2022-06-24T15:53:41+00:00"
+            "time": "2022-06-29T16:48:33+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
