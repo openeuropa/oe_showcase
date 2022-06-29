@@ -116,6 +116,9 @@
             },
             "openeuropa/oe_starter_content": {
                 "OEL-1651: Published date prefilled with current date": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_starter_content/pull/9.diff"
+            },
+            "openeuropa/oe_whitelabel": {
+                "OEL-1638: Avoid warning": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202206241900...OEL-1638.diff"
             }
         },
         "artifacts": {
