@@ -292,6 +292,138 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'Event number 9',
       'Event number 11',
     ]);
+
+    // Test Project list page.
+    $date_plus_1 = date('Y-m-d', strtotime('+1 day'));
+    $date_plus_10 = date('Y-m-d', strtotime('+10 days'));
+
+    Node::create([
+      'title' => 'Project closed',
+      'type' => 'oe_project',
+      'oe_summary' => 'This is a closed Project',
+      'language' => 'en',
+      'status' => NodeInterface::PUBLISHED,
+      'oe_project_budget' => 100,
+      'oe_project_dates' => [
+        'value' => '2020-05-10',
+        'end_value' => '2020-05-15',
+      ],
+      'oe_subject' => 'http://data.europa.eu/uxp/1000',
+    ])->save();
+
+    Node::create([
+      'title' => 'Project ongoing',
+      'type' => 'oe_project',
+      'oe_summary' => 'This is a ongoing Project',
+      'language' => 'en',
+      'status' => NodeInterface::PUBLISHED,
+      'oe_project_budget' => 33,
+      'oe_project_dates' => [
+        'value' => '2022-05-20',
+        'end_value' => $date_plus_1,
+      ],
+      'oe_subject' => 'http://data.europa.eu/uxp/1567',
+    ])->save();
+
+    Node::create([
+      'title' => 'Project pending',
+      'type' => 'oe_project',
+      'oe_summary' => 'This is a pending Project',
+      'language' => 'en',
+      'status' => NodeInterface::PUBLISHED,
+      'oe_project_budget' => 1234,
+      'oe_project_dates' => [
+        'value' => $date_plus_1,
+        'end_value' => $date_plus_10,
+      ],
+      'oe_subject' => 'http://data.europa.eu/uxp/1018',
+    ])->save();
+
+    // Index content.
+    $this->indexItems('oe_list_pages_index');
+
+    $list_page = $this->createListPage('oe_project', [
+      'oelp_oe_sc_project__type' => 'oelp_oe_sc_project__type',
+      'oelp_oe_sc_project__budget' => 'oelp_oe_sc_project__budget',
+      'oelp_oe_sc_project__start_date' => 'oelp_oe_sc_project__start_date',
+      'oelp_oe_sc_project__end_date' => 'oelp_oe_sc_project__end_date',
+    ]);
+
+    $this->drupalGet($list_page->toUrl());
+
+    $this->assertSearchResultsTitle('Results', 3);
+    $this->assertSearchResults([
+      'Project closed',
+      'Project ongoing',
+      'Project pending',
+    ]);
+
+    // Assert that the filter form for Events exists.
+    $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $filter_type = $filter_form->findField('Type');
+    $filter_budget = $filter_form->findField('Total budget');
+    $filter_start = $filter_form->findField('Start date');
+    $filter_end = $filter_form->findField('End date');
+    $search_button = $filter_form->find('css', '#edit-submit');
+    $this->assertNotNull($filter_type);
+    $this->assertNotNull($filter_budget);
+    $this->assertNotNull($filter_start);
+    $this->assertNotNull($filter_end);
+    $this->assertNotNull($search_button);
+
+    // Filter results by type.
+    $filter_type->selectOption('financing');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 1);
+    $this->assertSearchResults([
+      'Project closed',
+    ]);
+    $filter_type->selectOption('public finance', TRUE);
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 2);
+    $this->assertSearchResults([
+      'Project closed',
+      'Project pending',
+    ]);
+
+    // Filter results by budget.
+    $filter_form->findButton('Clear filters')->click();
+    $filter_budget->setValue(33);
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 1);
+    $this->assertSearchResults([
+      'Project ongoing',
+    ]);
+
+    // Filter results by dates.
+    $filter_form->findButton('Clear filters')->click();
+    $filter_start->setValue('gt');
+    $date_input = $filter_form->findField('Date');
+    $date_input->setValue('2022-05-19');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 2);
+    $this->assertSearchResults([
+      'Project ongoing',
+      'Project pending',
+    ]);
+
+    $filter_start->setValue('lt');
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 1);
+    $this->assertSearchResults([
+      'Project closed',
+    ]);
+
+    $dates = $filter_form->findAll('named', ['field', 'Date']);
+    $filter_start->setValue('gt');
+    $dates[0]->setValue('2022-05-19');
+    $filter_end->setValue('lt');
+    $dates[1]->setValue($date_plus_10);
+    $search_button->click();
+    $this->assertSearchResultsTitle('Results', 1);
+    $this->assertSearchResults([
+      'Project ongoing',
+    ]);
   }
 
   /**
@@ -335,6 +467,41 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       static fn(NodeElement $element): string => $element->getText(),
       $elements,
     ));
+  }
+
+  /**
+   * Create a list page node with filters configured.
+   *
+   * @param string $bundle
+   *   Nodes of this bundle will be listed.
+   * @param array $exposed_filters
+   *   Facet machine names linked to the bundle's facet source.
+   *
+   * @return \Drupal\node\NodeInterface
+   *   The list page node created.
+   */
+  protected function createListPage(string $bundle, array $exposed_filters): NodeInterface {
+    $list_page = Node::create([
+      'type' => 'oe_list_page',
+      'title' => 'Results',
+    ]);
+
+    /** @var \Drupal\emr\Entity\EntityMetaInterface $list_page_entity_meta */
+    $list_page_entity_meta = $list_page->get('emr_entity_metas')->getEntityMeta('oe_list_page');
+    /** @var \Drupal\oe_list_pages\ListPageWrapper $list_page_entity_meta_wrapper */
+    $list_page_entity_meta_wrapper = $list_page_entity_meta->getWrapper();
+    $list_page_entity_meta_wrapper->setSource('node', $bundle);
+    $list_page_entity_meta_wrapper->setConfiguration([
+      'override_exposed_filters' => 1,
+      'exposed_filters' => $exposed_filters,
+      'preset_filters' => [],
+      'limit' => 10,
+      'sort' => [],
+    ]);
+    $list_page->get('emr_entity_metas')->attach($list_page_entity_meta);
+    $list_page->save();
+
+    return $list_page;
   }
 
 }
