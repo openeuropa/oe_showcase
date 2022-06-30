@@ -325,10 +325,11 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->indexItems('oe_list_pages_index');
 
     $list_page = $this->createListPage('oe_project', [
-      'oelp_oe_sc_project__type' => 'oelp_oe_sc_project__type',
       'oelp_oe_sc_project__budget' => 'oelp_oe_sc_project__budget',
-      'oelp_oe_sc_project__start_date' => 'oelp_oe_sc_project__start_date',
       'oelp_oe_sc_project__end_date' => 'oelp_oe_sc_project__end_date',
+      'oelp_oe_sc_project__start_date' => 'oelp_oe_sc_project__start_date',
+      'oelp_oe_sc_project__status' => 'oelp_oe_sc_project__status',
+      'oelp_oe_sc_project__type' => 'oelp_oe_sc_project__type',
     ]);
 
     $this->drupalGet($list_page->toUrl());
@@ -342,6 +343,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     // Assert that the filter form for Events exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $filter_status = $filter_form->findField('Status');
     $filter_type = $filter_form->findField('Type');
     $filter_budget = $filter_form->findField('Total budget');
     $filter_start = $filter_form->findField('Start date');
@@ -405,6 +407,23 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->assertResultsTitle('Results', 1);
     $this->assertResults([
       'Project ongoing',
+    ]);
+
+    // Filter results by status.
+    $filter_form->findButton('Clear filters')->click();
+    $filter_status->selectOption('Closed');
+    $search_button->click();
+    $this->assertResultsTitle('Results', 1);
+    $this->assertResults([
+      'Project closed',
+    ]);
+
+    $filter_status->selectOption('Ongoing and Planned');
+    $search_button->click();
+    $this->assertResultsTitle('Results', 2);
+    $this->assertResults([
+      'Project ongoing',
+      'Project pending',
     ]);
   }
 
