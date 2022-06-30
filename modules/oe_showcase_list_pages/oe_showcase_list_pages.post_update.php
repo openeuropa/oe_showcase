@@ -17,6 +17,7 @@ function oe_showcase_list_pages_post_update_00001() {
     'facets.facet.oelp_oe_sc_project__budget',
     'facets.facet.oelp_oe_sc_project__end_date',
     'facets.facet.oelp_oe_sc_project__start_date',
+    'facets.facet.oelp_oe_sc_project__status',
     'facets.facet.oelp_oe_sc_project__type',
     'search_api.index.oe_list_pages_index',
   ];
