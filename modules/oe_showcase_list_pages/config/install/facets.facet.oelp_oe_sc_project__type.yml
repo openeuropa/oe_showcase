@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: oelp_oe_sc_project__type
-name: Type
+name: 'Project type'
 weight: 0
 min_count: 1
 url_alias: oelp_oe_sc_project__type

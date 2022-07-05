@@ -344,7 +344,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Assert that the filter form for Events exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $filter_status = $filter_form->findField('Status');
-    $filter_type = $filter_form->findField('Type');
+    $filter_type = $filter_form->findField('Project type');
     $filter_budget = $filter_form->findField('Total budget');
     $filter_start = $filter_form->findField('Start date');
     $filter_end = $filter_form->findField('End date');
