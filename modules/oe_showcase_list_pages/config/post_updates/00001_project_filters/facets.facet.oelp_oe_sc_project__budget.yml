@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: oelp_oe_sc_project__budget
 name: 'Total budget'
-weight: 1
+weight: 2
 min_count: 1
 url_alias: oelp_oe_sc_project__budget
 facet_source_id: 'list_facet_source:node:oe_project'

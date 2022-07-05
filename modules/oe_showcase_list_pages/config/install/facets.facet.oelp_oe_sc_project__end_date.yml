@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: oelp_oe_sc_project__end_date
 name: 'End date'
-weight: 3
+weight: 4
 min_count: 1
 url_alias: oelp_oe_sc_project__end_date
 facet_source_id: 'list_facet_source:node:oe_project'
