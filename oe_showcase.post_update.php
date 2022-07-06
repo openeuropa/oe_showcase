@@ -304,3 +304,31 @@ function oe_showcase_post_update_00013(): void {
   $roleassign_roles['manage_site_specific_footer'] = 'manage_site_specific_footer';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
 }
+
+/**
+ * Enable person content type. Grant permissions to editor.
+ */
+function oe_showcase_post_update_00014(): void {
+  // Install starter content person module.
+  \Drupal::service('module_installer')->install([
+    'oe_whitelabel_starter_person',
+  ]);
+
+  // Allow editor role to manage person pages.
+  $permissions = [
+    'create oe_sc_person content',
+    'delete any oe_sc_person content',
+    'delete oe_sc_person revisions',
+    'edit any oe_sc_person content',
+    'revert oe_sc_person revisions',
+    'view oe_sc_person revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}

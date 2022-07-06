@@ -16,6 +16,7 @@ dependencies:
     - node.type.oe_project
     - node.type.oe_sc_event
     - node.type.oe_sc_news
+    - node.type.oe_sc_person
     - node.type.oe_showcase_page
   module:
     - filter
@@ -43,6 +44,7 @@ permissions:
   - 'create oe_project content'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
+  - 'create oe_sc_person content'
   - 'create oe_showcase_page content'
   - 'create remote_video media'
   - 'create webtools_chart media'
@@ -56,6 +58,7 @@ permissions:
   - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
+  - 'delete any oe_sc_person content'
   - 'delete any oe_showcase_page content'
   - 'delete any remote_video media'
   - 'delete any webtools_chart media'
@@ -67,6 +70,7 @@ permissions:
   - 'delete oe_project revisions'
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
+  - 'delete oe_sc_person revisions'
   - 'delete oe_showcase_page revisions'
   - 'edit any av_portal_photo media'
   - 'edit any av_portal_video media'
@@ -76,6 +80,7 @@ permissions:
   - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
+  - 'edit any oe_sc_person content'
   - 'edit any oe_showcase_page content'
   - 'edit any remote_video media'
   - 'edit any webtools_chart media'
@@ -87,6 +92,7 @@ permissions:
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
+  - 'revert oe_sc_person revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
@@ -94,6 +100,7 @@ permissions:
   - 'view oe_project revisions'
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
+  - 'view oe_sc_person revisions'
   - 'view oe_showcase_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
