@@ -23,3 +23,15 @@ function oe_showcase_list_pages_post_update_00001() {
   ];
   ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00001_project_filters', $configs);
 }
+
+/**
+ * Enable person facets.
+ */
+function oe_showcase_list_pages_post_update_00002(): void {
+  $configs = [
+    'facets.facet.oelp_oe_sc_person__title',
+    'search_api.index.oe_list_pages_index',
+  ];
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase_list_pages', '/config/post_updates/00002_person_facets', $configs);
+}
