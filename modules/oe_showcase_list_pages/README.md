@@ -36,24 +36,31 @@ The new page should show a list of content of the chosen type, and filters in th
 
 This section describes how to set up list pages outside of OE Showcase.
 
-### Required modules
+### Composer dependencies
 
-Look at the dependencies sections in `oe_showcase_list_pages.info.yml` and `oe_whitelabel_list_pages.info.yml`.
-
-Composer packages:
+Packages:
 
 - `openeuropa/oe_list_pages`
-  - `drupal/facets` and `drupal/search_api` will be installed as dependencies
-  - Both `drupal/facets` and `openeuropa/oe_list_pages` may need a patch, see "Notes" below.
+  - `drupal/facets` and `drupal/search_api` will be installed as dependencies.
 - `drupal/extra_field`
 - `openeuropa/oe_whitelabel` - if you want OpenEuropa Whitelabel as a theme.
 
-Modules:
+Patches:
+
+- `drupal/facets` needs a patch to fix [#3262863: setHierarchy method causing the fatal error on facets settings form submission](https://www.drupal.org/project/facets/issues/3262863).
+
+Look at the `composer.json` in `oe_showcase` for up-to-date version numbers and patch urls.
+
+### Drupal modules
+
+The following modules should be installed, and/or added as dependencies:
 
 - `oe_list_pages` for the basic list pages functionality.
 - `oe_list_page_content_type` for a pre-defined content type that acts as a list page.
 - `extra_field` to have list and filters available as extra fields in the view mode.
 - `oe_whitelabel_list_pages` for theming.
+
+You may look at the dependencies sections in `oe_showcase_list_pages.info.yml` and `oe_whitelabel_list_pages.info.yml`.
 
 ### Search index
 
@@ -97,19 +104,3 @@ All you need is a role (e.g. "editor") with permission to create list page conte
 Now users with the respective permission will be able to create list pages, as described above.
 
 You may export the configuration and deploy on production.
-
-## Notes
-
-To overcome an [issue](https://www.drupal.org/project/facets/issues/3262863) with facets 2 we used below patch:
-```json
-"drupal/facets": {
-    "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
-}
-```
-
-To use labels instead of country codes in address facets we added a patch:
-```json
-"openeuropa/oe_list_pages": {
-    "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
-}
-```
