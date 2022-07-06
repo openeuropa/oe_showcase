@@ -1746,6 +1746,58 @@
             }
         },
         {
+            "name": "drupal/datetime_range_timezone",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/datetime_range_timezone.git",
+                "reference": "8.x-1.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/datetime_range_timezone-8.x-1.0-alpha2.zip",
+                "reference": "8.x-1.0-alpha2",
+                "shasum": "a276812d7490b28794a6b4497ea3da3d672d2aa8"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "drupal/token": "^1.10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha2",
+                    "datestamp": "1649673208",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                }
+            ],
+            "description": "Datetime Range Timezone",
+            "homepage": "https://www.drupal.org/project/datetime_range_timezone",
+            "support": {
+                "source": "https://git.drupalcode.org/project/datetime_range_timezone"
+            }
+        },
+        {
             "name": "drupal/daterange_compact",
             "version": "2.0.0",
             "source": {
@@ -3606,17 +3658,17 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "2.0.0-rc2",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maxlength.git",
-                "reference": "2.0.0-rc2"
+                "reference": "2.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-2.0.0-rc2.zip",
-                "reference": "2.0.0-rc2",
-                "shasum": "9e94519392716489e71157dfa65c58587bc559f1"
+                "url": "https://ftp.drupal.org/files/projects/maxlength-2.0.0-rc1.zip",
+                "reference": "2.0.0-rc1",
+                "shasum": "1d08a0a49b36b8593be203fc3c423dd29647fc4b"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -3624,8 +3676,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc2",
-                    "datestamp": "1652368182",
+                    "version": "2.0.0-rc1",
+                    "datestamp": "1634070330",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3638,41 +3690,30 @@
             ],
             "authors": [
                 {
-                    "name": "Marius Scurtescu (mariuss)",
-                    "homepage": "https://www.drupal.org/u/mariuss",
-                    "role": "Maintainer"
+                    "name": "cedewey",
+                    "homepage": "https://www.drupal.org/user/38694"
                 },
                 {
-                    "name": "Clayton Dewey (cedewey)",
-                    "homepage": "https://www.drupal.org/u/cedewey",
-                    "role": "Maintainer"
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
-                    "name": "Daniel Wehner (dawehner)",
-                    "homepage": "https://www.drupal.org/u/dawehner",
-                    "role": "Maintainer"
+                    "name": "hipp2bsquare",
+                    "homepage": "https://www.drupal.org/user/2473076"
                 },
                 {
-                    "name": "Paulino Michelazzo (pmichelazzo)",
-                    "homepage": "https://www.drupal.org/u/pmichelazzo",
-                    "role": "Maintainer"
+                    "name": "mariuss",
+                    "homepage": "https://www.drupal.org/user/28539"
                 },
                 {
-                    "name": "Jeff Hipp (hipp2bsquare)",
-                    "homepage": "https://www.drupal.org/u/hipp2bsquare",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Steven DuBois (srdtwc)",
-                    "homepage": "https://www.drupal.org/u/srdtwc",
-                    "role": "Maintainer"
+                    "name": "srdtwc",
+                    "homepage": "https://www.drupal.org/user/3422763"
                 }
             ],
-            "description": "Maxlength allows a soft or hard character limit to be set on titles, text fields and link fields.",
+            "description": "Limit the number of characters in textfields and textareas and shows the amount of characters left.",
             "homepage": "https://www.drupal.org/project/maxlength",
             "support": {
-                "source": "https://git.drupalcode.org/project/maxlength",
-                "issues": "https://www.drupal.org/project/issues/maxlength"
+                "source": "https://git.drupalcode.org/project/maxlength"
             }
         },
         {
@@ -6661,22 +6702,24 @@
         },
         {
             "name": "openeuropa/oe_content",
-            "version": "2.8.0",
+            "version": "dev-OEL-1551",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_content.git",
-                "reference": "959323ef130680ebf96c1e6d7d75f0e5a4296cad"
+                "reference": "624baac7e964e05c6295f52663726b98761ee7c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/959323ef130680ebf96c1e6d7d75f0e5a4296cad",
-                "reference": "959323ef130680ebf96c1e6d7d75f0e5a4296cad",
+                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/624baac7e964e05c6295f52663726b98761ee7c2",
+                "reference": "624baac7e964e05c6295f52663726b98761ee7c2",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9.2",
+                "cweagans/composer-patches": "~1.4",
+                "drupal/core": "^9.3",
+                "drupal/datetime_range_timezone": "^1.0@alpha",
                 "drupal/linkit": "^5.0-beta11 || ^6.0",
-                "drupal/maxlength": "^1.0@beta || ^2.0",
+                "drupal/maxlength": "^1.0@beta || 2.0.0-rc1",
                 "openeuropa/oe_media": "^1.15",
                 "openeuropa/rdf_skos": "^1.0",
                 "php": ">=7.4"
@@ -6685,6 +6728,7 @@
                 "behat/behat": "^3.10",
                 "behat/mink-extension": "^2.3.1",
                 "composer/installers": "^1.5",
+                "composer/xdebug-handler": "^2.0",
                 "drupal/address": "^1.8",
                 "drupal/composite_reference": "^2.1",
                 "drupal/config_devel": "^1.8",
@@ -6699,11 +6743,13 @@
                 "drupal/entity_reference_revisions": "^1.8",
                 "drupal/field_group": "~3.2",
                 "drupal/inline_entity_form": "^1.0-rc9",
+                "drupal/sparql_entity_storage": "1.0.0-alpha9",
                 "drupal/token": "^1.10",
                 "drupal/typed_link": "^2.0",
                 "drupaltest/behat-traits": "^0.3",
                 "drush/drush": "^10.3",
                 "egulias/email-validator": "^2.1.22 || ^3.0",
+                "fabpot/goutte": "^3.3",
                 "friends-of-behat/service-container-extension": "^1.0",
                 "instaclick/php-webdriver": "^1.4.7",
                 "nikic/php-parser": "~4.10.4",
@@ -6711,7 +6757,7 @@
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_corporate_countries": "^2.0",
                 "openeuropa/oe_corporate_site_info": "^1.0",
-                "openeuropa/oe_link_lists": "~0.13.0",
+                "openeuropa/oe_link_lists": "~0.14",
                 "openeuropa/oe_multilingual": "^1.10",
                 "openeuropa/oe_time_caching": "^1.1",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
@@ -6745,6 +6791,9 @@
                     },
                     "drupal/inline_entity_form": {
                         "https://www.drupal.org/project/inline_entity_form/issues/2875716": "https://www.drupal.org/files/issues/2021-04-15/ief_removed_references_2875716-103.patch"
+                    },
+                    "drupal/typed_link": {
+                        "https://www.drupal.org/project/typed_link/issues/3263477": "https://www.drupal.org/files/issues/2022-02-09/typed_link_constraints-3263477-2.patch"
                     }
                 },
                 "drupal-scaffold": {
@@ -6753,10 +6802,11 @@
                     }
                 },
                 "_readme": [
-                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.2 compatibility.",
+                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.3 compatibility.",
                     "Explicit minimum version requirement of behat/behat library due to PHP compatibility.",
-                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
-                    "Explicit requirement of drupal/token module due to PHP 8 compatbility."
+                    "Explicit minimum version requirement for fabpot/goutte due to Drupal 9.3 compatibility.",
+                    "Explicit requirement of drupal/token module due to PHP 8 compatbility.",
+                    "Explicit requirement of drupal/maxlength: 2.0.0-rc1 due to issues #3279243, #3279222."
                 ]
             },
             "autoload": {
@@ -6771,9 +6821,9 @@
             "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_content/issues",
-                "source": "https://github.com/openeuropa/oe_content/tree/2.8.0"
+                "source": "https://github.com/openeuropa/oe_content/tree/OEL-1551"
             },
-            "time": "2022-02-10T16:46:44+00:00"
+            "time": "2022-07-02T16:58:55+00:00"
         },
         {
             "name": "openeuropa/oe_content_extra",
@@ -7712,16 +7762,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.0.0-beta4",
+            "version": "dev-OEL-1552",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3"
+                "reference": "999251c8a8b283b4bd297b2df7e5bd0ca9500fe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/999251c8a8b283b4bd297b2df7e5bd0ca9500fe0",
+                "reference": "999251c8a8b283b4bd297b2df7e5bd0ca9500fe0",
                 "shasum": ""
             },
             "require": {
@@ -7762,7 +7812,7 @@
                 "openeuropa/code-review": "^1.7 || ^2.0",
                 "openeuropa/oe_authentication": "^1.4",
                 "openeuropa/oe_contact_forms": "~1.1",
-                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/oe_content": "dev-OEL-1551",
                 "openeuropa/oe_content_extra": "^1.0.0-alpha1",
                 "openeuropa/oe_corporate_blocks": "^4.4",
                 "openeuropa/oe_list_pages": "^0.16",
@@ -7789,6 +7839,9 @@
                 "patches": {
                     "drupal/entity_reference_revisions": {
                         "https://www.drupal.org/project/entity_reference_revisions/issues/2937835": "https://www.drupal.org/files/issues/2021-03-26/entity_reference_revisions-field_formatter_label-2937835-36.patch"
+                    },
+                    "openeuropa/oe_starter_content": {
+                        "OEL-1551-Document_fields_for_person": "https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta1...EPIC-OEL-1548-Person-v1.diff"
                     }
                 },
                 "drupal-scaffold": {
@@ -7832,9 +7885,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.0.0-beta4"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-1552"
             },
-            "time": "2022-07-08T15:22:51+00:00"
+            "time": "2022-07-05T07:37:55+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -18547,7 +18600,9 @@
         "drupal/json_field": 5,
         "drupal/roleassign": 10,
         "drupal/user_field_anonymize": 15,
-        "openeuropa/oe_content_extra": 15
+        "openeuropa/oe_content": 20,
+        "openeuropa/oe_content_extra": 15,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
