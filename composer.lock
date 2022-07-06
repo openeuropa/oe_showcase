@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "445c53ec853579eb1aee40fac45f422b",
+    "content-hash": "e32d171a458119a955a9ef431328c518",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7761,16 +7761,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.0.0-beta4",
+            "version": "dev-OEL-1552",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3"
+                "reference": "6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea",
+                "reference": "6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea",
                 "shasum": ""
             },
             "require": {
@@ -7798,6 +7798,7 @@
                 "drupal/facets_form": "1.0.0-alpha2",
                 "drupal/field_group": "^3.2",
                 "drupal/file_link": "^2.0.6",
+                "drupal/inline_entity_form": "^1.0-rc12",
                 "drupal/pathauto": "^1.8",
                 "drupal/search_api": "^1.21",
                 "drupal/search_api_autocomplete": "^1.5",
@@ -7811,14 +7812,14 @@
                 "openeuropa/code-review": "^1.7 || ^2.0",
                 "openeuropa/oe_authentication": "^1.4",
                 "openeuropa/oe_contact_forms": "~1.1",
-                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/oe_content": "3.x-dev",
                 "openeuropa/oe_content_extra": "^1.0.0-alpha1",
                 "openeuropa/oe_corporate_blocks": "^4.4",
                 "openeuropa/oe_list_pages": "^0.16",
                 "openeuropa/oe_media": "^1.14",
                 "openeuropa/oe_multilingual": "^1.9",
                 "openeuropa/oe_paragraphs": "^1.13",
-                "openeuropa/oe_starter_content": "^1.0.0-beta1",
+                "openeuropa/oe_starter_content": "dev-EPIC-OEL-1548-Person-v1",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
                 "symfony/dom-crawler": "^4.4.12"
@@ -7852,7 +7853,8 @@
                     "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
                     "Explicit requirement for league/csv due to PHP 8.0 compatibility",
                     "Explicit minimum version requirement for symfony/dom-crawler due to its lower versions using the deprecated function libxml_disable_entity_loader() in PHP8.",
-                    "Explicit requirement of token module due to PHP 8 compatbility."
+                    "Explicit requirement of token module due to PHP 8 compatbility.",
+                    "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required the same minimum version."
                 ],
                 "installer-paths": {
                     "build/core": [
@@ -7881,9 +7883,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.0.0-beta4"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-1552"
             },
-            "time": "2022-07-08T15:22:51+00:00"
+            "time": "2022-07-25T16:04:42+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -14459,16 +14461,16 @@
         },
         {
             "name": "mikey179/vfsstream",
-            "version": "v1.6.10",
+            "version": "v1.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bovigo/vfsStream.git",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85"
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/250c0825537d501e327df879fb3d4cd751933b85",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
                 "shasum": ""
             },
             "require": {
@@ -14506,7 +14508,7 @@
                 "source": "https://github.com/bovigo/vfsStream/tree/master",
                 "wiki": "https://github.com/bovigo/vfsStream/wiki"
             },
-            "time": "2021-09-25T08:05:01+00:00"
+            "time": "2022-02-23T02:02:42+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -18596,7 +18598,8 @@
         "drupal/roleassign": 10,
         "drupal/user_field_anonymize": 15,
         "openeuropa/oe_content": 20,
-        "openeuropa/oe_content_extra": 15
+        "openeuropa/oe_content_extra": 15,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
