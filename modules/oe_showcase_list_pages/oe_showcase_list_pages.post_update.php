@@ -18,5 +18,5 @@ function oe_showcase_list_pages_post_update_00001(): void {
     'search_api.index.oe_list_pages_index',
   ];
 
-  ConfigImporter::importMultiple('profile', 'oe_showcase_list_pages', '/config/post_updates/00001_person_facets', $configs);
+  ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00001_person_facets', $configs);
 }
