@@ -69,16 +69,18 @@ Create a search index to make specific content types available for use in list p
 * Visit `config/search/search-api`.
 * Create a search server, unless you want to reuse one that already exists.
 * Click "Add index".
-* Enter an index name, e.g. "List pages index", and review or adjust the machine name.
-  * The index will be reused across content types, so a machine name like `myproject_list_pages_index` is fine.
-  * It is probably a good idea to have dedicated search indices for list pages and for regular site search.
+* Enter an index name, e.g. "List pages index". Review or adjust the machine name, e.g. `myproject_list_pages_index` or just `list_pages_index`.
+  * _Note: We recommend to have one shared search index for all list pages, but to have distinct search indices for other purposes like site search.
 * In "Datasources", choose "Content".
 * In "Bundles", choose the content types that should be indexed.
 * Click "Save and add fields".
-* In the "Fields" tab, add the fields you need:
-  * The "Content type" field is required if the index covers multiple content types.
-  * Add more fields to prepare for search facets.
+* In the "Fields" tab, add the fields:
+  * Add the "Content type" field, if the index covers more than one content type.
+  * Add additional fields as needed to create facets later.
 * Click "Save".
+* Clear the cache, e.g. with `drush cr`.
+  * This is needed for newly added fields and content types to become available when creating facets.
+* Run the indexing process for the newly created or updated search index.
 
 ### Facets
 
@@ -92,7 +94,8 @@ Create facets that can be added as filters in a list page:
     * Facets exist in a global namespace, so their machine names should be properly prefixed to make them distinguishable and prevent conflicts.
     * Facets and facet sources for list pages are _not_ reused across content types, so you may need to create multiple facets for the same field. This means the machine name prefix should include the content type.
   * Click "Save". This should open the "Edit" tab for the new facet.
-  * In "Widget", it is recommended to choose one of the widgets provided by `oe_list_pages`, such as "List pages date", "List pages fulltext" or "List pages multiselect".
+  * In "Widget", choose one of the widgets provided by `oe_list_pages`, such as "List pages date", "List pages fulltext" or "List pages multiselect".
+    * To be more precise, only widget are supported that implement `ListPagesWidgetInterface`. Other widgets won't show up as filters on the list page.
 * On the facets overview page, the new facets should appear in a facet source like `'list_facet_source:node:oe_sc_news'`.
 
 ### Permissions
