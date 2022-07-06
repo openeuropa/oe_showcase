@@ -243,3 +243,31 @@ function oe_showcase_post_update_00010(): void {
     ->set('default', 'oe_showcase_theme')
     ->save();
 }
+
+/**
+ * Enable person content type. Grant permissions to editor.
+ */
+function oe_showcase_post_update_00011(): void {
+  // Install starter content person module.
+  \Drupal::service('module_installer')->install([
+    'oe_whitelabel_starter_person',
+  ]);
+
+  // Allow editor role to manage person pages.
+  $permissions = [
+    'create oe_sc_person content',
+    'delete any oe_sc_person content',
+    'delete oe_sc_person revisions',
+    'edit any oe_sc_person content',
+    'revert oe_sc_person revisions',
+    'view oe_sc_person revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}
