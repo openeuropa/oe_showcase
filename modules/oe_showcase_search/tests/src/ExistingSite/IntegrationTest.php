@@ -51,7 +51,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Assert that filter facets exist in the sidebar.
     $offcanvas = $assert->elementExists('css', '#bcl-offcanvas');
-    $title = $offcanvas->find('css', 'h3');
+    $title = $offcanvas->find('css', 'h2');
     $this->assertSame('Filter Options', $title->getText());
     $assert->fieldExists('Category 1', $offcanvas);
     $assert->fieldExists('Category 2', $offcanvas);
