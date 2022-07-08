@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_post_updates_alter().
+ */
+function oe_showcase_post_updates_alter(&$updates) {
+  // We need to move the profile post updates to the bottom, so they run always
+  // after all the updates from dependencies have been executed.
+  foreach ($updates as $key => $update) {
+    if (str_starts_with($update, 'oe_showcase_')) {
+      unset($updates[$key]);
+      $updates[] = $update;
+    }
+  }
+}

@@ -15,6 +15,9 @@
     <testsuite name="unit">
       <directory>./themes/**/tests/src/Unit/</directory>
     </testsuite>
+    <testsuite name="kernel">
+      <directory>./tests/src/Kernel/</directory>
+    </testsuite>
     <testsuite name="existing-site-no-javascript">
       <directory>./tests/src/ExistingSite/</directory>
       <directory>./modules/**/tests/src/ExistingSite/</directory>

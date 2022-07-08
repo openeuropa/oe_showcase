@@ -108,6 +108,9 @@
         "enable-patching": true,
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
+            "drupal/core": {
+                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch"
+            },
             "drupal/facets": {
                 "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
             },

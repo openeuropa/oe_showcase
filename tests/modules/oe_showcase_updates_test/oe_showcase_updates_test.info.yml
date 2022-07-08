@@ -1,0 +1,5 @@
+name: OpenEuropa Showcase updates test
+description: Test module for oe_showcase updates.
+package: Testing
+type: module
+core_version_requirement: ^9.3 || ^10
