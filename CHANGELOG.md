@@ -1,10 +1,22 @@
 # Change Log
 
-## [1.0.0-alpha5](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha5) (2022-06-22)
+## [1.0.0-alpha6](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha6) (2022-07-08)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha5...1.0.0-alpha6)
+
+**Merged pull requests:**
+
+- OEL-1727: Run profile post\_update hooks last. [\#167](https://github.com/openeuropa/oe_showcase/pull/167) ([brummbar](https://github.com/brummbar))
+- OEL-1653: Show time in event dates. [\#162](https://github.com/openeuropa/oe_showcase/pull/162) ([brummbar](https://github.com/brummbar))
+- OEL-1169: OE Webtools ETrans integration [\#142](https://github.com/openeuropa/oe_showcase/pull/142) ([escuriola](https://github.com/escuriola))
+- OEL-1618: Upgrade to BCL 0.23.0. [\#137](https://github.com/openeuropa/oe_showcase/pull/137) ([escuriola](https://github.com/escuriola))
+- OEL-1543: Introduce oe\_showcase\_theme. [\#123](https://github.com/openeuropa/oe_showcase/pull/123) ([donquixote](https://github.com/donquixote))
+
+## [1.0.0-alpha5](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha5) (2022-06-23)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha4...1.0.0-alpha5)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-alpha5. [\#161](https://github.com/openeuropa/oe_showcase/pull/161) ([drishu](https://github.com/drishu))
 - OEL-1722: Install dropsolid\_purge, oe\_dashboard\_agent, redirect. [\#159](https://github.com/openeuropa/oe_showcase/pull/159) ([donquixote](https://github.com/donquixote))
 - OEL-1703: Upgrade path for list pages epic. [\#158](https://github.com/openeuropa/oe_showcase/pull/158) ([donquixote](https://github.com/donquixote))
 - OEL-1690: Upgrade path for project epic [\#156](https://github.com/openeuropa/oe_showcase/pull/156) ([donquixote](https://github.com/donquixote))
