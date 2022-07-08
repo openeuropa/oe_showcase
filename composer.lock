@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65a69ec58f895f08399e36ec7b482d12",
+    "content-hash": "d5bfe10a0c90f0697c1f73c0aacf8f5c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6483,16 +6483,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202206231430",
+            "version": "0.1823.202207081315",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "6118b5e0feb97c38bd2de21c9e1db8b180a3b01d"
+                "reference": "d48e30978583d09b1e043d33c9ff2f7ae09a8af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/6118b5e0feb97c38bd2de21c9e1db8b180a3b01d",
-                "reference": "6118b5e0feb97c38bd2de21c9e1db8b180a3b01d",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/d48e30978583d09b1e043d33c9ff2f7ae09a8af4",
+                "reference": "d48e30978583d09b1e043d33c9ff2f7ae09a8af4",
                 "shasum": ""
             },
             "require": {
@@ -6567,9 +6567,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202206231430"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1823.202207081315"
             },
-            "time": "2022-06-23T12:34:07+00:00"
+            "time": "2022-07-08T11:02:15+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -7712,16 +7712,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202206291849",
+            "version": "0.1823.202207081545",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "fe55f1b203c8a6be7877776b93de7a1b167b68a9"
+                "reference": "e51f3a5cb71c35fa176e9062b4c03b4f16e21029"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/fe55f1b203c8a6be7877776b93de7a1b167b68a9",
-                "reference": "fe55f1b203c8a6be7877776b93de7a1b167b68a9",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/e51f3a5cb71c35fa176e9062b4c03b4f16e21029",
+                "reference": "e51f3a5cb71c35fa176e9062b4c03b4f16e21029",
                 "shasum": ""
             },
             "require": {
@@ -7730,7 +7730,7 @@
                 "drupal/daterange_compact": "^2.0",
                 "drupal/twig_field_value": "^2.0",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.1.202206231430",
+                "openeuropa/oe_bootstrap_theme": "0.1823.202207081315",
                 "php": ">=7.4"
             },
             "require-dev": {
@@ -7832,9 +7832,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202206291849"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1823.202207081545"
             },
-            "time": "2022-06-29T16:48:33+00:00"
+            "time": "2022-07-08T13:46:37+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
