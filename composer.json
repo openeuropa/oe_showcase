@@ -13,7 +13,7 @@
         "drupal/better_exposed_filters": "^5.0",
         "drupal/block_field": "^1.0@RC",
         "drupal/composite_reference": "^2.1",
-        "drupal/core-recommended": "^9.2",
+        "drupal/core-recommended": "~9.3.18",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/dropsolid_purge": "^1.0@beta",
@@ -51,14 +51,14 @@
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.18",
-        "openeuropa/oe_whitelabel": "0.1.202206291849"
+        "openeuropa/oe_whitelabel": "^1.0.0-beta4"
     },
     "require-dev": {
         "composer/installers": "~1.11",
         "drupal/cas_mock_server": "^1.4",
         "drupal/config_devel": "^1.2",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-dev": "^9.2",
+        "drupal/core-composer-scaffold": "~9.3.18",
+        "drupal/core-dev": "~9.3.18",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
