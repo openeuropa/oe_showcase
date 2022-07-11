@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb60af12116c9ac8b824c12899374254",
+    "content-hash": "78f30dfe388bcfddafe859c5b308a801",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1746,6 +1746,50 @@
             }
         },
         {
+            "name": "drupal/daterange_compact",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/daterange_compact.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/daterange_compact-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "0b8467a0797aa4504020c37151edd92da94727a8"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1625600195",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "erik.erskine",
+                    "homepage": "https://www.drupal.org/user/375884"
+                }
+            ],
+            "description": "Provides a compact formatter for date range fields.",
+            "homepage": "https://www.drupal.org/project/daterange_compact",
+            "support": {
+                "source": "https://git.drupalcode.org/project/daterange_compact"
+            }
+        },
+        {
             "name": "drupal/datetime_range_timezone",
             "version": "1.0.0-alpha2",
             "source": {
@@ -1795,50 +1839,6 @@
             "homepage": "https://www.drupal.org/project/datetime_range_timezone",
             "support": {
                 "source": "https://git.drupalcode.org/project/datetime_range_timezone"
-            }
-        },
-        {
-            "name": "drupal/daterange_compact",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/daterange_compact.git",
-                "reference": "2.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/daterange_compact-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "0b8467a0797aa4504020c37151edd92da94727a8"
-            },
-            "require": {
-                "drupal/core": "^8.9 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1625600195",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "erik.erskine",
-                    "homepage": "https://www.drupal.org/user/375884"
-                }
-            ],
-            "description": "Provides a compact formatter for date range fields.",
-            "homepage": "https://www.drupal.org/project/daterange_compact",
-            "support": {
-                "source": "https://git.drupalcode.org/project/daterange_compact"
             }
         },
         {
@@ -7766,12 +7766,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "999251c8a8b283b4bd297b2df7e5bd0ca9500fe0"
+                "reference": "eeacbd425b95bdf8487a80630fae615a77751a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/999251c8a8b283b4bd297b2df7e5bd0ca9500fe0",
-                "reference": "999251c8a8b283b4bd297b2df7e5bd0ca9500fe0",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/eeacbd425b95bdf8487a80630fae615a77751a06",
+                "reference": "eeacbd425b95bdf8487a80630fae615a77751a06",
                 "shasum": ""
             },
             "require": {
@@ -7887,7 +7887,7 @@
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
                 "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-1552"
             },
-            "time": "2022-07-05T07:37:55+00:00"
+            "time": "2022-07-11T10:22:26+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
