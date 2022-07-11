@@ -73,6 +73,7 @@ Create a search index to make specific content types available for use in list p
   * _Note: We recommend to have one shared search index for all list pages, but to have distinct search indices for other purposes like site search.
 * In "Datasources", choose "Content".
 * In "Bundles", choose the content types that should be indexed.
+* In "Index options" / "List pages", check the "List pages index" checkbox.
 * Click "Save and add fields".
 * In the "Fields" tab, add the fields:
   * Add the "Content type" field, if the index covers more than one content type.
