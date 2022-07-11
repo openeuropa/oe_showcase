@@ -10,23 +10,12 @@ use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
- * Class to test Person content type on existing site tests.
+ * Tests the person content type.
  */
-class ShowcaseExistingSiteCreatePersonTest extends ShowcaseExistingSiteTestBase {
+class PersonTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    parent::setUp();
-
-    // Create user.
-    $user = $this->createUser([]);
-    $this->drupalLogin($user);
-  }
 
   /**
    * Check creation Person content through the UI.
@@ -77,7 +66,11 @@ class ShowcaseExistingSiteCreatePersonTest extends ShowcaseExistingSiteTestBase 
     ]);
     $media_document->save();
 
-    // Assert editors don't have permissions to create Person items.
+    // Create user.
+    $user = $this->createUser([]);
+    $this->drupalLogin($user);
+
+    // Assert non editor user has no permissions to create Person items.
     $this->drupalGet('node/add/oe_sc_person');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
