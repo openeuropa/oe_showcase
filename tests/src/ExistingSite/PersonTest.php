@@ -21,6 +21,10 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
    * Check creation Person content through the UI.
    */
   public function testCreatePerson() {
+    // Create user.
+    $user = $this->createUser([]);
+    $this->drupalLogin($user);
+
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('media');
@@ -54,21 +58,17 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     $document_file->save();
     $media_document = Media::create([
       'bundle' => 'document',
-      'name' => 'Event document test',
+      'name' => 'Person document test',
       'oe_media_file_type' => 'local',
       'oe_media_file' => [
         [
           'target_id' => (int) $document_file->id(),
-          'alt' => 'Event document alt',
-          'title' => 'Event document title',
+          'alt' => 'Person document alt',
+          'title' => 'Person document title',
         ],
       ],
     ]);
     $media_document->save();
-
-    // Create user.
-    $user = $this->createUser([]);
-    $this->drupalLogin($user);
 
     // Assert non editor user has no permissions to create Person items.
     $this->drupalGet('node/add/oe_sc_person');
@@ -111,7 +111,7 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('DG TEST');
     $assert_session->pageTextContains('Director');
     $assert_session->pageTextContains('Linkedin');
-    $assert_session->pageTextContains('Event document test');
+    $assert_session->responseContains('Person document test');
 
     $this->assertSocialShareBlock();
   }
