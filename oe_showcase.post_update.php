@@ -351,6 +351,10 @@ function oe_showcase_post_update_00014(): void {
   $block = Block::load('oe_showcase_theme_social_share');
   $block->setVisibilityConfig('entity_bundle:node', [
     'id' => 'entity_bundle:node',
+    'negate' => FALSE,
+    'context_mapping' => [
+      'node' => '@node.node_route_context:node',
+    ],
     'bundles' => [
       'oe_sc_event' => 'oe_sc_event',
       'oe_sc_news' => 'oe_sc_news',
