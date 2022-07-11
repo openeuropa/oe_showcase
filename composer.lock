@@ -7766,12 +7766,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "eeacbd425b95bdf8487a80630fae615a77751a06"
+                "reference": "b79a04ce88c46d7ab4ce047695ed7c3b10dfc279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/eeacbd425b95bdf8487a80630fae615a77751a06",
-                "reference": "eeacbd425b95bdf8487a80630fae615a77751a06",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/b79a04ce88c46d7ab4ce047695ed7c3b10dfc279",
+                "reference": "b79a04ce88c46d7ab4ce047695ed7c3b10dfc279",
                 "shasum": ""
             },
             "require": {
@@ -7887,7 +7887,7 @@
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
                 "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-1552"
             },
-            "time": "2022-07-11T10:22:26+00:00"
+            "time": "2022-07-11T15:33:00+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
