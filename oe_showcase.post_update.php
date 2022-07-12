@@ -333,17 +333,17 @@ function oe_showcase_post_update_00014(): void {
   $role->save();
 
   // Configure text formats in rich text fields for person.
-  $field_names_by_text_format = [
+  $field_names = [
     'oe_sc_person_additional_info',
     'oe_summary',
   ];
-  foreach ($field_names_by_text_format as $field_name) {
+  foreach ($field_names as $field_name) {
     $field_id = "node.oe_sc_person.$field_name";
     $field = FieldConfig::load($field_id);
     if ($field === NULL) {
       throw new \Exception("Field not found: '$field_id'.");
     }
-    $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text']);
+    $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['simple_rich_text']);
     $field->save();
   }
 
@@ -357,19 +357,10 @@ function oe_showcase_post_update_00014(): void {
 
   // Add person bundle to the social share block.
   $block = Block::load('oe_showcase_theme_social_share');
-  $block->setVisibilityConfig('entity_bundle:node', [
-    'id' => 'entity_bundle:node',
-    'negate' => FALSE,
-    'context_mapping' => [
-      'node' => '@node.node_route_context:node',
-    ],
-    'bundles' => [
-      'oe_sc_event' => 'oe_sc_event',
-      'oe_sc_news' => 'oe_sc_news',
-      'oe_sc_person' => 'oe_sc_person',
-      'oe_showcase_page' => 'oe_showcase_page',
-    ],
-  ]);
-
-  $block->save();
+  $visibility = $block->getVisibility();
+  if (isset($visibility['entity_bundle:node']['bundles'])) {
+    $visibility['entity_bundle:node']['bundles']['oe_sc_person'] = 'oe_sc_person';
+    $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
+    $block->save();
+  }
 }
