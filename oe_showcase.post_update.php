@@ -245,7 +245,7 @@ function oe_showcase_post_update_00010(): void {
 }
 
 /**
- * Install and configure person. Grant permissions to editor.
+ * Install and configure person.
  */
 function oe_showcase_post_update_00011(): void {
   // Install starter content person module.
@@ -285,6 +285,14 @@ function oe_showcase_post_update_00011(): void {
     $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text']);
     $field->save();
   }
+
+  // Enable person facets.
+  $configs = [
+    'facets.facet.oelp_oe_sc_person__title',
+    'search_api.index.oe_list_pages_index',
+  ];
+
+  ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00001_person_facets', $configs);
 
   // Add person bundle to the social share block.
   $block = Block::load('oe_showcase_theme_social_share');
