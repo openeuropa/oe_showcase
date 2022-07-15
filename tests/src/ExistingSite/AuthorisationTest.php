@@ -92,6 +92,28 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Authenticated user cannot access restricted pages.
+   */
+  public function testAdministatorAccess(): void {
+    $this->drupalLogin($this->createUserWithRoles(['administrator']));
+    $paths = [
+      '/admin',
+      '/admin/config',
+      '/admin/reports/status',
+      '/admin/content',
+      '/admin/content/media',
+      '/admin/people',
+      '/admin/structure',
+      '/node/add',
+    ];
+
+    foreach ($paths as $path) {
+      $this->drupalGet($path);
+      $this->assertSession()->statusCodeEquals(200);
+    }
+  }
+
+  /**
    * Manage users user cannot access restricted pages.
    */
   public function testManageUsersAccess(): void {
