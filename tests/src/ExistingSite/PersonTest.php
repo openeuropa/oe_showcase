@@ -70,7 +70,7 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     ]);
     $media_document->save();
 
-    // Assert non editor user has no permissions to create Person items.
+    // Assert users without permission to create Person don't have access.
     $this->drupalGet('node/add/oe_sc_person');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
