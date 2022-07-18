@@ -94,17 +94,39 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   /**
    * Authenticated user cannot access restricted pages.
    */
-  public function testAdministatorAccess(): void {
+  public function testAdministratorAccess(): void {
     $this->drupalLogin($this->createUserWithRoles(['administrator']));
     $paths = [
       '/admin',
+      '/admin/structure/block',
+      '/admin/structure/block/manage/oe_showcase_theme_main_page_content',
+      '/admin/structure/contact',
+      '/admin/structure/contact/manage/example_contact_form',
+      '/admin/structure/oe_contact_type',
+      '/admin/structure/types',
+      '/admin/structure/types/manage/oe_showcase_page',
+      '/admin/structure/menu',
+      '/admin/structure/menu/manage/main',
+      '/admin/structure/paragraphs_type',
+      '/admin/structure/paragraphs_type/oe_facts_figures',
+      '/admin/structure/taxonomy',
+      '/admin/appearance',
+      '/admin/appearance/settings/oe_showcase_theme',
+      '/admin/modules',
       '/admin/config',
+      '/admin/config/system/site-information',
+      '/admin/config/development/configuration',
+      '/admin/config/development/maintenance',
+      '/admin/config/regional/settings',
+      '/admin/config/regional/language',
+      '/admin/people',
+      '/admin/people/permissions',
+      'admin/people/roles',
       '/admin/reports/status',
       '/admin/content',
       '/admin/content/media',
-      '/admin/people',
-      '/admin/structure',
       '/node/add',
+      '/node/add/oe_showcase_page',
     ];
 
     foreach ($paths as $path) {
