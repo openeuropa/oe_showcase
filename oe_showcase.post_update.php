@@ -243,3 +243,63 @@ function oe_showcase_post_update_00010(): void {
     ->set('default', 'oe_showcase_theme')
     ->save();
 }
+
+/**
+ * Install and configure person.
+ */
+function oe_showcase_post_update_00011(): void {
+  // Install starter content person module.
+  \Drupal::service('module_installer')->install([
+    'oe_whitelabel_starter_person',
+  ]);
+
+  // Allow editor role to manage person pages.
+  $permissions = [
+    'create oe_sc_person content',
+    'delete any oe_sc_person content',
+    'delete oe_sc_person revisions',
+    'edit any oe_sc_person content',
+    'revert oe_sc_person revisions',
+    'view oe_sc_person revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+
+  // Configure text formats in rich text fields for person.
+  $field_names = [
+    'oe_sc_person_additional_info',
+    'oe_summary',
+  ];
+  foreach ($field_names as $field_name) {
+    $field_id = "node.oe_sc_person.$field_name";
+    $field = FieldConfig::load($field_id);
+    if ($field === NULL) {
+      throw new \Exception("Field not found: '$field_id'.");
+    }
+    $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['simple_rich_text']);
+    $field->save();
+  }
+
+  // Enable person facets.
+  $configs = [
+    'facets.facet.oelp_oe_sc_person__title',
+    'search_api.index.oe_list_pages_index',
+  ];
+
+  ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00001_person_facets', $configs);
+
+  // Add person bundle to the social share block.
+  $block = Block::load('oe_showcase_theme_social_share');
+  $visibility = $block->getVisibility();
+  if (isset($visibility['entity_bundle:node']['bundles'])) {
+    $visibility['entity_bundle:node']['bundles']['oe_sc_person'] = 'oe_sc_person';
+    $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
+    $block->save();
+  }
+}
