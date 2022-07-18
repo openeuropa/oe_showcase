@@ -79,6 +79,25 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       $node->save();
     }
 
+    // Create some Person test nodes.
+    for ($i = 0; $i < 12; $i++) {
+      $values = [
+        'oe_sc_person_first_name' => 'John',
+        'oe_sc_person_last_name' => 'Doe ' . $i,
+        'type' => 'oe_sc_person',
+        'oe_summary' => 'This is a person short description number ' . $i,
+        'oe_sc_person_additional_info' => 'This is a person additional info number ' . $i,
+        'language' => 'en',
+        'status' => NodeInterface::PUBLISHED,
+        'oe_sc_person_country' => 'DE',
+        'oe_sc_person_occupation' => 'DG TEST',
+        'oe_sc_person_position' => 'Director',
+        'created' => sprintf('2022-04-%02d', $i + 1),
+      ];
+      $node = Node::create($values);
+      $node->save();
+    }
+
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
@@ -426,6 +445,69 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'Project ongoing',
       'Project pending',
     ]);
+
+    // Create a Person listing page.
+    $this->drupalGet('node/add/oe_list_page');
+    $page->fillField('Title', 'Person list page');
+    $page->fillField('Source entity type', 'node');
+    $page->fillField('Source bundle', 'oe_sc_person');
+    $page->pressButton('Save');
+
+    $node = $this->getNodeByTitle('Person list page');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $page->checkField('Override default exposed filters');
+    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_person__title]');
+    $page->pressButton('Save');
+
+    $this->drupalGet('node/' . $node->id());
+
+    // Assert that only Event items are displayed.
+    $this->assertResults([
+      'John Doe 0',
+      'John Doe 1',
+      'John Doe 2',
+      'John Doe 3',
+      'John Doe 4',
+      'John Doe 5',
+      'John Doe 6',
+      'John Doe 7',
+      'John Doe 8',
+      'John Doe 9',
+    ]);
+    $pager = $page->find('css', 'ul.pagination > li:nth-child(2) > a');
+    $pager->click();
+    $this->assertResults([
+      'John Doe 10',
+      'John Doe 11',
+    ]);
+
+    // Assert that the filter form for Person exists.
+    $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $title_input = $filter_form->findField('Title');
+    $search_button = $filter_form->find('css', '#edit-submit');
+    $this->assertNotNull($search_button);
+    $this->assertNotNull($title_input);
+
+    // Filter Person results by title.
+    $title_input->setValue('John Doe 8',);
+    $search_button->click();
+    $this->assertResultsTitle('Person list page', 1);
+    $this->assertResults([
+      'John Doe 8',
+    ]);
+
+    // Assert only Person nodes are part of the result.
+    $title_input->setValue('News number 1');
+    $search_button->click();
+    $this->assertResultsTitle('Person list page', 0);
+
+    // Assert Event title filters only by title.
+    $title_input->setValue('This is a person short description number 10');
+    $search_button->click();
+    $this->assertResultsTitle('Person list page', 0);
+    $title_input->setValue('This is a person additional info number 10');
+    $search_button->click();
+    $this->assertResultsTitle('Person list page', 0);
   }
 
   /**
