@@ -21,7 +21,7 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: oe_list_pages_fulltext
   config:
-    fulltext_all_fields: true
+    fulltext_all_fields: false
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: true
