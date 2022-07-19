@@ -255,3 +255,22 @@ function oe_showcase_post_update_00011(): void {
   ]);
   $role->save();
 }
+
+/**
+ * Create new role for manage menu items and assign permissions.
+ */
+function oe_showcase_post_update_00012(): void {
+  $role = Role::create([
+    'id' => 'manage_menu_items',
+    'label' => 'Manage menu items',
+    'is_admin' => FALSE,
+    'permissions' => [
+      'access administration pages',
+      'access toolbar',
+      'administer menu',
+      'administer site configuration',
+      'view the administration theme',
+    ],
+  ]);
+  $role->save();
+}
