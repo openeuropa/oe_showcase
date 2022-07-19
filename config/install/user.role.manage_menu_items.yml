@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - toolbar
+id: manage_menu_items
+label: 'Manage menu items'
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'administer site configuration'
+  - 'view the administration theme'
