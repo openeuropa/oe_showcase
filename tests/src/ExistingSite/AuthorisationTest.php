@@ -136,6 +136,45 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Tests that manage_menu_items users can manage menu administration pages.
+   */
+  public function testManageMenuItemsAccess(): void {
+    $this->drupalLogin($this->createUserWithRoles(['manage_menu_items']));
+    $paths = [
+      '/admin',
+      '/admin/structure',
+      '/admin/structure/menu',
+      '/admin/structure/menu/add',
+      '/admin/structure/menu/manage/main',
+      'admin/structure/menu/manage/main/add',
+    ];
+    foreach ($paths as $path) {
+      $this->drupalGet($path);
+      $this->assertSession()->statusCodeEquals(200);
+    }
+
+    // Mark test content for deletion after the test has finished.
+    $this->markEntityTypeForCleanup('menu');
+
+    // Assert a basic menu creation.
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    $this->drupalGet('admin/structure/menu/add');
+    $page->fillField('Title', 'Example menu');
+    $page->fillField('Menu name', 'example-menu');
+    $page->pressButton('Save');
+    $assert_session->pageTextContains('Menu Example menu has been added.');
+
+    $page->clickLink('Add link');
+    $page->fillField('Menu link title', 'Link 1');
+    $page->fillField('Link', 'https://europa.eu');
+    $page->pressButton('Save');
+    $assert_session->pageTextContains('The menu link has been saved.');
+    $assert_session->pageTextContains('Link 1');
+  }
+
+  /**
    * Manage users user cannot access restricted pages.
    */
   public function testManageUsersAccess(): void {
