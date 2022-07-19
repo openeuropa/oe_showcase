@@ -92,39 +92,39 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Authenticated user cannot access restricted pages.
+   * Tests that the administrator can see restricted administration pages.
    */
   public function testAdministratorAccess(): void {
     $this->drupalLogin($this->createUserWithRoles(['administrator']));
     $paths = [
       '/admin',
+      '/admin/appearance',
+      '/admin/appearance/settings/oe_showcase_theme',
+      '/admin/config',
+      '/admin/config/development/configuration',
+      '/admin/config/development/maintenance',
+      '/admin/config/regional/language',
+      '/admin/config/regional/settings',
+      '/admin/config/system/site-information',
+      '/admin/content',
+      '/admin/content/media',
+      '/admin/modules',
+      '/admin/people',
+      '/admin/people/permissions',
+      '/admin/people/roles',
+      '/admin/reports/status',
       '/admin/structure/block',
       '/admin/structure/block/manage/oe_showcase_theme_main_page_content',
       '/admin/structure/contact',
       '/admin/structure/contact/manage/example_contact_form',
-      '/admin/structure/oe_contact_type',
-      '/admin/structure/types',
-      '/admin/structure/types/manage/oe_showcase_page',
       '/admin/structure/menu',
       '/admin/structure/menu/manage/main',
+      '/admin/structure/oe_contact_type',
       '/admin/structure/paragraphs_type',
       '/admin/structure/paragraphs_type/oe_facts_figures',
       '/admin/structure/taxonomy',
-      '/admin/appearance',
-      '/admin/appearance/settings/oe_showcase_theme',
-      '/admin/modules',
-      '/admin/config',
-      '/admin/config/system/site-information',
-      '/admin/config/development/configuration',
-      '/admin/config/development/maintenance',
-      '/admin/config/regional/settings',
-      '/admin/config/regional/language',
-      '/admin/people',
-      '/admin/people/permissions',
-      'admin/people/roles',
-      '/admin/reports/status',
-      '/admin/content',
-      '/admin/content/media',
+      '/admin/structure/types',
+      '/admin/structure/types/manage/oe_showcase_page',
       '/node/add',
       '/node/add/oe_showcase_page',
     ];
