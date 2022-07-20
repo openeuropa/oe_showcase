@@ -155,6 +155,27 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Tests that manage_menu_items users can manage menu administration pages.
+   */
+  public function testManageSiteSpecificFooterAccess(): void {
+    $this->drupalLogin($this->createUserWithRoles(['manage_site_specific_footer']));
+    $paths = [
+      '/admin',
+      '/admin/config',
+      '/admin/config/footer_link_general',
+      '/admin/config/footer_link_general/add',
+      '/admin/config/footer_link_section',
+      '/admin/config/footer_link_section/add',
+      '/admin/config/footer_link_social',
+      '/admin/config/footer_link_social/add',
+    ];
+    foreach ($paths as $path) {
+      $this->drupalGet($path);
+      $this->assertSession()->statusCodeEquals(200);
+    }
+  }
+
+  /**
    * Manage users user cannot access restricted pages.
    */
   public function testManageUsersAccess(): void {
@@ -186,6 +207,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'Editor',
       'Manage contact forms',
       'Manage menu items',
+      'Manage site specific footer',
     ];
 
     // Test roles availability in the user listing page.
@@ -208,6 +230,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'editor',
       'manage_contact_forms',
       'manage_menu_items',
+      'manage_site_specific_footer',
     ]);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
