@@ -136,6 +136,25 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Tests that manage_menu_items users can manage menu administration pages.
+   */
+  public function testManageMenuItemsAccess(): void {
+    $this->drupalLogin($this->createUserWithRoles(['manage_menu_items']));
+    $paths = [
+      '/admin',
+      '/admin/structure',
+      '/admin/structure/menu',
+      '/admin/structure/menu/add',
+      '/admin/structure/menu/manage/main',
+      'admin/structure/menu/manage/main/add',
+    ];
+    foreach ($paths as $path) {
+      $this->drupalGet($path);
+      $this->assertSession()->statusCodeEquals(200);
+    }
+  }
+
+  /**
    * Manage users user cannot access restricted pages.
    */
   public function testManageUsersAccess(): void {
@@ -166,6 +185,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'Configure Page Feedback form',
       'Editor',
       'Manage contact forms',
+      'Manage menu items',
     ];
 
     // Test roles availability in the user listing page.
@@ -187,6 +207,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'configure_page_feedback_form',
       'editor',
       'manage_contact_forms',
+      'manage_menu_items',
     ]);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
