@@ -83,14 +83,14 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->indexItems('oe_list_pages_index');
 
     // Create the News listing page.
-    $list_page = $this->createListPage('oe_sc_news', [
-      'oelp_oe_sc_news__title' => 'oelp_oe_sc_news__title',
-      'oelp_oe_sc_news__oe_publication_date' => 'oelp_oe_sc_news__oe_publication_date',
+    $list_page = $this->createListPage('News list page', 'oe_sc_news', [
+      'oelp_oe_sc_news__title',
+      'oelp_oe_sc_news__oe_publication_date',
     ]);
     $this->drupalGet($list_page->toUrl());
 
     // Assert that only News items are displayed.
-    $this->assertResultsTitle('Results', 12);
+    $this->assertResultsTitle('News list page', 12);
     $this->assertResults([
       'News number 0',
       'News number 1',
@@ -124,7 +124,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertResultsTitle('Results', 8);
+    $this->assertResultsTitle('News list page', 8);
     $this->assertResults([
       'News number 4',
       'News number 5',
@@ -139,7 +139,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter the News results by title.
     $title_input->setValue('News number 8');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('News list page', 1);
     $this->assertResults([
       'News number 8',
     ]);
@@ -147,7 +147,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter the News results by content.
     $title_input->setValue('This is a News content number 10');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('News list page', 1);
     $this->assertResults([
       'News number 10',
     ]);
@@ -155,7 +155,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter the News results by introduction.
     $title_input->setValue('This is a News introduction number 11');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('News list page', 1);
     $this->assertResults([
       'News number 11',
     ]);
@@ -163,14 +163,14 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter by a mix of introduction and content in shuffled order.
     $title_input->setValue('6 content number introduction');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('News list page', 1);
     $this->assertResults([
       'News number 6',
     ]);
     // @todo Remove "7" once we have a default order.
     $title_input->setValue('NUMBER 7 this');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('News list page', 1);
     $this->assertResults([
       'News number 7',
     ]);
@@ -178,13 +178,13 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Assert only News nodes are part of the result.
     $title_input->setValue('Event example');
     $search_button->click();
-    $this->assertResultsTitle('Results', 0);
+    $this->assertResultsTitle('News list page', 0);
 
     // Create an Event listing page.
-    $list_page = $this->createListPage('oe_sc_event', [
-      'oelp_oe_sc_event__location' => 'oelp_oe_sc_event__location',
-      'oelp_oe_sc_event__title' => 'oelp_oe_sc_event__title',
-      'oelp_oe_sc_event__oe_sc_event_dates' => 'oelp_oe_sc_event__oe_sc_event_dates',
+    $list_page = $this->createListPage('Event list page', 'oe_sc_event', [
+      'oelp_oe_sc_event__location',
+      'oelp_oe_sc_event__title',
+      'oelp_oe_sc_event__oe_sc_event_dates',
     ]);
     $this->drupalGet($list_page->toUrl());
 
@@ -222,7 +222,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-04-04');
     $search_button->click();
-    $this->assertResultsTitle('Results', 8);
+    $this->assertResultsTitle('Event list page', 8);
     $this->assertResults([
       'Event number 4',
       'Event number 5',
@@ -237,7 +237,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter Event results by title.
     $title_input->setValue('Event number 8',);
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Event list page', 1);
     $this->assertResults([
       'Event number 8',
     ]);
@@ -245,29 +245,29 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Assert only Event nodes are part of the result.
     $title_input->setValue('News number 1');
     $search_button->click();
-    $this->assertResultsTitle('Results', 0);
+    $this->assertResultsTitle('Event list page', 0);
 
     // Assert Event title filters only by title.
     $title_input->setValue('This is an Event content number 10');
     $search_button->click();
-    $this->assertResultsTitle('Results', 0);
+    $this->assertResultsTitle('Event list page', 0);
     $title_input->setValue('This is an Event introduction number 10');
     $search_button->click();
-    $this->assertResultsTitle('Results', 0);
+    $this->assertResultsTitle('Event list page', 0);
 
     // Filter results by location.
     $filter_form->findButton('Clear filters')->click();
     $location = $filter_form->findField('Location');
     $location->selectOption('France');
     $search_button->click();
-    $this->assertResultsTitle('Results', 2);
+    $this->assertResultsTitle('Event list page', 2);
     $this->assertResults([
       'Event number 4',
       'Event number 11',
     ]);
     $location->selectOption('Romania', TRUE);
     $search_button->click();
-    $this->assertResultsTitle('Results', 4);
+    $this->assertResultsTitle('Event list page', 4);
     $this->assertResults([
       'Event number 2',
       'Event number 4',
@@ -324,17 +324,17 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
-    $list_page = $this->createListPage('oe_project', [
-      'oelp_oe_sc_project__budget' => 'oelp_oe_sc_project__budget',
-      'oelp_oe_sc_project__end_date' => 'oelp_oe_sc_project__end_date',
-      'oelp_oe_sc_project__start_date' => 'oelp_oe_sc_project__start_date',
-      'oelp_oe_sc_project__status' => 'oelp_oe_sc_project__status',
-      'oelp_oe_sc_project__type' => 'oelp_oe_sc_project__type',
+    $list_page = $this->createListPage('Project list page', 'oe_project', [
+      'oelp_oe_sc_project__budget',
+      'oelp_oe_sc_project__end_date',
+      'oelp_oe_sc_project__start_date',
+      'oelp_oe_sc_project__status',
+      'oelp_oe_sc_project__type',
     ]);
 
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertResultsTitle('Results', 3);
+    $this->assertResultsTitle('Project list page', 3);
     $this->assertResults([
       'Project closed',
       'Project ongoing',
@@ -358,13 +358,13 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Filter results by type.
     $filter_type->selectOption('financing');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Project list page', 1);
     $this->assertResults([
       'Project closed',
     ]);
     $filter_type->selectOption('public finance', TRUE);
     $search_button->click();
-    $this->assertResultsTitle('Results', 2);
+    $this->assertResultsTitle('Project list page', 2);
     $this->assertResults([
       'Project closed',
       'Project pending',
@@ -374,7 +374,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $filter_form->findButton('Clear filters')->click();
     $filter_budget->setValue(33);
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Project list page', 1);
     $this->assertResults([
       'Project ongoing',
     ]);
@@ -385,7 +385,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-05-19');
     $search_button->click();
-    $this->assertResultsTitle('Results', 2);
+    $this->assertResultsTitle('Project list page', 2);
     $this->assertResults([
       'Project ongoing',
       'Project pending',
@@ -393,7 +393,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
 
     $filter_start->setValue('lt');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Project list page', 1);
     $this->assertResults([
       'Project closed',
     ]);
@@ -404,7 +404,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $filter_end->setValue('lt');
     $dates[1]->setValue($date_plus_10);
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Project list page', 1);
     $this->assertResults([
       'Project ongoing',
     ]);
@@ -413,14 +413,14 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $filter_form->findButton('Clear filters')->click();
     $filter_status->selectOption('Closed');
     $search_button->click();
-    $this->assertResultsTitle('Results', 1);
+    $this->assertResultsTitle('Project list page', 1);
     $this->assertResults([
       'Project closed',
     ]);
 
     $filter_status->selectOption('Ongoing and Planned');
     $search_button->click();
-    $this->assertResultsTitle('Results', 2);
+    $this->assertResultsTitle('Project list page', 2);
     $this->assertResults([
       'Project ongoing',
       'Project pending',
@@ -473,6 +473,8 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   /**
    * Create a list page node with filters configured.
    *
+   * @param string $title
+   *   The title of the list page.
    * @param string $bundle
    *   Nodes of this bundle will be listed.
    * @param array $exposed_filters
@@ -481,28 +483,26 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
    * @return \Drupal\node\NodeInterface
    *   The list page node created.
    */
-  protected function createListPage(string $bundle, array $exposed_filters): NodeInterface {
-    $list_page = Node::create([
-      'type' => 'oe_list_page',
-      'title' => 'Results',
-    ]);
+  protected function createListPage(string $title, string $bundle, array $exposed_filters): NodeInterface {
+    $page = $this->getSession()->getPage();
 
-    /** @var \Drupal\emr\Entity\EntityMetaInterface $list_page_entity_meta */
-    $list_page_entity_meta = $list_page->get('emr_entity_metas')->getEntityMeta('oe_list_page');
-    /** @var \Drupal\oe_list_pages\ListPageWrapper $list_page_entity_meta_wrapper */
-    $list_page_entity_meta_wrapper = $list_page_entity_meta->getWrapper();
-    $list_page_entity_meta_wrapper->setSource('node', $bundle);
-    $list_page_entity_meta_wrapper->setConfiguration([
-      'override_exposed_filters' => 1,
-      'exposed_filters' => $exposed_filters,
-      'preset_filters' => [],
-      'limit' => 10,
-      'sort' => [],
-    ]);
-    $list_page->get('emr_entity_metas')->attach($list_page_entity_meta);
-    $list_page->save();
+    $this->drupalGet('node/add/oe_list_page');
+    $page->fillField('Title', $title);
+    $page->fillField('Source entity type', 'node');
+    $page->fillField('Source bundle', $bundle);
+    $page->pressButton('Save');
 
-    return $list_page;
+    $node = $this->getNodeByTitle($title);
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $page->checkField('Override default exposed filters');
+
+    foreach ($exposed_filters as $filter_name) {
+      $page->checkField("emr_plugins_oe_list_page[wrapper][exposed_filters][$filter_name]");
+    }
+
+    $page->pressButton('Save');
+
+    return $node;
   }
 
 }
