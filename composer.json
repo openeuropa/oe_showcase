@@ -48,6 +48,7 @@
         "openeuropa/oe_list_pages": "^0.16",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
+        "openeuropa/oe_oembed": "^0.2.0",
         "openeuropa/oe_paragraphs": "^1.13",
         "openeuropa/oe_starter_content": "1.0.0-beta1",
         "openeuropa/oe_webtools": "^1.18",
