@@ -349,6 +349,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $filter_start = $filter_form->findField('Start date');
     $filter_end = $filter_form->findField('End date');
     $search_button = $filter_form->find('css', '#edit-submit');
+    $this->assertNotNull($filter_status);
     $this->assertNotNull($filter_type);
     $this->assertNotNull($filter_budget);
     $this->assertNotNull($filter_start);
