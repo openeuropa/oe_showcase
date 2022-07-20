@@ -152,26 +152,6 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       $this->drupalGet($path);
       $this->assertSession()->statusCodeEquals(200);
     }
-
-    // Mark test content for deletion after the test has finished.
-    $this->markEntityTypeForCleanup('menu');
-
-    // Assert a basic menu creation.
-    $assert_session = $this->assertSession();
-    $page = $this->getSession()->getPage();
-
-    $this->drupalGet('admin/structure/menu/add');
-    $page->fillField('Title', 'Example menu');
-    $page->fillField('Menu name', 'example-menu');
-    $page->pressButton('Save');
-    $assert_session->pageTextContains('Menu Example menu has been added.');
-
-    $page->clickLink('Add link');
-    $page->fillField('Menu link title', 'Link 1');
-    $page->fillField('Link', 'https://europa.eu');
-    $page->pressButton('Save');
-    $assert_session->pageTextContains('The menu link has been saved.');
-    $assert_session->pageTextContains('Link 1');
   }
 
   /**
@@ -205,6 +185,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'Configure Page Feedback form',
       'Editor',
       'Manage contact forms',
+      'Manage menu items',
     ];
 
     // Test roles availability in the user listing page.
@@ -226,6 +207,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       'configure_page_feedback_form',
       'editor',
       'manage_contact_forms',
+      'manage_menu_items',
     ]);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
