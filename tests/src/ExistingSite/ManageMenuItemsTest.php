@@ -16,7 +16,7 @@ class ManageMenuItemsTest extends ShowcaseExistingSiteTestBase {
   /**
    * Test users with manage_menu_items role can manage menus.
    */
-  public function testUsersWithManageSiteSpecificFooterRole(): void {
+  public function testUsersWithManageMenuItemsRole(): void {
     $this->drupalLogin($this->createUserWithRoles(['manage_menu_items']));
 
     // Mark test content for deletion after the test has finished.
