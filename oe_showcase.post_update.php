@@ -268,9 +268,14 @@ function oe_showcase_post_update_00012(): void {
       'access administration pages',
       'access toolbar',
       'administer menu',
-      'administer site configuration',
       'view the administration theme',
     ],
   ]);
   $role->save();
+
+  // Add new role to roleassign.
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['manage_menu_items'] = 'manage_menu_items';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
 }
