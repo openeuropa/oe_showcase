@@ -50,7 +50,10 @@ trait AssertPathAccessTrait {
 
     // Test users with other roles.
     $all_roles = array_keys(user_role_names(TRUE));
-    $other_roles = array_diff($all_roles, [$role, 'authenticated']);
+    $other_roles = array_diff(
+      $all_roles,
+      [$role, 'authenticated', 'administrator'],
+    );
     $this->drupalLogin($this->createUserWithRoles($other_roles));
     $this->assertPathsResponseCode(403, $paths);
 
@@ -77,7 +80,7 @@ trait AssertPathAccessTrait {
 
     // Test all existing roles.
     $all_roles = user_role_names(TRUE);
-    unset($all_roles['authenticated']);
+    unset($all_roles['authenticated'], $all_roles['administrator']);
     $this->drupalLogin($this->createUserWithRoles(array_keys($all_roles)));
     $this->assertPathsResponseCode(403, $paths);
   }

@@ -243,3 +243,15 @@ function oe_showcase_post_update_00010(): void {
     ->set('default', 'oe_showcase_theme')
     ->save();
 }
+
+/**
+ * Add an administrator admin role.
+ */
+function oe_showcase_post_update_00011(): void {
+  $role = Role::create([
+    'id' => 'administrator',
+    'label' => 'Administrator',
+    'is_admin' => TRUE,
+  ]);
+  $role->save();
+}
