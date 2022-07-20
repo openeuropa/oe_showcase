@@ -7,14 +7,14 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
 /**
- * Tests that a manage_site_specific_footer user can manage menus.
+ * Tests that a manage_site_specific_footer user can manage footer links.
  */
 class ManageSiteSpecificFooterTest extends ShowcaseExistingSiteTestBase {
 
   use UserTrait;
 
   /**
-   * Test users with manage_site_specific_footer role can manage menus.
+   * Test users with manage_site_specific_footer role can manage footer links.
    */
   public function testUsersWithManageSiteSpecificFooterRole(): void {
     $this->drupalLogin($this->createUserWithRoles(['manage_site_specific_footer']));
