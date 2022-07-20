@@ -256,7 +256,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $this->assertResultsTitle('Event list page', 0);
 
     // Filter results by location.
-    $filter_form->findButton('Clear filters')->click();
+    $filter_form->pressButton('Clear filters');
     $location = $filter_form->findField('Location');
     $location->selectOption('France');
     $search_button->click();
@@ -371,7 +371,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     ]);
 
     // Filter results by budget.
-    $filter_form->findButton('Clear filters')->click();
+    $filter_form->pressButton('Clear filters');
     $filter_budget->setValue(33);
     $search_button->click();
     $this->assertResultsTitle('Project list page', 1);
@@ -380,7 +380,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     ]);
 
     // Filter results by dates.
-    $filter_form->findButton('Clear filters')->click();
+    $filter_form->pressButton('Clear filters');
     $filter_start->setValue('gt');
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('2022-05-19');
@@ -410,7 +410,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     ]);
 
     // Filter results by status.
-    $filter_form->findButton('Clear filters')->click();
+    $filter_form->pressButton('Clear filters');
     $filter_status->selectOption('Closed');
     $search_button->click();
     $this->assertResultsTitle('Project list page', 1);
