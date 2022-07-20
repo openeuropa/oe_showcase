@@ -279,3 +279,28 @@ function oe_showcase_post_update_00012(): void {
   $roleassign_roles['manage_menu_items'] = 'manage_menu_items';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
 }
+
+/**
+ * Create new role for manage menu items and assign permissions.
+ */
+function oe_showcase_post_update_00013(): void {
+  $role = Role::create([
+    'id' => 'manage_site_specific_footer',
+    'label' => 'Manage site specific footer',
+    'is_admin' => FALSE,
+    'permissions' => [
+      'access administration pages',
+      'access toolbar',
+      'administer site specific footer link sections',
+      'administer site specific footer links',
+      'view the administration theme',
+    ],
+  ]);
+  $role->save();
+
+  // Add new role to roleassign.
+  $roleassign_config = \Drupal::configFactory()->getEditable('roleassign.settings');
+  $roleassign_roles = $roleassign_config->get('roleassign_roles');
+  $roleassign_roles['manage_site_specific_footer'] = 'manage_site_specific_footer';
+  $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
+}

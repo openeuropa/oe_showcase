@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_corporate_blocks
+    - system
+    - toolbar
+id: manage_site_specific_footer
+label: 'Manage site specific footer'
+weight: 7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'administer site specific footer link sections'
+  - 'administer site specific footer links'
+  - 'view the administration theme'
