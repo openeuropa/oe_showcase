@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.embed_media
+    - media.type.av_portal_photo
+    - media.type.av_portal_video
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video_iframe
+  module:
+    - media
+    - oe_oembed
+label: Media
+id: oembed_button_media
+type_id: oe_oembed_entities
+type_settings:
+  entity_type: media
+  bundles:
+    - av_portal_photo
+    - av_portal_video
+    - document
+    - image
+    - remote_video
+    - video_iframe
+  entity_browser: embed_media
+  entity_browser_settings:
+    display_review: false
+icon: {  }
+icon_uuid: null
