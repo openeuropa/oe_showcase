@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_oembed
+name: 'Rich text with media'
+format: rich_text_with_media
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid> <p data-oembed>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  oe_oembed_filter:
+    id: oe_oembed_filter
+    provider: oe_oembed
+    status: true
+    weight: 0
+    settings: {  }
