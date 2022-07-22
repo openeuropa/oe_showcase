@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - filter.format.rich_text
+    - filter.format.rich_text_with_media
     - filter.format.simple_rich_text
     - media.type.av_portal_photo
     - media.type.av_portal_video
@@ -89,6 +90,7 @@ permissions:
   - 'revert oe_sc_news revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
+  - 'use text format rich_text_with_media'
   - 'use text format simple_rich_text'
   - 'view oe_list_page revisions'
   - 'view oe_project revisions'
