@@ -5,6 +5,7 @@ core_version_requirement: ^9.2
 package: OpenEuropa Showcase
 dependencies:
   - oe_content:oe_content
+  - oe_content_extra:oe_content_extra_project
   - oe_list_pages:oe_list_pages_address
   - oe_starter_content:oe_starter_content_event
   - oe_starter_content:oe_starter_content_news
@@ -18,6 +19,11 @@ config_devel:
     - facets.facet.oelp_oe_sc_event__title
     - facets.facet.oelp_oe_sc_news__oe_publication_date
     - facets.facet.oelp_oe_sc_news__title
+    - facets.facet.oelp_oe_sc_project__budget
+    - facets.facet.oelp_oe_sc_project__end_date
+    - facets.facet.oelp_oe_sc_project__start_date
+    - facets.facet.oelp_oe_sc_project__status
+    - facets.facet.oelp_oe_sc_project__type
     - facets.facet_source.list_facet_source__node__oe_sc_news
     - search_api.index.oe_list_pages_index
     - search_api.server.oe_list_pages_search_server
