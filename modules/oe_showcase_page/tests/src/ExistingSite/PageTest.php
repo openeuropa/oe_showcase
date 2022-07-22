@@ -63,6 +63,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Quote',
         'Add Rich text',
         'Add Social feed',
+        'Add Social media follow',
         'Add Text with Featured media',
         'Add Timeline',
       ],
@@ -306,6 +307,25 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       sprintf('Local PDF file (%s)', $local_media->id())
     );
 
+    // Add Social media follow paragraph.
+    $page->pressButton('Add Social media follow');
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
+      'Social share links',
+    );
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][1][subform][field_oe_social_media_links][0][uri]',
+      'https://linkedin.com',
+    );
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][1][subform][field_oe_social_media_links][0][title]',
+      'Linkedin profile',
+    );
+    $page->fillField(
+      'field_body[4][subform][field_oe_paragraphs][1][subform][field_oe_social_media_links][0][link_type]',
+      'linkedin',
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -367,6 +387,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('First term description');
     $assert_session->pageTextContains('Second term');
     $assert_session->pageTextContains('Second term description');
+
+    // Assert Social media follow.
+    $assert_session->pageTextContains('Social share links');
+    $assert_session->pageTextContains('Linkedin profile');
 
     $this->assertSocialShareBlock();
   }
