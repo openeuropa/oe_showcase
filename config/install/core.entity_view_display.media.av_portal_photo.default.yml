@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.av_portal_photo.oe_media_avportal_photo
+    - image.style.thumbnail
+    - media.type.av_portal_photo
+  module:
+    - image
+    - media_avportal
+    - oe_oembed
+    - user
+third_party_settings:
+  oe_oembed:
+    embeddable: true
+id: media.av_portal_photo.default
+targetEntityType: media
+bundle: av_portal_photo
+mode: default
+content:
+  created:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  oe_media_avportal_photo:
+    type: avportal_photo
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  uid:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  name: true
+  search_api_excerpt: true
