@@ -304,3 +304,45 @@ function oe_showcase_post_update_00013(): void {
   $roleassign_roles['manage_site_specific_footer'] = 'manage_site_specific_footer';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
 }
+
+/**
+ * Install and configure embedded rich text with media.
+ */
+function oe_showcase_post_update_00014(&$sandbox) {
+  \Drupal::service('module_installer')->install([
+    'oe_media_embed',
+    'oe_media_iframe',
+    'oe_oembed',
+  ]);
+
+  $configs = [
+    'core.entity_view_display.media.av_portal_photo.default',
+    'core.entity_view_display.media.av_portal_video.default',
+    'core.entity_view_display.media.document.default',
+    'core.entity_view_display.media.image.default',
+    'core.entity_view_display.media.remote_video.default',
+    'core.entity_view_display.media.video_iframe.default',
+    'editor.editor.rich_text_with_media',
+    'embed.button.oembed_button_media',
+    'entity_browser.browser.embed_media',
+    'filter.format.rich_text_with_media',
+    'views.view.media_entity_browsers',
+  ];
+
+  ConfigImporter::importMultiple('module', 'oe_showcase', '/config/post_updates/000013_rich_text_media_browser', $configs);
+
+  // Configure body fields in rich text with media.
+  $field_names = [
+    'field.field.node.oe_project.body',
+    'field.field.node.oe_sc_event.body',
+    'field.field.node.oe_sc_news.body',
+  ];
+  foreach ($field_names as $field_name) {
+    $field = FieldConfig::load($field_name);
+    if ($field === NULL) {
+      throw new \Exception("Field not found: '$field_name'.");
+    }
+    $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text_with_media']);
+    $field->save();
+  }
+}
