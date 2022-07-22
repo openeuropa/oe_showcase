@@ -329,7 +329,7 @@ function oe_showcase_post_update_00014(&$sandbox) {
     'editor.editor.rich_text_with_media',
   ];
 
-  ConfigImporter::importMultiple('module', 'oe_showcase', '/config/post_updates/000013_rich_text_media_browser', $configs);
+  ConfigImporter::importMultiple('module', 'oe_showcase', '/config/post_updates/00014_rich_text_media_browser', $configs);
 
   // Configure body fields in rich text with media.
   $field_names = [
