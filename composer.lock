@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb60af12116c9ac8b824c12899374254",
+    "content-hash": "25f94d49c9bdb5ee9f597a0ecd6aa72f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7427,6 +7427,83 @@
                 "source": "https://github.com/openeuropa/oe_multilingual/tree/1.10.0"
             },
             "time": "2022-01-26T16:27:24+00:00"
+        },
+        {
+            "name": "openeuropa/oe_oembed",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openeuropa/oe_oembed.git",
+                "reference": "5a7687c8b3e611b107d99d32b387e278cef3c6d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openeuropa/oe_oembed/zipball/5a7687c8b3e611b107d99d32b387e278cef3c6d9",
+                "reference": "5a7687c8b3e611b107d99d32b387e278cef3c6d9",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/embed": "^1.4",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "composer/installers": "^1.5",
+                "drupal/config_devel": "^1.2",
+                "drupal/core-composer-scaffold": "^9.2",
+                "drupal/core-dev": "^9.2",
+                "drupal/drupal-extension": "^4.0",
+                "drush/drush": "^10.3",
+                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "openeuropa/code-review": "^2.0",
+                "openeuropa/oe_media": "^1.15",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
+                "phpspec/prophecy-phpunit": "^2",
+                "symfony/dom-crawler": "^4.4.12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                },
+                "_readme": [
+                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
+                    "Explicit minimum version requirement for symfony/dom-crawler due to its lower versions using the deprecated function libxml_disable_entity_loader() in PHP8."
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\oe_oembed\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "description": "OpenEuropa Drupal oEmbed component.",
+            "support": {
+                "issues": "https://github.com/openeuropa/oe_oembed/issues",
+                "source": "https://github.com/openeuropa/oe_oembed/tree/0.2.0"
+            },
+            "time": "2022-02-17T10:43:06+00:00"
         },
         {
             "name": "openeuropa/oe_paragraphs",
@@ -18555,5 +18632,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
