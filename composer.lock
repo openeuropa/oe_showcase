@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb60af12116c9ac8b824c12899374254",
+    "content-hash": "445c53ec853579eb1aee40fac45f422b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1790,6 +1790,58 @@
             }
         },
         {
+            "name": "drupal/datetime_range_timezone",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/datetime_range_timezone.git",
+                "reference": "8.x-1.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/datetime_range_timezone-8.x-1.0-alpha2.zip",
+                "reference": "8.x-1.0-alpha2",
+                "shasum": "a276812d7490b28794a6b4497ea3da3d672d2aa8"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "drupal/token": "^1.10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha2",
+                    "datestamp": "1649673208",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                }
+            ],
+            "description": "Datetime Range Timezone",
+            "homepage": "https://www.drupal.org/project/datetime_range_timezone",
+            "support": {
+                "source": "https://git.drupalcode.org/project/datetime_range_timezone"
+            }
+        },
+        {
             "name": "drupal/default_content",
             "version": "2.0.0-alpha1",
             "source": {
@@ -2297,20 +2349,20 @@
         },
         {
             "name": "drupal/entity_browser",
-            "version": "2.6.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_browser.git",
-                "reference": "8.x-2.6"
+                "reference": "8.x-2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.6.zip",
-                "reference": "8.x-2.6",
-                "shasum": "95cad4ce9620ccb4f02afa0e8b8bbf7c73fc5aac"
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.8.zip",
+                "reference": "8.x-2.8",
+                "shasum": "151433fb7681f3e844010072285a374a5e46cf2a"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2 || ^10"
             },
             "require-dev": {
                 "drupal/embed": "~1.0",
@@ -2319,13 +2371,13 @@
                 "drupal/entityqueue": "1.x-dev",
                 "drupal/inline_entity_form": "1.x-dev",
                 "drupal/paragraphs": "1.x-dev",
-                "drupal/token": "~1.0"
+                "drupal/token": "1.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.6",
-                    "datestamp": "1624401306",
+                    "version": "8.x-2.8",
+                    "datestamp": "1658509699",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2357,16 +2409,16 @@
                     "homepage": "https://www.drupal.org/user/3260690"
                 },
                 {
-                    "name": "Primsi",
-                    "homepage": "https://www.drupal.org/user/282629"
-                },
-                {
                     "name": "marcingy",
                     "homepage": "https://www.drupal.org/user/77320"
                 },
                 {
                     "name": "oknate",
                     "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "Primsi",
+                    "homepage": "https://www.drupal.org/user/282629"
                 },
                 {
                     "name": "samuel.mortenson",
@@ -3027,20 +3079,20 @@
         },
         {
             "name": "drupal/inline_entity_form",
-            "version": "1.0.0-rc11",
+            "version": "1.0.0-rc12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "8.x-1.0-rc11"
+                "reference": "8.x-1.0-rc12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc11.zip",
-                "reference": "8.x-1.0-rc11",
-                "shasum": "67a92ec1482be19b2f2091ca9498f585e34072b9"
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc12.zip",
+                "reference": "8.x-1.0-rc12",
+                "shasum": "eddee2964823b7da2ec7032ddb871f247ba7ed7a"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -3049,8 +3101,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc11",
-                    "datestamp": "1648748863",
+                    "version": "8.x-1.0-rc12",
+                    "datestamp": "1658308069",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3063,12 +3115,12 @@
             ],
             "authors": [
                 {
-                    "name": "Centarro",
-                    "homepage": "https://www.drupal.org/user/3661446"
-                },
-                {
                     "name": "bojanz",
                     "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "Centarro",
+                    "homepage": "https://www.drupal.org/user/3661446"
                 },
                 {
                     "name": "dawehner",
@@ -3606,17 +3658,17 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "2.0.0-rc2",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maxlength.git",
-                "reference": "2.0.0-rc2"
+                "reference": "2.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-2.0.0-rc2.zip",
-                "reference": "2.0.0-rc2",
-                "shasum": "9e94519392716489e71157dfa65c58587bc559f1"
+                "url": "https://ftp.drupal.org/files/projects/maxlength-2.0.0-rc1.zip",
+                "reference": "2.0.0-rc1",
+                "shasum": "1d08a0a49b36b8593be203fc3c423dd29647fc4b"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -3624,8 +3676,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc2",
-                    "datestamp": "1652368182",
+                    "version": "2.0.0-rc1",
+                    "datestamp": "1634070330",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -3638,41 +3690,30 @@
             ],
             "authors": [
                 {
-                    "name": "Marius Scurtescu (mariuss)",
-                    "homepage": "https://www.drupal.org/u/mariuss",
-                    "role": "Maintainer"
+                    "name": "cedewey",
+                    "homepage": "https://www.drupal.org/user/38694"
                 },
                 {
-                    "name": "Clayton Dewey (cedewey)",
-                    "homepage": "https://www.drupal.org/u/cedewey",
-                    "role": "Maintainer"
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
-                    "name": "Daniel Wehner (dawehner)",
-                    "homepage": "https://www.drupal.org/u/dawehner",
-                    "role": "Maintainer"
+                    "name": "hipp2bsquare",
+                    "homepage": "https://www.drupal.org/user/2473076"
                 },
                 {
-                    "name": "Paulino Michelazzo (pmichelazzo)",
-                    "homepage": "https://www.drupal.org/u/pmichelazzo",
-                    "role": "Maintainer"
+                    "name": "mariuss",
+                    "homepage": "https://www.drupal.org/user/28539"
                 },
                 {
-                    "name": "Jeff Hipp (hipp2bsquare)",
-                    "homepage": "https://www.drupal.org/u/hipp2bsquare",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Steven DuBois (srdtwc)",
-                    "homepage": "https://www.drupal.org/u/srdtwc",
-                    "role": "Maintainer"
+                    "name": "srdtwc",
+                    "homepage": "https://www.drupal.org/user/3422763"
                 }
             ],
-            "description": "Maxlength allows a soft or hard character limit to be set on titles, text fields and link fields.",
+            "description": "Limit the number of characters in textfields and textareas and shows the amount of characters left.",
             "homepage": "https://www.drupal.org/project/maxlength",
             "support": {
-                "source": "https://git.drupalcode.org/project/maxlength",
-                "issues": "https://www.drupal.org/project/issues/maxlength"
+                "source": "https://git.drupalcode.org/project/maxlength"
             }
         },
         {
@@ -6661,22 +6702,24 @@
         },
         {
             "name": "openeuropa/oe_content",
-            "version": "2.8.0",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_content.git",
-                "reference": "959323ef130680ebf96c1e6d7d75f0e5a4296cad"
+                "reference": "ecbf3a0dde2fc6c2dba8cf5e3afdec0e35dc16c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/959323ef130680ebf96c1e6d7d75f0e5a4296cad",
-                "reference": "959323ef130680ebf96c1e6d7d75f0e5a4296cad",
+                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/ecbf3a0dde2fc6c2dba8cf5e3afdec0e35dc16c1",
+                "reference": "ecbf3a0dde2fc6c2dba8cf5e3afdec0e35dc16c1",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9.2",
+                "cweagans/composer-patches": "~1.4",
+                "drupal/core": "^9.3",
+                "drupal/datetime_range_timezone": "^1.0@alpha",
                 "drupal/linkit": "^5.0-beta11 || ^6.0",
-                "drupal/maxlength": "^1.0@beta || ^2.0",
+                "drupal/maxlength": "^1.0@beta || 2.0.0-rc1",
                 "openeuropa/oe_media": "^1.15",
                 "openeuropa/rdf_skos": "^1.0",
                 "php": ">=7.4"
@@ -6685,11 +6728,12 @@
                 "behat/behat": "^3.10",
                 "behat/mink-extension": "^2.3.1",
                 "composer/installers": "^1.5",
+                "composer/xdebug-handler": "^2.0",
                 "drupal/address": "^1.8",
                 "drupal/composite_reference": "^2.1",
                 "drupal/config_devel": "^1.8",
-                "drupal/core-composer-scaffold": "^9.2",
-                "drupal/core-dev": "^9.2",
+                "drupal/core-composer-scaffold": "^9.3",
+                "drupal/core-dev": "^9.3",
                 "drupal/ctools": "^3.7",
                 "drupal/datetime_testing": "1.x-dev",
                 "drupal/description_list_field": "^1.0",
@@ -6698,12 +6742,13 @@
                 "drupal/entity_embed": "^1.1",
                 "drupal/entity_reference_revisions": "^1.8",
                 "drupal/field_group": "~3.2",
-                "drupal/inline_entity_form": "^1.0-rc9",
+                "drupal/inline_entity_form": "^1.0-rc12",
+                "drupal/sparql_entity_storage": "1.0.0-alpha9",
                 "drupal/token": "^1.10",
                 "drupal/typed_link": "^2.0",
                 "drupaltest/behat-traits": "^0.3",
                 "drush/drush": "^10.3",
-                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "fabpot/goutte": "^3.3",
                 "friends-of-behat/service-container-extension": "^1.0",
                 "instaclick/php-webdriver": "^1.4.7",
                 "nikic/php-parser": "~4.10.4",
@@ -6711,7 +6756,7 @@
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_corporate_countries": "^2.0",
                 "openeuropa/oe_corporate_site_info": "^1.0",
-                "openeuropa/oe_link_lists": "~0.13.0",
+                "openeuropa/oe_link_lists": "dev-master",
                 "openeuropa/oe_multilingual": "^1.10",
                 "openeuropa/oe_time_caching": "^1.1",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
@@ -6744,7 +6789,10 @@
                         "https://www.drupal.org/project/entity_browser/issues/2851580": "https://www.drupal.org/files/issues/2020-10-05/entity_browser-remove_button_2851580-92.patch"
                     },
                     "drupal/inline_entity_form": {
-                        "https://www.drupal.org/project/inline_entity_form/issues/2875716": "https://www.drupal.org/files/issues/2021-04-15/ief_removed_references_2875716-103.patch"
+                        "https://www.drupal.org/project/inline_entity_form/issues/2875716": "https://www.drupal.org/files/issues/2022-07-20/ief_removed_references_2875716-104.patch"
+                    },
+                    "drupal/typed_link": {
+                        "https://www.drupal.org/project/typed_link/issues/3263477": "https://www.drupal.org/files/issues/2022-02-09/typed_link_constraints-3263477-2.patch"
                     }
                 },
                 "drupal-scaffold": {
@@ -6753,10 +6801,11 @@
                     }
                 },
                 "_readme": [
-                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.2 compatibility.",
+                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.3 compatibility.",
                     "Explicit minimum version requirement of behat/behat library due to PHP compatibility.",
-                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
-                    "Explicit requirement of drupal/token module due to PHP 8 compatbility."
+                    "Explicit minimum version requirement for fabpot/goutte due to Drupal 9.3 compatibility.",
+                    "Explicit requirement of drupal/token module due to PHP 8 compatbility.",
+                    "Explicit requirement of drupal/maxlength: 2.0.0-rc1 due to issues #3279243, #3279222."
                 ]
             },
             "autoload": {
@@ -6771,9 +6820,9 @@
             "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_content/issues",
-                "source": "https://github.com/openeuropa/oe_content/tree/2.8.0"
+                "source": "https://github.com/openeuropa/oe_content/tree/3.x"
             },
-            "time": "2022-02-10T16:46:44+00:00"
+            "time": "2022-07-25T08:18:05+00:00"
         },
         {
             "name": "openeuropa/oe_content_extra",
@@ -7258,16 +7307,16 @@
         },
         {
             "name": "openeuropa/oe_media",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_media.git",
-                "reference": "2e67dfad39d231a199bbe89464798e800165194d"
+                "reference": "b1199b0e676c460afb7254767502b9aca847b633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_media/zipball/2e67dfad39d231a199bbe89464798e800165194d",
-                "reference": "2e67dfad39d231a199bbe89464798e800165194d",
+                "url": "https://api.github.com/repos/openeuropa/oe_media/zipball/b1199b0e676c460afb7254767502b9aca847b633",
+                "reference": "b1199b0e676c460afb7254767502b9aca847b633",
                 "shasum": ""
             },
             "require": {
@@ -7300,7 +7349,7 @@
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_link_lists": "^0.14",
                 "openeuropa/oe_oembed": "~0.1.0",
-                "openeuropa/oe_webtools": "^1.17",
+                "openeuropa/oe_webtools": "dev-master",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
                 "twig/twig": "^1.40 || ^2.12"
@@ -7339,9 +7388,9 @@
             "description": "Media features for the OpenEuropa project.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_media/issues",
-                "source": "https://github.com/openeuropa/oe_media/tree/1.16.0"
+                "source": "https://github.com/openeuropa/oe_media/tree/1.17.0"
             },
-            "time": "2022-04-11T10:30:25+00:00"
+            "time": "2022-06-22T14:26:34+00:00"
         },
         {
             "name": "openeuropa/oe_multilingual",
@@ -7838,20 +7887,20 @@
         },
         {
             "name": "openeuropa/rdf_skos",
-            "version": "1.0.0-alpha6",
+            "version": "1.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/rdf_skos.git",
-                "reference": "f516549618b86d312530157c91563ae900d7afdb"
+                "reference": "4ddc58f6c63eafb9cb0143331066a835b581d30b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/rdf_skos/zipball/f516549618b86d312530157c91563ae900d7afdb",
-                "reference": "f516549618b86d312530157c91563ae900d7afdb",
+                "url": "https://api.github.com/repos/openeuropa/rdf_skos/zipball/4ddc58f6c63eafb9cb0143331066a835b581d30b",
+                "reference": "4ddc58f6c63eafb9cb0143331066a835b581d30b",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9.2",
+                "drupal/core": "^9.3",
                 "drupal/sparql_entity_storage": "1.0.0-alpha10",
                 "easyrdf/easyrdf": "1.0.0 as 0.9.1",
                 "php": ">=7.4"
@@ -7859,13 +7908,12 @@
             "require-dev": {
                 "composer/installers": "^1.5",
                 "consolidation/robo": "^3.0",
-                "cweagans/composer-patches": "~1.0",
                 "drupal/config_devel": "~1.2",
-                "drupal/core-composer-scaffold": "^9.2",
-                "drupal/core-dev": "^9.2",
+                "drupal/core-composer-scaffold": "^9.3",
+                "drupal/core-dev": "^9.3",
                 "drupal/drupal-extension": "~4.0",
                 "drush/drush": "~10.0",
-                "egulias/email-validator": "^2.1.22 || ^3.0",
+                "fabpot/goutte": "~3.3",
                 "nikic/php-parser": "^4.12.0",
                 "openeuropa/behat-transformation-context": "~0.1",
                 "openeuropa/code-review": "^2.0",
@@ -7912,9 +7960,9 @@
             "description": "Drupal module that contains the RDF SKOS entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/rdf_skos/issues",
-                "source": "https://github.com/openeuropa/rdf_skos/tree/1.0.0-alpha6"
+                "source": "https://github.com/openeuropa/rdf_skos/tree/1.0.0-alpha7"
             },
-            "time": "2022-01-18T16:07:12+00:00"
+            "time": "2022-06-22T14:24:40+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -18547,6 +18595,7 @@
         "drupal/json_field": 5,
         "drupal/roleassign": 10,
         "drupal/user_field_anonymize": 15,
+        "openeuropa/oe_content": 20,
         "openeuropa/oe_content_extra": 15
     },
     "prefer-stable": true,
