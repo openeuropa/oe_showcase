@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e32d171a458119a955a9ef431328c518",
+    "content-hash": "2e1c25af10a68d7107218be581ad6931",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7586,11 +7586,11 @@
         },
         {
             "name": "openeuropa/oe_starter_content",
-            "version": "1.0.0-beta1",
+            "version": "dev-EPIC-OEL-1548-Person-v1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_starter_content",
-                "reference": "5cafe4acb9f6330c34bcfd49cfd2e5311c2c4dfb"
+                "reference": "f618c4c3c49da574b550fb8badbbc337b58ffe98"
             },
             "require": {
                 "drupal/address": "^1.10",
@@ -7601,15 +7601,18 @@
             "require-dev": {
                 "amphp/parallel-functions": "~1.0.0",
                 "composer/installers": "^2.0",
+                "drupal/composite_reference": "^2.1",
                 "drupal/config_devel": "^1.8",
                 "drupal/core-composer-scaffold": "^9.2",
                 "drupal/core-dev": "^9.2",
                 "drupal/entity_browser": "^2.6",
                 "drupal/file_link": "^2.0.4",
+                "drupal/inline_entity_form": "^1.0-rc12",
+                "drupal/typed_link": "^2.0",
                 "drush/drush": "^10.3",
                 "egulias/email-validator": "^2.1.22 || ^3.0",
                 "openeuropa/code-review": "^1.6 || ^2.0",
-                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/oe_content": "3.x-dev",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^1 || ^2"
             },
@@ -7639,7 +7642,8 @@
                 "_readme": [
                     "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
                     "Explicit requirement for drupal/file_link due to https://www.drupal.org/project/file_link/issues/3147517. It can be removed when oe_media requires version 2.0.4 or above.",
-                    "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors."
+                    "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors.",
+                    "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required same minimum version."
                 ]
             },
             "autoload": {
@@ -7664,7 +7668,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
-            "time": "2022-04-07T15:03:48+00:00"
+            "time": "2022-07-25T14:14:15+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -18599,6 +18603,7 @@
         "drupal/user_field_anonymize": 15,
         "openeuropa/oe_content": 20,
         "openeuropa/oe_content_extra": 15,
+        "openeuropa/oe_starter_content": 20,
         "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,

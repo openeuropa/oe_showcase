@@ -50,7 +50,7 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
-        "openeuropa/oe_starter_content": "1.0.0-beta1",
+        "openeuropa/oe_starter_content": "dev-EPIC-OEL-1548-Person-v1",
         "openeuropa/oe_webtools": "^1.18",
         "openeuropa/oe_whitelabel": "dev-OEL-1552"
     },
@@ -118,9 +118,6 @@
             },
             "openeuropa/oe_list_pages": {
                 "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
-            },
-            "openeuropa/oe_starter_content": {
-                "OEL-1551-Document_fields_for_person": "https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta1...EPIC-OEL-1548-Person-v1.diff"
             }
         },
         "artifacts": {
