@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.embed_media
     - media.type.av_portal_photo
     - media.type.av_portal_video
     - media.type.document

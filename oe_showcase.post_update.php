@@ -310,6 +310,7 @@ function oe_showcase_post_update_00013(): void {
  */
 function oe_showcase_post_update_00014(&$sandbox) {
   \Drupal::service('module_installer')->install([
+    'entity_browser_enhanced',
     'oe_media_embed',
     'oe_media_iframe',
     'oe_oembed',

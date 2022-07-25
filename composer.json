@@ -18,6 +18,7 @@
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/dropsolid_purge": "^1.0@beta",
         "drupal/easy_breadcrumb": "^2.0",
+        "drupal/entity_browser_enhanced": "^1.0",
         "drupal/extra_field": "^2.1",
         "drupal/facets": "^2.0",
         "drupal/facets_form": "1.0.0-alpha3",
