@@ -355,4 +355,12 @@ function oe_showcase_post_update_00014(): void {
     $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
     $block->save();
   }
+
+  // Enable title filter.
+  $configs = [
+    'facets.facet.oelp_oe_sc_person__title',
+    'search_api.index.oe_list_pages_index',
+  ];
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00010_person_facets', $configs);
 }
