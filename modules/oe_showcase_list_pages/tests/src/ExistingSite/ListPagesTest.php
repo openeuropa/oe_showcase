@@ -447,21 +447,12 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     ]);
 
     // Create a Person listing page.
-    $this->drupalGet('node/add/oe_list_page');
-    $page->fillField('Title', 'Person list page');
-    $page->fillField('Source entity type', 'node');
-    $page->fillField('Source bundle', 'oe_sc_person');
-    $page->pressButton('Save');
+    $list_page = $this->createListPage('Person list page', 'oe_sc_person', [
+      'oelp_oe_sc_person__title',
+    ]);
+    $this->drupalGet($list_page->toUrl());
 
-    $node = $this->getNodeByTitle('Person list page');
-    $this->drupalGet('node/' . $node->id() . '/edit');
-    $page->checkField('Override default exposed filters');
-    $page->checkField('emr_plugins_oe_list_page[wrapper][exposed_filters][oelp_oe_sc_person__title]');
-    $page->pressButton('Save');
-
-    $this->drupalGet('node/' . $node->id());
-
-    // Assert that only Event items are displayed.
+    // Assert that only Person items are displayed.
     $this->assertResults([
       'John Doe 0',
       'John Doe 1',
@@ -501,7 +492,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $search_button->click();
     $this->assertResultsTitle('Person list page', 0);
 
-    // Assert Event title filters only by title.
+    // Assert Title filters only by Person title.
     $title_input->setValue('This is a person short description number 10');
     $search_button->click();
     $this->assertResultsTitle('Person list page', 0);
