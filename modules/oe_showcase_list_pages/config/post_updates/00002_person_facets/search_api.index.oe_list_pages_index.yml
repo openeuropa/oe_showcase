@@ -4,10 +4,12 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.oe_sc_event_dates
-    - field.storage.node.oe_sc_event_location
-    - field.storage.node.oe_publication_date
-    - field.storage.node.oe_sc_event_dates
     - field.storage.node.oe_summary
+    - field.storage.node.oe_sc_event_location
+    - field.storage.node.oe_project_budget
+    - field.storage.node.oe_project_dates
+    - field.storage.node.oe_publication_date
+    - field.storage.node.oe_subject
     - search_api.server.oe_list_pages_search_server
   module:
     - node
@@ -25,6 +27,30 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  oe_project_budget:
+    label: 'Overall budget'
+    datasource_id: 'entity:node'
+    property_path: oe_project_budget
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.oe_project_budget
+  oe_project_dates:
+    label: 'Project period'
+    datasource_id: 'entity:node'
+    property_path: oe_project_dates
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
+  oe_project_dates_end:
+    label: 'Project period » End date value'
+    datasource_id: 'entity:node'
+    property_path: 'oe_project_dates:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
   oe_publication_date:
     label: 'Publication date'
     datasource_id: 'entity:node'
@@ -41,14 +67,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.oe_sc_event_dates
-  oe_summary:
-    label: Introduction
-    datasource_id: 'entity:node'
-    property_path: oe_summary
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.oe_summary
   oe_sc_event_location:
     label: Location
     datasource_id: 'entity:node'
@@ -57,6 +75,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.oe_sc_event_location
+  oe_subject:
+    label: Subject
+    datasource_id: 'entity:node'
+    property_path: oe_subject
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.oe_subject
+  oe_summary:
+    label: Introduction
+    datasource_id: 'entity:node'
+    property_path: oe_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.oe_summary
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -78,6 +112,7 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - oe_project
         - oe_sc_event
         - oe_sc_news
         - oe_sc_person
