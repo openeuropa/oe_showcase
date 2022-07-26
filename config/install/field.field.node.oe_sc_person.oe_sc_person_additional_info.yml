@@ -10,7 +10,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - simple_rich_text
+      - rich_text
 id: node.oe_sc_person.oe_sc_person_additional_info
 field_name: oe_sc_person_additional_info
 entity_type: node
