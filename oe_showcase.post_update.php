@@ -347,14 +347,6 @@ function oe_showcase_post_update_00014(): void {
     $field->save();
   }
 
-  // Enable person facets.
-  $configs = [
-    'facets.facet.oelp_oe_sc_person__title',
-    'search_api.index.oe_list_pages_index',
-  ];
-
-  ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00001_person_facets', $configs);
-
   // Add person bundle to the social share block.
   $block = Block::load('oe_showcase_theme_social_share');
   $visibility = $block->getVisibility();
