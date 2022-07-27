@@ -50,9 +50,9 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
-        "openeuropa/oe_starter_content": "dev-EPIC-OEL-1548-Person-v1",
+        "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_webtools": "^1.18",
-        "openeuropa/oe_whitelabel": "dev-OEL-1552"
+        "openeuropa/oe_whitelabel": "0.1.202207271650"
     },
     "require-dev": {
         "composer/installers": "~1.11",

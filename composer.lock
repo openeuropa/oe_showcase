@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e1c25af10a68d7107218be581ad6931",
+    "content-hash": "0be481779adf7eb6cc4d56c7dc5ec938",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7586,11 +7586,11 @@
         },
         {
             "name": "openeuropa/oe_starter_content",
-            "version": "dev-EPIC-OEL-1548-Person-v1",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_starter_content",
-                "reference": "f618c4c3c49da574b550fb8badbbc337b58ffe98"
+                "reference": "b1bc117bafdc3630d2e28e7cfc091f6c6e90c951"
             },
             "require": {
                 "drupal/address": "^1.10",
@@ -7616,6 +7616,7 @@
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^1 || ^2"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -7668,7 +7669,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
-            "time": "2022-07-25T14:14:15+00:00"
+            "time": "2022-07-27T13:43:42+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -7765,16 +7766,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "dev-OEL-1552",
+            "version": "0.1.202207271650",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea"
+                "reference": "d91499bf30f7b69697d917c5d3fd14b4012ad402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea",
-                "reference": "6afe15e1faa34d92fd66503d74cd5a3c0b5cb9ea",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/d91499bf30f7b69697d917c5d3fd14b4012ad402",
+                "reference": "d91499bf30f7b69697d917c5d3fd14b4012ad402",
                 "shasum": ""
             },
             "require": {
@@ -7823,7 +7824,7 @@
                 "openeuropa/oe_media": "^1.14",
                 "openeuropa/oe_multilingual": "^1.9",
                 "openeuropa/oe_paragraphs": "^1.13",
-                "openeuropa/oe_starter_content": "dev-EPIC-OEL-1548-Person-v1",
+                "openeuropa/oe_starter_content": "1.x-dev",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
                 "symfony/dom-crawler": "^4.4.12"
@@ -7887,9 +7888,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-1552"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202207271650"
             },
-            "time": "2022-07-25T16:04:42+00:00"
+            "time": "2022-07-27T14:29:17+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -18603,8 +18604,7 @@
         "drupal/user_field_anonymize": 15,
         "openeuropa/oe_content": 20,
         "openeuropa/oe_content_extra": 15,
-        "openeuropa/oe_starter_content": 20,
-        "openeuropa/oe_whitelabel": 20
+        "openeuropa/oe_starter_content": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
