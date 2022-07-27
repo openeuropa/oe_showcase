@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "445c53ec853579eb1aee40fac45f422b",
+    "content-hash": "0be481779adf7eb6cc4d56c7dc5ec938",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7586,11 +7586,11 @@
         },
         {
             "name": "openeuropa/oe_starter_content",
-            "version": "1.0.0-beta1",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_starter_content",
-                "reference": "5cafe4acb9f6330c34bcfd49cfd2e5311c2c4dfb"
+                "reference": "b1bc117bafdc3630d2e28e7cfc091f6c6e90c951"
             },
             "require": {
                 "drupal/address": "^1.10",
@@ -7601,18 +7601,22 @@
             "require-dev": {
                 "amphp/parallel-functions": "~1.0.0",
                 "composer/installers": "^2.0",
+                "drupal/composite_reference": "^2.1",
                 "drupal/config_devel": "^1.8",
                 "drupal/core-composer-scaffold": "^9.2",
                 "drupal/core-dev": "^9.2",
                 "drupal/entity_browser": "^2.6",
                 "drupal/file_link": "^2.0.4",
+                "drupal/inline_entity_form": "^1.0-rc12",
+                "drupal/typed_link": "^2.0",
                 "drush/drush": "^10.3",
                 "egulias/email-validator": "^2.1.22 || ^3.0",
                 "openeuropa/code-review": "^1.6 || ^2.0",
-                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/oe_content": "3.x-dev",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^1 || ^2"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -7639,7 +7643,8 @@
                 "_readme": [
                     "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
                     "Explicit requirement for drupal/file_link due to https://www.drupal.org/project/file_link/issues/3147517. It can be removed when oe_media requires version 2.0.4 or above.",
-                    "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors."
+                    "Explicit requirement for amphp/parallel-functions because release 1.1.0 causes serialisation errors.",
+                    "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required same minimum version."
                 ]
             },
             "autoload": {
@@ -7664,7 +7669,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
-            "time": "2022-04-07T15:03:48+00:00"
+            "time": "2022-07-27T13:43:42+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -7761,16 +7766,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.0.0-beta4",
+            "version": "0.1.202207271650",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3"
+                "reference": "d91499bf30f7b69697d917c5d3fd14b4012ad402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
-                "reference": "00fe3c3c466077e80645a9aab5bb71a1bc857fa3",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/d91499bf30f7b69697d917c5d3fd14b4012ad402",
+                "reference": "d91499bf30f7b69697d917c5d3fd14b4012ad402",
                 "shasum": ""
             },
             "require": {
@@ -7798,6 +7803,7 @@
                 "drupal/facets_form": "1.0.0-alpha2",
                 "drupal/field_group": "^3.2",
                 "drupal/file_link": "^2.0.6",
+                "drupal/inline_entity_form": "^1.0-rc12",
                 "drupal/pathauto": "^1.8",
                 "drupal/search_api": "^1.21",
                 "drupal/search_api_autocomplete": "^1.5",
@@ -7811,14 +7817,14 @@
                 "openeuropa/code-review": "^1.7 || ^2.0",
                 "openeuropa/oe_authentication": "^1.4",
                 "openeuropa/oe_contact_forms": "~1.1",
-                "openeuropa/oe_content": "^2.8.0",
+                "openeuropa/oe_content": "3.x-dev",
                 "openeuropa/oe_content_extra": "^1.0.0-alpha1",
                 "openeuropa/oe_corporate_blocks": "^4.4",
                 "openeuropa/oe_list_pages": "^0.16",
                 "openeuropa/oe_media": "^1.14",
                 "openeuropa/oe_multilingual": "^1.9",
                 "openeuropa/oe_paragraphs": "^1.13",
-                "openeuropa/oe_starter_content": "^1.0.0-beta1",
+                "openeuropa/oe_starter_content": "1.x-dev",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
                 "symfony/dom-crawler": "^4.4.12"
@@ -7852,7 +7858,8 @@
                     "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
                     "Explicit requirement for league/csv due to PHP 8.0 compatibility",
                     "Explicit minimum version requirement for symfony/dom-crawler due to its lower versions using the deprecated function libxml_disable_entity_loader() in PHP8.",
-                    "Explicit requirement of token module due to PHP 8 compatbility."
+                    "Explicit requirement of token module due to PHP 8 compatbility.",
+                    "Explicit minimum version requirement of drupal/inline_entity_form due to failing patch in lower versions. To be removed once oe_media required the same minimum version."
                 ],
                 "installer-paths": {
                     "build/core": [
@@ -7881,9 +7888,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.0.0-beta4"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202207271650"
             },
-            "time": "2022-07-08T15:22:51+00:00"
+            "time": "2022-07-27T14:29:17+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -14459,16 +14466,16 @@
         },
         {
             "name": "mikey179/vfsstream",
-            "version": "v1.6.10",
+            "version": "v1.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bovigo/vfsStream.git",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85"
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/250c0825537d501e327df879fb3d4cd751933b85",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
                 "shasum": ""
             },
             "require": {
@@ -14506,7 +14513,7 @@
                 "source": "https://github.com/bovigo/vfsStream/tree/master",
                 "wiki": "https://github.com/bovigo/vfsStream/wiki"
             },
-            "time": "2021-09-25T08:05:01+00:00"
+            "time": "2022-02-23T02:02:42+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -18596,7 +18603,8 @@
         "drupal/roleassign": 10,
         "drupal/user_field_anonymize": 15,
         "openeuropa/oe_content": 20,
-        "openeuropa/oe_content_extra": 15
+        "openeuropa/oe_content_extra": 15,
+        "openeuropa/oe_starter_content": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

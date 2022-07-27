@@ -20,8 +20,10 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
    */
   public function testManageContentPages(): void {
     $content_types = [
+      'oe_project',
       'oe_sc_event',
       'oe_sc_news',
+      'oe_sc_person',
       'oe_showcase_page',
     ];
 

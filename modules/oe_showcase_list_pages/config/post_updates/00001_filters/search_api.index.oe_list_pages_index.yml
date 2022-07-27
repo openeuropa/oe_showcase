@@ -115,6 +115,7 @@ datasource_settings:
         - oe_project
         - oe_sc_event
         - oe_sc_news
+        - oe_sc_person
     languages:
       default: true
       selected: {  }

@@ -304,3 +304,55 @@ function oe_showcase_post_update_00013(): void {
   $roleassign_roles['manage_site_specific_footer'] = 'manage_site_specific_footer';
   $roleassign_config->set('roleassign_roles', $roleassign_roles)->save();
 }
+
+/**
+ * Enable person content type. Grant permissions to editor.
+ */
+function oe_showcase_post_update_00014(): void {
+  // Install starter content person module.
+  \Drupal::service('module_installer')->install([
+    'oe_whitelabel_starter_person',
+  ]);
+
+  // Allow editor role to manage person pages.
+  $permissions = [
+    'create oe_sc_person content',
+    'delete any oe_sc_person content',
+    'delete oe_sc_person revisions',
+    'edit any oe_sc_person content',
+    'revert oe_sc_person revisions',
+    'view oe_sc_person revisions',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+
+  // Configure text formats in rich text fields for person.
+  $field = FieldConfig::load('node.oe_sc_person.oe_summary');
+  if ($field === NULL) {
+    throw new \Exception("Field not found: 'oe_summary'.");
+  }
+  $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['simple_rich_text']);
+  $field->save();
+
+  $field = FieldConfig::load('node.oe_sc_person.oe_sc_person_additional_info');
+  if ($field === NULL) {
+    throw new \Exception("Field not found: 'oe_sc_person_additional_info'.");
+  }
+  $field->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text']);
+  $field->save();
+
+  // Add person bundle to the social share block.
+  $block = Block::load('oe_showcase_theme_social_share');
+  $visibility = $block->getVisibility();
+  if (isset($visibility['entity_bundle:node']['bundles'])) {
+    $visibility['entity_bundle:node']['bundles']['oe_sc_person'] = 'oe_sc_person';
+    $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
+    $block->save();
+  }
+}

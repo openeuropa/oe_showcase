@@ -50,9 +50,9 @@
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_paragraphs": "^1.13",
-        "openeuropa/oe_starter_content": "1.0.0-beta1",
+        "openeuropa/oe_starter_content": "1.x-dev",
         "openeuropa/oe_webtools": "^1.18",
-        "openeuropa/oe_whitelabel": "^1.0.0-beta4"
+        "openeuropa/oe_whitelabel": "0.1.202207271650"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -118,9 +118,6 @@
             },
             "openeuropa/oe_list_pages": {
                 "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
-            },
-            "openeuropa/oe_starter_content": {
-                "OEL-1651: Published date prefilled with current date": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_starter_content/pull/9.diff"
             }
         },
         "artifacts": {
