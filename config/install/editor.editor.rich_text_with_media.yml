@@ -14,11 +14,18 @@ settings:
         -
           name: Formatting
           items:
+            - Format
             - Bold
             - Italic
+            - Underline
+            - Superscript
+            - Subscript
+            - Outdent
+            - Indent
         -
           name: Links
           items:
+            - Blockquote
             - DrupalLink
             - DrupalUnlink
         -
@@ -26,16 +33,15 @@ settings:
           items:
             - BulletedList
             - NumberedList
-        -
-          name: Media
-          items:
-            - oembed_button_media
-            - Blockquote
-            - DrupalImage
+            - Table
         -
           name: Tools
           items:
+            - Undo
+            - RemoveFormat
+            - Maximize
             - Source
+            - media
   plugins:
     stylescombo:
       styles: ''
