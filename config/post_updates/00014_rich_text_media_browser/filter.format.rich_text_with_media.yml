@@ -2,7 +2,11 @@ langcode: en
 status: true
 dependencies:
   module:
+    - editor
+    - media
+    - oe_media_embed
     - oe_oembed
+    - oe_webtools_cookie_consent
 name: 'Rich text with media'
 format: rich_text_with_media
 weight: 0
@@ -13,12 +17,82 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid> <p data-oembed>'
+      allowed_html: '<a href hreflang data-oembed data-display-as data-link-style name> <em> <strong> <cite> <blockquote cite> <ul type> <ol start type> <li> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <u> <sup> <sub> <p data-oembed data-display-as> <h1> <pre> <table> <caption> <tbody> <thead> <tfoot> <th colspan rowspan> <td colspan rowspan> <tr> <br>'
       filter_html_help: true
       filter_html_nofollow: false
   oe_oembed_filter:
     id: oe_oembed_filter
     provider: oe_oembed
     status: true
-    weight: 0
+    weight: -7
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -8
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -9
+    settings:
+      filter_url_length: 72
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -5
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: 2
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -3
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -2
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -4
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -6
+    settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 3
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
+  oe_media_embed:
+    id: oe_media_embed
+    provider: oe_media_embed
+    status: false
+    weight: -1
+    settings: {  }
+  filter_iframe_cck:
+    id: filter_iframe_cck
+    provider: oe_webtools_cookie_consent
+    status: false
+    weight: 1
     settings: {  }
