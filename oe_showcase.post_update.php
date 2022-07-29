@@ -322,7 +322,6 @@ function oe_showcase_post_update_00014(&$sandbox) {
     'core.entity_view_display.media.document.default',
     'core.entity_view_display.media.image.default',
     'core.entity_view_display.media.remote_video.default',
-    'core.entity_view_display.media.video_iframe.default',
     'views.view.media_entity_browsers',
     'embed.button.oembed_button_media',
     'entity_browser.browser.embed_media',
