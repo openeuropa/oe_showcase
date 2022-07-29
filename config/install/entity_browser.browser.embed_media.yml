@@ -31,7 +31,7 @@ widgets:
       view: media_entity_browsers
       view_display: all_media
   a75ddb75-5238-4cd9-abd5-932b3cb95a22:
-    id: view
+    id: avportal_search
     uuid: a75ddb75-5238-4cd9-abd5-932b3cb95a22
     label: 'Search in AV Portal'
     weight: 2
