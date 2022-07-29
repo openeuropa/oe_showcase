@@ -92,6 +92,11 @@ themes:
 config_devel:
   install:
     - contact.settings
+    - core.entity_view_display.media.av_portal_photo.default
+    - core.entity_view_display.media.av_portal_video.default
+    - core.entity_view_display.media.document.default
+    - core.entity_view_display.media.image.default
+    - core.entity_view_display.media.remote_video.default
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
