@@ -110,11 +110,13 @@ config_devel:
     - field.field.node.oe_project.oe_summary
     - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_event_type
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
     - field.field.node.oe_sc_news.oe_summary
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_summary
+    - field.storage.node.field_event_type
     - filter.format.full_html
     - filter.format.rich_text
     - filter.format.simple_rich_text
