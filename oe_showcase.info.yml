@@ -92,6 +92,7 @@ config_devel:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
     - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
+    - core.entity_view_display.node.oe_sc_event.teaser
     - easy_breadcrumb.settings
     - core.entity_view_display.media.av_portal_photo.showcase_embed
     - core.entity_view_display.media.av_portal_video.showcase_embed
