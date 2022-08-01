@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.oe_w_content_banner
+    - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.oe_documents
+    - field.field.node.oe_sc_event.oe_featured_media
+    - field.field.node.oe_sc_event.oe_sc_event_dates
+    - field.field.node.oe_sc_event.oe_sc_event_location
+    - field.field.node.oe_sc_event.oe_sc_event_registration_url
+    - field.field.node.oe_sc_event.oe_summary
+    - node.type.oe_sc_event
+  module:
+    - link
+    - oe_content_featured_media_field
+    - text
+    - user
+id: node.oe_sc_event.oe_w_content_banner
+targetEntityType: node
+bundle: oe_sc_event
+mode: oe_w_content_banner
+content:
+  field_event_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  oe_featured_media:
+    type: oe_featured_media_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  oe_sc_event_registration_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  oe_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true
+  links: true
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
+  oe_documents: true
+  oe_sc_event_dates: true
+  oe_sc_event_location: true
+  search_api_excerpt: true
