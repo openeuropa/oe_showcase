@@ -31,7 +31,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
   /**
    * Check creation Event content through the UI.
    */
-  public function testCreateEvent() {
+  public function testCreateEvent(): void {
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('media');
