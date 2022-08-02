@@ -5,7 +5,6 @@ dependencies:
     - views.view.av_portal_entity_browsers
     - views.view.media_entity_browsers
   module:
-    - oe_media
     - views
 name: embed_media
 label: 'Embed media'
@@ -40,10 +39,3 @@ widgets:
       auto_select: false
       view: av_portal_entity_browsers
       view_display: all
-  1cfff23f-917b-42e8-8592-dba9922afbe3:
-    id: oe_media_creation_form
-    uuid: 1cfff23f-917b-42e8-8592-dba9922afbe3
-    label: 'New asset'
-    weight: 3
-    settings:
-      submit_text: 'Select asset'
