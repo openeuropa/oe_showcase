@@ -406,19 +406,6 @@ display:
     position: 4
     display_options:
       filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          entity_type: media
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
         bundle:
           id: bundle
           table: media_field_data
@@ -436,9 +423,8 @@ display:
             document: document
             image: image
             remote_video: remote_video
-            video_iframe: video_iframe
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: bundle_op
             label: Type
@@ -459,6 +445,75 @@ display:
               manage_users: '0'
               manage_contact_forms: '0'
               administrator: '0'
+              manage_menu_items: '0'
+              manage_site_specific_footer: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        bundle_1:
+          id: bundle_1
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+          operator: in
+          value:
+            av_portal_photo: av_portal_photo
+            av_portal_video: av_portal_video
+            document: document
+            image: image
+            remote_video: remote_video
+          group: 1
+          exposed: true
+          expose:
+            operator_id: bundle_1_op
+            label: 'Media type'
+            description: ''
+            use_operator: false
+            operator: bundle_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bundle_exposed
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              configure_page_feedback_form: '0'
+              manage_users: '0'
+              manage_contact_forms: '0'
+              administrator: '0'
+              manage_menu_items: '0'
+              manage_site_specific_footer: '0'
             reduce: true
           is_grouped: false
           group_info:
