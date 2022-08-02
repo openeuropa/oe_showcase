@@ -17,7 +17,7 @@ entity_type: node
 bundle: oe_sc_event
 label: 'Event type'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
