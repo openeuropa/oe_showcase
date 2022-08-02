@@ -77,7 +77,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     ]);
     $media_image->save();
 
-    // Assert editors don't have permissions to create Event items.
+    // Assert user without permission can't create events.
     $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextContains('You are not authorized to access this page.');
     $assert_session->statusCodeEquals(403);
