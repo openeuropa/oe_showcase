@@ -12,7 +12,7 @@ use Drupal\Tests\TestFileCreationTrait;
 /**
  * Class to test Event content type on existing site tests.
  */
-class ShowcaseExistingSiteCreateEventTest extends ShowcaseExistingSiteTestBase {
+class EventTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
