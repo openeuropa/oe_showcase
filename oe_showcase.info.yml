@@ -90,6 +90,12 @@ config_devel:
   install:
     - contact.settings
     - easy_breadcrumb.settings
+    - core.entity_view_display.media.av_portal_photo.showcase_embed
+    - core.entity_view_display.media.av_portal_video.showcase_embed
+    - core.entity_view_display.media.document.showcase_embed
+    - core.entity_view_display.media.image.showcase_embed
+    - core.entity_view_display.media.remote_video.showcase_embed
+    - core.entity_view_mode.media.showcase_embed
     - editor.editor.full_html
     - editor.editor.rich_text
     - field.field.node.oe_project.body
