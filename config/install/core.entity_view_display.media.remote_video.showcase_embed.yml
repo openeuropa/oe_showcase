@@ -20,8 +20,8 @@ content:
     type: oembed
     label: above
     settings:
-      max_width: 0
-      max_height: 0
+      max_width: 640
+      max_height: 390
     third_party_settings: {  }
     weight: 0
     region: content
