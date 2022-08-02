@@ -361,5 +361,8 @@ function oe_showcase_post_update_00014(): void {
  * Enable embedding of medias in rich text fields.
  */
 function oe_showcase_post_update_00015(): void {
-  \Drupal::service('module_installer')->install(['oe_oembed']);
+  \Drupal::service('module_installer')->install([
+    'oe_oembed',
+    'entity_browser_enhanced',
+  ]);
 }

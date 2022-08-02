@@ -15,6 +15,7 @@ install:
   - dynamic_page_cache
   - easy_breadcrumb
   - editor
+  - entity_browser_enhanced
   - file
   - filter
   - image
@@ -100,6 +101,7 @@ config_devel:
     - editor.editor.rich_text
     - embed.button.embed_media
     - entity_browser.browser.embed_media
+    - entity_browser_enhanced.widgets.embed_media
     - field.field.node.oe_project.body
     - field.field.node.oe_project.oe_cx_achievements_and_milestone
     - field.field.node.oe_project.oe_cx_impacts
