@@ -33,6 +33,7 @@ install:
   - oe_dashboard_agent
   - oe_list_pages_address
   - oe_multilingual
+  - oe_oembed
   - oe_paragraphs
   - oe_paragraphs_banner
   - oe_paragraphs_chart
