@@ -6,6 +6,7 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
@@ -29,6 +30,44 @@ class EventTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Test Event type CRUD.
+   */
+  public function testEventType(): void {
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    // Assert user without permission can't create event types.
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/add');
+    $assert_session->pageTextContains('You are not authorized to access this page.');
+    $assert_session->statusCodeEquals(403);
+
+    // Assert editors can create event types.
+    $user = $this->createUser([]);
+    $user->addRole('editor');
+    $user->save();
+    $this->drupalLogin($user);
+
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/add');
+    $page->fillField('Name', 'Term one');
+    $page->pressButton('Save');
+    $assert_session->pageTextContains('Created new term Term one.');
+
+    // Assert editors can edit event types.
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/overview');
+    $page->clickLink('Edit');
+    $page->fillField('Name', 'Term changed');
+    $page->pressButton('Save');
+    $assert_session->pageTextContains('Updated term Term changed.');
+
+    // Assert editors can delete event types.
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/overview');
+    $page->clickLink('Delete');
+    $assert_session->pageTextContains('Are you sure you want to delete the taxonomy term Term changed?');
+    $page->pressButton('Delete');
+    $assert_session->pageTextContains('Deleted term Term changed.');
+  }
+
+  /**
    * Check creation Event content through the UI.
    */
   public function testCreateEvent(): void {
@@ -36,6 +75,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('media');
     $this->markEntityTypeForCleanup('file');
+    $this->markEntityTypeForCleanup('taxonomy_term');
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
@@ -77,6 +117,12 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     ]);
     $media_image->save();
 
+    $term = Term::create([
+      'vid' => 'event_type',
+      'name' => 'Test term',
+    ]);
+    $term->save();
+
     // Assert user without permission can't create events.
     $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextContains('You are not authorized to access this page.');
@@ -92,6 +138,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
+    $page->selectFieldOption('Event type', 'Test term');
     $page->fillField('Content', 'Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-24');
@@ -108,6 +155,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     // Assert that event has been created.
     $assert_session->pageTextContains('Event Example title has been created.');
     $assert_session->pageTextContains('Example title');
+    $assert_session->pageTextContains('Test term');
     $assert_session->pageTextContains('Example Content');
     $assert_session->pageTextContains('Example Introduction');
     $assert_session->pageTextContains('24 January 2022');
