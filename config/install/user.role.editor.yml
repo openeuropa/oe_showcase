@@ -19,6 +19,7 @@ dependencies:
     - node.type.oe_sc_person
     - node.type.oe_showcase_page
   module:
+    - entity_browser
     - filter
     - media
     - node
@@ -32,6 +33,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access embed_media entity browser pages'
   - 'access media overview'
   - 'access toolbar'
   - 'create av_portal_photo media'

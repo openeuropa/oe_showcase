@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.embed_media
     - media.type.av_portal_photo
     - media.type.av_portal_video
     - media.type.document
@@ -21,7 +22,8 @@ type_settings:
     - document
     - image
     - remote_video
-  entity_browser: ''
-  entity_browser_settings: {  }
+  entity_browser: embed_media
+  entity_browser_settings:
+    display_review: false
 icon: {  }
 icon_uuid: null
