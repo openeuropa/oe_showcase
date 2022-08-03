@@ -130,6 +130,7 @@ config_devel:
     - pathauto.settings
     - purge_users.settings
     - roleassign.settings
+    - search_api.index.oe_list_pages_index
     - system.theme
     - taxonomy.vocabulary.event_type
     - user.role.administrator
