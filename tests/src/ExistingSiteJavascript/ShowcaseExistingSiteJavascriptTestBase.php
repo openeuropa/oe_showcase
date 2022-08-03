@@ -50,4 +50,23 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
     parent::tearDown();
   }
 
+  /**
+   * Waits for the given time or until the given JS condition becomes TRUE.
+   *
+   * @param string $condition
+   *   JS condition to wait until it becomes TRUE.
+   * @param int $timeout
+   *   (Optional) Timeout in milliseconds, defaults to 10000.
+   * @param string $message
+   *   (optional) A message to display with the assertion. If left blank, a
+   *   default message will be displayed.
+   *
+   * @see \Drupal\FunctionalJavascriptTests\WebDriverTestBase::assertJsCondition()
+   */
+  protected function assertJsCondition($condition, $timeout = 10000, $message = ''): void {
+    $message = $message ?: "JavaScript condition met:\n" . $condition;
+    $result = $this->getSession()->getDriver()->wait($timeout, $condition);
+    $this->assertTrue($result, $message);
+  }
+
 }

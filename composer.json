@@ -104,7 +104,8 @@
     ],
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\oe_showcase\\": "./tests/src/"
+            "Drupal\\Tests\\oe_showcase\\": "./tests/src/",
+            "Drupal\\Tests\\oe_bootstrap_theme\\": "./build/themes/contrib/oe_bootstrap_theme/tests/src/"
         }
     },
     "extra": {
