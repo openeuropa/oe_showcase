@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.av_portal_entity_browsers
+    - views.view.media_entity_browsers
+  module:
+    - views
+name: embed_media
+label: 'Embed media'
+display: iframe
+display_configuration:
+  width: 100%
+  height: '500'
+  link_text: 'Select media'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  67b95a37-7fac-4b2a-8449-0095a1255a98:
+    id: view
+    uuid: 67b95a37-7fac-4b2a-8449-0095a1255a98
+    label: 'Media library'
+    weight: 1
+    settings:
+      submit_text: 'Select media'
+      auto_select: false
+      view: media_entity_browsers
+      view_display: all_media
+  a75ddb75-5238-4cd9-abd5-932b3cb95a22:
+    id: avportal_search
+    uuid: a75ddb75-5238-4cd9-abd5-932b3cb95a22
+    label: 'Search in AV Portal'
+    weight: 2
+    settings:
+      submit_text: 'Select media'
+      auto_select: false
+      view: av_portal_entity_browsers
+      view_display: all

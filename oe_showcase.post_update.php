@@ -365,4 +365,33 @@ function oe_showcase_post_update_00015(): void {
     'oe_oembed',
     'entity_browser_enhanced',
   ]);
+
+  $configs = [
+    'core.entity_view_mode.media.showcase_embed',
+    'core.entity_view_display.media.av_portal_photo.showcase_embed',
+    'core.entity_view_display.media.av_portal_video.showcase_embed',
+    'core.entity_view_display.media.document.showcase_embed',
+    'core.entity_view_display.media.image.showcase_embed',
+    'core.entity_view_display.media.remote_video.showcase_embed',
+    'views.view.media_entity_browsers',
+    'entity_browser.browser.embed_media',
+    'embed.button.embed_media',
+    'filter.format.rich_text',
+    'editor.editor.rich_text',
+  ];
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00015_media_embed', $configs);
+
+  // The entity_browser_enhanced module uses very simple configs that cannot
+  // be imported.
+  \Drupal::service('config.factory')->getEditable('entity_browser_enhanced.widgets.embed_media')
+    ->setData([
+      '67b95a37-7fac-4b2a-8449-0095a1255a98' => 'multiselect',
+      'a75ddb75-5238-4cd9-abd5-932b3cb95a22' => 'multiselect',
+    ])
+    ->save();
+
+  $editor = Role::load('editor');
+  $editor->grantPermission('access embed_media entity browser pages');
+  $editor->save();
 }
