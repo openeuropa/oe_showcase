@@ -16,7 +16,7 @@ function oe_showcase_list_pages_post_update_00001() {
   $configs = [
     'facets.facet.oelp_oe_sc_event__location',
     'facets.facet.oelp_oe_sc_event__oe_sc_event_dates',
-    'facets.facet.oelp_oe_sc_event__oe_sc_event_type',
+    'facets.facet.oelp_oe_sc_event__type',
     'facets.facet.oelp_oe_sc_person__title',
     'facets.facet.oelp_oe_sc_project__budget',
     'facets.facet.oelp_oe_sc_project__end_date',

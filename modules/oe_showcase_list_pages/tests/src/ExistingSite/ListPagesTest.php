@@ -211,7 +211,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     $list_page = $this->createListPage('Event list page', 'oe_sc_event', [
       'oelp_oe_sc_event__location',
       'oelp_oe_sc_event__oe_sc_event_dates',
-      'oelp_oe_sc_event__oe_sc_event_type',
+      'oelp_oe_sc_event__type',
       'oelp_oe_sc_event__title',
     ]);
     $this->drupalGet($list_page->toUrl());
