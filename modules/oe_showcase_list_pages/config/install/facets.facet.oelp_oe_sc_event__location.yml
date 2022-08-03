@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: oelp_oe_sc_event__location
 name: Location
-weight: 0
+weight: 2
 min_count: 1
 url_alias: oelp_oe_sc_event__location
 facet_source_id: 'list_facet_source:node:oe_sc_event'

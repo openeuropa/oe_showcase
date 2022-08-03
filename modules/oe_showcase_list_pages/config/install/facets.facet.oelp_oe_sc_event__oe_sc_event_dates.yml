@@ -3,17 +3,14 @@ status: true
 dependencies: {  }
 id: oelp_oe_sc_event__oe_sc_event_dates
 name: 'Event dates'
-url_alias: oelp_oe_sc_event__oe_sc_event_dates
-weight: 0
+weight: 3
 min_count: 1
-show_only_one_result: false
-field_identifier: oe_sc_event_dates
+url_alias: oelp_oe_sc_event__oe_sc_event_dates
 facet_source_id: 'list_facet_source:node:oe_sc_event'
-widget:
-  type: oe_list_pages_date
-  config:
-    date_type: date
+field_identifier: oe_sc_event_dates
 query_operator: or
+hard_limit: 0
+exclude: false
 use_hierarchy: false
 keep_hierarchy_parents_active: false
 hierarchy:
@@ -21,9 +18,15 @@ hierarchy:
   config: {  }
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
-hard_limit: 0
-exclude: false
+widget:
+  type: oe_list_pages_date
+  config:
+    date_type: date
+empty_behavior:
+  behavior: none
 only_visible_when_facet_source_is_visible: true
+show_only_one_result: false
+show_title: false
 processor_configs:
   active_widget_order:
     processor_id: active_widget_order
@@ -49,6 +52,3 @@ processor_configs:
       pre_query: 50
       build: 15
     settings: {  }
-empty_behavior:
-  behavior: none
-show_title: false

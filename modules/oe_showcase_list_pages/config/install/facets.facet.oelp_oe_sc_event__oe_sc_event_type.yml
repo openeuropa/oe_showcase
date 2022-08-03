@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: oelp_oe_sc_event__oe_sc_event_type
 name: Type
-weight: 0
+weight: 1
 min_count: 1
 url_alias: oelp_oe_sc_event__oe_sc_event_type
 facet_source_id: 'list_facet_source:node:oe_sc_event'
