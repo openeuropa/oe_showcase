@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "176ccb0271c4206346ecde85efb84032",
+    "content-hash": "48336569664fa4e3f28a3bf6966b35e0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6578,16 +6578,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "ad361114b977847cee8deb888fb7d7bc0306d5ee"
+                "reference": "3a186e8644fcc5d1b75c6a133a72d5117541363a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/ad361114b977847cee8deb888fb7d7bc0306d5ee",
-                "reference": "ad361114b977847cee8deb888fb7d7bc0306d5ee",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/3a186e8644fcc5d1b75c6a133a72d5117541363a",
+                "reference": "3a186e8644fcc5d1b75c6a133a72d5117541363a",
                 "shasum": ""
             },
             "require": {
@@ -6662,9 +6662,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.0.0-beta3"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.0.0-beta4"
             },
-            "time": "2022-07-08T14:47:20+00:00"
+            "time": "2022-08-01T15:46:00+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
