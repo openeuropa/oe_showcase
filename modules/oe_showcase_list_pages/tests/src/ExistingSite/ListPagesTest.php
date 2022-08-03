@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase_list_pages\ExistingSite;
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 
@@ -36,6 +37,7 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
   public function testCreateListPages() {
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
+    $this->markEntityTypeForCleanup('taxonomy_term');
 
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
@@ -60,9 +62,15 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
     ];
     for ($i = 0; $i < 12; $i++) {
+      $term = Term::create([
+        'vid' => 'event_type',
+        'name' => 'Term ' . $i,
+      ]);
+      $term->save();
       $values = [
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
+        'field_event_type' => $term->id(),
         'body' => 'This is an Event content number ' . $i,
         'oe_summary' => 'This is an Event introduction number ' . $i,
         'language' => 'en',
@@ -202,8 +210,9 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
     // Create an Event listing page.
     $list_page = $this->createListPage('Event list page', 'oe_sc_event', [
       'oelp_oe_sc_event__location',
-      'oelp_oe_sc_event__title',
       'oelp_oe_sc_event__oe_sc_event_dates',
+      'oelp_oe_sc_event__oe_sc_event_type',
+      'oelp_oe_sc_event__title',
     ]);
     $this->drupalGet($list_page->toUrl());
 
@@ -292,6 +301,22 @@ class ListPagesTest extends ShowcaseExistingSiteTestBase {
       'Event number 4',
       'Event number 9',
       'Event number 11',
+    ]);
+
+    // Filter results by type.
+    $filter_form->pressButton('Clear filters');
+    $type = $filter_form->findField('Type');
+    $type->selectOption('Term 3');
+    $search_button->click();
+    $this->assertResultsTitle('Event list page', 1);
+    $this->assertResults([
+      'Event number 3',
+    ]);
+    $type->selectOption('Term 8');
+    $search_button->click();
+    $this->assertResultsTitle('Event list page', 1);
+    $this->assertResults([
+      'Event number 8',
     ]);
 
     // Test Project list page.
