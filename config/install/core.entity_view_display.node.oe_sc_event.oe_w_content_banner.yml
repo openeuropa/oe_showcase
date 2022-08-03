@@ -13,8 +13,6 @@ dependencies:
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
-    - link
-    - oe_content_featured_media_field
     - text
     - user
 id: node.oe_sc_event.oe_w_content_banner
@@ -28,27 +26,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
-    region: content
-  oe_featured_media:
-    type: oe_featured_media_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
     weight: 1
-    region: content
-  oe_sc_event_registration_url:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
     region: content
   oe_summary:
     type: text_default
@@ -66,6 +44,8 @@ hidden:
   oe_content_navigation_title: true
   oe_content_short_title: true
   oe_documents: true
+  oe_featured_media: true
   oe_sc_event_dates: true
   oe_sc_event_location: true
+  oe_sc_event_registration_url: true
   search_api_excerpt: true
