@@ -395,3 +395,19 @@ function oe_showcase_post_update_00015(): void {
   $editor->grantPermission('access embed_media entity browser pages');
   $editor->save();
 }
+
+/**
+ * Add Event type.
+ */
+function oe_showcase_post_update_00016(): void {
+  $configs = [
+    'taxonomy.vocabulary.event_type',
+    'field.storage.node.field_event_type',
+    'field.field.node.oe_sc_event.field_event_type',
+    'core.entity_form_display.node.oe_sc_event.default',
+    'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
+    'core.entity_view_display.node.oe_sc_event.teaser',
+    'user.role.editor',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00010_event_type', $configs);
+}

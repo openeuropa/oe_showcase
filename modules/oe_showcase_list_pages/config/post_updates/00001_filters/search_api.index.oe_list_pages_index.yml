@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.oe_sc_event_dates
+    - field.storage.node.field_event_type
     - field.storage.node.oe_summary
     - field.storage.node.oe_sc_event_location
     - field.storage.node.oe_project_budget
@@ -27,6 +28,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  field_event_type:
+    label: 'Event type'
+    datasource_id: 'entity:node'
+    property_path: field_event_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
   oe_project_budget:
     label: 'Overall budget'
     datasource_id: 'entity:node'
