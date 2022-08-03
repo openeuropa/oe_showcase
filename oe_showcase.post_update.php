@@ -408,6 +408,8 @@ function oe_showcase_post_update_00016(): void {
     'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_event.teaser',
     'user.role.editor',
+    'facets.facet.oelp_oe_sc_event__type',
+    'search_api.index.oe_list_pages_index',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00010_event_type', $configs);
 }
