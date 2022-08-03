@@ -162,7 +162,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
-    $assert_session->elementContains('css', 'a[target="_blank"] > button', 'Register');
+    $assert_session->elementContains('css', 'a[target="_blank"]', 'Register');
 
     $this->assertSocialShareBlock();
   }
