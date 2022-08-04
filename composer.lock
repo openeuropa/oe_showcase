@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48336569664fa4e3f28a3bf6966b35e0",
+    "content-hash": "44e258314df17907c075a5d5bfcfe18f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -947,12 +947,12 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
                     "name": "acbramley",
                     "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
                     "name": "fenstrat",
@@ -1183,16 +1183,16 @@
             ],
             "authors": [
                 {
+                    "name": "andypost",
+                    "homepage": "https://www.drupal.org/user/118908"
+                },
+                {
                     "name": "Arla",
                     "homepage": "https://www.drupal.org/user/226712"
                 },
                 {
                     "name": "Berdir",
                     "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "andypost",
-                    "homepage": "https://www.drupal.org/user/118908"
                 },
                 {
                     "name": "jibran",
@@ -1883,20 +1883,16 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Sam152",
-                    "homepage": "https://www.drupal.org/user/1485048"
-                },
-                {
                     "name": "andypost",
                     "homepage": "https://www.drupal.org/user/118908"
                 },
                 {
                     "name": "benjy",
                     "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
                     "name": "dawehner",
@@ -1909,6 +1905,10 @@
                 {
                     "name": "larowlan",
                     "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "Sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
                 }
             ],
             "description": "Imports default content when a module is enabled",
@@ -1954,7 +1954,7 @@
             "extra": {
                 "drupal": {
                     "version": "1.0.0-alpha3",
-                    "datestamp": "1644506955",
+                    "datestamp": "1644506974",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -2013,10 +2013,6 @@
             ],
             "authors": [
                 {
-                    "name": "Upchuk",
-                    "homepage": "https://www.drupal.org/user/1885838"
-                },
-                {
                     "name": "hernani",
                     "homepage": "https://www.drupal.org/user/448086"
                 },
@@ -2027,6 +2023,10 @@
                 {
                     "name": "joevagyok",
                     "homepage": "https://www.drupal.org/user/2876343"
+                },
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
                 }
             ],
             "description": "Drupal module that contains the Description list field type.",
@@ -2321,10 +2321,6 @@
             ],
             "authors": [
                 {
-                    "name": "Upchuk",
-                    "homepage": "https://www.drupal.org/user/1885838"
-                },
-                {
                     "name": "ademarco",
                     "homepage": "https://www.drupal.org/user/186696"
                 },
@@ -2339,6 +2335,10 @@
                 {
                     "name": "sardara",
                     "homepage": "https://www.drupal.org/user/2353864"
+                },
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
                 }
             ],
             "description": "Provides an entity meta relation entity and associated behaviors for relations.",
@@ -2534,10 +2534,6 @@
             ],
             "authors": [
                 {
-                    "name": "Upchuk",
-                    "homepage": "https://www.drupal.org/user/1885838"
-                },
-                {
                     "name": "ademarco",
                     "homepage": "https://www.drupal.org/user/186696"
                 },
@@ -2552,6 +2548,10 @@
                 {
                     "name": "sardara",
                     "homepage": "https://www.drupal.org/user/2353864"
+                },
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
                 }
             ],
             "homepage": "https://www.drupal.org/project/entity_meta_relation",
@@ -2764,20 +2764,20 @@
                     "homepage": "https://www.drupal.org/node/2348769/committers"
                 },
                 {
-                    "name": "StryKaizer",
-                    "homepage": "https://www.drupal.org/user/462700"
-                },
-                {
-                    "name": "borisson_",
-                    "homepage": "https://www.drupal.org/user/2393360"
-                },
-                {
                     "name": "drunken monkey",
                     "homepage": "https://www.drupal.org/user/205582"
                 },
                 {
                     "name": "mkalkbrenner",
                     "homepage": "https://www.drupal.org/user/124705"
+                },
+                {
+                    "name": "Nick_vh",
+                    "homepage": "https://www.drupal.org/user/122682"
+                },
+                {
+                    "name": "StryKaizer",
+                    "homepage": "https://www.drupal.org/user/462700"
                 }
             ],
             "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
@@ -2944,10 +2944,6 @@
             ],
             "authors": [
                 {
-                    "name": "RobLoach",
-                    "homepage": "https://www.drupal.org/user/61114"
-                },
-                {
                     "name": "japerry",
                     "homepage": "https://www.drupal.org/user/45640"
                 },
@@ -2962,6 +2958,10 @@
                 {
                     "name": "markus_petrux",
                     "homepage": "https://www.drupal.org/user/39593"
+                },
+                {
+                    "name": "RobLoach",
+                    "homepage": "https://www.drupal.org/user/61114"
                 }
             ],
             "description": "The Field Permissions module allows site administrators to set field-level permissions to edit, view and create fields on any entity.",
@@ -3100,16 +3100,16 @@
             "authors": [
                 {
                     "name": "Jeff Geerling",
-                    "homepage": "https://www.drupal.org/user/213194",
+                    "homepage": "https://www.drupal.org/user/389011",
                     "email": "geerlingguy@mac.com"
+                },
+                {
+                    "name": "Manuel Garcia",
+                    "homepage": "https://www.drupal.org/user/213194"
                 },
                 {
                     "name": "TR",
                     "homepage": "https://www.drupal.org/user/202830"
-                },
-                {
-                    "name": "geerlingguy",
-                    "homepage": "https://www.drupal.org/user/389011"
                 },
                 {
                     "name": "vijaycs85",
@@ -3865,16 +3865,12 @@
             ],
             "authors": [
                 {
-                    "name": "Delphine Lepers",
-                    "homepage": "https://www.drupal.org/user/821730"
-                },
-                {
-                    "name": "Upchuk",
-                    "homepage": "https://www.drupal.org/user/1885838"
-                },
-                {
                     "name": "albapb",
                     "homepage": "https://www.drupal.org/user/3572561"
+                },
+                {
+                    "name": "Delphine Lepers",
+                    "homepage": "https://www.drupal.org/user/821730"
                 },
                 {
                     "name": "hernani",
@@ -3903,6 +3899,10 @@
                 {
                     "name": "stred",
                     "homepage": "https://www.drupal.org/user/956840"
+                },
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
                 }
             ],
             "description": "Media AV Portal adds European Audiovisual Services as a supported media provider.",
@@ -4001,6 +4001,10 @@
                 {
                     "name": "hernani",
                     "homepage": "https://www.drupal.org/user/448086"
+                },
+                {
+                    "name": "ieguskiza",
+                    "homepage": "https://www.drupal.org/user/2652665"
                 },
                 {
                     "name": "sardara",
@@ -6810,13 +6814,14 @@
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_corporate_countries": "^2.0",
                 "openeuropa/oe_corporate_site_info": "^1.0",
-                "openeuropa/oe_link_lists": "dev-master",
+                "openeuropa/oe_link_lists": "~0.16.0",
                 "openeuropa/oe_multilingual": "^1.10",
                 "openeuropa/oe_time_caching": "^1.1",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "openeuropa/task-runner-ensure-behat-batching": "^1.0",
                 "phpspec/prophecy-phpunit": "^2"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -6874,7 +6879,7 @@
             "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_content/issues",
-                "source": "https://github.com/openeuropa/oe_content/tree/3.x"
+                "source": "https://github.com/openeuropa/oe_content/tree/3.0.0-alpha4"
             },
             "time": "2022-07-25T08:18:05+00:00"
         },
