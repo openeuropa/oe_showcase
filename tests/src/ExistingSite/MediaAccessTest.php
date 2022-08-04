@@ -4,10 +4,9 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
-use Drupal\file\Entity\File;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
+use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
-use weitzman\DrupalTestTraits\Entity\MediaCreationTrait;
 
 /**
  * Tests access to media CRUD and overview routes.
@@ -31,72 +30,9 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $pdf = File::create([
-      'uri' => \Drupal::service('file_system')->copy(
-        \Drupal::service('extension.list.module')->getPath('oe_media') . '/tests/fixtures/sample.pdf',
-        'public://sample.pdf'
-      ),
-    ]);
-    $pdf->save();
-    $this->markEntityForCleanup($pdf);
-
-    $image = File::create([
-      'uri' => \Drupal::service('file_system')->copy(
-        \Drupal::root() . '/core/misc/druplicon.png',
-        'public://image.png'
-      ),
-    ]);
-    $image->save();
-    $this->markEntityForCleanup($image);
-
-    // Prepare a list of minimum required fields for each media type.
-    $bundles = [
-      'remote_video' => [
-        'name' => NULL,
-        'oe_media_oembed_video' => 'https://www.youtube.com/watch?v=1-g73ty9v04',
-      ],
-      'av_portal_photo' => [
-        'name' => NULL,
-        'oe_media_avportal_photo' => 'P-038924/00-15',
-      ],
-      'av_portal_video' => [
-        'name' => NULL,
-        'oe_media_avportal_video' => 'I-163162',
-      ],
-      'webtools_chart' => [
-        'oe_media_webtools' => '{"service":"chart"}',
-      ],
-      'webtools_map' => [
-        'oe_media_webtools' => '{"service":"map"}',
-      ],
-      'webtools_social_feed' => [
-        'oe_media_webtools' => '{"service":"social_feed"}',
-      ],
-      'webtools_op_publication_list' => [
-        'oe_media_webtools' => '{"service":"opwidget"}',
-      ],
-      'webtools_generic' => [
-        'oe_media_webtools' => '{"service":"share"}',
-      ],
-      'document' => [
-        'oe_media_file_type' => 'local',
-        'oe_media_file' => [
-          'target_id' => $pdf->id(),
-        ],
-      ],
-      'image' => [
-        'oe_media_image' => [
-          'target_id' => $image->id(),
-          'alt' => 'Alt text',
-        ],
-      ],
-    ];
-
-    foreach ($bundles as $bundle => $data) {
-      $this->medias[$bundle] = $this->createMedia($data + [
-        'bundle' => $bundle,
-        'name' => $bundle . ' title',
-      ]);
+    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
+    foreach (array_keys($bundles) as $bundle) {
+      $this->medias[$bundle] = $this->createMediaByBundle($bundle);
     }
   }
 
@@ -109,6 +45,7 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
     $disallowed_media_bundles = [
       'webtools_op_publication_list',
       'webtools_generic',
+      'webtools_countdown',
     ];
 
     $restricted_paths = [];

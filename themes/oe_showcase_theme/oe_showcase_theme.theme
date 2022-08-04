@@ -54,3 +54,16 @@ function oe_showcase_theme_preprocess_user__full(array &$variables): void {
   CacheableMetadata::createFromObject($variables['image'])
     ->applyTo($variables);
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for document media bundle.
+ *
+ * Match the style of the default view mode. We use a separate view mode to
+ * embed so that, if we ever need changes to the view mode used for embedding,
+ * we can apply them in a separate way from the default view mode.
+ * The view mode used to render is saved in the content, so it's not easy to
+ * change it.
+ */
+function oe_showcase_theme_preprocess_media__document__showcase_embed(&$variables): void {
+  oe_whitelabel_preprocess_media__document__default($variables);
+}

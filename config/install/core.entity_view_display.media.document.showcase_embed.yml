@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.showcase_embed
+    - field.field.media.document.oe_media_file
+    - field.field.media.document.oe_media_file_type
+    - field.field.media.document.oe_media_remote_file
+    - media.type.document
+  module:
+    - file
+    - file_link
+    - oe_oembed
+third_party_settings:
+  oe_oembed:
+    embeddable: true
+id: media.document.showcase_embed
+targetEntityType: media
+bundle: document
+mode: showcase_embed
+content:
+  oe_media_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  oe_media_remote_file:
+    type: file_link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+      format_size: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  oe_media_file_type: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
