@@ -126,7 +126,7 @@
                 "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202208041835...1.x.diff"
             },
             "openeuropa/oe_whitelabel": {
-                "Rework event register": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202207271650...OEL-1650.diff"
+                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202208051048...1.x.diff"
             }
         },
         "artifacts": {
