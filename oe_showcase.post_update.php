@@ -407,7 +407,6 @@ function oe_showcase_post_update_00016(): void {
     'core.entity_form_display.node.oe_sc_event.default',
     'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_event.teaser',
-    'user.role.editor',
     'facets.facet.oelp_oe_sc_event__location',
     'facets.facet.oelp_oe_sc_event__oe_sc_event_dates',
     'facets.facet.oelp_oe_sc_event__type',
@@ -420,4 +419,11 @@ function oe_showcase_post_update_00016(): void {
     'search_api.index.oe_list_pages_index',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00016_event_type_and_filters', $configs);
+
+  $editor = Role::load('editor');
+  $editor->grantPermission('access taxonomy overview');
+  $editor->grantPermission('create terms in event_type');
+  $editor->grantPermission('delete terms in event_type');
+  $editor->grantPermission('edit terms in event_type');
+  $editor->save();
 }
