@@ -397,7 +397,7 @@ function oe_showcase_post_update_00015(): void {
 }
 
 /**
- * Add Event type.
+ * Add Event type and update filters.
  */
 function oe_showcase_post_update_00016(): void {
   $configs = [
@@ -408,8 +408,16 @@ function oe_showcase_post_update_00016(): void {
     'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_event.teaser',
     'user.role.editor',
+    'facets.facet.oelp_oe_sc_event__location',
+    'facets.facet.oelp_oe_sc_event__oe_sc_event_dates',
     'facets.facet.oelp_oe_sc_event__type',
+    'facets.facet.oelp_oe_sc_person__title',
+    'facets.facet.oelp_oe_sc_project__budget',
+    'facets.facet.oelp_oe_sc_project__end_date',
+    'facets.facet.oelp_oe_sc_project__start_date',
+    'facets.facet.oelp_oe_sc_project__status',
+    'facets.facet.oelp_oe_sc_project__type',
     'search_api.index.oe_list_pages_index',
   ];
-  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00010_event_type', $configs);
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00016_event_type_and_filters', $configs);
 }
