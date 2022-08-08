@@ -454,3 +454,13 @@ function oe_showcase_post_update_00017(): void {
     }
   }
 }
+
+/**
+ * Remove field description in Facts and figures paragraph type.
+ */
+function oe_showcase_post_update_00018(): void {
+  $field_config_id = 'paragraph.oe_facts_figures.field_oe_paragraphs';
+  $field_config = FieldConfig::load($field_config_id);
+  $field_config->setDescription('');
+  $field_config->save();
+}
