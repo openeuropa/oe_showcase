@@ -8,6 +8,8 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
+use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -17,6 +19,8 @@ class EventTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
+  use AssertPathAccessTrait;
+  use UserTrait;
 
   /**
    * {@inheritdoc}
@@ -37,9 +41,10 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
 
     // Assert user without permission can't create event types.
-    $this->drupalGet('admin/structure/taxonomy/manage/event_type/add');
-    $assert_session->pageTextContains('You are not authorized to access this page.');
-    $assert_session->statusCodeEquals(403);
+    $this->assertPathsRequireRole([
+      'admin/structure/taxonomy/manage/event_type/overview',
+      'admin/structure/taxonomy/manage/event_type/add',
+    ], 'editor');
 
     // Assert editors can create event types.
     $user = $this->createUser([]);
