@@ -121,6 +121,12 @@
             },
             "openeuropa/oe_list_pages": {
                 "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
+            },
+            "openeuropa/oe_bootstrap_theme": {
+                "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202208041835...1.x.diff"
+            },
+            "openeuropa/oe_whitelabel": {
+                "latest": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202208051048...1.x.diff"
             }
         },
         "artifacts": {

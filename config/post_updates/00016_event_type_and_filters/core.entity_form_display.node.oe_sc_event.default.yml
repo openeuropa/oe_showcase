@@ -1,0 +1,157 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.oe_documents
+    - field.field.node.oe_sc_event.oe_featured_media
+    - field.field.node.oe_sc_event.oe_sc_event_dates
+    - field.field.node.oe_sc_event.oe_sc_event_location
+    - field.field.node.oe_sc_event.oe_sc_event_registration_url
+    - field.field.node.oe_sc_event.oe_summary
+    - node.type.oe_sc_event
+  module:
+    - address
+    - datetime_range
+    - link
+    - oe_content_featured_media_field
+    - path
+    - text
+id: node.oe_sc_event.default
+targetEntityType: node
+bundle: oe_sc_event
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_type:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  oe_documents:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_featured_media:
+    type: oe_featured_media_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_sc_event_dates:
+    type: daterange_default
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  oe_sc_event_location:
+    type: address_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  oe_sc_event_registration_url:
+    type: link_default
+    weight: 14
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  oe_summary:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true

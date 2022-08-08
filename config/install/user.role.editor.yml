@@ -18,6 +18,7 @@ dependencies:
     - node.type.oe_sc_news
     - node.type.oe_sc_person
     - node.type.oe_showcase_page
+    - taxonomy.vocabulary.event_type
   module:
     - entity_browser
     - filter
@@ -25,6 +26,7 @@ dependencies:
     - node
     - oe_content_entity_organisation
     - system
+    - taxonomy
     - toolbar
 id: editor
 label: Editor
@@ -35,6 +37,7 @@ permissions:
   - 'access content overview'
   - 'access embed_media entity browser pages'
   - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'create av_portal_photo media'
   - 'create av_portal_video media'
@@ -49,6 +52,7 @@ permissions:
   - 'create oe_sc_person content'
   - 'create oe_showcase_page content'
   - 'create remote_video media'
+  - 'create terms in event_type'
   - 'create webtools_chart media'
   - 'create webtools_map media'
   - 'create webtools_social_feed media'
@@ -74,6 +78,7 @@ permissions:
   - 'delete oe_sc_news revisions'
   - 'delete oe_sc_person revisions'
   - 'delete oe_showcase_page revisions'
+  - 'delete terms in event_type'
   - 'edit any av_portal_photo media'
   - 'edit any av_portal_video media'
   - 'edit any document media'
@@ -90,6 +95,7 @@ permissions:
   - 'edit any webtools_social_feed media'
   - 'edit oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'edit oe_organisation oe_stakeholder corporate entity'
+  - 'edit terms in event_type'
   - 'revert oe_list_page revisions'
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'

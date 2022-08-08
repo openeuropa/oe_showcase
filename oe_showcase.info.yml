@@ -90,6 +90,9 @@ themes:
 config_devel:
   install:
     - contact.settings
+    - core.entity_form_display.node.oe_sc_event.default
+    - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
+    - core.entity_view_display.node.oe_sc_event.teaser
     - easy_breadcrumb.settings
     - core.entity_view_display.media.av_portal_photo.showcase_embed
     - core.entity_view_display.media.av_portal_video.showcase_embed
@@ -110,11 +113,13 @@ config_devel:
     - field.field.node.oe_project.oe_summary
     - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_event_type
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
     - field.field.node.oe_sc_news.oe_summary
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_summary
+    - field.storage.node.field_event_type
     - filter.format.full_html
     - filter.format.rich_text
     - filter.format.simple_rich_text
@@ -125,7 +130,9 @@ config_devel:
     - pathauto.settings
     - purge_users.settings
     - roleassign.settings
+    - search_api.index.oe_list_pages_index
     - system.theme
+    - taxonomy.vocabulary.event_type
     - user.role.administrator
     - user.role.anonymous
     - user.role.authenticated

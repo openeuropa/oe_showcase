@@ -1,13 +1,13 @@
 langcode: en
 status: true
 dependencies: {  }
-id: oelp_oe_sc_event__location
-name: Location
-weight: 2
+id: oelp_oe_sc_event__type
+name: Type
+weight: 1
 min_count: 1
-url_alias: oelp_oe_sc_event__location
+url_alias: oelp_oe_sc_event__type
 facet_source_id: 'list_facet_source:node:oe_sc_event'
-field_identifier: oe_sc_event_location
+field_identifier: field_event_type
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -51,8 +51,8 @@ processor_configs:
     weights:
       build: 100
     settings: {  }
-  oe_list_pages_address_format_country_code:
-    processor_id: oe_list_pages_address_format_country_code
+  translate_entity:
+    processor_id: translate_entity
     weights:
       build: 5
     settings: {  }

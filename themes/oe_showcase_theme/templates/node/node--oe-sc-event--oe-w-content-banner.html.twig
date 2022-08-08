@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Override Event content banner display to add badges.
+ */
+#}
+{% set _badges = [] %}
+{% for _item in content.field_event_type|field_value %}
+  {% set _badges = _badges|merge([{
+    label: _item,
+    rounded_pill: true,
+  }]) %}
+{% endfor %}
+<div{{attributes}}>
+  {{ pattern('content_banner', {
+    background: 'gray',
+    title: label,
+    content: [
+      content.oe_summary,
+    ],
+    image: image,
+    links: links,
+    badges: _badges,
+  }) }}
+</div>
