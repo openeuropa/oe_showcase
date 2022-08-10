@@ -1,10 +1,30 @@
 # Change Log
 
+## [1.0.0-alpha7](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha7) (2022-08-09)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha6...1.0.0-alpha7)
+
+**Merged pull requests:**
+
+- OEL-1875: Allow to embed medias in the rich text editor. [\#178](https://github.com/openeuropa/oe_showcase/pull/178) ([brummbar](https://github.com/brummbar))
+- OEL-1650: Add Event type. [\#177](https://github.com/openeuropa/oe_showcase/pull/177) ([drishu](https://github.com/drishu))
+- OEL-1893: Update composer.lock for oe\_content 3.x. [\#176](https://github.com/openeuropa/oe_showcase/pull/176) ([drishu](https://github.com/drishu))
+- OEL-1893: Move to oe\_content version 3. [\#175](https://github.com/openeuropa/oe_showcase/pull/175) ([drishu](https://github.com/drishu))
+- OEL-1874: Manage site specific footer role [\#173](https://github.com/openeuropa/oe_showcase/pull/173) ([escuriola](https://github.com/escuriola))
+- OEL-1873: Manage menu items role [\#172](https://github.com/openeuropa/oe_showcase/pull/172) ([escuriola](https://github.com/escuriola))
+- OEL-1775: Enable social media follow in basic page. [\#171](https://github.com/openeuropa/oe_showcase/pull/171) ([escuriola](https://github.com/escuriola))
+- OEL-1761: Create administrator role [\#170](https://github.com/openeuropa/oe_showcase/pull/170) ([escuriola](https://github.com/escuriola))
+- OEL-1823: BCL Upgrade 0.24.1 [\#168](https://github.com/openeuropa/oe_showcase/pull/168) ([escuriola](https://github.com/escuriola))
+- OEL-1553: Person integration [\#166](https://github.com/openeuropa/oe_showcase/pull/166) ([escuriola](https://github.com/escuriola))
+- OEL-1516: Improve the README for oe\_showcase\_list\_pages. [\#165](https://github.com/openeuropa/oe_showcase/pull/165) ([donquixote](https://github.com/donquixote))
+- OEL-1439: Project list pages. [\#163](https://github.com/openeuropa/oe_showcase/pull/163) ([drishu](https://github.com/drishu))
+- OEL-1662: Add event registration url field [\#160](https://github.com/openeuropa/oe_showcase/pull/160) ([escuriola](https://github.com/escuriola))
+
 ## [1.0.0-alpha6](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha6) (2022-07-08)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha5...1.0.0-alpha6)
 
 **Merged pull requests:**
 
+- Prepare for release 1.0.0-alpha6 [\#169](https://github.com/openeuropa/oe_showcase/pull/169) ([brummbar](https://github.com/brummbar))
 - OEL-1727: Run profile post\_update hooks last. [\#167](https://github.com/openeuropa/oe_showcase/pull/167) ([brummbar](https://github.com/brummbar))
 - OEL-1653: Show time in event dates. [\#162](https://github.com/openeuropa/oe_showcase/pull/162) ([brummbar](https://github.com/brummbar))
 - OEL-1169: OE Webtools ETrans integration [\#142](https://github.com/openeuropa/oe_showcase/pull/142) ([escuriola](https://github.com/escuriola))
