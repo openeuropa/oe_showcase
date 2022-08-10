@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a5ef2d188601c7cade1ebe23c2b8ba0",
+    "content-hash": "df5623cdba46eced5f120f913009aaf4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2242,9 +2242,9 @@
         },
         {
             "name": "drupal/emr",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "require": {
-                "drupal/core": "^9.2",
+                "drupal/core": "^9.3",
                 "drupal/entity_meta_relation": "^1",
                 "drupal/entity_reference_revisions": "^1.6",
                 "drupal/inline_entity_form": "^1.0",
@@ -2253,11 +2253,10 @@
             "require-dev": {
                 "composer/installers": "~1.5",
                 "drupal/config_devel": "^1.2",
-                "drupal/core-composer-scaffold": "^9.2",
-                "drupal/core-dev": "^9.2",
+                "drupal/core-composer-scaffold": "^9.3",
+                "drupal/core-dev": "^9.3",
                 "drupal/drupal-extension": "^4.0",
                 "drush/drush": "^10.3",
-                "egulias/email-validator": "^2.1.22 || ^3.0",
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^1 || ^2"
@@ -2265,8 +2264,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1644315955",
+                    "version": "8.x-1.2",
+                    "datestamp": "1659424015",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2292,10 +2291,7 @@
                     "locations": {
                         "web-root": "./build"
                     }
-                },
-                "_readme": [
-                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped."
-                ]
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -2493,20 +2489,20 @@
         },
         {
             "name": "drupal/entity_meta_relation",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_meta_relation.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_meta_relation-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "cbbae389fcc64eed8c6e78a7ffb16888fa644f54"
+                "url": "https://ftp.drupal.org/files/projects/entity_meta_relation-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "3411eac7e5261c174de3cfb6967004e78621567b"
             },
             "require": {
-                "drupal/core": "^9.2"
+                "drupal/core": "^9.3"
             },
             "require-dev": {
                 "drupal/emr": "*",
@@ -2520,8 +2516,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1644315955",
+                    "version": "8.x-1.2",
+                    "datestamp": "1659424015",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2716,20 +2712,20 @@
         },
         {
             "name": "drupal/facets",
-            "version": "2.0.2",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/facets.git",
-                "reference": "2.0.2"
+                "reference": "2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/facets-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "17afc46d3f4e4300e8e69f23b3b01a4935b57104"
+                "url": "https://ftp.drupal.org/files/projects/facets-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "8be11b5bca088212270603cd3f3e69185022e379"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10.0"
+                "drupal/core": "^9.3 || ^10.0"
             },
             "conflict": {
                 "drupal/search_api": "<1.14"
@@ -2737,7 +2733,7 @@
             "require-dev": {
                 "drupal/jquery_ui_slider": "~1.1",
                 "drupal/jquery_ui_touch_punch": "~1.0",
-                "drupal/search_api": "~1.21"
+                "drupal/search_api": "^1.25||1.x-dev"
             },
             "suggest": {
                 "drupal/jquery_ui_slider": "Required for the 'Facets Range Widget' module to work",
@@ -2746,8 +2742,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1649151557",
+                    "version": "2.0.5",
+                    "datestamp": "1658315614",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3913,29 +3909,28 @@
         },
         {
             "name": "drupal/multivalue_form_element",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/multivalue_form_element.git",
-                "reference": "1.0.0-beta3"
+                "reference": "1.0.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multivalue_form_element-1.0.0-beta3.zip",
-                "reference": "1.0.0-beta3",
-                "shasum": "8e0e46a0bcebdcc09108362598c760adfaecd00a"
+                "url": "https://ftp.drupal.org/files/projects/multivalue_form_element-1.0.0-beta4.zip",
+                "reference": "1.0.0-beta4",
+                "shasum": "e44990d002988c734e65551cf3534d57801a96a5"
             },
             "require": {
-                "drupal/core": "^9.2",
+                "drupal/core": "^9.3",
                 "php": ">=7.4"
             },
             "require-dev": {
                 "composer/installers": "^1.11",
-                "drupal/core-composer-scaffold": "^9.2",
-                "drupal/core-dev": "^9.2",
+                "drupal/core-composer-scaffold": "^9.3",
+                "drupal/core-dev": "^9.3",
                 "drupal/drupal-extension": "^4.1",
                 "drush/drush": "^10.3",
-                "egulias/email-validator": "^2.1.22 || ^3.0",
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
                 "phpspec/prophecy-phpunit": "^2"
@@ -3943,8 +3938,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta3",
-                    "datestamp": "1644318395",
+                    "version": "1.0.0-beta4",
+                    "datestamp": "1659428979",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3970,10 +3965,7 @@
                     "build/themes/contrib/{$name}": [
                         "type:drupal-theme"
                     ]
-                },
-                "_readme": [
-                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped."
-                ]
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -4602,20 +4594,20 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.23.0",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.23"
+                "reference": "8.x-1.25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.23.zip",
-                "reference": "8.x-1.23",
-                "shasum": "7de5425bba5b8daa37e98d47b677459dfb1abbe7"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.25.zip",
+                "reference": "8.x-1.25",
+                "shasum": "823bf5a6010cd08c7d1b287fcd855fbf81140e39"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2 || ^10.0"
             },
             "conflict": {
                 "drupal/search_api_solr": "2.* || 3.0 || 3.1"
@@ -4633,8 +4625,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.23",
-                    "datestamp": "1642935837",
+                    "version": "8.x-1.25",
+                    "datestamp": "1658149514",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7274,20 +7266,20 @@
         },
         {
             "name": "openeuropa/oe_list_pages",
-            "version": "0.16.0",
+            "version": "0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_list_pages.git",
-                "reference": "1feb06caca33395563e7d067e7b3189869a6d446"
+                "reference": "752ca25d1c06f3a725423a11e4afdf4c8a3e5f14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_list_pages/zipball/1feb06caca33395563e7d067e7b3189869a6d446",
-                "reference": "1feb06caca33395563e7d067e7b3189869a6d446",
+                "url": "https://api.github.com/repos/openeuropa/oe_list_pages/zipball/752ca25d1c06f3a725423a11e4afdf4c8a3e5f14",
+                "reference": "752ca25d1c06f3a725423a11e4afdf4c8a3e5f14",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9.2",
+                "drupal/core": "^9.3",
                 "drupal/emr": "^1.1",
                 "drupal/facets": "^2.0",
                 "drupal/multivalue_form_element": "^1.0@beta",
@@ -7300,17 +7292,16 @@
                 "composer/xdebug-handler": "^2.0",
                 "drupal/address": "^1.8",
                 "drupal/config_devel": "^1.2",
-                "drupal/core-composer-scaffold": "^9.2",
-                "drupal/core-dev": "^9.2",
+                "drupal/core-composer-scaffold": "^9.3",
+                "drupal/core-dev": "^9.3",
                 "drupal/ctools": "^3.7",
                 "drupal/drupal-extension": "^4.0",
                 "drupal/extra_field": "^2.1",
-                "drupal/inline_entity_form": "^1.0-rc9",
+                "drupal/inline_entity_form": "^1.0-rc12",
                 "drupal/token": "^1.10",
                 "drush/drush": "^10.3",
-                "egulias/email-validator": "^2.1.22 || ^3.0",
                 "openeuropa/code-review": "^2.0",
-                "openeuropa/oe_link_lists": "^0.14",
+                "openeuropa/oe_link_lists": "~0.16.0",
                 "openeuropa/oe_multilingual": "^1.10",
                 "openeuropa/open_vocabularies": "^1.0-alpha6",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta5",
@@ -7342,8 +7333,7 @@
                     }
                 },
                 "_readme": [
-                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.2 compatibility.",
-                    "Explicit requirement for egulias/email-validator due to https://www.drupal.org/project/drupal/issues/3061074#comment-14300579. It can be removed when Drupal core 9.2 support is droppped.",
+                    "Explicit lower version requirement of drupal/ctools due to Drupal core 9.3 compatibility.",
                     "Explicit minimum version requirement for symfony/dom-crawler due to its lower versions using the deprecated function libxml_disable_entity_loader() in PHP8.",
                     "Explicit requirement of drupal/token module due to PHP 8 compatbility."
                 ]
@@ -7360,9 +7350,9 @@
             "description": "OpenEuropa List Pages.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_list_pages/issues",
-                "source": "https://github.com/openeuropa/oe_list_pages/tree/0.16.0"
+                "source": "https://github.com/openeuropa/oe_list_pages/tree/0.19.0"
             },
-            "time": "2022-03-07T12:40:33+00:00"
+            "time": "2022-08-02T08:44:05+00:00"
         },
         {
             "name": "openeuropa/oe_media",
@@ -9779,16 +9769,16 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.4.37",
+            "version": "v4.4.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "41d1e741a292574887629369400820c9645e8a87"
+                "reference": "583f56160f716dd435f1cd721fd14b548f4bb510"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/41d1e741a292574887629369400820c9645e8a87",
-                "reference": "41d1e741a292574887629369400820c9645e8a87",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/583f56160f716dd435f1cd721fd14b548f4bb510",
+                "reference": "583f56160f716dd435f1cd721fd14b548f4bb510",
                 "shasum": ""
             },
             "require": {
@@ -9826,7 +9816,7 @@
                 "options"
             ],
             "support": {
-                "source": "https://github.com/symfony/options-resolver/tree/v4.4.37"
+                "source": "https://github.com/symfony/options-resolver/tree/v4.4.44"
             },
             "funding": [
                 {
@@ -9842,7 +9832,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:41:36+00:00"
+            "time": "2022-07-20T09:59:04+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

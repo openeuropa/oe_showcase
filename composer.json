@@ -20,7 +20,7 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity_browser_enhanced": "^1.0",
         "drupal/extra_field": "^2.1",
-        "drupal/facets": "^2.0",
+        "drupal/facets": "^2.0.5",
         "drupal/facets_form": "1.0.0-alpha3",
         "drupal/field_group": "^3.2",
         "drupal/file_link": "^2.0.6",
@@ -47,7 +47,7 @@
         "openeuropa/oe_corporate_blocks": "^4.4",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha3",
         "openeuropa/oe_dashboard_agent": "^0.4.0",
-        "openeuropa/oe_list_pages": "^0.16",
+        "openeuropa/oe_list_pages": "^0.19",
         "openeuropa/oe_media": "^1.14",
         "openeuropa/oe_multilingual": "^1.9",
         "openeuropa/oe_oembed": "^0.3.0",
@@ -115,12 +115,6 @@
         "patches": {
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch"
-            },
-            "drupal/facets": {
-                "https://www.drupal.org/project/facets/issues/3262863": "https://git.drupalcode.org/project/facets/-/commit/88fd8a88a7206ea2e3828718fc404665ee20b064.diff"
-            },
-            "openeuropa/oe_list_pages": {
-                "Support Address field in country code processor": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_list_pages/pull/139.diff"
             },
             "openeuropa/oe_bootstrap_theme": {
                 "latest": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202208041835...1.x.diff"
