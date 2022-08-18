@@ -427,3 +427,30 @@ function oe_showcase_post_update_00016(): void {
   $editor->grantPermission('edit terms in event_type');
   $editor->save();
 }
+
+/**
+ * Update pathauto node type conditions from node_type to entity_bundle.
+ *
+ * @see https://www.drupal.org/project/ctools/issues/3300682
+ * @see https://www.drupal.org/project/pathauto/issues/3222776
+ * @see pathauto_update_8108()
+ */
+function oe_showcase_post_update_00017(): void {
+  // Load all pattern configuration entities.
+  foreach (\Drupal::configFactory()->listAll('pathauto.pattern.') as $pattern_config_name) {
+    $pattern_config = \Drupal::configFactory()->getEditable($pattern_config_name);
+
+    // Loop patterns and swap the node_type plugin by the entity_bundle:node
+    // plugin.
+    if ($pattern_config->get('type') === 'canonical_entities:node') {
+      $selection_criteria = $pattern_config->get('selection_criteria');
+      foreach ($selection_criteria as $uuid => $condition) {
+        if ($condition['id'] === 'node_type') {
+          $pattern_config->set("selection_criteria.$uuid.id", 'entity_bundle:node');
+          $pattern_config->save();
+          break;
+        }
+      }
+    }
+  }
+}

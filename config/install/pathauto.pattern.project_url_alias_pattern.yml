@@ -16,6 +16,14 @@ selection_criteria:
       node: node
     bundles:
       oe_project: oe_project
+  bc4608c7-8616-4a8e-a9e5-dbfaadb4e4c4:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: bc4608c7-8616-4a8e-a9e5-dbfaadb4e4c4
+    context_mapping:
+      node: node
+    bundles:
+      oe_project: oe_project
 selection_logic: and
 weight: -5
 relationships: {  }
