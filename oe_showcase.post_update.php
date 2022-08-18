@@ -433,6 +433,7 @@ function oe_showcase_post_update_00016(): void {
  *
  * @see https://www.drupal.org/project/ctools/issues/3300682
  * @see https://www.drupal.org/project/pathauto/issues/3222776
+ * @see pathauto_update_8108()
  */
 function oe_showcase_post_update_00017(): void {
   // Load all pattern configuration entities.
