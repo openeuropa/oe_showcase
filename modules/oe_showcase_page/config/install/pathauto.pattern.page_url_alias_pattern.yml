@@ -10,12 +10,20 @@ pattern: 'pages/[node:title]'
 selection_criteria:
   417b127d-e4cb-4b0f-a3c2-f20889cb6d69:
     id: node_type
-    bundles:
-      oe_showcase_page: oe_showcase_page
     negate: false
+    uuid: 417b127d-e4cb-4b0f-a3c2-f20889cb6d69
     context_mapping:
       node: node
-    uuid: 417b127d-e4cb-4b0f-a3c2-f20889cb6d69
+    bundles:
+      oe_showcase_page: oe_showcase_page
+  7beffba1-7e8b-42c7-be47-8bbdd6502583:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7beffba1-7e8b-42c7-be47-8bbdd6502583
+    context_mapping:
+      node: node
+    bundles:
+      oe_showcase_page: oe_showcase_page
 selection_logic: and
 weight: -5
 relationships: {  }
