@@ -1,10 +1,19 @@
 # Change Log
 
-## [1.0.0-alpha7](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha7) (2022-08-09)
+## [1.0.0-beta1](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta1) (2022-08-18)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha7...1.0.0-beta1)
+
+**Merged pull requests:**
+
+- OEL-1952: Adapt to pathauto node type conditions change. [\#184](https://github.com/openeuropa/oe_showcase/pull/184) ([drishu](https://github.com/drishu))
+
+## [1.0.0-alpha7](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha7) (2022-08-10)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha6...1.0.0-alpha7)
 
 **Merged pull requests:**
 
+- OEL-1931: Update list pages and search index. [\#181](https://github.com/openeuropa/oe_showcase/pull/181) ([drishu](https://github.com/drishu))
+- Prepare release 1.0.0-alpha7. [\#180](https://github.com/openeuropa/oe_showcase/pull/180) ([drishu](https://github.com/drishu))
 - OEL-1875: Allow to embed medias in the rich text editor. [\#178](https://github.com/openeuropa/oe_showcase/pull/178) ([brummbar](https://github.com/brummbar))
 - OEL-1650: Add Event type. [\#177](https://github.com/openeuropa/oe_showcase/pull/177) ([drishu](https://github.com/drishu))
 - OEL-1893: Update composer.lock for oe\_content 3.x. [\#176](https://github.com/openeuropa/oe_showcase/pull/176) ([drishu](https://github.com/drishu))
