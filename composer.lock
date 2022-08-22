@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e211519cf518198624b3a835961a98d0",
+    "content-hash": "848777bb405541f884726ab09d29785a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7910,16 +7910,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.0.0-beta5",
+            "version": "0.1.202208221749",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "47b44a02a938cb9739acc8c8eb736708b3b96355"
+                "reference": "fb0f3105a42c5f69f987761a5104e4696528c829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/47b44a02a938cb9739acc8c8eb736708b3b96355",
-                "reference": "47b44a02a938cb9739acc8c8eb736708b3b96355",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/fb0f3105a42c5f69f987761a5104e4696528c829",
+                "reference": "fb0f3105a42c5f69f987761a5104e4696528c829",
                 "shasum": ""
             },
             "require": {
@@ -8032,9 +8032,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.0.0-beta5"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202208221749"
             },
-            "time": "2022-08-09T16:34:03+00:00"
+            "time": "2022-08-22T15:49:03+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -18754,5 +18754,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
