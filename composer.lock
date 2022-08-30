@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ed260a1a2cf6553bb2333679d1c2ec9",
+    "content-hash": "723c08fc5ec6f28a54cfc7239b8dadc4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7958,16 +7958,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202208221749",
+            "version": "0.1913.202208301702",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "fb0f3105a42c5f69f987761a5104e4696528c829"
+                "reference": "0535558a155ad41d6c4a720a51cb3df3d9d468c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/fb0f3105a42c5f69f987761a5104e4696528c829",
-                "reference": "fb0f3105a42c5f69f987761a5104e4696528c829",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/0535558a155ad41d6c4a720a51cb3df3d9d468c8",
+                "reference": "0535558a155ad41d6c4a720a51cb3df3d9d468c8",
                 "shasum": ""
             },
             "require": {
@@ -8015,7 +8015,7 @@
                 "openeuropa/oe_list_pages": "^0.16",
                 "openeuropa/oe_media": "^1.14",
                 "openeuropa/oe_multilingual": "^1.9",
-                "openeuropa/oe_paragraphs": "^1.13",
+                "openeuropa/oe_paragraphs": "^1.14",
                 "openeuropa/oe_starter_content": "^1.0.0-beta2",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
@@ -8036,6 +8036,9 @@
                 "patches": {
                     "drupal/entity_reference_revisions": {
                         "https://www.drupal.org/project/entity_reference_revisions/issues/2937835": "https://www.drupal.org/files/issues/2021-03-26/entity_reference_revisions-field_formatter_label-2937835-36.patch"
+                    },
+                    "openeuropa/oe_bootstrap_theme": {
+                        "OEL-1912": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_bootstrap_theme/pull/265.diff"
                     }
                 },
                 "drupal-scaffold": {
@@ -8080,9 +8083,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202208221749"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1913.202208301702"
             },
-            "time": "2022-08-22T15:49:03+00:00"
+            "time": "2022-08-30T11:17:00+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
