@@ -37,6 +37,7 @@ install:
   - oe_oembed
   - oe_paragraphs
   - oe_paragraphs_banner
+  - oe_paragraphs_carousel
   - oe_paragraphs_chart
   - oe_paragraphs_document
   - oe_paragraphs_map

@@ -464,3 +464,10 @@ function oe_showcase_post_update_00018(): void {
   $field_config->setDescription('');
   $field_config->save();
 }
+
+/**
+ * Enable carousel functionality.
+ */
+function oe_showcase_post_update_00019(): void {
+  \Drupal::service('module_installer')->install(['oe_paragraphs_carousel']);
+}
