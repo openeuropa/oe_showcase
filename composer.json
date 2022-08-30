@@ -28,7 +28,7 @@
         "drupal/inline_entity_form": "^1.0-rc12",
         "drupal/json_field": "^1.0@RC",
         "drupal/legal": "^2.0",
-        "drupal/paragraphs": "^1.13",
+        "drupal/paragraphs": "^1.14",
         "drupal/purge_users": "^3.1",
         "drupal/redirect": "^1.7",
         "drupal/roleassign": "^1.0@beta",
