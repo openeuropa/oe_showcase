@@ -8,11 +8,14 @@ use Behat\Mink\Element\NodeElement;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 
 /**
  * Tests the 'oe_showcase_page' content type.
  */
 class PageTest extends ShowcaseExistingSiteTestBase {
+
+  use MediaCreationTrait;
 
   /**
    * {@inheritdoc}
@@ -27,9 +30,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Create test Showcase Page content.
+   * Create test Page content.
    */
-  public function testCreateShowCasePage() {
+  public function testCreatePage() {
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
@@ -51,6 +54,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       [
         'Add Accordion',
         'Add Banner',
+        'Add Carousel',
         'Add Chart',
         'Add Contact form',
         'Add Content row',
@@ -326,6 +330,53 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'linkedin',
     );
 
+    // Add Carousel paragraph.
+    $media_1 = $this->createImageMedia(['name' => 'First image']);
+    $media_2 = $this->createImageMedia(['name' => 'Second image']);
+
+    $page->pressButton('Add Carousel');
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_title][0][value]',
+      'Carousel item 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_text][0][value]',
+      'Caption 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_link][0][uri]',
+      'https://www.example1.com'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_link][0][title]',
+      'Link 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_media][0][target_id]',
+      'First image'
+    );
+    $this->submitForm([], 'Add Carousel item');
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_title][0][value]',
+      'Carousel item 2'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_text][0][value]',
+      'Caption 2'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_link][0][uri]',
+      'https://www.example2.com'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_link][0][title]',
+      'Link 2'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_media][0][target_id]',
+      'Second image'
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -391,6 +442,24 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Social media follow.
     $assert_session->pageTextContains('Social share links');
     $assert_session->pageTextContains('Linkedin profile');
+
+    // Assert Carousel.
+    $assert_session->pageTextContains('Carousel item 1');
+    $assert_session->pageTextContains('Caption 1');
+    $assert_session->pageTextContains('Link 1');
+    $assert_session->linkByHrefExists('https://www.example1.com');
+    $fid = $media_1->getSource()->getSourceFieldValue($media_1);
+    $file = File::load($fid);
+    $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    $assert_session->elementAttributeContains('css', '.carousel-item:nth-child(1) img', 'src', $url);
+    $assert_session->pageTextContains('Carousel item 2');
+    $assert_session->pageTextContains('Caption 2');
+    $assert_session->pageTextContains('Link 2');
+    $assert_session->linkByHrefExists('https://www.example2.com');
+    $fid = $media_2->getSource()->getSourceFieldValue($media_2);
+    $file = File::load($fid);
+    $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    $assert_session->elementAttributeContains('css', '.carousel-item:nth-child(2) img', 'src', $url);
 
     $this->assertSocialShareBlock();
   }
