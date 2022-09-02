@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase_page\ExistingSite;
 use Behat\Mink\Element\NodeElement;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\CarouselPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 
@@ -440,22 +441,41 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Linkedin profile');
 
     // Assert Carousel.
-    $assert_session->pageTextContains('Carousel item 1');
-    $assert_session->pageTextContains('Caption 1');
-    $assert_session->pageTextContains('Link 1');
-    $assert_session->linkByHrefExists('https://www.example1.com');
     $fid = $media_1->getSource()->getSourceFieldValue($media_1);
     $file = File::load($fid);
     $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-    $assert_session->elementAttributeContains('css', '.carousel-item:nth-child(1) img', 'src', $url);
-    $assert_session->pageTextContains('Carousel item 2');
-    $assert_session->pageTextContains('Caption 2');
-    $assert_session->pageTextContains('Link 2');
-    $assert_session->linkByHrefExists('https://www.example2.com');
-    $fid = $media_2->getSource()->getSourceFieldValue($media_2);
-    $file = File::load($fid);
-    $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-    $assert_session->elementAttributeContains('css', '.carousel-item:nth-child(2) img', 'src', $url);
+
+    $paragraph = $assert_session->elementExists('css', 'div.carousel');
+
+    $assert = new CarouselPatternAssert();
+    $expected_values = [
+      'items' => [
+        [
+          'caption_title' => 'Carousel item 1',
+          'caption' => 'Caption 1',
+          'link' => [
+            'label' => 'Link 1',
+            'path' => 'https://www.example1.com',
+          ],
+          'image' => [
+            'src' => $url,
+            'alt' => 'Alt text',
+          ],
+        ],
+        [
+          'caption' => 'Caption 2',
+          'link' => [
+            'label' => 'Link 2',
+            'path' => 'https://www.example2.com',
+          ],
+          'image' => [
+            'src' => 'P039321-615406.jpg',
+            'alt' => 'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania',
+          ],
+        ],
+      ],
+    ];
+    $assert->assertPattern($expected_values, $paragraph->getOuterHtml());
 
     $this->assertSocialShareBlock();
   }
