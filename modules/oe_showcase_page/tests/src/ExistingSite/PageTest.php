@@ -332,7 +332,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Add Carousel paragraph.
     $media_1 = $this->createImageMedia(['name' => 'First image']);
-    $media_2 = $this->createImageMedia(['name' => 'Second image']);
+    $this->createAvPortalPhotoMedia(['oe_media_avportal_photo' => 'P-039321/00-04']);
 
     $page->pressButton('Add Carousel');
     $page->fillField(
@@ -374,7 +374,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     );
     $page->fillField(
       'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_media][0][target_id]',
-      'Second image'
+      'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania'
     );
 
     // Save node.
