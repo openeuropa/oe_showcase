@@ -357,10 +357,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     );
     $this->submitForm([], 'Add Carousel item');
     $page->fillField(
-      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_title][0][value]',
-      'Carousel item 2'
-    );
-    $page->fillField(
       'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_text][0][value]',
       'Caption 2'
     );
