@@ -459,7 +459,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
           ],
           'image' => [
             'src' => $url,
-            'alt' => 'Alt text',
+            'alt' => 'First image',
           ],
         ],
         [
