@@ -464,3 +464,16 @@ function oe_showcase_post_update_00018(): void {
   $field_config->setDescription('');
   $field_config->save();
 }
+
+/**
+ * Enable carousel functionality.
+ */
+function oe_showcase_post_update_00019(): void {
+  \Drupal::service('module_installer')->install(['oe_paragraphs_carousel']);
+
+  $field_config = FieldConfig::load('paragraph.oe_carousel_item.field_oe_title');
+  $field_config->setRequired(FALSE);
+  $field_config->save();
+
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00019_carousel', 'field.field.node.oe_showcase_page.field_body');
+}

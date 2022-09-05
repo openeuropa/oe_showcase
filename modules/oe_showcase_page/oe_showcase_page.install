@@ -21,6 +21,7 @@ function oe_showcase_page_install(bool $is_syncing): void {
 
   $configs = [
     'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+    'field.field.paragraph.oe_carousel_item.field_oe_title',
   ];
 
   ConfigImporter::importMultiple('module', 'oe_showcase_page', '/config/overrides/', $configs);

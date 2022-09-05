@@ -7,12 +7,16 @@ namespace Drupal\Tests\oe_showcase_page\ExistingSite;
 use Behat\Mink\Element\NodeElement;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\CarouselPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 
 /**
  * Tests the 'oe_showcase_page' content type.
  */
 class PageTest extends ShowcaseExistingSiteTestBase {
+
+  use MediaCreationTrait;
 
   /**
    * {@inheritdoc}
@@ -27,9 +31,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Create test Showcase Page content.
+   * Create test Page content.
    */
-  public function testCreateShowCasePage() {
+  public function testCreatePage() {
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
@@ -51,6 +55,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       [
         'Add Accordion',
         'Add Banner',
+        'Add Carousel',
         'Add Chart',
         'Add Contact form',
         'Add Content row',
@@ -326,6 +331,49 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'linkedin',
     );
 
+    // Add Carousel paragraph.
+    $media_1 = $this->createImageMedia(['name' => 'First image']);
+    $this->createAvPortalPhotoMedia(['oe_media_avportal_photo' => 'P-039321/00-04']);
+
+    $page->pressButton('Add Carousel');
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_title][0][value]',
+      'Carousel item 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_text][0][value]',
+      'Caption 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_link][0][uri]',
+      'https://www.example1.com'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_link][0][title]',
+      'Link 1'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][0][subform][field_oe_media][0][target_id]',
+      'First image'
+    );
+    $this->submitForm([], 'Add Carousel item');
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_text][0][value]',
+      'Caption 2'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_link][0][uri]',
+      'https://www.example2.com'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_link][0][title]',
+      'Link 2'
+    );
+    $page->fillField(
+      'field_body[8][subform][field_oe_carousel_items][1][subform][field_oe_media][0][target_id]',
+      'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania'
+    );
+
     // Save node.
     $page->pressButton('Save');
 
@@ -391,6 +439,43 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Social media follow.
     $assert_session->pageTextContains('Social share links');
     $assert_session->pageTextContains('Linkedin profile');
+
+    // Assert Carousel.
+    $fid = $media_1->getSource()->getSourceFieldValue($media_1);
+    $file = File::load($fid);
+    $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+
+    $paragraph = $assert_session->elementExists('css', 'div.carousel');
+
+    $assert = new CarouselPatternAssert();
+    $expected_values = [
+      'items' => [
+        [
+          'caption_title' => 'Carousel item 1',
+          'caption' => 'Caption 1',
+          'link' => [
+            'label' => 'Link 1',
+            'path' => 'https://www.example1.com',
+          ],
+          'image' => [
+            'src' => $url,
+            'alt' => 'First image',
+          ],
+        ],
+        [
+          'caption' => 'Caption 2',
+          'link' => [
+            'label' => 'Link 2',
+            'path' => 'https://www.example2.com',
+          ],
+          'image' => [
+            'src' => 'P039321-615406.jpg',
+            'alt' => 'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania',
+          ],
+        ],
+      ],
+    ];
+    $assert->assertPattern($expected_values, $paragraph->getOuterHtml());
 
     $this->assertSocialShareBlock();
   }

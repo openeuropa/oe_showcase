@@ -9,7 +9,9 @@ dependencies:
   - drupal:json_field
   - drupal:menu_ui
   - drupal:pathauto
+  - drupal:composite_reference
   - oe_paragraphs:oe_paragraphs_banner
+  - oe_paragraphs:oe_paragraphs_carousel
   - oe_paragraphs:oe_paragraphs_chart
   - oe_paragraphs:oe_paragraphs_description_list
   - oe_paragraphs:oe_paragraphs_document
