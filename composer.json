@@ -64,6 +64,7 @@
         "drupal/core-dev": "~9.3.20",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
+        "openeuropa/oe_bootstrap_theme": "0.1.202209091141 as 0.1.202209022238",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpmd/phpmd": "^2.11",
         "phpspec/prophecy-phpunit": "^1 || ^2",
@@ -118,6 +119,9 @@
             },
             "openeuropa/oe_paragraphs": {
                 "latest": "https://github.com/openeuropa/oe_paragraphs/compare/1.14.0...master.diff"
+            },
+            "openeuropa/oe_bootstrap_theme": {
+                "ticket branch": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202209091141...OEL-2006.diff"
             }
         },
         "artifacts": {
