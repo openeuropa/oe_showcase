@@ -109,9 +109,11 @@ function oe_showcase_glossary_views_post_execute(ViewExecutable $view) {
  * Implements hook_preprocess_HOOK() for glossary view.
  */
 function oe_showcase_glossary_preprocess_views_view__glossary_page__page_1(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
   $view = $variables['view'];
   // Views exposes values as tokens that can be replaced inside some text areas.
-  $name_argument = $view->build_info['substitutions']['{{ arguments.name }}'] ?? NULL;
+  $tokens = $view->getDisplay()->getArgumentsTokens();
+  $name_argument = $tokens['{{ arguments.name }}'] ?? NULL;
   $variables['character'] = $name_argument;
   $variables['total_results'] = $view->total_rows;
 }
