@@ -141,7 +141,7 @@ function oe_showcase_glossary_preprocess_views_view_summary__glossary_page__atta
       return;
     }
 
-    if ($row->name_truncated === $initial) {
+    if (mb_strtolower($row->name_truncated) === $initial) {
       $matching_index = $index;
     }
   }
