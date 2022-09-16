@@ -10,6 +10,7 @@ use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\taxonomy\TermInterface;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\PaginationPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 
@@ -17,6 +18,8 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
  * Tests the glossary functionality.
  */
 class GlossaryTest extends ShowcaseExistingSiteTestBase {
+
+  use TraversingTrait;
 
   /**
    * Tests the glossary view.
@@ -60,6 +63,24 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $pagination_assert = new PaginationPatternAssert();
     $pagination_assert->assertPattern($expected_summary, $summary->getOuterHtml());
 
+    // Assert the exposed form fields.
+    $exposed_form = $assert_session->elementExists('css', 'form.bef-exposed-form', $view_wrapper);
+    $sort_by = $assert_session->selectExists('Sort by', $exposed_form);
+    $this->assertEquals([
+      'az' => 'A-Z',
+      'za' => 'Z-A',
+      'changed' => 'Latest update',
+      'oldest' => 'Oldest update',
+    ], $this->getSelectOptions($sort_by));
+    $this->assertEquals([
+      '20' => '20',
+      '50' => '50',
+    ], $this->getSelectOptions($assert_session->selectExists('Items per page', $exposed_form)));
+
+    $active_letter = key($all_terms);
+    // Safety check to make sure that the first character is not a number.
+    $this->assertIsNotNumeric($active_letter);
+    $this->assertViewResults($all_terms[$active_letter], $active_letter);
 
     $previous_index = $index = 0;
     foreach ($all_terms as $character => $terms) {
@@ -75,6 +96,19 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
       $previous_index = $index++;
     }
+
+    // Find the first character that has at least 3 items.
+    reset($all_terms);
+    do {
+      $candidate = key($all_terms);
+      next($all_terms);
+    } while (count($all_terms[$candidate]) < 3);
+
+    // Verify that the inverse sorting works.
+    $summary->find('named_exact', ['link', mb_strtoupper((string) $candidate)])->click();
+    $sort_by->selectOption('Z-A');
+    $exposed_form->pressButton('Apply');
+    $this->assertViewResults(array_reverse($all_terms[$candidate]), $candidate);
   }
 
   /**
