@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Theme implementation for main view template of the glossary page view.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * Additional variables:
+ * - character: The character being used to filter the view.
+ * - total_results: The total number of results.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="glossary-view">
+  {{ title_prefix }}
+  {{ pattern('content_banner', {
+    title: 'Glossary',
+  }) }}
+  {{ title_suffix }}
+
+  <div class="mt-md-4-75 mt-4">
+    {{ attachment_before }}
+  </div>
+
+  <div class="col-12">
+    <div class="mb-md-5 border-bottom-md border-top-md border-gray-300 py-5">
+      {{ exposed }}
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+    {% if character %}
+      <h2 class="mb-4 bcl-heading">
+        {{ 'Starting with "@character" (@total)'|t({
+          '@character': character,
+          '@total': total_results,
+        }) }}
+      </h2>
+    {% endif %}
+
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    {{ pager }}
+
+    {{ attachment_after }}
+    {{ more }}
+
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+  </div>
+</div>

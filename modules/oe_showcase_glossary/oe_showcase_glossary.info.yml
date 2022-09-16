@@ -1,0 +1,18 @@
+name: OpenEuropa Showcase Glossary
+type: module
+description: Provides a glossary page for a taxonomy vocabulary.
+core_version_requirement: ^9.2
+package: OpenEuropa Showcase
+dependencies:
+  - better_exposed_filters:better_exposed_filters
+  - drupal:taxonomy
+  - drupal:user
+
+config_devel:
+  install:
+    - taxonomy.vocabulary.glossary
+    - views.view.glossary_page
+    - core.entity_view_mode.taxonomy_term.teaser
+    - core.entity_view_mode.taxonomy_term.full
+    - core.entity_view_display.taxonomy_term.glossary.teaser
+    - core.entity_view_display.taxonomy_term.glossary.full
