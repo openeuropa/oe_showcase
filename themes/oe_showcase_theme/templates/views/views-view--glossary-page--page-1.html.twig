@@ -54,7 +54,7 @@
   </div>
 
   <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
-    {% if character %}
+    {% if character is not empty %}
       <h2 class="mb-4 bcl-heading">
         {{ 'Starting with "@character" (@total)'|t({
           '@character': character,
