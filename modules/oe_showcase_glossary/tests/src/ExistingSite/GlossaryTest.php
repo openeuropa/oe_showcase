@@ -108,7 +108,23 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $summary->find('named_exact', ['link', mb_strtoupper((string) $candidate)])->click();
     $sort_by->selectOption('Z-A');
     $exposed_form->pressButton('Apply');
-    $this->assertViewResults(array_reverse($all_terms[$candidate]), $candidate);
+    $this->assertViewResults(array_reverse($all_terms[$candidate]), $candidate, 'za');
+
+    // Create a new term with a very old update date.
+    $glossary_vocabulary = Vocabulary::load('glossary');
+    $old_term = $this->createTerm($glossary_vocabulary, [
+      'name' => $candidate . $this->randomMachineName(),
+      'langcode' => 'en',
+      'changed' => 1,
+    ]);
+
+    // Test the two date-based sorts.
+    $sort_by->selectOption('Latest update');
+    $exposed_form->pressButton('Apply');
+    $this->assertViewResults(array_merge($all_terms[$candidate], [$old_term]), $candidate, 'changed');
+    $sort_by->selectOption('Oldest update');
+    $exposed_form->pressButton('Apply');
+    $this->assertViewResults(array_merge([$old_term], $all_terms[$candidate]), $candidate, 'oldest');
   }
 
   /**
@@ -118,8 +134,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
    *   The expected terms that will be presented as results.
    * @param string $expected_character
    *   The expected character that will be shown in the title.
+   * @param string $expected_sort
+   *   The expected sort. Used to build the pagination links.
    */
-  protected function assertViewResults(array $expected_terms, string $expected_character): void {
+  protected function assertViewResults(array $expected_terms, string $expected_character, string $expected_sort = 'az'): void {
     $assert_session = $this->assertSession();
     $assert_session->elementTextEquals(
       'css',
@@ -144,17 +162,17 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     ];
     for ($i = 0; $i < count($pages); $i++) {
       $expected_pagination['links'][] = [
-        'url' => '?sort_by=az&items_per_page=20&page=' . $i,
+        'url' => sprintf('?sort_by=%s&items_per_page=20&page=%s', $expected_sort, $i),
         'label' => (string) ($i + 1),
         'active' => $i === 0,
       ];
     }
     $expected_pagination['links'][] = [
-      'url' => '?sort_by=az&items_per_page=20&page=1',
+      'url' => sprintf('?sort_by=%s&items_per_page=20&page=1', $expected_sort),
       'label' => 'Next',
     ];
     $expected_pagination['links'][] = [
-      'url' => '?sort_by=az&items_per_page=20&page=' . count($pages) - 1,
+      'url' => sprintf('?sort_by=%s&items_per_page=20&page=%s', $expected_sort, count($pages) - 1),
       'icon' => 'chevron-double-right',
     ];
 
