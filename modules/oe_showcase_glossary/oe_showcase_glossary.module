@@ -41,26 +41,39 @@ function oe_showcase_glossary_views_pre_view(ViewExecutable $view, $display_id, 
 
 /**
  * Implements hook_views_query_alter().
- *
- * Alters the glossary summary so that numbers are shown after letters.
  */
 function oe_showcase_glossary_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if ($view->id() !== 'glossary_page' || $view->current_display !== 'attachment_1') {
+  if ($view->id() !== 'glossary_page') {
     return;
   }
 
-  /** @var \Drupal\views\Plugin\views\query\Sql $query */
-  $table_alias = $query->ensureTable('taxonomy_term_field_data');
-  // Add an expression that returns 1 if a string starts with a number.
-  $query->addField(NULL, "{$table_alias}.name REGEXP :regexp", 'is_number', [
-    'placeholders' => [':regexp' => '^[0-9]'],
-  ]);
-  // Use the custom expression as first sort option, so that numbers are moved
-  // last.
-  array_unshift($query->orderby, [
-    'field' => 'is_number',
-    'direction' => 'ASC',
-  ]);
+  // Alter the glossary summary display so that numbers are shown after letters.
+  if ($view->current_display === 'attachment_1') {
+    /** @var \Drupal\views\Plugin\views\query\Sql $query */
+    $table_alias = $query->ensureTable('taxonomy_term_field_data');
+    // Add an expression that returns 1 if a string starts with a number.
+    $query->addField(NULL, "{$table_alias}.name REGEXP :regexp", 'is_number', [
+      'placeholders' => [':regexp' => '^[0-9]'],
+    ]);
+    // Use the custom expression as first sort option, so that numbers are moved
+    // last.
+    array_unshift($query->orderby, [
+      'field' => 'is_number',
+      'direction' => 'ASC',
+    ]);
+  }
+
+  // Add a fallback sort by name. This cannot be added in the View directly,
+  // as it will override the exposed one. Without fallback, terms with the same
+  // update date will not be sorted consistently.
+  if ($view->current_display === 'page_1') {
+    $current_order_by = $query->orderby[0]['field'] ?? NULL;
+    if ($current_order_by === 'taxonomy_term_field_data_name') {
+      return;
+    }
+    $table_alias = $query->ensureTable('taxonomy_term_field_data');
+    $query->addOrderBy($table_alias, 'name');
+  }
 }
 
 /**
