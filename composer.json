@@ -116,7 +116,8 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "drupal/core": {
-                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch"
+                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch",
+                "Incorrect label in taxonomy glossary for terms that start with zero @see https://www.drupal.org/project/drupal/issues/3291520": "patches/3291520-9.3.x.patch"
             },
             "openeuropa/oe_paragraphs": {
                 "latest": "https://github.com/openeuropa/oe_paragraphs/compare/1.14.0...master.diff"
