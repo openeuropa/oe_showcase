@@ -46,6 +46,7 @@ install:
   - oe_paragraphs_timeline
   - oe_showcase_contact_forms
   - oe_showcase_default_content
+  - oe_showcase_glossary
   - oe_showcase_list_pages
   - oe_showcase_multilingual
   - oe_showcase_navigation
