@@ -7,159 +7,60 @@
 
 declare(strict_types =  1);
 
+use Drupal\oe_showcase_glossary\GlossaryViewHooks;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_views_pre_view().
- *
- * Selects the first available letter when no explicit selection is made in
- * the glossary page view.
  */
 function oe_showcase_glossary_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
-  if ($view->id() !== 'glossary_page' || $display_id !== 'page_1') {
-    return;
-  }
-
-  // Always generate the total rows count. Useful when a mini-pager is used.
-  $view->get_total_rows = TRUE;
-
-  // No need to set a default arg when it's already present.
-  if (!empty($args)) {
-    return;
-  }
-
-  $summary_results = views_get_view_result('glossary_page', 'attachment_1');
-  if (empty($summary_results)) {
-    return;
-  }
-
-  // Make sure the letter is lowercased, to match the configuration of our
-  // contextual filter settings.
-  $args[] = mb_strtolower($summary_results[0]->name_truncated);
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preView($view, $display_id, $args);
 }
 
 /**
  * Implements hook_views_query_alter().
  */
 function oe_showcase_glossary_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if ($view->id() !== 'glossary_page') {
-    return;
-  }
-
-  // Alter the glossary summary display so that numbers are shown after letters.
-  if ($view->current_display === 'attachment_1') {
-    /** @var \Drupal\views\Plugin\views\query\Sql $query */
-    $table_alias = $query->ensureTable('taxonomy_term_field_data');
-    // Add an expression that returns 1 if a string starts with a number.
-    $query->addField(NULL, "{$table_alias}.name REGEXP :regexp", 'is_number', [
-      'placeholders' => [':regexp' => '^[0-9]'],
-    ]);
-    // Use the custom expression as first sort option, so that numbers are moved
-    // last.
-    array_unshift($query->orderby, [
-      'field' => 'is_number',
-      'direction' => 'ASC',
-    ]);
-  }
-
-  // Add a fallback sort by name. This cannot be added in the View directly,
-  // as it will override the exposed one. Without fallback, terms with the same
-  // update date will not be sorted consistently.
-  if ($view->current_display === 'page_1') {
-    $current_order_by = $query->orderby[0]['field'] ?? NULL;
-    if ($current_order_by === 'taxonomy_term_field_data_name') {
-      return;
-    }
-    $table_alias = $query->ensureTable('taxonomy_term_field_data');
-    $query->addOrderBy($table_alias, 'name');
-  }
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->queryAlter($view, $query);
 }
 
 /**
  * Implements hook_views_post_build().
- *
- * The main view argument has a default value. This value is not present in the
- * URL, so the glossary summary won't mark the correct letter as active. The
- * attachment view cannot access the parent view, so we need to save the args
- * for later usage.
  */
 function oe_showcase_glossary_views_post_build(ViewExecutable $view) {
-  if ($view->id() !== 'glossary_page' || $view->current_display !== 'page_1' || empty($view->args) || empty($view->attachment_before)) {
-    return;
-  }
-
-  $view->attachment_before[0]['#main_display_args'] = $view->args;
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $class */
+  $class = \Drupal::classResolver(GlossaryViewHooks::class);
+  $class->postBuild($view);
 }
 
 /**
  * Implements hook_views_pre_render().
- *
- * Remove accents from glossary summary.
- * We use a post_execute hook so we can change the raw results before views
- * executes any processing on them, like lower/upper case, URL generation, etc.
- * A pre_render hook is not good as we need this transliteration also to be
- * applied when the view is invoked using views_get_view_result() above.
  */
 function oe_showcase_glossary_views_post_execute(ViewExecutable $view) {
-  if ($view->id() !== 'glossary_page' || $view->current_display !== 'attachment_1' || empty($view->result)) {
-    return;
-  }
-
-  /** @var \Drupal\Component\Transliteration\TransliterationInterface $transliteration */
-  $transliteration = \Drupal::service('transliteration');
-  // The default collation of Drupal for text fields is utf8mb4, which ignores
-  // accents. But when the glossary is generated, letters with accents could be
-  // retrieved, for example "ç" for all the words that start with "c", "C", "ć"
-  // too. We remove all the diacritics from the characters, so that we always
-  // have consistent lettering.
-  foreach ($view->result as $row) {
-    $row->name_truncated = $transliteration->removeDiacritics($row->name_truncated);
-  }
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->postExecute($view);
 }
 
 /**
- * Implements hook_preprocess_HOOK() for glossary view.
+ * Implements hook_preprocess_HOOK() for glossary view page display.
  */
 function oe_showcase_glossary_preprocess_views_view__glossary_page__page_1(&$variables) {
-  /** @var \Drupal\views\ViewExecutable $view */
-  $view = $variables['view'];
-  // Views exposes values as tokens that can be replaced inside some text areas.
-  $tokens = $view->getDisplay()->getArgumentsTokens();
-  $name_argument = $tokens['{{ arguments.name }}'] ?? NULL;
-  $variables['character'] = $name_argument;
-  $variables['total_results'] = $view->total_rows;
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preprocessPageDisplay($variables);
 }
 
 /**
  * Implements hook_preprocess_HOOK() for glossary page "glossary" attachment.
- *
- * Sort the glossary summary entries so that numbers are shown after letters.
- * We use a late preprocess hook so that all views processing is applied already
- * and we can sort the final results.
  */
 function oe_showcase_glossary_preprocess_views_view_summary__glossary_page__attachment_1(&$variables) {
-  $main_display_args = $variables['view']->element['#main_display_args'] ?? NULL;
-  if (empty($main_display_args)) {
-    return;
-  }
-
-  $initial = mb_strtolower($main_display_args[0]);
-  // We need to loop all the items to check if there is any row marked as active
-  // already. If none is active, we set as active the one that matches the main
-  // view argument.
-  $matching_index = NULL;
-  foreach ($variables['rows'] as $index => $row) {
-    if ($row->active) {
-      return;
-    }
-
-    if (mb_strtolower($row->name_truncated) === $initial) {
-      $matching_index = $index;
-    }
-  }
-
-  if ($matching_index !== NULL) {
-    $variables['rows'][$matching_index]->active = TRUE;
-  }
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preprocessSummaryDisplay($variables);
 }
