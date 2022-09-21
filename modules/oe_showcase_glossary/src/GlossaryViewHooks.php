@@ -125,6 +125,9 @@ class GlossaryViewHooks implements ContainerInjectionInterface {
   /**
    * Implements hook_views_query_alter().
    *
+   * Adds custom sorting for the summary entries and fallback sorting for the
+   * results.
+   *
    * @param \Drupal\views\ViewExecutable $view
    *   The view object about to be processed.
    * @param \Drupal\views\Plugin\views\query\QueryPluginBase $query
@@ -217,6 +220,9 @@ class GlossaryViewHooks implements ContainerInjectionInterface {
   /**
    * Preprocess for the page display.
    *
+   * Makes available to the template the character passed as argument to the
+   * view and the total number of results.
+   *
    * @param array $variables
    *   The variables array.
    */
@@ -234,12 +240,12 @@ class GlossaryViewHooks implements ContainerInjectionInterface {
   /**
    * Preprocess for the summary display.
    *
-   * Sort the glossary summary entries so that numbers are shown after letters.
-   * We use a late preprocess hook so that all views processing is applied
-   * already and we can sort the final results.
+   * Marks the current character as active in the summary.
    *
    * @param array $variables
    *   The variables array.
+   *
+   * @see self::postBuild()
    */
   public function preprocessSummaryDisplay(array &$variables): void {
     $main_display_args = $variables['view']->element['#main_display_args'] ?? NULL;
