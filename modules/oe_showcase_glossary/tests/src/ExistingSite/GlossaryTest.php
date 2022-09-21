@@ -34,6 +34,8 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     // The CSS selector uses the converter with a default "descendant-or-self::"
     // prefix which makes impossible to check for direct children. At the same
     // time we cannot pass "> .selector" to the methods.
+    // By using directly the CssSelectorConverter, we can pass "/" as prefix,
+    // which allows to find direct children.
     $css = new CssSelectorConverter(TRUE);
 
     (new ContentBannerAssert())->assertPattern([
