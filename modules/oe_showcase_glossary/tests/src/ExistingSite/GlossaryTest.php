@@ -292,8 +292,8 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     }
 
     // Sort the terms alphabetically.
-    $this->sortTerms($terms_by_letter, 'letter');
-    $this->sortTerms($terms_by_number, 'number');
+    $this->sortTerms($terms_by_letter);
+    $this->sortTerms($terms_by_number);
 
     // The characters in the summary are alphabetically sorted, with numbers
     // last.
