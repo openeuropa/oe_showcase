@@ -43,6 +43,12 @@
   }) }}
   {{ title_suffix }}
 
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
+
   <div class="mt-md-4-75 mt-4 glossary-view__summary">
     {{ attachment_before }}
   </div>
