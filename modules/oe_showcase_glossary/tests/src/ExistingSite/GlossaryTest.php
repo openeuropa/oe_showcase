@@ -25,11 +25,19 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
    * Tests the glossary view.
    */
   public function testGlossaryView(): void {
-    $all_terms = $this->generateTerms();
-
     $this->drupalGet('/glossary');
     $assert_session = $this->assertSession();
     $view_wrapper = $assert_session->elementExists('css', '.glossary-view');
+
+    // No terms are yet so the no results found message should be shown. No
+    // title is rendered as we are not filtering on a character.
+    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results', 'No results found.');
+    $this->drupalGet('/glossary/a');
+    $this->assertViewResultsTitle('A', 0);
+    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results found.');
+
+    $all_terms = $this->generateTerms();
+    $this->drupalGet('/glossary/a');
 
     // The CSS selector uses the converter with a default "descendant-or-self::"
     // prefix which makes impossible to check for direct children. At the same
@@ -141,14 +149,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
    */
   protected function assertViewResults(array $expected_terms, string $expected_character, string $expected_sort = 'az'): void {
     $assert_session = $this->assertSession();
-    $assert_session->elementTextEquals(
-      'css',
-      '.glossary-view > .glossary-view__results > h2.bcl-heading',
-      sprintf('Starting with "%s" (%s)', mb_strtoupper($expected_character), count($expected_terms))
-    );
 
     $pager_selector = '.glossary-view > .glossary-view__results > nav[role="navigation"]';
     if (count($expected_terms) < 21) {
+      $this->assertViewResultsTitle($expected_character, count($expected_terms));
       $this->assertViewsResultPage($expected_terms);
       $assert_session->elementNotExists('css', $pager_selector);
       return;
@@ -187,8 +191,26 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
         $assert_session->elementExists('named_exact', ['link', $index + 1], $pagination)->click();
       }
 
+      // Each page should show the same title with the global total of results.
+      $this->assertViewResultsTitle($expected_character, count($expected_terms));
       $this->assertViewsResultPage($terms);
     }
+  }
+
+  /**
+   * Asserts the view results title.
+   *
+   * @param string $expected_character
+   *   The expected character.
+   * @param int $expected_count
+   *   The expected count.
+   */
+  protected function assertViewResultsTitle(string $expected_character, int $expected_count): void {
+    $this->assertSession()->elementTextEquals(
+      'css',
+      '.glossary-view > .glossary-view__results > h2.bcl-heading',
+      sprintf('Starting with "%s" (%s)', mb_strtoupper($expected_character), $expected_count)
+    );
   }
 
   /**

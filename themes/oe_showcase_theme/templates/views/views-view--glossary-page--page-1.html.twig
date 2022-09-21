@@ -73,6 +73,8 @@
       {{ rows }}
     {% elseif empty -%}
       {{ empty }}
+    {% else %}
+      <p>{{ 'No results found.'|t }}</p>
     {% endif %}
     {{ pager }}
 
