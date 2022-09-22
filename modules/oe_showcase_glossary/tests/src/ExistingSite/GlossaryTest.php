@@ -37,7 +37,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results have been found.');
 
     $all_terms = $this->generateTerms();
-    $this->drupalGet('/glossary/a');
+    $this->drupalGet('/glossary');
 
     // The CSS selector uses the converter with a default "descendant-or-self::"
     // prefix which makes impossible to check for direct children. At the same
