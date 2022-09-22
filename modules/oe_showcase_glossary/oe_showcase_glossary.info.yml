@@ -15,4 +15,3 @@ config_devel:
     - core.entity_view_mode.taxonomy_term.teaser
     - core.entity_view_mode.taxonomy_term.full
     - core.entity_view_display.taxonomy_term.glossary.teaser
-    - core.entity_view_display.taxonomy_term.glossary.full
