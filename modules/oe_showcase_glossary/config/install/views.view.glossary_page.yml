@@ -394,20 +394,6 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'No terms that start with {{ arguments.name }}.'
-            format: full_html
-          tokenize: true
       sorts:
         name:
           id: name
@@ -472,7 +458,7 @@ display:
           exposed: true
           granularity: second
       defaults:
-        empty: false
+        empty: true
         exposed_form: true
         sorts: false
         header: true
