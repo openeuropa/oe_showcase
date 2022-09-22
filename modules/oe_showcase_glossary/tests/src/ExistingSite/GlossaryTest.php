@@ -31,10 +31,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
     // No terms are yet so the no results found message should be shown. No
     // title is rendered as we are not filtering on a character.
-    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results', 'No results found.');
+    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results', 'No results have been found.');
     $this->drupalGet('/glossary/a');
     $this->assertViewResultsTitle('A', 0);
-    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results found.');
+    $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results have been found.');
 
     $all_terms = $this->generateTerms();
     $this->drupalGet('/glossary/a');

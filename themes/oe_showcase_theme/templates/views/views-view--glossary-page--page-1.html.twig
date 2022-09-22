@@ -74,7 +74,8 @@
     {% elseif empty -%}
       {{ empty }}
     {% else %}
-      <p>{{ 'No results found.'|t }}</p>
+      {# The dot should be inside the string, but unfortunately we have the string translated without dot. #}
+      <p>{{ 'No results have been found'|t }}.</p>
     {% endif %}
     {{ pager }}
 
