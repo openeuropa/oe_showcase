@@ -123,7 +123,7 @@
                 "latest": "https://github.com/openeuropa/oe_paragraphs/compare/1.14.0...master.diff"
             },
             "openeuropa/oe_bootstrap_theme": {
-                "ticket branch": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202209091141...OEL-2006.diff"
+                "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202209091141...1.x.diff"
             }
         },
         "artifacts": {
