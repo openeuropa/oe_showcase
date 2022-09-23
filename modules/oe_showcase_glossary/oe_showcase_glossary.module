@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase Glossary module.
+ */
+
+declare(strict_types =  1);
+
+use Drupal\oe_showcase_glossary\GlossaryViewHooks;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function oe_showcase_glossary_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preView($view, $display_id, $args);
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function oe_showcase_glossary_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->queryAlter($view, $query);
+}
+
+/**
+ * Implements hook_views_post_build().
+ */
+function oe_showcase_glossary_views_post_build(ViewExecutable $view) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $class */
+  $class = \Drupal::classResolver(GlossaryViewHooks::class);
+  $class->postBuild($view);
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function oe_showcase_glossary_views_post_execute(ViewExecutable $view) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->postExecute($view);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for glossary view page display.
+ */
+function oe_showcase_glossary_preprocess_views_view__glossary_page__page_1(&$variables) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preprocessPageDisplay($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for glossary page "glossary" attachment.
+ */
+function oe_showcase_glossary_preprocess_views_view_summary__glossary_page__attachment_1(&$variables) {
+  /** @var \Drupal\oe_showcase_glossary\GlossaryViewHooks $glossary */
+  $glossary = \Drupal::classResolver(GlossaryViewHooks::class);
+  $glossary->preprocessSummaryDisplay($variables);
+}

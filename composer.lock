@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80788310f9508e17b8880b67c29405c4",
+    "content-hash": "df51c44b78b16da66da6cdeb250503bc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -890,17 +890,17 @@
         },
         {
             "name": "drupal/better_exposed_filters",
-            "version": "5.0.0",
+            "version": "5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/better_exposed_filters.git",
-                "reference": "8.x-5.0"
+                "reference": "8.x-5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-5.0.zip",
-                "reference": "8.x-5.0",
-                "shasum": "ef575591af202b5c6867841ce58e1f447455e502"
+                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-5.2.zip",
+                "reference": "8.x-5.2",
+                "shasum": "43f0d013d78ab72c29d797ac5fe9be682ffbfb85"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -912,8 +912,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.0",
-                    "datestamp": "1634748760",
+                    "version": "8.x-5.2",
+                    "datestamp": "1657172286",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -938,12 +938,16 @@
                     "homepage": "https://www.drupal.org/u/neslee-canil-pinto"
                 },
                 {
-                    "name": "jkopel",
-                    "homepage": "https://www.drupal.org/user/66207"
-                },
-                {
                     "name": "mikeker",
                     "homepage": "https://www.drupal.org/user/192273"
+                },
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/user/3580850"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
                 },
                 {
                     "name": "rlhawk",
@@ -1900,7 +1904,8 @@
                 "shasum": "0d534ab8e44786a352e24c7cec3dc06bef155f66"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^8.7.7 || ^9",
+                "drupal/hal": "*"
             },
             "require-dev": {
                 "drupal/paragraphs": "^1"
@@ -2185,20 +2190,20 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                },
-                {
-                    "name": "diamondsea",
-                    "homepage": "https://www.drupal.org/user/430714"
-                },
-                {
                     "name": "hmartens",
                     "homepage": "https://www.drupal.org/user/622826"
                 },
                 {
                     "name": "loopduplicate",
                     "homepage": "https://www.drupal.org/user/717290"
+                },
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/user/3580850"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
                     "name": "sonemonu",
@@ -2254,6 +2259,10 @@
             ],
             "authors": [
                 {
+                    "name": "cs_shadow",
+                    "homepage": "https://www.drupal.org/user/2828287"
+                },
+                {
                     "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
@@ -2264,10 +2273,6 @@
                 {
                     "name": "Drupal Media Team",
                     "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
-                    "name": "cs_shadow",
-                    "homepage": "https://www.drupal.org/user/2828287"
                 },
                 {
                     "name": "phenaproxima",
@@ -2929,16 +2934,16 @@
                     "homepage": "https://www.drupal.org/user/647364"
                 },
                 {
-                    "name": "Stalski",
-                    "homepage": "https://www.drupal.org/user/322618"
-                },
-                {
                     "name": "jyve",
                     "homepage": "https://www.drupal.org/user/591438"
                 },
                 {
                     "name": "nils.destoop",
                     "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
                 },
                 {
                     "name": "swentel",
@@ -3509,6 +3514,10 @@
                     "name": "Naveen Valecha",
                     "homepage": "https://drupal.org/u/naveenvalecha",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
                 }
             ],
             "description": "Provides jQuery UI Touch Punch library.",
@@ -5146,6 +5155,18 @@
                     "homepage": "https://www.drupal.org/user/1344166"
                 },
                 {
+                    "name": "G4MBINI",
+                    "homepage": "https://www.drupal.org/user/2533498"
+                },
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "pdureau",
+                    "homepage": "https://www.drupal.org/user/1903334"
+                },
+                {
                     "name": "pescetti",
                     "homepage": "https://www.drupal.org/user/436244"
                 }
@@ -6641,16 +6662,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202209022238",
+            "version": "0.1.202209091141",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "f6a537ecdf756bb12df8a93bf1f7998224522413"
+                "reference": "2df08485bed7b77f8d6769e8c70c75fdb8da6abf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f6a537ecdf756bb12df8a93bf1f7998224522413",
-                "reference": "f6a537ecdf756bb12df8a93bf1f7998224522413",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/2df08485bed7b77f8d6769e8c70c75fdb8da6abf",
+                "reference": "2df08485bed7b77f8d6769e8c70c75fdb8da6abf",
                 "shasum": ""
             },
             "require": {
@@ -6725,9 +6746,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202209022238"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202209091141"
             },
-            "time": "2022-09-02T20:37:50+00:00"
+            "time": "2022-09-09T09:40:32+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -18779,6 +18800,12 @@
             "version": "1.0.0.0",
             "alias": "0.9.1",
             "alias_normalized": "0.9.1.0"
+        },
+        {
+            "package": "openeuropa/oe_bootstrap_theme",
+            "version": "0.1.202209091141.0",
+            "alias": "0.1.202209022238",
+            "alias_normalized": "0.1.202209022238.0"
         }
     ],
     "minimum-stability": "dev",

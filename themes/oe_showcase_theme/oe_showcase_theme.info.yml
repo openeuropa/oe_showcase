@@ -4,6 +4,9 @@ type: theme
 base theme: oe_whitelabel
 core_version_requirement: ^9.2
 
+libraries:
+  - oe_showcase_theme/global-styling
+
 # Regions are meant to be 100% the same as in parent theme.
 regions:
   header_branding: 'Header branding'

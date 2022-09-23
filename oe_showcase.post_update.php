@@ -477,3 +477,10 @@ function oe_showcase_post_update_00019(): void {
 
   ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00019_carousel', 'field.field.node.oe_showcase_page.field_body');
 }
+
+/**
+ * Enable glossary module.
+ */
+function oe_showcase_post_update_00020(): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_glossary']);
+}

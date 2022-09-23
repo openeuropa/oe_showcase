@@ -64,6 +64,7 @@
         "drupal/core-dev": "~9.3.20",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
+        "openeuropa/oe_bootstrap_theme": "0.1.202209091141 as 0.1.202209022238",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpmd/phpmd": "^2.11",
         "phpspec/prophecy-phpunit": "^1 || ^2",
@@ -105,7 +106,8 @@
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\oe_showcase\\": "./tests/src/",
-            "Drupal\\Tests\\oe_bootstrap_theme\\": "./build/themes/contrib/oe_bootstrap_theme/tests/src/"
+            "Drupal\\Tests\\oe_bootstrap_theme\\": "./build/themes/contrib/oe_bootstrap_theme/tests/src/",
+            "Drupal\\Tests\\oe_whitelabel\\": "./build/themes/contrib/oe_whitelabel/tests/src/"
         }
     },
     "extra": {
@@ -114,10 +116,14 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "drupal/core": {
-                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch"
+                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2021-10-28/31292311-12.patch",
+                "Incorrect label in taxonomy glossary for terms that start with zero @see https://www.drupal.org/project/drupal/issues/3291520": "patches/3291520-9.3.x.patch"
             },
             "openeuropa/oe_paragraphs": {
                 "latest": "https://github.com/openeuropa/oe_paragraphs/compare/1.14.0...master.diff"
+            },
+            "openeuropa/oe_bootstrap_theme": {
+                "latest 1.x": "https://github.com/openeuropa/oe_bootstrap_theme/compare/0.1.202209091141...1.x.diff"
             }
         },
         "artifacts": {

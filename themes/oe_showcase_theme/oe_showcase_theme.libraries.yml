@@ -1,0 +1,5 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      assets/css/oe_showcase_theme.css: {}
