@@ -71,8 +71,8 @@ The code in [`GlossaryViewHooks`](./src/GlossaryViewHooks.php) can be updated to
 Just update the [`::isPageDisplay()`](./src/GlossaryViewHooks.php#L72) and [`::isSummaryDisplay()`](./src/GlossaryViewHooks.php#L85)
 to include the new display IDs.\
 E.g. if adding a new block display `block_1`:
-- edit the `attachment_1` display to be attached to the new block display;
-- updated the `::isPageDisplay()` method to return TRUE also for the new display ID.
+- edit the `attachment_1` view display to be attached to the new block display;
+- update the `::isPageDisplay()` method to return TRUE also for the new display ID.
 - style the needed view templates accordingly.
 
 ### Custom initial character
@@ -87,4 +87,4 @@ update the value automatically upon save. For example, you can:
    - transliterate the first character to transform special characters like `Æ` using `\Drupal::transliteration()->transliterate()`;
    - filter out special characters from the beginning of the term name, like `*, \`.
 
-Please note that this is not provided in this module.
+Please note that this functionality is not provided in this module.
