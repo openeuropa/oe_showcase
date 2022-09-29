@@ -3,6 +3,16 @@
 This module provides an example of a glossary taxonomy vocabulary and a page that shows the glossary terms, organised by
 first character.
 
+The glossary page, accessible at `/glossary`, shows a summary with all the first characters for the terms created in the
+glossary vocabulary. Clicking one of the characters will show only the terms that start with said character.\
+Additionally:
+- When the glossary page is accessed without any character selection, the first character available in the summary is
+  automatically activated;
+- The summary entries are sorted so that numbers are shown after letters;
+- Fallback sort, additionally to the one selected in the interface;
+- Diacritics are removed from the summary characters;
+- Active filter and results count are shown in the title.
+
 ## Requirements
 
 Aside from Drupal core Taxonomy and Views modules, it has the following dependencies:
@@ -12,7 +22,7 @@ styling for the glossary summary and results.
 - [Better Exposed Filters](https://www.drupal.org/project/better_exposed_filters): Optional. Provides
 auto-submit for the sort and page size form elements.
 
-## Code and configuration provided
+## How it was built
 
 In the [config/install](./config/install) folder the following configuration:
 
@@ -43,15 +53,6 @@ Extra taxonomy term template suggestions are necessary to style the teaser view 
 
 Various hooks implementations are located in [`oe_showcase_glossary.module`](./oe_showcase_glossary.module) and
 implemented in a dedicated class, [`GlossaryViewHooks`](./src/GlossaryViewHooks.php).
-
-This class extends the default functionality provided by Views:
-
-- If no argument is passed when accessing the page at `/glossary`, the first character available in the summary is
-  automatically activated;
-- sorts the summary entries so that numbers are shown after letters;
-- provides fallback sort, additionally to the one selected in the interface;
-- removes diacritics from the characters;
-- template preprocess functions to render counts and active filter in the title.
 
 ## How to install
 
