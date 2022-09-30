@@ -542,3 +542,29 @@ function oe_showcase_post_update_00021(): void {
 function oe_showcase_post_update_00022(): void {
   ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00023_media_library', 'image.style.media_entity_browser_thumbnail');
 }
+
+/**
+ * Use rich_text format in formatted text fields.
+ */
+function oe_showcase_post_update_00023(): void {
+  $field_storage = \Drupal::entityTypeManager()->getStorage('field_config');
+  $fields = [
+    'node.oe_showcase_search_demo.body',
+    'paragraph.oe_accordion_item.field_oe_text_long',
+    'paragraph.oe_list_item.field_oe_text_long',
+    'paragraph.oe_rich_text.field_oe_text_long',
+    'paragraph.oe_text_feature_media.field_oe_text_long',
+    'paragraph.oe_timeline.field_oe_text_long',
+    'user.user.field_bio',
+  ];
+
+  foreach ($fields as $field_name) {
+    /** @var \Drupal\Core\Field\FieldConfigInterface $field_instance */
+    $field_instance = $field_storage->load($field_name);
+    if (!$field_instance) {
+      continue;
+    }
+    $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text']);
+    $field_instance->save();
+  }
+}
