@@ -483,4 +483,10 @@ function oe_showcase_post_update_00019(): void {
  */
 function oe_showcase_post_update_00020(): void {
   \Drupal::service('module_installer')->install(['oe_showcase_glossary']);
+
+  $editor = Role::load('editor');
+  $editor->grantPermission('create terms in glossary');
+  $editor->grantPermission('delete terms in glossary');
+  $editor->grantPermission('edit terms in glossary');
+  $editor->save();
 }
