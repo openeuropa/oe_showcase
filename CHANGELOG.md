@@ -1,10 +1,24 @@
 # Change Log
 
+## [1.0.0-beta2](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta2) (2022-10-04)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta1...1.0.0-beta2)
+
+**Merged pull requests:**
+
+- OEL-2074: Glossary term permissions and canonical page fixes [\#193](https://github.com/openeuropa/oe_showcase/pull/193) ([brummbar](https://github.com/brummbar))
+- OEL-1910: Drupal 9.4 support. [\#189](https://github.com/openeuropa/oe_showcase/pull/189) ([drishu](https://github.com/drishu))
+- OEL-1587: Add README for glossary. [\#188](https://github.com/openeuropa/oe_showcase/pull/188) ([brummbar](https://github.com/brummbar))
+- OEL-2006: Glossary. [\#187](https://github.com/openeuropa/oe_showcase/pull/187) ([brummbar](https://github.com/brummbar))
+- OEL-1914: Integrate the carousel paragraph. [\#186](https://github.com/openeuropa/oe_showcase/pull/186) ([drishu](https://github.com/drishu))
+- OEL-1919: Broken styling for facets module. [\#182](https://github.com/openeuropa/oe_showcase/pull/182) ([drishu](https://github.com/drishu))
+- OEL-1747: Remove misleading field description for facts and figures paragraph. [\#179](https://github.com/openeuropa/oe_showcase/pull/179) ([brummbar](https://github.com/brummbar))
+
 ## [1.0.0-beta1](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta1) (2022-08-18)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-alpha7...1.0.0-beta1)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-beta1. [\#185](https://github.com/openeuropa/oe_showcase/pull/185) ([drishu](https://github.com/drishu))
 - OEL-1952: Adapt to pathauto node type conditions change. [\#184](https://github.com/openeuropa/oe_showcase/pull/184) ([drishu](https://github.com/drishu))
 
 ## [1.0.0-alpha7](https://github.com/openeuropa/oe_showcase/tree/1.0.0-alpha7) (2022-08-10)
