@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\views\Entity\View;
 
 /**
  * Implements hook_install_tasks_alter().
@@ -18,6 +19,24 @@ function oe_showcase_install_tasks_alter(&$tasks, $install_state): void {
   unset($tasks['install_config_download_translations']);
   unset($tasks['install_import_translations']);
   unset($tasks['install_finish_translations']);
+
+  $tasks['oe_showcase_disable_taxonomy_term_view'] = [];
+}
+
+/**
+ * Disables the taxonomy term canonical page override provided by Views.
+ *
+ * @param array $install_state
+ *   An array of information about the current installation state.
+ */
+function oe_showcase_disable_taxonomy_term_view(array &$install_state): void {
+  $view = View::load('taxonomy_term');
+  if (!$view || $view->status() === FALSE) {
+    return;
+  }
+
+  $view->disable();
+  $view->save();
 }
 
 /**
