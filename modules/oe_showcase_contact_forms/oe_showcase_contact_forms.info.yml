@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Contact form
 type: module
 description: Provides a demo for the contact form feature.
-core_version_requirement: ^9.2
+core_version_requirement: ^9.4
 package: OpenEuropa Showcase
 dependencies:
   - block_field:block_field

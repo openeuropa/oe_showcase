@@ -42,7 +42,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Country', 'BE');
     $page->fillField('Nationality', 'France');
     $page->fillField('Working Languages', 'http://publications.europa.eu/resource/authority/language/FRA');
-    $assert_session->buttonExists('Cancel account');
+    $assert_session->linkExists('Cancel account');
     $page->pressButton('Save');
 
     $this->drupalGet("user/{$user->id()}/edit");
@@ -69,7 +69,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalLogin($user);
     $this->drupalGet("user/{$user->id()}/edit");
-    $page->pressButton('Cancel account');
+    $page->clickLink('Cancel account');
     $page->pressButton('Confirm');
     $assert_session->pageTextContains('A confirmation request to cancel your account has been sent to your email address.');
   }
