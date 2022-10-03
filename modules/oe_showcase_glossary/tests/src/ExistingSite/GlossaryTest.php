@@ -10,7 +10,9 @@ use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\taxonomy\TermInterface;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\PaginationPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
+use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 
@@ -19,7 +21,9 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
  */
 class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
+  use AssertPathAccessTrait;
   use TraversingTrait;
+  use UserTrait;
 
   /**
    * Tests the glossary view.
@@ -135,6 +139,36 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $sort_by->selectOption('Oldest update');
     $exposed_form->pressButton('Apply');
     $this->assertViewResults(array_merge([$old_term], $all_terms[$candidate]), $candidate, 'oldest');
+  }
+
+  /**
+   * Tests that the glossary term page is not using the override by Views.
+   */
+  public function testGlossaryTermPage(): void {
+    $glossary_vocabulary = Vocabulary::load('glossary');
+    $term = $this->createTerm($glossary_vocabulary);
+    $this->drupalGet($term->toUrl());
+
+    $assert_session = $this->assertSession();
+    $assert_session->elementNotExists('css', '#block-oe-showcase-theme-main-page-content .views-element-container');
+    $assert_session->linkNotExists('Subscribe to');
+  }
+
+  /**
+   * Tests that the editor role can manage the glossary vocabulary.
+   */
+  public function testGlossaryVocabularyAccess(): void {
+    $glossary_vocabulary = Vocabulary::load('glossary');
+    $term = $this->createTerm($glossary_vocabulary);
+
+    $paths = [
+      '/admin/structure/taxonomy/manage/glossary/overview',
+      '/admin/structure/taxonomy/manage/glossary/add',
+      $term->toUrl('edit-form')->setAbsolute()->toString(),
+      $term->toUrl('delete-form')->setAbsolute()->toString(),
+    ];
+
+    $this->assertPathsRequireRole($paths, 'editor');
   }
 
   /**
