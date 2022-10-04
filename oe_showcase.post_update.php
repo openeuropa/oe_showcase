@@ -13,6 +13,7 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
+use Drupal\views\Entity\View;
 
 /**
  * Set the updated regions of the oe_whitelabel navigation blocks.
@@ -489,4 +490,8 @@ function oe_showcase_post_update_00020(): void {
   $editor->grantPermission('delete terms in glossary');
   $editor->grantPermission('edit terms in glossary');
   $editor->save();
+
+  $view = View::load('taxonomy_term');
+  $view->disable();
+  $view->save();
 }
