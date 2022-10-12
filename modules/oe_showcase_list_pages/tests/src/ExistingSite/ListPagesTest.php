@@ -8,13 +8,13 @@ use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 
 /**
  * Tests list pages.
  */
-class ListPagesTest extends ShowcaseExistingSiteTestBase {
+class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
 
