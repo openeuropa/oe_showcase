@@ -62,7 +62,7 @@
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "~9.4.0",
         "drupal/core-dev": "~9.4.0",
-        "openeuropa/oe_bootstrap_theme": "0.2002.202210070921 as 1.0.0-beta6",
+        "openeuropa/oe_bootstrap_theme": "0.1.202210121625 as 1.0.0-beta6",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
@@ -120,7 +120,7 @@
                 "Incorrect label in taxonomy glossary for terms that start with zero @see https://www.drupal.org/project/drupal/issues/3291520": "https://www.drupal.org/files/issues/2022-08-01/3291520-12.patch"
             },
             "openeuropa/oe_whitelabel": {
-                "OEL-2002": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta6...OEL-2002.diff"
+                "OEL-2002": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta6...1.x.diff"
             }
         },
         "artifacts": {
