@@ -19,19 +19,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use ExampleContentTrait;
 
   /**
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    parent::setUp();
-
-    // Create editor user.
-    $user = $this->createUser([]);
-    $user->addRole('editor');
-    $user->save();
-    $this->drupalLogin($user);
-  }
-
-  /**
    * Tests list pages integration.
    */
   public function testCreateListPages() {
@@ -583,7 +570,18 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   The list page node created.
    */
   protected function createListPage(string $title, string $bundle, array $exposed_filters): NodeInterface {
+    static $user;
+
     $page = $this->getSession()->getPage();
+    $assert = $this->assertSession();
+
+    if ($user === NULL) {
+      $user = $this->createUser([]);
+      $user->addRole('editor');
+      $user->save();
+    }
+
+    $this->drupalLogin($user);
 
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', $title);
@@ -600,6 +598,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     }
 
     $page->pressButton('Save');
+    $this->drupalLogout();
 
     return $node;
   }
