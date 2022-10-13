@@ -19,6 +19,25 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use ExampleContentTrait;
 
   /**
+   * An editor user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $editorUser;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+
+    // Create editor user.
+    $this->editorUser = $this->createUser([]);
+    $this->editorUser->addRole('editor');
+    $this->editorUser->save();
+  }
+
+  /**
    * Tests list pages integration.
    */
   public function testCreateListPages() {
@@ -602,18 +621,10 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   The list page node created.
    */
   protected function createListPage(string $title, string $bundle, array $exposed_filters): NodeInterface {
-    static $user;
-
     $page = $this->getSession()->getPage();
     $assert = $this->assertSession();
 
-    if ($user === NULL) {
-      $user = $this->createUser([]);
-      $user->addRole('editor');
-      $user->save();
-    }
-
-    $this->drupalLogin($user);
+    $this->drupalLogin($this->editorUser);
 
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', $title);
