@@ -212,6 +212,71 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 7',
     ]);
 
+    $page->pressButton('Clear filters');
+    $page->selectFieldOption('Sort by', 'Z-A');
+    $assert_session->waitOnAutocomplete();
+    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResults([
+      'News number 9',
+      'News number 8',
+      'News number 7',
+      'News number 6',
+      'News number 5',
+      'News number 4',
+      'News number 3',
+      'News number 2',
+      'News number 11',
+      'News number 10',
+    ]);
+
+    $page->selectFieldOption('Sort by', 'A-Z');
+    $assert_session->waitOnAutocomplete();
+    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResults([
+      'News number 0',
+      'News number 1',
+      'News number 10',
+      'News number 11',
+      'News number 2',
+      'News number 3',
+      'News number 4',
+      'News number 5',
+      'News number 6',
+      'News number 7',
+    ]);
+
+    $page->selectFieldOption('Sort by', 'Date ASC');
+    $assert_session->waitOnAutocomplete();
+    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResults([
+      'News number 0',
+      'News number 1',
+      'News number 2',
+      'News number 3',
+      'News number 4',
+      'News number 5',
+      'News number 6',
+      'News number 7',
+      'News number 8',
+      'News number 9',
+    ]);
+
+    $page->selectFieldOption('Sort by', 'Date DESC');
+    $assert_session->waitOnAutocomplete();
+    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResults([
+      'News number 11',
+      'News number 10',
+      'News number 9',
+      'News number 8',
+      'News number 7',
+      'News number 6',
+      'News number 5',
+      'News number 4',
+      'News number 3',
+      'News number 2',
+    ]);
+
     // Assert only News nodes are part of the result.
     $title_input->setValue('Event example');
     $search_button->click();
@@ -337,6 +402,24 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertResultsTitle('Event List Page', 1);
     $this->assertResults([
       'Event number 8',
+    ]);
+
+    $this->scrollIntoView('#edit-reset');
+    $page->pressButton('Clear filters');
+    $page->selectFieldOption('Sort by', 'Z-A');
+    $assert_session->waitOnAutocomplete();
+    $this->assertResultsTitle('Event List Page', 12);
+    $this->assertResults([
+      'Event number 9',
+      'Event number 8',
+      'Event number 7',
+      'Event number 6',
+      'Event number 5',
+      'Event number 4',
+      'Event number 3',
+      'Event number 2',
+      'Event number 11',
+      'Event number 10',
     ]);
 
     // Test Project list page.
@@ -631,6 +714,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);
     $assert->assertWaitOnAjaxRequest();
+    $page->checkField('Expose sort');
     $page->pressButton('Save');
 
     $node = $this->getNodeByTitle($title);
