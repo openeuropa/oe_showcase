@@ -54,7 +54,7 @@
         "openeuropa/oe_paragraphs": "^1.15",
         "openeuropa/oe_starter_content": "^1.0.0-beta3",
         "openeuropa/oe_webtools": "^1.19",
-        "openeuropa/oe_whitelabel": "0.1414.202210111411"
+        "openeuropa/oe_whitelabel": "0.1414.202210140934"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -118,9 +118,6 @@
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch",
                 "Incorrect label in taxonomy glossary for terms that start with zero @see https://www.drupal.org/project/drupal/issues/3291520": "https://www.drupal.org/files/issues/2022-08-01/3291520-12.patch"
-            },
-            "openeuropa/oe_whitelabel": {
-                "OEL-2002": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0-beta6...1.x.diff"
             }
         },
         "artifacts": {
