@@ -24,10 +24,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->drupalLogin($this->createUser([
-      'create oe_showcase_page content',
-      'view the administration theme',
-    ]));
+    // Create editor user.
+    $user = $this->createUser([]);
+    $user->addRole('editor');
+    $user->save();
+    $this->drupalLogin($user);
   }
 
   /**
@@ -39,10 +40,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
 
     // Create a Showcase Page node through the UI.
     $this->drupalGet('node/add/oe_showcase_page');
-    $page = $this->getSession()->getPage();
 
     // Set page title.
     $page->fillField('title[0][value]', 'OE Showcase Demo Page');
@@ -82,6 +83,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[0][subform][field_oe_title][0][value]',
       'Rich Text paragraph title'
     );
+
     $page->fillField(
       'field_body[0][subform][field_oe_text_long][0][value]',
       'Rich Text paragraph Body'
