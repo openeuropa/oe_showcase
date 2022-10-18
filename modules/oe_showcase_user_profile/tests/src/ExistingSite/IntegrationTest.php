@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase_user_profile\ExistingSite;
 
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 
 /**
  * Tests the User Profile feature integration.
@@ -12,6 +13,8 @@ use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
  * @group oe_showcase_user_profile
  */
 class IntegrationTest extends ShowcaseExistingSiteTestBase {
+
+  use WysiwygTrait;
 
   /**
    * Tests the user profile feature.
@@ -35,7 +38,9 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityForCleanup($user);
 
     $this->drupalGet("user/{$user->id()}/edit");
-    $page->fillField('Bio', 'User description bio.');
+    $field = $page->findField('Bio');
+    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $field->setValue('User description bio.');
     $page->fillField('Date', '1990-01-01');
     $page->fillField('Current position', 'Web Developer');
     $page->selectFieldOption('Gender', 'male');
