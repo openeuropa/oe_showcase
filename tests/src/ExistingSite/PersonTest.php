@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -16,6 +17,7 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
+  use WysiwygTrait;
 
   /**
    * Check creation Person content through the UI.
@@ -86,12 +88,16 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('First name', 'Stefan');
     $page->fillField('Last name', 'Mayer');
-    $page->fillField('Short description', 'Example short description field.');
+    $field = $page->findField('Short description');
+    $this->assertFieldHasFormat($field, 'simple_rich_text');
+    $field->setValue('Example short description field.');
     $page->fillField('Use existing media', $media_image->getName() . ' (' . $media_image->id() . ')');
     $page->fillField('Country', 'DE');
     $page->fillField('Occupation', 'DG TEST');
     $page->fillField('Position', 'Director');
-    $page->fillField('Additional information', 'Example additional information field.');
+    $field = $page->findField('Additional information');
+    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $field->setValue('Example additional information field.');
     $page->fillField('URL', 'https://linkedin.com');
     $page->fillField('Link text', 'Linkedin');
     $page->fillField('Link type', 'linkedin');

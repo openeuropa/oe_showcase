@@ -7,15 +7,17 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
  * Class to test News content type on existing site tests.
  */
-class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
+class NewsTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
+  use WysiwygTrait;
 
   /**
    * {@inheritdoc}
@@ -73,7 +75,9 @@ class ShowcaseExistingSiteCreateNewsTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/add/oe_sc_news');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
-    $page->fillField('Content', 'Example Content');
+    $field = $page->findField('Content');
+    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $field->setValue('Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     // Assert that publication date was filled with a default value.
     $publication_date = $page->find('css', 'input[name="oe_publication_date[0][value][date]"]');
