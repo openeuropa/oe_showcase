@@ -214,7 +214,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $page->pressButton('Clear filters');
     $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->waitOnAutocomplete();
+    $assert_session->assertWaitOnAjaxRequest();
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 9',
@@ -230,7 +230,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $page->selectFieldOption('Sort by', 'A-Z');
-    $assert_session->waitOnAutocomplete();
+    $assert_session->assertWaitOnAjaxRequest();
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -246,7 +246,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $page->selectFieldOption('Sort by', 'Date ASC');
-    $assert_session->waitOnAutocomplete();
+    $assert_session->assertWaitOnAjaxRequest();
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -262,7 +262,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $page->selectFieldOption('Sort by', 'Date DESC');
-    $assert_session->waitOnAutocomplete();
+    $assert_session->assertWaitOnAjaxRequest();
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 11',
@@ -407,7 +407,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
     $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->waitOnAutocomplete();
+    $assert_session->assertWaitOnAjaxRequest();
     $this->assertResultsTitle('Event List Page', 12);
     $this->assertResults([
       'Event number 9',
@@ -586,6 +586,35 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project pending',
     ]);
 
+    $this->scrollIntoView('#edit-reset');
+    $page->pressButton('Clear filters');
+    $page->selectFieldOption('Sort by', 'Z-A');
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResults([
+      'Project pending',
+      'Project ongoing',
+      'Project closed',
+    ]);
+
+    $page->selectFieldOption('Sort by', 'Total budget ASC');
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResults([
+      'Project closed',
+      'Project pending',
+      'Project ongoing',
+    ]);
+
+    $page->selectFieldOption('Sort by', 'Total budget DESC');
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResults([
+      'Project ongoing',
+      'Project pending',
+      'Project closed',
+    ]);
+
     // Create a Person listing page.
     $list_page = $this->createListPage('Person list page', 'oe_sc_person', [
       'oelp_oe_sc_person__title',
@@ -645,6 +674,24 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Person List Page', 0);
+
+    $this->scrollIntoView('#edit-reset');
+    $page->pressButton('Clear filters');
+    $page->selectFieldOption('Sort by', 'Z-A');
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->assertResultsTitle('Person List Page', 12);
+    $this->assertResults([
+      'John Doe 9',
+      'John Doe 8',
+      'John Doe 7',
+      'John Doe 6',
+      'John Doe 5',
+      'John Doe 4',
+      'John Doe 3',
+      'John Doe 2',
+      'John Doe 11',
+      'John Doe 10',
+    ]);
   }
 
   /**
@@ -724,7 +771,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     foreach ($exposed_filters as $filter_name) {
       $page->checkField("emr_plugins_oe_list_page[wrapper][exposed_filters][$filter_name]");
     }
-
+    $this->scrollIntoView('#edit-submit');
     $page->pressButton('Save');
     $this->drupalLogout();
 
