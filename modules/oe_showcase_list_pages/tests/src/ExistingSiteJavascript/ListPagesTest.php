@@ -10,6 +10,7 @@ use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
+use Drupal\user\Entity\Role;
 
 /**
  * Tests list pages.
@@ -35,14 +36,19 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->editorUser = $this->createUser([]);
     $this->editorUser->addRole('editor');
     $this->editorUser->save();
+
+    // Prevent toolbar from overlapping.
+    // Maximizing the window gives inconsistent results, so we remove the
+    // element all together.
+    $role = Role::load('editor');
+    $role->revokePermission('access toolbar');
+    $role->save();
   }
 
   /**
    * Tests list pages integration.
    */
   public function testCreateListPages() {
-    // Prevent toolbar from overlapping.
-    $this->getSession()->maximizeWindow();
     // Mark test content for deletion after the test has finished.
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('taxonomy_term');
@@ -771,7 +777,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     foreach ($exposed_filters as $filter_name) {
       $page->checkField("emr_plugins_oe_list_page[wrapper][exposed_filters][$filter_name]");
     }
-    $this->scrollIntoView('#edit-submit');
+
     $page->pressButton('Save');
     $this->drupalLogout();
 
