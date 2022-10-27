@@ -46,6 +46,17 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function tearDown() {
+    $role = Role::load('editor');
+    $role->grantPermission('access toolbar');
+    $role->save();
+
+    parent::tearDown();
+  }
+
+  /**
    * Tests list pages integration.
    */
   public function testCreateListPages() {
