@@ -54,7 +54,7 @@
         "openeuropa/oe_paragraphs": "^1.15",
         "openeuropa/oe_starter_content": "^1.0.0-beta3",
         "openeuropa/oe_webtools": "^1.19",
-        "openeuropa/oe_whitelabel": "0.1414.202210140934"
+        "openeuropa/oe_whitelabel": "0.1.202210271621"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -62,7 +62,6 @@
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "~9.4.0",
         "drupal/core-dev": "~9.4.0",
-        "openeuropa/oe_bootstrap_theme": "0.1.202210121625 as 1.0.0-beta6",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
