@@ -20,8 +20,11 @@ function oe_showcase_page_install(bool $is_syncing): void {
   }
 
   $configs = [
-    'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+    'core.entity_form_display.paragraph.oe_gallery.default',
     'field.field.paragraph.oe_carousel_item.field_oe_title',
+    'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+    'field.field.paragraph.oe_gallery.field_oe_title',
+    'field.storage.paragraph.field_oe_gallery_items',
   ];
 
   ConfigImporter::importMultiple('module', 'oe_showcase_page', '/config/overrides/', $configs);
