@@ -1,11 +1,20 @@
 # Change Log
 
+## [1.0.0-beta3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta3) (2022-11-03)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta2...1.0.0-beta3)
+
+**Merged pull requests:**
+
+- OEL-1414: Integrate OE List Page sort. [\#195](https://github.com/openeuropa/oe_showcase/pull/195) ([drishu](https://github.com/drishu))
+- OEL-2002: Preserve Drupal links. [\#190](https://github.com/openeuropa/oe_showcase/pull/190) ([drishu](https://github.com/drishu))
+
 ## [1.0.0-beta2](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta2) (2022-10-04)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta1...1.0.0-beta2)
 
 **Merged pull requests:**
 
 - OEL-2074: Glossary term permissions and canonical page fixes [\#193](https://github.com/openeuropa/oe_showcase/pull/193) ([brummbar](https://github.com/brummbar))
+- Prepare release 1.0.0-beta2. [\#191](https://github.com/openeuropa/oe_showcase/pull/191) ([drishu](https://github.com/drishu))
 - OEL-1910: Drupal 9.4 support. [\#189](https://github.com/openeuropa/oe_showcase/pull/189) ([drishu](https://github.com/drishu))
 - OEL-1587: Add README for glossary. [\#188](https://github.com/openeuropa/oe_showcase/pull/188) ([brummbar](https://github.com/brummbar))
 - OEL-2006: Glossary. [\#187](https://github.com/openeuropa/oe_showcase/pull/187) ([brummbar](https://github.com/brummbar))
