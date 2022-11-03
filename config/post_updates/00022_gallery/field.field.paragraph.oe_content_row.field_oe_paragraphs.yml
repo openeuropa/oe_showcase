@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_oe_paragraphs
+    - paragraphs.paragraphs_type.oe_accordion
+    - paragraphs.paragraphs_type.oe_content_row
+    - paragraphs.paragraphs_type.oe_document
+    - paragraphs.paragraphs_type.oe_gallery
+    - paragraphs.paragraphs_type.oe_links_block
+    - paragraphs.paragraphs_type.oe_list_item_block
+    - paragraphs.paragraphs_type.oe_quote
+    - paragraphs.paragraphs_type.oe_rich_text
+    - paragraphs.paragraphs_type.oe_social_media_follow
+  module:
+    - entity_reference_revisions
+id: paragraph.oe_content_row.field_oe_paragraphs
+field_name: field_oe_paragraphs
+entity_type: paragraph
+bundle: oe_content_row
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      oe_accordion: oe_accordion
+      oe_document: oe_document
+      oe_gallery: oe_gallery
+      oe_links_block: oe_links_block
+      oe_list_item_block: oe_list_item_block
+      oe_quote: oe_quote
+      oe_rich_text: oe_rich_text
+      oe_social_media_follow: oe_social_media_follow
+    negate: 0
+    target_bundles_drag_drop:
+      contact_form:
+        weight: -3
+        enabled: false
+      oe_accordion:
+        weight: -15
+        enabled: true
+      oe_accordion_item:
+        weight: -6
+        enabled: false
+      oe_banner:
+        weight: -2
+        enabled: false
+      oe_carousel:
+        weight: 0
+        enabled: false
+      oe_carousel_item:
+        weight: 2
+        enabled: false
+      oe_chart:
+        weight: -1
+        enabled: false
+      oe_content_row:
+        weight: -5
+        enabled: false
+      oe_contextual_navigation:
+        weight: -7
+        enabled: false
+      oe_description_list:
+        weight: 1
+        enabled: false
+      oe_document:
+        weight: -14
+        enabled: true
+      oe_fact:
+        weight: 3
+        enabled: false
+      oe_facts_figures:
+        weight: 4
+        enabled: false
+      oe_gallery:
+        weight: -13
+        enabled: true
+      oe_links_block:
+        weight: -12
+        enabled: true
+      oe_list_item:
+        weight: -4
+        enabled: false
+      oe_list_item_block:
+        weight: -11
+        enabled: true
+      oe_map:
+        weight: 5
+        enabled: false
+      oe_quote:
+        weight: -10
+        enabled: true
+      oe_rich_text:
+        weight: -9
+        enabled: true
+      oe_social_feed:
+        weight: 6
+        enabled: false
+      oe_social_media_follow:
+        weight: -8
+        enabled: true
+      oe_text_feature_media:
+        weight: 7
+        enabled: false
+      oe_timeline:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

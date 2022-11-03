@@ -10,6 +10,7 @@ declare(strict_types = 1);
 use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
@@ -494,4 +495,28 @@ function oe_showcase_post_update_00020(): void {
   $view = View::load('taxonomy_term');
   $view->disable();
   $view->save();
+}
+
+/**
+ * Enable the gallery paragraph.
+ */
+function oe_showcase_post_update_00021(): void {
+  \Drupal::service('module_installer')->install(['oe_paragraphs_gallery']);
+
+  $field_config = FieldConfig::load('paragraph.oe_gallery.field_oe_title');
+  $field_config->setRequired(TRUE)->save();
+
+  $field_storage = FieldStorageConfig::load('paragraph.field_oe_gallery_items');
+  $field_storage->setCardinality(50)->save();
+
+  $configs = [
+    'core.entity_form_display.paragraph.oe_gallery.default',
+    'entity_browser.browser.images_and_videos',
+    'entity_browser_enhanced.widgets.images_and_videos',
+    'field.field.node.oe_showcase_page.field_body',
+    'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+    'views.view.media_entity_browsers',
+  ];
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_gallery', $configs);
 }
