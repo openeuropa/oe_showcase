@@ -40,6 +40,7 @@ install:
   - oe_paragraphs_carousel
   - oe_paragraphs_chart
   - oe_paragraphs_document
+  - oe_paragraphs_gallery
   - oe_paragraphs_map
   - oe_paragraphs_media
   - oe_paragraphs_social_feed
