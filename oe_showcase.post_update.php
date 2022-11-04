@@ -530,4 +530,8 @@ function oe_showcase_post_update_00021(): void {
   ];
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_gallery', $configs);
+
+  $editor = Role::load('editor');
+  $editor->grantPermission('access images_and_videos entity browser pages');
+  $editor->save();
 }
