@@ -1,10 +1,18 @@
 # Change Log
 
+## [1.0.0-beta4](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta4) (2022-11-04)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta3...1.0.0-beta4)
+
+**Merged pull requests:**
+
+- OEL-2102: Upgrade drupal core to version 9.4.8. [\#199](https://github.com/openeuropa/oe_showcase/pull/199) ([drishu](https://github.com/drishu))
+
 ## [1.0.0-beta3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta3) (2022-11-03)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta2...1.0.0-beta3)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-beta3. [\#197](https://github.com/openeuropa/oe_showcase/pull/197) ([drishu](https://github.com/drishu))
 - OEL-1414: Integrate OE List Page sort. [\#195](https://github.com/openeuropa/oe_showcase/pull/195) ([drishu](https://github.com/drishu))
 - OEL-2002: Preserve Drupal links. [\#190](https://github.com/openeuropa/oe_showcase/pull/190) ([drishu](https://github.com/drishu))
 
