@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.oe_sc_entity_browser_selection
+    - field.field.media.av_portal_photo.oe_media_avportal_photo
+    - image.style.medium
+    - media.type.av_portal_photo
+  module:
+    - media_avportal
+id: media.av_portal_photo.oe_sc_entity_browser_selection
+targetEntityType: media
+bundle: av_portal_photo
+mode: oe_sc_entity_browser_selection
+content:
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  oe_media_avportal_photo:
+    type: avportal_photo
+    label: hidden
+    settings:
+      image_style: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

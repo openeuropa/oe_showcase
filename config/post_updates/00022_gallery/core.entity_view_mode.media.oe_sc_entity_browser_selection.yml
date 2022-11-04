@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.oe_sc_entity_browser_selection
+label: 'Entity browser selection'
+targetEntityType: media
+cache: true

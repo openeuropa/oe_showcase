@@ -517,6 +517,11 @@ function oe_showcase_post_update_00021(): void {
     ->save();
 
   $configs = [
+    'core.entity_view_mode.media.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.image.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.remote_video.oe_sc_entity_browser_selection',
     'core.entity_form_display.paragraph.oe_gallery.default',
     'entity_browser.browser.images_and_videos',
     'field.field.node.oe_showcase_page.field_body',
