@@ -94,15 +94,20 @@ config_devel:
   install:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
-    - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
-    - core.entity_view_display.node.oe_sc_event.teaser
-    - easy_breadcrumb.settings
+    - core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection
     - core.entity_view_display.media.av_portal_photo.showcase_embed
+    - core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection
     - core.entity_view_display.media.av_portal_video.showcase_embed
     - core.entity_view_display.media.document.showcase_embed
+    - core.entity_view_display.media.image.oe_sc_entity_browser_selection
     - core.entity_view_display.media.image.showcase_embed
+    - core.entity_view_display.media.remote_video.oe_sc_entity_browser_selection
     - core.entity_view_display.media.remote_video.showcase_embed
+    - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
+    - core.entity_view_display.node.oe_sc_event.teaser
+    - core.entity_view_mode.media.oe_sc_entity_browser_selection
     - core.entity_view_mode.media.showcase_embed
+    - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
     - embed.button.embed_media

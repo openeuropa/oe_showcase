@@ -20,12 +20,13 @@ content:
     region: content
     settings:
       entity_browser: images_and_videos
-      field_widget_display: label
+      field_widget_display: rendered_entity
       field_widget_edit: false
       field_widget_remove: true
       field_widget_replace: false
       open: false
-      field_widget_display_settings: {  }
+      field_widget_display_settings:
+        view_mode: oe_sc_entity_browser_selection
       selection_mode: selection_append
     third_party_settings: {  }
   field_oe_plain_text_long:
