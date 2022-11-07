@@ -62,6 +62,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Description list',
         'Add Document',
         'Add Facts and figures',
+        'Add Gallery',
         'Add Links block',
         'Add Listing item block',
         'Add Map',
@@ -163,6 +164,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->assertEqualsCanonicalizing([
       'Add Accordion',
       'Add Document',
+      'Add Gallery',
       'Add Links block',
       'Add Listing item block',
       'Add Quote',
