@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 
-use Behat\Mink\Element\NodeElement;
 use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\FilePatternAssert;
+use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 
@@ -16,6 +16,7 @@ use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use CKEditorTestTrait;
+  use EntityBrowserTrait;
   use MediaCreationTrait;
   use TraversingTrait;
 
@@ -176,22 +177,6 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->linkExists($label);
 
     $this->getSession()->switchToIFrame();
-  }
-
-  /**
-   * Fetches a media browser tile for a specific media.
-   *
-   * @param string $label
-   *   The media label.
-   *
-   * @return \Behat\Mink\Element\NodeElement
-   *   The media browser view tile.
-   */
-  protected function getMediaBrowserTileByMediaName(string $label): NodeElement {
-    $xpath = $this->cssSelectToXpath('div.views-col div.views-field-name') . '//span[normalize-space(text())=:text]';
-    $assert_session = $this->assertSession();
-
-    return $assert_session->elementExists('xpath', $assert_session->buildXPathQuery($xpath, [':text' => $label]));
   }
 
   /**
