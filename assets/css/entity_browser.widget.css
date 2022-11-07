@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Styling for the entity browser widget.
+ */
+
+.field--widget-entity-browser-entity-reference {
+  font-weight: bold;
+}

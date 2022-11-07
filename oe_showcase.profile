@@ -127,3 +127,21 @@ function oe_showcase_form_bulk_add_cas_users_alter(&$form, FormStateInterface $f
     $form['roles']['#options'] = $assignable_roles;
   }
 }
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * Attaches extra styles to the entity browser entity reference widget.
+ */
+function oe_showcase_field_widget_entity_browser_entity_reference_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $element['#attached']['library'][] = 'oe_showcase/entity_browser.widget';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for "entity_browser_form" form.
+ *
+ * Attaches extra styles to the entity browser modal form.
+ */
+function oe_showcase_form_entity_browser_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'oe_showcase/entity_browser.form';
+}
