@@ -3,6 +3,46 @@
  * Styling for the entity browser widget.
  */
 
-.field--widget-entity-browser-entity-reference {
-  font-weight: bold;
+.entities-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  display: grid;
+}
+
+.entities-list .rendered-entity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.entities-list .rendered-entity > .media {
+  background: #ebebeb;
+  border: 1px solid #c4c4c4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.entities-list .rendered-entity > .media > .field:first-child {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.entities-list .rendered-entity .field--name-name {
+  background: #fff;
+  padding: 5px 10px;
+  border-top: 1px solid #c4c4c4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
 }

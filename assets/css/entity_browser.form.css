@@ -3,6 +3,40 @@
  * Styling for the entity browser form.
  */
 
-.view-media-entity-browsers {
-  font-weight: bold;
+.view-media-entity-browsers .views-row {
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  display: grid;
+  margin-top: 16px;
+}
+
+.view-media-entity-browsers .views-row:first-child {
+  margin-top: 0;
+}
+
+.view-media-entity-browsers .views-col {
+  background: #ebebeb;
+  border: 1px solid #c4c4c4;
+  width: auto !important;
+}
+
+.view-media-entity-browsers .views-col .views-field-thumbnail__target-id{
+  padding: 20px;
+}
+
+.view-media-entity-browsers .views-field-name {
+  background: #fff;
+  padding: 5px 10px;
+  border-top: 1px solid #c4c4c4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-media-entity-browsers .views-field-name .field-content {
+  white-space: nowrap;
+}
+
+.view .views-col.selected::before {
+  top: -18px;
 }
