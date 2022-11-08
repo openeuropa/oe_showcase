@@ -443,12 +443,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Linkedin profile');
 
     // Assert Carousel.
-    $fid = $media_1->getSource()->getSourceFieldValue($media_1);
-    $file = File::load($fid);
-    $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-
     $paragraph = $assert_session->elementExists('css', 'div.carousel');
-
     $assert = new CarouselPatternAssert();
     $expected_values = [
       'items' => [
@@ -459,10 +454,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
             'label' => 'Link 1',
             'path' => 'https://www.example1.com',
           ],
-          'image' => [
-            'src' => $url,
-            'alt' => 'First image',
-          ],
+          'image' => sprintf(
+            '<img src="%s" alt="First image" class="d-block w-100">',
+            \Drupal::service('file_url_generator')->generate($media_1->get('oe_media_image')->entity->getFileUri())->setAbsolute()->toString(),
+          ),
         ],
         [
           'caption' => 'Caption 2',
@@ -470,10 +465,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
             'label' => 'Link 2',
             'path' => 'https://www.example2.com',
           ],
-          'image' => [
-            'src' => 'P039321-615406.jpg',
-            'alt' => 'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania',
-          ],
+          'image' => '<img src="//ec.europa.eu/avservices/avs/files/video6/repository/prod/photo/store/store2/1/P039321-615406.jpg" alt="Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania" class="d-block w-100">',
         ],
       ],
     ];
