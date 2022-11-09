@@ -37,6 +37,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access embed_media entity browser pages'
+  - 'access images_and_videos entity browser pages'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'

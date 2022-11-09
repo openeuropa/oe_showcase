@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.oe_sc_entity_browser_selection
+    - field.field.media.av_portal_video.oe_media_avportal_video
+    - image.style.medium
+    - media.type.av_portal_video
+  module:
+    - image
+id: media.av_portal_video.oe_sc_entity_browser_selection
+targetEntityType: media
+bundle: av_portal_video
+mode: oe_sc_entity_browser_selection
+content:
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  oe_media_avportal_video: true
+  search_api_excerpt: true
+  uid: true

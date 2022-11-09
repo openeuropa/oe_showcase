@@ -10,6 +10,7 @@ declare(strict_types = 1);
 use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
@@ -494,4 +495,43 @@ function oe_showcase_post_update_00020(): void {
   $view = View::load('taxonomy_term');
   $view->disable();
   $view->save();
+}
+
+/**
+ * Enable the gallery paragraph.
+ */
+function oe_showcase_post_update_00021(): void {
+  \Drupal::service('module_installer')->install(['oe_paragraphs_gallery']);
+
+  $field_config = FieldConfig::load('paragraph.oe_gallery.field_oe_title');
+  $field_config->setRequired(TRUE)->save();
+
+  $field_storage = FieldStorageConfig::load('paragraph.field_oe_gallery_items');
+  $field_storage->setCardinality(50)->save();
+
+  Drupal::service('config.factory')->getEditable('entity_browser_enhanced.widgets.images_and_videos')
+    ->setData([
+      'ccf4f22e-62bf-4051-b43c-d43c707be09f' => 'multiselect',
+      '482cc0f3-5652-4dbb-8158-2df53fc935a7' => 'multiselect',
+    ])
+    ->save();
+
+  $configs = [
+    'core.entity_view_mode.media.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.image.oe_sc_entity_browser_selection',
+    'core.entity_view_display.media.remote_video.oe_sc_entity_browser_selection',
+    'core.entity_form_display.paragraph.oe_gallery.default',
+    'entity_browser.browser.images_and_videos',
+    'field.field.node.oe_showcase_page.field_body',
+    'field.field.paragraph.oe_content_row.field_oe_paragraphs',
+    'views.view.media_entity_browsers',
+  ];
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_gallery', $configs);
+
+  $editor = Role::load('editor');
+  $editor->grantPermission('access images_and_videos entity browser pages');
+  $editor->save();
 }

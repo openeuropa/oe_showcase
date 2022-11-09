@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43c6f011cec4fd1327c447b59b0b4b2b",
+    "content-hash": "65f5e93bb4b77ca263d7a804d898dd9f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6511,16 +6511,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.0.0-beta7",
+            "version": "0.1.202211090950",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "29f864ea80333c312ba99e2ca7340e27429e3a70"
+                "reference": "e5d7298ad6b3f494f1cb0034cd18b5b04949e5f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/29f864ea80333c312ba99e2ca7340e27429e3a70",
-                "reference": "29f864ea80333c312ba99e2ca7340e27429e3a70",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/e5d7298ad6b3f494f1cb0034cd18b5b04949e5f9",
+                "reference": "e5d7298ad6b3f494f1cb0034cd18b5b04949e5f9",
                 "shasum": ""
             },
             "require": {
@@ -6587,9 +6587,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.0.0-beta7"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202211090950"
             },
-            "time": "2022-11-03T12:37:41+00:00"
+            "time": "2022-11-09T07:59:44+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -7528,16 +7528,16 @@
         },
         {
             "name": "openeuropa/oe_paragraphs",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_paragraphs.git",
-                "reference": "be407f3bb7aa4976ec418c3baaa64f81fec51219"
+                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/be407f3bb7aa4976ec418c3baaa64f81fec51219",
-                "reference": "be407f3bb7aa4976ec418c3baaa64f81fec51219",
+                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/5023bc9a75b52b73e12b31a4a3f83213d459b148",
+                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148",
                 "shasum": ""
             },
             "require": {
@@ -7561,7 +7561,7 @@
                 "drupal/drupal-extension": "^4.0",
                 "drupal/entity_browser": "^2.5",
                 "drupal/inline_entity_form": "^1.0-rc12",
-                "drupal/json_field": "^1.0.0-rc3",
+                "drupal/json_field": "^1.1",
                 "drupaltest/behat-traits": "^0.3",
                 "drush/drush": "^10.3",
                 "fabpot/goutte": "^3.3",
@@ -7629,9 +7629,9 @@
             "description": "Drupal module providing a collection of Paragraph types based on ECL components.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_paragraphs/issues",
-                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.15.0"
+                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.16.0"
             },
-            "time": "2022-09-16T12:58:10+00:00"
+            "time": "2022-11-04T13:24:17+00:00"
         },
         {
             "name": "openeuropa/oe_starter_content",
@@ -7807,16 +7807,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.0.0-beta7",
+            "version": "0.1.202211091028",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "25187a6ff70429791e4076ba60c343fffea7dc32"
+                "reference": "aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/25187a6ff70429791e4076ba60c343fffea7dc32",
-                "reference": "25187a6ff70429791e4076ba60c343fffea7dc32",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1",
+                "reference": "aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1",
                 "shasum": ""
             },
             "require": {
@@ -7825,7 +7825,7 @@
                 "drupal/daterange_compact": "^2.0",
                 "drupal/twig_field_value": "^2.0",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.0.0-beta7",
+                "openeuropa/oe_bootstrap_theme": "0.1.202211090950",
                 "php": ">=7.4"
             },
             "require-dev": {
@@ -7859,7 +7859,7 @@
                 "openeuropa/oe_corporate_blocks": "^4.8",
                 "openeuropa/oe_list_pages": "^0.20",
                 "openeuropa/oe_multilingual": "^1.11",
-                "openeuropa/oe_paragraphs": "^1.14",
+                "openeuropa/oe_paragraphs": "^1.16",
                 "openeuropa/oe_starter_content": "^1.0.0-beta3",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
@@ -7880,6 +7880,9 @@
                 "patches": {
                     "drupal/entity_reference_revisions": {
                         "https://www.drupal.org/project/entity_reference_revisions/issues/2937835": "https://www.drupal.org/files/issues/2021-03-26/entity_reference_revisions-field_formatter_label-2937835-36.patch"
+                    },
+                    "openeuropa/oe_paragraphs": {
+                        "master": "https://github.com/openeuropa/oe_paragraphs/compare/1.16.0..master.diff"
                     }
                 },
                 "drupal-scaffold": {
@@ -7921,9 +7924,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.0.0-beta7"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202211091028"
             },
-            "time": "2022-11-03T13:14:58+00:00"
+            "time": "2022-11-09T09:28:21+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -18665,5 +18668,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

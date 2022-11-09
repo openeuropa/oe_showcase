@@ -15,6 +15,7 @@ dependencies:
   - oe_paragraphs:oe_paragraphs_chart
   - oe_paragraphs:oe_paragraphs_description_list
   - oe_paragraphs:oe_paragraphs_document
+  - oe_paragraphs:oe_paragraphs_gallery
   - oe_paragraphs:oe_paragraphs_map
   - oe_paragraphs:oe_paragraphs_media
   - oe_paragraphs:oe_paragraphs_social_feed

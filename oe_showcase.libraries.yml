@@ -1,0 +1,11 @@
+entity_browser.widget:
+  version: VERSION
+  css:
+    theme:
+      assets/css/entity_browser.widget.css: {}
+
+entity_browser.form:
+  version: VERSION
+  css:
+    theme:
+      assets/css/entity_browser.form.css: {}
