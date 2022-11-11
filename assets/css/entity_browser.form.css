@@ -3,6 +3,7 @@
  * Styling for the entity browser form.
  */
 
+.view-av-portal-entity-browsers .views-row,
 .view-media-entity-browsers .views-row {
   grid-auto-flow: column;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -11,28 +12,46 @@
   margin-top: 16px;
 }
 
+.view-av-portal-entity-browsers .views-row:first-child,
 .view-media-entity-browsers .views-row:first-child {
   margin-top: 0;
 }
 
+.view-av-portal-entity-browsers .views-col,
 .view-media-entity-browsers .views-col {
   background: #ebebeb;
-  border: 1px solid #c4c4c4;
   width: auto !important;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.view-media-entity-browsers .views-col .views-field-thumbnail__target-id{
+.view-av-portal-entity-browsers .views-col .views-field-thumbnail,
+.view-media-entity-browsers .views-col .views-field-thumbnail__target-id {
   padding: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: #ebebeb;
+  border-right: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+  height: 100%;
 }
 
+.view-av-portal-entity-browsers .views-field-title,
 .view-media-entity-browsers .views-field-name {
   background: #fff;
-  padding: 5px 10px;
-  border-top: 1px solid #c4c4c4;
+  padding: 5px 10px 10px;
+  border: 1px solid #c4c4c4;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.view-av-portal-entity-browsers .views-field-title .field-content,
 .view-media-entity-browsers .views-field-name .field-content {
   white-space: nowrap;
 }
