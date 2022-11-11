@@ -535,3 +535,10 @@ function oe_showcase_post_update_00021(): void {
   $editor->grantPermission('access images_and_videos entity browser pages');
   $editor->save();
 }
+
+/**
+ * Update the media library image style.
+ */
+function oe_showcase_post_update_00022(): void {
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00023_media_library', 'image.style.media_entity_browser_thumbnail');
+}
