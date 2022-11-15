@@ -185,7 +185,6 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
     'paragraph.oe_rich_text.field_oe_text_long' => 'rich_text',
     'paragraph.oe_text_feature_media.field_oe_text_long' => 'rich_text',
     'paragraph.oe_timeline.field_oe_text_long' => 'rich_text',
-    'user.user.field_bio' => 'rich_text',
   ];
 
   $identifier = implode('.', [

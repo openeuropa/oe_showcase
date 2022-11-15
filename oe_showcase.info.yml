@@ -135,7 +135,6 @@ config_devel:
     - field.field.paragraph.oe_rich_text.field_oe_text_long
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
     - field.field.paragraph.oe_timeline.field_oe_text_long
-    - field.field.user.user.field_bio
     - field.storage.node.field_event_type
     - filter.format.full_html
     - filter.format.rich_text

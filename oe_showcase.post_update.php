@@ -583,10 +583,6 @@ function oe_showcase_post_update_00023(): void {
       'rich_text',
       'full_html',
     ],
-    'user.user.field_bio' => [
-      'rich_text',
-      'full_html',
-    ],
   ];
 
   foreach ($fields as $field_name => $text_formats) {
