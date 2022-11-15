@@ -598,4 +598,9 @@ function oe_showcase_post_update_00023(): void {
     $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', $text_formats);
     $field_instance->save();
   }
+
+  // Grand editors full_html permissions, the old text format.
+  $role = Role::load('editor');
+  $role->grantPermission('use text format full_html');
+  $role->save();
 }
