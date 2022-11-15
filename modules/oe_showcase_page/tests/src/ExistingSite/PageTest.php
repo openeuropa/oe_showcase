@@ -86,7 +86,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Rich Text paragraph title'
     );
     $field = $page->findField('field_body[0][subform][field_oe_text_long][0][value]');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Rich Text paragraph Body');
 
     // Add a Banner paragraph.
@@ -140,7 +140,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Home Page'
     );
     $field = $page->findField('field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
     $field->setValue('Listing item description');
 
     $page->pressButton('Add Listing item');
@@ -153,7 +152,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Example 1 Page'
     );
     $field = $page->findField('field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
     $field->setValue('Listing item description for example 1');
 
     // Add a Banner paragraph.
@@ -186,7 +184,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Example title rich text 1'
     );
     $field = $page->findField('field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Text description for rich text 1');
 
     // Add Facts and figures paragraph.
@@ -272,7 +270,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'First term'
     );
     $field = $page->findField('field_body[6][subform][field_oe_description_list_items][0][description][value]');
-    $this->assertFieldHasFormat($field, 'simple_rich_text');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('First term description');
 
     $page->pressButton('field_body_6_subform_field_oe_description_list_items_add_more');
@@ -281,7 +279,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Second term'
     );
     $field = $page->findField('field_body[6][subform][field_oe_description_list_items][1][description][value]');
-    $this->assertFieldHasFormat($field, 'simple_rich_text');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Second term description');
 
     // Create a media to be referenced.

@@ -147,7 +147,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Title', 'Example title');
     $page->selectFieldOption('Event type', 'Test term');
     $field = $page->findField('Content');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-24');

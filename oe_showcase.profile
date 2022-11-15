@@ -10,6 +10,7 @@ declare(strict_types = 1);
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Url;
 use Drupal\filter\Entity\FilterFormat;
 use Drupal\views\Entity\View;
 
@@ -218,7 +219,7 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
     return;
   }
 
-  $element['#element_validate'][] = 'oe_showcase_validate_text_format';
+  $element['#element_validate'][] = '_oe_showcase_validate_text_format';
   $element['#ewcms_expected_format'] = $expected_format;
 }
 
@@ -232,7 +233,7 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
  * @param array $complete_form
  *   The complete form structure.
  */
-function oe_showcase_validate_text_format(array &$element, FormStateInterface $form_state, array &$complete_form): void {
+function _oe_showcase_validate_text_format(array &$element, FormStateInterface $form_state, array &$complete_form): void {
   // The text format element creates a child element for the value, moving
   // there all the properties of the original element. To get to the text format
   // value, we need to move one element up.
@@ -250,4 +251,64 @@ function oe_showcase_validate_text_format(array &$element, FormStateInterface $f
     '%field_name' => $element['#title'],
     '%format' => $format->label(),
   ]));
+}
+
+/**
+ * Implements hook_element_info_alter().
+ *
+ * Add a custom process method to the TextFormat form element.
+ */
+function oe_showcase_element_info_alter(array &$types) {
+  if (isset($types['text_format'])) {
+    $types['text_format']['#process'][] = '_oe_showcase_alter_text_format_help';
+  }
+}
+
+/**
+ * After build callback to alter the Url of the help link on text areas.
+ *
+ * @param $element
+ *   The element.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ * @param $complete_form
+ *   The complete form structure.
+ *
+ * @return array
+ *   The altered element.
+ *
+ * @see https://github.com/openeuropa/oe_editorial/blob/master/oe_editorial.module#L27
+ */
+function _oe_showcase_alter_text_format_help(&$element, FormStateInterface $form_state, &$complete_form) {
+  // Replace the format help links with custom ones that point to
+  // the appropriate help page.
+  if (isset($element['format']['format'])) {
+    // Apply custom class to text format select field.
+    $element['format']['format']['#attributes']['class'][] = 'text-format-filter-list';
+
+    foreach ($element['format']['format']['#options'] as $allowed_format_id => $allowed_format_name) {
+      // We add one link for each of the available format types.
+      $element['format']['help'][$allowed_format_id] = [
+        '#type' => 'link',
+        '#title' => t('About the :format_name format', [':format_name' => $allowed_format_name]),
+        '#url' => Url::fromRoute('filter.tips', ['filter_format' => $allowed_format_id]),
+        '#attributes' => [
+          'data-filter-format' => $allowed_format_id,
+          'class' => [
+            'filter-help-item',
+            'filter-help-' . $allowed_format_id,
+          ],
+          'target' => '_blank',
+        ],
+      ];
+    }
+    // Remove the default static link.
+    unset($element['format']['help']['about']);
+  }
+
+  // Remove the guidelines area.
+  if (isset($element['format']['guidelines'])) {
+    unset($element['format']['guidelines']);
+  }
+  return $element;
 }

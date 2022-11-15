@@ -76,7 +76,7 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $field = $page->findField('Content');
-    $this->assertFieldHasWysiwyg($field, 'rich_text');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     // Assert that publication date was filled with a default value.
