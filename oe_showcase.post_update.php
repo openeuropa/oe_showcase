@@ -545,26 +545,57 @@ function oe_showcase_post_update_00022(): void {
 
 /**
  * Use rich_text format in formatted text fields.
+ *
+ * @see https://github.com/ec-europa/ewcms/blob/develop/post_updates/ewcms_post_update_200.inc#L2096
  */
 function oe_showcase_post_update_00023(): void {
   $field_storage = \Drupal::entityTypeManager()->getStorage('field_config');
+  // To prevent field lock during editing, set multiple formats to all the
+  // fields that are already used in production. The first format is the real
+  // allowed one, while the others are the current value (note that order is
+  // just for sake of understanding easier which format is what).
   $fields = [
-    'node.oe_showcase_search_demo.body',
-    'paragraph.oe_accordion_item.field_oe_text_long',
-    'paragraph.oe_list_item.field_oe_text_long',
-    'paragraph.oe_rich_text.field_oe_text_long',
-    'paragraph.oe_text_feature_media.field_oe_text_long',
-    'paragraph.oe_timeline.field_oe_text_long',
-    'user.user.field_bio',
+    'field.field.node.oe_showcase_page.field_body' => [
+      'rich_text',
+      'full_html',
+    ],
+    'node.oe_showcase_search_demo.body' => [
+      'rich_text',
+      'plain_text',
+    ],
+    'paragraph.oe_accordion_item.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_list_item.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_rich_text.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_text_feature_media.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_timeline.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'user.user.field_bio' => [
+      'rich_text',
+      'full_html',
+    ],
   ];
 
-  foreach ($fields as $field_name) {
+  foreach ($fields as $field_name => $text_formats) {
     /** @var \Drupal\Core\Field\FieldConfigInterface $field_instance */
     $field_instance = $field_storage->load($field_name);
     if (!$field_instance) {
       continue;
     }
-    $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', ['rich_text']);
+    $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', $text_formats);
     $field_instance->save();
   }
 }

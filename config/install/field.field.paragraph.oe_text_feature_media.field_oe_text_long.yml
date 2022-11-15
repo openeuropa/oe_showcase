@@ -11,6 +11,7 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - rich_text
+      - full_html
 id: paragraph.oe_text_feature_media.field_oe_text_long
 field_name: field_oe_text_long
 entity_type: paragraph
