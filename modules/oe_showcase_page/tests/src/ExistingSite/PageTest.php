@@ -372,6 +372,16 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania'
     );
 
+    // Add Accordion paragraph.
+    $page->pressButton('field_body_oe_accordion_add_more');
+    $page->fillField(
+      'field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text][0][value]',
+      'Accordion title'
+    );
+    $field = $page->findField('field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Accordion Body');
+
     // Save node.
     $page->pressButton('Save');
 
@@ -384,6 +394,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Assert Description.
     $assert_session->pageTextContains('Page demo description');
+
+    $assert_session->pageTextContains('Accordion title');
+    $assert_session->pageTextContains('Accordion body');
 
     // Assert Rich Text Title.
     $assert_session->pageTextContains('Rich Text paragraph title');
