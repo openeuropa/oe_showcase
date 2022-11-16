@@ -140,6 +140,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Home Page'
     );
     $field = $page->findField('field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Listing item description');
 
     $page->pressButton('Add Listing item');
@@ -152,6 +153,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Example 1 Page'
     );
     $field = $page->findField('field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Listing item description for example 1');
 
     // Add a Banner paragraph.

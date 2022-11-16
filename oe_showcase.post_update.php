@@ -559,8 +559,8 @@ function oe_showcase_post_update_00023(): void {
       'simple_rich_text',
     ],
     'paragraph.oe_list_item.field_oe_text_long' => [
-      'rich_text',
-      'full_html',
+      'simple_rich_text',
+      'plain_text',
     ],
     'paragraph.oe_rich_text.field_oe_text_long' => [
       'rich_text',
@@ -585,6 +585,13 @@ function oe_showcase_post_update_00023(): void {
     $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', $text_formats);
     $field_instance->save();
   }
+
+  // Enable the format help text for listing item description.
+  $configs = [
+    'core.entity_form_display.paragraph.oe_list_item.default',
+    'core.entity_form_display.paragraph.oe_list_item.highlight',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_text_formats', $configs);
 
   // Grand editors full_html permissions, the old text format.
   $role = Role::load('editor');

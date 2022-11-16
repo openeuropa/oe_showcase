@@ -94,6 +94,8 @@ config_devel:
   install:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
+    - core.entity_form_display.paragraph.oe_list_item.default
+    - core.entity_form_display.paragraph.oe_list_item.highlight
     - core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection
     - core.entity_view_display.media.av_portal_photo.showcase_embed
     - core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection

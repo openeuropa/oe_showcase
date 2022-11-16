@@ -339,7 +339,7 @@ default:
                   field_oe_text_long:
                     -
                       value: 'Suspendisse consequat vulputate enim, at pretium justo elementum quis. Nullam tincidunt fringilla dui, fringilla tincidunt turpis feugiat vel. Ut luctus porta metus, fringilla efficitur lectus feugiat sed.'
-                      format: plain_text
+                      format: simple_rich_text
                   field_oe_title:
                     -
                       value: 'Link item title one'
@@ -385,7 +385,7 @@ default:
                   field_oe_text_long:
                     -
                       value: 'Nunc placerat dolor lacus, eget tincidunt nunc dignissim eu. Praesent pretium metus est, ut dictum neque vulputate sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
-                      format: plain_text
+                      format: simple_rich_text
                   field_oe_title:
                     -
                       value: 'Link item title two'
