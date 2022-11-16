@@ -129,7 +129,6 @@ config_devel:
     - field.field.node.oe_sc_news.oe_summary
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_summary
-    - field.field.node.oe_showcase_search_demo.body
     - field.field.paragraph.oe_accordion_item.field_oe_text_long
     - field.field.paragraph.oe_list_item.field_oe_text_long
     - field.field.paragraph.oe_rich_text.field_oe_text_long

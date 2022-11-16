@@ -555,14 +555,6 @@ function oe_showcase_post_update_00023(): void {
   // allowed one, while the others are the current value (note that order is
   // just for sake of understanding easier which format is what).
   $fields = [
-    'field.field.node.oe_showcase_page.field_body' => [
-      'rich_text',
-      'full_html',
-    ],
-    'node.oe_showcase_search_demo.body' => [
-      'rich_text',
-      'plain_text',
-    ],
     'paragraph.oe_accordion_item.field_oe_text_long' => [
       'rich_text',
       'full_html',

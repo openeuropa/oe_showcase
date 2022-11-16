@@ -178,8 +178,6 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
   // List of field "identifiers" and the expected text format.
   // An identifier is built with entity type ID, bundle ID and field name.
   $fields = [
-    'field.field.node.oe_showcase_page.field_body' => 'rich_text',
-    'node.oe_showcase_search_demo.body' => 'rich_text',
     'paragraph.oe_accordion_item.field_oe_text_long' => 'rich_text',
     'paragraph.oe_list_item.field_oe_text_long' => 'rich_text',
     'paragraph.oe_rich_text.field_oe_text_long' => 'rich_text',
