@@ -556,7 +556,8 @@ function oe_showcase_post_update_00023(): void {
   // just for sake of understanding easier which format is what).
   $fields = [
     'paragraph.oe_accordion_item.field_oe_text_long' => [
-      'simple_rich_text',
+      'rich_text',
+      'full_html',
     ],
     'paragraph.oe_list_item.field_oe_text_long' => [
       'simple_rich_text',

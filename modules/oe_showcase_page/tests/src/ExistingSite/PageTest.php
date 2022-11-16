@@ -381,7 +381,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Accordion title'
     );
     $field = $page->findField('field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Accordion Body');
 
     // Save node.
