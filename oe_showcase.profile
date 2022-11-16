@@ -182,7 +182,7 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
     'paragraph.oe_list_item.field_oe_text_long' => 'simple_rich_text',
     'paragraph.oe_rich_text.field_oe_text_long' => 'rich_text',
     'paragraph.oe_text_feature_media.field_oe_text_long' => 'rich_text',
-    'paragraph.oe_timeline.field_oe_text_long' => 'rich_text',
+    'paragraph.oe_timeline.field_oe_text_long' => 'simple_rich_text',
   ];
 
   $identifier = implode('.', [

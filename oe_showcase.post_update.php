@@ -571,8 +571,7 @@ function oe_showcase_post_update_00023(): void {
       'full_html',
     ],
     'paragraph.oe_timeline.field_oe_text_long' => [
-      'rich_text',
-      'full_html',
+      'simple_rich_text',
     ],
   ];
 
