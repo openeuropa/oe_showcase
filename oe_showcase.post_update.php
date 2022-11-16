@@ -11,6 +11,7 @@ use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
@@ -544,7 +545,7 @@ function oe_showcase_post_update_00022(): void {
 }
 
 /**
- * Use rich_text format in formatted text fields.
+ * Fix allowed formats in formatted text fields.
  *
  * @see https://github.com/ec-europa/ewcms/blob/develop/post_updates/ewcms_post_update_200.inc#L2096
  */
@@ -593,8 +594,12 @@ function oe_showcase_post_update_00023(): void {
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_text_formats', $configs);
 
-  // Grand editors full_html permissions, the old text format.
+  // Full html format is risky, so we disable it.
   $role = Role::load('editor');
-  $role->grantPermission('use text format full_html');
+  $role->revokePermission('use text format full_html');
   $role->save();
+
+  $format = FilterFormat::load('full_html');
+  $format->disable();
+  $format->save();
 }

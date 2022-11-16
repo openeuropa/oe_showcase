@@ -211,6 +211,12 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
   // the other formats. The format is NULL when no text has been entered, so
   // we force the format also in that case.
   $current_format = $items[$context['delta']]->format;
+
+  // Full html format is risky, enforce the expected format.
+  if ($current_format === 'full_html') {
+    $element['#format'] = $expected_format;
+  }
+
   if ($current_format === $expected_format || $current_format === NULL) {
     $element['#allowed_formats'] = [$expected_format];
     return;
