@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_event_type
+    - field.storage.node.field_publication_type
     - field.storage.node.oe_project_budget
     - field.storage.node.oe_project_dates
     - field.storage.node.oe_publication_date
@@ -40,6 +41,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_type
+  field_publication_type:
+    label: 'Publication type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
   oe_project_budget:
     label: 'Overall budget'
     datasource_id: 'entity:node'
@@ -129,6 +138,7 @@ datasource_settings:
         - oe_sc_event
         - oe_sc_news
         - oe_sc_person
+        - oe_sc_publication
     languages:
       default: true
       selected: {  }
