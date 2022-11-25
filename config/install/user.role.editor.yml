@@ -20,6 +20,7 @@ dependencies:
     - node.type.oe_showcase_page
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.glossary
+    - taxonomy.vocabulary.publication_type
   module:
     - entity_browser
     - filter
@@ -56,6 +57,7 @@ permissions:
   - 'create remote_video media'
   - 'create terms in event_type'
   - 'create terms in glossary'
+  - 'create terms in publication_type'
   - 'create webtools_chart media'
   - 'create webtools_map media'
   - 'create webtools_social_feed media'
@@ -83,6 +85,7 @@ permissions:
   - 'delete oe_showcase_page revisions'
   - 'delete terms in event_type'
   - 'delete terms in glossary'
+  - 'delete terms in publication_type'
   - 'edit any av_portal_photo media'
   - 'edit any av_portal_video media'
   - 'edit any document media'
@@ -101,6 +104,7 @@ permissions:
   - 'edit oe_organisation oe_stakeholder corporate entity'
   - 'edit terms in event_type'
   - 'edit terms in glossary'
+  - 'edit terms in publication_type'
   - 'revert oe_list_page revisions'
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
