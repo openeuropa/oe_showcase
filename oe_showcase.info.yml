@@ -95,7 +95,6 @@ config_devel:
   install:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
-    - core.entity_form_display.node.oe_sc_publication.default
     - core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection
     - core.entity_view_display.media.av_portal_photo.showcase_embed
     - core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection
@@ -107,8 +106,6 @@ config_devel:
     - core.entity_view_display.media.remote_video.showcase_embed
     - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
     - core.entity_view_display.node.oe_sc_event.teaser
-    - core.entity_view_display.node.oe_sc_publication.oe_w_content_banner
-    - core.entity_view_display.node.oe_sc_publication.teaser
     - core.entity_view_mode.media.oe_sc_entity_browser_selection
     - core.entity_view_mode.media.showcase_embed
     - easy_breadcrumb.settings
@@ -175,3 +172,10 @@ config_devel:
     - block.block.seven_page_title
     - block.block.seven_primary_local_tasks
     - block.block.seven_secondary_local_tasks
+
+# List of config overrides. Config_devel doesn't export these entries automatically.
+# Copy them temporarily in the above list if you need to update them.
+#
+# - core.entity_form_display.node.oe_sc_publication.default
+# - core.entity_view_display.node.oe_sc_publication.oe_w_content_banner
+# - core.entity_view_display.node.oe_sc_publication.teaser
