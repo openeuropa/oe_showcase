@@ -17,6 +17,7 @@ dependencies:
     - node.type.oe_sc_event
     - node.type.oe_sc_news
     - node.type.oe_sc_person
+    - node.type.oe_sc_publication
     - node.type.oe_showcase_page
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.glossary
@@ -55,6 +56,7 @@ permissions:
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'create oe_sc_person content'
+  - 'create oe_sc_publication content'
   - 'create oe_showcase_page content'
   - 'create remote_video media'
   - 'create terms in event_type'
@@ -72,6 +74,7 @@ permissions:
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
   - 'delete any oe_sc_person content'
+  - 'delete any oe_sc_publication content'
   - 'delete any oe_showcase_page content'
   - 'delete any remote_video media'
   - 'delete any webtools_chart media'
@@ -84,6 +87,7 @@ permissions:
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
   - 'delete oe_sc_person revisions'
+  - 'delete oe_sc_publication revisions'
   - 'delete oe_showcase_page revisions'
   - 'delete terms in event_type'
   - 'delete terms in glossary'
@@ -97,6 +101,7 @@ permissions:
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
   - 'edit any oe_sc_person content'
+  - 'edit any oe_sc_publication content'
   - 'edit any oe_showcase_page content'
   - 'edit any remote_video media'
   - 'edit any webtools_chart media'
@@ -112,6 +117,7 @@ permissions:
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'revert oe_sc_person revisions'
+  - 'revert oe_sc_publication revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
@@ -120,6 +126,7 @@ permissions:
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
   - 'view oe_sc_person revisions'
+  - 'view oe_sc_publication revisions'
   - 'view oe_showcase_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
