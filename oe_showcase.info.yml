@@ -134,7 +134,9 @@ config_devel:
     - field.field.node.oe_sc_news.oe_summary
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_summary
+    - field.field.node.oe_sc_publication.body
     - field.field.node.oe_sc_publication.field_publication_type
+    - field.field.node.oe_sc_publication.oe_summary
     - field.storage.node.field_event_type
     - field.storage.node.field_publication_type
     - filter.format.full_html

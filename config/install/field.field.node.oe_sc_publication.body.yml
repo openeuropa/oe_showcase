@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.oe_sc_publication
+  module:
+    - allowed_formats
+    - field_display_label
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+  field_display_label:
+    display_label: Description
+id: node.oe_sc_publication.body
+field_name: body
+entity_type: node
+bundle: oe_sc_publication
+label: 'Long description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

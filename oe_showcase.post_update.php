@@ -572,6 +572,17 @@ function oe_showcase_post_update_00022(): void {
     ])
     ->save();
 
+  $text_fields = [
+    'body' => 'rich_text',
+    'oe_summary' => 'simple_rich_text',
+  ];
+  foreach ($text_fields as $field_name => $text_format) {
+    $field_id = "node.oe_sc_publication.$field_name";
+    $field = FieldConfig::load($field_id);
+    $field->setThirdPartySetting('allowed_formats', 'allowed_formats', [$text_format]);
+    $field->save();
+  }
+
   $permissions = [
     'create oe_sc_publication content',
     'delete any oe_sc_publication content',
