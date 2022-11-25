@@ -535,3 +535,59 @@ function oe_showcase_post_update_00021(): void {
   $editor->grantPermission('access images_and_videos entity browser pages');
   $editor->save();
 }
+
+/**
+ * Enable the publication content type.
+ */
+function oe_showcase_post_update_00022(): void {
+  \Drupal::service('module_installer')->install(['oe_whitelabel_starter_publication']);
+
+  $configs = [
+    'views.view.media_entity_browsers',
+    'entity_browser.browser.documents',
+    'entity_browser.browser.images',
+    'taxonomy.vocabulary.publication_type',
+    'field.storage.node.field_publication_type',
+    'field.field.node.oe_sc_publication.field_publication_type',
+    'core.entity_form_display.node.oe_sc_publication.default',
+    'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
+    'core.entity_view_display.node.oe_sc_publication.teaser',
+    'facets.facet.oelp_oe_sc_publication__keyword',
+    'facets.facet.oelp_oe_sc_publication__publication_date',
+    'facets.facet.oelp_oe_sc_publication__type',
+    'search_api.index.oe_list_pages_index',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_publication_content_type', $configs);
+
+  Drupal::service('config.factory')->getEditable('entity_browser_enhanced.widgets.documents')
+    ->setData([
+      '5b99b16c-0710-4271-9c45-deed0c6bcfaa' => 'multiselect',
+    ])
+    ->save();
+
+  Drupal::service('config.factory')->getEditable('entity_browser_enhanced.widgets.images')
+    ->setData([
+      '309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d' => 'multiselect',
+      'a1713f16-c893-4baf-ac6d-949d4df818e3' => 'multiselect',
+    ])
+    ->save();
+
+  $permissions = [
+    'create oe_sc_publication content',
+    'delete any oe_sc_publication content',
+    'delete oe_sc_publication revisions',
+    'edit any oe_sc_publication content',
+    'revert oe_sc_publication revisions',
+    'view oe_sc_publication revisions',
+    'create terms in publication_type',
+    'delete terms in publication_type',
+    'edit terms in publication_type',
+    'access documents entity browser pages',
+    'access images entity browser pages',
+  ];
+  $role = Role::load('editor');
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}
