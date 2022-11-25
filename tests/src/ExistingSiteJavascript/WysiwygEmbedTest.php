@@ -27,7 +27,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->markEntityTypeForCleanup('node');
 
     // Create a media entity for each existing bundle.
-    $medias = $this->createTestMedia();
+    $media = $this->createTestMedia();
 
     $user = $this->createUser([]);
     $user->addRole('editor');
@@ -65,15 +65,15 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
       'remote_video',
     ];
     foreach ($expected_media_bundles as $bundle) {
-      $assert_session->pageTextContains($medias[$bundle]->label());
+      $assert_session->pageTextContains($media[$bundle]->label());
     }
 
-    foreach (array_diff(array_keys($medias), $expected_media_bundles) as $unwanted_bundle) {
-      $assert_session->pageTextNotContains($medias[$unwanted_bundle]->label());
+    foreach (array_diff(array_keys($media), $expected_media_bundles) as $unwanted_bundle) {
+      $assert_session->pageTextNotContains($media[$unwanted_bundle]->label());
     }
     // Currently showcase ships media entities with the default_content module.
     // To make sure the above assertions are correct, we check that no pager
-    // is present, so we know that there are no medias hidden in a second page.
+    // is present, so we know that there are no media hidden in a second page.
     $assert_session->elementNotExists('css', 'nav.pager');
 
     // Check that the search tab is present.
@@ -112,7 +112,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
       'file' => [
         'title' => 'Document title',
         'language' => 'English',
-        'url' => $medias['document']->get('oe_media_file')->entity->createFileUrl(FALSE),
+        'url' => $media['document']->get('oe_media_file')->entity->createFileUrl(FALSE),
         'meta' => '(2.96 KB - PDF)',
         'icon' => 'file-pdf-fill',
       ],
@@ -126,7 +126,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->waitForEditor();
     $this->assignNameToCkeditorIframe();
 
-    // Embed the remaining medias.
+    // Embed the remaining media.
     $this->embedMediaInWysiwyg('Image title');
     $this->embedMediaInWysiwyg('Euro with miniature figurines');
     $this->embedMediaInWysiwyg('Economic and Financial Affairs Council - Arrivals');
@@ -135,11 +135,11 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('Test embed');
 
     // Extract the real file name of the image.
-    $image_filename = $medias['image']->get('oe_media_image')->entity->getFilename();
+    $image_filename = $media['image']->get('oe_media_image')->entity->getFilename();
     $news_body = $assert_session->elementExists('css', 'div.oe-sc-news__body');
     // We expect only two images. The thumbnails shouldn't be rendered.
     $assert_session->elementsCount('css', 'img', 2, $news_body);
-    // Assert that all the medias are rendered.
+    // Assert that all the media are rendered.
     $assert_session->elementExists('css', sprintf('img.img-fluid[src*="/styles/wide/public/%s"]', $image_filename), $news_body);
     $assert_session->elementExists('css', 'img[src*="/styles/wide/avportal/P-038924/00-15.jpg"]', $news_body);
     $assert_session->elementExists('css', 'iframe[src^="//ec.europa.eu/avservices/play.cfm?ref=I-163162"]', $news_body);

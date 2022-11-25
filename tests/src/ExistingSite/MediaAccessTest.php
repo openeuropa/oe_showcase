@@ -22,7 +22,7 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
    *
    * @var array
    */
-  protected array $medias = [];
+  protected array $media = [];
 
   /**
    * {@inheritdoc}
@@ -30,7 +30,7 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->medias = $this->createTestMedia();
+    $this->media = $this->createTestMedia();
   }
 
   /**
@@ -46,8 +46,8 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
     ];
 
     $restricted_paths = [];
-    $allowed_medias = array_diff_key($this->medias, array_flip($disallowed_media_bundles));
-    foreach ($allowed_medias as $bundle => $media) {
+    $allowed_media = array_diff_key($this->media, array_flip($disallowed_media_bundles));
+    foreach ($allowed_media as $bundle => $media) {
       $restricted_paths[] = 'media/add/' . $bundle;
       $restricted_paths[] = 'media/' . $media->id() . '/edit';
       $restricted_paths[] = 'media/' . $media->id() . '/delete';
@@ -61,8 +61,8 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
     $forbidden_paths = [];
     foreach ($disallowed_media_bundles as $bundle) {
       $forbidden_paths[] = 'media/add/' . $bundle;
-      $forbidden_paths[] = 'media/' . $this->medias[$bundle]->id() . '/edit';
-      $forbidden_paths[] = 'media/' . $this->medias[$bundle]->id() . '/delete';
+      $forbidden_paths[] = 'media/' . $this->media[$bundle]->id() . '/edit';
+      $forbidden_paths[] = 'media/' . $this->media[$bundle]->id() . '/delete';
     }
 
     $this->assertPathsAccessForbidden($forbidden_paths);
