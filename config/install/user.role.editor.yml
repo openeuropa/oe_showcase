@@ -37,7 +37,9 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access documents entity browser pages'
   - 'access embed_media entity browser pages'
+  - 'access images entity browser pages'
   - 'access images_and_videos entity browser pages'
   - 'access media overview'
   - 'access taxonomy overview'

@@ -2,6 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.documents
+    - entity_browser.browser.images
     - field.field.node.oe_sc_publication.body
     - field.field.node.oe_sc_publication.field_publication_type
     - field.field.node.oe_sc_publication.oe_featured_media
@@ -13,7 +15,7 @@ dependencies:
     - node.type.oe_sc_publication
   module:
     - datetime
-    - oe_content_featured_media_field
+    - entity_browser
     - path
     - text
 id: node.oe_sc_publication.default
@@ -51,14 +53,18 @@ content:
       include_locked: true
     third_party_settings: {  }
   oe_featured_media:
-    type: oe_featured_media_autocomplete
+    type: oe_featured_media_entity_browser
     weight: 3
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: images
+      field_widget_display: label
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
   oe_publication_date:
     type: datetime_default
@@ -85,14 +91,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
   oe_sc_publication_document:
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     weight: 8
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: documents
+      field_widget_display: label
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
   oe_summary:
     type: text_textarea
