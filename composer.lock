@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65f5e93bb4b77ca263d7a804d898dd9f",
+    "content-hash": "756d8ee9847b0598fcb3098db58ce9c2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2793,6 +2793,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/facets_form",
                 "issues": "https://www.drupal.org/project/issues/facets_form"
+            }
+        },
+        {
+            "name": "drupal/field_display_label",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_display_label.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_display_label-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "745be0bcf00f1dcee8c9f6e22c25b8bd80f53b9c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1655383227",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Plazik",
+                    "homepage": "https://www.drupal.org/user/982724"
+                }
+            ],
+            "description": "Defines a label for fields that is used for displaying content which can be different than the form label.",
+            "homepage": "https://www.drupal.org/project/field_display_label",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_display_label",
+                "issues": "https://www.drupal.org/project/issues/field_display_label"
             }
         },
         {
@@ -7528,16 +7578,16 @@
         },
         {
             "name": "openeuropa/oe_paragraphs",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_paragraphs.git",
-                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148"
+                "reference": "e209ec886e8483dc69102d8ce17082d5e4a2ffd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/5023bc9a75b52b73e12b31a4a3f83213d459b148",
-                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148",
+                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/e209ec886e8483dc69102d8ce17082d5e4a2ffd1",
+                "reference": "e209ec886e8483dc69102d8ce17082d5e4a2ffd1",
                 "shasum": ""
             },
             "require": {
@@ -7570,7 +7620,7 @@
                 "openeuropa/behat-transformation-context": "^0.1",
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_content": "^3.0.0-alpha4",
-                "openeuropa/oe_media": "^1.15",
+                "openeuropa/oe_media": "^1.16",
                 "openeuropa/oe_webtools": "^1.12",
                 "openeuropa/rdf_skos": "^1.0.0-alpha6",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
@@ -7598,9 +7648,6 @@
                 "patches": {
                     "drupal/paragraphs": {
                         "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
-                    },
-                    "drupal/file_link": {
-                        "https://www.drupal.org/project/file_link/issues/3239397": "https://git.drupalcode.org/project/file_link/-/merge_requests/3.patch"
                     }
                 },
                 "drupal-scaffold": {
@@ -7629,17 +7676,17 @@
             "description": "Drupal module providing a collection of Paragraph types based on ECL components.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_paragraphs/issues",
-                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.16.0"
+                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.17.0"
             },
-            "time": "2022-11-04T13:24:17+00:00"
+            "time": "2022-11-21T08:25:22+00:00"
         },
         {
             "name": "openeuropa/oe_starter_content",
-            "version": "1.0.0-beta3",
+            "version": "dev-EPIC-OEL-1723-Publication-v1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_starter_content",
-                "reference": "7bef7eb3a57e5c8800d7cb9642683400a92da1b3"
+                "reference": "66ec4dc22b8530e3be7f3b10f95e998f14ea8d1b"
             },
             "require": {
                 "drupal/address": "^1.10",
@@ -7710,7 +7757,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
-            "time": "2022-09-29T14:00:21+00:00"
+            "time": "2022-11-18T13:19:37+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -18660,7 +18707,8 @@
         "drupal/dropsolid_purge": 10,
         "drupal/json_field": 5,
         "drupal/roleassign": 10,
-        "drupal/user_field_anonymize": 15
+        "drupal/user_field_anonymize": 15,
+        "openeuropa/oe_starter_content": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
