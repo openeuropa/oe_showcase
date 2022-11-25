@@ -28,11 +28,7 @@ class GalleryParagraphTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     // Create a media entity for each existing bundle.
-    $medias = [];
-    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
-    foreach (array_keys($bundles) as $bundle) {
-      $medias[$bundle] = $this->createMediaByBundle($bundle);
-    }
+    $medias = $this->createTestMedia();
 
     $editor = $this->createUser([]);
     $editor->addRole('editor');

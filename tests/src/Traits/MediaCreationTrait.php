@@ -20,6 +20,22 @@ trait MediaCreationTrait {
   use WeitzmanMediaCreationTrait;
 
   /**
+   * Creates one media for each existing media bundle.
+   *
+   * @return \Drupal\media\MediaInterface[]
+   *   The created media, keyed by bundle.
+   */
+  protected function createTestMedia(): array {
+    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
+    $media = [];
+    foreach (array_keys($bundles) as $bundle) {
+      $media[$bundle] = $this->createMediaByBundle($bundle);
+    }
+
+    return $media;
+  }
+
+  /**
    * Creates a media of a specific bundle ready to use in tests.
    *
    * @param string $bundle

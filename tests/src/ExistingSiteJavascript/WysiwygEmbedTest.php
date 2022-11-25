@@ -27,11 +27,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->markEntityTypeForCleanup('node');
 
     // Create a media entity for each existing bundle.
-    $medias = [];
-    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
-    foreach (array_keys($bundles) as $bundle) {
-      $medias[$bundle] = $this->createMediaByBundle($bundle);
-    }
+    $medias = $this->createTestMedia();
 
     $user = $this->createUser([]);
     $user->addRole('editor');

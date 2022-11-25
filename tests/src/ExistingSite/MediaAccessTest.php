@@ -30,10 +30,7 @@ class MediaAccessTest extends ShowcaseExistingSiteTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
-    foreach (array_keys($bundles) as $bundle) {
-      $this->medias[$bundle] = $this->createMediaByBundle($bundle);
-    }
+    $this->medias = $this->createTestMedia();
   }
 
   /**
