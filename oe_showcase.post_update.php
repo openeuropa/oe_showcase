@@ -540,6 +540,10 @@ function oe_showcase_post_update_00021(): void {
  * Enable the publication content type.
  */
 function oe_showcase_post_update_00022(): void {
+  // Field_display_label is a dependency of oe_whitelabel_starter_publication,
+  // but since we override the field the dependency is required earlier, when
+  // oe_starter_content_publication is enabled.
+  \Drupal::service('module_installer')->install(['field_display_label']);
   \Drupal::service('module_installer')->install(['oe_whitelabel_starter_publication']);
 
   $configs = [
