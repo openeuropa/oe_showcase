@@ -106,6 +106,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         ],
         'oe_sc_event_location' => [
           'country_code' => $countries[$i],
+          'address_line1' => 'Address line ' . $i,
+          'postal_code' => '123 ' . $i,
+          'locality' => 'Town' . $i,
         ],
       ];
       $node = Node::create($values);
@@ -340,6 +343,18 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 7',
       'Event number 8',
       'Event number 9',
+    ]);
+    $this->assertResultMetas([
+      '1 Apr 2022 - 2 Apr 2022 Town0, Afghanistan',
+      '2 Apr 2022 - 3 Apr 2022 Town1, Belgium',
+      '3 Apr 2022 - 4 Apr 2022 Town2, Romania',
+      '4 Apr 2022 - 5 Apr 2022 Town3, Germany',
+      '5 Apr 2022 - 6 Apr 2022 Town4, France',
+      '6 Apr 2022 - 7 Apr 2022 Town5, Spain',
+      '7 Apr 2022 - 8 Apr 2022 Town6, Italy',
+      '8 Apr 2022 - 9 Apr 2022 Town7, Australia',
+      '9 Apr 2022 - 10 Apr 2022 Town8, Barbados',
+      '10 Apr 2022 - 11 Apr 2022 Town9, Romania',
     ]);
 
     $this->scrollIntoView('ul.pagination > li:nth-child(2) > a');
@@ -873,6 +888,19 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $items = $this->assertSession()
       ->elementExists('css', '.bcl-listing')
       ->findAll('css', '.card-title');
+    $this->assertElementsTexts($expected, $items);
+  }
+
+  /**
+   * Asserts search results item's meta information.
+   *
+   * @param array $expected
+   *   Expected meta items.
+   */
+  protected function assertResultMetas(array $expected): void {
+    $items = $this->assertSession()
+      ->elementExists('css', '.bcl-listing')
+      ->findAll('css', '.my-3.me-n3');
     $this->assertElementsTexts($expected, $items);
   }
 
