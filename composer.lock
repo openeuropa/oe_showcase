@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65f5e93bb4b77ca263d7a804d898dd9f",
+    "content-hash": "b02b91e454a556acd602587955d9926d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7528,16 +7528,16 @@
         },
         {
             "name": "openeuropa/oe_paragraphs",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_paragraphs.git",
-                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148"
+                "reference": "e209ec886e8483dc69102d8ce17082d5e4a2ffd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/5023bc9a75b52b73e12b31a4a3f83213d459b148",
-                "reference": "5023bc9a75b52b73e12b31a4a3f83213d459b148",
+                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/e209ec886e8483dc69102d8ce17082d5e4a2ffd1",
+                "reference": "e209ec886e8483dc69102d8ce17082d5e4a2ffd1",
                 "shasum": ""
             },
             "require": {
@@ -7570,7 +7570,7 @@
                 "openeuropa/behat-transformation-context": "^0.1",
                 "openeuropa/code-review": "^2.0",
                 "openeuropa/oe_content": "^3.0.0-alpha4",
-                "openeuropa/oe_media": "^1.15",
+                "openeuropa/oe_media": "^1.16",
                 "openeuropa/oe_webtools": "^1.12",
                 "openeuropa/rdf_skos": "^1.0.0-alpha6",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
@@ -7598,9 +7598,6 @@
                 "patches": {
                     "drupal/paragraphs": {
                         "https://www.drupal.org/project/paragraphs/issues/2890086": "https://www.drupal.org/files/issues/2021-12-23/respect-display-on-validation-2890086-55.patch"
-                    },
-                    "drupal/file_link": {
-                        "https://www.drupal.org/project/file_link/issues/3239397": "https://git.drupalcode.org/project/file_link/-/merge_requests/3.patch"
                     }
                 },
                 "drupal-scaffold": {
@@ -7629,9 +7626,9 @@
             "description": "Drupal module providing a collection of Paragraph types based on ECL components.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_paragraphs/issues",
-                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.16.0"
+                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.17.0"
             },
-            "time": "2022-11-04T13:24:17+00:00"
+            "time": "2022-11-21T08:25:22+00:00"
         },
         {
             "name": "openeuropa/oe_starter_content",
@@ -7807,16 +7804,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202211091028",
+            "version": "dev-OEL-2119",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1"
+                "reference": "8047805e4d1034149e4a4bd36438648312574673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1",
-                "reference": "aca5b4fb9ff6a1f6735e2184cb12b0297000c6c1",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/8047805e4d1034149e4a4bd36438648312574673",
+                "reference": "8047805e4d1034149e4a4bd36438648312574673",
                 "shasum": ""
             },
             "require": {
@@ -7859,7 +7856,7 @@
                 "openeuropa/oe_corporate_blocks": "^4.8",
                 "openeuropa/oe_list_pages": "^0.20",
                 "openeuropa/oe_multilingual": "^1.11",
-                "openeuropa/oe_paragraphs": "^1.16",
+                "openeuropa/oe_paragraphs": "^1.17",
                 "openeuropa/oe_starter_content": "^1.0.0-beta3",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
                 "phpspec/prophecy-phpunit": "^2",
@@ -7880,9 +7877,6 @@
                 "patches": {
                     "drupal/entity_reference_revisions": {
                         "https://www.drupal.org/project/entity_reference_revisions/issues/2937835": "https://www.drupal.org/files/issues/2021-03-26/entity_reference_revisions-field_formatter_label-2937835-36.patch"
-                    },
-                    "openeuropa/oe_paragraphs": {
-                        "master": "https://github.com/openeuropa/oe_paragraphs/compare/1.16.0..master.diff"
                     }
                 },
                 "drupal-scaffold": {
@@ -7924,9 +7918,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202211091028"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-2119"
             },
-            "time": "2022-11-09T09:28:21+00:00"
+            "time": "2022-11-28T06:36:42+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -10167,16 +10161,16 @@
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "bf44a9fd41feaac72b074de600314a93e2ae78e2"
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/bf44a9fd41feaac72b074de600314a93e2ae78e2",
-                "reference": "bf44a9fd41feaac72b074de600314a93e2ae78e2",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/869329b1e9894268a8a61dabb69153029b7a8c97",
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97",
                 "shasum": ""
             },
             "require": {
@@ -10185,7 +10179,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -10223,7 +10217,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php72/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-php72/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -10239,20 +10233,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "e440d35fa0286f77fb45b79a03fedbeda9307e85"
+                "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/e440d35fa0286f77fb45b79a03fedbeda9307e85",
-                "reference": "e440d35fa0286f77fb45b79a03fedbeda9307e85",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
+                "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
                 "shasum": ""
             },
             "require": {
@@ -10261,7 +10255,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -10302,7 +10296,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -10318,7 +10312,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -14725,16 +14719,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.1",
+            "version": "v4.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900"
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
                 "shasum": ""
             },
             "require": {
@@ -14775,9 +14769,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.2"
             },
-            "time": "2022-09-04T07:30:47+00:00"
+            "time": "2022-11-12T15:38:23+00:00"
         },
         {
             "name": "nuvoleweb/robo-config",
@@ -15773,16 +15767,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "33aefcdab42900e36366d0feab6206e2dd68f947"
+                "reference": "aac44118344d197e6d5f7c6cee91885f0a89acdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/33aefcdab42900e36366d0feab6206e2dd68f947",
-                "reference": "33aefcdab42900e36366d0feab6206e2dd68f947",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/aac44118344d197e6d5f7c6cee91885f0a89acdd",
+                "reference": "aac44118344d197e6d5f7c6cee91885f0a89acdd",
                 "shasum": ""
             },
             "require": {
@@ -15812,22 +15806,22 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.13.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.13.1"
             },
-            "time": "2022-10-21T09:57:39+00:00"
+            "time": "2022-11-20T08:52:26+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.18",
+            "version": "9.2.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "12fddc491826940cf9b7e88ad9664cf51f0f6d0a"
+                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
-                "reference": "12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c77b56b63e3d2031bd8997fcec43c1925ae46559",
+                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559",
                 "shasum": ""
             },
             "require": {
@@ -15883,7 +15877,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.18"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.19"
             },
             "funding": [
                 {
@@ -15891,7 +15885,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-10-27T13:35:33+00:00"
+            "time": "2022-11-18T07:47:47+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -18291,16 +18285,16 @@
         },
         {
             "name": "symfony/polyfill-php81",
-            "version": "v1.26.0",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php81.git",
-                "reference": "13f6d1271c663dc5ae9fb843a8f16521db7687a1"
+                "reference": "707403074c8ea6e2edaf8794b0157a0bfa52157a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/13f6d1271c663dc5ae9fb843a8f16521db7687a1",
-                "reference": "13f6d1271c663dc5ae9fb843a8f16521db7687a1",
+                "url": "https://api.github.com/repos/symfony/polyfill-php81/zipball/707403074c8ea6e2edaf8794b0157a0bfa52157a",
+                "reference": "707403074c8ea6e2edaf8794b0157a0bfa52157a",
                 "shasum": ""
             },
             "require": {
@@ -18309,7 +18303,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.27-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -18350,7 +18344,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php81/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-php81/tree/v1.27.0"
             },
             "funding": [
                 {
@@ -18366,7 +18360,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -18650,6 +18644,12 @@
             "version": "1.0.0.0",
             "alias": "0.9.1",
             "alias_normalized": "0.9.1.0"
+        },
+        {
+            "package": "openeuropa/oe_whitelabel",
+            "version": "dev-OEL-2119",
+            "alias": "0.1.202211091028",
+            "alias_normalized": "0.1.202211091028.0"
         }
     ],
     "minimum-stability": "dev",
@@ -18660,7 +18660,8 @@
         "drupal/dropsolid_purge": 10,
         "drupal/json_field": 5,
         "drupal/roleassign": 10,
-        "drupal/user_field_anonymize": 15
+        "drupal/user_field_anonymize": 15,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -18668,5 +18669,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

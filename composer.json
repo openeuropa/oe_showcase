@@ -51,7 +51,7 @@
         "openeuropa/oe_list_pages": "^0.20",
         "openeuropa/oe_multilingual": "^1.11",
         "openeuropa/oe_oembed": "^0.3.0",
-        "openeuropa/oe_paragraphs": "^1.16",
+        "openeuropa/oe_paragraphs": "^1.17",
         "openeuropa/oe_starter_content": "^1.0.0-beta3",
         "openeuropa/oe_webtools": "^1.19",
         "openeuropa/oe_whitelabel": "0.1.202211091028"
@@ -64,6 +64,7 @@
         "drupal/core-dev": "~9.4.0",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
+        "openeuropa/oe_whitelabel": "dev-OEL-2119 as 0.1.202211091028",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpmd/phpmd": "^2.11",
         "phpspec/prophecy-phpunit": "^1 || ^2",
