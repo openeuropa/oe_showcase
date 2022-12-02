@@ -6,14 +6,11 @@ dependencies:
     - node.type.oe_sc_publication
   module:
     - allowed_formats
-    - field_display_label
     - text
 third_party_settings:
   allowed_formats:
     allowed_formats:
       - rich_text
-  field_display_label:
-    display_label: Description
 id: node.oe_sc_publication.body
 field_name: body
 entity_type: node
