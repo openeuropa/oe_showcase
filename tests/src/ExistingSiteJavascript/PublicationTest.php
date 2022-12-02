@@ -93,8 +93,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     // @todo Assert formats.
     $assert_session->fieldExists('Short description')->setValue('Short description text.');
     $this->enterTextInWysiwyg('Description', 'Description text.');
-    // @todo Setting dates in JS tests is not as straightforward as it seems.
-    // @see oe_content/tests/src/Behat/DateFieldContext.php
     // Assert the media browser for the document field.
     $document_fieldset = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-sc-publication-document-wrapper"]');
     $assert_session->buttonExists('Select media', $document_fieldset)->press();
@@ -142,7 +140,9 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $content_banner_assert = new ContentBannerAssert();
     $expected_content_banner = [
       'title' => 'Test publication',
-      // @todo Add date test.
+      'meta' => [
+        date('d F Y'),
+      ],
       'description' => 'Short description text.',
       'badges' => [],
       'image' => [
@@ -156,6 +156,8 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $publication = $this->getNodeByTitle('Test publication');
     $this->drupalGet($publication->toUrl('edit-form'));
     $assert_session->fieldExists('Publication type')->selectOption('Type 1');
+    // @todo Setting dates in JS tests is not as straightforward as it seems.
+    // @see oe_content/tests/src/Behat/DateFieldContext.php
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Publication Test publication has been updated.');
 
