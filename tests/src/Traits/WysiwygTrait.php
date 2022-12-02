@@ -12,27 +12,6 @@ use Behat\Mink\Element\NodeElement;
 trait WysiwygTrait {
 
   /**
-   * Checks whether a WYSIWYG editor with the given field label is present.
-   *
-   * @param string $field
-   *   The label of the field to which the WYSIWYG editor is attached.
-   *
-   * @return bool
-   *   TRUE if the editor is present, FALSE otherwise.
-   */
-  protected function hasWysiwyg($field) {
-    try {
-      $this->getWysiwyg($field);
-      return TRUE;
-    }
-    // Only catch the specific exception that is thrown when the WYSIWYG editor
-    // is not present, let all other exceptions pass through.
-    catch (\Exception $e) {
-      return FALSE;
-    }
-  }
-
-  /**
    * Presses the given WYSIWYG button.
    *
    * @param string $field
