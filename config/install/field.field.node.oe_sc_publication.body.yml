@@ -15,7 +15,7 @@ id: node.oe_sc_publication.body
 field_name: body
 entity_type: node
 bundle: oe_sc_publication
-label: 'Long description'
+label: 'Description'
 description: ''
 required: false
 translatable: false

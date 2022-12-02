@@ -92,7 +92,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->fieldExists('Reference code')->setValue('I-9876987012');
     // @todo Assert formats.
     $assert_session->fieldExists('Short description')->setValue('Short description text.');
-    $this->enterTextInWysiwyg('Long description', 'Long description text.');
+    $this->enterTextInWysiwyg('Description', 'Description text.');
     // @todo Setting dates in JS tests is not as straightforward as it seems.
     // @see oe_content/tests/src/Behat/DateFieldContext.php
     // Assert the media browser for the document field.
@@ -136,7 +136,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Publication Test publication has been created.');
-
     // Since the rendering of the content banner view mode has been changed,
     // test that everything is rendered correctly when no publication type is
     // selected.
