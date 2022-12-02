@@ -161,6 +161,12 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $expected_content_banner['badges'] = ['Type 1'];
     $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
+
+    $assert_session->pageTextContains('John Red');
+    $assert_session->pageTextContains('Bob Purple');
+    $assert_session->pageTextContains('I-9876987012');
+    $assert_session->pageTextContains('Description text.');
+    $assert_session->pageTextContains('Document title');
   }
 
   /**
