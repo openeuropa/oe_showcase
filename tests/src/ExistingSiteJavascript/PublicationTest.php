@@ -152,16 +152,16 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     ];
     $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
 
-    // Edit again the publication and select a type.
+    // Edit again the publication and select a type and date.
     $publication = $this->getNodeByTitle('Test publication');
     $this->drupalGet($publication->toUrl('edit-form'));
     $assert_session->fieldExists('Publication type')->selectOption('Type 1');
-    // @todo Setting dates in JS tests is not as straightforward as it seems.
-    // @see oe_content/tests/src/Behat/DateFieldContext.php
+    $assert_session->fieldExists('oe_publication_date[0][value][date]')->setValue('11.01.2022');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Publication Test publication has been updated.');
 
     $expected_content_banner['badges'] = ['Type 1'];
+    $expected_content_banner['meta'] = ['01 November 2022'];
     $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
 
     $assert_session->pageTextContains('John Red');
