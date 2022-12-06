@@ -64,7 +64,6 @@
         "drupal/core-dev": "~9.4.0",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
-        "openeuropa/oe_whitelabel": "dev-OEL-2119 as 0.1.202211091028",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpmd/phpmd": "^2.11",
         "phpspec/prophecy-phpunit": "^1 || ^2",
@@ -117,6 +116,13 @@
         "patches": {
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch"
+            }
+        },
+        "patches-ignore": {
+            "openeuropa/oe_whitelabel": {
+                "openeuropa/oe_paragraphs": {
+                    "Outdated": "https://github.com/openeuropa/oe_paragraphs/compare/1.16.0..master.diff"
+                }
             }
         },
         "artifacts": {
