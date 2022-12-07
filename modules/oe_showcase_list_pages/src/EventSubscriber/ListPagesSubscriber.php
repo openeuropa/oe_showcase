@@ -75,6 +75,12 @@ class ListPagesSubscriber implements EventSubscriberInterface {
             'title__ASC' => 'A-Z',
             'title__DESC' => 'Z-A',
           ],
+          'oe_sc_publication' => [
+            'title__ASC' => 'A-Z',
+            'title__DESC' => 'Z-A',
+            'oe_publication_date__ASC' => 'Publication date ASC',
+            'oe_publication_date__DESC' => 'Publication date DESC',
+          ],
         ],
       ],
     ];

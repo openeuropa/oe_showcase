@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browsers
+  module:
+    - oe_media
+    - views
+name: documents
+label: Documents
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select media'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  5b99b16c-0710-4271-9c45-deed0c6bcfaa:
+    id: view
+    uuid: 5b99b16c-0710-4271-9c45-deed0c6bcfaa
+    label: 'Media library'
+    weight: 1
+    settings:
+      submit_text: 'Select media'
+      auto_select: false
+      view: media_entity_browsers
+      view_display: documents
+  82a81512-14cc-4953-bdd6-5a439c078071:
+    id: oe_media_creation_form
+    uuid: 82a81512-14cc-4953-bdd6-5a439c078071
+    label: 'Create new document'
+    weight: 2
+    settings:
+      submit_text: 'Create and select document'

@@ -51,8 +51,8 @@
         "openeuropa/oe_list_pages": "^0.20",
         "openeuropa/oe_multilingual": "^1.11",
         "openeuropa/oe_oembed": "^0.3.0",
-        "openeuropa/oe_paragraphs": "^1.16",
-        "openeuropa/oe_starter_content": "^1.0.0-beta3",
+        "openeuropa/oe_paragraphs": "^1.17",
+        "openeuropa/oe_starter_content": "dev-OEL-1724",
         "openeuropa/oe_webtools": "^1.19",
         "openeuropa/oe_whitelabel": "0.1.202211091028"
     },
@@ -116,6 +116,16 @@
         "patches": {
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "EPIC": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.202211091028...OEL-2109.diff"
+            }
+        },
+        "patches-ignore": {
+            "openeuropa/oe_whitelabel": {
+                "openeuropa/oe_paragraphs": {
+                    "Outdated": "https://github.com/openeuropa/oe_paragraphs/compare/1.16.0..master.diff"
+                }
             }
         },
         "artifacts": {

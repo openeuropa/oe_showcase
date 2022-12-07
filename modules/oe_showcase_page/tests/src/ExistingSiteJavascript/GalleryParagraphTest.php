@@ -28,11 +28,7 @@ class GalleryParagraphTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     // Create a media entity for each existing bundle.
-    $medias = [];
-    $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
-    foreach (array_keys($bundles) as $bundle) {
-      $medias[$bundle] = $this->createMediaByBundle($bundle);
-    }
+    $media = $this->createTestMedia();
 
     $editor = $this->createUser([]);
     $editor->addRole('editor');
@@ -82,8 +78,8 @@ class GalleryParagraphTest extends ShowcaseExistingSiteJavascriptTestBase {
       'image',
       'remote_video',
     ];
-    foreach (array_diff(array_keys($medias), $expected_media_bundles) as $unwanted_bundle) {
-      $assert_session->pageTextNotContains($medias[$unwanted_bundle]->label());
+    foreach (array_diff(array_keys($media), $expected_media_bundles) as $unwanted_bundle) {
+      $assert_session->pageTextNotContains($media[$unwanted_bundle]->label());
     }
 
     // Currently showcase ships media entities with the default_content module.

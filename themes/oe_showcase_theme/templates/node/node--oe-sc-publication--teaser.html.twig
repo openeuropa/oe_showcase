@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override to display a node of bundle publication in the teaser view mode.
+ *
+ * @see ./build/themes/contrib/oe_whitelabel/templates/content/node--oe-sc-publication--teaser.html.twig
+ */
+#}
+{% set _title %}
+  <a class="standalone" href="{{ url }}">{{ label }}</a>
+{% endset %}
+{% set _badges = [] %}
+{% for _item in content.field_publication_type|field_value %}
+  {% set _badges = _badges|merge([{
+    label: _item,
+  }]) %}
+{% endfor %}
+{% block content %}
+  {{ pattern('card', {
+    variant: 'search',
+    title: _title,
+    text: content.oe_summary,
+    image: image,
+    badges: _badges,
+    meta: [
+      content.oe_publication_date|field_value,
+    ],
+    attributes: attributes,
+  }) }}
+{% endblock %}

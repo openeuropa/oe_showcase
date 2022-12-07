@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Publication content banner display.
+  *
+ * @see ./build/themes/contrib/oe_whitelabel/templates/content/node--oe-sc-publication--oe-w-content-banner.html.twig
+ */
+#}
+{% set _badges = [] %}
+{% for _item in content.field_publication_type|field_value %}
+  {% set _badges = _badges|merge([{
+    label: _item,
+    rounded_pill: true,
+  }]) %}
+{% endfor %}
+<div{{ attributes }}>
+  {{ pattern('content_banner', {
+    background: 'gray',
+    title: label,
+    content: content.oe_summary,
+    image: image,
+    meta: [
+      content.oe_publication_date|field_value,
+    ],
+    badges: _badges
+  }) }}
+</div>

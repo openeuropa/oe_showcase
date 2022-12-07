@@ -3,15 +3,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.oe_sc_event_dates
     - field.storage.node.field_event_type
-    - field.storage.node.field_publication_type
+    - field.storage.node.oe_summary
+    - field.storage.node.oe_sc_event_location
     - field.storage.node.oe_project_budget
     - field.storage.node.oe_project_dates
     - field.storage.node.oe_publication_date
-    - field.storage.node.oe_sc_event_dates
-    - field.storage.node.oe_sc_event_location
+    - field.storage.node.field_publication_type
     - field.storage.node.oe_subject
-    - field.storage.node.oe_summary
     - search_api.server.oe_list_pages_search_server
   module:
     - oe_list_pages
