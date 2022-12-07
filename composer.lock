@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81941053deda3db9379313d6e56e286d",
+    "content-hash": "5731132dae37e5e49a711c01489f7bf5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7632,11 +7632,11 @@
         },
         {
             "name": "openeuropa/oe_starter_content",
-            "version": "dev-OEL-1724",
+            "version": "dev-OEL-2130",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_starter_content",
-                "reference": "8a3e5fa89da014c89278952fd4ee2e5091d03239"
+                "reference": "8102bf22cebd691158bcd2a0bf72b813889203b5"
             },
             "require": {
                 "drupal/address": "^1.10",
@@ -7707,7 +7707,7 @@
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module that contains content types to quickstart a project.",
-            "time": "2022-12-01T14:19:05+00:00"
+            "time": "2022-12-06T15:45:18+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -18666,5 +18666,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
