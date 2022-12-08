@@ -552,6 +552,7 @@ function oe_showcase_post_update_00022(): void {
     'field.field.node.oe_sc_publication.field_publication_authors',
     'field.field.node.oe_sc_publication.field_publication_type',
     'core.entity_form_display.node.oe_sc_publication.default',
+    'core.entity_view_display.node.oe_sc_publication.full',
     'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_publication.teaser',
     'facets.facet.oelp_oe_sc_publication__keyword',
