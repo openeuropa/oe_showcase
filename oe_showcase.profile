@@ -227,6 +227,22 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
 }
 
 /**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function oe_showcase_field_widget_timeline_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  // Bail out if it's a default value widget.
+  if ($context['default']) {
+    return;
+  }
+
+  if (!isset($element['body']['#format'])) {
+    return;
+  }
+  // Force Simple rich text format for timeline body.
+  $element['body']['#format'] = 'simple_rich_text';
+}
+
+/**
  * Validates the chosen text format.
  *
  * @param array $element
