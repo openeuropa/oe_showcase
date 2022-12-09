@@ -96,7 +96,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tellus faucibus, blandit orci ut, tincidunt ante. Proin tempor aliquet finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In iaculis nunc sodales, rhoncus nibh id, auctor lorem. Aenean at facilisis mauris. Vestibulum lorem ex, viverra eget lacus et, accumsan fermentum nisi. Sed quis nisi nec nunc mollis maximus condimentum sit amet nunc. Curabitur quis turpis sagittis turpis euismod ultricies. Aenean suscipit risus ut felis iaculis convallis. Sed dictum, quam a bibendum hendrerit, dui dui hendrerit orci, dictum condimentum magna ipsum ac nisi.</p>\r\n\r\n<p><strong>Praesent quis leo non velit tempor vestibulum.</strong></p>\r\n\r\n<p>Pellentesque sed velit placerat, consequat ipsum sed, volutpat elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc egestas sem eget pellentesque molestie. Maecenas non nibh urna. Donec ultricies semper augue, et facilisis felis eleifend vitae. Sed bibendum nec velit eu varius. Cras vehicula ante eget nulla dictum, id dapibus nunc porttitor. Ut sem est, finibus eu justo et, sollicitudin euismod velit. Phasellus sit amet sagittis mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc ac nunc ex. Vivamus euismod ornare nisi at convallis.</p>\r\n"
-                      format: full_html
+                      format: rich_text
                   field_oe_title:
                     -
                       value: Introduction
@@ -127,7 +127,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Curabitur leo enim, malesuada et vestibulum non, volutpat sit amet massa. Aenean convallis dapibus nunc id mattis. Aenean molestie sem nec neque rutrum, et tincidunt odio luctus. Pellentesque efficitur auctor nibh et viverra. Nunc eget tellus sed mi interdum vulputate sit amet eget sapien. Proin sed mauris facilisis, egestas mi quis, facilisis odio. Curabitur consectetur odio sed fringilla semper. Fusce in arcu sollicitudin, placerat elit non, convallis metus. Vivamus fermentum maximus ligula eu placerat. In efficitur euismod placerat. Ut pharetra a mauris ac maximus. Sed vehicula, nisl a pretium scelerisque, arcu elit mollis eros, at condimentum ante quam at quam. Nulla semper facilisis purus, sed sodales ante lacinia vel.</p>\r\n\r\n<p>Cras ultricies varius augue, in molestie arcu malesuada eget. Praesent luctus, quam eget convallis pulvinar, ex nulla tincidunt elit, at ullamcorper augue ligula nec metus. Aenean auctor accumsan nisi non tristique. Praesent vitae nisi ac arcu fermentum dictum. Nunc in elit ac sapien dignissim lobortis id sit amet odio. Nullam vulputate tincidunt tortor non pharetra. Aliquam sed ante at purus ornare auctor a ut turpis. Proin ultricies sed neque sit amet scelerisque. Aliquam malesuada massa id quam pharetra, sed egestas sapien vestibulum. Duis semper vestibulum ipsum, sed consequat sapien aliquet vitae. Sed eu mi fringilla, consectetur enim in, finibus massa. Suspendisse tristique a ante vitae mollis. Vestibulum et magna vel ligula porta elementum. Etiam sit amet pellentesque orci. Sed iaculis nunc in lectus faucibus aliquet.</p>\r\n"
-                      format: full_html
+                      format: rich_text
                   field_oe_title:
                     -
                       value: 'Second title'

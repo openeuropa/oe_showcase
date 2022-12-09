@@ -128,7 +128,7 @@ default:
           field_oe_text_long:
             -
               value: "<p>Fusce gravida consequat magna volutpat bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sodales suscipit arcu in dapibus. Curabitur felis ante, gravida ut rutrum non, pellentesque ut turpis. Ut ultricies diam id sapien feugiat, vehicula viverra leo luctus. Ut at dapibus arcu. Etiam hendrerit leo tincidunt mauris viverra iaculis. Duis quis leo maximus, ultricies dolor ac, venenatis enim.</p>\r\n"
-              format: full_html
+              format: rich_text
           field_oe_title:
             -
               value: 'This is a text with featured media'
@@ -171,7 +171,7 @@ default:
           field_oe_text_long:
             -
               value: "<p>In mauris velit, tristique at turpis nec, ornare dapibus nunc. Vivamus quis quam tincidunt, tempor elit eget, maximus diam. Mauris ultrices lobortis quam, vel placerat tellus hendrerit in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam diam odio, laoreet eget est ac, scelerisque suscipit lacus. Quisque et lectus nec purus auctor fringilla sit amet in erat. Ut non nisl porta, vehicula tortor vel, feugiat velit. Sed commodo ipsum sit amet ante vulputate, non bibendum lorem ultrices. Nulla sit amet orci viverra, molestie nibh sit amet, efficitur urna. Maecenas dapibus cursus sapien sit amet congue.</p>\r\n"
-              format: full_html
+              format: rich_text
     -
       entity:
         _meta:
@@ -229,7 +229,7 @@ default:
           field_oe_text_long:
             -
               value: "<p>In mauris velit, tristique at turpis nec, ornare dapibus nunc. Vivamus quis quam tincidunt, tempor elit eget, maximus diam. Mauris ultrices lobortis quam, vel placerat tellus hendrerit in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam diam odio, laoreet eget est ac, scelerisque suscipit lacus. Quisque et lectus nec purus auctor fringilla sit amet in erat. Ut non nisl porta, vehicula tortor vel, feugiat velit. Sed commodo ipsum sit amet ante vulputate, non bibendum lorem ultrices. Nulla sit amet orci viverra, molestie nibh sit amet, efficitur urna. Maecenas dapibus cursus sapien sit amet congue.</p>\r\n"
-              format: full_html
+              format: rich_text
     -
       entity:
         _meta:
@@ -339,7 +339,7 @@ default:
                   field_oe_text_long:
                     -
                       value: 'Suspendisse consequat vulputate enim, at pretium justo elementum quis. Nullam tincidunt fringilla dui, fringilla tincidunt turpis feugiat vel. Ut luctus porta metus, fringilla efficitur lectus feugiat sed.'
-                      format: plain_text
+                      format: simple_rich_text
                   field_oe_title:
                     -
                       value: 'Link item title one'
@@ -385,7 +385,7 @@ default:
                   field_oe_text_long:
                     -
                       value: 'Nunc placerat dolor lacus, eget tincidunt nunc dignissim eu. Praesent pretium metus est, ut dictum neque vulputate sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
-                      format: plain_text
+                      format: simple_rich_text
                   field_oe_title:
                     -
                       value: 'Link item title two'
@@ -450,7 +450,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Nam accumsan ornare est, pulvinar mollis sapien. Aenean tristique, massa sit amet imperdiet malesuada, ligula magna interdum mauris, id hendrerit erat ante quis neque. Donec convallis arcu id efficitur scelerisque. Mauris quis massa semper nisi tempus gravida. Nunc scelerisque dolor nec sapien venenatis dapibus. Sed laoreet augue vel sapien luctus, in vestibulum lacus viverra. Aliquam viverra cursus dapibus. In hac habitasse platea dictumst. Aliquam quis massa sed orci pulvinar congue id sit amet ante. Sed vestibulum tincidunt nunc, in laoreet est dictum sit amet. Nulla sit amet mollis tortor, et tincidunt massa. Pellentesque feugiat velit quis nulla interdum, id efficitur odio commodo. Mauris sed bibendum nunc. Donec nec nisl consectetur, lacinia dui vel, rutrum lorem.</p>\r\n"
-                      format: full_html
+                      format: rich_text
             -
               entity:
                 _meta:
@@ -484,7 +484,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Nullam semper molestie lectus in ultricies. Vestibulum vel odio ipsum. Praesent at aliquam dolor. Donec consectetur lectus sed mi viverra, quis facilisis arcu euismod. Vivamus pharetra orci non elementum finibus. Pellentesque nec ultrices ex.</p>\r\n"
-                      format: full_html
+                      format: rich_text
             -
               entity:
                 _meta:
@@ -518,7 +518,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Nulla ipsum diam, viverra quis molestie sit amet, cursus at enim. Nullam tempor leo placerat tellus faucibus congue. Suspendisse consequat lectus sit amet posuere tincidunt. Integer vehicula eleifend ligula ut tincidunt. Suspendisse condimentum, leo a tristique aliquet, erat tellus vehicula lectus, a hendrerit lacus lorem sit amet lacus. Aliquam tristique, libero id vestibulum elementum, sapien sapien imperdiet nibh, facilisis aliquam nulla quam a elit. Morbi pulvinar ex nec nisl varius, a laoreet neque varius. Duis eros massa, dapibus in eleifend eu, volutpat in nibh.</p>\r\n"
-                      format: full_html
+                      format: rich_text
             -
               entity:
                 _meta:
@@ -552,7 +552,7 @@ default:
                   field_oe_text_long:
                     -
                       value: "<p>Quisque dignissim quam eget tincidunt euismod. Quisque euismod nulla vel tellus dignissim, ac pellentesque mi varius. Nam eget nisl vitae leo condimentum semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pulvinar ornare arcu non ultricies. In ex sapien, tincidunt a eleifend quis, accumsan nec metus. Vivamus eget erat eget magna semper ullamcorper. Vestibulum posuere elit tortor, nec suscipit orci tristique eu.</p>\r\n"
-                      format: full_html
+                      format: rich_text
     -
       entity:
         _meta:

@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -18,6 +19,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
+  use WysiwygTrait;
 
   /**
    * {@inheritdoc}
@@ -66,7 +68,9 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('node/add/oe_project');
     $page->fillField('Page title', 'Project page test');
     $page->fillField('Media item', 'Project Image test');
-    $page->fillField('Teaser', 'Teaser text');
+    $field = $page->findField('Teaser');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Teaser text');
     $page->fillField('Subject', 'financing (http://data.europa.eu/uxp/1000)');
 
     // Project details.
@@ -87,10 +91,18 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Create organisation');
 
     // Summary, objective, impacts and achievements and milestones.
-    $page->fillField('Summary', 'Text summary');
-    $page->fillField('Objective', 'Text Objective');
-    $page->fillField('Impacts', 'Text Impacts');
-    $page->fillField('Achievements and milestones', 'Text Achievements and milestones');
+    $field = $page->findField('Summary');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text summary');
+    $field = $page->findField('Objective');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Objective');
+    $field = $page->findField('Impacts');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Impacts');
+    $field = $page->findField('Achievements and milestones');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Achievements and milestones');
 
     // Participants.
     $page->pressButton('Add new participant');
