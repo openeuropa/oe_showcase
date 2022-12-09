@@ -546,8 +546,6 @@ function oe_showcase_post_update_00022(): void {
 
 /**
  * Fix allowed formats in formatted text fields.
- *
- * @see https://github.com/ec-europa/ewcms/blob/develop/post_updates/ewcms_post_update_200.inc#L2096
  */
 function oe_showcase_post_update_00023(): void {
   $field_storage = \Drupal::entityTypeManager()->getStorage('field_config');
@@ -555,6 +553,7 @@ function oe_showcase_post_update_00023(): void {
   // fields that are already used in production. The first format is the real
   // allowed one, while the others are the current value (note that order is
   // just for sake of understanding easier which format is what).
+  // @see https://github.com/ec-europa/ewcms/blob/develop/post_updates/ewcms_post_update_200.inc#L2096
   $fields = [
     'paragraph.oe_accordion_item.field_oe_text_long' => [
       'rich_text',
