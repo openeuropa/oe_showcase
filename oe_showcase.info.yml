@@ -133,6 +133,7 @@ config_devel:
     - filter.format.full_html
     - filter.format.rich_text
     - filter.format.simple_rich_text
+    - image.style.media_entity_browser_thumbnail
     - legal.settings
     - node.settings
     - oe_authentication.settings
