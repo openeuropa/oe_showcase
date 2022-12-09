@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Field template for publication reference code.
+ *
+ * @see ./core/themes/stable/templates/field/field.html.twig
+ */
+#}
+{% if items is not empty %}
+  <h2{{ title_attributes.addClass('mb-4')}}>{{ label }}</h2>
+  <div class="mb-4-5">
+    {% if items|length > 2 %}
+      <p class="fs-5">
+      {% for item in items %}
+        {{ item.content }}{% if not loop.last %} • {% endif %}
+      {% endfor %}
+      </p>
+    {% else %}
+      <ul class="ps-4">
+        {% for item in items %}
+          <li class="ps-2 fs-5 mb-1">{{ item.content }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endif %}
+
+

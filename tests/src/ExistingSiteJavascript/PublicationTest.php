@@ -11,6 +11,7 @@ use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
+use Drupal\Tests\oe_whitelabel\PatternAssertions\InPageNavigationAssert;
 
 /**
  * Tests the publication content type.
@@ -33,8 +34,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $vocabulary = Vocabulary::load('publication_type');
     $this->createTerm($vocabulary, ['name' => 'Type 1']);
     $this->createTerm($vocabulary, ['name' => 'Type 2']);
-    $this->createPerson('John', 'Red');
-    $this->createPerson('Bob', 'Purple');
     $media = $this->createTestMedia();
 
     $user = $this->createUser([]);
@@ -127,11 +126,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->assertWaitOnAjaxRequest();
     $assert_session->pageTextContains('Document title');
 
-    $assert_session->fieldExists('Authors')->setValue('John Red');
-    $assert_session->buttonExists('Add another item')->press();
-    $assert_session->assertWaitOnAjaxRequest();
-    $assert_session->fieldExists('oe_sc_publication_authors[1][target_id]')->setValue('Bob Purple');
-
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Publication Test publication has been created.');
     // Since the rendering of the content banner view mode has been changed,
@@ -152,6 +146,10 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     ];
     $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
 
+    $assert_session->pageTextContains('I-9876987012');
+    $assert_session->pageTextContains('Description text.');
+    $assert_session->pageTextContains('Document title');
+
     // Edit again the publication and select a type and date.
     $publication = $this->getNodeByTitle('Test publication');
     $this->drupalGet($publication->toUrl('edit-form'));
@@ -164,11 +162,68 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $expected_content_banner['meta'] = ['01 November 2022'];
     $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
 
-    $assert_session->pageTextContains('John Red');
-    $assert_session->pageTextContains('Bob Purple');
-    $assert_session->pageTextContains('I-9876987012');
-    $assert_session->pageTextContains('Description text.');
-    $assert_session->pageTextContains('Document title');
+    // Edit again to add an author.
+    $this->createPerson('John', 'Red');
+    $this->drupalGet($publication->toUrl('edit-form'));
+    $assert_session->fieldExists('Authors')->setValue('John Red');
+    $assert_session->buttonExists('Save')->press();
+    $assert_session->pageTextContains('Publication Test publication has been updated.');
+
+    $inpage_nav_assert = new InPageNavigationAssert();
+    $inpage_nav_assert->assertPattern([
+      'title' => 'Page content',
+      'links' => [
+        [
+          'label' => 'Authors',
+          'href' => '#authors',
+        ],
+        [
+          'label' => 'Reference code',
+          'href' => '#reference-code',
+        ],
+        [
+          'label' => 'Description',
+          'href' => '#description',
+        ],
+        [
+          'label' => 'Document',
+          'href' => '#document',
+        ],
+      ],
+    ], $assert_session->elementExists('css', 'nav.bcl-inpage-navigation')->getOuterHtml());
+
+    $this->assertEquals('Authors', $assert_session->elementExists('css', 'h2#authors')->getText());
+    $author_list = $assert_session->elementExists('css', 'h2#authors + div.mb-4-5 ul');
+    $this->assertCount(1, $author_list->findAll('css', 'li'));
+    $this->assertEquals('John Red', trim($author_list->getText()));
+
+    // Test that up to two authors, they are rendered in an unordered list.
+    $this->createPerson('Bob', 'Purple');
+    $this->drupalGet($publication->toUrl('edit-form'));
+    $assert_session->buttonExists('Add another item')->press();
+    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->fieldExists('field_publication_authors[1][target_id]')->setValue('Bob Purple');
+    $assert_session->buttonExists('Save')->press();
+    $assert_session->pageTextContains('Publication Test publication has been updated.');
+
+    $author_list = $assert_session->elementExists('css', 'h2#authors + div.mb-4-5 ul');
+    $list_items = $author_list->findAll('css', 'li');
+    $this->assertCount(2, $list_items);
+    $this->assertEquals('John Red', trim($list_items[0]->getText()));
+    $this->assertEquals('Bob Purple', trim($list_items[1]->getText()));
+
+    // When three authors or more are present, they are rendered separated by a
+    // bullet.
+    $this->createPerson('Mia', 'Green');
+    $this->drupalGet($publication->toUrl('edit-form'));
+    $assert_session->buttonExists('Add another item')->press();
+    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->fieldExists('field_publication_authors[2][target_id]')->setValue('Mia Green');
+    $assert_session->buttonExists('Save')->press();
+    $assert_session->pageTextContains('Publication Test publication has been updated.');
+
+    $assert_session->elementNotExists('css', 'h2#authors + div.mb-4-5 ul');
+    $this->assertEquals('John Red • Bob Purple • Mia Green', trim($assert_session->elementExists('css', 'h2#authors + div.mb-4-5 p')->getText()));
   }
 
   /**

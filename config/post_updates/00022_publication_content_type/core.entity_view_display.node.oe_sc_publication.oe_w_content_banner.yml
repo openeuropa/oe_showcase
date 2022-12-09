@@ -4,11 +4,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.oe_w_content_banner
     - field.field.node.oe_sc_publication.body
+    - field.field.node.oe_sc_publication.field_publication_authors
     - field.field.node.oe_sc_publication.field_publication_type
     - field.field.node.oe_sc_publication.oe_featured_media
     - field.field.node.oe_sc_publication.oe_publication_date
     - field.field.node.oe_sc_publication.oe_reference_code
-    - field.field.node.oe_sc_publication.oe_sc_publication_authors
     - field.field.node.oe_sc_publication.oe_sc_publication_document
     - field.field.node.oe_sc_publication.oe_summary
     - node.type.oe_sc_publication
@@ -47,6 +47,7 @@ content:
     region: content
 hidden:
   body: true
+  field_publication_authors: true
   langcode: true
   links: true
   oe_content_content_owner: true
@@ -55,6 +56,5 @@ hidden:
   oe_content_short_title: true
   oe_featured_media: true
   oe_reference_code: true
-  oe_sc_publication_authors: true
   oe_sc_publication_document: true
   search_api_excerpt: true

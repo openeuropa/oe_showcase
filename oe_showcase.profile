@@ -63,6 +63,7 @@ function oe_showcase_disable_taxonomy_term_view(array &$install_state): void {
 function oe_showcase_import_overrides(array &$install_state): void {
   $configs = [
     'core.entity_form_display.node.oe_sc_publication.default',
+    'core.entity_view_display.node.oe_sc_publication.full',
     'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_publication.teaser',
   ];

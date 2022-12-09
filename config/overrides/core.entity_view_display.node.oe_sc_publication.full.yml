@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.oe_sc_publication.body
     - field.field.node.oe_sc_publication.field_publication_authors
     - field.field.node.oe_sc_publication.field_publication_type
@@ -13,41 +13,62 @@ dependencies:
     - field.field.node.oe_sc_publication.oe_summary
     - node.type.oe_sc_publication
   module:
-    - datetime
+    - field_group
     - text
     - user
-id: node.oe_sc_publication.teaser
+third_party_settings:
+  field_group:
+    group_inpage_navigation:
+      children:
+        - field_publication_authors
+        - oe_reference_code
+        - body
+        - oe_sc_publication_document
+      label: 'Page content'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: oe_whitelabel_helper_inpage_navigation_pattern
+      format_settings: {  }
+id: node.oe_sc_publication.full
 targetEntityType: node
 bundle: oe_sc_publication
-mode: teaser
+mode: full
 content:
-  field_publication_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
+  body:
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  oe_publication_date:
-    type: datetime_default
-    label: hidden
+  field_publication_authors:
+    type: entity_reference_label
+    label: above
     settings:
-      timezone_override: ''
-      format_type: oe_whitelabel_publication_date
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  oe_summary:
-    type: text_default
-    label: hidden
-    settings: {  }
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
+  oe_reference_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  oe_sc_publication_document:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
-  body: true
-  field_publication_authors: true
+  field_publication_type: true
   langcode: true
   links: true
   oe_content_content_owner: true
@@ -55,6 +76,6 @@ hidden:
   oe_content_navigation_title: true
   oe_content_short_title: true
   oe_featured_media: true
-  oe_reference_code: true
-  oe_sc_publication_document: true
+  oe_publication_date: true
+  oe_summary: true
   search_api_excerpt: true
