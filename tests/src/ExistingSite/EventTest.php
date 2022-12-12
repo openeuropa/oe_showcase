@@ -10,6 +10,7 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
 /**
@@ -21,6 +22,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
   use TestFileCreationTrait;
   use AssertPathAccessTrait;
   use UserTrait;
+  use WysiwygTrait;
 
   /**
    * {@inheritdoc}
@@ -144,7 +146,9 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $page->selectFieldOption('Event type', 'Test term');
-    $page->fillField('Content', 'Example Content');
+    $field = $page->findField('Content');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Example Content');
     $page->fillField('Introduction', 'Example Introduction');
     $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-24');
     $page->fillField('oe_sc_event_dates[0][value][time]', '20:00:00');

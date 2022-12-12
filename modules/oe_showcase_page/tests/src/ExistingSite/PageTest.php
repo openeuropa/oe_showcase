@@ -10,6 +10,7 @@ use Drupal\media\Entity\Media;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\CarouselPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 
 /**
  * Tests the 'oe_showcase_page' content type.
@@ -17,6 +18,7 @@ use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 class PageTest extends ShowcaseExistingSiteTestBase {
 
   use MediaCreationTrait;
+  use WysiwygTrait;
 
   /**
    * {@inheritdoc}
@@ -24,10 +26,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->drupalLogin($this->createUser([
-      'create oe_showcase_page content',
-      'view the administration theme',
-    ]));
+    // Create editor user.
+    $user = $this->createUser([]);
+    $user->addRole('editor');
+    $user->save();
+    $this->drupalLogin($user);
   }
 
   /**
@@ -39,10 +42,10 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('paragraph');
 
     $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
 
     // Create a Showcase Page node through the UI.
     $this->drupalGet('node/add/oe_showcase_page');
-    $page = $this->getSession()->getPage();
 
     // Set page title.
     $page->fillField('title[0][value]', 'OE Showcase Demo Page');
@@ -82,13 +85,13 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[0][subform][field_oe_title][0][value]',
       'Rich Text paragraph title'
     );
-    $page->fillField(
-      'field_body[0][subform][field_oe_text_long][0][value]',
-      'Rich Text paragraph Body'
-    );
+    $field = $page->findField('field_body[0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Rich Text paragraph Body');
 
     // Add a Banner paragraph.
     $page->pressButton('Add Banner');
+
     $page->selectFieldOption(
       'field_body[1][subform][field_oe_banner_type]',
       'page_center'
@@ -136,10 +139,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Home Page'
     );
-    $page->fillField(
-      'field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
-      'Listing item description'
-    );
+    $field = $page->findField('field_body[3][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Listing item description');
 
     $page->pressButton('Add Listing item');
     $page->fillField(
@@ -150,10 +152,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_title][0][value]',
       'Example 1 Page'
     );
-    $page->fillField(
-      'field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]',
-      'Listing item description for example 1'
-    );
+    $field = $page->findField('field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Listing item description for example 1');
 
     // Add a Banner paragraph.
     $page->pressButton('Add Content row');
@@ -184,10 +185,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_title][0][value]',
       'Example title rich text 1'
     );
-    $page->fillField(
-      'field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]',
-      'Text description for rich text 1'
-    );
+    $field = $page->findField('field_body[4][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text description for rich text 1');
 
     // Add Facts and figures paragraph.
     $page->pressButton('Add Facts and figures');
@@ -271,20 +271,18 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[6][subform][field_oe_description_list_items][0][term]',
       'First term'
     );
-    $page->fillField(
-      'field_body[6][subform][field_oe_description_list_items][0][description][value]',
-      'First term description'
-    );
+    $field = $page->findField('field_body[6][subform][field_oe_description_list_items][0][description][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('First term description');
 
     $page->pressButton('field_body_6_subform_field_oe_description_list_items_add_more');
     $page->fillField(
       'field_body[6][subform][field_oe_description_list_items][1][term]',
       'Second term'
     );
-    $page->fillField(
-      'field_body[6][subform][field_oe_description_list_items][1][description][value]',
-      'Second term description'
-    );
+    $field = $page->findField('field_body[6][subform][field_oe_description_list_items][1][description][value]');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Second term description');
 
     // Create a media to be referenced.
     $file_uri = $this->container->get('file_system')->copy(
@@ -376,6 +374,16 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania'
     );
 
+    // Add Accordion paragraph.
+    $page->pressButton('field_body_oe_accordion_add_more');
+    $page->fillField(
+      'field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text][0][value]',
+      'Accordion title'
+    );
+    $field = $page->findField('field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Accordion Body');
+
     // Save node.
     $page->pressButton('Save');
 
@@ -388,6 +396,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Assert Description.
     $assert_session->pageTextContains('Page demo description');
+
+    $assert_session->pageTextContains('Accordion title');
+    $assert_session->pageTextContains('Accordion body');
 
     // Assert Rich Text Title.
     $assert_session->pageTextContains('Rich Text paragraph title');
