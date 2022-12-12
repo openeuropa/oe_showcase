@@ -12,6 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Url;
 use Drupal\filter\Entity\FilterFormat;
+use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\views\Entity\View;
 
 /**
@@ -24,6 +25,7 @@ function oe_showcase_install_tasks_alter(&$tasks, $install_state): void {
   unset($tasks['install_finish_translations']);
 
   $tasks['oe_showcase_disable_taxonomy_term_view'] = [];
+  $tasks['oe_showcase_import_overrides'] = [];
 }
 
 /**
@@ -40,6 +42,35 @@ function oe_showcase_disable_taxonomy_term_view(array &$install_state): void {
 
   $view->disable();
   $view->save();
+}
+
+/**
+ * Installs configuration overrides.
+ *
+ * Normally configuration are overridden by placing them in the profile
+ * config/install folder.
+ * But it might happen that a new module that we are trying to install in an
+ * update hook has some overridden configurations that require additional
+ * dependencies, that cannot be installed until the module itself is installed.
+ * Example: oe_showcase provides extra fields and form/view display overrides
+ * for the publication node type provided by oe_starter_content_publication.
+ * In order to import the fields, the node bundle needs to be imported, but
+ * if oe_starter_content_publication is installed, Drupal will try to import the
+ * overridden form/view modes which depend on the new field.
+ * To solve this, we need to move these files out of the install/optional config
+ * folders and have them installed "manually" in this install task.
+ *
+ * @param array $install_state
+ *   An array of information about the current installation state.
+ */
+function oe_showcase_import_overrides(array &$install_state): void {
+  $configs = [
+    'core.entity_form_display.node.oe_sc_publication.default',
+    'core.entity_view_display.node.oe_sc_publication.full',
+    'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
+    'core.entity_view_display.node.oe_sc_publication.teaser',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/overrides', $configs);
 }
 
 /**

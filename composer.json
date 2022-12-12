@@ -52,9 +52,9 @@
         "openeuropa/oe_multilingual": "^1.11",
         "openeuropa/oe_oembed": "^0.3.0",
         "openeuropa/oe_paragraphs": "^1.17",
-        "openeuropa/oe_starter_content": "^1.0.0-beta3",
+        "openeuropa/oe_starter_content": "^1.0.0",
         "openeuropa/oe_webtools": "^1.19",
-        "openeuropa/oe_whitelabel": "0.1.202211091028"
+        "openeuropa/oe_whitelabel": "0.1.202212091921"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -122,6 +122,9 @@
             "openeuropa/oe_whitelabel": {
                 "openeuropa/oe_paragraphs": {
                     "Outdated": "https://github.com/openeuropa/oe_paragraphs/compare/1.16.0..master.diff"
+                },
+                "openeuropa/oe_starter_content": {
+                    "outdated": "https://github.com/openeuropa/oe_starter_content/compare/1.0.0-beta3...1.x.diff"
                 }
             }
         },

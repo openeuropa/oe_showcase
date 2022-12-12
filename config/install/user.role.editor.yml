@@ -18,9 +18,11 @@ dependencies:
     - node.type.oe_sc_event
     - node.type.oe_sc_news
     - node.type.oe_sc_person
+    - node.type.oe_sc_publication
     - node.type.oe_showcase_page
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.glossary
+    - taxonomy.vocabulary.publication_type
   module:
     - entity_browser
     - filter
@@ -37,7 +39,9 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access documents entity browser pages'
   - 'access embed_media entity browser pages'
+  - 'access images entity browser pages'
   - 'access images_and_videos entity browser pages'
   - 'access media overview'
   - 'access taxonomy overview'
@@ -53,10 +57,12 @@ permissions:
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'create oe_sc_person content'
+  - 'create oe_sc_publication content'
   - 'create oe_showcase_page content'
   - 'create remote_video media'
   - 'create terms in event_type'
   - 'create terms in glossary'
+  - 'create terms in publication_type'
   - 'create webtools_chart media'
   - 'create webtools_map media'
   - 'create webtools_social_feed media'
@@ -69,6 +75,7 @@ permissions:
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
   - 'delete any oe_sc_person content'
+  - 'delete any oe_sc_publication content'
   - 'delete any oe_showcase_page content'
   - 'delete any remote_video media'
   - 'delete any webtools_chart media'
@@ -81,9 +88,11 @@ permissions:
   - 'delete oe_sc_event revisions'
   - 'delete oe_sc_news revisions'
   - 'delete oe_sc_person revisions'
+  - 'delete oe_sc_publication revisions'
   - 'delete oe_showcase_page revisions'
   - 'delete terms in event_type'
   - 'delete terms in glossary'
+  - 'delete terms in publication_type'
   - 'edit any av_portal_photo media'
   - 'edit any av_portal_video media'
   - 'edit any document media'
@@ -93,6 +102,7 @@ permissions:
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
   - 'edit any oe_sc_person content'
+  - 'edit any oe_sc_publication content'
   - 'edit any oe_showcase_page content'
   - 'edit any remote_video media'
   - 'edit any webtools_chart media'
@@ -102,11 +112,13 @@ permissions:
   - 'edit oe_organisation oe_stakeholder corporate entity'
   - 'edit terms in event_type'
   - 'edit terms in glossary'
+  - 'edit terms in publication_type'
   - 'revert oe_list_page revisions'
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
   - 'revert oe_sc_news revisions'
   - 'revert oe_sc_person revisions'
+  - 'revert oe_sc_publication revisions'
   - 'revert oe_showcase_page revisions'
   - 'use text format full_html'
   - 'use text format rich_text'
@@ -116,6 +128,7 @@ permissions:
   - 'view oe_sc_event revisions'
   - 'view oe_sc_news revisions'
   - 'view oe_sc_person revisions'
+  - 'view oe_sc_publication revisions'
   - 'view oe_showcase_page revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

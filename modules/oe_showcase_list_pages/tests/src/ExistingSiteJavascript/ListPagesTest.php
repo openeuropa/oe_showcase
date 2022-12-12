@@ -131,6 +131,26 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       $node->save();
     }
 
+    // Create some Publication test nodes.
+    for ($i = 0; $i < 12; $i++) {
+      $term = Term::create([
+        'vid' => 'publication_type',
+        'name' => 'Term ' . $i,
+      ]);
+      $term->save();
+      $values = [
+        'title' => 'Pub ' . $i,
+        'type' => 'oe_sc_publication',
+        'language' => 'en',
+        'status' => NodeInterface::PUBLISHED,
+        'field_publication_type' => $term->id(),
+        'oe_summary' => 'This is a Publication summary ' . $i,
+        'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
+      ];
+      $node = Node::create($values);
+      $node->save();
+    }
+
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
@@ -708,6 +728,123 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'John Doe 2',
       'John Doe 11',
       'John Doe 10',
+    ]);
+
+    // Create a Person listing page.
+    $list_page = $this->createListPage('Publication list page', 'oe_sc_publication', [
+      'oelp_oe_sc_publication__keyword',
+      'oelp_oe_sc_publication__publication_date',
+      'oelp_oe_sc_publication__type',
+    ]);
+    $this->drupalGet($list_page->toUrl());
+
+    // Assert that only Publication items are displayed.
+    $this->assertResultsTitle('Publication List Page', 12);
+    $this->assertResults([
+      'Pub 0',
+      'Pub 1',
+      'Pub 2',
+      'Pub 3',
+      'Pub 4',
+      'Pub 5',
+      'Pub 6',
+      'Pub 7',
+      'Pub 8',
+      'Pub 9',
+    ]);
+
+    $this->scrollIntoView('ul.pagination > li:nth-child(2) > a');
+    $page->clickLink('2');
+
+    $this->assertResults([
+      'Pub 10',
+      'Pub 11',
+    ]);
+
+    // Assert that the filter form for Publication exists.
+    $this->drupalGet($list_page->toUrl());
+    $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
+    $keyword_input = $filter_form->findField('Keyword');
+    $publication_date_input = $filter_form->findField('Publication date');
+    $type_select = $filter_form->findField('Type');
+    $search_button = $filter_form->findButton('Search');
+    $this->assertNotNull($keyword_input);
+    $this->assertNotNull($publication_date_input);
+    $this->assertNotNull($type_select);
+    $this->assertNotNull($search_button);
+
+    // Filter the News results by date.
+    $publication_date_input->setValue('gt');
+    $date_input = $filter_form->findField('Date');
+    $date_input->setValue('04/04/2022');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+
+    $this->assertResultsTitle('Publication List Page', 8);
+    $this->assertResults([
+      'Pub 4',
+      'Pub 5',
+      'Pub 6',
+      'Pub 7',
+      'Pub 8',
+      'Pub 9',
+      'Pub 10',
+      'Pub 11',
+    ]);
+
+    // Filter the Publication results by title.
+    $keyword_input->setValue('Pub 8');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResults([
+      'Pub 8',
+    ]);
+
+    // Filter the Publication results by content.
+    $keyword_input->setValue('This is a Publication summary 10');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResults([
+      'Pub 10',
+    ]);
+
+    // Filter results by type.
+    $this->scrollIntoView('#edit-reset');
+    $filter_form->pressButton('Clear filters');
+    $type = $filter_form->findField('Type');
+    $type->selectOption('Term 3');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResults([
+      'Pub 3',
+    ]);
+    $type->selectOption('Term 8');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResults([
+      'Pub 8',
+    ]);
+
+    $this->scrollIntoView('#edit-reset');
+    $page->pressButton('Clear filters');
+    $page->selectFieldOption('Sort by', 'Z-A');
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->assertResultsTitle('Publication List Page', 12);
+    $this->assertResults([
+      'Pub 9',
+      'Pub 8',
+      'Pub 7',
+      'Pub 6',
+      'Pub 5',
+      'Pub 4',
+      'Pub 3',
+      'Pub 2',
+      'Pub 11',
+      'Pub 10',
     ]);
   }
 

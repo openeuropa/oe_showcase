@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.av_portal_entity_browsers
+    - views.view.media_entity_browsers
+  module:
+    - views
+name: images
+label: Images
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select media'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d:
+    id: view
+    uuid: 309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d
+    label: 'Media library'
+    weight: 1
+    settings:
+      submit_text: 'Select media'
+      auto_select: false
+      view: media_entity_browsers
+      view_display: images
+  a1713f16-c893-4baf-ac6d-949d4df818e3:
+    id: avportal_search
+    uuid: a1713f16-c893-4baf-ac6d-949d4df818e3
+    label: 'Search in AV Portal'
+    weight: 2
+    settings:
+      submit_text: 'Select media'
+      auto_select: false
+      view: av_portal_entity_browsers
+      view_display: photos
