@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase Page module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function oe_showcase_page_field_widget_description_list_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  if (!isset($element['description']['#format'])) {
+    return;
+  }
+  $element['description']['#format'] = 'simple_rich_text';
+  $element['description']['#allowed_formats'] = ['simple_rich_text'];
+}

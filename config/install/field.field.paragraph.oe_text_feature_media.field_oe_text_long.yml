@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_oe_text_long
+    - paragraphs.paragraphs_type.oe_text_feature_media
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.oe_text_feature_media.field_oe_text_long
+field_name: field_oe_text_long
+entity_type: paragraph
+bundle: oe_text_feature_media
+label: 'Full text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

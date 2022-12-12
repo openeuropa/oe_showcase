@@ -71,4 +71,4 @@ default:
           field_oe_text_long:
             -
               value: "<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"text-align:center\">This profile is aimed to provide developers with a series of examples on how the OpenEuropa Library features are built and configured.&nbsp;Exposing these features,&nbsp;the building of new sites will be easy to get the necessary components to achieve every site's goals.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n"
-              format: full_html
+              format: rich_text

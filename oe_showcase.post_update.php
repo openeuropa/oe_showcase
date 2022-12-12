@@ -11,6 +11,7 @@ use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\user\Entity\Role;
@@ -537,9 +538,75 @@ function oe_showcase_post_update_00021(): void {
 }
 
 /**
- * Enable the publication content type.
+ * Update the media library image style.
  */
 function oe_showcase_post_update_00022(): void {
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00023_media_library', 'image.style.media_entity_browser_thumbnail');
+}
+
+/**
+ * Fix allowed formats in formatted text fields.
+ */
+function oe_showcase_post_update_00023(): void {
+  $field_storage = \Drupal::entityTypeManager()->getStorage('field_config');
+  // To prevent field lock during editing, set multiple formats to all the
+  // fields that are already used in production. The first format is the real
+  // allowed one, while the others are the current value (note that order is
+  // just for sake of understanding easier which format is what).
+  // @see https://github.com/ec-europa/ewcms/blob/develop/post_updates/ewcms_post_update_200.inc#L2096
+  $fields = [
+    'paragraph.oe_accordion_item.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_list_item.field_oe_text_long' => [
+      'simple_rich_text',
+      'plain_text',
+    ],
+    'paragraph.oe_rich_text.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_text_feature_media.field_oe_text_long' => [
+      'rich_text',
+      'full_html',
+    ],
+    'paragraph.oe_timeline.field_oe_text_long' => [
+      'simple_rich_text',
+    ],
+  ];
+
+  foreach ($fields as $field_name => $text_formats) {
+    /** @var \Drupal\Core\Field\FieldConfigInterface $field_instance */
+    $field_instance = $field_storage->load($field_name);
+    if (!$field_instance) {
+      continue;
+    }
+    $field_instance->setThirdPartySetting('allowed_formats', 'allowed_formats', $text_formats);
+    $field_instance->save();
+  }
+
+  // Enable the format help text for listing item description.
+  $configs = [
+    'core.entity_form_display.paragraph.oe_list_item.default',
+    'core.entity_form_display.paragraph.oe_list_item.highlight',
+  ];
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00022_text_formats', $configs);
+
+  // Full html format is risky, so we disable it.
+  $role = Role::load('editor');
+  $role->revokePermission('use text format full_html');
+  $role->save();
+
+  $format = FilterFormat::load('full_html');
+  $format->disable();
+  $format->save();
+}
+
+/**
+ * Enable the publication content type.
+ */
+function oe_showcase_post_update_00024(): void {
   \Drupal::service('module_installer')->install(['oe_whitelabel_starter_publication']);
 
   $configs = [

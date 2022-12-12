@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: media_entity_browser_thumbnail
+label: 'Media Entity Browser thumbnail'
+effects:
+  ed56f9df-33bd-4067-951a-19191d9978bf:
+    uuid: ed56f9df-33bd-4067-951a-19191d9978bf
+    id: image_scale
+    weight: 2
+    data:
+      width: 350
+      height: 350
+      upscale: false

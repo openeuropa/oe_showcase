@@ -8,7 +8,6 @@ use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
-use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\InPageNavigationAssert;
@@ -20,7 +19,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use EntityBrowserTrait;
   use MediaCreationTrait;
-  use TraversingTrait;
   use WysiwygTrait;
 
   /**
