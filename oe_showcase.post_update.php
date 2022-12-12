@@ -677,5 +677,5 @@ function oe_showcase_post_update_00024(): void {
  * Add location to Event teaser.
  */
 function oe_showcase_post_update_00025(): void {
-  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00024_event_location', 'core.entity_view_display.node.oe_sc_event.teaser');
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00025_event_location', 'core.entity_view_display.node.oe_sc_event.teaser');
 }
