@@ -44,18 +44,18 @@ content:
     settings:
       delimiter: ', '
       properties:
-        country: country
-        locality: locality
-        givenName: '0'
-        additionalName: '0'
-        familyName: '0'
-        organization: '0'
-        addressLine1: '0'
-        addressLine2: '0'
-        postalCode: '0'
-        sortingCode: '0'
-        dependentLocality: '0'
-        administrativeArea: '0'
+        country: true
+        locality: true
+        givenName: false
+        additionalName: false
+        familyName: false
+        organization: false
+        addressLine1: false
+        addressLine2: false
+        postalCode: false
+        sortingCode: false
+        dependentLocality: false
+        administrativeArea: false
     third_party_settings: {  }
     weight: 2
     region: content
