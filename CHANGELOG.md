@@ -1,10 +1,26 @@
 # Change Log
 
+## [1.0.0](https://github.com/openeuropa/oe_showcase/tree/1.0.0) (2022-12-14)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta4...1.0.0)
+
+**Merged pull requests:**
+
+- OEL-1723: Publication content type. [\#207](https://github.com/openeuropa/oe_showcase/pull/207) ([drishu](https://github.com/drishu))
+- OEL-2076: Update epic. [\#206](https://github.com/openeuropa/oe_showcase/pull/206) ([brummbar](https://github.com/brummbar))
+- OEL-2130: Add back the author field. [\#205](https://github.com/openeuropa/oe_showcase/pull/205) ([brummbar](https://github.com/brummbar))
+- OEL-1676: Add Location to Event teaser. [\#204](https://github.com/openeuropa/oe_showcase/pull/204) ([drishu](https://github.com/drishu))
+- OEL-2119: Bump up oe\_paragraphs version. [\#203](https://github.com/openeuropa/oe_showcase/pull/203) ([drishu](https://github.com/drishu))
+- OEL-1807: Install the publication content type. [\#202](https://github.com/openeuropa/oe_showcase/pull/202) ([brummbar](https://github.com/brummbar))
+- OEL-2107: Added styles for gallery modal. [\#201](https://github.com/openeuropa/oe_showcase/pull/201) ([tibi2303](https://github.com/tibi2303))
+- OEL-2071: Integrate the gallery paragraph. [\#198](https://github.com/openeuropa/oe_showcase/pull/198) ([brummbar](https://github.com/brummbar))
+- OEL-1990: Fix allowed formats in formatted text fields. [\#196](https://github.com/openeuropa/oe_showcase/pull/196) ([drishu](https://github.com/drishu))
+
 ## [1.0.0-beta4](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta4) (2022-11-04)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta3...1.0.0-beta4)
 
 **Merged pull requests:**
 
+- Prepare release 1.0.0-beta4. [\#200](https://github.com/openeuropa/oe_showcase/pull/200) ([drishu](https://github.com/drishu))
 - OEL-2102: Upgrade drupal core to version 9.4.8. [\#199](https://github.com/openeuropa/oe_showcase/pull/199) ([drishu](https://github.com/drishu))
 
 ## [1.0.0-beta3](https://github.com/openeuropa/oe_showcase/tree/1.0.0-beta3) (2022-11-03)
