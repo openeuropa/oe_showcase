@@ -116,6 +116,9 @@
         "patches": {
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "dev": "https://github.com/openeuropa/oe_whitelabel/compare/1.0.0...OEL-1915.diff"
             }
         },
         "artifacts": {
