@@ -64,6 +64,7 @@
         "drupal/core-dev": "~9.4.0",
         "drush/drush": "~10.3",
         "openeuropa/code-review": "^1.6 || ^2.0",
+        "openeuropa/oe_bootstrap_theme": "0.1915.202301031227 as 1.0.0",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta5",
         "phpmd/phpmd": "^2.11",
         "phpspec/prophecy-phpunit": "^1 || ^2",
