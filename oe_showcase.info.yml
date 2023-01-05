@@ -77,6 +77,7 @@ install:
   - rdf_skos_language_mapping
   - redirect
   - roleassign
+  - slim_select
   - taxonomy
   - toolbar
   - ui_patterns
