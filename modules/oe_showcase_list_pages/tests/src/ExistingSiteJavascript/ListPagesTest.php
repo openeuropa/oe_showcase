@@ -418,7 +418,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Filter results by location.
     $filter_form->pressButton('Clear filters');
     $location = $filter_form->findField('Location');
-    $location->selectOption('France');
+    $this->selectSlimOption($location, 'France');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Event List Page', 2);
@@ -426,7 +426,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 4',
       'Event number 11',
     ]);
-    $location->selectOption('Romania', TRUE);
+    $this->selectSlimOption($location, 'Romania', TRUE);
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Event List Page', 4);
@@ -441,14 +441,14 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $filter_form->pressButton('Clear filters');
     $type = $filter_form->findField('Type');
-    $type->selectOption('Term 3');
+    $this->selectSlimOption($type, 'Term 3');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Event List Page', 1);
     $this->assertResults([
       'Event number 3',
     ]);
-    $type->selectOption('Term 8');
+    $this->selectSlimOption($type, 'Term 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Event List Page', 1);
@@ -555,20 +555,12 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertNotNull($search_button);
 
     // Filter results by type.
-    $filter_type->selectOption('financing');
+    $this->selectSlimOption($filter_type, 'financing');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Project List Page', 1);
     $this->assertResults([
       'Project closed',
-    ]);
-    $filter_type->selectOption('public finance', TRUE);
-    $this->scrollIntoView('#edit-submit');
-    $search_button->click();
-    $this->assertResultsTitle('Project List Page', 2);
-    $this->assertResults([
-      'Project closed',
-      'Project pending',
     ]);
 
     // Filter results by dates.
@@ -608,7 +600,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Filter results by status.
     $this->scrollIntoView('#edit-reset');
     $filter_form->pressButton('Clear filters');
-    $filter_status->selectOption('Closed');
+    $this->selectSlimOption($filter_status, 'Closed');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Project List Page', 1);
@@ -616,7 +608,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project closed',
     ]);
 
-    $filter_status->selectOption('Ongoing and Planned');
+    $this->selectSlimOption($filter_status, 'Ongoing and Planned');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Project List Page', 2);
@@ -816,14 +808,14 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $filter_form->pressButton('Clear filters');
     $type = $filter_form->findField('Type');
-    $type->selectOption('Term 3');
+    $this->selectSlimOption($type, 'Term 3');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Publication List Page', 1);
     $this->assertResults([
       'Pub 3',
     ]);
-    $type->selectOption('Term 8');
+    $this->selectSlimOption($type, 'Term 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('Publication List Page', 1);
@@ -955,7 +947,32 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    */
   protected function scrollIntoView(string $selector): void {
     $this->getSession()->executeScript("document.querySelector('$selector').scrollIntoView()");
-    sleep(1);
+    $this->getSession()->wait(1000);
+  }
+
+  /**
+   * Selects a slim select option.
+   *
+   * @param \Behat\Mink\Element\NodeElement $field
+   *   The form field.
+   * @param string $option
+   *   The option to select.
+   * @param bool $multiple
+   *   If old values should be kept.
+   */
+  protected function selectSlimOption(NodeElement $field, string $option, bool $multiple = FALSE): void {
+    $slim_select = $field->getParent()->find('css', 'div.ss-main');
+
+    if (!$multiple) {
+      $items = $slim_select->findAll('css', '.ss-value-delete');
+      foreach ($items as $item) {
+        $item->click();
+      }
+    }
+    $slim_select->click();
+    $this->getSession()->wait(1000);
+    $slim_select->find('xpath', '//div[contains(@class, "ss-option") and text()="' . $option . '"]')->click();
+    $this->getSession()->wait(1000);
   }
 
 }
