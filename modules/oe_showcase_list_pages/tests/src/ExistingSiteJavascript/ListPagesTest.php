@@ -525,7 +525,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->indexItems('oe_list_pages_index');
 
     $list_page = $this->createListPage('Project list page', 'oe_project', [
-      'oelp_oe_sc_project__budget',
       'oelp_oe_sc_project__end_date',
       'oelp_oe_sc_project__start_date',
       'oelp_oe_sc_project__status',
@@ -541,17 +540,15 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project pending',
     ]);
 
-    // Assert that the filter form for Events exists.
+    // Assert that the filter form for Projects exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $filter_status = $filter_form->findField('Status');
     $filter_type = $filter_form->findField('Project type');
-    $filter_budget = $filter_form->findField('Total budget');
     $filter_start = $filter_form->findField('Start date');
     $filter_end = $filter_form->findField('End date');
     $search_button = $filter_form->findButton('Search');
     $this->assertNotNull($filter_status);
     $this->assertNotNull($filter_type);
-    $this->assertNotNull($filter_budget);
     $this->assertNotNull($filter_start);
     $this->assertNotNull($filter_end);
     $this->assertNotNull($search_button);
@@ -571,17 +568,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertResults([
       'Project closed',
       'Project pending',
-    ]);
-
-    // Filter results by budget.
-    $this->scrollIntoView('#edit-reset');
-    $filter_form->pressButton('Clear filters');
-    $filter_budget->setValue(33);
-    $this->scrollIntoView('#edit-submit');
-    $search_button->click();
-    $this->assertResultsTitle('Project List Page', 1);
-    $this->assertResults([
-      'Project ongoing',
     ]);
 
     // Filter results by dates.
