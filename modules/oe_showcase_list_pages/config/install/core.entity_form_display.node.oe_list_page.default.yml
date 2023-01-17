@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - node.type.oe_list_page
+  module:
+    - path
 id: node.oe_list_page.default
 targetEntityType: node
 bundle: oe_list_page

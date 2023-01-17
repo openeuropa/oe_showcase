@@ -6,6 +6,8 @@ name: 'Publication date'
 url_alias: oelp_oe_sc_news__oe_publication_date
 weight: 0
 min_count: 1
+missing: false
+missing_label: others
 show_only_one_result: false
 field_identifier: oe_publication_date
 facet_source_id: 'list_facet_source:node:oe_sc_news'
