@@ -687,4 +687,13 @@ function oe_showcase_post_update_00025(): void {
 function oe_showcase_post_update_00026(): void {
   $facet = Facet::load('oelp_oe_sc_project__budget');
   $facet->delete();
+
+  // Add Project bundle to the social share block.
+  $block = Block::load('oe_showcase_theme_social_share');
+  $visibility = $block->getVisibility();
+  if (isset($visibility['entity_bundle:node']['bundles'])) {
+    $visibility['entity_bundle:node']['bundles']['oe_project'] = 'oe_project';
+    $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
+    $block->save();
+  }
 }
