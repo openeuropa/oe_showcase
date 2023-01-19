@@ -9,6 +9,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
+use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 use Drupal\user\Entity\Role;
 
@@ -18,6 +19,7 @@ use Drupal\user\Entity\Role;
 class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
+  use SlimSelectTrait;
 
   /**
    * An editor user.
@@ -947,31 +949,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    */
   protected function scrollIntoView(string $selector): void {
     $this->getSession()->executeScript("document.querySelector('$selector').scrollIntoView()");
-    $this->getSession()->wait(1000);
-  }
-
-  /**
-   * Selects a slim select option.
-   *
-   * @param \Behat\Mink\Element\NodeElement $field
-   *   The form field.
-   * @param string $option
-   *   The option to select.
-   * @param bool $multiple
-   *   If old values should be kept.
-   */
-  protected function selectSlimOption(NodeElement $field, string $option, bool $multiple = FALSE): void {
-    $slim_select = $field->getParent()->find('css', 'div.ss-main');
-
-    if (!$multiple) {
-      $items = $slim_select->findAll('css', '.ss-value-delete');
-      foreach ($items as $item) {
-        $item->click();
-      }
-    }
-    $slim_select->click();
-    $this->getSession()->wait(1000);
-    $slim_select->find('xpath', '//div[contains(@class, "ss-option") and text()="' . $option . '"]')->click();
     $this->getSession()->wait(1000);
   }
 
