@@ -131,6 +131,9 @@
                     "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
                     "type": "zip"
                 }
+            },
+            "openeuropa/oe_starter_content": {
+                "latest": "https://github.com/openeuropa/oe_starter_content/compare/1.x...OEL-2163.diff"
             }
         },
         "installer-paths": {
