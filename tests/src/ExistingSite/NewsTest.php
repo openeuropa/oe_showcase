@@ -78,7 +78,6 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Content field is required.');
 
     // Assert that editors have access to the Simple/Rich text formats.
-    $this->drupalGet('node/add/oe_sc_news');
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $field = $page->findField('Content');
