@@ -242,6 +242,8 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals('Lead contributors', $lead_contributors);
     $this->assertEquals('Participants', $participants);
 
+    $this->assertSocialShareBlock();
+
     $this->drupalGet('/node');
     // Check meta is not present.
     $assert_session->elementNotExists('css', '.card-body:nth-child(1) .text-muted');

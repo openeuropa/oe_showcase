@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
+use Drupal\facets\Entity\Facet;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
@@ -678,4 +679,21 @@ function oe_showcase_post_update_00024(): void {
  */
 function oe_showcase_post_update_00025(): void {
   ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00025_event_location', 'core.entity_view_display.node.oe_sc_event.teaser');
+}
+
+/**
+ * Project updates.
+ */
+function oe_showcase_post_update_00026(): void {
+  $facet = Facet::load('oelp_oe_sc_project__budget');
+  $facet->delete();
+
+  // Add Project bundle to the social share block.
+  $block = Block::load('oe_showcase_theme_social_share');
+  $visibility = $block->getVisibility();
+  if (isset($visibility['entity_bundle:node']['bundles'])) {
+    $visibility['entity_bundle:node']['bundles']['oe_project'] = 'oe_project';
+    $block->setVisibilityConfig('entity_bundle:node', $visibility['entity_bundle:node']);
+    $block->save();
+  }
 }
