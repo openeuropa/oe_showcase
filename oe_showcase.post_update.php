@@ -697,3 +697,10 @@ function oe_showcase_post_update_00026(): void {
     $block->save();
   }
 }
+
+/**
+ * Enable Slim Select.
+ */
+function oe_showcase_post_update_00027(): void {
+  \Drupal::service('module_installer')->install(['slim_select']);
+}
