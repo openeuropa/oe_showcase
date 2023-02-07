@@ -55,11 +55,11 @@
         "openeuropa/oe_paragraphs": "^1.17",
         "openeuropa/oe_starter_content": "^1.0.0",
         "openeuropa/oe_webtools": "^1.19",
-        "openeuropa/oe_whitelabel": "0.1.202301301719"
+        "openeuropa/oe_whitelabel": "^1.1.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
-        "drupal/cas_mock_server": "^1.4",
+        "drupal/cas_mock_server": "^2.0",
         "drupal/config_devel": "^1.2",
         "drupal/core-composer-scaffold": "~9.4.0",
         "drupal/core-dev": "~9.4.0",

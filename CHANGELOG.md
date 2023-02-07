@@ -1,10 +1,21 @@
 # Change Log
 
+## [1.1.0](https://github.com/openeuropa/oe_showcase/tree/1.1.0) (2023-02-06)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0...1.1.0)
+
+**Merged pull requests:**
+
+- OEL-2162: Project updates [\#211](https://github.com/openeuropa/oe_showcase/pull/211) ([drishu](https://github.com/drishu))
+- OEL-1574: Enable slim\_select. [\#210](https://github.com/openeuropa/oe_showcase/pull/210) ([drishu](https://github.com/drishu))
+- OEL-1915: Use oewt dev branch. [\#209](https://github.com/openeuropa/oe_showcase/pull/209) ([drishu](https://github.com/drishu))
+- OEL-2166: Test with BCL 1.0.0 [\#194](https://github.com/openeuropa/oe_showcase/pull/194) ([brummbar](https://github.com/brummbar))
+
 ## [1.0.0](https://github.com/openeuropa/oe_showcase/tree/1.0.0) (2022-12-14)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0-beta4...1.0.0)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.0.0. [\#208](https://github.com/openeuropa/oe_showcase/pull/208) ([brummbar](https://github.com/brummbar))
 - OEL-1723: Publication content type. [\#207](https://github.com/openeuropa/oe_showcase/pull/207) ([drishu](https://github.com/drishu))
 - OEL-2076: Update epic. [\#206](https://github.com/openeuropa/oe_showcase/pull/206) ([brummbar](https://github.com/brummbar))
 - OEL-2130: Add back the author field. [\#205](https://github.com/openeuropa/oe_showcase/pull/205) ([brummbar](https://github.com/brummbar))
