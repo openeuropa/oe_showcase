@@ -45,3 +45,15 @@ function oe_showcase_search_post_update_00002(&$sandbox) {
     'block.block.showcase_header_search_form'
   );
 }
+
+/**
+ * Update search field preserve.
+ */
+function oe_showcase_search_post_update_00003(): void {
+  ConfigImporter::importSingle(
+    'module',
+    'oe_showcase_search',
+    '/config/post_updates/00003',
+    'views.view.showcase_search'
+  );
+}
