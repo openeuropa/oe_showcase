@@ -1,0 +1,9 @@
+name: OpenEuropa Showcase Notifications
+type: module
+description: Notifications proof of concept.
+core_version_requirement: ^9.4
+package: OpenEuropa Showcase
+
+dependencies:
+  - drupal:extra_field
+  - drupal:message_subscribe

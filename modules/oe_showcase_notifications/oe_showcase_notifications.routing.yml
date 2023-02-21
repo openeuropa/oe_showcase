@@ -1,0 +1,17 @@
+oe_showcase_notifications.anonymous_subscribe:
+  path: '/subscribe/{subscription_id}'
+  defaults:
+    _title: 'Subscribe'
+    _controller: '\Drupal\oe_showcase_notifications\Controller\SubscriptionController::subscribeAnonymous'
+  requirements:
+    #_user_is_logged_in: 'FALSE'
+    _access: 'TRUE'
+
+oe_showcase_notifications.confirm_subscription:
+  # @todo The subscription ID should be in the database and not in the URL. Same for e-mail.
+  path: '/subscription/confirm/{hash}/{mail}/{subscription_id}'
+  defaults:
+    _title: 'Confirm subscription'
+    _controller: '\Drupal\oe_showcase_notifications\Controller\SubscriptionController::confirmSubscription'
+  requirements:
+    _access: 'TRUE'

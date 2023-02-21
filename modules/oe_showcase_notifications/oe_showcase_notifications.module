@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase Notifications module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_mail().
+ */
+function oe_showcase_notifications_mail($key, &$message, $params) {
+  // @todo Load the real subscription. It can be other things than entities.
+  [$flag_id, $entity_id] = explode(':', $params['subscription_id']);
+
+  $flag_storage = \Drupal::entityTypeManager()->getStorage('flag');
+  /** @var \Drupal\flag\FlagInterface $flag */
+  $flag = $flag_storage->load($flag_id);
+
+  /** @var \Drupal\flag\FlagServiceInterface $flag_service */
+  $flag_service = \Drupal::service('flag');
+  $entity = $flag_service->getFlaggableById($flag, $entity_id);
+
+  $message['subject'] = strtr('Confirm subscription to @label', [
+    '@label' => $entity->label(),
+  ]);
+
+  $body = <<<BODY
+You have asked to subscribe to &lt;SUBSCRIPTION DESCRIPTION&gt;.
+Click this link to confirm the subscription: @link
+
+Ignore this e-mail if you didn't perform the operation.
+BODY;
+  $confirm_url = Url::fromRoute('oe_showcase_notifications.confirm_subscription', [
+    'hash' => 'dynamic-safe-hash',
+    'subscription_id' => $params['subscription_id'],
+    'mail' => $message['to'],
+  ]);
+
+  $message['body'][] = strtr($body, ['@link' => $confirm_url->setAbsolute()->toString()]);
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function oe_showcase_notifications_node_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $entity;
+  if ($node->bundle() === 'article') {
+    $flag = \Drupal\flag\Entity\Flag::load('email_node');
+    /** @var \Drupal\flag\FlagServiceInterface $flag_service */
+    $flag_service = \Drupal::service('flag');
+    /** @var \Drupal\flag\FlaggingInterface[] $flaggings */
+    $flaggings = $flag_service->getEntityFlaggings($flag, $entity);
+
+    $uids = [];
+    foreach ((array)$flaggings as $flagging) {
+      $uids[] = $flagging->get('uid')->target_id;
+    }
+
+    if (count($uids) == 0) {
+      // No users have subscribed, so we don't have to send a notification.
+      return;
+    }
+
+    $notification = Drupal\notification_system_database\Entity\Notification::create([
+      'user_id' => $uids,                                   // The audience of the notification are all subscribed users.
+      'provider_id' => 'example',                              // This is the id of our provider. Make sure that it exists.
+      'notification_type' => 'new_blog_post',                  // The type of the notification
+      'created' => $node->getCreatedTime(),                    // The notification timestamp
+      'title' => t('New blog post'),                    // The title of the notification
+      'body' => $node->label(),                                // We use the node title as the body of the notification
+      'link' => $node->toUrl()->setAbsolute(TRUE)->toString()  // Set the url absolute, to get a full link if it is displayed in an e-mail for example.
+    ]);
+
+    // We save the notification to the database.
+    $notification->save();
+  }
+}

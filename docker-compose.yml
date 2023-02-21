@@ -16,6 +16,9 @@ services:
       PHP_IDE_CONFIG: "serverName=Docker"
       # Enable step debugging for all PHP request. See ./README.md#step-debugging for more information.
       # XDEBUG_SESSION: 1
+      SMTP_SERVER: mailhog
+      SMTP_FROM: francesco@test.org
+      SMTP_PORT: 1025
 
   mysql:
     image: percona/percona-server:5.7
@@ -51,6 +54,11 @@ services:
       - '4444:4444'
       - '5900:5900'
     shm_size: 2g
+
+  mailhog:
+    image: skilldlabs/mailhog:latest
+    ports:
+      - '8025:8025'
 
 #### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
 
