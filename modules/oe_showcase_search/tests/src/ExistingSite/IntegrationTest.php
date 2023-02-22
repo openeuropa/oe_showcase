@@ -194,6 +194,11 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
+    // Check url contains search value and sort value.
+    $currentURL = $this->getUrl();
+    $this->assertStringContainsString('search_api_fulltext=' . $search_input->getValue(), $currentURL);
+    $this->assertStringContainsString('sort_bef_combine=created_ASC', $currentURL);
+
     // Check search value is still present.
     $this->assertSame($search_input->getValue(), 'Imputo');
   }
