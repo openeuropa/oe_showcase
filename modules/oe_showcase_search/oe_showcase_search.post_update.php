@@ -47,7 +47,7 @@ function oe_showcase_search_post_update_00002(&$sandbox) {
 }
 
 /**
- * Update search field preserve.
+ * Preserve search text after sort is applied.
  */
 function oe_showcase_search_post_update_00003(): void {
   ConfigImporter::importSingle(
