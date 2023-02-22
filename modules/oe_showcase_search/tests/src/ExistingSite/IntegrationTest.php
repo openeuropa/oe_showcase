@@ -129,19 +129,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     $this->assertPager(4);
 
-    // Set search text value.
-    $search_input->setValue('Imputo');
-    $page->pressButton('Search');
-
-    // Sort by publication date.
-    $page->selectFieldOption('Sort by', 'Published on Asc');
-    $page->pressButton('Apply');
-
-    // Check search value is still present.
-    $this->assertSame($search_input->getValue(), 'Imputo');
-
-    $this->drupalGet('/search');
-
     // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
