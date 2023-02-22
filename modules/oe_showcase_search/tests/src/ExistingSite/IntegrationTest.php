@@ -183,8 +183,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Check url contains search value and sort value.
     $currentURL = $this->getUrl();
-    $this->assertStringContainsString('search_api_fulltext=' . $search_input->getValue(), $currentURL);
-    $this->assertStringContainsString('sort_bef_combine=created_ASC', $currentURL);
+    $this->assertStringContainsString('search_api_fulltext=' . $search_input->getValue() . '&sort_bef_combine=created_ASC', $currentURL);
 
     // Check search value is still present.
     $this->assertSame($search_input->getValue(), 'Imputo');
