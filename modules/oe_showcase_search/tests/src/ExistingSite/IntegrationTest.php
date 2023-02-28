@@ -171,16 +171,15 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     $this->assertPager(4, 3);
 
+    // Search keeps value if sort is also applied.
     $this->drupalGet('/search');
 
-    // Set search text value.
     $search_input->setValue('Imputo');
     $page->pressButton('Search');
 
     // Check url contains search value.
-    $this->assertStringContainsString('search_api_fulltext=' . $search_input->getValue(), $this->getUrl());
+    $this->assertStringContainsString('search_api_fulltext=Imputo', $this->getUrl());
 
-    // Assert search results.
     $this->assertSearchResults([
       'Imputo Neo Sagaciter',
       'Gemino Imputo',
@@ -190,10 +189,8 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
-    // Check url contains search value and sort value.
-    $this->assertStringContainsString('search_api_fulltext=' . $search_input->getValue() . '&sort_bef_combine=created_ASC', $this->getUrl());
+    $this->assertStringContainsString('search_api_fulltext=Imputo&sort_bef_combine=created_ASC', $this->getUrl());
 
-    // Assert search results.
     $this->assertSearchResults([
       'Gemino Imputo',
       'Imputo Neo Sagaciter',
