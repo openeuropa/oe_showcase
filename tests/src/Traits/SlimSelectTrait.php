@@ -23,6 +23,7 @@ trait SlimSelectTrait {
    */
   protected function selectSlimOption(NodeElement $field, string $option, bool $multiple = FALSE): void {
     $slim_select = $field->getParent()->find('css', 'div.ss-main');
+    $slim_select_search = $slim_select->find('css', 'div.ss-search > input');
 
     if (!$multiple) {
       $items = $slim_select->findAll('css', '.ss-value-delete');
@@ -31,7 +32,8 @@ trait SlimSelectTrait {
       }
     }
     $slim_select->click();
-    $this->assertSession()->waitForElementVisible('css', '.ss-list');
+    $this->assertSession()->waitForElementVisible('css', 'div.ss-search');
+    $slim_select_search->setValue($option);
     $option_selector = '//div[contains(@class, "ss-option") and text()="' . $option . '"]';
     $this->assertSession()->waitForElementVisible('xpath', $option_selector);
     $slim_select->find('xpath', $option_selector)->click();
