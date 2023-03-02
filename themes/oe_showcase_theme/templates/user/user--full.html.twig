@@ -7,19 +7,26 @@
 {% apply spaceless %}
 <article{{ attributes }}>
   {# Combine margin and padding for precise spacing. #}
-  {# @todo Remove the 'mx-n3', 'px-1' once OEL-1226 is fixed. #}
-  {{ pattern('content_banner', {
-    image: image,
-    title: content.field_first_name|field_value|render ~ ' ' ~ content.field_last_name|field_value|render,
-    meta: [
-      content.group_professional_information.field_organization|field_value,
-      content.group_professional_information.field_current_position|field_value,
-    ],
-    content: content.field_bio|field_value,
-    attributes: create_attribute().addClass('mb-4', 'pb-3', 'mx-n3', 'px-1'),
-  }) }}
-  {{ _self.description_list_section('Personal information', content.group_personal_information ?? {}) }}
-  {{ _self.description_list_section('Professional information', content.group_professional_information ?? {}) }}
+  <div class="mx-md-4 w-100">
+    {% set _field_bio %}
+      <div class="pe-md-3-5">{{ content.field_bio|field_value }}</div>
+    {% endset %}
+    {{ pattern('content_banner', {
+      image: image,
+      title: content.field_first_name|field_value|render ~ ' ' ~ content.field_last_name|field_value|render,
+      meta: [
+        content.group_professional_information.field_organization|field_value,
+        content.group_professional_information.field_current_position|field_value,
+      ],
+      content: _field_bio,
+      attributes: create_attribute().addClass('mb-4', 'pb-3'),
+      card: {
+        attributes: create_attribute().addClass("px-4")
+      }
+    }) }}
+    {{ _self.description_list_section('Personal information', content.group_personal_information ?? {}) }}
+    {{ _self.description_list_section('Professional information', content.group_professional_information ?? {}) }}
+  </div>
 </article>
 
 {% macro description_list_section(group_label, group_content) %}
