@@ -704,11 +704,3 @@ function oe_showcase_post_update_00026(): void {
 function oe_showcase_post_update_00027(): void {
   \Drupal::service('module_installer')->install(['slim_select']);
 }
-
-/**
- * News content required.
- */
-function oe_showcase_post_update_00028(): void {
-  $field_config = FieldConfig::load('node.oe_sc_news.body');
-  $field_config->setRequired(TRUE)->save();
-}
