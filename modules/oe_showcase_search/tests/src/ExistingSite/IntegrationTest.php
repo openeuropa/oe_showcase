@@ -170,6 +170,34 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Imputo Neo Sagaciter',
     ]);
     $this->assertPager(4, 3);
+
+    // Search keeps value if sort is also applied.
+    $this->drupalGet('/search');
+
+    $search_input->setValue('Imputo');
+    $page->pressButton('Search');
+
+    // Check url contains search value.
+    $this->assertStringContainsString('search_api_fulltext=Imputo', $this->getUrl());
+
+    $this->assertSearchResults([
+      'Imputo Neo Sagaciter',
+      'Gemino Imputo',
+    ]);
+
+    // Sort by publication date.
+    $page->selectFieldOption('Sort by', 'Published on Asc');
+    $page->pressButton('Apply');
+
+    $this->assertStringContainsString('search_api_fulltext=Imputo&sort_bef_combine=created_ASC', $this->getUrl());
+
+    $this->assertSearchResults([
+      'Gemino Imputo',
+      'Imputo Neo Sagaciter',
+    ]);
+
+    // Check search value is still present.
+    $this->assertSame($search_input->getValue(), 'Imputo');
   }
 
   /**
