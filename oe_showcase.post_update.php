@@ -704,3 +704,17 @@ function oe_showcase_post_update_00026(): void {
 function oe_showcase_post_update_00027(): void {
   \Drupal::service('module_installer')->install(['slim_select']);
 }
+
+/**
+ * Add Editors access to Patterns overview page.
+ */
+function oe_showcase_post_update_00028(): void {
+  $permissions = [
+    'access patterns page',
+  ];
+  $role = Role::load('editor');
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}
