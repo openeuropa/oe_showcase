@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Override of UI Pattern library page template.
+ */
+#}
+
+{% if patterns is not empty %}
+  <div class="row">
+    <div class="col-lg-2">
+      <h2 class="hidden">{{ "Available patterns"|t }}</h2>
+
+      {# List of available patterns with anchor links. #}
+      {% for group_name, group_patterns in patterns %}
+        {% if patterns|length > 1 %}
+          <h3>{{ group_name }}</h3>
+        {% endif %}
+        <ul class="list-unstyled">
+          {% for pattern_name, pattern in group_patterns %}
+            <li>
+              <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+
+    </div>
+    <div class="col-lg-10">
+
+      {% for group_patterns in patterns %}
+        {% for pattern_name, pattern in group_patterns %}
+          <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
+            {# Pattern name and description. #}
+            <a id="{{ pattern_name }}"></a>
+            {{ pattern.meta }}
+
+            {# Link to standalone pattern preview page.#}
+            <p class="my-3">
+              <a href="{{ url('ui_patterns.patterns.single', {'name': pattern_name}) }}" class="pattern-preview__view">
+                {% trans %}View {{ pattern.label }} as stand-alone{% endtrans %}
+              </a>
+            </p>
+
+            {# Rendered pattern preview. #}
+            {{ pattern.rendered }}
+
+          </div>
+
+          <hr class="my-5">
+        {% endfor %}
+      {% endfor %}
+
+    </div>
+  </div>
+{% endif %}
