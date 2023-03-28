@@ -706,15 +706,17 @@ function oe_showcase_post_update_00027(): void {
 }
 
 /**
- * Add Editors access to Patterns overview page.
+ * Add users access to Patterns overview page.
  */
 function oe_showcase_post_update_00028(): void {
-  $permissions = [
-    'access patterns page',
+  $roles = [
+    'anonymous',
+    'authenticated',
   ];
-  $role = Role::load('editor');
-  foreach ($permissions as $permission) {
-    $role->grantPermission($permission);
+
+  foreach ($roles as $role) {
+    $role = Role::load($role);
+    $role->grantPermission('access patterns page');
+    $role->save();
   }
-  $role->save();
 }

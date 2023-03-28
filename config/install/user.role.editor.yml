@@ -31,7 +31,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - ui_patterns_library
 id: editor
 label: Editor
 weight: 2
@@ -44,7 +43,6 @@ permissions:
   - 'access images entity browser pages'
   - 'access images_and_videos entity browser pages'
   - 'access media overview'
-  - 'access patterns page'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'create av_portal_photo media'
