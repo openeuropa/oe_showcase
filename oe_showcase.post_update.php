@@ -704,3 +704,19 @@ function oe_showcase_post_update_00026(): void {
 function oe_showcase_post_update_00027(): void {
   \Drupal::service('module_installer')->install(['slim_select']);
 }
+
+/**
+ * Add users access to Patterns overview page.
+ */
+function oe_showcase_post_update_00028(): void {
+  $roles = [
+    'anonymous',
+    'authenticated',
+  ];
+
+  foreach ($roles as $role) {
+    $role = Role::load($role);
+    $role->grantPermission('access patterns page');
+    $role->save();
+  }
+}

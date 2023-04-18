@@ -8,6 +8,7 @@ dependencies:
     - rdf_skos
     - search_api_autocomplete
     - system
+    - ui_patterns_library
     - user_field_anonymize
     - user_fields_visibility
 id: authenticated
@@ -17,6 +18,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access corporate contact form'
+  - 'access patterns page'
   - 'access user profiles'
   - 'cancel account'
   - 'set own profile fields visibility'

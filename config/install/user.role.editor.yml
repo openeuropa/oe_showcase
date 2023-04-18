@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.full_html
     - filter.format.rich_text
     - filter.format.simple_rich_text
     - media.type.av_portal_photo
