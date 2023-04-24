@@ -1,10 +1,22 @@
 # Change Log
 
-## [1.1.0](https://github.com/openeuropa/oe_showcase/tree/1.1.0) (2023-02-06)
+## [1.2.0](https://github.com/openeuropa/oe_showcase/tree/1.2.0) (2023-04-19)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.1.0...1.2.0)
+
+**Merged pull requests:**
+
+- OEL-2274: Grant access to Patterns overview. [\#217](https://github.com/openeuropa/oe_showcase/pull/217) ([drishu](https://github.com/drishu))
+- OEL-2237: Fix random failures on select elements. [\#216](https://github.com/openeuropa/oe_showcase/pull/216) ([tibi2303](https://github.com/tibi2303))
+- OEL-768: Fixed search and sort filters when both are present. [\#215](https://github.com/openeuropa/oe_showcase/pull/215) ([tibi2303](https://github.com/tibi2303))
+- OEL-2050: Fixed user banner display. [\#213](https://github.com/openeuropa/oe_showcase/pull/213) ([tibi2303](https://github.com/tibi2303))
+- OEL-2163: Content news required. [\#212](https://github.com/openeuropa/oe_showcase/pull/212) ([tibi2303](https://github.com/tibi2303))
+
+## [1.1.0](https://github.com/openeuropa/oe_showcase/tree/1.1.0) (2023-02-07)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.0.0...1.1.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.1.0. [\#214](https://github.com/openeuropa/oe_showcase/pull/214) ([drishu](https://github.com/drishu))
 - OEL-2162: Project updates [\#211](https://github.com/openeuropa/oe_showcase/pull/211) ([drishu](https://github.com/drishu))
 - OEL-1574: Enable slim\_select. [\#210](https://github.com/openeuropa/oe_showcase/pull/210) ([drishu](https://github.com/drishu))
 - OEL-1915: Use oewt dev branch. [\#209](https://github.com/openeuropa/oe_showcase/pull/209) ([drishu](https://github.com/drishu))
