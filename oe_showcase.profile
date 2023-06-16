@@ -149,16 +149,9 @@ function oe_showcase_form_user_admin_roles_form_alter(&$form, FormStateInterface
  * Alter the assignable roles.
  */
 function oe_showcase_form_bulk_add_cas_users_alter(&$form, FormStateInterface $form_state): void {
-  if (roleassign_restrict_access()) {
-    // Get all roles that are available.
-    $roles = user_role_names(TRUE);
-
-    // Get roles that are available for assignment.
-    $assignable_roles = array_intersect_key($roles, array_filter(\Drupal::config('roleassign.settings')
-      ->get('roleassign_roles')));
-
-    // Change assignable roles.
-    $form['roles']['#options'] = $assignable_roles;
+  if (_roleassign_restrict_access()) {
+    // Add roles that are available for assignment.
+    $form['roles']['#options'] = _roleassign_get_assignable_roles();
   }
 }
 
