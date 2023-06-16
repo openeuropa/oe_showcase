@@ -61,9 +61,11 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
     // Prepare all the expected links in the summary.
     foreach ($all_terms as $character => $terms) {
+      $term = mb_strtoupper((string) $character);
       $expected_summary['links'][] = [
         'url' => Url::fromUri('internal:/glossary/' . $character)->toString(),
-        'label' => mb_strtoupper((string) $character),
+        'label' => $term,
+        'aria_label' => $term,
       ];
     }
 
