@@ -107,6 +107,9 @@
         "patches": {
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch"
+            },
+            "drupal/roleassign": {
+                "Bug in RoleAssignUserBulkForm, roles not shown": "https://www.drupal.org/files/issues/2023-06-16/3367110-2.patch"
             }
         },
         "artifacts": {
