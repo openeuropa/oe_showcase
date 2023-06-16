@@ -110,8 +110,10 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Refine');
 
     $this->assertSearchResultsTitle(1);
-    // @todo Expect additional badges for the date once OEL-662 is resolved.
-    $this->assertActiveFilterBadges(['Category 2']);
+    $this->assertActiveFilterBadges([
+      'Category 2',
+      'After Sun, 08/01/2021 - 00:00',
+    ]);
     $this->assertSearchResults(['Imputo Neo Sagaciter']);
     $this->assertNoPager();
 
