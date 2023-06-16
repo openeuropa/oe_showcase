@@ -54,10 +54,10 @@ class ShowcasePageFeedbackFormTest extends ShowcaseExistingSiteTestBase {
 
     // Assert the block is rendered.
     $this->drupalGet('<front>');
-    $this->assertSession()->elementExists('xpath', "//script[@type='application/json'][.='" . addcslashes('{"service":"dff","id":1234,"lang":"en"}', '\\\'') . "']");
+    $this->assertSession()->elementExists('xpath', "//script[@type='application/json'][.='" . addcslashes('{"service":"dff","id":"1234","lang":"en"}', '\\\'') . "']");
     $page->clickLink('English');
     $page->clickLink('português');
-    $this->assertSession()->elementExists('xpath', "//script[@type='application/json'][.='" . addcslashes('{"service":"dff","id":1234,"lang":"pt"}', '\\\'') . "']");
+    $this->assertSession()->elementExists('xpath', "//script[@type='application/json'][.='" . addcslashes('{"service":"dff","id":"1234","lang":"pt"}', '\\\'') . "']");
     // Assert that Page feedback form is placed before the footer
     // inside footer region.
     $this->assertSession()->elementExists('css', '#block-oe-showcase-theme-page-feedback-form + #block-oe-showcase-theme-neutral-footer');
