@@ -14,7 +14,7 @@ workspace:
 
 services:
   web:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     environment:
       - DOCUMENT_ROOT=/test/oe_showcase
   mysql:
@@ -43,7 +43,7 @@ services:
 pipeline:
   build-branch:
     group: prepare
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     volumes:
       - /cache:/cache
     commands:
@@ -53,7 +53,7 @@ pipeline:
         TYPE: install
 
   build-release:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     volumes:
       - /cache:/cache
     commands:
@@ -66,7 +66,7 @@ pipeline:
         TYPE: update
 
   install-branch:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
@@ -75,7 +75,7 @@ pipeline:
         TYPE: install
 
   install-release:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - while ! mysqladmin ping -h mysql --silent; do sleep 1; done
       - ./vendor/bin/run drupal:site-install
@@ -84,7 +84,7 @@ pipeline:
         TYPE: update
 
   switch-branch:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - git config --global --add safe.directory /test/oe_showcase
       - git checkout ${DRONE_BRANCH}
@@ -95,7 +95,7 @@ pipeline:
         TYPE: update
 
   update-branch:
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - ./vendor/bin/drush updb -y
       - ./vendor/bin/drush cr
@@ -105,13 +105,13 @@ pipeline:
 
   grumphp:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - ./vendor/bin/grumphp run
 
   phpunit:
     group: test
-    image: registry.fpfis.eu/fpfis/httpd-php:8.0-ci
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - ./vendor/bin/run ci:site-setup
       - ./vendor/bin/drush en -y media_avportal_mock
