@@ -54,7 +54,7 @@ trait EntityCleanupTrait {
    *   The entity IDs.
    */
   protected function getAllEntityIds(string $entity_type): array {
-    return \Drupal::entityTypeManager()->getStorage($entity_type)->getQuery()->execute();
+    return \Drupal::entityTypeManager()->getStorage($entity_type)->getQuery()->accessCheck(FALSE)->execute();
   }
 
 }

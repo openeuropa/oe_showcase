@@ -32,7 +32,7 @@ class PostUpdateTest extends KernelTestBase {
     // We need to manually enable the profile because adding it to the
     // modules variable triggers an error (since it is not a module).
     $this->enableModules(['oe_showcase']);
-    module_load_install('oe_showcase');
+    \Drupal::moduleHandler()->loadInclude('oe_showcase', 'install');
   }
 
   /**
