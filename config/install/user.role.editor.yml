@@ -119,7 +119,6 @@ permissions:
   - 'revert oe_sc_person revisions'
   - 'revert oe_sc_publication revisions'
   - 'revert oe_showcase_page revisions'
-  - 'use text format full_html'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
   - 'view oe_list_page revisions'
