@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86af9220679f3ed0963267b474a85b4d",
+    "content-hash": "2789238898c424513022caa4743e9b77",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7148,16 +7148,16 @@
         },
         {
             "name": "openeuropa/oe_paragraphs",
-            "version": "1.20.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_paragraphs.git",
-                "reference": "fd372ecb4504fdf839cb1aa9db6eaab0863ff3b3"
+                "reference": "1f3e3c50e6a86194fb7dd6578d293df27d3ae59d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/fd372ecb4504fdf839cb1aa9db6eaab0863ff3b3",
-                "reference": "fd372ecb4504fdf839cb1aa9db6eaab0863ff3b3",
+                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/1f3e3c50e6a86194fb7dd6578d293df27d3ae59d",
+                "reference": "1f3e3c50e6a86194fb7dd6578d293df27d3ae59d",
                 "shasum": ""
             },
             "require": {
@@ -7189,8 +7189,7 @@
                 "openeuropa/rdf_skos": "^1.0.0-alpha10",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
                 "phpspec/prophecy-phpunit": "^2",
-                "symfony/phpunit-bridge": "^6.0",
-                "symfony/validator": "~v4.4.48 || ~v6.2.5"
+                "symfony/phpunit-bridge": "^6.0"
             },
             "suggest": {
                 "openeuropa/oe_media": "Allows usage of paragraphs with different media attached to it."
@@ -7221,8 +7220,7 @@
                     }
                 },
                 "_readme": [
-                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits.",
-                    "Using symfony/validator v6.2.5 for D10 like core-recommended does because 6.3 breaks BC with the signature changes to the ExecutionContextInterface. Remove when 6.3.1 is realased."
+                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits."
                 ]
             },
             "autoload": {
@@ -7238,9 +7236,9 @@
             "description": "Drupal module providing a collection of Paragraph types based on ECL components.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_paragraphs/issues",
-                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.20.0"
+                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.19.0"
             },
-            "time": "2023-06-30T13:17:17+00:00"
+            "time": "2023-05-12T13:09:34+00:00"
         },
         {
             "name": "openeuropa/oe_starter_content",

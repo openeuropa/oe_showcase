@@ -46,7 +46,7 @@
         "openeuropa/oe_list_pages": "^1.0",
         "openeuropa/oe_multilingual": "^1.14",
         "openeuropa/oe_oembed": "^0.7.0",
-        "openeuropa/oe_paragraphs": "^1.19",
+        "openeuropa/oe_paragraphs": "1.19.0",
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_webtools": "^1.23",
         "openeuropa/oe_whitelabel": "^1.2.0"
