@@ -20,22 +20,22 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d:
-    id: view
-    uuid: 309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d
-    label: 'Media library'
-    weight: 1
     settings:
       submit_text: 'Select media'
       auto_select: false
       view: media_entity_browsers
       view_display: images
+    uuid: 309d157b-59e7-4bf6-8c9c-fb7f6db9bf6d
+    weight: 1
+    label: 'Media library'
+    id: view
   a1713f16-c893-4baf-ac6d-949d4df818e3:
-    id: avportal_search
-    uuid: a1713f16-c893-4baf-ac6d-949d4df818e3
-    label: 'Search in AV Portal'
-    weight: 2
     settings:
       submit_text: 'Select media'
       auto_select: false
       view: av_portal_entity_browsers
       view_display: photos
+    uuid: a1713f16-c893-4baf-ac6d-949d4df818e3
+    weight: 2
+    label: 'Search in AV Portal'
+    id: avportal_search
