@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - roleassign
     - system
     - toolbar
@@ -15,4 +16,5 @@ permissions:
   - 'access user profiles'
   - 'administer users'
   - 'assign roles'
+  - 'delete own files'
   - 'view the administration theme'

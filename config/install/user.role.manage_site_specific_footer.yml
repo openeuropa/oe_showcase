@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - oe_corporate_blocks
     - system
     - toolbar
@@ -14,4 +15,5 @@ permissions:
   - 'access toolbar'
   - 'administer site specific footer link sections'
   - 'administer site specific footer links'
+  - 'delete own files'
   - 'view the administration theme'

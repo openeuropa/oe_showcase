@@ -24,6 +24,7 @@ dependencies:
     - taxonomy.vocabulary.publication_type
   module:
     - entity_browser
+    - file
     - filter
     - media
     - node
@@ -89,6 +90,7 @@ permissions:
   - 'delete oe_sc_person revisions'
   - 'delete oe_sc_publication revisions'
   - 'delete oe_showcase_page revisions'
+  - 'delete own files'
   - 'delete terms in event_type'
   - 'delete terms in glossary'
   - 'delete terms in publication_type'

@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - system
     - toolbar
 id: manage_menu_items
@@ -12,4 +13,5 @@ permissions:
   - 'access administration pages'
   - 'access toolbar'
   - 'administer menu'
+  - 'delete own files'
   - 'view the administration theme'

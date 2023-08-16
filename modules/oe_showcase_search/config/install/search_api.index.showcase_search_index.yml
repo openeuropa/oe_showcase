@@ -84,7 +84,7 @@ processor_settings:
       - body
       - rendered_item
       - title
-    ignorable: '[''¿¡!?,.:;]'
+    ignorable: "['¿¡!?,.:;]"
     ignorable_classes:
       - Pc
       - Pd
