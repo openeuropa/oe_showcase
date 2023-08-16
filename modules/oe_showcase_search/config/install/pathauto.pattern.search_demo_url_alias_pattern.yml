@@ -8,14 +8,6 @@ label: 'Search Demo URL Alias Pattern'
 type: 'canonical_entities:node'
 pattern: 'search-demo/[node:title]'
 selection_criteria:
-  2367048e-d2e3-4519-9fbf-1f91fdb94239:
-    id: node_type
-    negate: false
-    uuid: 2367048e-d2e3-4519-9fbf-1f91fdb94239
-    context_mapping:
-      node: node
-    bundles:
-      oe_showcase_search_demo: oe_showcase_search_demo
   7fbdded0-c930-4de8-8e32-c4e90491172c:
     id: 'entity_bundle:node'
     negate: false
