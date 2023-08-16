@@ -12,8 +12,9 @@
         "drupal/allowed_formats": "^2.0",
         "drupal/better_exposed_filters": "^6.0.3",
         "drupal/block_field": "^1.0@RC",
+        "drupal/ckeditor": "^1.0",
         "drupal/composite_reference": "^2.2",
-        "drupal/core-recommended": "~9.5.0",
+        "drupal/core-recommended": "^10.1",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/dropsolid_purge": "^1.0",
@@ -32,6 +33,7 @@
         "drupal/roleassign": "^2.0.0",
         "drupal/search_api": "^1.29",
         "drupal/search_api_autocomplete": "^1.7",
+        "drupal/seven": "^1.0",
         "drupal/slim_select": "^1.0@alpha",
         "drupal/user_field_anonymize": "^1.0@alpha",
         "drupal/user_fields_visibility": "1.1.0-alpha1",
@@ -55,8 +57,8 @@
         "composer/installers": "~1.11",
         "drupal/cas_mock_server": "^2.0.1",
         "drupal/config_devel": "^1.9",
-        "drupal/core-composer-scaffold": "~9.5.0",
-        "drupal/core-dev": "~9.5.0",
+        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-dev": "^10.1",
         "drush/drush": "~11.1",
         "openeuropa/code-review": "^2.0.0-alpha6",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
@@ -148,7 +150,8 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpro/grumphp": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "phpstan/extension-installer": true
         }
     }
 }
