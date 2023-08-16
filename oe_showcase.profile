@@ -156,11 +156,11 @@ function oe_showcase_form_bulk_add_cas_users_alter(&$form, FormStateInterface $f
 }
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
  *
  * Attaches extra styles to the entity browser entity reference widget.
  */
-function oe_showcase_field_widget_entity_browser_entity_reference_form_alter(&$element, FormStateInterface $form_state, $context) {
+function oe_showcase_field_widget_single_element_entity_browser_entity_reference_form_alter(&$element, FormStateInterface $form_state, $context) {
   $element['#attached']['library'][] = 'oe_showcase/entity_browser.widget';
 }
 
@@ -174,12 +174,12 @@ function oe_showcase_form_entity_browser_form_alter(&$form, FormStateInterface $
 }
 
 /**
- * Implements hook_field_widget_form_alter().
+ * Implements hook_field_widget_single_element_form_alter().
  *
  * Forces the correct text format for fields where more than one format is
  * allowed.
  */
-function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+function oe_showcase_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
   // Bail out if it's a default value widget.
   if ($context['default']) {
     return;
@@ -251,9 +251,9 @@ function oe_showcase_field_widget_form_alter(&$element, FormStateInterface $form
 }
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
  */
-function oe_showcase_field_widget_timeline_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+function oe_showcase_field_widget_single_element_timeline_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   // Bail out if it's a default value widget.
   if ($context['default']) {
     return;
