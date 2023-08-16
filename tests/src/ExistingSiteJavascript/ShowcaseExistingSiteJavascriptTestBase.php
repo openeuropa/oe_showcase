@@ -30,7 +30,7 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     if (!$this->casForcedLogin) {
@@ -41,7 +41,7 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
   /**
    * {@inheritdoc}
    */
-  public function tearDown() {
+  public function tearDown(): void {
     // Restore the default status of forced login.
     $this->enableForcedLogin();
     $this->cleanupTestEntities();
