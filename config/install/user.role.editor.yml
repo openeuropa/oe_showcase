@@ -2,6 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.documents
+    - entity_browser.browser.embed_media
+    - entity_browser.browser.images
+    - entity_browser.browser.images_and_videos
     - filter.format.rich_text
     - filter.format.simple_rich_text
     - media.type.av_portal_photo

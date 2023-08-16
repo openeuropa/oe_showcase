@@ -108,6 +108,9 @@
             },
             "drupal/roleassign": {
                 "Bug in RoleAssignUserBulkForm, roles not shown": "https://www.drupal.org/files/issues/2023-06-16/3367110-2.patch"
+            },
+            "drupal/entity_browser": {
+                "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
             }
         },
         "artifacts": {
