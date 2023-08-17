@@ -104,7 +104,8 @@
         "installer-types": ["npm-asset", "bower-asset"],
         "patches": {
             "drupal/core": {
-                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch"
+                "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch",
+                "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2023-03-03/3300404-28-map-field-failing-php-81-combined.patch"
             },
             "drupal/cas": {
                 "Exception on CasRouteEnhancer @see https://www.drupal.org/project/cas/issues/3376872": "https://www.drupal.org/files/issues/2023-07-28/cas-getsession-3376872-7.patch"
