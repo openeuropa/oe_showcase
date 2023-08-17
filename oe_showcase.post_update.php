@@ -720,3 +720,14 @@ function oe_showcase_post_update_00028(): void {
     $role->save();
   }
 }
+
+/**
+ * Update pathauto entities to remove deprecated and duplicated node_type entry.
+ */
+function oe_showcase_post_update_00029(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00029_pathauto', [
+    'pathauto.pattern.page_url_alias_pattern',
+    'pathauto.pattern.project_url_alias_pattern',
+    'pathauto.pattern.search_demo_url_alias_pattern',
+  ]);
+}

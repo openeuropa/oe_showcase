@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: search_demo_url_alias_pattern
+label: 'Search Demo URL Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'search-demo/[node:title]'
+selection_criteria:
+  7fbdded0-c930-4de8-8e32-c4e90491172c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7fbdded0-c930-4de8-8e32-c4e90491172c
+    context_mapping:
+      node: node
+    bundles:
+      oe_showcase_search_demo: oe_showcase_search_demo
+selection_logic: and
+weight: -5
+relationships: {  }

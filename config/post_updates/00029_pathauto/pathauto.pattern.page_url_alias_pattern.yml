@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: page_url_alias_pattern
+label: 'Page URL Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'pages/[node:title]'
+selection_criteria:
+  7beffba1-7e8b-42c7-be47-8bbdd6502583:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7beffba1-7e8b-42c7-be47-8bbdd6502583
+    context_mapping:
+      node: node
+    bundles:
+      oe_showcase_page: oe_showcase_page
+selection_logic: and
+weight: -5
+relationships: {  }
