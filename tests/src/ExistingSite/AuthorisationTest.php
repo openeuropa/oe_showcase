@@ -33,6 +33,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       $node = $this->createNode([
         'type' => $content_type,
         'title' => 'Stub ' . $content_type . ' node',
+        'oe_content_content_owner' => 'http://publications.europa.eu/resource/authority/corporate-body/AGRI',
       ]);
       $revision_id = $node->getRevisionId();
       // Update the node to create a new revision.
