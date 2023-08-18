@@ -731,3 +731,13 @@ function oe_showcase_post_update_00029(): void {
     'pathauto.pattern.search_demo_url_alias_pattern',
   ]);
 }
+
+/**
+ * Set the correct default user cancel method.
+ */
+function oe_showcase_post_update_00030():void {
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('cancel_method', 'user_cancel_block')
+    ->save();
+}
