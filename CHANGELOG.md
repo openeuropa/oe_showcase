@@ -1,10 +1,18 @@
 # Change Log
 
-## [1.2.0](https://github.com/openeuropa/oe_showcase/tree/1.2.0) (2023-04-19)
+## [1.3.0](https://github.com/openeuropa/oe_showcase/tree/1.3.0) (2023-08-31)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.2.0...1.3.0)
+
+**Merged pull requests:**
+
+- OEL-2371: D10 compatibility and PHP 8.1 update. [\#219](https://github.com/openeuropa/oe_showcase/pull/219) ([drishu](https://github.com/drishu))
+
+## [1.2.0](https://github.com/openeuropa/oe_showcase/tree/1.2.0) (2023-04-24)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.1.0...1.2.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.2.0. [\#218](https://github.com/openeuropa/oe_showcase/pull/218) ([drishu](https://github.com/drishu))
 - OEL-2274: Grant access to Patterns overview. [\#217](https://github.com/openeuropa/oe_showcase/pull/217) ([drishu](https://github.com/drishu))
 - OEL-2237: Fix random failures on select elements. [\#216](https://github.com/openeuropa/oe_showcase/pull/216) ([tibi2303](https://github.com/tibi2303))
 - OEL-768: Fixed search and sort filters when both are present. [\#215](https://github.com/openeuropa/oe_showcase/pull/215) ([tibi2303](https://github.com/tibi2303))
