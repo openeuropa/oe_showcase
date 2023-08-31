@@ -22,7 +22,7 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Create user.

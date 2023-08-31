@@ -31,7 +31,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Create editor user.
@@ -50,7 +50,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   /**
    * {@inheritdoc}
    */
-  public function tearDown() {
+  public function tearDown(): void {
     $role = Role::load('editor');
     $role->grantPermission('access toolbar');
     $role->save();

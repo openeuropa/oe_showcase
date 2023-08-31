@@ -21,7 +21,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->container->get('cas_mock_server.server_manager')
@@ -43,7 +43,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
   /**
    * {@inheritdoc}
    */
-  public function tearDown() {
+  public function tearDown(): void {
     $this->container->get('cas_mock_server.user_manager')
       ->deleteUsers(['chucknorris']);
 

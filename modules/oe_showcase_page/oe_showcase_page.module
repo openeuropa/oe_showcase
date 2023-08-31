@@ -10,9 +10,9 @@ declare(strict_types = 1);
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
  */
-function oe_showcase_page_field_widget_description_list_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+function oe_showcase_page_field_widget_single_element_description_list_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   if (!isset($element['description']['#format'])) {
     return;
   }

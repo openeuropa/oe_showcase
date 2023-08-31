@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - media
     - oe_contact_forms
     - oe_content_entity_organisation
@@ -21,6 +22,7 @@ permissions:
   - 'access patterns page'
   - 'access user profiles'
   - 'cancel account'
+  - 'delete own files'
   - 'set own profile fields visibility'
   - 'set user profile anonymity'
   - 'use search_api_autocomplete for showcase_search'

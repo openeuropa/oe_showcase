@@ -5,6 +5,7 @@ dependencies:
     - contact
     - contact_storage
     - contact_storage_export
+    - file
     - system
     - toolbar
 id: manage_contact_forms
@@ -16,6 +17,7 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'administer contact forms'
+  - 'delete own files'
   - 'export contact form messages'
   - 'view contact messages'
   - 'view the administration theme'

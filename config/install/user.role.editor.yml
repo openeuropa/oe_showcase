@@ -2,6 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.documents
+    - entity_browser.browser.embed_media
+    - entity_browser.browser.images
+    - entity_browser.browser.images_and_videos
     - filter.format.rich_text
     - filter.format.simple_rich_text
     - media.type.av_portal_photo
@@ -24,6 +28,7 @@ dependencies:
     - taxonomy.vocabulary.publication_type
   module:
     - entity_browser
+    - file
     - filter
     - media
     - node
@@ -89,6 +94,7 @@ permissions:
   - 'delete oe_sc_person revisions'
   - 'delete oe_sc_publication revisions'
   - 'delete oe_showcase_page revisions'
+  - 'delete own files'
   - 'delete terms in event_type'
   - 'delete terms in glossary'
   - 'delete terms in publication_type'
@@ -119,7 +125,6 @@ permissions:
   - 'revert oe_sc_person revisions'
   - 'revert oe_sc_publication revisions'
   - 'revert oe_showcase_page revisions'
-  - 'use text format full_html'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
   - 'view oe_list_page revisions'

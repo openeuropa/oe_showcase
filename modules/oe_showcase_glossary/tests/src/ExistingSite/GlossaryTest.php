@@ -61,9 +61,11 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
     // Prepare all the expected links in the summary.
     foreach ($all_terms as $character => $terms) {
+      $term = mb_strtoupper((string) $character);
       $expected_summary['links'][] = [
         'url' => Url::fromUri('internal:/glossary/' . $character)->toString(),
-        'label' => mb_strtoupper((string) $character),
+        'label' => $term,
+        'aria_label' => $term,
       ];
     }
 
@@ -178,10 +180,8 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
    *   The expected terms that will be presented as results.
    * @param string $expected_character
    *   The expected character that will be shown in the title.
-   * @param string $expected_sort
-   *   The expected sort. Used to build the pagination links.
    */
-  protected function assertViewResults(array $expected_terms, string $expected_character, string $expected_sort = 'az'): void {
+  protected function assertViewResults(array $expected_terms, string $expected_character): void {
     $assert_session = $this->assertSession();
 
     $pager_selector = '.glossary-view > .glossary-view__results > nav[role="navigation"]';
@@ -202,17 +202,17 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     ];
     for ($i = 0; $i < count($pages); $i++) {
       $expected_pagination['links'][] = [
-        'url' => sprintf('?sort_by=%s&items_per_page=20&page=%s', $expected_sort, $i),
+        'url' => sprintf('?page=%s', $i),
         'label' => (string) ($i + 1),
         'active' => $i === 0,
       ];
     }
     $expected_pagination['links'][] = [
-      'url' => sprintf('?sort_by=%s&items_per_page=20&page=1', $expected_sort),
+      'url' => sprintf('?page=1'),
       'label' => 'Next',
     ];
     $expected_pagination['links'][] = [
-      'url' => sprintf('?sort_by=%s&items_per_page=20&page=%s', $expected_sort, count($pages) - 1),
+      'url' => sprintf('?page=%s', count($pages) - 1),
       'icon' => 'chevron-double-right',
     ];
 

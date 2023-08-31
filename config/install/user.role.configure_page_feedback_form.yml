@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - oe_webtools_page_feedback
     - system
     - toolbar
@@ -13,4 +14,5 @@ permissions:
   - 'access administration pages'
   - 'access toolbar'
   - 'administer webtools page feedback form'
+  - 'delete own files'
   - 'view the administration theme'
