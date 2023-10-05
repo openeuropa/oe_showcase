@@ -59,7 +59,7 @@ pipeline:
     commands:
       - git config --global --add safe.directory /test/oe_showcase
       - git fetch --tags
-      - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+      - git checkout 1.2.0
       - composer install --ansi --no-progress
     when:
       matrix:
