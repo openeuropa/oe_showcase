@@ -741,3 +741,17 @@ function oe_showcase_post_update_00030():void {
     ->set('cancel_method', 'user_cancel_block')
     ->save();
 }
+
+/**
+ * Set only the correct index as source for list pages.
+ */
+function oe_showcase_post_update_00031(): void {
+  /** @var \Drupal\search_api\Entity\SearchApiConfigEntityStorage $storage */
+  $storage = \Drupal::entityTypeManager()->getStorage('search_api_index');
+
+  foreach ($storage->loadMultiple() as $index) {
+    $use_for_list_pages = $index->id() === 'oe_list_pages_index';
+    $index->setThirdPartySetting('oe_list_pages', 'lists_pages_index', $use_for_list_pages);
+    $index->save();
+  }
+}

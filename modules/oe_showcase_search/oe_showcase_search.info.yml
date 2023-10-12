@@ -30,9 +30,9 @@ config_devel:
     - field.storage.node.field_image
     - node.type.oe_showcase_search_demo
     - pathauto.pattern.search_demo_url_alias_pattern
+    - search_api_autocomplete.search.showcase_search
     - search_api.index.showcase_search_index
     - search_api.server.showcase_search_server
-    - search_api_autocomplete.search.showcase_search
     - taxonomy.vocabulary.categories
     - views.view.showcase_search
   optional:
