@@ -18,8 +18,8 @@ config_devel:
     - core.entity_form_display.node.oe_list_page.default
     - facets.facet.oelp_oe_sc_event__location
     - facets.facet.oelp_oe_sc_event__oe_sc_event_dates
-    - facets.facet.oelp_oe_sc_event__type
     - facets.facet.oelp_oe_sc_event__title
+    - facets.facet.oelp_oe_sc_event__type
     - facets.facet.oelp_oe_sc_news__oe_publication_date
     - facets.facet.oelp_oe_sc_news__title
     - facets.facet.oelp_oe_sc_person__title

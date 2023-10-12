@@ -117,12 +117,12 @@ config_devel:
     - embed.button.embed_media
     - entity_browser.browser.documents
     - entity_browser.browser.embed_media
-    - entity_browser.browser.images
     - entity_browser.browser.images_and_videos
+    - entity_browser.browser.images
     - entity_browser_enhanced.widgets.documents
     - entity_browser_enhanced.widgets.embed_media
-    - entity_browser_enhanced.widgets.images
     - entity_browser_enhanced.widgets.images_and_videos
+    - entity_browser_enhanced.widgets.images
     - field.field.node.oe_project.body
     - field.field.node.oe_project.oe_cx_achievements_and_milestone
     - field.field.node.oe_project.oe_cx_impacts
@@ -138,6 +138,7 @@ config_devel:
     - field.field.node.oe_sc_person.oe_sc_person_additional_info
     - field.field.node.oe_sc_person.oe_summary
     - field.field.node.oe_sc_publication.body
+    - field.field.node.oe_sc_publication.field_publication_authors
     - field.field.node.oe_sc_publication.field_publication_type
     - field.field.node.oe_sc_publication.oe_summary
     - field.field.paragraph.oe_accordion_item.field_oe_text_long
@@ -146,6 +147,7 @@ config_devel:
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
     - field.field.paragraph.oe_timeline.field_oe_text_long
     - field.storage.node.field_event_type
+    - field.storage.node.field_publication_authors
     - field.storage.node.field_publication_type
     - filter.format.full_html
     - filter.format.rich_text
@@ -156,12 +158,15 @@ config_devel:
     - oe_authentication.settings
     - pathauto.pattern.project_url_alias_pattern
     - pathauto.settings
+    - purge.plugins
     - purge_users.settings
     - roleassign.settings
     - search_api.index.oe_list_pages_index
+    - system.site
     - system.theme
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.publication_type
+    - user_field_anonymize.settings
     - user.role.administrator
     - user.role.anonymous
     - user.role.authenticated
@@ -172,7 +177,6 @@ config_devel:
     - user.role.manage_site_specific_footer
     - user.role.manage_users
     - user.settings
-    - user_field_anonymize.settings
     - views.view.media_entity_browsers
   optional:
     - block.block.seven_breadcrumbs

@@ -10,8 +10,8 @@ dependencies:
 
 config_devel:
   install:
+    - core.entity_view_display.taxonomy_term.glossary.full
     - core.entity_view_display.taxonomy_term.glossary.teaser
-    - core.entity_view_mode.taxonomy_term.full
     - core.entity_view_mode.taxonomy_term.teaser
     - taxonomy.vocabulary.glossary
     - views.view.glossary_page
