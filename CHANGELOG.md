@@ -1,20 +1,20 @@
 # Change Log
 
+## [1.4.0](https://github.com/openeuropa/oe_showcase/tree/1.4.0) (2023-10-16)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.3.1...1.4.0)
+
+**Merged pull requests:**
+
+- OEL-2670: Update all dependencies. [\#226](https://github.com/openeuropa/oe_showcase/pull/226) ([brummbar](https://github.com/brummbar))
+
 ## [1.3.1](https://github.com/openeuropa/oe_showcase/tree/1.3.1) (2023-10-13)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.2.1...1.3.1)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.3.1. [\#225](https://github.com/openeuropa/oe_showcase/pull/225) ([brummbar](https://github.com/brummbar))
 - OEL-2670: Bump Drupal core packages and related dependencies. [\#224](https://github.com/openeuropa/oe_showcase/pull/224) ([brummbar](https://github.com/brummbar))
 - OEL-2627: Make sure only one index is configured as list page source. [\#223](https://github.com/openeuropa/oe_showcase/pull/223) ([brummbar](https://github.com/brummbar))
-
-## [1.3.0](https://github.com/openeuropa/oe_showcase/tree/1.3.0) (2023-08-31)
-[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.2.0...1.3.0)
-
-**Merged pull requests:**
-
-- Prepare changelog for release 1.3.0. [\#220](https://github.com/openeuropa/oe_showcase/pull/220) ([brummbar](https://github.com/brummbar))
-- OEL-2371: D10 compatibility and PHP 8.1 update. [\#219](https://github.com/openeuropa/oe_showcase/pull/219) ([drishu](https://github.com/drishu))
 
 ## [1.2.1](https://github.com/openeuropa/oe_showcase/tree/1.2.1) (2023-10-09)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.3.0...1.2.1)
@@ -23,6 +23,14 @@
 
 - Prepare the changelog for 1.2.1. [\#222](https://github.com/openeuropa/oe_showcase/pull/222) ([brummbar](https://github.com/brummbar))
 - OEL-2670: Update core to 9.5.11. [\#221](https://github.com/openeuropa/oe_showcase/pull/221) ([brummbar](https://github.com/brummbar))
+
+## [1.3.0](https://github.com/openeuropa/oe_showcase/tree/1.3.0) (2023-08-31)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.2.0...1.3.0)
+
+**Merged pull requests:**
+
+- Prepare changelog for release 1.3.0. [\#220](https://github.com/openeuropa/oe_showcase/pull/220) ([brummbar](https://github.com/brummbar))
+- OEL-2371: D10 compatibility and PHP 8.1 update. [\#219](https://github.com/openeuropa/oe_showcase/pull/219) ([drishu](https://github.com/drishu))
 
 ## [1.2.0](https://github.com/openeuropa/oe_showcase/tree/1.2.0) (2023-04-24)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.1.0...1.2.0)
