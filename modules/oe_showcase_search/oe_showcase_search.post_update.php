@@ -57,3 +57,15 @@ function oe_showcase_search_post_update_00003(): void {
     'views.view.showcase_search'
   );
 }
+
+/**
+ * Update seachr index, all content types except oe_list_pages.
+ */
+function oe_showcase_search_post_update_00004(): void {
+  ConfigImporter::importSingle(
+    'module',
+    'oe_showcase_search',
+    '/config/post_updates/00004',
+    'search_api.index.showcase_search_index'
+  );
+}
