@@ -65,17 +65,17 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Assert exposed sort widget.
     $assert->fieldExists('Sort by', $this->getSearchTopRegion());
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
-      'Imputo Neo Sagaciter',
-      'Distineo',
-      'Quae Vulputate',
-      'Abico Diam Jugis',
-      'Obruo',
+      'Webtools',
+      'Inpage Navigation',
+      'About us',
+      'Contact us',
+      'Pages',
     ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Filter by category.
     $page->checkField('Category 2');
@@ -123,22 +123,22 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Clear active filters.
     $page->clickLink('Clear');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
-      'Imputo Neo Sagaciter',
-      'Distineo',
-      'Quae Vulputate',
-      'Abico Diam Jugis',
-      'Obruo',
+      'Webtools',
+      'Inpage Navigation',
+      'About us',
+      'Contact us',
+      'Pages',
     ]);
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Hendrerit',
@@ -147,12 +147,12 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Gemino Imputo',
       'Macto Neque Virtus',
     ]);
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Visit the second page of search results.
     $page->clickLink('2');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Luctus Sit',
@@ -161,20 +161,21 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Voco',
       'Appellatio Camur',
     ]);
-    $this->assertPager(4, 1);
+    $this->assertPager(6, 1);
 
     // Visit the last page.
     $page->clickLink('4');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Abico Diam Jugis',
       'Quae Vulputate',
       'Distineo',
       'Imputo Neo Sagaciter',
+      'Item 01',
     ]);
-    $this->assertPager(4, 3);
+    $this->assertPager(6, 3);
 
     // Search keeps value if sort is also applied.
     $this->drupalGet('/search');
@@ -209,6 +210,8 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    * Test that search page shows all content types except list pages.
    */
   public function testSearchContentTypes() {
+    // Mark test content for deletion after the test has finished.
+    $this->markEntityTypeForCleanup('node');
     // Define content types.
     $content_types = [
       'oe_sc_event',
