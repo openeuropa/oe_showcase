@@ -7,11 +7,14 @@ namespace Drupal\Tests\oe_showcase_search\ExistingSite;
 use Behat\Mink\Element\NodeElement;
 use Drupal\Core\Url;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 
 /**
  * Tests the OEL Search feature integration.
  */
 class IntegrationTest extends ShowcaseExistingSiteTestBase {
+
+  use ExampleContentTrait;
 
   /**
    * Test the search page.
@@ -200,6 +203,61 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Check search value is still present.
     $this->assertSame($search_input->getValue(), 'Imputo');
+  }
+
+  /**
+   * Test that search page shows all content types except list pages.
+   */
+  public function testSearchContentTypes() {
+    // Define content types.
+    $content_types = [
+      'oe_sc_event',
+      'oe_sc_news',
+      'oe_showcase_search_demo',
+      'oe_showcase_page',
+      'oe_project',
+      'oe_sc_publication',
+    ];
+    // Create node for each of the types:
+    foreach ($content_types as $content_type) {
+      $this->createNode([
+        'title' => $content_type,
+        'type' => $content_type,
+        'status' => 1,
+      ]);
+    }
+    // Create four Person nodes to complete page displayed items.
+    for ($i = 0; $i < 4; $i++) {
+      $this->createNode([
+        'oe_sc_person_first_name' => 'John',
+        'oe_sc_person_last_name' => 'Doe ' . $i,
+        'type' => 'oe_sc_person',
+        'status' => 1,
+      ]);
+      $content_types[] = 'John Doe ' . $i;
+    }
+    // Create oe_list_page.
+    $this->createNode([
+      'title' => 'oe_list_page',
+      'type' => 'oe_list_page',
+      'status' => 1,
+    ]);
+    // Index content.
+    $this->indexItems('showcase_search_index');
+
+    // Assert that the created content is there.
+    $this->drupalGet('/search');
+    $this->assertSearchResults(array_slice($content_types, 0, 5));
+    // Visit second page to check second half.
+    $this->clickLink('2');
+    $this->assertSearchResults(array_slice($content_types, 5, 5));
+
+    // Assert oe_list_page is not present after searching it.
+    $search_form = $this->assertSession()->elementExists('css', '#oe-whitelabel-search-form');
+    $search_form->findField('Search')->setValue('oe_list_page');
+    $search_form->find('css', 'button[type="submit"]')->press();
+    $this->assertSearchResultsTitle(0);
+
   }
 
   /**
