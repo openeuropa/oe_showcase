@@ -2,10 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_category
+    - field.storage.node.body
+    - field.storage.node.oe_sc_event_dates
+    - field.storage.node.oe_sc_event_location
+    - field.storage.node.field_event_type
+    - field.storage.node.oe_summary
+    - field.storage.node.oe_project_dates
+    - field.storage.node.oe_publication_date
+    - field.storage.node.field_publication_type
     - search_api.server.showcase_search_server
     - core.entity_view_mode.node.search_result
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - search_api
@@ -15,7 +23,7 @@ description: ''
 read_only: false
 field_settings:
   body:
-    label: Body
+    label: Content
     datasource_id: 'entity:node'
     property_path: body
     type: text
@@ -30,6 +38,14 @@ field_settings:
     dependencies:
       module:
         - node
+  end_value:
+    label: 'Project Status'
+    datasource_id: 'entity:node'
+    property_path: 'oe_project_dates:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
   field_category:
     label: Category
     datasource_id: 'entity:node'
@@ -38,15 +54,77 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_category
+  field_event_type:
+    label: 'Event type'
+    datasource_id: 'entity:node'
+    property_path: field_event_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
+  field_publication_type:
+    label: 'Publication type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
+  oe_project_dates:
+    label: 'Project period'
+    datasource_id: 'entity:node'
+    property_path: oe_project_dates
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
+  oe_publication_date:
+    label: 'Publication date'
+    datasource_id: 'entity:node'
+    property_path: oe_publication_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_publication_date
+  oe_sc_event_dates:
+    label: 'Event dates'
+    datasource_id: 'entity:node'
+    property_path: oe_sc_event_dates
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.oe_sc_event_dates
+  oe_sc_event_location:
+    label: 'Event location'
+    datasource_id: 'entity:node'
+    property_path: oe_sc_event_location
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.oe_sc_event_location
+  oe_summary:
+    label: Introduction
+    datasource_id: 'entity:node'
+    property_path: oe_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.oe_summary
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
+          oe_project: teaser
+          oe_sc_event: teaser
+          oe_sc_news: teaser
+          oe_sc_person: teaser
+          oe_sc_publication: teaser
+          oe_showcase_page: teaser
           oe_showcase_search_demo: search_result
   title:
     label: Title
@@ -68,20 +146,27 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  entity_type: {  }
   highlight:
-    highlight: always
-    highlight_partial: true
-    excerpt: true
-    excerpt_length: 256
-    exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
     weights:
       postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: true
   ignore_character:
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
     all_fields: true
     fields:
       - body
+      - oe_sc_event_location
+      - oe_summary
       - rendered_item
       - title
     ignorable: "['¿¡!?,.:;]"
@@ -93,16 +178,13 @@ processor_settings:
       - Pi
       - Po
       - Ps
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
   track_changes_in_references: true
 server: showcase_search_server
