@@ -62,10 +62,21 @@ function oe_showcase_search_post_update_00003(): void {
  * Update seachr index, all content types except oe_list_pages.
  */
 function oe_showcase_search_post_update_00004(): void {
-  ConfigImporter::importSingle(
+  ConfigImporter::importMultiple(
     'module',
     'oe_showcase_search',
     '/config/post_updates/00004',
-    'search_api.index.showcase_search_index'
+    [
+      'facets.facet.oe_project_dates',
+      'facets.facet.oe_publication_date',
+      'facets.facet.oe_sc_event__oe_sc_event_dates',
+      'facets.facet.oe_sc_event_location',
+      'facets.facet.oe_sc_event_type',
+      'facets.facet.oe_sc_project__end_date',
+      'facets.facet.oe_sc_project_status',
+      'facets.facet.oe_sc_publication__type',
+      'search_api.index.showcase_search_index',
+      'views.view.showcase_search',
+    ]
   );
 }

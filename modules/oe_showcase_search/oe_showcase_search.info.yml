@@ -9,6 +9,13 @@ dependencies:
   - facets_form_date_range:facets_form_date_range
   - facets_form_live_total:facets_form_live_total
   - facets_summary:facets_summary
+  - oe_content:oe_content
+  - oe_content_extra:oe_content_extra_project
+  - oe_list_pages:oe_list_pages_address
+  - oe_starter_content:oe_starter_content_event
+  - oe_starter_content:oe_starter_content_news
+  - oe_starter_content:oe_starter_content_person
+  - oe_starter_content:oe_starter_content_publication
   - search_api:search_api
   - search_api_autocomplete:search_api_autocomplete
   - search_api_db:search_api_db
