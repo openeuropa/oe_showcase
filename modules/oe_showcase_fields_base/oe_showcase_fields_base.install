@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\oe_bootstrap_theme\ConfigImporter;
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_fields_base_install() {
+  $config = [
+    'field.storage.node.field_event_type',
+    'field.storage.node.field_publication_authors',
+    'field.storage.node.field_publication_type',
+    'taxonomy.vocabulary.event_type',
+    'taxonomy.vocabulary.publication_type',
+    'field.field.node.oe_sc_event.field_event_type',
+    'field.field.node.oe_sc_publication.field_publication_authors',
+    'field.field.node.oe_sc_publication.field_publication_type',
+  ];
+  // Remove existing configuration.
+  foreach ($config as $value) {
+    if (_in_active_config($value)) {
+      unset($config[$value]);
+    }
+  }
+  // No configuration to import.
+  if (empty($config)) {
+    return;
+  }
+
+  // Import configuration.
+  ConfigImporter::importMultiple('module', 'oe_showcase_fields_base', '/config/fields', $config);
+
+}
+
+/**
+ * Helper function to check if the given name exists in active configuration.
+ *
+ * @param string $configName
+ *   The id of the configuration to check.
+ *
+ * @return bool
+ *   The config exists.
+ */
+function _in_active_config($configName): bool {
+  if (empty($configName)) {
+    return FALSE;
+  }
+  $activeConfigFactory = \Drupal::service('config.factory');
+  // The config factory always returns an ImmutableConfig object
+  // but if doesn't exist in configuration yet, ->isNew() is true.
+  $existsInActiveConfig = !$activeConfigFactory->get($configName)->isNew();
+
+  return $existsInActiveConfig;
+}
