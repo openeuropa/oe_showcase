@@ -1,0 +1,12 @@
+name: Openeuropa Showcase fields base
+type: module
+description: Provides fields used in content types within Showcase profile.
+package: OpenEuropa Showcase
+core_version_requirement: ^9 || ^10
+dependencies:
+  - field_permissions:field_permissions
+  - drupal:node
+  - drupal:taxonomy
+  - oe_starter_content:oe_starter_content_person
+  - oe_starter_content:oe_starter_content_event
+  - oe_starter_content:oe_starter_content_publication
