@@ -12,6 +12,7 @@ dependencies:
   - oe_content:oe_content
   - oe_content_extra:oe_content_extra_project
   - oe_list_pages:oe_list_pages_address
+  - oe_showcase_fields_base:oe_showcase_fields_base
   - oe_starter_content:oe_starter_content_event
   - oe_starter_content:oe_starter_content_news
   - oe_starter_content:oe_starter_content_person

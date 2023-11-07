@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    # - field.storage.node.field_category
-    # - field.storage.node.body
-    # - field.storage.node.oe_sc_event_dates
-    # - field.storage.node.oe_sc_event_location
-    # - field.storage.node.field_event_type
-    # - field.storage.node.oe_summary
-    # - field.storage.node.oe_project_dates
-    # - field.storage.node.oe_publication_date
-    # - field.storage.node.field_publication_type
+    - field.storage.node.field_category
+    - field.storage.node.body
+    - field.storage.node.oe_sc_event_dates
+    - field.storage.node.oe_sc_event_location
+    - field.storage.node.field_event_type
+    - field.storage.node.oe_summary
+    - field.storage.node.oe_project_dates
+    - field.storage.node.oe_publication_date
+    - field.storage.node.field_publication_type
     - search_api.server.showcase_search_server
     - core.entity_view_mode.node.search_result
     - core.entity_view_mode.node.teaser
@@ -43,73 +43,73 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: 'oe_project_dates:end_value'
     type: date
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_project_dates
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
   field_category:
     label: Category
     datasource_id: 'entity:node'
     property_path: field_category
     type: integer
-    dependencies: {}
-      # config:
-      #   - field.storage.node.field_category
+    dependencies:
+      config:
+        - field.storage.node.field_category
   field_event_type:
     label: 'Event type'
     datasource_id: 'entity:node'
     property_path: field_event_type
     type: integer
-    dependencies: {}
-      # config:
-      #   - field.storage.node.field_event_type
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
   field_publication_type:
     label: 'Publication type'
     datasource_id: 'entity:node'
     property_path: field_publication_type
     type: integer
-    dependencies: {}
-      # config:
-      #   - field.storage.node.field_publication_type
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
   oe_project_dates:
     label: 'Project period'
     datasource_id: 'entity:node'
     property_path: oe_project_dates
     type: date
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_project_dates
+    dependencies:
+      config:
+        - field.storage.node.oe_project_dates
   oe_publication_date:
     label: 'Publication date'
     datasource_id: 'entity:node'
     property_path: oe_publication_date
     type: date
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_publication_date
+    dependencies:
+      config:
+        - field.storage.node.oe_publication_date
   oe_sc_event_dates:
     label: 'Event dates'
     datasource_id: 'entity:node'
     property_path: oe_sc_event_dates
     type: date
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_sc_event_dates
+    dependencies:
+      config:
+        - field.storage.node.oe_sc_event_dates
   oe_sc_event_location:
     label: 'Event location'
     datasource_id: 'entity:node'
     property_path: oe_sc_event_location
     type: string
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_sc_event_location
+    dependencies:
+      config:
+        - field.storage.node.oe_sc_event_location
   oe_summary:
     label: Introduction
     datasource_id: 'entity:node'
     property_path: oe_summary
     type: text
-    dependencies: {}
-      # config:
-      #   - field.storage.node.oe_summary
+    dependencies:
+      config:
+        - field.storage.node.oe_summary
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item

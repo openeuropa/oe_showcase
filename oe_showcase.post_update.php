@@ -755,3 +755,10 @@ function oe_showcase_post_update_00031(): void {
     $index->save();
   }
 }
+
+/**
+ * Enable Showcase base fields module.
+ */
+function oe_showcase_post_update_00032(): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_fields_base']);
+}
