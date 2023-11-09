@@ -258,6 +258,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalGet('/search');
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 1');
+    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
@@ -265,6 +266,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 2');
+    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
@@ -278,6 +280,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $publication_date_to = $assert_session->elementExists('css', "#$selector-to", $publication_date)->findField('Date');
     // First filter by From.
     $publication_date_from->setValue('04/04/2022');
+    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
     $this->assertSearchResultsTitle(4);
     $this->assertSearchResults([
