@@ -68,8 +68,8 @@ processor_configs:
       build: 35
     settings:
       default_status: ''
-      upcoming_label: Upcoming
-      past_label: Past
+      upcoming_label: 'Ongoing and Planned'
+      past_label: Closed
       sort_alter_field_identifier: ''
   url_processor_handler:
     processor_id: url_processor_handler
