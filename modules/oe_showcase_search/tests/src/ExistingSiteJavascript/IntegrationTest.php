@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\Tests\oe_showcase_search\ExistingSite;
+namespace Drupal\Tests\oe_showcase_search\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
