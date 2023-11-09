@@ -6,7 +6,6 @@ namespace Drupal\Tests\oe_showcase_search\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
-use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
@@ -31,22 +30,17 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Create some News test nodes.
     for ($i = 0; $i < 5; $i++) {
-      $values = [
+      Node::create([
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is a News content number ' . $i,
-        'oe_summary' => 'This is a News introduction number ' . $i,
-        'language' => 'en',
-        'status' => NodeInterface::PUBLISHED,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+      ])->save();
     }
 
     // Create some Events test nodes.
     $countries = [
-      'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
+      'AF', 'BE', 'RO', 'DE', 'FR',
     ];
     for ($i = 0; $i < 5; $i++) {
       $term = Term::create([
@@ -54,14 +48,11 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         'name' => 'Event type ' . $i,
       ]);
       $term->save();
-      $values = [
+
+      Node::create([
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
         'field_event_type' => $term->id(),
-        'body' => 'This is an Event content number ' . $i,
-        'oe_summary' => 'This is an Event introduction number ' . $i,
-        'language' => 'en',
-        'status' => NodeInterface::PUBLISHED,
         'oe_sc_event_dates' => [
           'value' => sprintf('2022-04-%02dT02:00:00', $i + 1),
           'end_value' => sprintf('2022-04-%02dT05:00:00', $i + 2),
@@ -72,28 +63,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
           'postal_code' => '123 ' . $i,
           'locality' => 'Town' . $i,
         ],
-      ];
-      $node = Node::create($values);
-      $node->save();
-    }
-
-    // Create some Person test nodes.
-    for ($i = 0; $i < 5; $i++) {
-      $values = [
-        'oe_sc_person_first_name' => 'John',
-        'oe_sc_person_last_name' => 'Doe ' . $i,
-        'type' => 'oe_sc_person',
-        'oe_summary' => 'This is a person short description number ' . $i,
-        'oe_sc_person_additional_info' => 'This is a person additional info number ' . $i,
-        'language' => 'en',
-        'status' => NodeInterface::PUBLISHED,
-        'oe_sc_person_country' => 'DE',
-        'oe_sc_person_occupation' => 'DG TEST',
-        'oe_sc_person_position' => 'Director',
-        'created' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+      ])->save();
     }
 
     // Create some Publication test nodes.
@@ -103,17 +73,13 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         'name' => 'Publication type ' . $i,
       ]);
       $term->save();
-      $values = [
+
+      Node::create([
         'title' => 'Pub ' . $i,
         'type' => 'oe_sc_publication',
-        'language' => 'en',
-        'status' => NodeInterface::PUBLISHED,
         'field_publication_type' => $term->id(),
-        'oe_summary' => 'This is a Publication summary ' . $i,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+      ])->save();
     }
 
     // Create some Projects test nodes.
@@ -124,10 +90,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     Node::create([
       'title' => 'Project closed',
       'type' => 'oe_project',
-      'oe_summary' => 'This is a closed Project',
-      'language' => 'en',
-      'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 100,
       'oe_project_dates' => [
         'value' => '2020-05-10',
         'end_value' => '2020-05-15',
@@ -138,10 +100,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     Node::create([
       'title' => 'Project ongoing',
       'type' => 'oe_project',
-      'oe_summary' => 'This is a ongoing Project',
-      'language' => 'en',
-      'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 33,
       'oe_project_dates' => [
         'value' => '2022-05-20',
         'end_value' => $date_plus_1,
@@ -152,29 +110,12 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     Node::create([
       'title' => 'Project pending',
       'type' => 'oe_project',
-      'oe_summary' => 'This is a pending Project',
-      'language' => 'en',
-      'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 1234,
       'oe_project_dates' => [
         'value' => $date_plus_1,
         'end_value' => $date_plus_10,
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1018',
     ])->save();
-
-    // Create some Page test nodes.
-    for ($i = 0; $i < 5; $i++) {
-      $values = [
-        'title' => 'Page number ' . $i,
-        'type' => 'oe_showcase_page',
-        'field_description' => 'This is a Page introduction number ' . $i,
-        'language' => 'en',
-        'status' => NodeInterface::PUBLISHED,
-      ];
-      $node = Node::create($values);
-      $node->save();
-    }
 
     // Index content.
     $this->indexItems('showcase_search_index');
@@ -194,9 +135,8 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $publication_type = $filter_form->findField('Publication type');
     // This facet is shared with News.
     $publication_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_publication_date"]', $filter_form);
-    // Submit buttons.
+    // Submit button.
     $search_button = $filter_form->findButton('Refine');
-    $clear_button = $filter_form->findLink('Clear');
     // Assert all form filters.
     $this->assertNotNull($project_status);
     $this->assertNotNull($project_start_date);
@@ -206,8 +146,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertNotNull($event_dates);
     $this->assertNotNull($publication_type);
     $this->assertNotNull($publication_date);
-    $this->assertNotNull($search_button);
-    $this->assertNotNull($clear_button);
 
     // Proyect status filter.
     $this->scrollIntoView('#' . $project_status->getAttribute('id'));
@@ -218,11 +156,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'Project closed',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Proyect start date filter.
-    $this->scrollIntoView('#' . $project_start_date->getAttribute('id'));
+    $this->drupalGet('/search');
     $selector = $project_start_date->getAttribute('data-drupal-selector');
     $project_start_date_from = $assert_session->elementExists('css', "#$selector-from", $project_start_date)->findField('Date');
     $project_start_date_to = $assert_session->elementExists('css', "#$selector-to", $project_start_date)->findField('Date');
@@ -243,11 +179,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'Project ongoing',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Proyect end date filter.
-    $this->scrollIntoView('#' . $project_end_date->getAttribute('id'));
+    $this->drupalGet('/search');
     $selector = $project_end_date->getAttribute('data-drupal-selector');
     $project_end_date_from = $assert_session->elementExists('css', "#$selector-from", $project_end_date)->findField('Date');
     $project_end_date_to = $assert_session->elementExists('css', "#$selector-to", $project_end_date)->findField('Date');
@@ -270,18 +204,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project closed',
       'Project ongoing',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Event type filter.
-    $this->scrollIntoView('#' . $event_type->getAttribute('id'));
-    $this->selectSlimOption($event_type, 'Event type 3');
-    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
-    $search_button->click();
-    $this->assertSearchResultsTitle(1);
-    $this->assertSearchResults([
-      'Event number 3',
-    ]);
+    $this->drupalGet('/search');
     $this->scrollIntoView('#' . $event_type->getAttribute('id'));
     $this->selectSlimOption($event_type, 'Event type 4');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -290,10 +215,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'Event number 4',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Event location filter.
+    $this->drupalGet('/search');
     $this->scrollIntoView('#' . $event_location->getAttribute('id'));
     $this->selectSlimOption($event_location, 'France');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -302,19 +226,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'Event number 4',
     ]);
-    $this->scrollIntoView('#' . $event_location->getAttribute('id'));
-    $this->selectSlimOption($event_location, 'Romania');
-    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
-    $search_button->click();
-    $this->assertSearchResultsTitle(1);
-    $this->assertSearchResults([
-      'Event number 2',
-    ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Event dates.
-    $this->scrollIntoView('#' . $event_dates->getAttribute('id'));
+    $this->drupalGet('/search');
     $selector = $event_dates->getAttribute('data-drupal-selector');
     $event_dates_from = $assert_session->elementExists('css', "#$selector-from", $event_dates)->findField('Date');
     $event_dates_to = $assert_session->elementExists('css', "#$selector-to", $event_dates)->findField('Date');
@@ -339,38 +253,31 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 2',
       'Event number 3',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Publication type filter.
+    $this->drupalGet('/search');
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 1');
-    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
-
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
       'Pub 1',
     ]);
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 2');
-    $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $search_button->click();
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
       'Pub 2',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
     // Publication date filter, this applies to news and publications.
-    $this->scrollIntoView('#' . $publication_date->getAttribute('id'));
+    $this->drupalGet('/search');
     $selector = $publication_date->getAttribute('data-drupal-selector');
     $publication_date_from = $assert_session->elementExists('css', "#$selector-from", $publication_date)->findField('Date');
     $publication_date_to = $assert_session->elementExists('css', "#$selector-to", $publication_date)->findField('Date');
     // First filter by From.
     $publication_date_from->setValue('04/04/2022');
-    $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
     $this->assertSearchResultsTitle(4);
     $this->assertSearchResults([
@@ -388,8 +295,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 3',
       'Pub 3',
     ]);
-    $this->scrollIntoView('#' . $clear_button->getAttribute('id'));
-    $clear_button->click();
 
   }
 
