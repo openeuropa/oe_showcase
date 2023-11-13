@@ -75,7 +75,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       $term->save();
 
       Node::create([
-        'title' => 'Pub ' . $i,
+        'title' => 'Publication ' . $i,
         'type' => 'oe_sc_publication',
         'field_publication_type' => $term->id(),
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
@@ -262,7 +262,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $search_button->click();
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
-      'Pub 1',
+      'Publication 1',
     ]);
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 2');
@@ -270,7 +270,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $search_button->click();
     $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
-      'Pub 2',
+      'Publication 2',
     ]);
 
     // Publication date filter, this applies to news and publications.
@@ -286,8 +286,8 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'News number 3',
       'News number 4',
-      'Pub 3',
-      'Pub 4',
+      'Publication 3',
+      'Publication 4',
     ]);
     // Then filter by To.
     $publication_date_to->setValue('04/04/2022');
@@ -296,7 +296,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResultsTitle(2);
     $this->assertSearchResults([
       'News number 3',
-      'Pub 3',
+      'Publication 3',
     ]);
 
   }
