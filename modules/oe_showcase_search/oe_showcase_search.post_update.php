@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 use Drupal\block\Entity\Block;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Ensure search blocks are in the correct order.
@@ -59,7 +60,7 @@ function oe_showcase_search_post_update_00003(): void {
 }
 
 /**
- * Update seachr index, all content types except oe_list_pages.
+ * Update search index, all content types except oe_list_pages.
  */
 function oe_showcase_search_post_update_00004(): void {
   ConfigImporter::importMultiple(
@@ -79,4 +80,7 @@ function oe_showcase_search_post_update_00004(): void {
       'views.view.showcase_search',
     ]
   );
+  // Index elements.
+  Index::load('showcase_search_index')->indexItems();
+
 }
