@@ -114,6 +114,9 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
+            },
+            "drupal/facets_form": {
+                "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
             }
         },
         "patches-ignore": {
