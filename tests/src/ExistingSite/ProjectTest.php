@@ -198,8 +198,8 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Project details');
 
     // Check meta is present.
-    $this->drupalGet('node/');
-    $assert_session->elementExists('css', '.card-body:nth-child(1) .text-muted');
+    $this->drupalGet('/node');
+    $assert_session->elementExists('css', '.views-row:nth-child(1) .text-muted');
     $this->drupalLogin($this->createUser([], '', TRUE));
 
     // Edit the node, remove project details.
@@ -246,7 +246,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalGet('/node');
     // Check meta is not present.
-    $assert_session->elementNotExists('css', '.card-body:nth-child(1) .text-muted');
+    $assert_session->elementNotExists('css', '.views-row:nth-child(1) .text-muted');
   }
 
 }
