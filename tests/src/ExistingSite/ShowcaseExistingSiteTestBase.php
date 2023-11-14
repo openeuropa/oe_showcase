@@ -47,8 +47,9 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
     $this->enableForcedLogin();
     $this->cleanupTestEntities();
     $this->restoreConfiguration();
-
+    drupal_flush_all_caches();
     parent::tearDown();
+
   }
 
   /**
