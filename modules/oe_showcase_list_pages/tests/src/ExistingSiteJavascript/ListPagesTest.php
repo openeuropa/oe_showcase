@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase_list_pages\ExistingSiteJavascript;
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Drupal\search_api\Entity\Index;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
@@ -157,7 +158,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     }
 
     // Index content.
-    $this->indexItems('oe_list_pages_index');
+    $index = Index::load('oe_list_pages_index');
+    $index->clear();
+    $index->indexItems();
 
     // Create the News listing page.
     $list_page = $this->createListPage('News list page', 'oe_sc_news', [
