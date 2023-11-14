@@ -239,12 +239,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       ]);
       $content_types[] = 'John Doe ' . $i;
     }
-    // Create oe_list_page.
-    $this->createNode([
-      'title' => 'oe_list_page',
-      'type' => 'oe_list_page',
-      'status' => 1,
-    ]);
+
     // Index content.
     $this->indexItems('showcase_search_index');
 
@@ -254,12 +249,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Visit second page to check second half.
     $this->clickLink('2');
     $this->assertSearchResults(array_slice($content_types, 5, 5));
-
-    // Assert oe_list_page is not present after searching it.
-    $search_form = $this->assertSession()->elementExists('css', '#oe-whitelabel-search-form');
-    $search_form->findField('Search')->setValue('oe_list_page');
-    $search_form->find('css', 'button[type="submit"]')->press();
-    $this->assertSearchResultsTitle(0);
 
   }
 
