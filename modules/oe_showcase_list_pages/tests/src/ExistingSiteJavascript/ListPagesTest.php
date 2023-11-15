@@ -80,6 +80,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
+        'created' => strtotime(sprintf('+%d days', 12 - $i)),
       ];
       $node = Node::create($values);
       $node->save();
@@ -113,6 +114,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
           'postal_code' => '123 ' . $i,
           'locality' => 'Town' . $i,
         ],
+        'created' => strtotime(sprintf('+%d days', 12 - $i)),
       ];
       $node = Node::create($values);
       $node->save();
@@ -131,7 +133,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'oe_sc_person_country' => 'DE',
         'oe_sc_person_occupation' => 'DG TEST',
         'oe_sc_person_position' => 'Director',
-        'created' => sprintf('2022-04-%02d', $i + 1),
+        'created' => strtotime(sprintf('+%d days', 12 - $i)),
       ];
       $node = Node::create($values);
       $node->save();
@@ -152,6 +154,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'field_publication_type' => $term->id(),
         'oe_summary' => 'This is a Publication summary ' . $i,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
+        'created' => strtotime(sprintf('+%d days', 12 - $i)),
       ];
       $node = Node::create($values);
       $node->save();

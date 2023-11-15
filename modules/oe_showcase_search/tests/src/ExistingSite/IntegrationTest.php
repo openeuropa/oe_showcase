@@ -222,20 +222,22 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'oe_sc_publication',
     ];
     // Create node for each of the types:
-    foreach ($content_types as $content_type) {
+    foreach ($content_types as $i => $content_type) {
       $this->createNode([
         'title' => $content_type,
         'type' => $content_type,
         'status' => 1,
+        'created' => strtotime(sprintf('+%d days', 10 - $i)),
       ]);
     }
     // Create four Person nodes to complete page displayed items.
-    for ($i = 0; $i < 4; $i++) {
+    for ($i = 6; $i < 10; $i++) {
       $this->createNode([
         'oe_sc_person_first_name' => 'John',
         'oe_sc_person_last_name' => 'Doe ' . $i,
         'type' => 'oe_sc_person',
         'status' => 1,
+        'created' => strtotime(sprintf('+%d days', 4 - $i)),
       ]);
       $content_types[] = 'John Doe ' . $i;
     }
