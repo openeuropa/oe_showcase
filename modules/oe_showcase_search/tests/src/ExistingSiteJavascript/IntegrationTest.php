@@ -5,8 +5,7 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase_search\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
-use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
@@ -24,18 +23,16 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
    */
   public function testSearchFilters() {
     // Mark test content for deletion after the test has finished.
-    $this->markEntityTypeForCleanup('node');
-    $this->markEntityTypeForCleanup('taxonomy_term');
     $assert_session = $this->assertSession();
 
     // Create some News test nodes.
     for ($i = 0; $i < 5; $i++) {
-      Node::create([
+      $this->createnode([
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is a News content number ' . $i,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ])->save();
+      ]);
     }
 
     // Create some Events test nodes.
@@ -43,13 +40,12 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'AF', 'BE', 'RO', 'DE', 'FR',
     ];
     for ($i = 0; $i < 5; $i++) {
-      $term = Term::create([
-        'vid' => 'event_type',
-        'name' => 'Event type ' . $i,
-      ]);
-      $term->save();
+      $term = $this->createTerm(
+        Vocabulary::load('event_type'),
+        ['name' => 'Event type ' . $i]
+      );
 
-      Node::create([
+      $this->createnode([
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
         'field_event_type' => $term->id(),
@@ -63,23 +59,22 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
           'postal_code' => '123 ' . $i,
           'locality' => 'Town' . $i,
         ],
-      ])->save();
+      ]);
     }
 
     // Create some Publication test nodes.
     for ($i = 0; $i < 5; $i++) {
-      $term = Term::create([
-        'vid' => 'publication_type',
-        'name' => 'Publication type ' . $i,
-      ]);
-      $term->save();
+      $term = $this->createTerm(
+        Vocabulary::load('publication_type'),
+        ['name' => 'Publication type ' . $i]
+      );
 
-      Node::create([
+      $this->createnode([
         'title' => 'Publication ' . $i,
         'type' => 'oe_sc_publication',
         'field_publication_type' => $term->id(),
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ])->save();
+      ]);
     }
 
     // Create some Projects test nodes.
@@ -87,7 +82,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_plus_10 = date('Y-m-d', strtotime('+10 days'));
     $date_plus_10_calendar_format = date('m/d/Y', strtotime('+10 days'));
 
-    Node::create([
+    $this->createnode([
       'title' => 'Project closed',
       'type' => 'oe_project',
       'oe_project_dates' => [
@@ -95,9 +90,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => '2020-05-15',
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1000',
-    ])->save();
+    ]);
 
-    Node::create([
+    $this->createnode([
       'title' => 'Project ongoing',
       'type' => 'oe_project',
       'oe_project_dates' => [
@@ -105,9 +100,9 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => $date_plus_1,
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1567',
-    ])->save();
+    ]);
 
-    Node::create([
+    $this->createnode([
       'title' => 'Project pending',
       'type' => 'oe_project',
       'oe_project_dates' => [
@@ -115,7 +110,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => $date_plus_10,
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1018',
-    ])->save();
+    ]);
 
     // Index content.
     $this->indexItems('showcase_search_index');

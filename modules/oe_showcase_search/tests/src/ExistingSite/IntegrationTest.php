@@ -210,8 +210,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    * Test that search page shows all content types except list pages.
    */
   public function testSearchContentTypes() {
-    // Mark test content for deletion after the test has finished.
-    $this->markEntityTypeForCleanup('node');
     // Define content types.
     $content_types = [
       'oe_sc_event',
@@ -237,7 +235,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
         'oe_sc_person_last_name' => 'Doe ' . $i,
         'type' => 'oe_sc_person',
         'status' => 1,
-        'created' => strtotime(sprintf('+%d days', 4 - $i)),
+        'created' => strtotime(sprintf('+%d days', 10 - $i)),
       ]);
       $content_types[] = 'John Doe ' . $i;
     }
