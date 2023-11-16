@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+third_party_settings:
+  oe_list_pages:
+    default_sort:
+      name: created
+      direction: ASC
+name: Event
+type: oe_sc_event
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

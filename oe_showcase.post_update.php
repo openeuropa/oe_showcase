@@ -761,4 +761,13 @@ function oe_showcase_post_update_00031(): void {
  */
 function oe_showcase_post_update_00032(): void {
   \Drupal::service('module_installer')->install(['oe_showcase_fields_base']);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00032_search', [
+    'search_api.index.oe_list_pages_index',
+    'node.type.oe_project',
+    'node.type.oe_sc_event',
+    'node.type.oe_sc_news',
+    'node.type.oe_sc_person',
+    'node.type.oe_sc_publication',
+  ]);
 }

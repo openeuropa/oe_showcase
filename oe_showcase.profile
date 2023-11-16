@@ -69,6 +69,11 @@ function oe_showcase_import_overrides(array &$install_state): void {
     'core.entity_view_display.node.oe_sc_publication.full',
     'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_publication.teaser',
+    'node.type.oe_project',
+    'node.type.oe_sc_event',
+    'node.type.oe_sc_news',
+    'node.type.oe_sc_person',
+    'node.type.oe_sc_publication',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/overrides', $configs);
 }
