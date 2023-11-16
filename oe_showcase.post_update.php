@@ -757,7 +757,7 @@ function oe_showcase_post_update_00031(): void {
 }
 
 /**
- * Enable Showcase base fields module.
+ * Enable Showcase base fields module, add default sorting for list pages.
  */
 function oe_showcase_post_update_00032(): void {
   \Drupal::service('module_installer')->install(['oe_showcase_fields_base']);

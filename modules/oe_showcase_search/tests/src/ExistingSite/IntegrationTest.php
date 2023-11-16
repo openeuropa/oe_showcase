@@ -17,6 +17,15 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
   use ExampleContentTrait;
 
   /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+    parent::setUp();
+
+    $this->indexItems('showcase_search_index');
+  }
+
+  /**
    * Test the search page.
    */
   public function testSearchFeature() {
