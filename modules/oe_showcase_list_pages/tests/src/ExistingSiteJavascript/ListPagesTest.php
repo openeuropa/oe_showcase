@@ -936,8 +936,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   The css query selector.
    */
   protected function scrollIntoView(string $selector): void {
-    $this->getSession()->executeScript("document.querySelector('$selector').scrollIntoView()");
-    $this->getSession()->wait(1000);
+    $this->getSession()->executeScript("window.scrollBy({top: document.querySelector('$selector').offsetTop, left: 0, behavior: 'instant'})");
   }
 
 }
