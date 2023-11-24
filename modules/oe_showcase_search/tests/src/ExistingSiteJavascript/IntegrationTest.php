@@ -26,7 +26,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Create some News test nodes.
     for ($i = 0; $i < 5; $i++) {
-      $this->createnode([
+      $this->createNode([
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is a News content number ' . $i,
@@ -44,7 +44,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         ['name' => 'Event type ' . $i]
       );
 
-      $this->createnode([
+      $this->createNode([
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
         'field_event_type' => $term->id(),
@@ -68,7 +68,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
         ['name' => 'Publication type ' . $i]
       );
 
-      $this->createnode([
+      $this->createNode([
         'title' => 'Publication ' . $i,
         'type' => 'oe_sc_publication',
         'field_publication_type' => $term->id(),
@@ -81,7 +81,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_plus_10 = date('Y-m-d', strtotime('+10 days'));
     $date_plus_10_calendar_format = date('m/d/Y', strtotime('+10 days'));
 
-    $this->createnode([
+    $this->createNode([
       'title' => 'Project closed',
       'type' => 'oe_project',
       'oe_project_dates' => [
@@ -91,7 +91,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_subject' => 'http://data.europa.eu/uxp/1000',
     ]);
 
-    $this->createnode([
+    $this->createNode([
       'title' => 'Project ongoing',
       'type' => 'oe_project',
       'oe_project_dates' => [
@@ -101,7 +101,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_subject' => 'http://data.europa.eu/uxp/1567',
     ]);
 
-    $this->createnode([
+    $this->createNode([
       'title' => 'Project pending',
       'type' => 'oe_project',
       'oe_project_dates' => [
