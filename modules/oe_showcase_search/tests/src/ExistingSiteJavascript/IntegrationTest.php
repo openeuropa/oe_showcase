@@ -114,32 +114,22 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Index content.
     $this->indexItems('showcase_search_index');
     $this->drupalGet('/search');
-
     // Assert that filter facets exist in the sidebar.
     $filter_form = $assert_session->elementExists('css', '#bcl-offcanvas');
     // Project filters.
-    $project_status = $filter_form->findField('Project status');
+    $project_status = $assert_session->fieldExists('Project status', $filter_form);
     $project_start_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_project_dates"]', $filter_form);
     $project_end_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_sc_project__end_date"]', $filter_form);
     // Event filters.
-    $event_type = $filter_form->findField('Event type');
-    $event_location = $filter_form->findField('Event location');
+    $event_type =  $assert_session->fieldExists('Event type', $filter_form);
+    $event_location = $assert_session->fieldExists('Event location', $filter_form);
     $event_dates = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_sc_event__oe_sc_event_dates"]', $filter_form);
     // Publication filters.
-    $publication_type = $filter_form->findField('Publication type');
+    $publication_type = $assert_session->fieldExists('Publication type', $filter_form);
     // This facet is shared with News.
     $publication_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_publication_date"]', $filter_form);
     // Submit button.
     $search_button = $filter_form->findButton('Refine');
-    // Assert all form filters.
-    $this->assertNotNull($project_status);
-    $this->assertNotNull($project_start_date);
-    $this->assertNotNull($project_end_date);
-    $this->assertNotNull($event_type);
-    $this->assertNotNull($event_location);
-    $this->assertNotNull($event_dates);
-    $this->assertNotNull($publication_type);
-    $this->assertNotNull($publication_date);
 
     // Proyect status filter.
     $this->scrollIntoView('#' . $project_status->getAttribute('id'));
