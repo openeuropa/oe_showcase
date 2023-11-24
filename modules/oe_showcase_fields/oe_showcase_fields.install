@@ -28,7 +28,7 @@ function oe_showcase_fields_install(bool $is_syncing): void {
   $config_factory = \Drupal::service('config.factory');
   // Remove existing configuration.
   $config = array_filter($config, function (string $config_name) use ($config_factory) {
-    return !$config_factory->get($config_name)->isNew();
+    return $config_factory->get($config_name)->isNew();
   });
 
   // Import configuration.
