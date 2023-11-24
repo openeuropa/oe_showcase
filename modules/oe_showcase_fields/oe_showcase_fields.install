@@ -12,7 +12,7 @@ use Drupal\oe_bootstrap_theme\ConfigImporter;
 /**
  * Implements hook_install().
  */
-function oe_showcase_fields_base_install(bool $is_syncing): void {
+function oe_showcase_fields_install(bool $is_syncing): void {
 
   $config = [
     'field.storage.node.field_event_type',
@@ -32,5 +32,5 @@ function oe_showcase_fields_base_install(bool $is_syncing): void {
   });
 
   // Import configuration.
-  ConfigImporter::importMultiple('module', 'oe_showcase_fields_base', '/config/fields', $config);
+  ConfigImporter::importMultiple('module', 'oe_showcase_fields', '/config/fields', $config);
 }
