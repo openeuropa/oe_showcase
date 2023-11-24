@@ -121,7 +121,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $project_start_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_project_dates"]', $filter_form);
     $project_end_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_sc_project__end_date"]', $filter_form);
     // Event filters.
-    $event_type =  $assert_session->fieldExists('Event type', $filter_form);
+    $event_type = $assert_session->fieldExists('Event type', $filter_form);
     $event_location = $assert_session->fieldExists('Event location', $filter_form);
     $event_dates = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_sc_event__oe_sc_event_dates"]', $filter_form);
     // Publication filters.
