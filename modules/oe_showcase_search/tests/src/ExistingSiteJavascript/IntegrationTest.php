@@ -22,7 +22,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
    * Test that search page shows filters.
    */
   public function testSearchFilters() {
-    // Mark test content for deletion after the test has finished.
     $assert_session = $this->assertSession();
 
     // Create some News test nodes.
