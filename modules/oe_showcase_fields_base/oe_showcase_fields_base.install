@@ -12,7 +12,8 @@ use Drupal\oe_bootstrap_theme\ConfigImporter;
 /**
  * Implements hook_install().
  */
-function oe_showcase_fields_base_install() {
+function oe_showcase_fields_base_install(bool $is_syncing): void {
+
   $config = [
     'field.storage.node.field_event_type',
     'field.storage.node.field_publication_authors',
