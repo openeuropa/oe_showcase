@@ -131,7 +131,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Submit button.
     $search_button = $filter_form->findButton('Refine');
 
-    // Proyect status filter.
+    // Project status filter.
     $this->scrollIntoView('#' . $project_status->getAttribute('id'));
     $this->selectSlimOption($project_status, 'Closed');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -141,7 +141,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project closed',
     ]);
 
-    // Proyect start date filter.
+    // Project start date filter.
     $this->drupalGet('/search');
     $selector = $project_start_date->getAttribute('data-drupal-selector');
     $project_start_date_from = $assert_session->elementExists('css', "#$selector-from", $project_start_date)->findField('Date');
@@ -164,7 +164,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
     ]);
 
-    // Proyect end date filter.
+    // Project end date filter.
     $this->drupalGet('/search');
     $selector = $project_end_date->getAttribute('data-drupal-selector');
     $project_end_date_from = $assert_session->elementExists('css', "#$selector-from", $project_end_date)->findField('Date');
