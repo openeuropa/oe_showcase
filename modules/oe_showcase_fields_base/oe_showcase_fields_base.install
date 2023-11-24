@@ -25,7 +25,7 @@ function oe_showcase_fields_base_install() {
   ];
   // Remove existing configuration.
   foreach ($config as $value) {
-    if (_in_active_config($value)) {
+    if (_oe_showcase_fields_base_in_active_config($value)) {
       unset($config[$value]);
     }
   }
@@ -42,20 +42,17 @@ function oe_showcase_fields_base_install() {
 /**
  * Helper function to check if the given name exists in active configuration.
  *
- * @param string $configName
+ * @param string $config_name
  *   The id of the configuration to check.
  *
  * @return bool
  *   The config exists.
  */
-function _in_active_config($configName): bool {
-  if (empty($configName)) {
-    return FALSE;
-  }
+function _oe_showcase_fields_base_in_active_config(string $config_name): bool {
   $activeConfigFactory = \Drupal::service('config.factory');
   // The config factory always returns an ImmutableConfig object
   // but if doesn't exist in configuration yet, ->isNew() is true.
-  $existsInActiveConfig = !$activeConfigFactory->get($configName)->isNew();
+  $existsInActiveConfig = !$activeConfigFactory->get($config_name)->isNew();
 
   return $existsInActiveConfig;
 }
