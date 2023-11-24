@@ -9,7 +9,7 @@
         "php": ">=8.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.12",
-        "drupal/allowed_formats": "^2.0",
+        "drupal/allowed_formats": "^3.0",
         "drupal/better_exposed_filters": "^6.0.3",
         "drupal/block_field": "^1.0@RC",
         "drupal/ckeditor": "^1.0",
@@ -48,7 +48,7 @@
         "openeuropa/oe_list_pages": "^1.0",
         "openeuropa/oe_multilingual": "^1.14",
         "openeuropa/oe_oembed": "^0.7.0",
-        "openeuropa/oe_paragraphs": "1.19.0",
+        "openeuropa/oe_paragraphs": "^1.21",
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_webtools": "^1.23",
         "openeuropa/oe_whitelabel": "^1.3.0"
