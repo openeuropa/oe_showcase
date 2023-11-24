@@ -15,6 +15,7 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\search_api\Entity\Index;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
 
@@ -770,4 +771,7 @@ function oe_showcase_post_update_00032(): void {
     'node.type.oe_sc_person',
     'node.type.oe_sc_publication',
   ]);
+
+  // Index elements.
+  Index::load('oe_list_pages_index')->indexItems();
 }
