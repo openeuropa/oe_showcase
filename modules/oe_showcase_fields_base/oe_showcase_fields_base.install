@@ -23,36 +23,13 @@ function oe_showcase_fields_base_install() {
     'field.field.node.oe_sc_publication.field_publication_authors',
     'field.field.node.oe_sc_publication.field_publication_type',
   ];
+  // Configuration service.
+  $config_factory = \Drupal::service('config.factory');
   // Remove existing configuration.
-  foreach ($config as $value) {
-    if (_oe_showcase_fields_base_in_active_config($value)) {
-      unset($config[$value]);
-    }
-  }
-  // No configuration to import.
-  if (empty($config)) {
-    return;
-  }
+  $config = array_filter($config, function (string $config_name) use ($config_factory) {
+    return !$config_factory->get($config_name)->isNew();
+  });
 
   // Import configuration.
   ConfigImporter::importMultiple('module', 'oe_showcase_fields_base', '/config/fields', $config);
-
-}
-
-/**
- * Helper function to check if the given name exists in active configuration.
- *
- * @param string $config_name
- *   The id of the configuration to check.
- *
- * @return bool
- *   The config exists.
- */
-function _oe_showcase_fields_base_in_active_config(string $config_name): bool {
-  $activeConfigFactory = \Drupal::service('config.factory');
-  // The config factory always returns an ImmutableConfig object
-  // but if doesn't exist in configuration yet, ->isNew() is true.
-  $existsInActiveConfig = !$activeConfigFactory->get($config_name)->isNew();
-
-  return $existsInActiveConfig;
 }
