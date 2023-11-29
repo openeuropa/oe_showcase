@@ -8,6 +8,7 @@ use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\FilePatternAssert;
 use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 
 /**
@@ -19,6 +20,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
   use EntityBrowserTrait;
   use MediaCreationTrait;
   use TraversingTrait;
+  use ScrollTrait;
 
   /**
    * Tests the media embed functionality.
@@ -29,7 +31,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Create a media entity for each existing bundle.
     $media = $this->createTestMedia();
 
-    $user = $this->createUser([]);
+    $user = $this->createUser();
     $user->addRole('editor');
     $user->save();
     $this->drupalLogin($user);
@@ -153,6 +155,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   The media label.
    */
   protected function embedMediaInWysiwyg(string $label): void {
+    $this->scrollIntoView('.field--name-body');
     $this->moveCkeditorCursorToEnd();
     $this->getSession()->getPage()->pressButton('Embed media');
     $assert_session = $this->assertSession();

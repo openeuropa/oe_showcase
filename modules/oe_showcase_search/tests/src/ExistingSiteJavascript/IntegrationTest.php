@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase_search\ExistingSiteJavascript;
 use Behat\Mink\Element\NodeElement;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
+use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 
@@ -17,6 +18,7 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
   use SlimSelectTrait;
+  use ScrollTrait;
 
   /**
    * Test that search page shows filters.
@@ -339,16 +341,6 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
       static fn(NodeElement $element): string => $element->getText(),
       $elements,
     ));
-  }
-
-  /**
-   * Scroll an element into the viewport.
-   *
-   * @param string $selector
-   *   The css query selector.
-   */
-  protected function scrollIntoView(string $selector): void {
-    $this->getSession()->executeScript("window.scrollBy({top: document.querySelector('$selector').offsetTop, left: 0, behavior: 'instant'})");
   }
 
 }
