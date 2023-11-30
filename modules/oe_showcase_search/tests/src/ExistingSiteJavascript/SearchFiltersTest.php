@@ -26,7 +26,6 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
   public function testSearchFilters() {
     $assert_session = $this->assertSession();
 
-    // Create some News test nodes.
     for ($i = 0; $i < 5; $i++) {
       $this->createNode([
         'title' => 'News number ' . $i,
@@ -36,7 +35,6 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       ]);
     }
 
-    // Create some Events test nodes.
     $countries = [
       'AF', 'BE', 'RO', 'DE', 'FR',
     ];
@@ -64,7 +62,6 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       ]);
     }
 
-    // Create some Publication test nodes.
     $publication_type = Vocabulary::load('publication_type');
     for ($i = 0; $i < 5; $i++) {
       $term = $this->createTerm(
@@ -80,10 +77,8 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       ]);
     }
 
-    // Create some Projects test nodes.
     $date_plus_1 = date('Y-m-d', strtotime('+1 day'));
     $date_plus_10 = date('Y-m-d', strtotime('+10 days'));
-    $date_plus_10_calendar_format = date('m/d/Y', strtotime('+10 days'));
 
     $this->createNode([
       'title' => 'Project closed',
@@ -115,9 +110,9 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_subject' => 'http://data.europa.eu/uxp/1018',
     ]);
 
-    // Index content.
     $this->indexItems('showcase_search_index');
     $this->drupalGet('/search');
+
     // Assert that filter facets exist in the sidebar.
     $filter_form = $assert_session->elementExists('css', '#bcl-offcanvas');
     // Project filters.
@@ -135,7 +130,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Submit button.
     $search_button = $filter_form->findButton('Refine');
 
-    // Project status filter.
+    // Filter by Project status closed.
     $this->scrollIntoView('#' . $project_status->getAttribute('id'));
     $this->selectSlimOption($project_status, 'Closed');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -150,7 +145,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $selector = $project_start_date->getAttribute('data-drupal-selector');
     $project_start_date_from = $assert_session->elementExists('css', "#$selector-from", $project_start_date)->findField('Date');
     $project_start_date_to = $assert_session->elementExists('css', "#$selector-to", $project_start_date)->findField('Date');
-    // First filter by From.
+    // Filter by Project start date from 05/19/2022.
     $project_start_date_from->setValue('05/19/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -159,7 +154,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
       'Project pending',
     ]);
-    // Then filter by To.
+    // Filter by Project start date to 05/21/2022.
     $project_start_date_to->setValue('05/21/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -173,7 +168,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $selector = $project_end_date->getAttribute('data-drupal-selector');
     $project_end_date_from = $assert_session->elementExists('css', "#$selector-from", $project_end_date)->findField('Date');
     $project_end_date_to = $assert_session->elementExists('css', "#$selector-to", $project_end_date)->findField('Date');
-    // First filter by From.
+    // Filter by Project end date from 05/14/2022.
     $project_end_date_from->setValue('05/14/2020');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -183,7 +178,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
       'Project pending',
     ]);
-    // Then filter by To.
+    // Filter by Project end date to two days from now.
     $project_end_date_to->setValue(date('m/d/Y', strtotime('+2 day')));
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -193,7 +188,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
     ]);
 
-    // Event type filter.
+    // Filter by Event type with Event type 4.
     $this->drupalGet('/search');
     $this->scrollIntoView('#' . $event_type->getAttribute('id'));
     $this->selectSlimOption($event_type, 'Event type 4');
@@ -204,7 +199,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 4',
     ]);
 
-    // Event location filter.
+    // Filter by location France.
     $this->drupalGet('/search');
     $this->scrollIntoView('#' . $event_location->getAttribute('id'));
     $this->selectSlimOption($event_location, 'France');
@@ -220,7 +215,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $selector = $event_dates->getAttribute('data-drupal-selector');
     $event_dates_from = $assert_session->elementExists('css', "#$selector-from", $event_dates)->findField('Date');
     $event_dates_to = $assert_session->elementExists('css', "#$selector-to", $event_dates)->findField('Date');
-    // First filter by From.
+    // Filter by Event dates from 04/02/2022.
     $event_dates_from->setValue('04/02/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -231,7 +226,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 3',
       'Event number 4',
     ]);
-    // Then filter by To.
+    // Filter by Event dates to 04/04/2022.
     $event_dates_to->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -242,7 +237,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Event number 3',
     ]);
 
-    // Publication type filter.
+    // Filter by Publication type with Publication type 1.
     $this->drupalGet('/search');
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 1');
@@ -252,6 +247,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->assertSearchResults([
       'Publication 1',
     ]);
+    // Filter by Publication type with Publication type 2.
     $this->scrollIntoView('#' . $publication_type->getAttribute('id'));
     $this->selectSlimOption($publication_type, 'Publication type 2');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -266,7 +262,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $selector = $publication_date->getAttribute('data-drupal-selector');
     $publication_date_from = $assert_session->elementExists('css', "#$selector-from", $publication_date)->findField('Date');
     $publication_date_to = $assert_session->elementExists('css', "#$selector-to", $publication_date)->findField('Date');
-    // First filter by From.
+    // Filter by Publication date from 04/04/2022.
     $publication_date_from->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
@@ -277,7 +273,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Publication 3',
       'Publication 4',
     ]);
-    // Then filter by To.
+    // Filter by Publication date to 04/04/2022.
     $publication_date_to->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();

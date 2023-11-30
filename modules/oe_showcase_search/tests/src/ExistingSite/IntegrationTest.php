@@ -227,7 +227,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'oe_project',
       'oe_sc_publication',
     ];
-    // Create node for each of the types:
+
     foreach ($content_types as $i => $content_type) {
       $this->createNode([
         'title' => $content_type,
