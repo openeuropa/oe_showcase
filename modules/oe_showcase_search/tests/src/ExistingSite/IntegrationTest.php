@@ -219,7 +219,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    * Test that search page shows all content types except list pages.
    */
   public function testSearchContentTypes() {
-    // Define content types.
     $content_types = [
       'oe_sc_event',
       'oe_sc_news',
@@ -248,13 +247,11 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       ]);
       $content_types[] = 'John Doe ' . $i;
     }
-    // Create oe_list_page.
     $this->createNode([
       'title' => 'oe_list_page',
       'type' => 'oe_list_page',
       'status' => 1,
     ]);
-    // Index content.
     $this->indexItems('showcase_search_index');
 
     // Assert that the created content is there.
