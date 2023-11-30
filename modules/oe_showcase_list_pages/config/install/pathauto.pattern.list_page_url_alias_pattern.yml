@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: list_page_url_alias_pattern
+label: 'List page URL Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'list/[node:title]'
+selection_criteria:
+  32ae14d8-534f-4b61-a16d-c714634a1438:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 32ae14d8-534f-4b61-a16d-c714634a1438
+    context_mapping:
+      node: node
+    bundles:
+      oe_list_page: oe_list_page
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -9,6 +9,7 @@ use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
+use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 use Drupal\user\Entity\Role;
 
@@ -19,6 +20,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
   use SlimSelectTrait;
+  use PathautoTestHelperTrait;
 
   /**
    * An editor user.
@@ -155,6 +157,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_news__oe_publication_date',
     ]);
     $this->drupalGet($list_page->toUrl());
+
+    $this->assertEntityAlias($list_page, '/list/news-list-page');
 
     // Assert that only News items are displayed.
     $this->assertResultsTitle('News List Page', 12);
@@ -322,6 +326,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_event__title',
     ]);
     $this->drupalGet($list_page->toUrl());
+
+    $this->assertEntityAlias($list_page, '/list/event-list-page');
 
     // Assert that only Event items are displayed.
     $this->assertResults([
@@ -525,6 +531,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->drupalGet($list_page->toUrl());
 
+    $this->assertEntityAlias($list_page, '/list/project-list-page');
+
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project closed',
@@ -644,6 +652,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalGet($list_page->toUrl());
 
+    $this->assertEntityAlias($list_page, '/list/person-list-page');
+
     // Assert that only Person items are displayed.
     $this->assertResults([
       'John Doe 0',
@@ -723,6 +733,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_publication__type',
     ]);
     $this->drupalGet($list_page->toUrl());
+
+    $this->assertEntityAlias($list_page, '/list/publication-list-page');
 
     // Assert that only Publication items are displayed.
     $this->assertResultsTitle('Publication List Page', 12);
