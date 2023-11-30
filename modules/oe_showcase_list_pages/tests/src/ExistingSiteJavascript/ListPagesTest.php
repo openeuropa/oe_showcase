@@ -82,9 +82,10 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $countries = [
       'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
     ];
+    $event_type = Vocabulary::load('event_type');
     for ($i = 0; $i < 12; $i++) {
       $term = $this->createTerm(
-        Vocabulary::load('event_type'),
+        $event_type,
         ['name' => 'Term ' . $i]
       );
       $this->createNode([
@@ -127,9 +128,10 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     }
 
     // Create some Publication test nodes.
+    $publication_type = Vocabulary::load('publication_type');
     for ($i = 0; $i < 12; $i++) {
       $term = $this->createTerm(
-        Vocabulary::load('publication_type'),
+        $publication_type,
         ['name' => 'Term ' . $i]
       );
       $this->createNode([

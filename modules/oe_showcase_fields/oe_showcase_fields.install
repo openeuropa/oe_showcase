@@ -13,6 +13,9 @@ use Drupal\oe_bootstrap_theme\ConfigImporter;
  * Implements hook_install().
  */
 function oe_showcase_fields_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
 
   $config = [
     'field.storage.node.field_event_type',
@@ -24,13 +27,6 @@ function oe_showcase_fields_install(bool $is_syncing): void {
     'field.field.node.oe_sc_publication.field_publication_authors',
     'field.field.node.oe_sc_publication.field_publication_type',
   ];
-  // Configuration service.
-  $config_factory = \Drupal::service('config.factory');
-  // Remove existing configuration.
-  $config = array_filter($config, function (string $config_name) use ($config_factory) {
-    return $config_factory->get($config_name)->isNew();
-  });
 
-  // Import configuration.
-  ConfigImporter::importMultiple('module', 'oe_showcase_fields', '/config/fields', $config);
+  ConfigImporter::importMultiple('module', 'oe_showcase_fields', '/config/fields/', $config);
 }

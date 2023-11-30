@@ -14,7 +14,7 @@ use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 /**
  * Tests the OEL Search feature integration.
  */
-class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
+class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
   use SlimSelectTrait;
@@ -40,9 +40,10 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $countries = [
       'AF', 'BE', 'RO', 'DE', 'FR',
     ];
+    $event_type = Vocabulary::load('event_type');
     for ($i = 0; $i < 5; $i++) {
       $term = $this->createTerm(
-        Vocabulary::load('event_type'),
+        $event_type,
         ['name' => 'Event type ' . $i]
       );
 
@@ -64,9 +65,10 @@ class IntegrationTest extends ShowcaseExistingSiteJavascriptTestBase {
     }
 
     // Create some Publication test nodes.
+    $publication_type = Vocabulary::load('publication_type');
     for ($i = 0; $i < 5; $i++) {
       $term = $this->createTerm(
-        Vocabulary::load('publication_type'),
+        $publication_type,
         ['name' => 'Publication type ' . $i]
       );
 
