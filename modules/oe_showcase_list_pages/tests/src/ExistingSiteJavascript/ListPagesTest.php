@@ -158,7 +158,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertEntityAlias($list_page, '/list/news-list-page');
+    $this->assertEntityAlias($list_page, '/news-list-page');
 
     // Assert that only News items are displayed.
     $this->assertResultsTitle('News List Page', 12);
@@ -327,7 +327,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertEntityAlias($list_page, '/list/event-list-page');
+    $this->assertEntityAlias($list_page, '/event-list-page');
 
     // Assert that only Event items are displayed.
     $this->assertResults([
@@ -531,7 +531,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertEntityAlias($list_page, '/list/project-list-page');
+    $this->assertEntityAlias($list_page, '/project-list-page');
 
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
@@ -652,7 +652,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertEntityAlias($list_page, '/list/person-list-page');
+    $this->assertEntityAlias($list_page, '/person-list-page');
 
     // Assert that only Person items are displayed.
     $this->assertResults([
@@ -734,7 +734,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     $this->drupalGet($list_page->toUrl());
 
-    $this->assertEntityAlias($list_page, '/list/publication-list-page');
+    $this->assertEntityAlias($list_page, '/publication-list-page');
 
     // Assert that only Publication items are displayed.
     $this->assertResultsTitle('Publication List Page', 12);
