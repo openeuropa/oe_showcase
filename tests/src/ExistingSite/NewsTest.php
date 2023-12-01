@@ -42,13 +42,13 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
-    // Assert user without permission can't create event types.
+    // Assert user without permission can't create news types.
     $this->assertPathsRequireRole([
       'admin/structure/taxonomy/manage/news_type/overview',
       'admin/structure/taxonomy/manage/news_type/add',
     ], 'editor');
 
-    // Assert editors can create event types.
+    // Assert editors can create news types.
     $user = $this->createUser([]);
     $user->addRole('editor');
     $user->save();
@@ -59,14 +59,14 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
     $assert_session->pageTextContains('Created new term Term one.');
 
-    // Assert editors can edit event types.
+    // Assert editors can edit news types.
     $this->drupalGet('admin/structure/taxonomy/manage/news_type/overview');
     $page->clickLink('Edit');
     $page->fillField('Name', 'Term changed');
     $page->pressButton('Save');
     $assert_session->pageTextContains('Updated term Term changed.');
 
-    // Assert editors can delete event types.
+    // Assert editors can delete news types.
     $this->drupalGet('admin/structure/taxonomy/manage/news_type/overview');
     $page->clickLink('Delete');
     $assert_session->pageTextContains('Are you sure you want to delete the taxonomy term Term changed?');
