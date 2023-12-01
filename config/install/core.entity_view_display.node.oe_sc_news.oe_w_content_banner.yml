@@ -18,6 +18,14 @@ targetEntityType: node
 bundle: oe_sc_news
 mode: oe_w_content_banner
 content:
+  field_news_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   oe_publication_date:
     type: datetime_default
     label: hidden
@@ -36,7 +44,6 @@ content:
     region: content
 hidden:
   body: true
-  field_news_type: true
   langcode: true
   links: true
   oe_content_content_owner: true
