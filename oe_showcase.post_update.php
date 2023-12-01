@@ -15,6 +15,7 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\search_api\Entity\Index;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
 
@@ -754,4 +755,23 @@ function oe_showcase_post_update_00031(): void {
     $index->setThirdPartySetting('oe_list_pages', 'lists_pages_index', $use_for_list_pages);
     $index->save();
   }
+}
+
+/**
+ * Enable Showcase base fields module, add default sorting for list pages.
+ */
+function oe_showcase_post_update_00032(): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_fields']);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00032_search', [
+    'search_api.index.oe_list_pages_index',
+    'node.type.oe_project',
+    'node.type.oe_sc_event',
+    'node.type.oe_sc_news',
+    'node.type.oe_sc_person',
+    'node.type.oe_sc_publication',
+  ]);
+
+  // Index elements.
+  Index::load('oe_list_pages_index')->indexItems();
 }

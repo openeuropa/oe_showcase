@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 use Drupal\block\Entity\Block;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Ensure search blocks are in the correct order.
@@ -56,4 +57,30 @@ function oe_showcase_search_post_update_00003(): void {
     '/config/post_updates/00003',
     'views.view.showcase_search'
   );
+}
+
+/**
+ * Update search index, all content types except oe_list_pages.
+ */
+function oe_showcase_search_post_update_00004(): void {
+  ConfigImporter::importMultiple(
+    'module',
+    'oe_showcase_search',
+    '/config/post_updates/00004',
+    [
+      'facets.facet.oe_project_dates',
+      'facets.facet.oe_publication_date',
+      'facets.facet.oe_sc_event__oe_sc_event_dates',
+      'facets.facet.oe_sc_event_location',
+      'facets.facet.oe_sc_event_type',
+      'facets.facet.oe_sc_project__end_date',
+      'facets.facet.oe_sc_project_status',
+      'facets.facet.oe_sc_publication__type',
+      'search_api.index.showcase_search_index',
+      'views.view.showcase_search',
+    ]
+  );
+  // Index elements.
+  Index::load('showcase_search_index')->indexItems();
+
 }

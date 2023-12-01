@@ -5,9 +5,8 @@ declare(strict_types = 1);
 namespace Drupal\Tests\oe_showcase_list_pages\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
-use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
-use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
@@ -62,16 +61,12 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    * Tests list pages integration.
    */
   public function testCreateListPages() {
-    // Mark test content for deletion after the test has finished.
-    $this->markEntityTypeForCleanup('node');
-    $this->markEntityTypeForCleanup('taxonomy_term');
-
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
     // Create some News test nodes.
     for ($i = 0; $i < 12; $i++) {
-      $values = [
+      $this->createNode([
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
         'body' => 'This is a News content number ' . $i,
@@ -79,22 +74,21 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'language' => 'en',
         'status' => NodeInterface::PUBLISHED,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+        'created' => strtotime(sprintf('-%d days', 12 - $i)),
+      ]);
     }
 
     // Create some Events test nodes.
     $countries = [
       'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
     ];
+    $event_type = Vocabulary::load('event_type');
     for ($i = 0; $i < 12; $i++) {
-      $term = Term::create([
-        'vid' => 'event_type',
-        'name' => 'Term ' . $i,
-      ]);
-      $term->save();
-      $values = [
+      $term = $this->createTerm(
+        $event_type,
+        ['name' => 'Term ' . $i]
+      );
+      $this->createNode([
         'title' => 'Event number ' . $i,
         'type' => 'oe_sc_event',
         'field_event_type' => $term->id(),
@@ -112,14 +106,13 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
           'postal_code' => '123 ' . $i,
           'locality' => 'Town' . $i,
         ],
-      ];
-      $node = Node::create($values);
-      $node->save();
+        'created' => strtotime(sprintf('-%d days', 12 - $i)),
+      ]);
     }
 
     // Create some Person test nodes.
     for ($i = 0; $i < 12; $i++) {
-      $values = [
+      $this->createNode([
         'oe_sc_person_first_name' => 'John',
         'oe_sc_person_last_name' => 'Doe ' . $i,
         'type' => 'oe_sc_person',
@@ -130,20 +123,18 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'oe_sc_person_country' => 'DE',
         'oe_sc_person_occupation' => 'DG TEST',
         'oe_sc_person_position' => 'Director',
-        'created' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+        'created' => strtotime(sprintf('-%d days', 12 - $i)),
+      ]);
     }
 
     // Create some Publication test nodes.
+    $publication_type = Vocabulary::load('publication_type');
     for ($i = 0; $i < 12; $i++) {
-      $term = Term::create([
-        'vid' => 'publication_type',
-        'name' => 'Term ' . $i,
-      ]);
-      $term->save();
-      $values = [
+      $term = $this->createTerm(
+        $publication_type,
+        ['name' => 'Term ' . $i]
+      );
+      $this->createNode([
         'title' => 'Pub ' . $i,
         'type' => 'oe_sc_publication',
         'language' => 'en',
@@ -151,9 +142,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'field_publication_type' => $term->id(),
         'oe_summary' => 'This is a Publication summary ' . $i,
         'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
-      ];
-      $node = Node::create($values);
-      $node->save();
+        'created' => strtotime(sprintf('-%d days', 12 - $i)),
+      ]);
     }
 
     // Index content.
@@ -481,7 +471,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_plus_10 = date('Y-m-d', strtotime('+10 days'));
     $date_plus_10_calendar_format = date('m/d/Y', strtotime('+10 days'));
 
-    Node::create([
+    $this->createNode([
       'title' => 'Project closed',
       'type' => 'oe_project',
       'oe_summary' => 'This is a closed Project',
@@ -493,9 +483,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => '2020-05-15',
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1000',
-    ])->save();
+    ]);
 
-    Node::create([
+    $this->createNode([
       'title' => 'Project ongoing',
       'type' => 'oe_project',
       'oe_summary' => 'This is a ongoing Project',
@@ -507,9 +497,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => $date_plus_1,
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1567',
-    ])->save();
+    ]);
 
-    Node::create([
+    $this->createNode([
       'title' => 'Project pending',
       'type' => 'oe_project',
       'oe_summary' => 'This is a pending Project',
@@ -521,7 +511,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         'end_value' => $date_plus_10,
       ],
       'oe_subject' => 'http://data.europa.eu/uxp/1018',
-    ])->save();
+    ]);
 
     // Index content.
     $this->indexItems('oe_list_pages_index');
@@ -948,8 +938,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   The css query selector.
    */
   protected function scrollIntoView(string $selector): void {
-    $this->getSession()->executeScript("document.querySelector('$selector').scrollIntoView()");
-    $this->getSession()->wait(1000);
+    $this->getSession()->executeScript("window.scrollBy({top: document.querySelector('$selector').offsetTop, left: 0, behavior: 'instant'})");
   }
 
 }

@@ -7,11 +7,23 @@ namespace Drupal\Tests\oe_showcase_search\ExistingSite;
 use Behat\Mink\Element\NodeElement;
 use Drupal\Core\Url;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
+use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 
 /**
  * Tests the OEL Search feature integration.
  */
 class IntegrationTest extends ShowcaseExistingSiteTestBase {
+
+  use ExampleContentTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+    parent::setUp();
+
+    $this->indexItems('showcase_search_index');
+  }
 
   /**
    * Test the search page.
@@ -62,17 +74,17 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Assert exposed sort widget.
     $assert->fieldExists('Sort by', $this->getSearchTopRegion());
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
-      'Imputo Neo Sagaciter',
-      'Distineo',
-      'Quae Vulputate',
-      'Abico Diam Jugis',
-      'Obruo',
+      'Webtools',
+      'Inpage Navigation',
+      'About us',
+      'Contact us',
+      'Pages',
     ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Filter by category.
     $page->checkField('Category 2');
@@ -120,22 +132,22 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Clear active filters.
     $page->clickLink('Clear');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
-      'Imputo Neo Sagaciter',
-      'Distineo',
-      'Quae Vulputate',
-      'Abico Diam Jugis',
-      'Obruo',
+      'Webtools',
+      'Inpage Navigation',
+      'About us',
+      'Contact us',
+      'Pages',
     ]);
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Sort by publication date.
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Hendrerit',
@@ -144,12 +156,12 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Gemino Imputo',
       'Macto Neque Virtus',
     ]);
-    $this->assertPager(4);
+    $this->assertPager(6);
 
     // Visit the second page of search results.
     $page->clickLink('2');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Luctus Sit',
@@ -158,20 +170,21 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       'Voco',
       'Appellatio Camur',
     ]);
-    $this->assertPager(4, 1);
+    $this->assertPager(6, 1);
 
     // Visit the last page.
     $page->clickLink('4');
 
-    $this->assertSearchResultsTitle(19);
+    $this->assertSearchResultsTitle(28);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Abico Diam Jugis',
       'Quae Vulputate',
       'Distineo',
       'Imputo Neo Sagaciter',
+      'Item 01',
     ]);
-    $this->assertPager(4, 3);
+    $this->assertPager(6, 3);
 
     // Search keeps value if sort is also applied.
     $this->drupalGet('/search');
@@ -200,6 +213,60 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Check search value is still present.
     $this->assertSame($search_input->getValue(), 'Imputo');
+  }
+
+  /**
+   * Test that search page shows all content types except list pages.
+   */
+  public function testSearchContentTypes() {
+    $content_types = [
+      'oe_sc_event',
+      'oe_sc_news',
+      'oe_showcase_search_demo',
+      'oe_showcase_page',
+      'oe_project',
+      'oe_sc_publication',
+    ];
+
+    foreach ($content_types as $i => $content_type) {
+      $this->createNode([
+        'title' => $content_type,
+        'type' => $content_type,
+        'status' => 1,
+        'created' => strtotime(sprintf('+%d days', 10 - $i)),
+      ]);
+    }
+    // Create four Person nodes to complete page displayed items.
+    for ($i = 6; $i < 10; $i++) {
+      $this->createNode([
+        'oe_sc_person_first_name' => 'John',
+        'oe_sc_person_last_name' => 'Doe ' . $i,
+        'type' => 'oe_sc_person',
+        'status' => 1,
+        'created' => strtotime(sprintf('+%d days', 10 - $i)),
+      ]);
+      $content_types[] = 'John Doe ' . $i;
+    }
+    $this->createNode([
+      'title' => 'oe_list_page',
+      'type' => 'oe_list_page',
+      'status' => 1,
+    ]);
+    $this->indexItems('showcase_search_index');
+
+    // Assert that the created content is there.
+    $this->drupalGet('/search');
+    $this->assertSearchResults(array_slice($content_types, 0, 5));
+    // Visit second page to check second half.
+    $this->clickLink('2');
+    $this->assertSearchResults(array_slice($content_types, 5, 5));
+
+    // Assert oe_list_page is not present after searching it.
+    $search_form = $this->assertSession()->elementExists('css', '#oe-whitelabel-search-form');
+    $search_form->findField('Search')->setValue('oe_list_page');
+    $search_form->find('css', 'button[type="submit"]')->press();
+    $this->assertSearchResultsTitle(0);
+
   }
 
   /**
