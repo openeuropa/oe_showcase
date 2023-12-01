@@ -1,0 +1,129 @@
+uuid: 97d3b9e7-aeab-4e5f-97d2-54ed052ca41f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_sc_news.body
+    - field.field.node.oe_sc_news.field_news_type
+    - field.field.node.oe_sc_news.oe_featured_media
+    - field.field.node.oe_sc_news.oe_publication_date
+    - field.field.node.oe_sc_news.oe_summary
+    - node.type.oe_sc_news
+  module:
+    - datetime
+    - oe_content_featured_media_field
+    - path
+    - text
+id: node.oe_sc_news.default
+targetEntityType: node
+bundle: oe_sc_news
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_news_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  oe_featured_media:
+    type: oe_featured_media_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_publication_date:
+    type: datetime_default
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  oe_summary:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
