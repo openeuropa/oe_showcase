@@ -88,7 +88,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $assert_session->fieldExists('Reference code')->setValue('I-9876987012');
     // @todo Assert formats.
-    $assert_session->fieldExists('Short description')->setValue('Short description text.');
+    $this->enterTextInWysiwyg('Short description', 'Short description text.');
     $this->enterTextInWysiwyg('Description', 'Description text.');
     // Assert the media browser for the document field.
     $document_fieldset = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-sc-publication-document-wrapper"]');
