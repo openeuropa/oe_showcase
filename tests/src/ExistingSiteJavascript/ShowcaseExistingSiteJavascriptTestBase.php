@@ -7,6 +7,7 @@ namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
 use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
+use Drupal\Tests\oe_showcase\Traits\SocialShareBlockTrait;
 use weitzman\DrupalTestTraits\ExistingSiteSelenium2DriverTestBase;
 
 /**
@@ -17,6 +18,7 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
   use AuthenticationTrait;
   use ConfigurationBackupTrait;
   use EntityCleanupTrait;
+  use SocialShareBlockTrait;
 
   /**
    * The status of the CAS forced login setting for the test.
