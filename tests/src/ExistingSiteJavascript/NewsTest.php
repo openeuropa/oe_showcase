@@ -63,7 +63,7 @@ class NewsTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert editors don't have permissions to create News items.
     $this->drupalGet('node/add/oe_sc_news');
     $assert_session->pageTextContains('You are not authorized to access this page.');
-    // @todo check status $this->statusCodeEquals(403);
+
     // Create editor user.
     $user = $this->createUser([]);
     $user->addRole('editor');
