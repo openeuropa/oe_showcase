@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
-use Drupal\Component\Serialization\Json;
 use Drupal\Tests\oe_showcase\Traits\AuthenticationTrait;
 use Drupal\Tests\oe_showcase\Traits\ConfigurationBackupTrait;
 use Drupal\Tests\oe_showcase\Traits\EntityCleanupTrait;
+use Drupal\Tests\oe_showcase\Traits\SocialShareBlockTrait;
 use weitzman\DrupalTestTraits\ExistingSiteBase;
 
 /**
@@ -18,6 +18,7 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
   use AuthenticationTrait;
   use ConfigurationBackupTrait;
   use EntityCleanupTrait;
+  use SocialShareBlockTrait;
 
   /**
    * The status of the CAS forced login setting for the test.
@@ -49,28 +50,6 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
     $this->restoreConfiguration();
 
     parent::tearDown();
-  }
-
-  /**
-   * Asserts Social Share block.
-   */
-  protected function assertSocialShareBlock(): void {
-    $main_content = $this->cssSelect('main > div.container')[0];
-    $this->assertStringContainsString('Share this page', $main_content->getText());
-    $social_share_config = [
-      'service' => 'share',
-      'version' => '2.0',
-      'networks' => [
-        'twitter',
-        'facebook',
-        'linkedin',
-        'email',
-        'more',
-      ],
-      'stats' => TRUE,
-      'selection' => TRUE,
-    ];
-    $this->assertStringContainsString(Json::encode($social_share_config), $main_content->getHtml());
   }
 
 }
