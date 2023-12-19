@@ -72,7 +72,6 @@ class EventTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->clickLink('Delete');
     $assert_session->assertWaitOnAjaxRequest();
     $assert_session->pageTextContains('Are you sure you want to delete the taxonomy term Term changed?');
-    file_put_contents('test1.html', $page->getContent());
     $page->find('css', '.ui-dialog-buttonset')->pressButton('Delete');
     $assert_session->pageTextContains('Deleted term Term changed.');
   }
