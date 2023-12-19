@@ -831,3 +831,13 @@ function oe_showcase_post_update_00035(): void {
 
   Index::load('oe_list_pages_index')->indexItems();
 }
+
+/**
+ * Add editor to simple_rich_text.
+ */
+function oe_showcase_post_update_00036(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00036_editor_simple_rich_text', [
+    'editor.editor.simple_rich_text',
+    'filter.format.simple_rich_text',
+  ]);
+}

@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_oembed
+name: 'Simple rich text'
+format: simple_rich_text
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <ul> <li> <ol> <blockquote> <img src alt data-entity-type data-entity-uuid> <p data-oembed>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  oe_oembed_filter:
+    id: oe_oembed_filter
+    provider: oe_oembed
+    status: true
+    weight: 0
+    settings: {  }
