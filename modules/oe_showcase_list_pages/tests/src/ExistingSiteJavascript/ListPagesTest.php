@@ -20,6 +20,7 @@ use Drupal\user\Entity\Role;
 class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
+  use ScrollTrait;
   use SlimSelectTrait;
   use PathautoTestHelperTrait;
   use ScrollTrait;
