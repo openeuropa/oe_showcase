@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\Tests\oe_showcase\ExistingSite;
+namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
@@ -16,7 +16,7 @@ use Drupal\Tests\TestFileCreationTrait;
 /**
  * Class to test Event content type on existing site tests.
  */
-class EventTest extends ShowcaseExistingSiteTestBase {
+class EventTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
@@ -43,10 +43,10 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $page = $this->getSession()->getPage();
 
     // Assert user without permission can't create event types.
-    $this->assertPathsRequireRole([
-      'admin/structure/taxonomy/manage/event_type/overview',
-      'admin/structure/taxonomy/manage/event_type/add',
-    ], 'editor');
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/overview');
+    $assert_session->pageTextContains('You are not authorized to access this page.');
+    $this->drupalGet('admin/structure/taxonomy/manage/event_type/add');
+    $assert_session->pageTextContains('You are not authorized to access this page.');
 
     // Assert editors can create event types.
     $user = $this->createUser([]);
@@ -68,9 +68,12 @@ class EventTest extends ShowcaseExistingSiteTestBase {
 
     // Assert editors can delete event types.
     $this->drupalGet('admin/structure/taxonomy/manage/event_type/overview');
+    $page->pressButton('List additional actions');
     $page->clickLink('Delete');
+    $assert_session->assertWaitOnAjaxRequest();
     $assert_session->pageTextContains('Are you sure you want to delete the taxonomy term Term changed?');
-    $page->pressButton('Delete');
+    file_put_contents('test1.html', $page->getContent());
+    $page->find('css', '.ui-dialog-buttonset')->pressButton('Delete');
     $assert_session->pageTextContains('Deleted term Term changed.');
   }
 
@@ -133,7 +136,6 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     // Assert user without permission can't create events.
     $this->drupalGet('node/add/oe_sc_event');
     $assert_session->pageTextContains('You are not authorized to access this page.');
-    $assert_session->statusCodeEquals(403);
 
     // Create editor user.
     $user = $this->createUser([]);
@@ -146,14 +148,16 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $page->fillField('Title', 'Example title');
     $page->selectFieldOption('Event type', 'Test term');
+    $field = $page->findField('Introduction');
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
+    $this->enterTextInWysiwyg('Introduction', 'Example Introduction');
     $field = $page->findField('Content');
     $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $field->setValue('Example Content');
-    $page->fillField('Introduction', 'Example Introduction');
-    $page->fillField('oe_sc_event_dates[0][value][date]', '2022-01-24');
-    $page->fillField('oe_sc_event_dates[0][value][time]', '20:00:00');
-    $page->fillField('oe_sc_event_dates[0][end_value][date]', '2022-01-24');
-    $page->fillField('oe_sc_event_dates[0][end_value][time]', '22:00:00');
+    $this->enterTextInWysiwyg('Content', 'Example Content');
+    $page->fillField('oe_sc_event_dates[0][value][date]', '01-24-2022');
+    $page->fillField('oe_sc_event_dates[0][value][time]', '09:00:00AM');
+    $page->fillField('oe_sc_event_dates[0][end_value][date]', '01-24-2022');
+    $page->fillField('oe_sc_event_dates[0][end_value][time]', '09:00:00PM');
     $page->fillField('oe_sc_event_registration_url[0][uri]', 'https://europa.eu');
     $media_name = $media_image->getName() . ' (' . $media_image->id() . ')';
     $page->fillField('oe_featured_media[0][featured_media][target_id]', $media_name);
