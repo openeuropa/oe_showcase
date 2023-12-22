@@ -217,7 +217,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Results display the created date.
     $this->drupalGet('/search');
     // First page are oe_showcase_page elements.
-    $this->assertResultsCreatedDate([
+    $this->assertResultsMeta([
       '16 February 2022',
       '14 January 2022',
       '01 October 2021',
@@ -226,7 +226,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     // Fourth page are oe_showcase_search_demo elements.
     $page->clickLink('4');
-    $this->assertResultsCreatedDate([
+    $this->assertResultsMeta([
       '10 February 2021',
       '06 February 2021',
       '22 January 2021',
@@ -408,7 +408,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
    * @param array $expected
    *   Expected dates of search result items.
    */
-  protected function assertResultsCreatedDate(array $expected): void {
+  protected function assertResultsMeta(array $expected): void {
     $items = $this->assertSession()
       ->elementExists('css', '.views-element-container')
       ->findAll('css', '.card-body span.text-muted');
