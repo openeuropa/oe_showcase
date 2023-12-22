@@ -775,3 +775,38 @@ function oe_showcase_post_update_00032(): void {
   // Index elements.
   Index::load('oe_list_pages_index')->indexItems();
 }
+
+/**
+ * Update banner paragraphs to use the new fields.
+ */
+function oe_showcase_post_update_00033(&$sandbox) {
+  $storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  if (!isset($sandbox['total'])) {
+    $sandbox['ids'] = $storage->getQuery()
+      ->condition('type', 'oe_banner')
+      ->exists('field_oe_banner_type')
+      ->accessCheck(FALSE)
+      ->execute();
+
+    $sandbox['current'] = 0;
+    $sandbox['total'] = count($sandbox['ids']);
+    if ($sandbox['total'] === 0) {
+      $sandbox['#finished'] = 1;
+      return 'No items to update.';
+    }
+  }
+
+  $id = array_pop($sandbox['ids']);
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $storage->load($id);
+  /** @var \Drupal\oe_paragraphs_banner\BannerParagraphUpdater $updater */
+  $updater = \Drupal::service('oe_paragraphs_banner.paragraph_updater');
+  $updater->updateParagraph($paragraph);
+
+  $sandbox['current']++;
+  $sandbox['#finished'] = $sandbox['current'] / $sandbox['total'];
+  if ($sandbox['#finished'] >= 1) {
+    return sprintf('Processed %s banner paragraphs.', $sandbox['current']);
+  }
+}
