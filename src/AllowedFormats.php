@@ -90,17 +90,16 @@ class AllowedFormats implements ContainerInjectionInterface {
    * Validates the text format selected, preventing old formats to be kept.
    *
    * @param array $element
-   *    The element being validated.
+   *   The element being validated.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *    The current state of the form.
+   *   The current state of the form.
    * @param array $complete_form
-   *    The complete form structure.
-   * /
+   *   The complete form structure.
    */
   public function validateTextFormat(array &$element, FormStateInterface $form_state, array &$complete_form): void {
     // The text format element creates a child element for the value, moving
-    // there all the properties of the original element. To get to the text format
-    // value, we need to move one element up.
+    // there all the properties of the original element. To get to the text
+    // format value, we need to move one element up.
     $path = array_slice($element['#parents'], 0, -1);
     $values = NestedArray::getValue($form_state->getValues(), $path);
 
@@ -120,11 +119,11 @@ class AllowedFormats implements ContainerInjectionInterface {
   /**
    * After build callback to alter the Url of the help link on text areas.
    *
-   * @param $element
+   * @param array $element
    *   The element.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The form state.
-   * @param $complete_form
+   * @param array $complete_form
    *   The complete form structure.
    *
    * @return array
