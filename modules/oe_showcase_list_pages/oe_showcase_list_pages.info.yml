@@ -12,6 +12,7 @@ dependencies:
   - oe_starter_content:oe_starter_content_person
   - oe_starter_content:oe_starter_content_publication
   - oe_whitelabel:oe_whitelabel_list_pages
+  - pathauto:pathauto
 
 config_devel:
   install:
