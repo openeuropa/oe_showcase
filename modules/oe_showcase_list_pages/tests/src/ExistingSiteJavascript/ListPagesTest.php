@@ -157,7 +157,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_news__oe_publication_date',
     ]);
     $this->drupalGet($list_page->toUrl());
-
     $this->assertEntityAlias($list_page, '/news-list-page');
 
     // Assert that only News items are displayed.
@@ -326,7 +325,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_event__title',
     ]);
     $this->drupalGet($list_page->toUrl());
-
     $this->assertEntityAlias($list_page, '/event-list-page');
 
     // Assert that only Event items are displayed.
@@ -530,7 +528,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->drupalGet($list_page->toUrl());
-
     $this->assertEntityAlias($list_page, '/project-list-page');
 
     $this->assertResultsTitle('Project List Page', 3);
@@ -651,7 +648,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_person__title',
     ]);
     $this->drupalGet($list_page->toUrl());
-
     $this->assertEntityAlias($list_page, '/person-list-page');
 
     // Assert that only Person items are displayed.
@@ -733,7 +729,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oelp_oe_sc_publication__type',
     ]);
     $this->drupalGet($list_page->toUrl());
-
     $this->assertEntityAlias($list_page, '/publication-list-page');
 
     // Assert that only Publication items are displayed.
