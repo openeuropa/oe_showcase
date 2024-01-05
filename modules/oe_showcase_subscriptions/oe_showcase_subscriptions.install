@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_subscriptions_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+
+  // Delete unneeded flags.
+  $flag_ids = [
+    'email_term',
+    'email_user',
+    'subscribe_term',
+    'subscribe_user',
+  ];
+  $storage = \Drupal::entityTypeManager()->getStorage('flag');
+  foreach ($flag_ids as $id) {
+    $storage->load($id)->delete();
+  }
+}
