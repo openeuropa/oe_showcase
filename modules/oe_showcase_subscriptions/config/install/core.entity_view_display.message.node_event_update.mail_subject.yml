@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.node_event_update.field_node
+    - message.template.node_event_update
+id: message.node_event_update.mail_subject
+targetEntityType: message
+bundle: node_event_update
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  field_node: true
+  partial_1: true
+  search_api_excerpt: true
