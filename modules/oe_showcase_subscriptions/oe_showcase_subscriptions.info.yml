@@ -4,7 +4,10 @@ description: Provides user subscriptions to content types.
 core_version_requirement: ^9.4 || ^10
 package: OpenEuropa Showcase
 dependencies:
-  - openeuropa:oe_subscriptions_anonymous
+  - oe_showcase:oe_showcase_core
+  - oe_subscriptions:oe_subscriptions_anonymous
+  # Temporary entries.
+  - message_subscribe:message_subscribe_email
 
 config_devel:
   install:
