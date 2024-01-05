@@ -14,5 +14,3 @@ config_devel:
     - field.field.message.node_event_update.field_node
     - field.storage.message.field_node
     - message.template.node_event_update
-    - message_subscribe.settings
-    - message_subscribe_email.settings
