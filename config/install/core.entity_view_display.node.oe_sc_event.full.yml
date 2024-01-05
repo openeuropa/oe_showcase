@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.oe_w_content_banner
+    - core.entity_view_mode.node.full
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
     - field.field.node.oe_sc_event.oe_documents
@@ -13,54 +13,68 @@ dependencies:
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
+    - daterange_compact
     - oe_oembed
+    - oe_whitelabel_helper
     - text
     - user
 third_party_settings:
   oe_oembed:
     embeddable: false
-id: node.oe_sc_event.oe_w_content_banner
+id: node.oe_sc_event.full
 targetEntityType: node
 bundle: oe_sc_event
-mode: oe_w_content_banner
+mode: full
 content:
-  'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node':
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_event_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  flag_subscribe_node:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  oe_summary:
+  body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  oe_documents:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  oe_sc_event_dates:
+    type: daterange_compact
+    label: inline
+    settings:
+      daterange_compact_format: oe_whitelabel_date_time_long
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  oe_sc_event_location:
+    type: oe_whitelabel_helper_address_inline
+    label: inline
+    settings:
+      delimiter: ', '
+      properties: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  body: true
+  'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node': true
+  field_event_type: true
   flag_email_node: true
+  flag_subscribe_node: true
   langcode: true
-  links: true
   oe_content_content_owner: true
   oe_content_legacy_link: true
   oe_content_navigation_title: true
   oe_content_short_title: true
-  oe_documents: true
   oe_featured_media: true
-  oe_sc_event_dates: true
-  oe_sc_event_location: true
   oe_sc_event_registration_url: true
+  oe_summary: true
   search_api_excerpt: true
