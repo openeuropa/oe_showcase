@@ -6,7 +6,7 @@ namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
-use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
@@ -33,45 +33,6 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     // Create user.
     $user = $this->createUser([]);
     $this->drupalLogin($user);
-  }
-
-  /**
-   * Test News type CRUD.
-   */
-  public function testNewsType(): void {
-    $assert_session = $this->assertSession();
-    $page = $this->getSession()->getPage();
-
-    // Assert user without permission can't create news types.
-    $this->assertPathsRequireRole([
-      'admin/structure/taxonomy/manage/news_type/overview',
-      'admin/structure/taxonomy/manage/news_type/add',
-    ], 'editor');
-
-    // Assert editors can create news types.
-    $user = $this->createUser([]);
-    $user->addRole('editor');
-    $user->save();
-    $this->drupalLogin($user);
-
-    $this->drupalGet('admin/structure/taxonomy/manage/news_type/add');
-    $page->fillField('Name', 'Term one');
-    $page->pressButton('Save');
-    $assert_session->pageTextContains('Created new term Term one.');
-
-    // Assert editors can edit news types.
-    $this->drupalGet('admin/structure/taxonomy/manage/news_type/overview');
-    $page->clickLink('Edit');
-    $page->fillField('Name', 'Term changed');
-    $page->pressButton('Save');
-    $assert_session->pageTextContains('Updated term Term changed.');
-
-    // Assert editors can delete news types.
-    $this->drupalGet('admin/structure/taxonomy/manage/news_type/overview');
-    $page->clickLink('Delete');
-    $assert_session->pageTextContains('Are you sure you want to delete the taxonomy term Term changed?');
-    $page->pressButton('Delete');
-    $assert_session->pageTextContains('Deleted term Term changed.');
   }
 
   /**
@@ -105,11 +66,9 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     ]);
     $media_image->save();
 
+    $vocabulary = Vocabulary::load('news_type');
     for ($i = 1; $i < 4; $i++) {
-      Term::create([
-        'vid' => 'news_type',
-        'name' => "News type $i",
-      ])->save();
+      $this->createTerm($vocabulary, ['name' => "News type $i"]);
     }
 
     // Assert editors don't have permissions to create News items.

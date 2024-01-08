@@ -23,6 +23,7 @@ class TaxonomyAccessTest extends ShowcaseExistingSiteTestBase {
     $vocabularies = [
       'event_type',
       'publication_type',
+      'news_type',
     ];
     $terms = [];
     foreach ($vocabularies as $vid) {
