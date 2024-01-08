@@ -69,10 +69,16 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page = $this->getSession()->getPage();
 
     // Create some News test nodes.
+    $news_type = Vocabulary::load('news_type');
     for ($i = 0; $i < 12; $i++) {
+      $term = $this->createTerm(
+        $news_type,
+        ['name' => 'Term ' . $i]
+      );
       $this->createNode([
         'title' => 'News number ' . $i,
         'type' => 'oe_sc_news',
+        'field_news_type' => $term->id(),
         'body' => 'This is a News content number ' . $i,
         'oe_summary' => 'This is a News introduction number ' . $i,
         'language' => 'en',
@@ -157,6 +163,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $list_page = $this->createListPage('News list page', 'oe_sc_news', [
       'oelp_oe_sc_news__title',
       'oelp_oe_sc_news__oe_publication_date',
+      'oelp_oe_sc_news__type',
     ]);
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/news-list-page');
@@ -188,15 +195,18 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $title_input = $filter_form->findField('Keywords');
     $publication_date_input = $filter_form->findField('Publication date');
+    $type = $filter_form->findField('Type');
     $search_button = $filter_form->findButton('Search');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
     $this->assertNotNull($publication_date_input);
+    $this->assertNotNull($type);
 
     // Filter the News results by date.
     $publication_date_input->setValue('gt');
     $date_input = $filter_form->findField('Date');
     $date_input->setValue('04/04/2022');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 8);
     $this->assertResults([
@@ -212,6 +222,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Filter the News results by title.
     $title_input->setValue('News number 8');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 1);
     $this->assertResults([
@@ -220,6 +231,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Filter the News results by content.
     $title_input->setValue('This is a News content number 10');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 1);
     $this->assertResults([
@@ -228,6 +240,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Filter the News results by introduction.
     $title_input->setValue('This is a News introduction number 11');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 1);
     $this->assertResults([
@@ -236,6 +249,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Filter by a mix of introduction and content in shuffled order.
     $title_input->setValue('6 content number introduction');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 1);
     $this->assertResults([
@@ -243,10 +257,29 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
     // @todo Remove "7" once we have a default order.
     $title_input->setValue('NUMBER 7 this');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsTitle('News List Page', 1);
     $this->assertResults([
       'News number 7',
+    ]);
+
+    // Filter results by type.
+    $this->scrollIntoView('#edit-reset');
+    $filter_form->pressButton('Clear filters');
+    $this->selectSlimOption($type, 'Term 4');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResults([
+      'News number 4',
+    ]);
+    $this->selectSlimOption($type, 'Term 6');
+    $this->scrollIntoView('#edit-submit');
+    $search_button->click();
+    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResults([
+      'News number 6',
     ]);
 
     $page->pressButton('Clear filters');
@@ -367,6 +400,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $title_input = $filter_form->findField('Title');
     $event_date_input = $filter_form->findField('Event dates');
+    $type = $filter_form->findField('Type');
     $search_button = $filter_form->findButton('Search');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);

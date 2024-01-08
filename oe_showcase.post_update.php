@@ -772,7 +772,6 @@ function oe_showcase_post_update_00032(): void {
     'node.type.oe_sc_publication',
   ]);
 
-  // Index elements.
   Index::load('oe_list_pages_index')->indexItems();
 }
 
@@ -826,6 +825,9 @@ function oe_showcase_post_update_00035(): void {
     'core.entity_view_display.node.oe_sc_news.teaser',
     'core.entity_view_display.node.oe_sc_news.oe_w_content_banner',
     'core.entity_form_display.node.oe_sc_news.default',
+    'search_api.index.oe_list_pages_index',
     'user.role.editor',
   ]);
+
+  Index::load('oe_list_pages_index')->indexItems();
 }
