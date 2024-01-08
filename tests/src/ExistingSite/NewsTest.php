@@ -8,7 +8,6 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
-use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
@@ -18,7 +17,6 @@ use Drupal\Tests\TestFileCreationTrait;
  */
 class NewsTest extends ShowcaseExistingSiteTestBase {
 
-  use AssertPathAccessTrait;
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
   use UserTrait;
