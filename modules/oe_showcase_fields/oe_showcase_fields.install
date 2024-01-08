@@ -21,11 +21,14 @@ function oe_showcase_fields_install(bool $is_syncing): void {
     'field.storage.node.field_event_type',
     'field.storage.node.field_publication_authors',
     'field.storage.node.field_publication_type',
+    'field.storage.node.field_news_type',
     'taxonomy.vocabulary.event_type',
     'taxonomy.vocabulary.publication_type',
+    'taxonomy.vocabulary.news_type',
     'field.field.node.oe_sc_event.field_event_type',
     'field.field.node.oe_sc_publication.field_publication_authors',
     'field.field.node.oe_sc_publication.field_publication_type',
+    'field.field.node.oe_sc_news.field_news_type',
   ];
 
   ConfigImporter::importMultiple('module', 'oe_showcase_fields', '/config/fields/', $config);
