@@ -27,11 +27,6 @@ settings:
             - BulletedList
             - NumberedList
         -
-          name: Media
-          items:
-            - Blockquote
-            - embed_media
-        -
           name: Tools
           items:
             - Source
