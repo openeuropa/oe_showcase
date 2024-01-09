@@ -109,7 +109,11 @@ config_devel:
     - core.entity_view_display.media.image.showcase_embed
     - core.entity_view_display.media.remote_video.oe_sc_entity_browser_selection
     - core.entity_view_display.media.remote_video.showcase_embed
+    - core.entity_view_display.node.oe_sc_event.default
+    - core.entity_view_display.node.oe_sc_event.full
     - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
+    - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
+    - core.entity_view_display.node.oe_sc_event.teaser
     - core.entity_view_display.node.oe_sc_event.teaser
     - core.entity_view_mode.media.oe_sc_entity_browser_selection
     - core.entity_view_mode.media.showcase_embed
@@ -119,12 +123,12 @@ config_devel:
     - embed.button.embed_media
     - entity_browser.browser.documents
     - entity_browser.browser.embed_media
-    - entity_browser.browser.images_and_videos
     - entity_browser.browser.images
+    - entity_browser.browser.images_and_videos
     - entity_browser_enhanced.widgets.documents
     - entity_browser_enhanced.widgets.embed_media
-    - entity_browser_enhanced.widgets.images_and_videos
     - entity_browser_enhanced.widgets.images
+    - entity_browser_enhanced.widgets.images_and_videos
     - field.field.node.oe_project.body
     - field.field.node.oe_project.oe_cx_achievements_and_milestone
     - field.field.node.oe_project.oe_cx_impacts
@@ -160,7 +164,6 @@ config_devel:
     - search_api.index.oe_list_pages_index
     - system.site
     - system.theme
-    - user_field_anonymize.settings
     - user.role.administrator
     - user.role.anonymous
     - user.role.authenticated
@@ -171,11 +174,8 @@ config_devel:
     - user.role.manage_site_specific_footer
     - user.role.manage_users
     - user.settings
+    - user_field_anonymize.settings
     - views.view.media_entity_browsers
-    - core.entity_view_display.node.oe_sc_event.default
-    - core.entity_view_display.node.oe_sc_event.full
-    - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
-    - core.entity_view_display.node.oe_sc_event.teaser
   optional:
     - block.block.seven_breadcrumbs
     - block.block.seven_content
