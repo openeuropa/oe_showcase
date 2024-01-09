@@ -4,6 +4,7 @@ description: Provides user subscriptions to content types.
 core_version_requirement: ^9.4 || ^10
 package: OpenEuropa Showcase
 dependencies:
+  - drupal:filter
   - oe_showcase:oe_showcase_core
   - oe_subscriptions:oe_subscriptions_anonymous
   # Temporary entries.
@@ -16,4 +17,5 @@ config_devel:
     - core.entity_view_display.message.node_event_update.mail_subject
     - field.field.message.node_event_update.field_node
     - field.storage.message.field_node
+    - filter.format.email_html
     - message.template.node_event_update

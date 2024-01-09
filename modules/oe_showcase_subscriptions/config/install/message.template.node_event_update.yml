@@ -2,17 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.simple_rich_text
+    - filter.format.email_html
 template: node_event_update
 label: 'Event content update'
 description: 'A notification sent when n event node is updated.'
 text:
   -
     value: 'Event [message:field_node:entity:title] has been updated'
-    format: simple_rich_text
+    format: email_html
   -
     value: 'The event <a href="[message:field_node:entity:url]">[message:field_node:entity:title]</a> has been updated.'
-    format: simple_rich_text
+    format: email_html
 settings:
   'token options':
     clear: false
