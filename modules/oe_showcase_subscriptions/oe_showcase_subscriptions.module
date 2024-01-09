@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase Subscriptions module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_update().
+ */
+function oe_showcase_subscriptions_node_update(NodeInterface $node) {
+  if ($node->bundle() !== 'oe_sc_event') {
+    return;
+  }
+
+  $message = \Drupal::entityTypeManager()->getStorage('message')->create([
+    'template' => 'node_event_update',
+    'field_node' => $node,
+  ]);
+
+  \Drupal::service('message_subscribe.subscribers')
+    ->sendMessage($node, $message, [], [
+      'notify blocked users' => TRUE,
+    ]);
+}
