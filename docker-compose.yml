@@ -49,6 +49,15 @@ services:
       - '5900:5900'
     shm_size: 2g
 
+  mailpit:
+    image: axllent/mailpit
+    restart: always
+    ports:
+      - 8025:8025
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
 #### Mac users: uncomment the "volumes" key to enable the NFS file sharing. You can find more information about Docker for Mac here: https://github.com/openeuropa/openeuropa/blob/master/docs/starting/tooling.md#using-docker-on-macos
 
 #volumes:

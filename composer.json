@@ -35,6 +35,7 @@
         "drupal/search_api_autocomplete": "^1.7",
         "drupal/seven": "^1.0",
         "drupal/slim_select": "^1.0@alpha",
+        "drupal/symfony_mailer": "^1.4",
         "drupal/user_field_anonymize": "^1.0@alpha",
         "drupal/user_fields_visibility": "1.1.0-alpha1",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",

@@ -80,6 +80,7 @@ install:
   - redirect
   - roleassign
   - slim_select
+  - symfony_mailer
   - taxonomy
   - toolbar
   - ui_patterns
@@ -162,6 +163,7 @@ config_devel:
     - purge_users.settings
     - roleassign.settings
     - search_api.index.oe_list_pages_index
+    - symfony_mailer.mailer_policy._
     - system.site
     - system.theme
     - user.role.administrator
