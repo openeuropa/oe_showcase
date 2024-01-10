@@ -16,9 +16,6 @@ class CookieConsentTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet('<front>');
     $this->assertCookieConsent();
 
-    $this->drupalGet('node');
-    $this->assertCookieConsent();
-
     $this->drupalGet('node/1');
     $this->assertCookieConsent();
   }

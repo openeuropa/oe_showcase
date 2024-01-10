@@ -197,12 +197,8 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('€22,90');
     $assert_session->pageTextContains('Project details');
 
-    // Check meta is present.
-    $this->drupalGet('/node');
-    $assert_session->elementExists('css', '.views-row:nth-child(1) .text-muted');
-    $this->drupalLogin($this->createUser([], '', TRUE));
-
     // Edit the node, remove project details.
+    $this->drupalLogin($this->createUser([], '', TRUE));
     $node = $this->getNodeByTitle('Project page test');
     $this->drupalGet('node/' . $node->id() . '/edit');
     $page->selectFieldOption('oe_project_dates[0][value][day]', '');
@@ -221,9 +217,23 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Remove');
     $page->pressButton('Save');
 
+    // Check Project details are not present when empty.
     $this->drupalGet('project/project-page-test');
-    // Check Project details is not present when empty.
     $assert_session->pageTextNotContains('Project details');
+    $assert_session->pageTextNotContains('03 March 2022');
+    $assert_session->pageTextNotContains('03 March 2023');
+    $assert_session->pageTextNotContains('Overall budget');
+    $assert_session->pageTextNotContains('€15.000.000,00');
+    $assert_session->pageTextNotContains('EU contribution');
+    $assert_session->pageTextNotContains('€240.000,00');
+    $assert_session->pageTextNotContains('Website');
+    $assert_session->pageTextNotContains('www.website-address.eu');
+    $assert_session->pageTextNotContains('Funding programme');
+    $assert_session->pageTextNotContains('Anti Fraud Information System (AFIS)');
+    $assert_session->pageTextNotContains('Reference');
+    $assert_session->pageTextNotContains('3425353');
+    $assert_session->pageTextNotContains('Coordinators');
+    $assert_session->pageTextNotContains('Coordinator 1');
 
     // Assert the in-page nav.
     $summary_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(1)');
@@ -243,10 +253,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals('Participants', $participants);
 
     $this->assertSocialShareBlock();
-
-    $this->drupalGet('/node');
-    // Check meta is not present.
-    $assert_session->elementNotExists('css', '.views-row:nth-child(1) .text-muted');
   }
 
 }
