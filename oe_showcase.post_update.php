@@ -838,3 +838,19 @@ function oe_showcase_post_update_00035(): void {
 function oe_showcase_post_update_00036(): void {
   ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00036_person_facet', 'facets.facet.oelp_oe_sc_person__title',);
 }
+
+/**
+ * Enable the subscriptions module.
+ */
+function oe_showcase_post_update_00037(): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_subscriptions']);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00037_event_subscriptions', [
+    'core.entity_view_display.node.oe_sc_event.default',
+    'core.entity_view_display.node.oe_sc_event.full',
+    'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
+    'core.entity_view_display.node.oe_sc_event.teaser',
+    'symfony_mailer.mailer_policy._',
+    'user.role.anonymous_subscriber',
+  ]);
+}

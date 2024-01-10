@@ -1,0 +1,105 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.oe_documents
+    - field.field.node.oe_sc_event.oe_featured_media
+    - field.field.node.oe_sc_event.oe_sc_event_dates
+    - field.field.node.oe_sc_event.oe_sc_event_location
+    - field.field.node.oe_sc_event.oe_sc_event_registration_url
+    - field.field.node.oe_sc_event.oe_summary
+    - node.type.oe_sc_event
+  module:
+    - address
+    - datetime_range
+    - link
+    - oe_content_featured_media_field
+    - oe_oembed
+    - text
+    - user
+third_party_settings:
+  oe_oembed:
+    embeddable: false
+id: node.oe_sc_event.default
+targetEntityType: node
+bundle: oe_sc_event
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  oe_documents:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  oe_featured_media:
+    type: oe_featured_media_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  oe_sc_event_dates:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  oe_sc_event_location:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  oe_sc_event_registration_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  oe_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node': true
+  field_event_type: true
+  flag_email_node: true
+  flag_subscribe_node: true
+  langcode: true
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
+  search_api_excerpt: true

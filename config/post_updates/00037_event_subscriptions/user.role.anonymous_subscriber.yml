@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - oe_content_entity_organisation
+    - rdf_skos
+    - system
+id: anonymous_subscriber
+label: 'Anonymous subscriber'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'view media'
+  - 'view published oe_organisation'
+  - 'view published skos concept entities'
