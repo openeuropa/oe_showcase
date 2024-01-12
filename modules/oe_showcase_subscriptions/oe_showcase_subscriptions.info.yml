@@ -18,3 +18,4 @@ config_devel:
     - field.storage.message.field_node
     - filter.format.email_html
     - message.template.node_event_update
+    - flag.flag.subscribe_node
