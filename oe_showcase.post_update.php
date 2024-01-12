@@ -843,7 +843,10 @@ function oe_showcase_post_update_00036(): void {
  * Enable the subscriptions module.
  */
 function oe_showcase_post_update_00037(): void {
-  \Drupal::service('module_installer')->install(['oe_showcase_subscriptions']);
+  \Drupal::service('module_installer')->install([
+    'oe_showcase_subscriptions',
+    'symfony_mailer',
+  ]);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00037_event_subscriptions', [
     'core.entity_view_display.node.oe_sc_event.default',
