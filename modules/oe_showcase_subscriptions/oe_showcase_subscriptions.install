@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the OE Showcase Subscriptions module.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\oe_bootstrap_theme\ConfigImporter;
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_subscriptions_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+
+  ConfigImporter::importSingle('module', 'oe_showcase_subscriptions', '/config/overrides/', 'flag.flag.subscribe_node');
+}
