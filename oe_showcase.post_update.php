@@ -815,10 +815,5 @@ function oe_showcase_post_update_00033(&$sandbox) {
  * Disable frontpage view.
  */
 function oe_showcase_post_update_00034(): void {
-  ConfigImporter::importSingle(
-    'profile',
-    'oe_showcase',
-    '/config/post_updates/00034_frontpage_view',
-    'views.view.frontpage'
-  );
+  View::load('frontpage')->disable()->save();
 }
