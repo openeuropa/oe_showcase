@@ -31,7 +31,6 @@ services:
       - DBA_PASSWORD=dba
   selenium:
     image: registry.fpfis.eu/fpfis/selenium:standalone-chrome-4.1.3-20220405
-    shm_size: 2g
     environment:
       - DISPLAY=:99
       - SCREEN_WIDTH=1440
