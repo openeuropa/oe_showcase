@@ -28,13 +28,6 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
   protected $casForcedLogin = FALSE;
 
   /**
-   * Determines if a test should fail on JavaScript console errors.
-   *
-   * @var bool
-   */
-  protected $failOnJavascriptConsoleErrors = TRUE;
-
-  /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
@@ -75,22 +68,6 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
     $message = $message ?: "JavaScript condition met:\n" . $condition;
     $result = $this->getSession()->getDriver()->wait($timeout, $condition);
     $this->assertTrue($result, $message);
-  }
-
-  /**
-   * Triggers a test failure if a JavaScript error was encountered.
-   *
-   * @throws \PHPUnit\Framework\AssertionFailedError
-   *
-   * @postCondition
-   */
-  protected function failOnJavaScriptErrors(): void {
-    if ($this->failOnJavascriptConsoleErrors) {
-      $errors = $this->getSession()->evaluateScript("JSON.parse(sessionStorage.getItem('js_testing_log_test.errors') || JSON.stringify([]))");
-      if (!empty($errors)) {
-        $this->fail(implode("\n", $errors));
-      }
-    }
   }
 
 }
