@@ -956,8 +956,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->fillField('Title', $title);
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);
-    $assert->assertWaitOnAjaxRequest();
-    $page->checkField('Expose sort');
+    $assert->waitForField('Expose sort')->check();
     $page->pressButton('Save');
 
     $node = $this->getNodeByTitle($title);
