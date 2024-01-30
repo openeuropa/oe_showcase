@@ -283,8 +283,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $page->pressButton('Clear filters');
-    $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Z-A');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 9',
@@ -299,8 +298,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 10',
     ]);
 
-    $page->selectFieldOption('Sort by', 'A-Z');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('A-Z');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -315,8 +313,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 7',
     ]);
 
-    $page->selectFieldOption('Sort by', 'Date ASC');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Date ASC');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -331,8 +328,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 9',
     ]);
 
-    $page->selectFieldOption('Sort by', 'Date DESC');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Date DESC');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 11',
@@ -490,8 +486,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Z-A');
     $this->assertResultsTitle('Event List Page', 12);
     $this->assertResults([
       'Event number 9',
@@ -652,8 +647,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Z-A');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project pending',
@@ -661,8 +655,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project closed',
     ]);
 
-    $page->selectFieldOption('Sort by', 'Total budget ASC');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Total budget ASC');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project closed',
@@ -670,8 +663,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
     ]);
 
-    $page->selectFieldOption('Sort by', 'Total budget DESC');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Total budget DESC');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project ongoing',
@@ -742,8 +734,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Z-A');
     $this->assertResultsTitle('Person List Page', 12);
     $this->assertResults([
       'John Doe 9',
@@ -860,8 +851,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $page->selectFieldOption('Sort by', 'Z-A');
-    $assert_session->assertWaitOnAjaxRequest();
+    $this->sortByOption('Z-A');
     $this->assertResultsTitle('Publication List Page', 12);
     $this->assertResults([
       'Pub 9',
@@ -971,6 +961,17 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalLogout();
 
     return $node;
+  }
+
+  /**
+   * Select a sort option and waits until is applied.
+   *
+   * @param string $option
+   *   The option to be applied.
+   */
+  protected function sortByOption(string $option): void {
+    $this->getSession()->getPage()->selectFieldOption('Sort by', $option);
+    $this->assertSession()->waitForElementVisible('xpath', "//option[@selected=selected and text()='$option']");
   }
 
 }
