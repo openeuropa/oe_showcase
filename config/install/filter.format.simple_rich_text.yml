@@ -13,7 +13,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <ul> <li> <ol> <blockquote>'
+      allowed_html: '<a href hreflang> <em> <strong>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -21,10 +21,4 @@ filters:
     provider: filter
     status: true
     weight: 10
-    settings: {  }
-  oe_oembed_filter:
-    id: oe_oembed_filter
-    provider: oe_oembed
-    status: true
-    weight: 0
     settings: {  }

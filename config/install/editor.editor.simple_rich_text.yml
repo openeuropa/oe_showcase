@@ -22,11 +22,6 @@ settings:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
           name: Tools
           items:
             - Source
