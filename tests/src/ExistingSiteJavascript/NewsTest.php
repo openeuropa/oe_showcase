@@ -80,7 +80,9 @@ class NewsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $introduction = $page->findField('Introduction');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($introduction));
-    $this->enterTextInWysiwyg('Introduction', 'Example Introduction');
+    $text = '<p>Example Introduction with <strong>Strong</strong>, <em>Emphasised</em> and <a href="/">Link</a> text.</p>
+    <ol><li>1</li> <li>2</li> <li>3</li></ol> <ul><li>4</li> <li>6</li> <li>5</li></ul> <blockquote>Lorem ipsum, famous last words</blockquote>';
+    $this->enterTextInWysiwyg('Introduction', $text);
     $page->fillField('Title', 'Example title');
     $content = $page->findField('Content');
     $this->assertEquals('rich_text', $this->getWysiwigTextFormat($content));
@@ -98,7 +100,13 @@ class NewsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Example Content');
-    $assert_session->pageTextContains('Example Introduction');
+    $assert_session->pageTextContains('Example Introduction with Strong, Emphasised and Link text. 1 2 3 4 6 5 Lorem ipsum, famous last words');
+    $assert_session->elementExists('xpath', '//strong[text()="Strong"]');
+    $assert_session->elementExists('xpath', '//em[text()="Emphasised"]');
+    $assert_session->elementExists('xpath', '//a[@href="/" and text()="Link"]');
+    $assert_session->elementNotExists('xpath', '//ol/li[text()="1" or text()="2" or text()="3"]');
+    $assert_session->elementNotExists('xpath', '//ul/li[text()="4" or text()="6" or text()="5"]');
+    $assert_session->elementNotExists('xpath', '//blockquote[text()="Lorem ipsum, famous last words"]');
     $assert_session->pageTextContains('24 January 2022');
     $assert_session->responseContains('image-test.png');
     $assert_session->responseContains('Starter Image test');
