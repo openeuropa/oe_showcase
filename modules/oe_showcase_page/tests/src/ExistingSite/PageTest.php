@@ -93,8 +93,12 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Add Banner');
 
     $page->selectFieldOption(
-      'field_body[1][subform][field_oe_banner_type]',
-      'page_center'
+      'field_body[1][subform][field_oe_banner_size]',
+      'medium'
+    );
+    $page->selectFieldOption(
+      'field_body[1][subform][field_oe_banner_alignment]',
+      'centered'
     );
     $page->fillField(
       'field_body[1][subform][field_oe_title][0][value]',

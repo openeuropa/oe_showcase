@@ -3,14 +3,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_teaser
+    - filter.format.simple_rich_text
     - node.type.oe_project
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_rich_text
 id: node.oe_project.oe_teaser
 field_name: oe_teaser
 entity_type: node
@@ -21,5 +17,7 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - simple_rich_text
 field_type: text_long
