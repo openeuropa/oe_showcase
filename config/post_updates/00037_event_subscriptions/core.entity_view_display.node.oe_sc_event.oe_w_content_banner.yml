@@ -13,12 +13,31 @@ dependencies:
     - field.field.node.oe_sc_event.oe_summary
     - node.type.oe_sc_event
   module:
-    - oe_oembed
+    - field_group
     - text
     - user
 third_party_settings:
-  oe_oembed:
-    embeddable: false
+  field_group:
+    group_action_bar:
+      children:
+        - flag_subscribe_node
+        - 'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node'
+      label: 'Action bar'
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 id: node.oe_sc_event.oe_w_content_banner
 targetEntityType: node
 bundle: oe_sc_event

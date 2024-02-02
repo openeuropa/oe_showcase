@@ -7,13 +7,6 @@ core_version_requirement: ^10
 libraries:
   - oe_showcase_theme/global-styling
 
-libraries-override:
-  flag/flag.link:
-    css:
-      theme:
-        # The flag CSS removes borders around flag links/buttons.
-        css/flag-link.css: false
-
 # Regions are meant to be 100% the same as in parent theme.
 regions:
   header_branding: 'Header branding'

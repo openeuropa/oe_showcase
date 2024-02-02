@@ -11,12 +11,6 @@
     rounded_pill: true,
   }]) %}
 {% endfor %}
-{% set _action_bar %}
-  <div class="d-flex justify-content-end mt-2 align-items-center">
-    {{ content.flag_subscribe_node }}
-    {{ content['extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node'] }}
-  </div>
-{% endset %}
 <div{{attributes}}>
   {{ pattern('content_banner', {
     background: 'gray',
@@ -27,6 +21,6 @@
     image: image,
     links: links,
     badges: _badges,
-    action_bar: _action_bar,
+    action_bar: content.group_action_bar,
   }) }}
 </div>
