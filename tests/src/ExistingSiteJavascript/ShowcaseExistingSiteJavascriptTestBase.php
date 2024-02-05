@@ -48,7 +48,6 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
     $this->restoreConfiguration();
 
     parent::tearDown();
-
   }
 
   /**

@@ -283,7 +283,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $page->pressButton('Clear filters');
-    $this->sortByOption('Z-A');
+    $this->selectSortByOption('Z-A');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 9',
@@ -298,7 +298,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 10',
     ]);
 
-    $this->sortByOption('A-Z');
+    $this->selectSortByOption('A-Z');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -313,7 +313,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 7',
     ]);
 
-    $this->sortByOption('Date ASC');
+    $this->selectSortByOption('Date ASC');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 0',
@@ -328,7 +328,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'News number 9',
     ]);
 
-    $this->sortByOption('Date DESC');
+    $this->selectSortByOption('Date DESC');
     $this->assertResultsTitle('News List Page', 12);
     $this->assertResults([
       'News number 11',
@@ -486,7 +486,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $this->sortByOption('Z-A');
+    $this->selectSortByOption('Z-A');
     $this->assertResultsTitle('Event List Page', 12);
     $this->assertResults([
       'Event number 9',
@@ -647,7 +647,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $this->sortByOption('Z-A');
+    $this->selectSortByOption('Z-A');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project pending',
@@ -655,7 +655,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project closed',
     ]);
 
-    $this->sortByOption('Total budget ASC');
+    $this->selectSortByOption('Total budget ASC');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project closed',
@@ -663,7 +663,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Project ongoing',
     ]);
 
-    $this->sortByOption('Total budget DESC');
+    $this->selectSortByOption('Total budget DESC');
     $this->assertResultsTitle('Project List Page', 3);
     $this->assertResults([
       'Project ongoing',
@@ -734,7 +734,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $this->sortByOption('Z-A');
+    $this->selectSortByOption('Z-A');
     $this->assertResultsTitle('Person List Page', 12);
     $this->assertResults([
       'John Doe 9',
@@ -851,7 +851,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
-    $this->sortByOption('Z-A');
+    $this->selectSortByOption('Z-A');
     $this->assertResultsTitle('Publication List Page', 12);
     $this->assertResults([
       'Pub 9',
@@ -969,7 +969,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    * @param string $option
    *   The option to be applied.
    */
-  protected function sortByOption(string $option): void {
+  protected function selectSortByOption(string $option): void {
     $this->getSession()->getPage()->selectFieldOption('Sort by', $option);
     $this->assertSession()->waitForElementVisible('xpath', "//option[@selected=selected and text()='$option']");
   }
