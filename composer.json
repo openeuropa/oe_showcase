@@ -6,7 +6,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.1",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.12",
         "drupal/allowed_formats": "^3.0",
@@ -14,7 +14,7 @@
         "drupal/block_field": "^1.0@RC",
         "drupal/ckeditor": "^1.0",
         "drupal/composite_reference": "^2.2",
-        "drupal/core-recommended": "^10.2",
+        "drupal/core-recommended": "^10",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@alpha",
         "drupal/dropsolid_purge": "^1.0",
@@ -57,8 +57,8 @@
         "composer/installers": "~1.11",
         "drupal/cas_mock_server": "^2.0.1",
         "drupal/config_devel": "^1.9",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-dev": "^10.2",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-dev": "^10",
         "drush/drush": "^12.4",
         "nikic/php-parser": "^4",
         "openeuropa/code-review": "^2.0.0-alpha6",
@@ -72,10 +72,6 @@
     },
     "repositories": [
         {
-            "type": "git",
-            "url": "https://github.com/openeuropa/oe_starter_content"
-        },
-        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -86,10 +82,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/openeuropa/oe_content_extra"
         }
     ],
     "autoload": {
