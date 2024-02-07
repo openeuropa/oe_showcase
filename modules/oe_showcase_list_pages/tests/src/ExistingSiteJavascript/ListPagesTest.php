@@ -8,6 +8,7 @@ use Behat\Mink\Element\NodeElement;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
+use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
@@ -21,6 +22,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use ExampleContentTrait;
   use SlimSelectTrait;
   use PathautoTestHelperTrait;
+  use ScrollTrait;
 
   /**
    * An editor user.
@@ -936,16 +938,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalLogout();
 
     return $node;
-  }
-
-  /**
-   * Scroll an element into the viewport.
-   *
-   * @param string $selector
-   *   The css query selector.
-   */
-  protected function scrollIntoView(string $selector): void {
-    $this->getSession()->executeScript("window.scrollBy({top: document.querySelector('$selector').offsetTop, left: 0, behavior: 'instant'})");
   }
 
 }
