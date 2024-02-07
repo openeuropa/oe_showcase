@@ -1,8 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - oe_oembed
+dependencies: {  }
 name: 'Simple rich text'
 format: simple_rich_text
 weight: 0
