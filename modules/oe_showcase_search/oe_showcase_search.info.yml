@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Search
 type: module
 description: Provides a demo search content type and search functionality based on search_api.
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 package: OpenEuropa Showcase
 dependencies:
   - better_exposed_filters:better_exposed_filters

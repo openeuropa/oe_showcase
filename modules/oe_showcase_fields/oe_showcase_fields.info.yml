@@ -2,7 +2,7 @@ name: Openeuropa Showcase fields
 type: module
 description: Provides fields used in content types within Showcase profile.
 package: OpenEuropa Showcase
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
 dependencies:
   - field_permissions:field_permissions
   - drupal:node
