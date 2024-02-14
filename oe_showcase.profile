@@ -237,3 +237,11 @@ function oe_showcase_element_info_alter(array &$types) {
     $types['text_format']['#process'][] = [AllowedFormats::class, 'alterTextFormatHelp'];
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oe_showcase_form_oe_list_pages_facets_form_alter(&$form, &$form_state, $form_id) {
+  // Change the label of the submit button.
+  $form['actions']['submit']['#value'] = t('Refine');
+}
