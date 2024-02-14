@@ -22,24 +22,30 @@ function oe_showcase_install_tasks_alter(&$tasks, $install_state): void {
   unset($tasks['install_import_translations']);
   unset($tasks['install_finish_translations']);
 
-  $tasks['oe_showcase_disable_taxonomy_term_view'] = [];
+  $tasks['oe_showcase_disable_default_views'] = [];
   $tasks['oe_showcase_import_overrides'] = [];
 }
 
 /**
- * Disables the taxonomy term canonical page override provided by Views.
+ * Disables default views:
+ * - Taxonomy term canonical page
+ * - Node frontpage
  *
  * @param array $install_state
  *   An array of information about the current installation state.
  */
-function oe_showcase_disable_taxonomy_term_view(array &$install_state): void {
-  $view = View::load('taxonomy_term');
-  if (!$view || $view->status() === FALSE) {
-    return;
-  }
+function oe_showcase_disable_default_views(array &$install_state): void {
+  $views = View::loadMultiple([
+    'taxonomy_term',
+    'frontpage'
+  ]);
 
-  $view->disable();
-  $view->save();
+  foreach ($views as $view) {
+    if ($view->status() === FALSE) {
+      continue;
+    }
+    $view->disable()->save();
+  }
 }
 
 /**

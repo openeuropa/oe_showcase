@@ -810,3 +810,10 @@ function oe_showcase_post_update_00033(&$sandbox) {
     return sprintf('Processed %s banner paragraphs.', $sandbox['current']);
   }
 }
+
+/**
+ * Disable frontpage view.
+ */
+function oe_showcase_post_update_00034(): void {
+  View::load('frontpage')->disable()->save();
+}
