@@ -772,7 +772,6 @@ function oe_showcase_post_update_00032(): void {
     'node.type.oe_sc_publication',
   ]);
 
-  // Index elements.
   Index::load('oe_list_pages_index')->indexItems();
 }
 
@@ -816,4 +815,19 @@ function oe_showcase_post_update_00033(&$sandbox) {
  */
 function oe_showcase_post_update_00034(): void {
   View::load('frontpage')->disable()->save();
+}
+
+/**
+ * Add News type to News.
+ */
+function oe_showcase_post_update_00035(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00035_news_type', [
+    'core.entity_view_display.node.oe_sc_news.teaser',
+    'core.entity_view_display.node.oe_sc_news.oe_w_content_banner',
+    'core.entity_form_display.node.oe_sc_news.default',
+    'search_api.index.oe_list_pages_index',
+    'user.role.editor',
+  ]);
+
+  Index::load('oe_list_pages_index')->indexItems();
 }

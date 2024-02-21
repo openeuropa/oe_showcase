@@ -20,3 +20,15 @@ function oe_showcase_list_pages_post_update_00001(&$sandbox): void {
     'pathauto.pattern.list_page_url_alias_pattern'
   );
 }
+
+/**
+ * Add News type filter.
+ */
+function oe_showcase_list_pages_post_update_00002(): void {
+  ConfigImporter::importSingle(
+    'module',
+    'oe_showcase_list_pages',
+    '/config/post_updates/00002_news_type',
+    'facets.facet.oelp_oe_sc_news__type'
+  );
+}

@@ -10,3 +10,4 @@ dependencies:
   - oe_starter_content:oe_starter_content_person
   - oe_starter_content:oe_starter_content_event
   - oe_starter_content:oe_starter_content_publication
+  - oe_starter_content:oe_starter_content_news
