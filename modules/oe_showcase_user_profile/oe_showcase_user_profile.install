@@ -18,7 +18,6 @@ function oe_showcase_user_profile_install($is_syncing): void {
   $graphs = [
     'country' => 'http://publications.europa.eu/resource/authority/country',
     'language' => 'http://publications.europa.eu/resource/authority/language',
-    'human-sex' => 'http://publications.europa.eu/resource/dataset/human-sex',
   ];
   \Drupal::service('rdf_skos.skos_graph_configurator')->addGraphs($graphs);
 }

@@ -31,7 +31,6 @@ config_devel:
     - field.field.user.user.field_current_position
     - field.field.user.user.field_date_of_birth
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_gender
     - field.field.user.user.field_last_name
     - field.field.user.user.field_nationality
     - field.field.user.user.field_organization
@@ -42,7 +41,6 @@ config_devel:
     - field.storage.user.field_current_position
     - field.storage.user.field_date_of_birth
     - field.storage.user.field_first_name
-    - field.storage.user.field_gender
     - field.storage.user.field_last_name
     - field.storage.user.field_nationality
     - field.storage.user.field_organization

@@ -4,7 +4,6 @@ _meta:
   uuid: 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
   default_langcode: en
   depends:
-    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
     'http://publications.europa.eu/resource/authority/country/FRA': skos_concept
     4cc2cde7-8eab-4d9a-a5f6-4d50d3f8243f: file
     'http://publications.europa.eu/resource/authority/language/FRA': skos_concept
@@ -74,9 +73,6 @@ default:
   field_first_name:
     -
       value: Shel
-  field_gender:
-    -
-      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
   field_last_name:
     -
       value: Caryl

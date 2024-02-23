@@ -34,11 +34,17 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     $this->markEntityForCleanup($user);
 
+    // Check that the same number of defined fields are present in the form.
     $this->drupalGet("user/{$user->id()}/edit");
+    $fields = array_filter($user->getFieldDefinitions(), function ($field) {
+      return strpos($field, 'field_') === 0;
+    }, ARRAY_FILTER_USE_KEY);
+    $this->assertCount(10, $fields);
+    $this->assertCount(10, $page->findAll('css', '[class*="field--name-field-"]'));
+
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '1990-01-01');
     $page->fillField('Current position', 'Web Developer');
-    $page->selectFieldOption('Gender', 'male');
     $page->fillField('Country', 'BE');
     $page->fillField('Nationality', 'France');
     $page->fillField('Working Languages', 'http://publications.europa.eu/resource/authority/language/FRA');
@@ -50,7 +56,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldValueEquals('Last name', 'Doe');
     $assert_session->fieldValueEquals('Organization', 'DIGIT');
     $assert_session->fieldValueEquals('Bio', 'User description bio.');
-    $assert_session->fieldValueEquals('Gender', 'http://publications.europa.eu/resource/authority/human-sex/MALE');
     $assert_session->fieldValueEquals('Country', 'BE');
     $assert_session->fieldValueEquals('Nationality', 'France (http://publications.europa.eu/resource/authority/country/FRA)');
     $working_language = $assert_session->optionExists('Working Languages', 'French');
@@ -60,7 +65,6 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->drupalGet("user/{$user->id()}");
     $assert_session->pageTextContains('John Doe');
     $assert_session->pageTextContains('User description bio.');
-    $assert_session->pageTextContains('male');
     $assert_session->pageTextContains('01 January 1990');
     $assert_session->pageTextContains('Web Developer');
     $assert_session->pageTextContains('Belgium');
