@@ -23,7 +23,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use ScrollTrait;
   use SlimSelectTrait;
   use PathautoTestHelperTrait;
-  use ScrollTrait;
 
   /**
    * An editor user.
