@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: xA_ftpiBud1TLgr5lJTV9_kakY5HUhjZGAOZlc8RIm0
 id: oelp_oe_sc_person__title
 name: Name
 url_alias: oelp_oe_sc_person__title
