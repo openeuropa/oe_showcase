@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase list pages module.
+ */
+
+declare(strict_types =  1);
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oe_showcase_list_pages_form_oe_list_pages_facets_form_alter(&$form, &$form_state, $form_id) {
+  // Change the label of the submit button.
+  $form['actions']['submit']['#value'] = t('Refine');
+}

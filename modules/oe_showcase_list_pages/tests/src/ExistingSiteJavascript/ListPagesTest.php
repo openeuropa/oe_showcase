@@ -196,7 +196,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input = $filter_form->findField('Keywords');
     $publication_date_input = $filter_form->findField('Publication date');
     $type = $filter_form->findField('Type');
-    $search_button = $filter_form->findButton('Search');
+    $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
     $this->assertNotNull($publication_date_input);
@@ -401,7 +401,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input = $filter_form->findField('Title');
     $event_date_input = $filter_form->findField('Event dates');
     $type = $filter_form->findField('Type');
-    $search_button = $filter_form->findButton('Search');
+    $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
     $this->assertNotNull($event_date_input);
@@ -580,7 +580,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->fieldNotExists('Total budget');
     $filter_start = $filter_form->findField('Start date');
     $filter_end = $filter_form->findField('End date');
-    $search_button = $filter_form->findButton('Search');
+    $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($filter_status);
     $this->assertNotNull($filter_type);
     $this->assertNotNull($filter_start);
@@ -711,7 +711,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert that the filter form for Person exists.
     $filter_form = $assert_session->elementExists('css', '#oe-list-pages-facets-form');
     $title_input = $filter_form->findField('Title');
-    $search_button = $filter_form->findButton('Search');
+    $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
 
@@ -796,7 +796,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $keyword_input = $filter_form->findField('Keyword');
     $publication_date_input = $filter_form->findField('Publication date');
     $type_select = $filter_form->findField('Type');
-    $search_button = $filter_form->findButton('Search');
+    $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($keyword_input);
     $this->assertNotNull($publication_date_input);
     $this->assertNotNull($type_select);
