@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: oe_showcase_page_date
+label: 'OE Showcase Page date'
+locked: false
+pattern: 'd F Y'
