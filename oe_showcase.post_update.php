@@ -831,3 +831,10 @@ function oe_showcase_post_update_00035(): void {
 
   Index::load('oe_list_pages_index')->indexItems();
 }
+
+/**
+ * Change label of person facet from Title to Name.
+ */
+function oe_showcase_post_update_00036(): void {
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00036_person_facet', 'facets.facet.oelp_oe_sc_person__title',);
+}
