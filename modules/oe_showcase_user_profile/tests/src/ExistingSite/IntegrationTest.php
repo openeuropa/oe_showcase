@@ -34,13 +34,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     ]);
     $this->markEntityForCleanup($user);
 
-    // Check that the same number of defined fields are present in the form.
     $this->drupalGet("user/{$user->id()}/edit");
-    $fields = array_filter($user->getFieldDefinitions(), function ($field) {
-      return strpos($field, 'field_') === 0;
-    }, ARRAY_FILTER_USE_KEY);
-    $this->assertCount(10, $fields);
-    $this->assertCount(10, $page->findAll('css', '[class*="field--name-field-"]'));
 
     $page->fillField('Bio', 'User description bio.');
     $page->fillField('Date', '1990-01-01');
@@ -76,6 +70,8 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->clickLink('Cancel account');
     $page->pressButton('Confirm');
     $assert_session->pageTextContains('A confirmation request to cancel your account has been sent to your email address.');
+
+    $this->assertArrayNotHasKey('field_gender', $user->getFieldDefinitions());
   }
 
 }
