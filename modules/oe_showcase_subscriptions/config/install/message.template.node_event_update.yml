@@ -5,7 +5,7 @@ dependencies:
     - filter.format.email_html
 template: node_event_update
 label: 'Event content update'
-description: 'A notification sent when n event node is updated.'
+description: 'A notification sent when an event node is updated.'
 text:
   -
     value: 'Event [message:field_node:entity:title] has been updated'

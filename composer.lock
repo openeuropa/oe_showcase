@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc38f9af1b95ebb04cfe0d7880060988",
+    "content-hash": "63f93e57bb65cf1bd2847963ce563bcf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -14600,6 +14600,63 @@
                 "source": "https://github.com/drupal/core-dev/tree/10.2.2"
             },
             "time": "2023-12-12T22:01:45+00:00"
+        },
+        {
+            "name": "drupal/datetime_testing",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/datetime_testing.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/datetime_testing-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "458545f6e4f1c45ac0bbf43d276ee6c13fc3cf1d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drush/drush": "^11.1 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1693573711",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Shaw (jonathanshaw)",
+                    "homepage": "https://www.drupal.org/u/jonathanshaw",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "hernani",
+                    "homepage": "https://www.drupal.org/user/448086"
+                },
+                {
+                    "name": "jonathanshaw",
+                    "homepage": "https://www.drupal.org/user/3237629"
+                }
+            ],
+            "description": "Provides an API to help with developing automated tests for date and time dependent functionality.",
+            "homepage": "https://www.drupal.org/project/datetime_testing",
+            "support": {
+                "source": "http://cgit.drupalcode.org/datetime_testing",
+                "issues": "https://www.drupal.org/project/issues/datetime_testing"
+            }
         },
         {
             "name": "drush/drush",

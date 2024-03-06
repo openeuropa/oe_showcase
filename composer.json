@@ -63,6 +63,7 @@
         "drupal/config_devel": "^1.9",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-dev": "^10",
+        "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^12.4",
         "nikic/php-parser": "^4",
         "openeuropa/code-review": "^2.0.0-alpha6",

@@ -22,8 +22,10 @@ function oe_showcase_subscriptions_node_update(NodeInterface $node) {
     'field_node' => $node,
   ]);
 
-  \Drupal::service('message_subscribe.subscribers')
-    ->sendMessage($node, $message, [], [
-      'notify blocked users' => TRUE,
-    ]);
+  // Set subscription options in order to notify anonymous users.
+  $subscribe_options = [
+    'notify blocked users' => TRUE,
+  ];
+
+  \Drupal::service('message_subscribe.subscribers')->sendMessage($node, $message, [], $subscribe_options);
 }

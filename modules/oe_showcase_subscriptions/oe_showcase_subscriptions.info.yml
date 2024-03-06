@@ -6,8 +6,7 @@ package: OpenEuropa Showcase
 dependencies:
   - drupal:filter
   - oe_subscriptions:oe_subscriptions_anonymous
-  # Temporary entries.
-  - message_subscribe:message_subscribe_email
+  - oe_subscriptions:oe_subscriptions_digest
 
 config_devel:
   install:
