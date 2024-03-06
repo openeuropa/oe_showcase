@@ -101,7 +101,9 @@
         "psr-4": {
             "Drupal\\Tests\\oe_showcase\\": "./tests/src/",
             "Drupal\\Tests\\oe_bootstrap_theme\\": "./build/themes/contrib/oe_bootstrap_theme/tests/src/",
-            "Drupal\\Tests\\oe_whitelabel\\": "./build/themes/contrib/oe_whitelabel/tests/src/"
+            "Drupal\\Tests\\oe_whitelabel\\": "./build/themes/contrib/oe_whitelabel/tests/src/",
+            "Drupal\\Tests\\oe_subscriptions_anonymous\\": "./build/modules/contrib/oe_subscriptions/modules/oe_subscriptions_anonymous/tests/src",
+            "Drupal\\symfony_mailer_test\\": "./build/modules/contrib/symfony_mailer/tests/modules/symfony_mailer_test/src"
         }
     },
     "extra": {

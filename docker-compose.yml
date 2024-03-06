@@ -51,7 +51,6 @@ services:
 
   mailpit:
     image: axllent/mailpit
-    restart: always
     ports:
       - 8025:8025
     environment:
