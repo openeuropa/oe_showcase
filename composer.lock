@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d25acccf8e4cfe5d404023ed5008e983",
+    "content-hash": "bad3088996ac63f2bc1f58c4eda83a8f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2098,35 +2098,39 @@
         },
         {
             "name": "drupal/entity_browser",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_browser.git",
-                "reference": "8.x-2.9"
+                "reference": "8.x-2.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.9.zip",
-                "reference": "8.x-2.9",
-                "shasum": "251afad80cde9fa547501a8d9de5d94b9f5bacff"
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.10.zip",
+                "reference": "8.x-2.10",
+                "shasum": "d52548ea66dc56108c2e211aeaff6e1cc0522e85"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.5 || ^10"
+            },
+            "conflict": {
+                "drupal/media_entity": "1.*"
             },
             "require-dev": {
-                "drupal/embed": "~1.0",
-                "drupal/entity_embed": "1.x-dev",
-                "drupal/entity_reference_revisions": "1.x-dev",
-                "drupal/entityqueue": "1.x-dev",
-                "drupal/inline_entity_form": "1.x-dev",
-                "drupal/paragraphs": "1.x-dev",
-                "drupal/token": "1.x-dev"
+                "drupal/ckeditor": "^1.0",
+                "drupal/embed": "^1.0",
+                "drupal/entity_embed": "^1.0",
+                "drupal/entity_reference_revisions": "^1.0",
+                "drupal/entityqueue": "^1.0",
+                "drupal/inline_entity_form": "^1.0@rc",
+                "drupal/paragraphs": "^1.0",
+                "drupal/token": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.9",
-                    "datestamp": "1674070933",
+                    "version": "8.x-2.10",
+                    "datestamp": "1702325310",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2179,7 +2183,7 @@
                 }
             ],
             "description": "Entity browsing and selecting component.",
-            "homepage": "http://drupal.org/project/entity_browser",
+            "homepage": "https://drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser",
                 "issues": "https://www.drupal.org/project/issues/entity_browser",
@@ -2343,6 +2347,10 @@
                 {
                     "name": "ieguskiza",
                     "homepage": "https://www.drupal.org/user/2652665"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
                 },
                 {
                     "name": "sardara",
@@ -2741,8 +2749,8 @@
                     "dev-8.x-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2+9-dev",
-                    "datestamp": "1703264322",
+                    "version": "8.x-1.3+1-dev",
+                    "datestamp": "1707336546",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -4849,6 +4857,10 @@
                     "homepage": "https://www.drupal.org/user/2775199"
                 },
                 {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                },
+                {
                     "name": "juanolalla",
                     "homepage": "https://www.drupal.org/user/913844"
                 }
@@ -6198,45 +6210,46 @@
         },
         {
             "name": "openeuropa/oe_content",
-            "version": "3.0.0-beta2",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_content.git",
-                "reference": "f34e5f0a2b906ee79c22494bf27ae0ca1c4343f9"
+                "reference": "1ffa7288770d77251ee98f7165db8120eff0f319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/f34e5f0a2b906ee79c22494bf27ae0ca1c4343f9",
-                "reference": "f34e5f0a2b906ee79c22494bf27ae0ca1c4343f9",
+                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/1ffa7288770d77251ee98f7165db8120eff0f319",
+                "reference": "1ffa7288770d77251ee98f7165db8120eff0f319",
                 "shasum": ""
             },
             "require": {
-                "cweagans/composer-patches": "~1.5",
-                "drupal/core": "^9.4 || ^10",
+                "cweagans/composer-patches": "^1.7 | ^2.0",
+                "drupal/core": "^10",
                 "drupal/datetime_range_timezone": "^1.0.0-alpha3",
                 "drupal/linkit": "^6.0.0-beta4",
                 "drupal/maxlength": "^2.0.1",
                 "openeuropa/oe_media": "^1.23.1",
                 "openeuropa/rdf_skos": "^1.0.0-alpha10",
-                "php": ">=8.0"
+                "php": ">=8.1"
             },
             "require-dev": {
+                "behat/mink-selenium2-driver": "1.6.0",
                 "composer/installers": "^1.5",
                 "drupal/address": "^1.11",
                 "drupal/ckeditor": "^1.0",
                 "drupal/composite_reference": "^2.2",
                 "drupal/config_devel": "^1.9",
-                "drupal/core-composer-scaffold": "^9.4 || ^10",
+                "drupal/core-composer-scaffold": "^10",
                 "drupal/datetime_testing": "^1.0",
                 "drupal/description_list_field": "^1.0.0-alpha5",
                 "drupal/drupal-extension": "^5.0",
-                "drupal/entity_browser": "^2.5",
+                "drupal/entity_browser": "^2.10",
                 "drupal/entity_reference_revisions": "^1.8",
                 "drupal/field_group": "~3.2",
                 "drupal/inline_entity_form": "^1.0-rc15",
                 "drupal/token": "^1.10",
-                "drupal/typed_link": "^2.0.1",
-                "drush/drush": "^11.1",
+                "drupal/typed_link": "2.0.1",
+                "drush/drush": "^12.4",
                 "friends-of-behat/service-container-extension": "^1.0",
                 "mikey179/vfsstream": "^1.6",
                 "openeuropa/behat-transformation-context": "~0.2",
@@ -6244,7 +6257,7 @@
                 "openeuropa/oe_corporate_countries": "^2.0.0-alpha6",
                 "openeuropa/oe_corporate_site_info": "^1.0",
                 "openeuropa/oe_link_lists": "~0.21",
-                "openeuropa/oe_multilingual": "^1.13",
+                "openeuropa/oe_multilingual": "^1.18",
                 "openeuropa/oe_time_caching": "^1.5",
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
                 "openeuropa/task-runner-ensure-behat-batching": "^1.0",
@@ -6271,13 +6284,13 @@
                 },
                 "patches": {
                     "drupal/core": {
-                        "https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2022-07-26/2230909-269.patch"
+                        "Drupal 10.2.x only - see oe_content/README.md for 10.1.x - https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2023-12-21/2230909-309.patch"
                     },
                     "drupal/field_group": {
                         "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
                     },
                     "drupal/entity_browser": {
-                        "https://www.drupal.org/project/entity_browser/issues/2851580": "https://www.drupal.org/files/issues/2023-04-04/2851580-109.patch"
+                        "https://www.drupal.org/project/entity_browser/issues/2851580": "https://www.drupal.org/files/issues/2023-12-12/2851580-117.patch"
                     }
                 },
                 "drupal-scaffold": {
@@ -6286,7 +6299,8 @@
                     }
                 },
                 "_readme": [
-                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits."
+                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits.",
+                    "Explicit requirement of behat/mink-selenium2-driver v1.6.0 to ensure dragTo() keeps working in tests."
                 ]
             },
             "autoload": {
@@ -6301,9 +6315,9 @@
             "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_content/issues",
-                "source": "https://github.com/openeuropa/oe_content/tree/3.0.0-beta2"
+                "source": "https://github.com/openeuropa/oe_content/tree/3.1.1"
             },
-            "time": "2023-09-18T08:59:16+00:00"
+            "time": "2024-02-09T15:51:21+00:00"
         },
         {
             "name": "openeuropa/oe_content_extra",

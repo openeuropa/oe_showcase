@@ -104,8 +104,7 @@
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch",
                 "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2023-03-03/3300404-28-map-field-failing-php-81-combined.patch",
-                "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch",
-                "Simple decimals fail to pass validation @see https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2023-12-21/2230909-309.patch"
+                "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch"
             },
             "drupal/roleassign": {
                 "Bug in RoleAssignUserBulkForm, roles not shown": "https://www.drupal.org/files/issues/2023-06-16/3367110-2.patch"
@@ -115,13 +114,6 @@
             },
             "drupal/facets_form": {
                 "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
-            }
-        },
-        "patches-ignore": {
-            "openeuropa/oe_content": {
-                "drupal/core": {
-                    "https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2022-07-26/2230909-269.patch"
-                }
             }
         },
         "patchLevel": {
