@@ -26,6 +26,16 @@ trait SlimSelectTrait {
   protected function selectSlimOption(NodeElement $field, string $option, bool $multiple = FALSE): void {
     $slim_select = $field->getParent()->find('css', 'div.ss-main');
     if (!$multiple) {
+      // Elements with no size are not interactable and can't be clicked, so we
+      // need to modify delete spans inside the select and make them use space.
+      // By default this elements have an 'x' as content with no size.
+      $script = <<<JS
+        var closeElements = document.querySelectorAll(".ss-main .ss-values .ss-value-delete");
+        for (var i = 0, max = closeElements.length; i < max; i++) {
+          closeElements[i].style.fontSize = '10px';
+        }
+      JS;
+      $this->getSession()->executeScript($script);
       $items = $slim_select->findAll('css', '.ss-values .ss-value-delete');
       foreach ($items as $item) {
         $item->click();
@@ -36,6 +46,7 @@ trait SlimSelectTrait {
     // \Drupal\FunctionalJavascriptTests\JSWebAssert::waitForElementVisible()
     // as it allows to pass a different container than page.
     $page = $this->getSession()->getPage();
+
     $fn_is_visible = static function (string $selector, $locator, ElementInterface $container = NULL) use ($page) {
       $container ??= $page;
       return $page->waitFor(10, static function () use ($selector, $locator, $container) {

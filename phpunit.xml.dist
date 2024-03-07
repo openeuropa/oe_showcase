@@ -8,7 +8,7 @@
     <env name="SIMPLETEST_DB" value="mysql://${drupal.database.user}:${drupal.database.password}@${drupal.database.host}:${drupal.database.port}/${drupal.database.name}"/>
     <env name="SIMPLETEST_SPARQL_DB" value="sparql://${drupal.sparql.host}:${drupal.sparql.port}/?module=sparql_entity_storage"/>
     <env name="DTT_BASE_URL" value="${drupal.base_url}"/>
-    <env name="DTT_MINK_DRIVER_ARGS" value='["${selenium.browser}", null, "${selenium.host}:${selenium.port}/wd/hub"]'/>
+    <env name="DTT_MINK_DRIVER_ARGS" value='["${selenium.browser}", {"browserName":"chrome","chromeOptions":{"w3c": false, "args":["--no-sandbox", "--start-maximized", "--disable-gpu", "--window-size=1440,900", "--disable-dev-shm-usage", "--disable-setuid-sandbox", "--disable-web-security", "--DNS-prefetch-disable", "--disable-translate", "--ignore-certificate-errors", "--test-type", "--disable-extensions", "--incognito", "--disable-infobars"]}}, "${selenium.host}:${selenium.port}/wd/hub"]'/>
     <env name="SYMFONY_DEPRECATIONS_HELPER" value='disabled'/>
   </php>
   <testsuites>

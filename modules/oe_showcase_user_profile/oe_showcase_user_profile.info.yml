@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase User Profile
 type: module
 description: Provides a demo of the OpenEuropa Showcase User Profile feature.
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 package: OpenEuropa Showcase
 dependencies:
   - drupal:address

@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Navigation
 type: module
 description: Demo navigation feature based on oe_whitelabel theme and easybreadcrumbs.
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 package: OpenEuropa Showcase
 dependencies:
   - drupal:views
