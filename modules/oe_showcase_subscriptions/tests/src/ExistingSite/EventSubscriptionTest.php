@@ -332,12 +332,13 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
   protected function waitUntilMailsAreCollected(int $count): void {
     $state = \Drupal::state();
     // We don't need the page at all, but we reuse the wait code.
-    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state) {
+    $mail_count = 0;
+    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state, &$mail_count) {
       $state->resetCache();
       $mail_count = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
-      return $mail_count === $count ? $mail_count : FALSE;
+      return $mail_count === $count;
     });
-    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, (int) $result));
+    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, $mail_count));
   }
 
 }
