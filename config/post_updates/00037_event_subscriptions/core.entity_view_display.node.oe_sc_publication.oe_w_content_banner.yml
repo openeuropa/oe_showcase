@@ -44,9 +44,9 @@ mode: oe_w_content_banner
 content:
   field_publication_type:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 2
     region: content

@@ -853,7 +853,13 @@ function oe_showcase_post_update_00037(): void {
     'core.entity_view_display.node.oe_sc_event.full',
     'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_event.teaser',
+    'core.entity_view_display.node.oe_sc_publication.oe_w_content_banner',
     'symfony_mailer.mailer_policy._',
     'user.role.anonymous_subscriber',
   ]);
+
+  $role = Role::load(Role::AUTHENTICATED_ID);
+  $role->grantPermission('flag subscribe_node')
+    ->grantPermission('unflag subscribe_node')
+    ->save();
 }
