@@ -13,9 +13,10 @@ use Drupal\symfony_mailer_test\MailerTestService as SymfonyMailerTestService;
  *
  * The differences are:
  * - mails are collected instantly, and not at service destruction time.
- * - no errors are thrown if emails are not collected. For tests that run on
+ * - no errors are thrown if mails are not consumed. For tests that run on
  *   existing databases, this will cause the next instantiation of the service
  *   to throw an error, and often this happens in the next run.
+ * - collected mails are always appended. Reset happens only on consumption.
  */
 class MailerTestService extends SymfonyMailerTestService {
 

@@ -134,8 +134,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward one day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    // The collection of emails is executed at the end of the request. If we
-    // fetch the emails too early, we won't find any.
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 2 has been updated.'], [
       [
@@ -144,6 +142,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
       ],
     ]);
 
+    // Set the anonymous user to receive weekly digests.
     $this->drupalGet('/user/subscriptions');
     $assert_session = $this->assertSession();
     $assert_session->fieldExists('Your e-mail')->setValue('test_anon@example.com');
@@ -156,6 +155,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->buttonExists('Save')->press();
     $assert_session->statusMessageContains('Your preferences have been saved.');
 
+    // Do another change to the event.
     $this->drupalLogin($editor);
     $this->drupalGet($event->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Event update 3');
@@ -166,8 +166,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward one day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    // The collection of emails is executed at the end of the request. If we
-    // fetch the emails too early, we won't find any.
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 3 has been updated.'], [
       [
@@ -179,8 +177,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward a week.
     \Drupal::time()->setTime(strtotime('+1 week +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    // The collection of emails is executed at the end of the request. If we
-    // fetch the emails too early, we won't find any.
     $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 3 has been updated.'], [
@@ -220,8 +216,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward another day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    // The collection of emails is executed at the end of the request. If we
-    // fetch the emails too early, we won't find any.
     $this->waitUntilMailsAreCollected(1);
     // The mail should contain information about the updates of both nodes.
     $this->assertMail(
@@ -244,8 +238,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward another week.
     \Drupal::time()->setTime(strtotime('+1 week +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    // The collection of emails is executed at the end of the request. If we
-    // fetch the emails too early, we won't find any.
     $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 4 has been updated.'], [
