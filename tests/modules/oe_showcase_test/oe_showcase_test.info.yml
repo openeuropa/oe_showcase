@@ -1,0 +1,12 @@
+name: OpenEuropa Showcase test module
+description: Contains functionalities needed for tests, and test dependencies.
+package: Testing
+type: module
+core_version_requirement: ^10
+
+dependencies:
+  - datetime_testing:datetime_testing
+  - drupal:js_testing_ajax_request_test
+  - media_avportal:media_avportal_mock
+  - oe_media:oe_media_oembed_mock
+  - symfony_mailer:symfony_mailer_test

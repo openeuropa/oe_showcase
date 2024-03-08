@@ -137,7 +137,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->cronRun();
     // The collection of emails is executed at the end of the request. If we
     // fetch the emails too early, we won't find any.
-    sleep(1);
+    $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 2 has been updated.'], [
       [
         'url' => $event->toUrl()->setAbsolute()->toString(),
@@ -169,7 +169,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->cronRun();
     // The collection of emails is executed at the end of the request. If we
     // fetch the emails too early, we won't find any.
-    sleep(1);
+    $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 3 has been updated.'], [
       [
         'url' => $event->toUrl()->setAbsolute()->toString(),
@@ -182,7 +182,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->cronRun();
     // The collection of emails is executed at the end of the request. If we
     // fetch the emails too early, we won't find any.
-    sleep(1);
+    $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 3 has been updated.'], [
       [
@@ -223,7 +223,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->cronRun();
     // The collection of emails is executed at the end of the request. If we
     // fetch the emails too early, we won't find any.
-    sleep(1);
+    $this->waitUntilMailsAreCollected(1);
     // The mail should contain information about the updates of both nodes.
     $this->assertMail(
       $authenticated_user->getEmail(),
@@ -247,7 +247,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->cronRun();
     // The collection of emails is executed at the end of the request. If we
     // fetch the emails too early, we won't find any.
-    sleep(1);
+    $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 4 has been updated.'], [
       [
@@ -316,7 +316,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    * @param bool $last_mail
    *   If the current mail is the last one expected to be found in the queue.
    */
-  public function assertMail(string $expected_to, array $expected_texts, array $expected_links, bool $last_mail = TRUE): void {
+  protected function assertMail(string $expected_to, array $expected_texts, array $expected_links, bool $last_mail = TRUE): void {
     $mail = $this->readMail($last_mail);
     $this->assertTo($expected_to);
     $crawler = new Crawler($mail->getHtmlBody());
@@ -329,6 +329,23 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
       $this->assertEquals($data['url'], $links->eq($delta)->attr('href'), sprintf('Url at delta %s did not match.', $delta));
       $this->assertEquals($data['text'], $links->eq($delta)->text(), sprintf('Text at delta %s did not match.', $delta));
     }
+  }
+
+  /**
+   * Waits for mails to be collected.
+   *
+   * @param int $count
+   *   The number of mails to collect.
+   */
+  protected function waitUntilMailsAreCollected(int $count): void {
+    $state = \Drupal::state();
+    // We don't need the page at all, but we reuse the wait code.
+    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state) {
+      $state->resetCache();
+      $mail_count = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
+      return $mail_count === $count ? $mail_count : FALSE;
+    });
+    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, (int) $result));
   }
 
 }

@@ -112,7 +112,7 @@ pipeline:
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - ./vendor/bin/run ci:site-setup
-      - ./vendor/bin/drush en -y media_avportal_mock oe_media_oembed_mock symfony_mailer_test datetime_testing js_testing_ajax_request_test
+      - ./vendor/bin/drush en -y oe_showcase_test
       - ./vendor/bin/phpunit
 
 matrix:
