@@ -162,6 +162,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 3 has been updated.');
     $this->drupalLogout();
+    $this->noMail();
 
     // Move the time forward one day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
