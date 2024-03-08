@@ -51,7 +51,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Clear the last execution time for digests.
     $state->delete('message_digest:daily_last_run');
     $state->delete('message_digest:weekly_last_run');
-    \Drupal::time()->resetTime();
   }
 
   /**
