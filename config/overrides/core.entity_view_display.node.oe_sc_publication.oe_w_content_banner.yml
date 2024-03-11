@@ -14,8 +14,29 @@ dependencies:
     - node.type.oe_sc_publication
   module:
     - datetime
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_action_bar:
+      children: {  }
+      label: 'Action bar'
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 id: node.oe_sc_publication.oe_w_content_banner
 targetEntityType: node
 bundle: oe_sc_publication
@@ -48,6 +69,7 @@ content:
 hidden:
   body: true
   field_publication_authors: true
+  flag_email_node: true
   langcode: true
   links: true
   oe_content_content_owner: true

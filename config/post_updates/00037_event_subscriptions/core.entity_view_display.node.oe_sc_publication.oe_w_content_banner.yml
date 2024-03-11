@@ -3,29 +3,28 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.oe_w_content_banner
-    - field.field.node.oe_sc_event.body
-    - field.field.node.oe_sc_event.field_event_type
-    - field.field.node.oe_sc_event.oe_documents
-    - field.field.node.oe_sc_event.oe_featured_media
-    - field.field.node.oe_sc_event.oe_sc_event_dates
-    - field.field.node.oe_sc_event.oe_sc_event_location
-    - field.field.node.oe_sc_event.oe_sc_event_registration_url
-    - field.field.node.oe_sc_event.oe_summary
-    - node.type.oe_sc_event
+    - field.field.node.oe_sc_publication.body
+    - field.field.node.oe_sc_publication.field_publication_authors
+    - field.field.node.oe_sc_publication.field_publication_type
+    - field.field.node.oe_sc_publication.oe_featured_media
+    - field.field.node.oe_sc_publication.oe_publication_date
+    - field.field.node.oe_sc_publication.oe_reference_code
+    - field.field.node.oe_sc_publication.oe_sc_publication_document
+    - field.field.node.oe_sc_publication.oe_summary
+    - node.type.oe_sc_publication
   module:
+    - datetime
     - field_group
     - text
     - user
 third_party_settings:
   field_group:
     group_action_bar:
-      children:
-        - flag_subscribe_node
-        - 'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node'
+      children: {  }
       label: 'Action bar'
       parent_name: ''
       region: content
-      weight: 2
+      weight: 3
       format_type: html_element
       format_settings:
         classes: ''
@@ -38,28 +37,27 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-id: node.oe_sc_event.oe_w_content_banner
+id: node.oe_sc_publication.oe_w_content_banner
 targetEntityType: node
-bundle: oe_sc_event
+bundle: oe_sc_publication
 mode: oe_w_content_banner
 content:
-  'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node':
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_event_type:
+  field_publication_type:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  flag_subscribe_node:
-    settings: {  }
+      link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  oe_publication_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: oe_whitelabel_publication_date
+    third_party_settings: {  }
+    weight: 1
     region: content
   oe_summary:
     type: text_default
@@ -70,6 +68,7 @@ content:
     region: content
 hidden:
   body: true
+  field_publication_authors: true
   flag_email_node: true
   langcode: true
   links: true
@@ -77,9 +76,7 @@ hidden:
   oe_content_legacy_link: true
   oe_content_navigation_title: true
   oe_content_short_title: true
-  oe_documents: true
   oe_featured_media: true
-  oe_sc_event_dates: true
-  oe_sc_event_location: true
-  oe_sc_event_registration_url: true
+  oe_reference_code: true
+  oe_sc_publication_document: true
   search_api_excerpt: true

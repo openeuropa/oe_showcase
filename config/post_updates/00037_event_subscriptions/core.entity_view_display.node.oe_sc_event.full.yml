@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
     - field.field.node.oe_sc_event.oe_documents
@@ -21,67 +21,60 @@ dependencies:
 third_party_settings:
   oe_oembed:
     embeddable: false
-id: node.oe_sc_event.teaser
+id: node.oe_sc_event.full
 targetEntityType: node
 bundle: oe_sc_event
-mode: teaser
+mode: full
 content:
-  field_event_type:
-    type: entity_reference_label
-    label: hidden
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  oe_documents:
+    type: entity_reference_entity_view
+    label: above
     settings:
-      link: false
+      view_mode: default
+      link: true
     third_party_settings: {  }
     weight: 3
     region: content
   oe_sc_event_dates:
     type: daterange_compact
-    label: hidden
+    label: inline
     settings:
-      daterange_compact_format: oe_whitelabel_date_only_short_month
+      daterange_compact_format: oe_whitelabel_date_time_long
     third_party_settings: {  }
     weight: 1
     region: content
   oe_sc_event_location:
     type: oe_whitelabel_helper_address_inline
-    label: hidden
+    label: inline
     settings:
       delimiter: ', '
-      properties:
-        country: true
-        locality: true
-        givenName: false
-        additionalName: false
-        familyName: false
-        organization: false
-        addressLine1: false
-        addressLine2: false
-        postalCode: false
-        sortingCode: false
-        dependentLocality: false
-        administrativeArea: false
+      properties: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  oe_summary:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
-  body: true
   'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node': true
+  field_event_type: true
   flag_email_node: true
   flag_subscribe_node: true
   langcode: true
-  links: true
   oe_content_content_owner: true
   oe_content_legacy_link: true
   oe_content_navigation_title: true
   oe_content_short_title: true
-  oe_documents: true
   oe_featured_media: true
   oe_sc_event_registration_url: true
+  oe_summary: true
   search_api_excerpt: true

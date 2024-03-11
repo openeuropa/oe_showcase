@@ -114,7 +114,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalGet('/search');
 
     // Assert that filter facets exist in the sidebar.
-    $filter_form = $assert_session->elementExists('css', '#bcl-offcanvas');
+    $filter_form = $assert_session->elementExists('css', 'div#block-oe-showcase-theme-facets-form.bcl-offcanvas');
     // Project filters.
     $project_status = $assert_session->fieldExists('Project status', $filter_form);
     $project_start_date = $assert_session->elementExists('css', 'fieldset[data-drupal-facets-form-facet="oe_project_dates"]', $filter_form);

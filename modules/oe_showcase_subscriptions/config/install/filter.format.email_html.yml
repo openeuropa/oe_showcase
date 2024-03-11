@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Email HTML'
+format: email_html
+weight: 10
+filters: {  }

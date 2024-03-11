@@ -24,6 +24,7 @@ function oe_showcase_install_tasks_alter(&$tasks, $install_state): void {
 
   $tasks['oe_showcase_disable_default_views'] = [];
   $tasks['oe_showcase_import_overrides'] = [];
+  $tasks['oe_showcase_delete_unused_flags'] = [];
 }
 
 /**
@@ -75,6 +76,31 @@ function oe_showcase_import_overrides(array &$install_state): void {
     'core.entity_view_display.node.oe_sc_publication.teaser',
   ];
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/overrides', $configs);
+}
+
+/**
+ * Deletes all the unused flags.
+ *
+ * This is implemented as task instead of hook_install() of the
+ * oe_showcase_subscriptions module as not all the flags are created before
+ * the module is installed.
+ * For websites where config is exported, this is not necessary.
+ *
+ * @param array $install_state
+ *   An array of information about the current installation state.
+ */
+function oe_showcase_delete_unused_flags(array &$install_state): void {
+  // Delete unneeded flags.
+  $flag_ids = [
+    'email_term',
+    'email_user',
+    'subscribe_term',
+    'subscribe_user',
+  ];
+  $storage = \Drupal::entityTypeManager()->getStorage('flag');
+  foreach ($flag_ids as $id) {
+    $storage->load($id)->delete();
+  }
 }
 
 /**

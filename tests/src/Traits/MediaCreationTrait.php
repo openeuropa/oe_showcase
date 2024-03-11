@@ -4,9 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\Tests\oe_showcase\Traits;
 
-use Drupal\Component\Utility\NestedArray;
-use Drupal\file\Entity\File;
 use Drupal\media\MediaInterface;
+use Drupal\Tests\oe_whitelabel\Traits\MediaCreationTrait as WhitelabelMediaCreationTrait;
 use weitzman\DrupalTestTraits\Entity\MediaCreationTrait as WeitzmanMediaCreationTrait;
 
 /**
@@ -18,6 +17,11 @@ use weitzman\DrupalTestTraits\Entity\MediaCreationTrait as WeitzmanMediaCreation
 trait MediaCreationTrait {
 
   use WeitzmanMediaCreationTrait;
+  use WhitelabelMediaCreationTrait {
+    WeitzmanMediaCreationTrait::createMedia insteadof WhitelabelMediaCreationTrait;
+    createDocumentMedia as whitelabelCreateDocumentMedia;
+    createImageMedia as whitelabelCreateImageMedia;
+  }
 
   /**
    * Creates one media for each existing media bundle.
@@ -33,90 +37,6 @@ trait MediaCreationTrait {
     }
 
     return $media;
-  }
-
-  /**
-   * Creates a media of a specific bundle ready to use in tests.
-   *
-   * @param string $bundle
-   *   The bundle of the media.
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
-   */
-  protected function createMediaByBundle(string $bundle, array $values = []): MediaInterface {
-    $callable = [
-      static::class,
-      'create' . strtr(ucwords($bundle, '_'), ['_' => '']) . 'Media',
-    ];
-
-    if (!is_callable($callable)) {
-      throw new \Exception(sprintf('No methods found to create medias of bundle "%s".', $bundle));
-    }
-
-    /** @var \Drupal\media\MediaInterface $media */
-    $media = call_user_func($callable, $values);
-
-    return $media;
-  }
-
-  /**
-   * Create a remote video media with default values, ready to use in tests.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
-   */
-  protected function createRemoteVideoMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'remote_video';
-    // Title is fetched automatically from remote, so it must stay empty.
-    $values['name'] = NULL;
-
-    return $this->createMedia($values + [
-      'oe_media_oembed_video' => 'https://www.youtube.com/watch?v=1-g73ty9v04',
-    ]);
-  }
-
-  /**
-   * Create an AV Portal photo media with default values, ready to use in tests.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
-   */
-  protected function createAvPortalPhotoMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'av_portal_photo';
-    // Title is fetched automatically from remote, so it must stay empty.
-    $values['name'] = NULL;
-
-    return $this->createMedia($values + [
-      'oe_media_avportal_photo' => 'P-038924/00-15',
-    ]);
-  }
-
-  /**
-   * Create an AV Portal video media with default values, ready to use in tests.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
-   */
-  protected function createAvPortalVideoMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'av_portal_video';
-    // Title is fetched automatically from remote, so it must stay empty.
-    $values['name'] = NULL;
-
-    return $this->createMedia($values + [
-      'oe_media_avportal_video' => 'I-163162',
-    ]);
   }
 
   /**
@@ -228,73 +148,23 @@ trait MediaCreationTrait {
   }
 
   /**
-   * Create a document media with default values, ready to use in tests.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
+   * {@inheritdoc}
    */
   protected function createDocumentMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'document';
+    $media = $this->whitelabelCreateDocumentMedia($values);
+    $this->markEntityForCleanup($media->get('oe_media_file')->first()->entity);
 
-    // If no file has been passed and the document type is local or not defined,
-    // we create a sample pdf file and create a local document.
-    if (!isset($values['oe_media_file']['target_id']) &&
-      (!isset($values['oe_media_file_type']) || $values['oe_media_file_type'] === 'local')
-    ) {
-      $pdf = File::create([
-        'uri' => \Drupal::service('file_system')->copy(
-          \Drupal::service('extension.list.module')->getPath('oe_media') . '/tests/fixtures/sample.pdf',
-          'public://sample.pdf'
-        ),
-      ]);
-      $pdf->save();
-      $this->markEntityForCleanup($pdf);
-
-      $values['oe_media_file_type'] = 'local';
-      $values['oe_media_file']['target_id'] = $pdf->id();
-    }
-
-    return $this->createMedia($values + [
-      'name' => 'Document title',
-    ]);
+    return $media;
   }
 
   /**
-   * Create an image media with default values, ready to use in tests.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
+   * {@inheritdoc}
    */
   protected function createImageMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'image';
+    $media = $this->whitelabelCreateImageMedia($values);
+    $this->markEntityForCleanup($media->get('oe_media_image')->first()->entity);
 
-    if (!isset($values['oe_media_image']['target_id'])) {
-      $image = File::create([
-        'uri' => \Drupal::service('file_system')->copy(
-          \Drupal::root() . '/core/misc/druplicon.png',
-          'public://image.png'
-        ),
-      ]);
-      $image->save();
-      $this->markEntityForCleanup($image);
-
-      $values = NestedArray::mergeDeep([
-        'oe_media_image' => [
-          'target_id' => $image->id(),
-          'alt' => 'Alt text',
-        ],
-      ], $values);
-    }
-
-    return $this->createMedia($values + [
-      'name' => 'Image title',
-    ]);
+    return $media;
   }
 
 }

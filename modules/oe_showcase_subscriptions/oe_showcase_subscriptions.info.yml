@@ -1,0 +1,23 @@
+name: OpenEuropa Showcase Subscriptions
+type: module
+description: Provides user subscriptions to content types.
+core_version_requirement: ^10
+package: OpenEuropa Showcase
+dependencies:
+  - drupal:filter
+  - oe_subscriptions:oe_subscriptions_anonymous
+  - oe_subscriptions:oe_subscriptions_digest
+
+config_devel:
+  install:
+    - core.entity_view_display.message.node_event_update.default
+    - core.entity_view_display.message.node_event_update.mail_body
+    - core.entity_view_display.message.node_event_update.mail_subject
+    - field.field.message.node_event_update.field_node
+    - field.storage.message.field_node
+    - filter.format.email_html
+    - message.template.node_event_update
+
+# List of config overrides. Config_devel doesn't export these entries automatically.
+# Copy them temporarily in the above list if you need to update them.
+#   - flag.flag.subscribe_node

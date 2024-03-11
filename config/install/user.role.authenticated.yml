@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - file
+    - flag
     - media
     - oe_contact_forms
     - oe_content_entity_organisation
@@ -23,8 +24,10 @@ permissions:
   - 'access user profiles'
   - 'cancel account'
   - 'delete own files'
+  - 'flag subscribe_node'
   - 'set own profile fields visibility'
   - 'set user profile anonymity'
+  - 'unflag subscribe_node'
   - 'use search_api_autocomplete for showcase_search'
   - 'view media'
   - 'view published oe_organisation'

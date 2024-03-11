@@ -11,3 +11,14 @@ dependencies:
   - oe_starter_content:oe_starter_content_event
   - oe_starter_content:oe_starter_content_publication
   - oe_starter_content:oe_starter_content_news
+
+config_devel:
+  install:
+    - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_publication.field_publication_authors
+    - field.field.node.oe_sc_publication.field_publication_type
+    - field.storage.node.field_event_type
+    - field.storage.node.field_publication_authors
+    - field.storage.node.field_publication_type
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.publication_type

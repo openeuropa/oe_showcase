@@ -92,7 +92,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Country of residence', 'http://publications.europa.eu/resource/authority/country/BEL');
     $page->pressButton('Send message');
 
-    $confirm_message = $page->find('css', 'div.alert.alert-success')->getText();
+    $confirm_message = $assert_session->elementExists('css', 'div.alert.alert-success')->getText();
     $this->assertStringContainsString('Alpaca', $confirm_message);
     $this->assertStringContainsString('345345345', $confirm_message);
     $this->assertStringContainsString('Belgium', $confirm_message);
