@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase Subscriptions
 type: module
 description: Provides user subscriptions to content types.
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 package: OpenEuropa Showcase
 dependencies:
   - drupal:filter

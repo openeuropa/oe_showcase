@@ -60,7 +60,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    */
   public function testEventNotifications(): void {
     $event = $this->createEventNode();
-    $this->markEntityForCleanup($event);
 
     // Subscribe with a registered user.
     $authenticated_user = $this->createUser();
@@ -203,9 +202,9 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->drupalLogin($editor);
     // Update the second event.
     $this->drupalGet($event_two->toUrl('edit-form'));
-    $assert_session->fieldExists('Title')->setValue('Second event - update 1');
+    $assert_session->fieldExists('Title')->setValue('Second event update 1');
     $assert_session->buttonExists('Save')->press();
-    $assert_session->pageTextContains('Event Second event - update 1 has been updated.');
+    $assert_session->pageTextContains('Event Second event update 1 has been updated.');
     // Update also the first event.
     $this->drupalGet($event->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Event update 4');
@@ -225,12 +224,12 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
       $authenticated_user->getEmail(),
       [
         'The event Event update 4 has been updated.',
-        'The event Second event - update 1 has been updated.',
+        'The event Second event update 1 has been updated.',
       ],
       [
         [
           'url' => $event_two->toUrl()->setAbsolute()->toString(),
-          'text' => 'Second event - update 1',
+          'text' => 'Second event update 1',
         ],
         [
           'url' => $event->toUrl()->setAbsolute()->toString(),
@@ -327,6 +326,9 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
   /**
    * Waits for mails to be collected.
+   *
+   * Mails are collected as soon as they are sent, but we want to make sure that
+   * the test didn't move forward before all the mails have been collected.
    *
    * @param int $count
    *   The number of mails to collect.
