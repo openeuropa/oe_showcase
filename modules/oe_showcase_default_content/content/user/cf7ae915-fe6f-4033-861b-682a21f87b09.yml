@@ -4,7 +4,6 @@ _meta:
   uuid: cf7ae915-fe6f-4033-861b-682a21f87b09
   default_langcode: en
   depends:
-    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
     'http://publications.europa.eu/resource/authority/country/CAN': skos_concept
     c607761f-6c3c-49d0-9cba-fc0ed748b2a5: file
     'http://publications.europa.eu/resource/authority/language/ENG': skos_concept
@@ -75,9 +74,6 @@ default:
   field_first_name:
     -
       value: Jarrett
-  field_gender:
-    -
-      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
   field_last_name:
     -
       value: Autumn

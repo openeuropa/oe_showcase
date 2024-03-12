@@ -4,7 +4,6 @@ _meta:
   uuid: 5de73784-3425-4baa-8814-b8bc58bc53de
   default_langcode: en
   depends:
-    'http://publications.europa.eu/resource/authority/human-sex/MALE': skos_concept
     'http://publications.europa.eu/resource/authority/country/DEU': skos_concept
     d27d25a7-91b2-4042-902d-9f99296d8702: file
     'http://publications.europa.eu/resource/authority/language/DEU': skos_concept
@@ -74,9 +73,6 @@ default:
   field_first_name:
     -
       value: Cristian
-  field_gender:
-    -
-      entity: 'http://publications.europa.eu/resource/authority/human-sex/MALE'
   field_last_name:
     -
       value: Eliza

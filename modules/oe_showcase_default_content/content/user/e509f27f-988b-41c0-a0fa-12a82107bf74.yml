@@ -4,7 +4,6 @@ _meta:
   uuid: e509f27f-988b-41c0-a0fa-12a82107bf74
   default_langcode: en
   depends:
-    'http://publications.europa.eu/resource/authority/human-sex/FEMALE': skos_concept
     'http://publications.europa.eu/resource/authority/country/FIN': skos_concept
     0bcf6fce-80fe-4634-bd38-b58cc7ff6cfb: file
     'http://publications.europa.eu/resource/authority/language/FIN': skos_concept
@@ -74,9 +73,6 @@ default:
   field_first_name:
     -
       value: Lisbet
-  field_gender:
-    -
-      entity: 'http://publications.europa.eu/resource/authority/human-sex/FEMALE'
   field_last_name:
     -
       value: Henri
