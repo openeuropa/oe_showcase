@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67c50b38a07f90dc9b683178c31724d8",
+    "content-hash": "326a2b10d051abd85da28a2ef2a5225b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2067,6 +2067,14 @@
                     "name": "Greg Boggs",
                     "homepage": "https://www.drupal.org/u/greg-boggs",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "diamondsea",
+                    "homepage": "https://www.drupal.org/user/430714"
+                },
+                {
+                    "name": "Greg Boggs",
+                    "homepage": "https://www.drupal.org/user/153069"
                 },
                 {
                     "name": "hmartens",
@@ -7822,8 +7830,14 @@
             "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openeuropa/oe_subscriptions",
+                "url": "https://github.com/openeuropa/oe_subscriptions.git",
                 "reference": "81f01899e109f908ba2aab2a39ff902bda207ba6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openeuropa/oe_subscriptions/zipball/81f01899e109f908ba2aab2a39ff902bda207ba6",
+                "reference": "81f01899e109f908ba2aab2a39ff902bda207ba6",
+                "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
@@ -7884,25 +7898,15 @@
                     "Drupal\\oe_subscriptions\\": "./src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Drupal\\Tests\\oe_subscriptions\\": "./tests/src",
-                    "Drupal\\Tests\\oe_subscriptions_anonymous\\": "./modules/oe_subscriptions_anonymous/tests/src/",
-                    "Drupal\\Tests\\oe_subscriptions_digest\\": "./modules/oe_subscriptions_digest/tests/src/"
-                }
-            },
-            "scripts": {
-                "post-install-cmd": [
-                    "./vendor/bin/run drupal:site-setup"
-                ],
-                "post-update-cmd": [
-                    "./vendor/bin/run drupal:site-setup"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "EUPL-1.2"
             ],
             "description": "OpenEuropa Drupal module to handle subscriptions.",
+            "support": {
+                "issues": "https://github.com/openeuropa/oe_subscriptions/issues",
+                "source": "https://github.com/openeuropa/oe_subscriptions/tree/1.0.0-alpha1"
+            },
             "time": "2024-03-12T17:03:32+00:00"
         },
         {
@@ -20500,6 +20504,7 @@
         "drupal/description_list_field": 15,
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
+        "openeuropa/oe_subscriptions": 15,
         "drupal/datetime_testing": 10
     },
     "prefer-stable": true,
