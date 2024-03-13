@@ -1,10 +1,29 @@
 # Change Log
 
+## [1.5.0](https://github.com/openeuropa/oe_showcase/tree/1.5.0) (2024-03-13)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.4.0...1.5.0)
+
+**Merged pull requests:**
+
+- OEL-2227: Update modules to prepare for release. [\#241](https://github.com/openeuropa/oe_showcase/pull/241) ([brummbar](https://github.com/brummbar))
+- OEL-2616: The selection of gender is insulting for users who could not be identifying as CIS female/male. [\#240](https://github.com/openeuropa/oe_showcase/pull/240) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2617: Changed label from Title to Name in person list page. [\#239](https://github.com/openeuropa/oe_showcase/pull/239) ([tibi2303](https://github.com/tibi2303))
+- OEL-2592: Changed form filter submit label. [\#238](https://github.com/openeuropa/oe_showcase/pull/238) ([tibi2303](https://github.com/tibi2303))
+- OEL-2794: Update components to run on Drupal 10.2.x  [\#237](https://github.com/openeuropa/oe_showcase/pull/237) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2766: Allow users to subscribe to events. [\#236](https://github.com/openeuropa/oe_showcase/pull/236) ([brummbar](https://github.com/brummbar))
+- OEL-2755: Disable the /node page. [\#235](https://github.com/openeuropa/oe_showcase/pull/235) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2598: Add optional categories to news items. [\#232](https://github.com/openeuropa/oe_showcase/pull/232) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2635: List page url alias pattern. [\#231](https://github.com/openeuropa/oe_showcase/pull/231) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2759: Enable media mock module to prevent failures. [\#230](https://github.com/openeuropa/oe_showcase/pull/230) ([brummbar](https://github.com/brummbar))
+- OEL-2555: Prevent timeline item field from losing format. [\#229](https://github.com/openeuropa/oe_showcase/pull/229) ([brummbar](https://github.com/brummbar))
+- OEL-2541: Allow to search all content types in general search. [\#228](https://github.com/openeuropa/oe_showcase/pull/228) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+
 ## [1.4.0](https://github.com/openeuropa/oe_showcase/tree/1.4.0) (2023-10-16)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.3.1...1.4.0)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.4.0. [\#227](https://github.com/openeuropa/oe_showcase/pull/227) ([brummbar](https://github.com/brummbar))
 - OEL-2670: Update all dependencies. [\#226](https://github.com/openeuropa/oe_showcase/pull/226) ([brummbar](https://github.com/brummbar))
 
 ## [1.3.1](https://github.com/openeuropa/oe_showcase/tree/1.3.1) (2023-10-13)
