@@ -50,7 +50,7 @@
         "openeuropa/oe_dashboard_agent": "^1.0.0",
         "openeuropa/oe_list_pages": "^1.0",
         "openeuropa/oe_multilingual": "^1.14",
-        "openeuropa/oe_oembed": "^0.7.0",
+        "openeuropa/oe_oembed": "^0.10",
         "openeuropa/oe_paragraphs": "^1.21",
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
