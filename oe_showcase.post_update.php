@@ -863,3 +863,13 @@ function oe_showcase_post_update_00037(): void {
     ->grantPermission('unflag subscribe_node')
     ->save();
 }
+
+/**
+ * Update the Media AV Portal URIs to include HTTPS.
+ */
+function oe_showcase_post_update_00038(): void {
+  $config = \Drupal::configFactory()->getEditable('media_avportal.settings');
+  $config->set('iframe_base_uri', 'https://ec.europa.eu/avservices/play.cfm');
+  $config->set('photos_base_uri', 'https://ec.europa.eu/avservices/avs/files/video6/repository/prod/photo/store/');
+  $config->save();
+}
