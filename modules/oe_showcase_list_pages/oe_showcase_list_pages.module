@@ -5,7 +5,7 @@
  * OE Showcase list pages module.
  */
 
-declare(strict_types =  1);
+declare(strict_types=1);
 
 /**
  * Implements hook_form_FORM_ID_alter().

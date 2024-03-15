@@ -5,7 +5,7 @@
  * Contains post update functions.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * Empty post update method.

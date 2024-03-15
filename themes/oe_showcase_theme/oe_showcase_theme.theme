@@ -5,7 +5,7 @@
  * Functions to support theming in the OpenEuropa Showcase theme.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
