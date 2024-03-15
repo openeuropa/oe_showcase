@@ -59,16 +59,16 @@ abstract class ShowcaseExistingSiteTestBase extends ExistingSiteBase {
     $this->assertStringContainsString('Share this page', $main_content->getText());
     $social_share_config = [
       'service' => 'share',
-      'popup' => FALSE,
-      'selection' => TRUE,
-      'to' => [
-        'more',
+      'version' => '2.0',
+      'networks' => [
         'twitter',
         'facebook',
         'linkedin',
-        'e-mail',
+        'email',
+        'more',
       ],
       'stats' => TRUE,
+      'selection' => TRUE,
     ];
     $this->assertStringContainsString(Json::encode($social_share_config), $main_content->getHtml());
   }

@@ -142,7 +142,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert that all the media are rendered.
     $assert_session->elementExists('css', sprintf('img.img-fluid[src*="/styles/wide/public/%s"]', $image_filename), $news_body);
     $assert_session->elementExists('css', 'img[src*="/styles/wide/avportal/P-038924/00-15.jpg"]', $news_body);
-    $assert_session->elementExists('css', 'iframe[src^="//ec.europa.eu/avservices/play.cfm?ref=I-163162"]', $news_body);
+    $assert_session->elementExists('css', 'iframe[src^="https://ec.europa.eu/avservices/play.cfm?ref=I-163162"]', $news_body);
     $assert_session->elementExists('css', 'iframe[src*="/media/oembed?url=https%3A//www.youtube.com/watch%3Fv%3D1-g73ty9v04"]', $news_body);
   }
 
