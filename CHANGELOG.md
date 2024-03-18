@@ -1,10 +1,18 @@
 # Change Log
 
+## [1.6.0](https://github.com/openeuropa/oe_showcase/tree/1.6.0) (2024-03-18)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.5.0...1.6.0)
+
+**Merged pull requests:**
+
+- OEL-2861: Update oe\_oembed to latest minor. [\#243](https://github.com/openeuropa/oe_showcase/pull/243) ([brummbar](https://github.com/brummbar))
+
 ## [1.5.0](https://github.com/openeuropa/oe_showcase/tree/1.5.0) (2024-03-13)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.4.0...1.5.0)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.5.0. [\#242](https://github.com/openeuropa/oe_showcase/pull/242) ([brummbar](https://github.com/brummbar))
 - OEL-2227: Update modules to prepare for release. [\#241](https://github.com/openeuropa/oe_showcase/pull/241) ([brummbar](https://github.com/brummbar))
 - OEL-2616: The selection of gender is insulting for users who could not be identifying as CIS female/male. [\#240](https://github.com/openeuropa/oe_showcase/pull/240) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-2617: Changed label from Title to Name in person list page. [\#239](https://github.com/openeuropa/oe_showcase/pull/239) ([tibi2303](https://github.com/tibi2303))
