@@ -5,7 +5,7 @@
  * OpenEuropa Showcase User profile post updates.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Drupal\field\Entity\FieldConfig;
 use Drupal\oe_bootstrap_theme\ConfigImporter;

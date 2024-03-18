@@ -5,7 +5,7 @@
  * OE Showcase Glossary module.
  */
 
-declare(strict_types =  1);
+declare(strict_types=1);
 
 use Drupal\oe_showcase_glossary\GlossaryViewHooks;
 use Drupal\views\Plugin\views\query\QueryPluginBase;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\Tests\oe_showcase_page\ExistingSite;
 
@@ -480,7 +480,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
             'label' => 'Link 2',
             'path' => 'https://www.example2.com',
           ],
-          'image' => '<img src="//ec.europa.eu/avservices/avs/files/video6/repository/prod/photo/store/store2/1/P039321-615406.jpg" alt="Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania" class="d-block w-100">',
+          'image' => '<img src="https://ec.europa.eu/avservices/avs/files/video6/repository/prod/photo/store/store2/1/P039321-615406.jpg" alt="Visit by Federica Mogherini, Vice-President of the EC, and Johannes Hahn, Member of the EC, to Romania" class="d-block w-100">',
         ],
       ],
     ];

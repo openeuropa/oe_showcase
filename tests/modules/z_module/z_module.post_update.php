@@ -5,7 +5,7 @@
  * EWCMS Updates post updates.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * Empty post update method.
