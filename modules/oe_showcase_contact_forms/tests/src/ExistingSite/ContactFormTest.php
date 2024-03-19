@@ -165,7 +165,6 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
       '123123123',
       'Llama',
     ], $email);
-
   }
 
   /**
