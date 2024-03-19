@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * OE Showcase Contact forms module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\symfony_mailer\Address;
+use Drupal\symfony_mailer\EmailInterface;
+
+/**
+ * Implements hook_mailer_PHASE().
+ */
+function oe_showcase_contact_forms_mailer_build(EmailInterface $email) {
+  if ($email->getType() !== 'contact' || empty($email->getTo())) {
+    return;
+  }
+  // This function removes extra spaces in recipient adresses added by contact
+  // module in mails sent by symfony_mailer.
+  // @see oe_showcase/build/core/modules/contact/src/MailHandler.php
+  $adresses = [];
+  foreach ($email->getTo() as $address) {
+    $adresses[] = new Address(trim($address->getEmail()), $address->getDisplayName(), $address->getLangcode(), $address->getAccount());
+  }
+  $email->setTo($adresses);
+}

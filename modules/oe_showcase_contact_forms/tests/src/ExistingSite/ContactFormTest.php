@@ -54,6 +54,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('user');
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
+    $this->markEntityTypeForCleanup('contact_message');
 
     // Disable the flood limits to avoid submit failure when run multiple times.
     $contact_settings = $this->container->get('config.factory')->getEditable('contact.settings');
