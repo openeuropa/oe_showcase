@@ -135,7 +135,6 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $email = $this->readMail();
     $this->assertTo($user->getEmail());
     $this->assertMailTexts(["{$user->label()} ($user_url) sent a message using the contact form at $page_url."], $email);
-
   }
 
   /**
