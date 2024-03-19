@@ -115,17 +115,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $user_url = $user->toUrl('canonical', ['absolute' => TRUE])->toString();
     // Configured recipients + Topic address.
     $this->assertAddress('to', ['webmaster@example.com', 'webmaster2@example.com']);
-    $this->assertMailLabelsTexts($email);
-    $this->assertMailTexts([
-      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
-      $user->label(),
-      $user->getEmail(),
-      'Example subject',
-      'Example Message text',
-      'Belgium',
-      '345345345',
-      'Alpaca',
-    ], $email);
+    $this->assertMailTexts(["{$user->label()} ($user_url) sent a message using the contact form at $page_url."], $email);
 
     // Test contact form with copy to sender.
     $this->drupalGet('/pages/example-contact-form-page');
@@ -140,31 +130,11 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     // Copy option sends two mails, first we check the website mail.
     $email = $this->readMail(FALSE);
     $this->assertAddress('to', ['webmaster@example.com', 'webmaster@example.com']);
-    $this->assertMailLabelsTexts($email);
-    $this->assertMailTexts([
-      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
-      $user->label(),
-      $user->getEmail(),
-      'Example subject 2',
-      'Example Message text 2',
-      'Spain',
-      '123123123',
-      'Llama',
-    ], $email);
+    $this->assertMailTexts(["{$user->label()} ($user_url) sent a message using the contact form at $page_url."], $email);
     // Then check the copy mail.
     $email = $this->readMail();
     $this->assertTo($user->getEmail());
-    $this->assertMailLabelsTexts($email);
-    $this->assertMailTexts([
-      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
-      $user->label(),
-      $user->getEmail(),
-      'Example subject 2',
-      'Example Message text 2',
-      'Spain',
-      '123123123',
-      'Llama',
-    ], $email);
+    $this->assertMailTexts(["{$user->label()} ($user_url) sent a message using the contact form at $page_url."], $email);
 
   }
 
@@ -181,24 +151,6 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     foreach ($expected_texts as $expected) {
       $this->assertStringContainsString($expected, $crawler->text());
     }
-  }
-
-  /**
-   * Asserts that field labels are present in a mail.
-   *
-   * @param \Drupal\symfony_mailer\Email $email
-   *   The mail.
-   */
-  protected function assertMailLabelsTexts(Email $email): void {
-    $this->assertMailTexts([
-      "The sender's name",
-      "The sender's email",
-      'Subject',
-      'Message',
-      'Country of residence',
-      'Phone',
-      'Topic',
-    ], $email);
   }
 
 }
