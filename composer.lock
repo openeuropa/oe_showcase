@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3368aa05e465fa4603610e72d5656577",
+    "content-hash": "545270d0611cb7724beb14c8249e5da4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5731,27 +5731,27 @@
         },
         {
             "name": "drupal/user_fields_visibility",
-            "version": "1.1.0-alpha1",
+            "version": "1.1.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/user_fields_visibility.git",
-                "reference": "1.1.0-alpha1"
+                "reference": "1.1.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/user_fields_visibility-1.1.0-alpha1.zip",
-                "reference": "1.1.0-alpha1",
-                "shasum": "af04b5b6acd0e991e606c3705e5b0f852dfc0abf"
+                "url": "https://ftp.drupal.org/files/projects/user_fields_visibility-1.1.0-alpha2.zip",
+                "reference": "1.1.0-alpha2",
+                "shasum": "dce157ff9a0a05248c916487e6198df617eb2add"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
-                "drupal/field_permissions": "dev-1.x"
+                "drupal/field_permissions": "^1.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0-alpha1",
-                    "datestamp": "1664903254",
+                    "version": "1.1.0-alpha2",
+                    "datestamp": "1711535966",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -20516,6 +20516,7 @@
         "drupal/description_list_field": 15,
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
+        "drupal/user_fields_visibility": 15,
         "openeuropa/oe_subscriptions": 15,
         "drupal/datetime_testing": 10
     },

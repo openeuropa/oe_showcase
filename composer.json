@@ -39,7 +39,7 @@
         "drupal/slim_select": "^1.0@alpha",
         "drupal/symfony_mailer": "^1.4",
         "drupal/user_field_anonymize": "^1.0@alpha",
-        "drupal/user_fields_visibility": "1.1.0-alpha1",
+        "drupal/user_fields_visibility": "^1.1@alpha",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
         "openeuropa/oe_contact_forms": "^1.5",
