@@ -227,10 +227,13 @@ class ProjectTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->fillField('Link text', '');
     $page->fillField('oe_project_funding_programme[0][target_id]', '');
     $page->fillField('Reference', '');
-    $page->find('css', 'input[value="Remove"]')->press();
+
+    $coordinators_wrapper = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-project-coordinators"]');
+    $assert_session->buttonExists('Remove', $coordinators_wrapper)->press();
     $assert_session->assertWaitOnAjaxRequest();
-    $page->find('css', 'input[value="Remove"]')->press();
+    $assert_session->buttonExists('Remove', $coordinators_wrapper)->press();
     $assert_session->assertWaitOnAjaxRequest();
+
     $page->pressButton('Save');
 
     // Check Project details are not present when empty.
