@@ -17,12 +17,16 @@ function oe_showcase_contact_forms_mailer_contact_build(EmailInterface $email) {
   if (empty($email->getTo())) {
     return;
   }
-  // This function removes extra spaces in recipient adresses added by contact
-  // module in mails sent by symfony_mailer.
-  // @see oe_showcase/build/core/modules/contact/src/MailHandler.php
-  $adresses = [];
+  // 1. Module contact from Drupal Core implodes all the recipients with ', ' in
+  // mails when the message is not personal and has multiple recipients.
+  // @see \Drupal/contact/MailHandler::sendMailMessages()
+  // 2. Module symfony_mailer provides a parser to explode all the recipients
+  // without having in consideration any extra spaces which sets addresses like
+  // ' test@mail.com'.
+  // @see \Drupal\symfony_mailer\MailerHelper::parseAddress()
+  $addresses = [];
   foreach ($email->getTo() as $address) {
-    $adresses[] = new Address(trim($address->getEmail()), $address->getDisplayName(), $address->getLangcode(), $address->getAccount());
+    $addresses[] = new Address(trim($address->getEmail()), $address->getDisplayName(), $address->getLangcode(), $address->getAccount());
   }
-  $email->setTo($adresses);
+  $email->setTo($addresses);
 }

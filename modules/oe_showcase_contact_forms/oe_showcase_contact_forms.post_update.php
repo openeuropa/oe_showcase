@@ -2,7 +2,7 @@
 
 /**
  * @file
- * OE Showcase List pages post updates.
+ * OE Showcase Contact form post updates.
  */
 
 declare(strict_types=1);
