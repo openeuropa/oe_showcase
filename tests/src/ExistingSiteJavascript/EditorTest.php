@@ -17,26 +17,66 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
   use WysiwygTrait;
 
   /**
-   * Tests the buttons available in the "simple rich text" editor format.
+   * Tests the editor associated to a format.
+   *
+   * @param string $field_name
+   *   The field name.
+   * @param array $expected_buttons
+   *   The expected buttons.
+   *
+   * @dataProvider formatEditorProvider
    */
-  public function testSimpleRichTextEditor(): void {
+  public function testFormatEditor(string $field_name, array $expected_buttons): void {
     $this->drupalLogin($this->createUserWithRoles(['editor']));
     $this->drupalGet('node/add/oe_sc_news');
+    $this->assertEquals($expected_buttons, $this->getButtonTitles($this->getWysiwyg($field_name)));
+  }
 
-    $introduction = $this->getWysiwyg('Introduction');
-    $buttons = $introduction->findAll('css', 'a[title][aria-labelledby]');
+  /**
+   * Returns the titles of buttons present in a CKEditor 4 instance.
+   *
+   * @param \Behat\Mink\Element\NodeElement $wysiwyg
+   *   The instance.
+   *
+   * @return array
+   *   An array of titles.
+   */
+  protected function getButtonTitles(NodeElement $wysiwyg): array {
     $assert_session = $this->assertSession();
-    $titles = array_map(function (NodeElement $button) use ($assert_session) {
+    return array_map(function (NodeElement $button) use ($assert_session) {
       return $assert_session->elementExists('css', '#' . $button->getAttribute('aria-labelledby'))->getHtml();
-    }, $buttons);
+    }, $wysiwyg->findAll('css', 'a[title][aria-labelledby]'));
+  }
 
-    $this->assertEquals([
-      'Bold',
-      'Italic',
-      'Link',
-      'Unlink',
-      'Source',
-    ], $titles);
+  /**
+   * Data provider for editor format tests.
+   */
+  public function formatEditorProvider(): \Generator {
+    yield 'Simple rich text' => [
+      'Introduction',
+      [
+        'Bold',
+        'Italic',
+        'Link',
+        'Unlink',
+        'Source',
+      ],
+    ];
+
+    yield 'Rich text' => [
+      'Content',
+      [
+        'Bold',
+        'Italic',
+        'Link',
+        'Unlink',
+        'Insert/Remove Bulleted List',
+        'Insert/Remove Numbered List',
+        'Block Quote',
+        'Embed media',
+        'Source',
+      ],
+    ];
   }
 
 }
