@@ -87,7 +87,8 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('Image title');
 
     $assert_session->fieldExists('Reference code')->setValue('I-9876987012');
-    // @todo Assert formats.
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($assert_session->fieldExists('Short description')));
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($assert_session->fieldExists('Description')));
     $this->enterTextInWysiwyg('Short description', 'Short description text.');
     $this->enterTextInWysiwyg('Description', 'Description text.');
     // Assert the media browser for the document field.

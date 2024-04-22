@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
+namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
-use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\TestFileCreationTrait;
 
@@ -16,10 +15,9 @@ use Drupal\Tests\TestFileCreationTrait;
  *
  * @todo Improve the labels to not use the machine names.
  */
-class ProjectTest extends ShowcaseExistingSiteJavascriptTestBase {
+class ProjectTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
-  use ScrollTrait;
   use TestFileCreationTrait;
   use WysiwygTrait;
 
@@ -69,26 +67,11 @@ class ProjectTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Create a node, fill the values.
     $this->drupalGet('node/add/oe_project');
     $page->fillField('Page title', 'Project page test');
-    $page->fillField('Media item', 'Project Image test (' . $media_image->id() . ')');
+    $page->fillField('Media item', 'Project Image test');
     $field = $page->findField('Teaser');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Teaser', 'Teaser text');
-
+    $field->setValue('Teaser text');
     $page->fillField('Subject', 'financing (http://data.europa.eu/uxp/1000)');
-
-    // Summary, objective, impacts and achievements and milestones.
-    $field = $page->findField('Summary');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Summary', 'Text Summary');
-    $field = $page->findField('Objective');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Objective', 'Text Objective');
-    $field = $page->findField('Impacts');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Impacts', 'Text Impacts');
-    $field = $page->findField('Achievements and milestones');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Achievements and milestones', 'Text Achievements and milestones');
 
     // Project details.
     $page->selectFieldOption('oe_project_dates[0][value][day]', '3');
@@ -104,37 +87,40 @@ class ProjectTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->fillField('oe_project_funding_programme[0][target_id]', 'Anti Fraud Information System (AFIS) (http://publications.europa.eu/resource/authority/eu-programme/AFIS2020)');
     $page->fillField('Reference', '3425353');
     $page->pressButton('Add new organisation');
-    $assert_session->assertWaitOnAjaxRequest();
     $page->fillField('oe_project_coordinators[form][0][name][0][value]', 'Coordinator 1');
     $page->pressButton('Create organisation');
-    $assert_session->assertWaitOnAjaxRequest();
+
+    // Summary, objective, impacts and achievements and milestones.
+    $field = $page->findField('Summary');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text summary');
+    $field = $page->findField('Objective');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Objective');
+    $field = $page->findField('Impacts');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Impacts');
+    $field = $page->findField('Achievements and milestones');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
+    $field->setValue('Text Achievements and milestones');
 
     // Participants.
-    $form_participants_wrapper = $page->find('css', '#edit-oe-project-participants-wrapper');
-    $form_participants_wrapper->pressButton('Add new participant');
-    $assert_session->assertWaitOnAjaxRequest();
-    $form_participants_wrapper->fillField('Name', 'Developer participant name');
-    $form_participants_wrapper->fillField('Acronym', 'Developer participant acronym');
-    $form_participants_wrapper->fillField('Country', 'BE');
-    $assert_session->assertWaitOnAjaxRequest();
-    $form_participants_wrapper->fillField('Contribution to the budget', '19.9');
-    $form_participants_wrapper->pressButton('Create participant');
-    $assert_session->assertWaitOnAjaxRequest();
+    $page->pressButton('Add new participant');
+    $page->fillField('oe_project_participants[form][0][name][0][value]', 'Developer participant name');
+    $page->fillField('Acronym', 'Developer participant acronym');
+    $page->fillField('Country', 'BE');
+    $page->fillField('Contribution to the budget', '19.9');
+    $page->pressButton('Create participant');
 
     // Lead contributors.
-    $this->scrollIntoView('#edit-oe-project-participants-wrapper');
-    $form_contributors_wrapper = $page->find('css', '#edit-oe-cx-lead-contributors-wrapper');
-    $form_contributors_wrapper->pressButton('Add new organisation');
-    $assert_session->assertWaitOnAjaxRequest();
-    $form_contributors_wrapper->fillField('Name', 'Lead contributors name');
-    $form_contributors_wrapper->fillField('Acronym', 'Lead contributors acronym');
-    $form_contributors_wrapper->fillField('Country', 'BE');
-    $assert_session->assertWaitOnAjaxRequest();
-    $form_contributors_wrapper->fillField('Contribution to the budget', '22.9');
-    $form_contributors_wrapper->pressButton('Create organisation');
-    $assert_session->assertWaitOnAjaxRequest();
-
+    $page->pressButton('edit-oe-cx-lead-contributors-actions-ief-add');
+    $page->fillField('oe_cx_lead_contributors[form][0][name][0][value]', 'Lead contributors name');
+    $page->fillField('Acronym', 'Lead contributors acronym');
+    $page->fillField('Country', 'BE');
+    $page->fillField('oe_cx_lead_contributors[form][0][oe_cx_contribution_budget][0][value]', '22.9');
+    $page->pressButton('Create organisation');
     $page->pressButton('Save');
+
     // Assert values as anonymous user.
     $this->drupalLogout();
     $this->drupalGet('project/project-page-test');
@@ -227,13 +213,9 @@ class ProjectTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->fillField('Link text', '');
     $page->fillField('oe_project_funding_programme[0][target_id]', '');
     $page->fillField('Reference', '');
-
     $coordinators_wrapper = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-project-coordinators"]');
     $assert_session->buttonExists('Remove', $coordinators_wrapper)->press();
-    $assert_session->assertWaitOnAjaxRequest();
     $assert_session->buttonExists('Remove', $coordinators_wrapper)->press();
-    $assert_session->assertWaitOnAjaxRequest();
-
     $page->pressButton('Save');
 
     // Check Project details are not present when empty.

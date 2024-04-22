@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
+namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
@@ -13,7 +13,7 @@ use Drupal\Tests\TestFileCreationTrait;
 /**
  * Tests the person content type.
  */
-class PersonTest extends ShowcaseExistingSiteJavascriptTestBase {
+class PersonTest extends ShowcaseExistingSiteTestBase {
 
   use MediaTypeCreationTrait;
   use TestFileCreationTrait;
@@ -75,6 +75,7 @@ class PersonTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert users without permission to create Person don't have access.
     $this->drupalGet('node/add/oe_sc_person');
     $assert_session->pageTextContains('You are not authorized to access this page.');
+    $assert_session->statusCodeEquals(403);
 
     // Create editor user.
     $user = $this->createUser([]);
@@ -89,22 +90,20 @@ class PersonTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->fillField('Last name', 'Mayer');
     $field = $page->findField('Short description');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Short description', 'Example short description field.');
+    $field->setValue('Example short description field.');
     $page->fillField('Use existing media', $media_image->getName() . ' (' . $media_image->id() . ')');
     $page->fillField('Country', 'DE');
     $page->fillField('Occupation', 'DG TEST');
     $page->fillField('Position', 'Director');
     $field = $page->findField('Additional information');
     $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
-    $this->enterTextInWysiwyg('Additional information', 'Example additional information field.');
+    $field->setValue('Example additional information field.');
     $page->fillField('URL', 'https://linkedin.com');
     $page->fillField('Link text', 'Linkedin');
     $page->fillField('Link type', 'linkedin');
     $page->pressButton('Add new document reference');
-    $assert_session->assertWaitOnAjaxRequest();
     $page->fillField('oe_sc_person_documents[form][0][oe_document][0][target_id]', $media_document->getName() . ' (' . $media_document->id() . ')');
     $page->pressButton('Create document reference');
-    $assert_session->assertWaitOnAjaxRequest();
     $page->pressButton('Save');
 
     // Assert that person has been created.
