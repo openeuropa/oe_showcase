@@ -84,3 +84,10 @@ function oe_showcase_search_post_update_00004(): void {
   Index::load('showcase_search_index')->indexItems();
 
 }
+
+/**
+ * Adds a format date for search demo teaser.
+ */
+function oe_showcase_search_post_update_00005(): void {
+  ConfigImporter::importSingle('module', 'oe_showcase_search', '/config/post_updates/00005', 'core.date_format.oe_showcase_search_demo_date');
+}

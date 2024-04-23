@@ -213,6 +213,24 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
 
     // Check search value is still present.
     $this->assertSame($search_input->getValue(), 'Imputo');
+
+    // Results display the created date.
+    $this->drupalGet('/search');
+    $this->assertResultsMeta([
+      '16 February 2022',
+      '14 January 2022',
+      '01 October 2021',
+      '01 October 2021',
+      '01 October 2021',
+    ]);
+    $page->clickLink('4');
+    $this->assertResultsMeta([
+      '10 February 2021',
+      '06 February 2021',
+      '22 January 2021',
+      '04 January 2021',
+      '06 November 2020',
+    ]);
   }
 
   /**
@@ -380,6 +398,20 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
       static fn(NodeElement $element): string => $element->getText(),
       $elements,
     ));
+  }
+
+  /**
+   * Asserts meta text in card.
+   *
+   * @param array $expected
+   *   Expected dates of search result items.
+   */
+  protected function assertResultsMeta(array $expected): void {
+    $items = $this->assertSession()
+      ->elementExists('css', '.views-element-container')
+      ->findAll('css', '.card-body span.text-muted');
+
+    $this->assertElementsTexts($expected, $items);
   }
 
 }
