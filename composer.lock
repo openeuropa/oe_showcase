@@ -6793,6 +6793,86 @@
             "time": "2024-05-03T11:15:51+00:00"
         },
         {
+            "name": "openeuropa/oe_color_scheme",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openeuropa/oe_color_scheme.git",
+                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openeuropa/oe_color_scheme/zipball/4d4acf3f24f0da4da2300421e82659df316ea408",
+                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^10",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "composer/installers": "^2.0",
+                "drupal/core-composer-scaffold": "^10",
+                "drupal/core-dev": "^10",
+                "drush/drush": "^12",
+                "openeuropa/code-review": "^2.0",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
+                "phpspec/prophecy-phpunit": "^2"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "extra": {
+                "composer-exit-on-patch-failure": true,
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
+                },
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "./build"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\oe_color_scheme\\": "./src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\Tests\\oe_color_scheme\\": "./tests/src"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ],
+                "post-update-cmd": [
+                    "./vendor/bin/run drupal:site-setup"
+                ]
+            },
+            "license": [
+                "EUPL-1.2"
+            ],
+            "description": "OpenEuropa Drupal module that provides a colour scheme field.",
+            "support": {
+                "source": "https://github.com/openeuropa/oe_color_scheme/tree/1.x",
+                "issues": "https://github.com/openeuropa/oe_color_scheme/issues"
+            },
+            "time": "2024-04-04T12:09:34+00:00"
+        },
+        {
             "name": "openeuropa/oe_contact_forms",
             "version": "1.16.0",
             "source": {
@@ -20528,6 +20608,7 @@
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
+        "openeuropa/oe_color_scheme": 20,
         "openeuropa/oe_subscriptions": 15,
         "drupal/datetime_testing": 10
     },
