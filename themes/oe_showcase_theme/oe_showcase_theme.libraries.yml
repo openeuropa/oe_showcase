@@ -3,3 +3,4 @@ global-styling:
   css:
     theme:
       assets/css/oe_showcase_theme.min.css: {}
+      assets/css/color_scheme.min.css: {}
