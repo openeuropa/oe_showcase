@@ -19,7 +19,9 @@ use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 class PageTest extends ShowcaseExistingSiteTestBase {
 
   use MediaCreationTrait;
-  use TraversingTrait;
+  use TraversingTrait {
+    TraversingTrait::getSelectOptions as fetchSelectOptions;
+  }
   use WysiwygTrait;
 
   /**
@@ -119,7 +121,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'pixie-pink' => 'Pixie-pink',
         'blue-horizon' => 'Blue-horizon',
       ],
-      $this->getSelectOptions($color_scheme_field)
+      $this->fetchSelectOptions($color_scheme_field)
     );
 
     $page->selectFieldOption('Color scheme', 'blue-horizon');
