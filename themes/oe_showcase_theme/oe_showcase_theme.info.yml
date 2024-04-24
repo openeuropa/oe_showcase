@@ -22,6 +22,10 @@ regions:
   content: 'Content'
   footer: 'Footer'
 
+color_scheme:
+  - pixie-pink
+  - blue-horizon
+
 config_devel:
   install:
     - oe_showcase_theme.settings
