@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\oe_showcase_contact_forms\ExistingSite;
 
+use Drupal\symfony_mailer_test\MailerTestServiceInterface;
+use Drupal\symfony_mailer_test\MailerTestTrait;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
+use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Contact form tests.
@@ -15,15 +18,18 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
 
   use AssertPathAccessTrait;
   use UserTrait;
+  use MailerTestTrait;
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp():void {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->backupSimpleConfig('contact.settings');
     $this->backupSimpleConfig('honeypot.settings');
+    // Empty previously collected mails.
+    \Drupal::state()->delete(MailerTestServiceInterface::STATE_KEY);
   }
 
   /**
@@ -47,6 +53,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('user');
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
+    $this->markEntityTypeForCleanup('contact_message');
 
     // Disable the flood limits to avoid submit failure when run multiple times.
     $contact_settings = $this->container->get('config.factory')->getEditable('contact.settings');
@@ -81,7 +88,9 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     );
     $page->pressButton('Save');
 
-    $this->drupalLogin($this->createUser());
+    // Test contact form.
+    $user = $this->createUser();
+    $this->drupalLogin($user);
 
     $this->drupalGet('/pages/example-contact-form-page');
     $page->fillField('Subject', 'Example subject');
@@ -98,6 +107,170 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $this->assertStringContainsString('Belgium', $confirm_message);
     $this->assertStringContainsString('Example subject', $confirm_message);
     $this->assertStringContainsString('Example Message text', $confirm_message);
+
+    // Check sent mail.
+    $email = $this->readMail();
+    $page_url = $this->buildUrl('/pages/example-contact-form-page', ['absolute' => TRUE]);
+    $user_url = $user->toUrl('canonical', ['absolute' => TRUE])->toString();
+    // Configured recipients + Topic address 'Alpaca'.
+    $this->assertAddress('to', ['webmaster@example.com', 'webmaster2@example.com']);
+    $this->assertContactMailHtml(
+      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
+      [
+        'name' => [
+          'label' => "The sender's name",
+          'text' => $user->label(),
+        ],
+        'mail' => [
+          'label' => "The sender's email",
+          'text' => $user->getEmail(),
+        ],
+        'subject' => [
+          'label' => 'Subject',
+          'text' => 'Example subject',
+        ],
+        'message' => [
+          'label' => 'Message',
+          'text' => 'Example Message text',
+        ],
+        'oe-country-residence' => [
+          'label' => 'Country of residence',
+          'text' => 'Belgium',
+        ],
+        'oe-telephone' => [
+          'label' => 'Phone',
+          'text' => '345345345',
+        ],
+        'oe-topic' => [
+          'label' => 'Topic',
+          'text' => 'Alpaca',
+        ],
+      ],
+      $email->getHtmlBody()
+    );
+
+    // Test contact form with copy to sender.
+    $this->drupalGet('/pages/example-contact-form-page');
+    $page->fillField('Subject', 'Example subject 2');
+    $page->fillField('Message', 'Example Message text 2');
+    $page->selectFieldOption('Topic', 'Llama');
+    $page->checkField('privacy_policy');
+    $page->fillField('Phone', '123123123');
+    $page->selectFieldOption('Country of residence', 'http://publications.europa.eu/resource/authority/country/ESP');
+    $page->checkField('Send yourself a copy');
+    $page->pressButton('Send message');
+    // Copy option sends two mails, first we check the website mail.
+    $email = $this->readMail(FALSE);
+    $this->assertAddress('to', ['webmaster@example.com', 'webmaster@example.com']);
+    $this->assertContactMailHtml(
+      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
+      [
+        'name' => [
+          'label' => "The sender's name",
+          'text' => $user->label(),
+        ],
+        'mail' => [
+          'label' => "The sender's email",
+          'text' => $user->getEmail(),
+        ],
+        'subject' => [
+          'label' => 'Subject',
+          'text' => 'Example subject 2',
+        ],
+        'message' => [
+          'label' => 'Message',
+          'text' => 'Example Message text 2',
+        ],
+        'oe-country-residence' => [
+          'label' => 'Country of residence',
+          'text' => 'Spain',
+        ],
+        'oe-telephone' => [
+          'label' => 'Phone',
+          'text' => '123123123',
+        ],
+        'oe-topic' => [
+          'label' => 'Topic',
+          'text' => 'Llama',
+        ],
+      ],
+      $email->getHtmlBody()
+    );
+
+    // Then check the copy mail.
+    $email = $this->readMail();
+    $this->assertTo($user->getEmail());
+    $this->assertContactMailHtml(
+      "{$user->label()} ($user_url) sent a message using the contact form at $page_url.",
+      [
+        'name' => [
+          'label' => "The sender's name",
+          'text' => $user->label(),
+        ],
+        'mail' => [
+          'label' => "The sender's email",
+          'text' => $user->getEmail(),
+        ],
+        'subject' => [
+          'label' => 'Subject',
+          'text' => 'Example subject 2',
+        ],
+        'message' => [
+          'label' => 'Message',
+          'text' => 'Example Message text 2',
+        ],
+        'oe-country-residence' => [
+          'label' => 'Country of residence',
+          'text' => 'Spain',
+        ],
+        'oe-telephone' => [
+          'label' => 'Phone',
+          'text' => '123123123',
+        ],
+        'oe-topic' => [
+          'label' => 'Topic',
+          'text' => 'Llama',
+        ],
+      ],
+      $email->getHtmlBody(),
+      TRUE
+    );
+  }
+
+  /**
+   * Asserts the expected HTML in a contact mail.
+   *
+   * @param string $expected_intro
+   *   Text with the mail introduction.
+   * @param array[] $expected_fields
+   *   Associative array with the expected fields.
+   * @param string $mail_body
+   *   The mail HTML body.
+   * @param bool $copy
+   *   If the mail is a copy to the sender.
+   */
+  protected function assertContactMailHtml(string $expected_intro, array $expected_fields, string $mail_body, bool $copy = FALSE): void {
+    $copy = $copy ? 'copy' : 'mail';
+    $crawler = new Crawler($mail_body);
+    $content_wrapper = $crawler->filter(".email-sub-type-page-$copy div.clearfix");
+
+    // Assert introduction.
+    $this->assertEquals($expected_intro, $content_wrapper->innerText());
+
+    // Assert each field content and order.
+    $previous = '';
+    foreach ($expected_fields as $field => $content) {
+      $field_wrapper = $content_wrapper->filter(".example-contact-form__$field");
+      $this->assertEquals($content['label'], $field_wrapper->filter(".field__label")->text());
+      $this->assertEquals($content['text'], $field_wrapper->filter(".field__item")->text());
+      if ($previous) {
+        $this->assertEquals(
+          $content_wrapper->filter(".example-contact-form__$previous")->attr('class'),
+          $field_wrapper->previousAll()->attr('class')
+        );
+      }
+      $previous = $field;
+    }
   }
 
 }
