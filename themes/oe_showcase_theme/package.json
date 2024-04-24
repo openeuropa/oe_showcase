@@ -1,0 +1,21 @@
+{
+  "name": "oe_showcase_theme",
+  "version": "1.0.0",
+  "description": "OpenEuropa Bootstrap Showcase theme for Drupal.",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:color-scheme": "cross-env bcl-builder color-scheme",
+    "build:styles": "cross-env bcl-builder styles"
+  },
+  "devDependencies": {
+    "@openeuropa/bcl-bootstrap": "0.313.202403151055",
+    "@openeuropa/bcl-builder": "0.313.202403151055",
+    "@openeuropa/bcl-theme-default": "0.313.202403151055",
+    "bootstrap-ie11": "5.0.2",
+    "chokidar-cli": "^3.0.0",
+    "cross-env": "7.0.3",
+    "glob": "10.0.0",
+    "npm-run-all": "4.1.5"
+  }
+}
