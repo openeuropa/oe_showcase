@@ -30,6 +30,7 @@ install:
   - oe_content_timeline_field
   - oe_corporate_blocks
   - oe_corporate_countries
+  - oe_color_scheme
   - oe_corporate_countries_address
   - oe_dashboard_agent
   - oe_list_pages_address

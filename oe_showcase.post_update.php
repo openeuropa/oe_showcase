@@ -896,3 +896,12 @@ function oe_showcase_post_update_00040(): void {
     'core.entity_view_display.node.oe_list_page.oe_w_content_banner',
   ]);
 }
+
+/**
+ * Enable Color Scheme module.
+ */
+function oe_showcase_post_update_00041(): void {
+  \Drupal::service('module_installer')->install([
+    'oe_color_scheme',
+  ]);
+}
