@@ -10,6 +10,7 @@ use Drupal\media\Entity\Media;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\CarouselPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
+use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 
 /**
@@ -18,6 +19,7 @@ use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 class PageTest extends ShowcaseExistingSiteTestBase {
 
   use MediaCreationTrait;
+  use TraversingTrait;
   use WysiwygTrait;
 
   /**
@@ -109,6 +111,19 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Banner 0 item Body'
     );
 
+    $color_scheme_field = $page->findField('Color scheme');
+
+    $this->assertEqualsCanonicalizing(
+      [
+        '' => '- None -',
+        'pixie-pink' => 'Pixie-pink',
+        'blue-horizon' => 'Blue-horizon',
+      ],
+      $this->getSelectOptions($color_scheme_field)
+    );
+
+    $page->selectFieldOption('Color scheme', 'blue-horizon');
+
     // Add Quote Paragraph.
     $page->pressButton('Add Quote');
     $page->fillField(
@@ -160,7 +175,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Listing item description for example 1');
 
-    // Add a Banner paragraph.
+    // Add a Content row paragraph.
     $page->pressButton('Add Content row');
 
     // Verify that only the expect paragraphs can be referenced from a content
@@ -417,6 +432,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Banner.
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
+    $assert_session->elementExists('css', '.bcl-banner.blue-horizon');
 
     // Assert Listing item block.
     $assert_session->pageTextContains('List item block example');
