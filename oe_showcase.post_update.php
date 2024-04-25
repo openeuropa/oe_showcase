@@ -736,7 +736,7 @@ function oe_showcase_post_update_00029(): void {
 /**
  * Set the correct default user cancel method.
  */
-function oe_showcase_post_update_00030():void {
+function oe_showcase_post_update_00030(): void {
   \Drupal::configFactory()
     ->getEditable('user.settings')
     ->set('cancel_method', 'user_cancel_block')
@@ -836,7 +836,7 @@ function oe_showcase_post_update_00035(): void {
  * Change label of person facet from Title to Name.
  */
 function oe_showcase_post_update_00036(): void {
-  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00036_person_facet', 'facets.facet.oelp_oe_sc_person__title',);
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00036_person_facet', 'facets.facet.oelp_oe_sc_person__title');
 }
 
 /**
@@ -881,5 +881,18 @@ function oe_showcase_post_update_00039(): void {
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00039_editor_simple_rich_text', [
     'editor.editor.simple_rich_text',
     'filter.format.simple_rich_text',
+    ]);
+}
+
+/**
+ * Add banner in list pages.
+ */
+function oe_showcase_post_update_00040(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00040_list_pages_banner', [
+    'field.field.node.oe_list_page.oe_featured_media',
+    'field.field.node.oe_list_page.oe_summary',
+    'core.entity_form_display.node.oe_list_page.default',
+    'core.entity_view_display.node.oe_list_page.full',
+    'core.entity_view_display.node.oe_list_page.oe_w_content_banner',
   ]);
 }
