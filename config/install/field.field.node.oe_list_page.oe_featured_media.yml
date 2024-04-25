@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.oe_featured_media
+    - media.type.av_portal_photo
+    - media.type.image
+    - node.type.oe_list_page
+  module:
+    - oe_content_featured_media_field
+id: node.oe_list_page.oe_featured_media
+field_name: oe_featured_media
+entity_type: node
+bundle: oe_list_page
+label: 'Featured media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      av_portal_photo: av_portal_photo
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: oe_featured_media

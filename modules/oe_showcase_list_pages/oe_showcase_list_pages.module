@@ -7,10 +7,79 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\media\MediaInterface;
+use Drupal\media\Plugin\media\Source\Image;
+use Drupal\media_avportal\Plugin\media\Source\MediaAvPortalPhotoSource;
+use Drupal\oe_bootstrap_theme\ValueObject\ImageValueObject;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function oe_showcase_list_pages_form_oe_list_pages_facets_form_alter(&$form, &$form_state, $form_id) {
   // Change the label of the submit button.
   $form['actions']['submit']['#value'] = t('Refine');
+}
+
+/**
+ * Implements template_preprocess_node() for the List pages node type.
+ */
+function oe_showcase_list_pages_preprocess_node__oe_list_page(&$variables) {
+  if ($variables['view_mode'] === 'full') {
+    $variables['label'] = t('Results');
+    return;
+  }
+
+  if ($variables['view_mode'] !== 'oe_w_content_banner') {
+    return;
+  }
+
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+
+  // Bail out if there is no media present.
+  if ($node->get('oe_featured_media')->isEmpty()) {
+    return;
+  }
+
+  /** @var \Drupal\media\Entity\Media $media */
+  $media = $node->get('oe_featured_media')->entity;
+  if (!$media instanceof MediaInterface) {
+    // The media entity is not available anymore, bail out.
+    return;
+  }
+
+  // Retrieve the correct media translation.
+  /** @var \Drupal\media\Entity\Media $media */
+  $media = \Drupal::service('entity.repository')->getTranslationFromContext($media, $node->language()->getId());
+
+  // Caches are handled by the formatter usually. Since we are not rendering
+  // the original render arrays, we need to propagate our caches to the
+  // paragraph template.
+  $cacheability = CacheableMetadata::createFromRenderArray($variables);
+  $cacheability->addCacheableDependency($media);
+
+  // Run access checks on the media entity.
+  $access = $media->access('view', $variables['user'], TRUE);
+  $cacheability->addCacheableDependency($access);
+  if (!$access->isAllowed()) {
+    $cacheability->applyTo($variables);
+    return;
+  }
+
+  // Get the media source.
+  $source = $media->getSource();
+
+  $is_image = $source instanceof MediaAvPortalPhotoSource || $source instanceof Image;
+
+  // If it's not an image bail out.
+  if (!$is_image) {
+    $cacheability->applyTo($variables);
+    return;
+  }
+
+  $thumbnail = $media->get('thumbnail')->first();
+  $variables['image'] = ImageValueObject::fromImageItem($thumbnail);
+
+  $cacheability->applyTo($variables);
 }
