@@ -5,14 +5,19 @@ declare(strict_types=1);
 namespace Drupal\Tests\oe_showcase_list_pages\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
+use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
+use Drupal\Tests\TestFileCreationTrait;
 use Drupal\user\Entity\Role;
+use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Tests list pages.
@@ -20,9 +25,11 @@ use Drupal\user\Entity\Role;
 class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use ExampleContentTrait;
-  use ScrollTrait;
   use SlimSelectTrait;
   use PathautoTestHelperTrait;
+  use ScrollTrait;
+  use TestFileCreationTrait;
+  use WysiwygTrait;
 
   /**
    * An editor user.
@@ -36,6 +43,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    $this->markEntityTypeForCleanup('media');
+    $this->markEntityTypeForCleanup('file');
 
     // Create editor user.
     $this->editorUser = $this->createUser([]);
@@ -159,17 +169,23 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
-    // Create the News listing page.
-    $list_page = $this->createListPage('News list page', 'oe_sc_news', [
-      'oelp_oe_sc_news__title',
-      'oelp_oe_sc_news__oe_publication_date',
-      'oelp_oe_sc_news__type',
-    ]);
+    // Create the News listing page with complete banner.
+    $list_page = $this->createListPage(
+      'News list page',
+      'oe_sc_news',
+      [
+        'oelp_oe_sc_news__title',
+        'oelp_oe_sc_news__oe_publication_date',
+        'oelp_oe_sc_news__type',
+      ],
+      'This is a summary for oe_sc_news list page.',
+      TRUE,
+    );
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/news-list-page');
 
     // Assert that only News items are displayed.
-    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'News number 0',
       'News number 1',
@@ -208,7 +224,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_input->setValue('04/04/2022');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 8);
+    $this->assertResultsTitle(8);
     $this->assertResults([
       'News number 4',
       'News number 5',
@@ -224,7 +240,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('News number 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 8',
     ]);
@@ -233,7 +249,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('This is a News content number 10');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 10',
     ]);
@@ -242,7 +258,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('This is a News introduction number 11');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 11',
     ]);
@@ -251,7 +267,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('6 content number introduction');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 6',
     ]);
@@ -259,7 +275,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('NUMBER 7 this');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 7',
     ]);
@@ -270,21 +286,22 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($type, 'Term 4');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 4',
     ]);
     $this->selectSlimOption($type, 'Term 6');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'News number 6',
     ]);
 
+    $this->scrollIntoView('#edit-submit');
     $page->pressButton('Clear filters');
     $this->selectSortByOption('Z-A');
-    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'News number 9',
       'News number 8',
@@ -299,7 +316,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->selectSortByOption('A-Z');
-    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'News number 0',
       'News number 1',
@@ -314,7 +331,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->selectSortByOption('Date ASC');
-    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'News number 0',
       'News number 1',
@@ -329,7 +346,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->selectSortByOption('Date DESC');
-    $this->assertResultsTitle('News List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'News number 11',
       'News number 10',
@@ -345,16 +362,22 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Assert only News nodes are part of the result.
     $title_input->setValue('Event example');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('News List Page', 0);
+    $this->assertResultsTitle(0);
 
-    // Create an Event listing page.
-    $list_page = $this->createListPage('Event list page', 'oe_sc_event', [
-      'oelp_oe_sc_event__location',
-      'oelp_oe_sc_event__oe_sc_event_dates',
-      'oelp_oe_sc_event__type',
-      'oelp_oe_sc_event__title',
-    ]);
+    // Create an Event listing page with only summary.
+    $list_page = $this->createListPage(
+      'Event list page',
+      'oe_sc_event',
+      [
+        'oelp_oe_sc_event__location',
+        'oelp_oe_sc_event__oe_sc_event_dates',
+        'oelp_oe_sc_event__type',
+        'oelp_oe_sc_event__title',
+      ],
+      'This is a summary for oe_sc_event list page.',
+    );
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/event-list-page');
 
@@ -408,7 +431,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_input->setValue('04/04/2022');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 8);
+    $this->assertResultsTitle(8);
     $this->assertResults([
       'Event number 4',
       'Event number 5',
@@ -424,7 +447,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('Event number 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Event number 8',
     ]);
@@ -433,15 +456,15 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('News number 1');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 0);
+    $this->assertResultsTitle(0);
 
     // Assert Event title filters only by title.
     $title_input->setValue('This is an Event content number 10');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 0);
+    $this->assertResultsTitle(0);
     $title_input->setValue('This is an Event introduction number 10');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 0);
+    $this->assertResultsTitle(0);
 
     // Filter results by location.
     $filter_form->pressButton('Clear filters');
@@ -449,7 +472,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($location, 'France');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 2);
+    $this->assertResultsTitle(2);
     $this->assertResults([
       'Event number 4',
       'Event number 11',
@@ -457,7 +480,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($location, 'Romania', TRUE);
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 4);
+    $this->assertResultsTitle(4);
     $this->assertResults([
       'Event number 2',
       'Event number 4',
@@ -472,14 +495,14 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($type, 'Term 3');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Event number 3',
     ]);
     $this->selectSlimOption($type, 'Term 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Event List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Event number 8',
     ]);
@@ -487,7 +510,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
     $this->selectSortByOption('Z-A');
-    $this->assertResultsTitle('Event List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'Event number 9',
       'Event number 8',
@@ -551,17 +574,23 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Index content.
     $this->indexItems('oe_list_pages_index');
 
-    $list_page = $this->createListPage('Project list page', 'oe_project', [
-      'oelp_oe_sc_project__end_date',
-      'oelp_oe_sc_project__start_date',
-      'oelp_oe_sc_project__status',
-      'oelp_oe_sc_project__type',
-    ]);
+    // Create an Project listing page with only image.
+    $list_page = $this->createListPage(
+      'Project list page',
+      'oe_project', [
+        'oelp_oe_sc_project__end_date',
+        'oelp_oe_sc_project__start_date',
+        'oelp_oe_sc_project__status',
+        'oelp_oe_sc_project__type',
+      ],
+      '',
+      TRUE,
+    );
 
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/project-list-page');
 
-    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResultsTitle(3);
     $this->assertResults([
       'Project closed',
       'Project ongoing',
@@ -586,7 +615,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($filter_type, 'financing');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Project closed',
     ]);
@@ -599,7 +628,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $date_input->setValue('05/19/2022');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 2);
+    $this->assertResultsTitle(2);
     $this->assertResults([
       'Project ongoing',
       'Project pending',
@@ -608,7 +637,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $filter_start->setValue('lt');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Project closed',
     ]);
@@ -620,7 +649,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $dates[1]->setValue($date_plus_10_calendar_format);
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Project ongoing',
     ]);
@@ -631,7 +660,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($filter_status, 'Closed');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Project closed',
     ]);
@@ -639,7 +668,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($filter_status, 'Ongoing and Planned');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Project List Page', 2);
+    $this->assertResultsTitle(2);
     $this->assertResults([
       'Project ongoing',
       'Project pending',
@@ -648,7 +677,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
     $this->selectSortByOption('Z-A');
-    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResultsTitle(3);
     $this->assertResults([
       'Project pending',
       'Project ongoing',
@@ -656,7 +685,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->selectSortByOption('Total budget ASC');
-    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResultsTitle(3);
     $this->assertResults([
       'Project closed',
       'Project pending',
@@ -664,17 +693,20 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     ]);
 
     $this->selectSortByOption('Total budget DESC');
-    $this->assertResultsTitle('Project List Page', 3);
+    $this->assertResultsTitle(3);
     $this->assertResults([
       'Project ongoing',
       'Project pending',
       'Project closed',
     ]);
 
-    // Create a Person listing page.
-    $list_page = $this->createListPage('Person list page', 'oe_sc_person', [
-      'oelp_oe_sc_person__title',
-    ]);
+    // Create a Person listing page with no summary nor image.
+    $list_page = $this->createListPage(
+      'Person list page',
+      'oe_sc_person', [
+        'oelp_oe_sc_person__title',
+      ]
+    );
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/person-list-page');
 
@@ -711,7 +743,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('John Doe 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Person List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'John Doe 8',
     ]);
@@ -720,22 +752,22 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input->setValue('News number 1');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Person List Page', 0);
+    $this->assertResultsTitle(0);
 
     // Assert Title filters only by Person title.
     $title_input->setValue('This is a person short description number 10');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Person List Page', 0);
+    $this->assertResultsTitle(0);
     $title_input->setValue('This is a person additional info number 10');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Person List Page', 0);
+    $this->assertResultsTitle(0);
 
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
     $this->selectSortByOption('Z-A');
-    $this->assertResultsTitle('Person List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'John Doe 9',
       'John Doe 8',
@@ -749,17 +781,21 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'John Doe 10',
     ]);
 
-    // Create a Person listing page.
-    $list_page = $this->createListPage('Publication list page', 'oe_sc_publication', [
-      'oelp_oe_sc_publication__keyword',
-      'oelp_oe_sc_publication__publication_date',
-      'oelp_oe_sc_publication__type',
-    ]);
+    // Create a Publication listing page with no summary nor image.
+    $list_page = $this->createListPage(
+      'Publication list page',
+      'oe_sc_publication',
+      [
+        'oelp_oe_sc_publication__keyword',
+        'oelp_oe_sc_publication__publication_date',
+        'oelp_oe_sc_publication__type',
+      ]
+    );
     $this->drupalGet($list_page->toUrl());
     $this->assertEntityAlias($list_page, '/publication-list-page');
 
     // Assert that only Publication items are displayed.
-    $this->assertResultsTitle('Publication List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'Pub 0',
       'Pub 1',
@@ -800,7 +836,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
 
-    $this->assertResultsTitle('Publication List Page', 8);
+    $this->assertResultsTitle(8);
     $this->assertResults([
       'Pub 4',
       'Pub 5',
@@ -816,7 +852,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $keyword_input->setValue('Pub 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Pub 8',
     ]);
@@ -825,7 +861,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $keyword_input->setValue('This is a Publication summary 10');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Pub 10',
     ]);
@@ -837,14 +873,14 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->selectSlimOption($type, 'Term 3');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Pub 3',
     ]);
     $this->selectSlimOption($type, 'Term 8');
     $this->scrollIntoView('#edit-submit');
     $search_button->click();
-    $this->assertResultsTitle('Publication List Page', 1);
+    $this->assertResultsTitle(1);
     $this->assertResults([
       'Pub 8',
     ]);
@@ -852,7 +888,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->scrollIntoView('#edit-reset');
     $page->pressButton('Clear filters');
     $this->selectSortByOption('Z-A');
-    $this->assertResultsTitle('Publication List Page', 12);
+    $this->assertResultsTitle(12);
     $this->assertResults([
       'Pub 9',
       'Pub 8',
@@ -870,15 +906,13 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   /**
    * Asserts the title above the search results.
    *
-   * @param string $list_page_title
-   *   Title of the list page node.
    * @param int $expected_count
    *   Expected number of results to be reported in the title.
    */
-  protected function assertResultsTitle(string $list_page_title, int $expected_count): void {
+  protected function assertResultsTitle(int $expected_count): void {
     $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
     $this->assertSame(
-      sprintf('%s (%s)', $list_page_title, $expected_count),
+      sprintf('Results (%s)', $expected_count),
       $title->getText());
   }
 
@@ -932,32 +966,67 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   Nodes of this bundle will be listed.
    * @param array $exposed_filters
    *   Facet machine names linked to the bundle's facet source.
+   * @param string $summary
+   *   The summary of the list page.
+   * @param string $has_media
+   *   The list page has a media in the banner.
    *
    * @return \Drupal\node\NodeInterface
    *   The list page node created.
    */
-  protected function createListPage(string $title, string $bundle, array $exposed_filters): NodeInterface {
+  protected function createListPage(string $title, string $bundle, array $exposed_filters, string $summary = '', bool $has_media = FALSE): NodeInterface {
     $page = $this->getSession()->getPage();
     $assert = $this->assertSession();
+    $media_name = '';
 
+    if ($has_media) {
+      $file = File::create([
+        'uri' => $this->getTestFiles('image')[0]->uri,
+      ]);
+      $file->save();
+
+      // Create a sample image media entity to be embedded.
+      $media = Media::create([
+        'bundle' => 'image',
+        'name' => "$bundle List page Image test",
+        'oe_media_image' => [
+          [
+            'target_id' => $file->id(),
+            'alt' => "$bundle List page Image test alt",
+          ],
+        ],
+      ]);
+      $media->save();
+      $media_name = $media->getName() . ' (' . $media->id() . ')';
+    }
     $this->drupalLogin($this->editorUser);
 
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', $title);
+
+    $page->fillField('Media item', $media_name);
+    $summary_field = $page->findField('Summary');
+    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($summary_field));
+    $this->enterTextInWysiwyg('Summary', $summary);
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);
     $assert->waitForField('Expose sort')->check();
-    $page->pressButton('Save');
-
-    $node = $this->getNodeByTitle($title);
-    $this->drupalGet('node/' . $node->id() . '/edit');
     $page->checkField('Override default exposed filters');
-
     foreach ($exposed_filters as $filter_name) {
       $page->checkField("emr_plugins_oe_list_page[wrapper][exposed_filters][$filter_name]");
     }
-
     $page->pressButton('Save');
+
+    $node = $this->getNodeByTitle($title);
+
+    $this->assertPageBanner(
+      $title,
+      $summary,
+      $has_media === FALSE ? [] : [
+        'src' => 'image-test.png',
+        'alt' => "$bundle List page Image test alt",
+      ]);
+
     $this->drupalLogout();
 
     return $node;
@@ -972,6 +1041,43 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function selectSortByOption(string $option): void {
     $this->getSession()->getPage()->selectFieldOption('Sort by', $option);
     $this->assertSession()->waitForElementVisible('xpath', "//option[@selected=selected and text()='$option']");
+  }
+
+  /**
+   * Asserts content banner in the page.
+   *
+   * @param string $expected_title
+   *   The expected title text.
+   * @param string $expected_summary
+   *   The expected summary text.
+   * @param array $expected_image
+   *   Associative array with expected image attributes.
+   */
+  protected function assertPageBanner(string $expected_title, string $expected_summary = '', array $expected_image = []) {
+    $crawler = new Crawler($this->getSession()->getPage()->getContent());
+    $content_banner = $crawler->filter('.bcl-content-banner');
+    $this->assertCount(1, $content_banner);
+
+    // Assert the title.
+    $title = $content_banner->filter('h1');
+    $this->assertCount(1, $title);
+    $this->assertEquals($expected_title, $title->text());
+
+    // Assert the summary if present.
+    if (!empty($expected_summary)) {
+      $summary = $content_banner->filter('.oe-list-page__oe-summary');
+      $this->assertCount(1, $summary);
+      $this->assertEquals($expected_summary, $summary->text());
+    }
+
+    // Assert the image and attributes if present.
+    if (!empty($expected_image)) {
+      $image = $content_banner->filter('img');
+      $this->assertCount(1, $image);
+      $this->assertStringContainsString($expected_image['src'], $image->attr('src'));
+      $this->assertEquals($expected_image['alt'], $image->attr('alt'));
+    }
+
   }
 
 }
