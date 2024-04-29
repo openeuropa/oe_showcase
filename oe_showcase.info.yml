@@ -101,6 +101,8 @@ config_devel:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
     - core.entity_form_display.paragraph.oe_banner.default
+    - core.entity_form_display.paragraph.oe_banner.oe_banner_image
+    - core.entity_form_display.paragraph.oe_banner.oe_banner_image_shade
     - core.entity_form_display.paragraph.oe_banner.oe_banner_primary
     - core.entity_form_display.paragraph.oe_list_item.default
     - core.entity_form_display.paragraph.oe_list_item.highlight
