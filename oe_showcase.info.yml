@@ -100,6 +100,7 @@ config_devel:
   install:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
+    - core.entity_form_display.paragraph.oe_accordion.default
     - core.entity_form_display.paragraph.oe_banner.default
     - core.entity_form_display.paragraph.oe_banner.oe_banner_image
     - core.entity_form_display.paragraph.oe_banner.oe_banner_image_shade
@@ -150,6 +151,7 @@ config_devel:
     - field.field.node.oe_sc_person.oe_summary
     - field.field.node.oe_sc_publication.body
     - field.field.node.oe_sc_publication.oe_summary
+    - field.field.paragraph.oe_accordion.field_color_scheme
     - field.field.paragraph.oe_accordion_item.field_oe_text_long
     - field.field.paragraph.oe_banner.field_color_scheme
     - field.field.paragraph.oe_list_item.field_oe_text_long
