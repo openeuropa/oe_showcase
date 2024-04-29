@@ -107,6 +107,7 @@ config_devel:
     - core.entity_form_display.paragraph.oe_banner.oe_banner_primary
     - core.entity_form_display.paragraph.oe_description_list.default
     - core.entity_form_display.paragraph.oe_document.default
+    - core.entity_form_display.paragraph.oe_facts_figures.default
     - core.entity_form_display.paragraph.oe_list_item.default
     - core.entity_form_display.paragraph.oe_list_item.highlight
     - core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection
@@ -158,6 +159,7 @@ config_devel:
     - field.field.paragraph.oe_banner.field_color_scheme
     - field.field.paragraph.oe_description_list.field_color_scheme
     - field.field.paragraph.oe_document.field_color_scheme
+    - field.field.paragraph.oe_facts_figures.field_color_scheme
     - field.field.paragraph.oe_list_item.field_oe_text_long
     - field.field.paragraph.oe_rich_text.field_oe_text_long
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
