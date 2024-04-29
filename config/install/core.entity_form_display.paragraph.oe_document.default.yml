@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_document.field_color_scheme
+    - field.field.paragraph.oe_document.field_oe_media
+    - paragraphs.paragraphs_type.oe_document
+  module:
+    - oe_color_scheme
+id: paragraph.oe_document.default
+targetEntityType: paragraph
+bundle: oe_document
+mode: default
+content:
+  field_color_scheme:
+    type: oe_color_scheme_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_media:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
