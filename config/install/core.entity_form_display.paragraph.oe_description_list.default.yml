@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_description_list.field_color_scheme
+    - field.field.paragraph.oe_description_list.field_oe_description_list_items
+    - field.field.paragraph.oe_description_list.field_oe_title
+    - field.field.paragraph.oe_description_list.oe_w_orientation
+    - paragraphs.paragraphs_type.oe_description_list
+  module:
+    - description_list_field
+    - oe_color_scheme
+id: paragraph.oe_description_list.default
+targetEntityType: paragraph
+bundle: oe_description_list
+mode: default
+content:
+  field_color_scheme:
+    type: oe_color_scheme_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_description_list_items:
+    type: description_list_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_w_orientation:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
