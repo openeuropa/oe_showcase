@@ -998,7 +998,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $page->fillField('Media item', $media_name);
     $summary_field = $page->findField('Summary');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($summary_field));
+    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($summary_field));
     $this->enterTextInWysiwyg('Summary', $summary);
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);

@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.oe_summary
-    - filter.format.rich_text
+    - filter.format.simple_rich_text
     - node.type.oe_list_page
   module:
     - text
@@ -19,5 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
-    - rich_text
+    - simple_rich_text
 field_type: text_long
