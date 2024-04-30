@@ -905,7 +905,7 @@ function oe_showcase_post_update_00041(): void {
     'oe_color_scheme',
   ]);
 
-  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00039_color_scheme', [
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00040_color_scheme', [
     'field.storage.paragraph.field_color_scheme',
     'field.field.paragraph.oe_banner.field_color_scheme',
     'core.entity_form_display.paragraph.oe_banner.default',
