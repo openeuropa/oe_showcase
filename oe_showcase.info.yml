@@ -116,6 +116,7 @@ config_devel:
     - core.entity_form_display.paragraph.oe_text_feature_media.left_featured
     - core.entity_form_display.paragraph.oe_text_feature_media.right_featured
     - core.entity_form_display.paragraph.oe_text_feature_media.right_simple
+    - core.entity_form_display.paragraph.oe_timeline.default
     - core.entity_view_display.media.av_portal_photo.oe_sc_entity_browser_selection
     - core.entity_view_display.media.av_portal_photo.showcase_embed
     - core.entity_view_display.media.av_portal_video.oe_sc_entity_browser_selection
@@ -172,6 +173,7 @@ config_devel:
     - field.field.paragraph.oe_rich_text.field_oe_text_long
     - field.field.paragraph.oe_text_feature_media.field_color_scheme
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
+    - field.field.paragraph.oe_timeline.field_color_scheme
     - field.field.paragraph.oe_timeline.field_oe_text_long
     - field.storage.paragraph.field_color_scheme
     - filter.format.full_html
