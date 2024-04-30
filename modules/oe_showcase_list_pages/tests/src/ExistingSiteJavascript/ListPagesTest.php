@@ -12,10 +12,10 @@ use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
+use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 use Drupal\user\Entity\Role;
-use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Tests list pages.
@@ -976,8 +976,15 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    */
   protected function createListPage(string $title, string $bundle, array $exposed_filters, string $summary = '', bool $has_media = FALSE): NodeInterface {
     $page = $this->getSession()->getPage();
-    $assert = $this->assertSession();
+    $assert_session = $this->assertSession();
     $media_name = '';
+    $expected_content_banner = [
+      'title' => $title,
+      'description' => $summary,
+      'meta' => [],
+      'badges' => [],
+      'image' => NULL,
+    ];
 
     if ($has_media) {
       // Create a sample image media entity to be embedded.
@@ -989,20 +996,22 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       ]);
 
       $media_name = $media->getName() . ' (' . $media->id() . ')';
+      $expected_content_banner['image'] = [
+        'alt' => "$bundle List page Image test alt",
+        'src' => $media->get('oe_media_image')->entity->getFilename(),
+      ];
     }
 
     $this->drupalLogin($this->editorUser);
-
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', $title);
-
     $page->fillField('Media item', $media_name);
     $summary_field = $page->findField('Summary');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($summary_field));
     $this->enterTextInWysiwyg('Summary', $summary);
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);
-    $assert->waitForField('Expose sort')->check();
+    $assert_session->waitForField('Expose sort')->check();
     $page->checkField('Override default exposed filters');
     foreach ($exposed_filters as $filter_name) {
       $page->checkField("emr_plugins_oe_list_page[wrapper][exposed_filters][$filter_name]");
@@ -1010,14 +1019,8 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page->pressButton('Save');
 
     $node = $this->getNodeByTitle($title);
-
-    $this->assertContentBanner(
-      $title,
-      $summary,
-      $has_media === FALSE ? [] : [
-        'src' => $media->get('oe_media_image')->entity->getFilename(),
-        'alt' => "$bundle List page Image test alt",
-      ]);
+    $content_banner_assert = new ContentBannerAssert();
+    $content_banner_assert->assertPattern($expected_content_banner, $assert_session->elementExists('css', '.bcl-content-banner')->getOuterHtml());
 
     $this->drupalLogout();
 
@@ -1033,43 +1036,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function selectSortByOption(string $option): void {
     $this->getSession()->getPage()->selectFieldOption('Sort by', $option);
     $this->assertSession()->waitForElementVisible('xpath', "//option[@selected=selected and text()='$option']");
-  }
-
-  /**
-   * Asserts content banner in the page.
-   *
-   * @param string $expected_title
-   *   The expected title text.
-   * @param string $expected_summary
-   *   The expected summary text.
-   * @param array $expected_image
-   *   Associative array with expected image attributes.
-   */
-  protected function assertContentBanner(string $expected_title, string $expected_summary = '', array $expected_image = []) {
-    $crawler = new Crawler($this->getSession()->getPage()->getContent());
-    $content_banner = $crawler->filter('.bcl-content-banner');
-    $this->assertCount(1, $content_banner);
-
-    // Assert the title.
-    $title = $content_banner->filter('h1');
-    $this->assertCount(1, $title);
-    $this->assertEquals($expected_title, $title->text());
-
-    // Assert the summary if present.
-    if (!empty($expected_summary)) {
-      $summary = $content_banner->filter('.oe-list-page__oe-summary');
-      $this->assertCount(1, $summary);
-      $this->assertEquals($expected_summary, $summary->text());
-    }
-
-    // Assert the image and attributes if present.
-    if (!empty($expected_image)) {
-      $image = $content_banner->filter('img');
-      $this->assertCount(1, $image);
-      $this->assertStringContainsString($expected_image['src'], $image->attr('src'));
-      $this->assertEquals($expected_image['alt'], $image->attr('alt'));
-    }
-
   }
 
 }
