@@ -124,8 +124,11 @@
             "drupal/facets_form": {
                 "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
             },
+            "openeuropa/oe_bootstrap_theme": {
+                "Color scheme development": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.x...contribution/EPHEH-318.diff"
+            },
             "openeuropa/oe_whitelabel": {
-                "Color scheme dev": "https://github.com/openeuropa/oe_whitelabel/compare/1.6.0...contribution/EPHEH-318.diff"
+                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.6.0...contribution/EPHEH-318.diff"
             }
         },
         "patchLevel": {
