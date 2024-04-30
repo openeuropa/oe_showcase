@@ -881,7 +881,7 @@ function oe_showcase_post_update_00039(): void {
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00039_editor_simple_rich_text', [
     'editor.editor.simple_rich_text',
     'filter.format.simple_rich_text',
-    ]);
+  ]);
 }
 
 /**

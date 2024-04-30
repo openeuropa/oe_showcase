@@ -2,11 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.images
     - field.field.node.oe_list_page.oe_featured_media
     - field.field.node.oe_list_page.oe_summary
     - node.type.oe_list_page
   module:
-    - oe_content_featured_media_field
+    - entity_browser
     - path
     - text
 id: node.oe_list_page.default
@@ -28,14 +29,18 @@ content:
       include_locked: true
     third_party_settings: {  }
   oe_featured_media:
-    type: oe_featured_media_autocomplete
+    type: oe_featured_media_entity_browser
     weight: 2
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      entity_browser: images
+      field_widget_display: label
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
   oe_summary:
     type: text_textarea

@@ -8,6 +8,7 @@ use Behat\Mink\Element\NodeElement;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
+use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
@@ -28,6 +29,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use ScrollTrait;
   use MediaCreationTrait;
   use WysiwygTrait;
+  use EntityBrowserTrait;
 
   /**
    * An editor user.
@@ -74,6 +76,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   public function testCreateListPages() {
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
+    $this->createTestMedia();
 
     // Create some News test nodes.
     /** @var \Drupal\taxonomy\VocabularyInterface $news_type */
@@ -977,7 +980,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function createListPage(string $title, string $bundle, array $exposed_filters, string $summary = '', bool $has_media = FALSE): NodeInterface {
     $page = $this->getSession()->getPage();
     $assert_session = $this->assertSession();
-    $media_name = '';
     $expected_content_banner = [
       'title' => $title,
       'description' => $summary,
@@ -995,7 +997,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
         ],
       ]);
 
-      $media_name = $media->getName() . ' (' . $media->id() . ')';
       $expected_content_banner['image'] = [
         'alt' => "$bundle List page Image test alt",
         'src' => $media->get('oe_media_image')->entity->getFilename(),
@@ -1005,7 +1006,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalLogin($this->editorUser);
     $this->drupalGet('node/add/oe_list_page');
     $page->fillField('Title', $title);
-    $page->fillField('Media item', $media_name);
+    if ($has_media) {
+      $this->addEntityBrowserMedia("$bundle List page Image test");
+    }
     $summary_field = $page->findField('Summary');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($summary_field));
     $this->enterTextInWysiwyg('Summary', $summary);
@@ -1036,6 +1039,50 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function selectSortByOption(string $option): void {
     $this->getSession()->getPage()->selectFieldOption('Sort by', $option);
     $this->assertSession()->waitForElementVisible('xpath', "//option[@selected=selected and text()='$option']");
+  }
+
+  /**
+   * Adds a media through entity browser.
+   *
+   * @param string $media_name
+   *   The media name to be added.
+   */
+  protected function addEntityBrowserMedia(string $media_name) {
+    $assert_session = $this->assertSession();
+
+    // Assert the media browser for the thumbnail field.
+    $thumbnail_fieldset = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-featured-media-wrapper"]');
+    $assert_session->buttonExists('Select media', $thumbnail_fieldset)->press();
+    $assert_session->assertWaitOnAjaxRequest();
+    $this->getSession()->switchToIFrame('entity_browser_iframe_images');
+    $assert_session->linkExistsExact('Media library');
+    $assert_session->linkExistsExact('Search in AV Portal');
+
+    // Assert the exposed filters.
+    $assert_session->fieldExists('Filter by name');
+    $assert_session->fieldExists('Language');
+    $this->assertEquals([
+      'All' => '- Any -',
+      'av_portal_photo' => 'AV Portal Photo',
+      'image' => 'Image',
+    ], $this->getSelectOptions($assert_session->selectExists('Media type')));
+
+    // Make sure this entity browser shows only the expected media bundles.
+    $existing_medias = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
+    $expected_media_bundles = [
+      'av_portal_photo',
+      'image',
+    ];
+    foreach (array_diff(array_keys($existing_medias), $expected_media_bundles) as $unwanted_bundle) {
+      $assert_session->pageTextNotContains($existing_medias[$unwanted_bundle]->label());
+    }
+
+    // Check that the media is present after adding it.
+    $this->getMediaBrowserTileByMediaName($media_name)->click();
+    $assert_session->buttonExists('Select media')->press();
+    $this->getSession()->switchToIFrame();
+    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->pageTextContains($media_name);
   }
 
 }
