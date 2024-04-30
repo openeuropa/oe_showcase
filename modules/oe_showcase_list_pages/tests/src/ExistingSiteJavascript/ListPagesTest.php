@@ -5,17 +5,15 @@ declare(strict_types=1);
 namespace Drupal\Tests\oe_showcase_list_pages\ExistingSiteJavascript;
 
 use Behat\Mink\Element\NodeElement;
-use Drupal\file\Entity\File;
-use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
+use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
-use Drupal\Tests\TestFileCreationTrait;
 use Drupal\user\Entity\Role;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -28,7 +26,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   use SlimSelectTrait;
   use PathautoTestHelperTrait;
   use ScrollTrait;
-  use TestFileCreationTrait;
+  use MediaCreationTrait;
   use WysiwygTrait;
 
   /**
@@ -44,7 +42,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->markEntityTypeForCleanup('media');
     $this->markEntityTypeForCleanup('file');
 
     // Create editor user.
@@ -983,25 +980,17 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $media_name = '';
 
     if ($has_media) {
-      $file = File::create([
-        'uri' => $this->getTestFiles('image')[0]->uri,
-      ]);
-      $file->save();
-
       // Create a sample image media entity to be embedded.
-      $media = Media::create([
-        'bundle' => 'image',
+      $media = $this->createImageMedia([
         'name' => "$bundle List page Image test",
         'oe_media_image' => [
-          [
-            'target_id' => $file->id(),
-            'alt' => "$bundle List page Image test alt",
-          ],
+          'alt' => "$bundle List page Image test alt",
         ],
       ]);
-      $media->save();
+
       $media_name = $media->getName() . ' (' . $media->id() . ')';
     }
+
     $this->drupalLogin($this->editorUser);
 
     $this->drupalGet('node/add/oe_list_page');
@@ -1026,7 +1015,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       $title,
       $summary,
       $has_media === FALSE ? [] : [
-        'src' => 'image-test.png',
+        'src' => $media->get('oe_media_image')->entity->getFilename(),
         'alt' => "$bundle List page Image test alt",
       ]);
 
