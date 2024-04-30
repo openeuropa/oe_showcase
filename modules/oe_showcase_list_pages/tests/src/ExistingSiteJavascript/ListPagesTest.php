@@ -79,6 +79,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $page = $this->getSession()->getPage();
 
     // Create some News test nodes.
+    /** @var \Drupal\taxonomy\VocabularyInterface $news_type */
     $news_type = Vocabulary::load('news_type');
     for ($i = 0; $i < 12; $i++) {
       $term = $this->createTerm(
@@ -102,6 +103,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $countries = [
       'AF', 'BE', 'RO', 'DE', 'FR', 'ES', 'IT', 'AU', 'BB', 'RO', 'CZ', 'FR',
     ];
+    /** @var \Drupal\taxonomy\VocabularyInterface $event_type */
     $event_type = Vocabulary::load('event_type');
     for ($i = 0; $i < 12; $i++) {
       $term = $this->createTerm(
@@ -148,6 +150,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     }
 
     // Create some Publication test nodes.
+    /** @var \Drupal\taxonomy\VocabularyInterface $publication_type */
     $publication_type = Vocabulary::load('publication_type');
     for ($i = 0; $i < 12; $i++) {
       $term = $this->createTerm(
