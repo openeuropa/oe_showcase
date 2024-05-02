@@ -113,18 +113,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Banner 0 item Body'
     );
 
-    $color_scheme_field = $page->findField('Color scheme');
-
-    $this->assertEqualsCanonicalizing(
-      [
-        '' => '- None -',
-        'pixie-pink' => 'Pixie-pink',
-        'blue-horizon' => 'Blue-horizon',
-      ],
-      $this->fetchSelectOptions($color_scheme_field)
-    );
-
-    $page->selectFieldOption('Color scheme', 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 1, color_scheme: 'blue-horizon');
 
     // Add Quote Paragraph.
     $page->pressButton('Add Quote');
@@ -136,6 +125,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[2][subform][field_oe_text][0][value]',
       'T.S Eliot'
     );
+
+    $this->selectColorScheme(paragraph_index: 2, color_scheme: 'pixie-pink');
 
     // Add a listing item block.
     $page->pressButton('Add Listing item block');
@@ -176,6 +167,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $field = $page->findField('field_body[3][subform][field_oe_paragraphs][1][subform][field_oe_text_long][0][value]');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Listing item description for example 1');
+
+    $this->selectColorScheme(paragraph_index: 3, color_scheme: 'blue-horizon');
 
     // Add a Content row paragraph.
     $page->pressButton('Add Content row');
@@ -278,6 +271,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Fact 3 description'
     );
 
+    $this->selectColorScheme(paragraph_index: 5, color_scheme: 'blue-horizon');
+
     // Add Description list paragraph.
     $page->pressButton('Add Description list');
     $page->selectFieldOption(
@@ -292,6 +287,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[6][subform][field_oe_description_list_items][0][term]',
       'First term'
     );
+
+    $this->selectColorScheme(paragraph_index: 6, color_scheme: 'blue-horizon');
+
     $field = $page->findField('field_body[6][subform][field_oe_description_list_items][0][description][value]');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('First term description');
@@ -332,6 +330,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'field_body[7][subform][field_oe_media][0][target_id]',
       sprintf('Local PDF file (%s)', $local_media->id())
     );
+
+    $this->selectColorScheme(paragraph_index: 7, color_scheme: 'pixie-pink');
 
     // Add Social media follow paragraph.
     $page->pressButton('Add Social media follow');
@@ -397,6 +397,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Add Accordion paragraph.
     $page->pressButton('field_body_oe_accordion_add_more');
+
     $page->fillField(
       'field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text][0][value]',
       'Accordion title'
@@ -404,6 +405,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $field = $page->findField('field_body[9][subform][field_oe_paragraphs][0][subform][field_oe_text_long][0][value]');
     $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Accordion Body');
+
+    $this->selectColorScheme(paragraph_index: 9, color_scheme: 'blue-horizon');
 
     // Save node.
     $page->pressButton('Save');
@@ -420,6 +423,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     $assert_session->pageTextContains('Accordion title');
     $assert_session->pageTextContains('Accordion body');
+    $assert_session->elementExists('css', '.accordion.blue-horizon');
 
     // Assert Rich Text Title.
     $assert_session->pageTextContains('Rich Text paragraph title');
@@ -430,6 +434,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Quote.
     $assert_session->pageTextContains('Every moment is a fresh beginning.');
     $assert_session->pageTextContains('T.S Eliot');
+    $assert_session->elementExists('css', 'figure.pixie-pink');
 
     // Assert Banner.
     $assert_session->pageTextContains('Banner 0 item title');
@@ -442,9 +447,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Listing item description');
     $assert_session->pageTextContains('Example 1 Page');
     $assert_session->pageTextContains('Listing item description for example 1');
+    $assert_session->elementExists('css', '.bcl-listing.blue-horizon');
 
     $assert_session->pageTextContains('Local PDF file');
     $assert_session->linkByHrefExists(\Drupal::service('file_url_generator')->generateAbsoluteString($file_uri));
+    $assert_session->elementExists('css', '.paragraph--type--oe-document.pixie-pink');
 
     // Assert Content row.
     $assert_session->pageTextContains('Example title rich text 1');
@@ -470,6 +477,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('First term description');
     $assert_session->pageTextContains('Second term');
     $assert_session->pageTextContains('Second term description');
+    $assert_session->elementExists('css', '.bcl-description-list.blue-horizon');
 
     // Assert Social media follow.
     $assert_session->pageTextContains('Social share links');
@@ -525,6 +533,30 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     return array_map(function (NodeElement $button) {
       return $button->getValue();
     }, $button_wrapper[0]->findAll('css', 'input.field-add-more-submit'));
+  }
+
+  /**
+   * Selects the color scheme option by name.
+   *
+   * @param int $paragraph_index
+   *   The paragraph order index.
+   * @param string $color_scheme
+   *   The color scheme value.
+   */
+  protected function selectColorScheme(int $paragraph_index, string $color_scheme): void {
+    $page = $this->getSession()->getPage();
+    $color_scheme_field = $page->findField("field_body[$paragraph_index][subform][field_color_scheme][0][name]");
+
+    $this->assertEqualsCanonicalizing(
+      [
+        '' => '- None -',
+        'pixie-pink' => 'Pixie pink',
+        'blue-horizon' => 'Blue horizon',
+      ],
+      $this->fetchSelectOptions($color_scheme_field)
+    );
+
+    $color_scheme_field->selectOption($color_scheme);
   }
 
 }
