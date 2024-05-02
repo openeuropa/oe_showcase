@@ -42,7 +42,7 @@
         "drupal/user_fields_visibility": "^1.1@alpha",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
-        "openeuropa/oe_color_scheme": "1.x-dev",
+        "openeuropa/oe_color_scheme": "dev-contribution/EPHEH-318",
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
         "openeuropa/oe_content_extra": "^1.1.0",
