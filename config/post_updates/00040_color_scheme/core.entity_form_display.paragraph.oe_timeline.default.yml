@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_timeline.field_color_scheme
+    - field.field.paragraph.oe_timeline.field_oe_text_long
+    - field.field.paragraph.oe_timeline.field_oe_timeline
+    - field.field.paragraph.oe_timeline.field_oe_timeline_expand
+    - field.field.paragraph.oe_timeline.field_oe_title
+    - paragraphs.paragraphs_type.oe_timeline
+  module:
+    - oe_color_scheme
+    - oe_content_timeline_field
+    - text
+id: paragraph.oe_timeline.default
+targetEntityType: paragraph
+bundle: oe_timeline
+mode: default
+content:
+  field_color_scheme:
+    type: oe_color_scheme_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_text_long:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_oe_timeline:
+    type: timeline_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_timeline_expand:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 170
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
