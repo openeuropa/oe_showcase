@@ -1,10 +1,22 @@
 # Change Log
 
+## [1.7.0](https://github.com/openeuropa/oe_showcase/tree/1.7.0) (2024-05-02)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.6.0...1.7.0)
+
+**Merged pull requests:**
+
+- OEL-2929: Add an optional title, description and image on the listing page. [\#248](https://github.com/openeuropa/oe_showcase/pull/248) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2863: Pipeline errors. [\#246](https://github.com/openeuropa/oe_showcase/pull/246) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2846: Check emails sent in contact form tests [\#245](https://github.com/openeuropa/oe_showcase/pull/245) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2756: Fix page teaser rendering. [\#234](https://github.com/openeuropa/oe_showcase/pull/234) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2710: Add editor to simple rich text format. [\#233](https://github.com/openeuropa/oe_showcase/pull/233) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+
 ## [1.6.0](https://github.com/openeuropa/oe_showcase/tree/1.6.0) (2024-03-18)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.5.0...1.6.0)
 
 **Merged pull requests:**
 
+- Prepare changelog for release 1.6.0. [\#244](https://github.com/openeuropa/oe_showcase/pull/244) ([brummbar](https://github.com/brummbar))
 - OEL-2861: Update oe\_oembed to latest minor. [\#243](https://github.com/openeuropa/oe_showcase/pull/243) ([brummbar](https://github.com/brummbar))
 
 ## [1.5.0](https://github.com/openeuropa/oe_showcase/tree/1.5.0) (2024-03-13)
