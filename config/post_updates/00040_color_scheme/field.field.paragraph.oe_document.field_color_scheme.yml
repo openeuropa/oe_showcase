@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color_scheme
+    - paragraphs.paragraphs_type.oe_document
+  module:
+    - oe_color_scheme
+id: paragraph.oe_document.field_color_scheme
+field_name: field_color_scheme
+entity_type: paragraph
+bundle: oe_document
+label: 'Color scheme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: oe_color_scheme
