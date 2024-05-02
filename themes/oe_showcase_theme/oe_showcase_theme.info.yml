@@ -23,8 +23,8 @@ regions:
   footer: 'Footer'
 
 color_scheme:
-  - pixie-pink
-  - blue-horizon
+  pixie-pink: "Pixie pink"
+  blue-horizon: "Blue horizon"
 
 config_devel:
   install:
