@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.oe_w_content_banner
+    - field.field.node.oe_list_page.oe_featured_media
+    - field.field.node.oe_list_page.oe_summary
+    - node.type.oe_list_page
+  module:
+    - oe_content_featured_media_field
+    - text
+    - user
+id: node.oe_list_page.oe_w_content_banner
+targetEntityType: node
+bundle: oe_list_page
+mode: oe_w_content_banner
+content:
+  oe_featured_media:
+    type: oe_featured_media_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  oe_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  'extra_field_oe_list_page_filters:node:oe_list_page': true
+  'extra_field_oe_list_page_pager_info:node:oe_list_page': true
+  'extra_field_oe_list_page_results:node:oe_list_page': true
+  'extra_field_oe_list_page_rss_link:node:oe_list_page': true
+  'extra_field_oe_list_page_selected_filters:node:oe_list_page': true
+  'extra_field_oe_list_page_sort:node:oe_list_page': true
+  'extra_field_oe_list_page_total_count:node:oe_list_page': true
+  langcode: true
+  links: true
+  oe_content_content_owner: true
+  oe_content_legacy_link: true
+  oe_content_navigation_title: true
+  oe_content_short_title: true
+  search_api_excerpt: true
