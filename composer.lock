@@ -6794,16 +6794,16 @@
         },
         {
             "name": "openeuropa/oe_color_scheme",
-            "version": "dev-contribution/EPHEH-318",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_color_scheme.git",
-                "reference": "38041f27d43a69041411bba7c5b5dc49a76c970d"
+                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_color_scheme/zipball/38041f27d43a69041411bba7c5b5dc49a76c970d",
-                "reference": "38041f27d43a69041411bba7c5b5dc49a76c970d",
+                "url": "https://api.github.com/repos/openeuropa/oe_color_scheme/zipball/4d4acf3f24f0da4da2300421e82659df316ea408",
+                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408",
                 "shasum": ""
             },
             "require": {
@@ -6819,6 +6819,7 @@
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
                 "phpspec/prophecy-phpunit": "^2"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -6866,10 +6867,10 @@
             ],
             "description": "OpenEuropa Drupal module that provides a colour scheme field.",
             "support": {
-                "source": "https://github.com/openeuropa/oe_color_scheme/tree/contribution/EPHEH-318",
+                "source": "https://github.com/openeuropa/oe_color_scheme/tree/1.x",
                 "issues": "https://github.com/openeuropa/oe_color_scheme/issues"
             },
-            "time": "2024-04-25T06:58:01+00:00"
+            "time": "2024-04-04T12:09:34+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
