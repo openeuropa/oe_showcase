@@ -113,9 +113,6 @@
                 "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2023-03-03/3300404-28-map-field-failing-php-81-combined.patch",
                 "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch"
             },
-            "drupal/roleassign": {
-                "Bug in RoleAssignUserBulkForm, roles not shown": "https://www.drupal.org/files/issues/2023-06-16/3367110-2.patch"
-            },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
             },
