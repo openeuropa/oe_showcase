@@ -1,10 +1,12 @@
 # Change Log
 
-## [1.7.0](https://github.com/openeuropa/oe_showcase/tree/1.7.0) (2024-05-02)
+## [1.7.0](https://github.com/openeuropa/oe_showcase/tree/1.7.0) (2024-05-07)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.6.0...1.7.0)
 
 **Merged pull requests:**
 
+- OEL-2863: Update packages. [\#250](https://github.com/openeuropa/oe_showcase/pull/250) ([brummbar](https://github.com/brummbar))
+- Prepare changelog for release 1.7.0. [\#249](https://github.com/openeuropa/oe_showcase/pull/249) ([brummbar](https://github.com/brummbar))
 - OEL-2929: Add an optional title, description and image on the listing page. [\#248](https://github.com/openeuropa/oe_showcase/pull/248) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-2863: Pipeline errors. [\#246](https://github.com/openeuropa/oe_showcase/pull/246) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-2846: Check emails sent in contact form tests [\#245](https://github.com/openeuropa/oe_showcase/pull/245) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
