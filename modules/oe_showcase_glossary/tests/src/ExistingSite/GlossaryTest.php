@@ -14,6 +14,7 @@ use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
+use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 
 /**
@@ -21,6 +22,7 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
  */
 class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
+  use PathautoTestHelperTrait;
   use AssertPathAccessTrait;
   use TraversingTrait;
   use UserTrait;
@@ -150,6 +152,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $glossary_vocabulary = Vocabulary::load('glossary');
     $term = $this->createTerm($glossary_vocabulary);
     $this->drupalGet($term->toUrl());
+    $this->assertEntityAlias($term, "/glossary/{$term->label()}");
 
     $assert_session = $this->assertSession();
     $assert_session->elementNotExists('css', '#block-oe-showcase-theme-main-page-content .views-element-container');
