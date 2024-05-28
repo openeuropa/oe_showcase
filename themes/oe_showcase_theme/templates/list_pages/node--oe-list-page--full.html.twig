@@ -1,0 +1,50 @@
+{% apply spaceless %}
+  {{ content|without('extra_field_oe_list_page_filters:node:oe_list_page', 'extra_field_oe_list_page_results:node:oe_list_page', 'extra_field_oe_list_page_selected_filters:node:oe_list_page', 'extra_field_oe_list_page_total_count:node:oe_list_page', 'extra_field_oe_list_page_sort:node:oe_list_page') }}
+  <div class="row">
+    <div class="col-12 bcl-sidebar col-lg-3">
+      {% set filters = content['extra_field_oe_list_page_filters:node:oe_list_page']|render %}
+      {% if filters %}
+        {{ pattern('offcanvas', {
+          'variant': 'search',
+          'title': 'Filter options',
+          'body': filters,
+          'placement': 'start',
+          'body_scroll': false,
+          'backdrop': true,
+          'toggle': {
+            'label': 'Filters',
+            'variant': 'light',
+            'size': 'lg',
+            'icon': 'filter',
+            'icon_position': 'before',
+            'attributes': create_attribute().addClass(['d-lg-none', 'w-100', 'mb-4']),
+          },
+        }) }}
+      {% endif %}
+    </div>
+    <div class="col-12 col-lg-9 col-xxl-8">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 align-self-center">
+          <h4 class="mb-0">
+            <span class="text-capitalize">{{ label }}</span>
+            ({{ content['extra_field_oe_list_page_total_count:node:oe_list_page'] }})
+          </h4>
+        </div>
+        {% set selected_filters %}
+          {{ content['extra_field_oe_list_page_selected_filters:node:oe_list_page']|merge({'#theme': 'field__bare'}) }}
+        {% endset %}
+        {% if selected_filters|trim is not empty %}
+          <div class="col-md-12 order-md-2 mt-3">
+            {{ selected_filters }}
+          </div>
+        {% endif %}
+        <div class="col-md-6 col-lg-8 mt-3 mt-md-0">
+          <div class="float-md-end d-md-flex align-items-center mb-4 mb-md-0">
+            {{ content['extra_field_oe_list_page_sort:node:oe_list_page'] }}
+          </div>
+        </div>
+      </div>
+      {{ content['extra_field_oe_list_page_results:node:oe_list_page'] }}
+    </div>
+  </div>
+{% endapply %}
