@@ -21,6 +21,7 @@ Aside from Drupal core Taxonomy and Views modules, it has the following dependen
 styling for the glossary summary and results.
 - [Better Exposed Filters](https://www.drupal.org/project/better_exposed_filters): Optional. Provides
 auto-submit for the sort and page size form elements.
+- [Pathauto](https://www.drupal.org/project/pathauto): Optional. Provides alias for terms in the glossary.
 
 ## How it was built
 
@@ -31,6 +32,7 @@ In the [config/install](./config/install) folder the following configuration:
 - Configured displays for "Full" and "Teaser" view modes ([`core.entity_view_display.taxonomy_term.glossary.full.yml`](./config/install/core.entity_view_display.taxonomy_term.glossary.full.yml)
 and [`core.entity_view_display.taxonomy_term.glossary.teaser.yml`](./config/install/core.entity_view_display.taxonomy_term.glossary.teaser.yml));
 - The glossary page, created with Views ([`views.view.glossary_page`](./config/install/views.view.glossary_page.yml)).
+- A URL alias pattern for glossary taxonomy terms ([`pathauto.pattern.glossary_term_url_alias_pattern`](./config/install/pathauto.pattern.glossary_term_url_alias_pattern.yml)).
 
 The view itself contains two displays:
 - a page display (`page_1`) which renders the results of the view. It takes a character as argument and filters by it.
