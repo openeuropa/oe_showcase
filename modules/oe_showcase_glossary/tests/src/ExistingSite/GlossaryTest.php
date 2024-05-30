@@ -269,6 +269,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     // Results are paged, 20 elements by page.
     $pages = array_chunk($expected_terms, 20);
 
+    // The URL query parameters are preserved in the pager links.
+    $url_query = parse_url($this->getUrl(), PHP_URL_QUERY);
+    $query = !empty($url_query) ? "?$url_query&page=%s" : '?page=%s';
+
     $expected_pagination = [
       'variant' => 'default',
       'alignment' => 'center',
@@ -276,17 +280,17 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     ];
     for ($i = 0; $i < count($pages); $i++) {
       $expected_pagination['links'][] = [
-        'url' => sprintf('?page=%s', $i),
+        'url' => sprintf($query, $i),
         'label' => (string) ($i + 1),
         'active' => $i === 0,
       ];
     }
     $expected_pagination['links'][] = [
-      'url' => sprintf('?page=1'),
+      'url' => sprintf($query, 1),
       'label' => 'Next',
     ];
     $expected_pagination['links'][] = [
-      'url' => sprintf('?page=%s', count($pages) - 1),
+      'url' => sprintf($query, count($pages) - 1),
       'icon' => 'chevron-double-right',
     ];
 
