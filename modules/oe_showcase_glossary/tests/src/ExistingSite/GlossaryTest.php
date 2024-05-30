@@ -384,8 +384,11 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $initials['ç'] = rand(1, 5);
     // Add a special character.
     $initials['Æ'] = rand(1, 5);
-    // Add one entry with more than 20 terms in it, to trigger paging.
-    $initials[array_rand($initials)] = 41;
+    // And Add one entry with more than 20 terms in it, to trigger paging.
+    $initials[array_rand(array_diff($initials, ['a']))] = 41;
+    // Test pager in 'a' character, to check aditional URL parameters like
+    // sorting and limit.
+    $initials['a'] = 42;
 
     $terms_by_letter = [];
     foreach ($initials as $character => $num_terms) {
