@@ -392,7 +392,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $initials['Æ'] = rand(1, 5);
     // And Add one entry with more than 20 terms in it, to trigger paging.
     $initials[array_rand(array_diff($initials, ['a']))] = 41;
-    // Test pager in 'a' character, to check aditional URL parameters like
+    // Test pager in 'a' character, to check additional URL parameters like
     // sorting and limit.
     $initials['a'] = 42;
 

@@ -14,5 +14,6 @@ config_devel:
     - core.entity_view_display.taxonomy_term.glossary.full
     - core.entity_view_display.taxonomy_term.glossary.teaser
     - core.entity_view_mode.taxonomy_term.teaser
+    - pathauto.pattern.glossary_term_url_alias_pattern
     - taxonomy.vocabulary.glossary
     - views.view.glossary_page
