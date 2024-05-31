@@ -36,7 +36,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $view_wrapper = $assert_session->elementExists('css', '.glossary-view');
 
-    // Check glossary when no terms are present.
+    // Check breadcrumbs when no terms are present.
     $this->assertBreadcrumbs([
       [
         'text' => 'Home',
@@ -55,7 +55,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $this->assertViewResultsTitle('A', 0);
     $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results have been found.');
 
-    // Breadcrumbs for a specific letter with no results.
+    // Check breadcrumbs for a specific letter with no results.
     $this->assertBreadcrumbs([
       [
         'text' => 'Home',
@@ -153,6 +153,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
       $this->assertViewResults($terms, (string) $character);
 
+      // Check breadcrumbs for the current character.
       $this->assertBreadcrumbs([
         [
           'text' => 'Home',
@@ -208,8 +209,9 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $glossary_vocabulary = Vocabulary::load('glossary');
     $term = $this->createTerm($glossary_vocabulary);
     $this->drupalGet($term->toUrl());
-    $this->assertEntityAlias($term, "/glossary/{$term->label()}");
 
+    // Check alias and breadcrumbs for the term.
+    $this->assertEntityAlias($term, "/glossary/{$term->label()}");
     $this->assertBreadcrumbs([
       [
         'text' => 'Home',
@@ -459,7 +461,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Asserts breaccrumbs in the current page.
+   * Asserts breadcrumbs in the current page.
    *
    * @param array $expected_segments
    *   Associative array with text and URL for the breadcrumbs segments.
@@ -475,7 +477,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $breadcrumbs_items = $breadcrumbs_block->filter('li.breadcrumb-item');
     $this->assertCount(count($expected_segments), $breadcrumbs_items);
 
-    // Collect segments text and url link if there is.
+    // Collect segments text and URL from link if there is.
     $segments = [];
     foreach ($breadcrumbs_items as $item) {
       $segments[] = [
