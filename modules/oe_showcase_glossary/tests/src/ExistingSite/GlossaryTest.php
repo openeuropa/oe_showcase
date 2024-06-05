@@ -473,7 +473,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
     // Check segments number.
     $breadcrumbs_items = $breadcrumbs_block->findAll('css', 'li.breadcrumb-item');
-    $this->assertCount(count($expected_segments), $breadcrumbs_items);
+    $this->assertSameSize($expected_segments, $breadcrumbs_items);
 
     // Collect segments text and URL from link if there is.
     $segments = [];
