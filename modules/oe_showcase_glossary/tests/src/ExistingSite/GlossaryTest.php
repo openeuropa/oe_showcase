@@ -16,7 +16,6 @@ use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Symfony\Component\CssSelector\CssSelectorConverter;
-use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Tests the glossary functionality.
@@ -467,22 +466,21 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
    *   Associative array with text and URL for the breadcrumbs segments.
    */
   protected function assertBreadcrumbs(array $expected_segments): void {
-    $crawler = new Crawler($this->getSession()->getPage()->getContent());
+    $assert_session = $this->assertSession();
 
     // Check that the breadcrumbs block is present in the page.
-    $breadcrumbs_block = $crawler->filter('#block-oe-showcase-theme-breadcrumbs');
-    $this->assertCount(1, $breadcrumbs_block);
+    $breadcrumbs_block = $assert_session->elementExists('css', '#block-oe-showcase-theme-breadcrumbs');
 
     // Check segments number.
-    $breadcrumbs_items = $breadcrumbs_block->filter('li.breadcrumb-item');
+    $breadcrumbs_items = $breadcrumbs_block->findAll('css', 'li.breadcrumb-item');
     $this->assertCount(count($expected_segments), $breadcrumbs_items);
 
     // Collect segments text and URL from link if there is.
     $segments = [];
     foreach ($breadcrumbs_items as $item) {
       $segments[] = [
-        'text' => $item->textContent,
-        'url' => $item->firstChild->hasAttributes() ? $item->firstChild->getAttribute('href') : '',
+        'text' => $item->getText(),
+        'url' => $item->find('css', 'a')?->getAttribute('href') ?? '',
       ];
     }
 
