@@ -906,16 +906,6 @@ function oe_showcase_post_update_00041(): void {
   ]);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00041_color_scheme', [
-    'field.storage.paragraph.field_color_scheme',
-    'field.field.paragraph.oe_accordion.field_color_scheme',
-    'field.field.paragraph.oe_banner.field_color_scheme',
-    'field.field.paragraph.oe_description_list.field_color_scheme',
-    'field.field.paragraph.oe_document.field_color_scheme',
-    'field.field.paragraph.oe_facts_figures.field_color_scheme',
-    'field.field.paragraph.oe_list_item_block.field_color_scheme',
-    'field.field.paragraph.oe_quote.field_color_scheme',
-    'field.field.paragraph.oe_text_feature_media.field_color_scheme',
-    'field.field.paragraph.oe_timeline.field_color_scheme',
     'core.entity_form_display.paragraph.oe_accordion.default',
     'core.entity_form_display.paragraph.oe_banner.default',
     'core.entity_form_display.paragraph.oe_banner.oe_banner_image',
@@ -924,6 +914,7 @@ function oe_showcase_post_update_00041(): void {
     'core.entity_form_display.paragraph.oe_description_list.default',
     'core.entity_form_display.paragraph.oe_document.default',
     'core.entity_form_display.paragraph.oe_facts_figures.default',
+    'core.entity_form_display.paragraph.oe_links_block.default',
     'core.entity_form_display.paragraph.oe_list_item_block.default',
     'core.entity_form_display.paragraph.oe_quote.default',
     'core.entity_form_display.paragraph.oe_text_feature_media.default',
@@ -931,5 +922,16 @@ function oe_showcase_post_update_00041(): void {
     'core.entity_form_display.paragraph.oe_text_feature_media.right_featured',
     'core.entity_form_display.paragraph.oe_text_feature_media.right_simple',
     'core.entity_form_display.paragraph.oe_timeline.default',
+    'field.field.paragraph.oe_accordion.field_color_scheme',
+    'field.field.paragraph.oe_banner.field_color_scheme',
+    'field.field.paragraph.oe_description_list.field_color_scheme',
+    'field.field.paragraph.oe_document.field_color_scheme',
+    'field.field.paragraph.oe_facts_figures.field_color_scheme',
+    'field.field.paragraph.oe_links_block.field_color_scheme',
+    'field.field.paragraph.oe_list_item_block.field_color_scheme',
+    'field.field.paragraph.oe_quote.field_color_scheme',
+    'field.field.paragraph.oe_text_feature_media.field_color_scheme',
+    'field.field.paragraph.oe_timeline.field_color_scheme',
+    'field.storage.paragraph.field_color_scheme',
   ]);
 }
