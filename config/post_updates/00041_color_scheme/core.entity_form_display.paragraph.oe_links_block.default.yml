@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_links_block.field_color_scheme
+    - field.field.paragraph.oe_links_block.field_oe_links
+    - field.field.paragraph.oe_links_block.field_oe_text
+    - field.field.paragraph.oe_links_block.oe_w_links_block_background
+    - field.field.paragraph.oe_links_block.oe_w_links_block_orientation
+    - paragraphs.paragraphs_type.oe_links_block
+  module:
+    - link
+    - oe_color_scheme
+id: paragraph.oe_links_block.default
+targetEntityType: paragraph
+bundle: oe_links_block
+mode: default
+content:
+  field_color_scheme:
+    type: oe_color_scheme_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_links:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_oe_text:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  oe_w_links_block_background:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  oe_w_links_block_orientation:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true
