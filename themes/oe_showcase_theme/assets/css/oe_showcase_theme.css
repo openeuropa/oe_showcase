@@ -1,18 +1,38 @@
+.glossary-view .glossary__description {
+  margin-bottom: -.75rem; /* Remove default margin for .card-text - mb-2-5 if empty */
+}
+
 .glossary-view .views-exposed-form {
   display: flex;
   justify-content: flex-end;
   align-content: center;
-}
-
-.glossary-view .views-exposed-form .form-item {
-  margin: 0 0 0 1.5rem !important;
-}
-.glossary-view .views-exposed-form .form-label,
-.glossary-view .views-exposed-form .form-select {
-  display: inline-block !important;
-  width: auto;
+  flex-direction: column;
 }
 
 .glossary-view .views-exposed-form .form-label {
   margin-right: 1.5rem;
+}
+
+.glossary-view .views-exposed-form .form-item {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .glossary-view .glossary__description {
+    margin-bottom: 0;
+  }
+  
+  .glossary-view .views-exposed-form {
+    flex-direction: row;
+  }
+
+  .glossary-view .views-exposed-form .form-label,
+  .glossary-view .views-exposed-form .form-select {
+    display: inline-block;
+    width: auto;
+  }
+
+  .glossary-view .views-exposed-form .form-item {
+    margin: 0 0 0 1.5rem !important;
+  }
 }
