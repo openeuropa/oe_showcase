@@ -171,7 +171,6 @@ config_devel:
     - field.field.paragraph.oe_list_item_block.field_color_scheme
     - field.field.paragraph.oe_quote.field_color_scheme
     - field.field.paragraph.oe_rich_text.field_oe_text_long
-    - field.field.paragraph.oe_text_feature_media.field_color_scheme
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
     - field.field.paragraph.oe_timeline.field_color_scheme
     - field.field.paragraph.oe_timeline.field_oe_text_long
