@@ -14,6 +14,7 @@ use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
+use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 
 /**
@@ -21,6 +22,7 @@ use Symfony\Component\CssSelector\CssSelectorConverter;
  */
 class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
+  use PathautoTestHelperTrait;
   use AssertPathAccessTrait;
   use TraversingTrait;
   use UserTrait;
@@ -33,6 +35,18 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $assert_session = $this->assertSession();
     $view_wrapper = $assert_session->elementExists('css', '.glossary-view');
 
+    // Check breadcrumbs when no terms are present.
+    $this->assertBreadcrumbs([
+      [
+        'text' => 'Home',
+        'url' => URL::fromRoute('<front>')->toString(),
+      ],
+      [
+        'text' => 'Glossary',
+        'url' => '',
+      ],
+    ]);
+
     // No terms are yet so the no results found message should be shown. No
     // title is rendered as we are not filtering on a character.
     $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results', 'No results have been found.');
@@ -40,8 +54,36 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $this->assertViewResultsTitle('A', 0);
     $assert_session->elementTextEquals('css', '.glossary-view > .glossary-view__results > p', 'No results have been found.');
 
+    // Check breadcrumbs for a specific letter with no results.
+    $this->assertBreadcrumbs([
+      [
+        'text' => 'Home',
+        'url' => URL::fromRoute('<front>')->toString(),
+      ],
+      [
+        'text' => 'Glossary',
+        'url' => URL::fromUserInput('/glossary')->toString(),
+      ],
+      [
+        'text' => 'Glossary',
+        'url' => '',
+      ],
+    ]);
+
     $all_terms = $this->generateTerms();
     $this->drupalGet('/glossary');
+
+    // Check breadcrumbs when terms are present (default character).
+    $this->assertBreadcrumbs([
+      [
+        'text' => 'Home',
+        'url' => URL::fromRoute('<front>')->toString(),
+      ],
+      [
+        'text' => 'Glossary',
+        'url' => '',
+      ],
+    ]);
 
     // The CSS selector uses the converter with a default "descendant-or-self::"
     // prefix which makes impossible to check for direct children. At the same
@@ -110,6 +152,22 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
 
       $this->assertViewResults($terms, (string) $character);
 
+      // Check breadcrumbs for the current character.
+      $this->assertBreadcrumbs([
+        [
+          'text' => 'Home',
+          'url' => URL::fromRoute('<front>')->toString(),
+        ],
+        [
+          'text' => 'Glossary',
+          'url' => URL::fromUserInput('/glossary')->toString(),
+        ],
+        [
+          'text' => 'Glossary',
+          'url' => '',
+        ],
+      ]);
+
       $previous_index = $index++;
     }
 
@@ -150,6 +208,23 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $glossary_vocabulary = Vocabulary::load('glossary');
     $term = $this->createTerm($glossary_vocabulary);
     $this->drupalGet($term->toUrl());
+
+    // Check alias and breadcrumbs for the term.
+    $this->assertEntityAlias($term, "/glossary/{$term->label()}");
+    $this->assertBreadcrumbs([
+      [
+        'text' => 'Home',
+        'url' => URL::fromRoute('<front>')->toString(),
+      ],
+      [
+        'text' => 'Glossary',
+        'url' => URL::fromUserInput('/glossary')->toString(),
+      ],
+      [
+        'text' => ucfirst($term->label()),
+        'url' => '',
+      ],
+    ]);
 
     $assert_session = $this->assertSession();
     $assert_session->elementNotExists('css', '#block-oe-showcase-theme-main-page-content .views-element-container');
@@ -195,6 +270,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     // Results are paged, 20 elements by page.
     $pages = array_chunk($expected_terms, 20);
 
+    // The URL query parameters are preserved in the pager links.
+    $url_query = parse_url($this->getUrl(), PHP_URL_QUERY);
+    $query = !empty($url_query) ? "?$url_query&page=%s" : '?page=%s';
+
     $expected_pagination = [
       'variant' => 'default',
       'alignment' => 'center',
@@ -202,17 +281,17 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     ];
     for ($i = 0; $i < count($pages); $i++) {
       $expected_pagination['links'][] = [
-        'url' => sprintf('?page=%s', $i),
+        'url' => sprintf($query, $i),
         'label' => (string) ($i + 1),
         'active' => $i === 0,
       ];
     }
     $expected_pagination['links'][] = [
-      'url' => sprintf('?page=1'),
+      'url' => sprintf($query, 1),
       'label' => 'Next',
     ];
     $expected_pagination['links'][] = [
-      'url' => sprintf('?page=%s', count($pages) - 1),
+      'url' => sprintf($query, count($pages) - 1),
       'icon' => 'chevron-double-right',
     ];
 
@@ -310,8 +389,11 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     $initials['ç'] = rand(1, 5);
     // Add a special character.
     $initials['Æ'] = rand(1, 5);
-    // Add one entry with more than 20 terms in it, to trigger paging.
-    $initials[array_rand($initials)] = 41;
+    // And Add one entry with more than 20 terms in it, to trigger paging.
+    $initials[array_rand(array_diff($initials, ['a']))] = 41;
+    // Test pager in 'a' character, to check additional URL parameters like
+    // sorting and limit.
+    $initials['a'] = 42;
 
     $terms_by_letter = [];
     foreach ($initials as $character => $num_terms) {
@@ -375,6 +457,34 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     array_walk($terms, function (array &$terms) use ($sort_by_label) {
       usort($terms, $sort_by_label);
     });
+  }
+
+  /**
+   * Asserts breadcrumbs in the current page.
+   *
+   * @param array $expected_segments
+   *   Associative array with text and URL for the breadcrumbs segments.
+   */
+  protected function assertBreadcrumbs(array $expected_segments): void {
+    $assert_session = $this->assertSession();
+
+    // Check that the breadcrumbs block is present in the page.
+    $breadcrumbs_block = $assert_session->elementExists('css', '#block-oe-showcase-theme-breadcrumbs');
+
+    // Check segments number.
+    $breadcrumbs_items = $breadcrumbs_block->findAll('css', 'li.breadcrumb-item');
+    $this->assertSameSize($expected_segments, $breadcrumbs_items);
+
+    // Collect segments text and URL from link if there is.
+    $segments = [];
+    foreach ($breadcrumbs_items as $item) {
+      $segments[] = [
+        'text' => $item->getText(),
+        'url' => $item->find('css', 'a')?->getAttribute('href') ?? '',
+      ];
+    }
+
+    $this->assertEquals($expected_segments, $segments);
   }
 
 }
