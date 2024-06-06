@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.oe_text_feature_media.field_color_scheme
     - field.field.paragraph.oe_text_feature_media.field_oe_feature_media_title
     - field.field.paragraph.oe_text_feature_media.field_oe_highlighted
     - field.field.paragraph.oe_text_feature_media.field_oe_link
@@ -13,19 +12,12 @@ dependencies:
     - paragraphs.paragraphs_type.oe_text_feature_media
   module:
     - link
-    - oe_color_scheme
     - text
 id: paragraph.oe_text_feature_media.default
 targetEntityType: paragraph
 bundle: oe_text_feature_media
 mode: default
 content:
-  field_color_scheme:
-    type: oe_color_scheme_widget
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_oe_feature_media_title:
     type: string_textfield
     weight: 2
