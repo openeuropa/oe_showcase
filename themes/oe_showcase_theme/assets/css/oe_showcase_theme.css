@@ -2,6 +2,10 @@
   margin-bottom: -.75rem; /* Remove default margin for .card-text - mb-2-5 if empty */
 }
 
+.glossary-view .card-text:empty {
+  display: none;
+}
+
 .glossary-view .views-exposed-form {
   display: flex;
   justify-content: flex-end;
@@ -21,7 +25,7 @@
   .glossary-view .glossary__description {
     margin-bottom: 0;
   }
-  
+
   .glossary-view .views-exposed-form {
     flex-direction: row;
   }
