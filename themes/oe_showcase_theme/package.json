@@ -9,9 +9,9 @@
     "build:styles": "cross-env bcl-builder styles"
   },
   "devDependencies": {
-    "@openeuropa/bcl-bootstrap": "0.313.202403151055",
-    "@openeuropa/bcl-builder": "0.313.202403151055",
-    "@openeuropa/bcl-theme-default": "0.313.202403151055",
+    "@openeuropa/bcl-bootstrap": "0.313.202406071306",
+    "@openeuropa/bcl-builder": "0.313.202406071306",
+    "@openeuropa/bcl-theme-default": "0.313.202406071306",
     "bootstrap-ie11": "5.0.2",
     "chokidar-cli": "^3.0.0",
     "cross-env": "7.0.3",
