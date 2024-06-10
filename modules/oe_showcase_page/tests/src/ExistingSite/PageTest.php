@@ -113,7 +113,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Banner 0 item Body'
     );
 
-    $this->selectColorScheme(paragraph_index: 1, color_scheme: 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 1, color_scheme: 'scheme-green');
 
     // Add Quote Paragraph.
     $page->pressButton('Add Quote');
@@ -126,7 +126,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'T.S Eliot'
     );
 
-    $this->selectColorScheme(paragraph_index: 2, color_scheme: 'pixie-pink');
+    $this->selectColorScheme(paragraph_index: 2, color_scheme: 'scheme-pink');
 
     // Add a listing item block.
     $page->pressButton('Add Listing item block');
@@ -168,7 +168,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Listing item description for example 1');
 
-    $this->selectColorScheme(paragraph_index: 3, color_scheme: 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 3, color_scheme: 'scheme-green');
 
     // Add a Content row paragraph.
     $page->pressButton('Add Content row');
@@ -271,7 +271,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'Fact 3 description'
     );
 
-    $this->selectColorScheme(paragraph_index: 5, color_scheme: 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 5, color_scheme: 'scheme-green');
 
     // Add Description list paragraph.
     $page->pressButton('Add Description list');
@@ -288,7 +288,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       'First term'
     );
 
-    $this->selectColorScheme(paragraph_index: 6, color_scheme: 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 6, color_scheme: 'scheme-green');
 
     $field = $page->findField('field_body[6][subform][field_oe_description_list_items][0][description][value]');
     $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
@@ -331,7 +331,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       sprintf('Local PDF file (%s)', $local_media->id())
     );
 
-    $this->selectColorScheme(paragraph_index: 7, color_scheme: 'pixie-pink');
+    $this->selectColorScheme(paragraph_index: 7, color_scheme: 'scheme-pink');
 
     // Add Social media follow paragraph.
     $page->pressButton('Add Social media follow');
@@ -406,7 +406,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Accordion Body');
 
-    $this->selectColorScheme(paragraph_index: 9, color_scheme: 'blue-horizon');
+    $this->selectColorScheme(paragraph_index: 9, color_scheme: 'scheme-green');
 
     // Save node.
     $page->pressButton('Save');
@@ -423,7 +423,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     $assert_session->pageTextContains('Accordion title');
     $assert_session->pageTextContains('Accordion body');
-    $assert_session->elementExists('css', '.accordion.blue-horizon');
+    $assert_session->elementExists('css', '.accordion.scheme-green');
 
     // Assert Rich Text Title.
     $assert_session->pageTextContains('Rich Text paragraph title');
@@ -434,12 +434,12 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Assert Quote.
     $assert_session->pageTextContains('Every moment is a fresh beginning.');
     $assert_session->pageTextContains('T.S Eliot');
-    $assert_session->elementExists('css', 'figure.pixie-pink');
+    $assert_session->elementExists('css', 'figure.scheme-pink');
 
     // Assert Banner.
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
-    $assert_session->elementExists('css', '.bcl-banner.blue-horizon');
+    $assert_session->elementExists('css', '.bcl-banner.scheme-green');
 
     // Assert Listing item block.
     $assert_session->pageTextContains('List item block example');
@@ -447,11 +447,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Listing item description');
     $assert_session->pageTextContains('Example 1 Page');
     $assert_session->pageTextContains('Listing item description for example 1');
-    $assert_session->elementExists('css', '.bcl-listing.blue-horizon');
+    $assert_session->elementExists('css', '.bcl-listing.scheme-green');
 
     $assert_session->pageTextContains('Local PDF file');
     $assert_session->linkByHrefExists(\Drupal::service('file_url_generator')->generateAbsoluteString($file_uri));
-    $assert_session->elementExists('css', '.paragraph--type--oe-document.pixie-pink');
+    $assert_session->elementExists('css', '.paragraph--type--oe-document.scheme-pink');
 
     // Assert Content row.
     $assert_session->pageTextContains('Example title rich text 1');
@@ -477,7 +477,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('First term description');
     $assert_session->pageTextContains('Second term');
     $assert_session->pageTextContains('Second term description');
-    $assert_session->elementExists('css', '.bcl-description-list.blue-horizon');
+    $assert_session->elementExists('css', '.bcl-description-list.scheme-green');
 
     // Assert Social media follow.
     $assert_session->pageTextContains('Social share links');
@@ -550,8 +550,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->assertEqualsCanonicalizing(
       [
         '' => '- None -',
-        'pixie-pink' => 'Pixie pink',
-        'blue-horizon' => 'Blue horizon',
+        'scheme-green' => 'Green scheme',
+        'scheme-pink' => 'Pink scheme',
       ],
       $this->fetchSelectOptions($color_scheme_field)
     );
