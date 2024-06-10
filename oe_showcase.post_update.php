@@ -906,6 +906,7 @@ function oe_showcase_post_update_00041(): void {
   ]);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00041_color_scheme', [
+    'field.storage.paragraph.field_color_scheme',
     'core.entity_form_display.paragraph.oe_accordion.default',
     'core.entity_form_display.paragraph.oe_banner.default',
     'core.entity_form_display.paragraph.oe_banner.oe_banner_image',
@@ -932,6 +933,5 @@ function oe_showcase_post_update_00041(): void {
     'field.field.paragraph.oe_quote.field_color_scheme',
     'field.field.paragraph.oe_text_feature_media.field_color_scheme',
     'field.field.paragraph.oe_timeline.field_color_scheme',
-    'field.storage.paragraph.field_color_scheme',
   ]);
 }
