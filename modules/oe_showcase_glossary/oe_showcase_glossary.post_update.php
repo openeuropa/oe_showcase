@@ -37,7 +37,7 @@ function oe_showcase_glossary_post_update_00001(array &$sandbox): void {
   foreach ($tids as $tid) {
     $term = Term::load($tid);
     // Enable automatic alias generation.
-    $term->path->pathauto = TRUE;
+    $term->set('path', ['pathauto' => TRUE]);
     $term->save();
 
     $sandbox['current']++;
