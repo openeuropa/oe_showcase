@@ -122,6 +122,21 @@
                 "drupal/sparql_entity_storage": {
                     "https://www.drupal.org/project/sparql_entity_storage/issues/3409679": "https://www.drupal.org/files/issues/2024-01-15/3409679.patch"
                 }
+            },
+            "drupal/facets_form": {
+                "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
+            },
+            "openeuropa/oe_color_scheme": {
+                "Color scheme development": "https://github.com/openeuropa/oe_color_scheme/compare/1.x...contribution/EPHEH-318.diff"
+            },
+            "openeuropa/oe_bootstrap_theme": {
+                "Color scheme development": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.x...contribution/EPHEH-318.diff"
+            },
+            "openeuropa/oe_color_scheme": {
+                "Color scheme development": "https://github.com/openeuropa/oe_color_scheme/compare/1.x...contribution/EPHEH-318.diff"
+            },
+            "openeuropa/oe_whitelabel": {
+                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.7.1...contribution/EPHEH-318.diff"
             }
         },
         "patchLevel": {
