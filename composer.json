@@ -42,6 +42,7 @@
         "drupal/user_fields_visibility": "^1.1@alpha",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
+        "openeuropa/oe_bootstrap_theme": "0.318.202406121551 as 1.10.0",
         "openeuropa/oe_color_scheme": "1.x-dev",
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
@@ -133,11 +134,8 @@
             "openeuropa/oe_color_scheme": {
                 "Color scheme development": "https://github.com/openeuropa/oe_color_scheme/compare/1.x...contribution/EPHEH-318.diff"
             },
-            "openeuropa/oe_bootstrap_theme": {
-                "Color scheme development": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.x...contribution/EPHEH-318.diff"
-            },
             "openeuropa/oe_whitelabel": {
-                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.x...contribution/EPHEH-318.diff"
+                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.7.1...contribution/EPHEH-318.diff"
             }
         },
         "patchLevel": {
