@@ -918,10 +918,6 @@ function oe_showcase_post_update_00041(): void {
     'core.entity_form_display.paragraph.oe_links_block.default',
     'core.entity_form_display.paragraph.oe_list_item_block.default',
     'core.entity_form_display.paragraph.oe_quote.default',
-    'core.entity_form_display.paragraph.oe_text_feature_media.default',
-    'core.entity_form_display.paragraph.oe_text_feature_media.left_featured',
-    'core.entity_form_display.paragraph.oe_text_feature_media.right_featured',
-    'core.entity_form_display.paragraph.oe_text_feature_media.right_simple',
     'core.entity_form_display.paragraph.oe_timeline.default',
     'field.field.paragraph.oe_accordion.field_color_scheme',
     'field.field.paragraph.oe_banner.field_color_scheme',
@@ -931,7 +927,6 @@ function oe_showcase_post_update_00041(): void {
     'field.field.paragraph.oe_links_block.field_color_scheme',
     'field.field.paragraph.oe_list_item_block.field_color_scheme',
     'field.field.paragraph.oe_quote.field_color_scheme',
-    'field.field.paragraph.oe_text_feature_media.field_color_scheme',
     'field.field.paragraph.oe_timeline.field_color_scheme',
   ]);
 }
