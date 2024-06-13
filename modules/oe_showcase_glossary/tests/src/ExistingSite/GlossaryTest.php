@@ -8,12 +8,12 @@ use Behat\Mink\Element\NodeElement;
 use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\taxonomy\TermInterface;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\ContentBannerAssert;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\PaginationPatternAssert;
 use Drupal\Tests\oe_showcase\ExistingSite\ShowcaseExistingSiteTestBase;
 use Drupal\Tests\oe_showcase\Traits\AssertPathAccessTrait;
 use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
-use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Symfony\Component\CssSelector\CssSelectorConverter;
 

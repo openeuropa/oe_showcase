@@ -13,7 +13,7 @@ use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
-use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\ContentBannerAssert;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 use Drupal\user\Entity\Role;
