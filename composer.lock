@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "712363df265d692840db62cff8cbc2a3",
+    "content-hash": "7dc84b31ad39ec8c1582c05e2dd7e94f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6794,16 +6794,16 @@
         },
         {
             "name": "openeuropa/oe_color_scheme",
-            "version": "1.x-dev",
+            "version": "dev-contribution/EPHEH-318",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_color_scheme.git",
-                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408"
+                "reference": "52badb0f2010618f02adf3e7360e14d3710e9322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_color_scheme/zipball/4d4acf3f24f0da4da2300421e82659df316ea408",
-                "reference": "4d4acf3f24f0da4da2300421e82659df316ea408",
+                "url": "https://api.github.com/repos/openeuropa/oe_color_scheme/zipball/52badb0f2010618f02adf3e7360e14d3710e9322",
+                "reference": "52badb0f2010618f02adf3e7360e14d3710e9322",
                 "shasum": ""
             },
             "require": {
@@ -6819,7 +6819,6 @@
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
                 "phpspec/prophecy-phpunit": "^2"
             },
-            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -6867,10 +6866,10 @@
             ],
             "description": "OpenEuropa Drupal module that provides a colour scheme field.",
             "support": {
-                "source": "https://github.com/openeuropa/oe_color_scheme/tree/1.x",
+                "source": "https://github.com/openeuropa/oe_color_scheme/tree/contribution/EPHEH-318",
                 "issues": "https://github.com/openeuropa/oe_color_scheme/issues"
             },
-            "time": "2024-04-04T12:09:34+00:00"
+            "time": "2024-05-02T13:42:58+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
