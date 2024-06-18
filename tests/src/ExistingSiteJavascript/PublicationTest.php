@@ -136,7 +136,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'meta' => [
         date('d F Y'),
       ],
-      'description' => 'Short description text.',
+      'content' => 'Short description text.',
       'badges' => [],
       'image' => [
         'alt' => 'Alt text',
