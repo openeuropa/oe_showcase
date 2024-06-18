@@ -7,13 +7,13 @@ namespace Drupal\Tests\oe_showcase_list_pages\ExistingSiteJavascript;
 use Behat\Mink\Element\NodeElement;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\ContentBannerAssert;
 use Drupal\Tests\oe_showcase\ExistingSiteJavascript\ShowcaseExistingSiteJavascriptTestBase;
 use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\ScrollTrait;
 use Drupal\Tests\oe_showcase\Traits\SlimSelectTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
-use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\ContentBannerAssert;
 use Drupal\Tests\pathauto\Functional\PathautoTestHelperTrait;
 use Drupal\Tests\search_api\Functional\ExampleContentTrait;
 use Drupal\user\Entity\Role;
@@ -982,7 +982,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session = $this->assertSession();
     $expected_content_banner = [
       'title' => $title,
-      'description' => $summary,
+      'content' => $summary,
       'meta' => [],
       'badges' => [],
       'image' => NULL,
