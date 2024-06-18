@@ -42,7 +42,6 @@
         "drupal/user_fields_visibility": "^1.1@alpha",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
-        "openeuropa/oe_bootstrap_theme": "0.318.202406121551 as 1.10.0",
         "openeuropa/oe_color_scheme": "dev-contribution/EPHEH-318",
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
@@ -57,7 +56,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "^1.6"
+        "openeuropa/oe_whitelabel": "0.318.202406181030"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -124,9 +123,6 @@
             },
             "drupal/facets_form": {
                 "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
-            },
-            "openeuropa/oe_whitelabel": {
-                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.7.1...contribution/EPHEH-318.diff"
             }
         },
         "patchLevel": {
