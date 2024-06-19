@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22e835bdb819653a908af2d75cbf1c3b",
+    "content-hash": "becb546b21b7944b8708850b6c8f231f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7067,16 +7067,16 @@
         },
         {
             "name": "openeuropa/oe_corporate_blocks",
-            "version": "4.18.0",
+            "version": "4.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_corporate_blocks.git",
-                "reference": "dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e"
+                "reference": "4d8418b5c04973ff5ff9979f95d35cfa196d85fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e",
-                "reference": "dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e",
+                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/4d8418b5c04973ff5ff9979f95d35cfa196d85fa",
+                "reference": "4d8418b5c04973ff5ff9979f95d35cfa196d85fa",
                 "shasum": ""
             },
             "require": {
@@ -7138,9 +7138,9 @@
             "description": "OpenEuropa Corporate Blocks.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_corporate_blocks/issues",
-                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/4.18.0"
+                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/4.19.1"
             },
-            "time": "2024-04-16T06:46:34+00:00"
+            "time": "2024-06-13T10:49:20+00:00"
         },
         {
             "name": "openeuropa/oe_corporate_countries",
@@ -20537,5 +20537,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

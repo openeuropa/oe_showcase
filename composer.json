@@ -45,7 +45,7 @@
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
         "openeuropa/oe_content_extra": "^1.1.0",
-        "openeuropa/oe_corporate_blocks": "^4.13",
+        "openeuropa/oe_corporate_blocks": "^4.19",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha8",
         "openeuropa/oe_dashboard_agent": "^1.0.0",
         "openeuropa/oe_list_pages": "^1.0",
@@ -118,6 +118,9 @@
             },
             "drupal/facets_form": {
                 "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
+            },
+            "openeuropa/oe_corporate_blocks": {
+                "Check strings before deletion": "https://github.com/openeuropa/oe_corporate_blocks/compare/4.x...OEL-3058.diff"
             }
         },
         "patchLevel": {
