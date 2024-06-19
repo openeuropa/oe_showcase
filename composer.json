@@ -123,6 +123,13 @@
                 "Check strings before deletion": "https://github.com/openeuropa/oe_corporate_blocks/compare/4.x...OEL-3058.diff"
             }
         },
+        "patches-ignore": {
+            "openeuropa/oe_contact_forms": {
+                "drupal/sparql_entity_storage": {
+                    "https://www.drupal.org/project/sparql_entity_storage/issues/3409679": "https://www.drupal.org/files/issues/2024-01-15/3409679.patch"
+                }
+            }
+        },
         "patchLevel": {
             "drupal/core": "-p2"
         },
