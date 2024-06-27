@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: glossary_term_url_alias_pattern
+label: 'Glossary term URL Alias pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/glossary/[term:name]'
+selection_criteria:
+  9549f888-8eb6-4c03-9b7b-10b57e4b388c:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 9549f888-8eb6-4c03-9b7b-10b57e4b388c
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      glossary: glossary
+selection_logic: and
+weight: -5
+relationships: {  }
