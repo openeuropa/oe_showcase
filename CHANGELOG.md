@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.7.1](https://github.com/openeuropa/oe_showcase/tree/1.7.1) (2024-06-27)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.7.0...1.7.1)
+
+**Merged pull requests:**
+
+- OEL-3079: Updated OE bootstrap theme to 1.10.1. [\#258](https://github.com/openeuropa/oe_showcase/pull/258) ([tibi2303](https://github.com/tibi2303))
+- OEL-2606: Add a link back to the glossary page in breadcrumb [\#253](https://github.com/openeuropa/oe_showcase/pull/253) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+
 ## [1.7.0](https://github.com/openeuropa/oe_showcase/tree/1.7.0) (2024-05-07)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.6.0...1.7.0)
 
 **Merged pull requests:**
 
+- Update changelog for release 1.7.0. [\#251](https://github.com/openeuropa/oe_showcase/pull/251) ([brummbar](https://github.com/brummbar))
 - OEL-2863: Update packages. [\#250](https://github.com/openeuropa/oe_showcase/pull/250) ([brummbar](https://github.com/brummbar))
 - Prepare changelog for release 1.7.0. [\#249](https://github.com/openeuropa/oe_showcase/pull/249) ([brummbar](https://github.com/brummbar))
 - OEL-2929: Add an optional title, description and image on the listing page. [\#248](https://github.com/openeuropa/oe_showcase/pull/248) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
