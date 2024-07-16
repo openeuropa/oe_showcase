@@ -106,7 +106,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
 
     // Logout.
     $this->drupalGet('/user/logout');
-    $page->pressButton('Log me out');
+    $page->pressButton('Log out');
 
     // Redirected back to Drupal.
     $this->assertIsHomepage();
