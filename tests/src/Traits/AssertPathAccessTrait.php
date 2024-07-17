@@ -22,7 +22,9 @@ trait AssertPathAccessTrait {
    */
   protected function assertPathsArePublic(array $paths): void {
     // Test anonymous.
-    $this->drupalLogout();
+    if ($this->loggedInUser) {
+      $this->drupalLogout();
+    }
     $this->assertPathsResponseCode(200, $paths);
 
     // Test authenticated.
@@ -45,7 +47,9 @@ trait AssertPathAccessTrait {
    */
   protected function assertPathsRequireRole(array $paths, string $role): void {
     // Test anonymous.
-    $this->drupalLogout();
+    if ($this->loggedInUser) {
+      $this->drupalLogout();
+    }
     $this->assertPathsResponseCode(403, $paths);
 
     // Test users with other roles.
@@ -75,7 +79,9 @@ trait AssertPathAccessTrait {
    */
   protected function assertPathsAccessForbidden(array $paths): void {
     // Test anonymous.
-    $this->drupalLogout();
+    if ($this->loggedInUser) {
+      $this->drupalLogout();
+    }
     $this->assertPathsResponseCode(403, $paths);
 
     // Test all existing roles.
