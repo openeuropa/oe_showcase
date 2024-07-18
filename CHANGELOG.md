@@ -1,11 +1,28 @@
 # Change Log
 
-## [1.7.1](https://github.com/openeuropa/oe_showcase/tree/1.7.1) (2024-06-27)
-[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.7.0...1.7.1)
+## [1.8.0](https://github.com/openeuropa/oe_showcase/tree/1.8.0) (2024-07-18)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.7.1...1.8.0)
 
 **Merged pull requests:**
 
+- OEL-3057: Update to Drupal 10.3 [\#261](https://github.com/openeuropa/oe_showcase/pull/261) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-3079: Merge 1.7.x into 1.x. [\#260](https://github.com/openeuropa/oe_showcase/pull/260) ([brummbar](https://github.com/brummbar))
+- OEL-2606: Add hook update to enable glossary terms automatic alias. [\#255](https://github.com/openeuropa/oe_showcase/pull/255) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-2994: Bug fixing on glossary page. [\#254](https://github.com/openeuropa/oe_showcase/pull/254) ([tibi2303](https://github.com/tibi2303))
+
+## [1.7.1](https://github.com/openeuropa/oe_showcase/tree/1.7.1) (2024-06-27)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.2994.202406121535...1.7.1)
+
+**Merged pull requests:**
+
+- Release 1.7.1 [\#259](https://github.com/openeuropa/oe_showcase/pull/259) ([brummbar](https://github.com/brummbar))
 - OEL-3079: Updated OE bootstrap theme to 1.10.1. [\#258](https://github.com/openeuropa/oe_showcase/pull/258) ([tibi2303](https://github.com/tibi2303))
+
+## [0.2994.202406121535](https://github.com/openeuropa/oe_showcase/tree/0.2994.202406121535) (2024-06-07)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.7.0...0.2994.202406121535)
+
+**Merged pull requests:**
+
 - OEL-2606: Add a link back to the glossary page in breadcrumb [\#253](https://github.com/openeuropa/oe_showcase/pull/253) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 
 ## [1.7.0](https://github.com/openeuropa/oe_showcase/tree/1.7.0) (2024-05-07)
