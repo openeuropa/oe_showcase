@@ -6,6 +6,7 @@ core_version_requirement: ^9.4 || ^10
 install:
   - block
   - ckeditor
+  - color_scheme_field
   - config
   - content_translation
   - datetime
@@ -30,7 +31,6 @@ install:
   - oe_content_timeline_field
   - oe_corporate_blocks
   - oe_corporate_countries
-  - oe_color_scheme
   - oe_corporate_countries_address
   - oe_dashboard_agent
   - oe_list_pages_address
@@ -48,8 +48,8 @@ install:
   - oe_paragraphs_timeline
   - oe_showcase_contact_forms
   - oe_showcase_default_content
-  - oe_showcase_glossary
   - oe_showcase_fields
+  - oe_showcase_glossary
   - oe_showcase_list_pages
   - oe_showcase_multilingual
   - oe_showcase_navigation

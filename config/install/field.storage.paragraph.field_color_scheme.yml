@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - field_permissions
-    - oe_color_scheme
+    - color_scheme_field
     - paragraphs
 third_party_settings:
   field_permissions:
@@ -11,9 +11,9 @@ third_party_settings:
 id: paragraph.field_color_scheme
 field_name: field_color_scheme
 entity_type: paragraph
-type: oe_color_scheme
+type: color_scheme_field
 settings: {  }
-module: oe_color_scheme
+module: color_scheme_field
 locked: false
 cardinality: 1
 translatable: true

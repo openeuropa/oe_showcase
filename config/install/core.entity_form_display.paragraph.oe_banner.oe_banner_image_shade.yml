@@ -15,14 +15,14 @@ dependencies:
     - paragraphs.paragraphs_type.oe_banner
   module:
     - link
-    - oe_color_scheme
+    - color_scheme_field
 id: paragraph.oe_banner.oe_banner_image_shade
 targetEntityType: paragraph
 bundle: oe_banner
 mode: oe_banner_image_shade
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 8
     region: content
     settings: {  }

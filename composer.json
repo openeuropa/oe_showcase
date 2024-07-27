@@ -13,6 +13,7 @@
         "drupal/better_exposed_filters": "^6.0.3",
         "drupal/block_field": "^1.0@RC",
         "drupal/ckeditor": "^1.0",
+        "drupal/color_scheme_field": "1.x-dev",
         "drupal/composite_reference": "^2.2",
         "drupal/core-recommended": "^10",
         "drupal/decoupled_auth": "^3.0",
@@ -42,6 +43,7 @@
         "drupal/user_fields_visibility": "^1.1@alpha",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
+        "openeuropa/oe_bootstrap_theme": "0.318.202407271117 as 1.11.0",
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
         "openeuropa/oe_content_extra": "^1.1.0",
@@ -115,28 +117,16 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.8.0...contribution/EPHEH-318.diff"
             }
         },
         "patches-ignore": {
-            "openeuropa/oe_contact_forms": {
-                "drupal/sparql_entity_storage": {
-                    "https://www.drupal.org/project/sparql_entity_storage/issues/3409679": "https://www.drupal.org/files/issues/2024-01-15/3409679.patch"
+            "openeuropa/oe_content": {
+                "drupal/field_group": {
+                    "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
                 }
-            },
-            "drupal/facets_form": {
-                "Form facets cache dependency @see https://www.drupal.org/project/facets_form/issues/3400844": "https://www.drupal.org/files/issues/2023-11-13/form-facets-cache-dependency-3400844-41.patch"
-            },
-            "openeuropa/oe_color_scheme": {
-                "Color scheme development": "https://github.com/openeuropa/oe_color_scheme/compare/1.x...contribution/EPHEH-318.diff"
-            },
-            "openeuropa/oe_bootstrap_theme": {
-                "Color scheme development": "https://github.com/openeuropa/oe_bootstrap_theme/compare/1.x...contribution/EPHEH-318.diff"
-            },
-            "openeuropa/oe_color_scheme": {
-                "Color scheme development": "https://github.com/openeuropa/oe_color_scheme/compare/1.x...contribution/EPHEH-318.diff"
-            },
-            "openeuropa/oe_whitelabel": {
-                "Color scheme development": "https://github.com/openeuropa/oe_whitelabel/compare/1.7.1...contribution/EPHEH-318.diff"
             }
         },
         "patchLevel": {

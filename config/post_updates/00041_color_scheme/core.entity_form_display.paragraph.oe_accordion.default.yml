@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.oe_accordion.field_oe_paragraphs
     - paragraphs.paragraphs_type.oe_accordion
   module:
-    - oe_color_scheme
+    - color_scheme_field
     - oe_paragraphs
 id: paragraph.oe_accordion.default
 targetEntityType: paragraph
@@ -14,7 +14,7 @@ bundle: oe_accordion
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 11
     region: content
     settings: {  }

@@ -10,7 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.oe_list_item_block
   module:
     - link
-    - oe_color_scheme
+    - color_scheme_field
     - paragraphs
 id: paragraph.oe_list_item_block.default
 targetEntityType: paragraph
@@ -18,7 +18,7 @@ bundle: oe_list_item_block
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }

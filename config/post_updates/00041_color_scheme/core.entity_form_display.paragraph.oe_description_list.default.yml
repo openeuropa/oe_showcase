@@ -9,14 +9,14 @@ dependencies:
     - paragraphs.paragraphs_type.oe_description_list
   module:
     - description_list_field
-    - oe_color_scheme
+    - color_scheme_field
 id: paragraph.oe_description_list.default
 targetEntityType: paragraph
 bundle: oe_description_list
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }

@@ -7,14 +7,14 @@ dependencies:
     - field.field.paragraph.oe_quote.field_oe_text
     - paragraphs.paragraphs_type.oe_quote
   module:
-    - oe_color_scheme
+    - color_scheme_field
 id: paragraph.oe_quote.default
 targetEntityType: paragraph
 bundle: oe_quote
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }

@@ -5,7 +5,7 @@ dependencies:
     - field.storage.paragraph.field_color_scheme
     - paragraphs.paragraphs_type.oe_list_item_block
   module:
-    - oe_color_scheme
+    - color_scheme_field
 id: paragraph.oe_list_item_block.field_color_scheme
 field_name: field_color_scheme
 entity_type: paragraph
@@ -17,4 +17,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: oe_color_scheme
+field_type: color_scheme_field

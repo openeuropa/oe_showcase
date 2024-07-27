@@ -6,14 +6,14 @@ dependencies:
     - field.field.paragraph.oe_document.field_oe_media
     - paragraphs.paragraphs_type.oe_document
   module:
-    - oe_color_scheme
+    - color_scheme_field
 id: paragraph.oe_document.default
 targetEntityType: paragraph
 bundle: oe_document
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }

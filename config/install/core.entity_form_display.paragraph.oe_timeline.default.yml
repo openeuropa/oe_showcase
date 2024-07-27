@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.oe_timeline.field_oe_title
     - paragraphs.paragraphs_type.oe_timeline
   module:
-    - oe_color_scheme
+    - color_scheme_field
     - oe_content_timeline_field
     - text
 id: paragraph.oe_timeline.default
@@ -18,7 +18,7 @@ bundle: oe_timeline
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }

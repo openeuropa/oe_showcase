@@ -902,7 +902,7 @@ function oe_showcase_post_update_00040(): void {
  */
 function oe_showcase_post_update_00041(): void {
   \Drupal::service('module_installer')->install([
-    'oe_color_scheme',
+    'color_scheme_field',
   ]);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00041_color_scheme', [

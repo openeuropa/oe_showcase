@@ -10,7 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.oe_facts_figures
   module:
     - link
-    - oe_color_scheme
+    - color_scheme_field
     - oe_paragraphs
 id: paragraph.oe_facts_figures.default
 targetEntityType: paragraph
@@ -18,7 +18,7 @@ bundle: oe_facts_figures
 mode: default
 content:
   field_color_scheme:
-    type: oe_color_scheme_widget
+    type: color_scheme_field_widget
     weight: 0
     region: content
     settings: {  }
