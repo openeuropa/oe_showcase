@@ -1,21 +1,46 @@
 .glossary-view {
+  .glossary__description {
+    margin-bottom: -.75rem; /* Remove default margin for .card-text - mb-2-5 if empty */
+  }
+
+  .card-text:empty {
+    display: none;
+  }
+
   .views-exposed-form {
     display: flex;
     justify-content: flex-end;
     align-content: center;
+    flex-direction: column;
 
     .form-item {
-      margin: 0 0 0 1.5rem !important;
-    }
-
-    .form-label,
-    .form-select {
-      display: inline-block !important;
-      width: auto;
+      margin-bottom: 1.5rem !important;
     }
 
     .form-label {
       margin-right: 1.5rem;
+    }
+
+    .form-label,
+    .form-select {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .glossary-view {
+    .glossary__description {
+      margin-bottom: 0;
+    }
+
+    .views-exposed-form {
+      flex-direction: row;
+
+      .form-item {
+        margin: 0 0 0 1.5rem !important;
+      }
     }
   }
 }
