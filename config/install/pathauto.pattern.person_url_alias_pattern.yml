@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: person_url_alias_pattern
+label: 'Person URL Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'persons/[node:title]'
+selection_criteria:
+  a41a605e-ed64-4f43-be6a-218e3576cc7a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a41a605e-ed64-4f43-be6a-218e3576cc7a
+    context_mapping:
+      node: node
+    bundles:
+      oe_sc_person: oe_sc_person
+selection_logic: and
+weight: -5
+relationships: {  }

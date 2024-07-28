@@ -930,3 +930,15 @@ function oe_showcase_post_update_00041(): void {
     'field.field.paragraph.oe_timeline.field_color_scheme',
   ]);
 }
+
+/**
+ * Add Pathauto patterns to content types.
+ */
+function oe_showcase_post_update_00042(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00042_pathauto_patterns', [
+    'pathauto.pattern.event_url_alias_pattern',
+    'pathauto.pattern.news_url_alias_pattern',
+    'pathauto.pattern.person_url_alias_pattern',
+    'pathauto.pattern.publication_url_alias_pattern',
+  ]);
+}
