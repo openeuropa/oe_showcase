@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bab6915d09d18c5d3269fb97c6ad8dbc",
+    "content-hash": "157ee469eb96a7c8ee5968f72c0e87e8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8041,16 +8041,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.8.0",
+            "version": "0.318.202407301150",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "63b501eff65f30018dfb4ecce567bb3e2e827925"
+                "reference": "875cbda6ee3c6b37811a2a847a466712a9d18273"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/63b501eff65f30018dfb4ecce567bb3e2e827925",
-                "reference": "63b501eff65f30018dfb4ecce567bb3e2e827925",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/875cbda6ee3c6b37811a2a847a466712a9d18273",
+                "reference": "875cbda6ee3c6b37811a2a847a466712a9d18273",
                 "shasum": ""
             },
             "require": {
@@ -8059,12 +8059,13 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.10.0",
+                "openeuropa/oe_bootstrap_theme": "0.318.202407271117",
                 "php": ">=8.1"
             },
             "require-dev": {
                 "composer/installers": "^1.11",
                 "drupal/better_exposed_filters": "^6.0.3",
+                "drupal/color_scheme_field": "1.x-dev",
                 "drupal/composite_reference": "^2.2",
                 "drupal/config_devel": "~1.9",
                 "drupal/core-composer-scaffold": "^10",
@@ -8142,9 +8143,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.8.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.318.202407301150"
             },
-            "time": "2024-07-18T07:18:28+00:00"
+            "time": "2024-07-30T07:29:46+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20496,14 +20497,7 @@
             "time": "2023-10-13T22:55:15+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "openeuropa/oe_bootstrap_theme",
-            "version": "0.318.202407271117.0",
-            "alias": "1.11.0",
-            "alias_normalized": "1.11.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
