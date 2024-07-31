@@ -59,7 +59,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    * Tests the event subscription and notifications.
    */
   public function testEventNotifications(): void {
-    $base_url = getenv('SIMPLETEST_BASE_URL') . '/en/';
     $event = $this->createEventNode();
 
     // Subscribe with a registered user.
@@ -97,13 +96,13 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 1 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 1',
       ],
     ], FALSE);
     $this->assertMail('test_anon@example.com', ['The event Event update 1 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 1',
       ],
     ]);
@@ -128,7 +127,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // digest.
     $this->assertMail('test_anon@example.com', ['The event Event update 2 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 2',
       ],
     ]);
@@ -139,7 +138,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 2 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 2',
       ],
     ]);
@@ -172,7 +171,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 3 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 3',
       ],
     ]);
@@ -184,7 +183,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 3 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 3',
       ],
     ]);
@@ -229,11 +228,11 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
       ],
       [
         [
-          'url' => $base_url . $event_two->toUrl()->getInternalPath(),
+          'url' => $event_two->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
           'text' => 'Second event update 1',
         ],
         [
-          'url' => $base_url . $event->toUrl()->getInternalPath(),
+          'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
           'text' => 'Event update 4',
         ],
       ]);
@@ -245,7 +244,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 4 has been updated.'], [
       [
-        'url' => $base_url . $event->toUrl()->getInternalPath(),
+        'url' => $event->toUrl()->setOption('alias', TRUE)->setAbsolute()->toString(),
         'text' => 'Event update 4',
       ],
     ]);
