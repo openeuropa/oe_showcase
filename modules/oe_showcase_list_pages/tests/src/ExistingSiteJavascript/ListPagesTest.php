@@ -913,7 +913,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   Expected number of results to be reported.
    */
   protected function assertResultsCount(int $expected_count): void {
-    $title = $this->assertSession()->elementExists('css', '.col-xxl-8 h4.mb-0');
+    $title = $this->assertSession()->elementExists('css', '.col-xl-8 h4.mb-0');
     $this->assertSame(
       sprintf('Results (%s)', $expected_count),
       $title->getText());
