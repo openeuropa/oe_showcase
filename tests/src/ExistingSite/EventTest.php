@@ -163,6 +163,7 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
 
     // Assert that event has been created.
+    $assert_session->addressEquals('/en/events/example-title');
     $assert_session->pageTextContains('Event Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('Test term');

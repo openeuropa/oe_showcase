@@ -127,6 +127,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Publication Test publication has been created.');
+    $assert_session->addressEquals('/en/publications/test-publication');
     // Since the rendering of the content banner view mode has been changed,
     // test that everything is rendered correctly when no publication type is
     // selected.
