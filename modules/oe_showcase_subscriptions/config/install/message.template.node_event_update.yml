@@ -11,7 +11,7 @@ text:
     value: 'Event [message:field_node:entity:title] has been updated'
     format: email_html
   -
-    value: 'The event <a href="[message:field_node:entity:url]">[message:field_node:entity:title]</a> has been updated.'
+    value: 'The event <a href="[message:field_node:entity:url:absolute]">[message:field_node:entity:title]</a> has been updated.'
     format: email_html
 settings:
   'token options':
