@@ -933,7 +933,7 @@ function oe_showcase_post_update_00041(): void {
 }
 
 /**
- * Add Pathauto patterns to content types.
+ * Update aliases for content types.
  */
 function oe_showcase_post_update_00042(array &$sandbox): void {
   if (!isset($sandbox['total'])) {
