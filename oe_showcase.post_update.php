@@ -13,6 +13,7 @@ use Drupal\facets\Entity\Facet;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
+use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\search_api\Entity\Index;
@@ -934,11 +935,48 @@ function oe_showcase_post_update_00041(): void {
 /**
  * Add Pathauto patterns to content types.
  */
-function oe_showcase_post_update_00042(): void {
-  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00042_pathauto_patterns', [
-    'pathauto.pattern.event_url_alias_pattern',
-    'pathauto.pattern.news_url_alias_pattern',
-    'pathauto.pattern.person_url_alias_pattern',
-    'pathauto.pattern.publication_url_alias_pattern',
-  ]);
+function oe_showcase_post_update_00042(array &$sandbox): void {
+  if (!isset($sandbox['total'])) {
+    ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00042_pathauto_patterns', [
+      'message.template.node_event_update',
+      'pathauto.pattern.event_url_alias_pattern',
+      'pathauto.pattern.news_url_alias_pattern',
+      'pathauto.pattern.page_url_alias_pattern',
+      'pathauto.pattern.person_url_alias_pattern',
+      'pathauto.pattern.project_url_alias_pattern',
+      'pathauto.pattern.publication_url_alias_pattern',
+    ]);
+
+    $node_count = \Drupal::entityQuery('node')
+      ->condition('type', ['oe_sc_event', 'oe_sc_news', 'oe_project', 'oe_sc_publication', 'oe_sc_person'], 'IN')
+      ->accessCheck(FALSE)
+      ->count()
+      ->execute();
+
+    $sandbox['total'] = $node_count;
+    $sandbox['current'] = 0;
+  }
+
+  $nodes = \Drupal::entityQuery('node')
+    ->range($sandbox['current'], 50)
+    ->condition('type', ['oe_sc_event', 'oe_sc_news', 'oe_project', 'oe_sc_publication', 'oe_sc_person'], 'IN')
+    ->accessCheck(FALSE)
+    ->execute();
+
+  foreach ($nodes as $node) {
+    $node = Node::load($node);
+    // Enable automatic alias generation.
+    $node->set('path', ['pathauto' => TRUE]);
+    $node->save();
+
+    $sandbox['current']++;
+  }
+
+  if ($sandbox['current'] >= $sandbox['total']) {
+    $sandbox['#finished'] = 1;
+
+    return;
+  }
+
+  $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
 }
