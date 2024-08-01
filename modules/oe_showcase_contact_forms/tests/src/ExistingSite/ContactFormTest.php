@@ -92,7 +92,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     $user = $this->createUser();
     $this->drupalLogin($user);
 
-    $this->drupalGet('/pages/example-contact-form-page');
+    $this->drupalGet('/example-contact-form-page');
     $page->fillField('Subject', 'Example subject');
     $page->fillField('Message', 'Example Message text');
     $page->selectFieldOption('Topic', 'Alpaca');
@@ -110,7 +110,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
 
     // Check sent mail.
     $email = $this->readMail();
-    $page_url = $this->buildUrl('/pages/example-contact-form-page', ['absolute' => TRUE]);
+    $page_url = $this->buildUrl('/example-contact-form-page', ['absolute' => TRUE]);
     $user_url = $user->toUrl('canonical', ['absolute' => TRUE])->toString();
     // Configured recipients + Topic address 'Alpaca'.
     $this->assertAddress('to', ['webmaster@example.com', 'webmaster2@example.com']);
@@ -150,7 +150,7 @@ class ContactFormTest extends ShowcaseExistingSiteTestBase {
     );
 
     // Test contact form with copy to sender.
-    $this->drupalGet('/pages/example-contact-form-page');
+    $this->drupalGet('/example-contact-form-page');
     $page->fillField('Subject', 'Example subject 2');
     $page->fillField('Message', 'Example Message text 2');
     $page->selectFieldOption('Topic', 'Llama');

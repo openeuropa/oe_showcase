@@ -413,7 +413,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
 
     // Assert node view.
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $assert_session->addressEquals($language . '/pages/oe-showcase-demo-page');
+    $assert_session->addressEquals($language . '/oe-showcase-demo-page');
 
     // Assert Page title.
     $assert_session->pageTextContains('OE Showcase Demo Page');
