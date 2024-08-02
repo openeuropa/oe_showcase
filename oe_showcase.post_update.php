@@ -948,7 +948,15 @@ function oe_showcase_post_update_00042(array &$sandbox): void {
     ]);
 
     $node_count = \Drupal::entityQuery('node')
-      ->condition('type', ['oe_sc_event', 'oe_sc_news', 'oe_project', 'oe_sc_publication', 'oe_sc_person'], 'IN')
+      ->condition('type', [
+        'oe_showcase_page',
+        'oe_list_page',
+        'oe_sc_event',
+        'oe_sc_news',
+        'oe_project',
+        'oe_sc_publication',
+        'oe_sc_person',
+      ], 'IN')
       ->accessCheck(FALSE)
       ->count()
       ->execute();
@@ -959,7 +967,15 @@ function oe_showcase_post_update_00042(array &$sandbox): void {
 
   $nodes = \Drupal::entityQuery('node')
     ->range($sandbox['current'], 50)
-    ->condition('type', ['oe_sc_event', 'oe_sc_news', 'oe_project', 'oe_sc_publication', 'oe_sc_person'], 'IN')
+    ->condition('type', [
+      'oe_showcase_page',
+      'oe_list_page',
+      'oe_sc_event',
+      'oe_sc_news',
+      'oe_project',
+      'oe_sc_publication',
+      'oe_sc_person',
+    ], 'IN')
     ->accessCheck(FALSE)
     ->execute();
 
