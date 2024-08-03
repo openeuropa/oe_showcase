@@ -116,9 +116,17 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
+            },
+            "openeuropa/oe_whitelabel": {
+                "Move the Legal section to the top right position in the EU footer": "https://github.com/openeuropa/oe_whitelabel/compare/1.x...contribution/UCPKN-3181.diff"
             }
         },
         "patches-ignore": {
+            "openeuropa/oe_content": {
+                "drupal/field_group": {
+                    "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
+                }
+            },
             "openeuropa/oe_content": {
                 "drupal/field_group": {
                     "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
