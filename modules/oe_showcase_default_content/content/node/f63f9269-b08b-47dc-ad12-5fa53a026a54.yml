@@ -16,7 +16,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'OpenEuropa Showcase'
+      value: 'Home'
   created:
     -
       value: 1632400817

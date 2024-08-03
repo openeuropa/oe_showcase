@@ -963,6 +963,13 @@ function oe_showcase_post_update_00042(array &$sandbox): void {
 
     $sandbox['total'] = $node_count;
     $sandbox['current'] = 0;
+
+    // Update the front page title to preserve the alias.
+    $path_alias = \Drupal::service('path_alias.repository')->lookupByAlias('/home', 'en');
+    $front_nid = intval(str_replace('/node/', '', $path_alias['path']));
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($front_nid);
+    $node->set('title', 'Home');
+    $node->save();
   }
 
   $nodes = \Drupal::entityQuery('node')
