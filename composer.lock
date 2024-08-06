@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "157ee469eb96a7c8ee5968f72c0e87e8",
+    "content-hash": "f890fe682887c85097fd12dba3332ccf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2897,7 +2897,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "a33215b85a77330a0d1afe9457ce906cfa736c44"
+                "reference": "df29940451bfd45137bde187200f2cd617d8ddcd"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10 || ^11"
@@ -2911,8 +2911,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.4+21-dev",
-                    "datestamp": "1717742883",
+                    "version": "8.x-3.5+1-dev",
+                    "datestamp": "1722672400",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -5391,26 +5391,29 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token.git",
-                "reference": "8.x-1.14"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.14.zip",
-                "reference": "8.x-1.14",
-                "shasum": "df3cae709fcc1a99ac1111ce67a0d6af56d287d7"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "5916fbccc86458a5f51e71f832ac70ff4c84ebdf"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/book": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.14",
-                    "datestamp": "1713009399",
+                    "version": "8.x-1.15",
+                    "datestamp": "1722206211",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6727,16 +6730,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.318.202407271117",
+            "version": "0.1.202408051724",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "f2a130925f47f5ee957ec90baef4592e1e76874b"
+                "reference": "77828e15e2fb51eb9e0eba867d1924328db3dc35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f2a130925f47f5ee957ec90baef4592e1e76874b",
-                "reference": "f2a130925f47f5ee957ec90baef4592e1e76874b",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/77828e15e2fb51eb9e0eba867d1924328db3dc35",
+                "reference": "77828e15e2fb51eb9e0eba867d1924328db3dc35",
                 "shasum": ""
             },
             "require": {
@@ -6797,9 +6800,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.318.202407271117"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202408051724"
             },
-            "time": "2024-07-27T08:02:20+00:00"
+            "time": "2024-08-05T14:11:06+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8041,16 +8044,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.318.202407301150",
+            "version": "0.1.20240806928",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "875cbda6ee3c6b37811a2a847a466712a9d18273"
+                "reference": "8967b69df8e116cd4bad644944ac3e08e37b0210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/875cbda6ee3c6b37811a2a847a466712a9d18273",
-                "reference": "875cbda6ee3c6b37811a2a847a466712a9d18273",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/8967b69df8e116cd4bad644944ac3e08e37b0210",
+                "reference": "8967b69df8e116cd4bad644944ac3e08e37b0210",
                 "shasum": ""
             },
             "require": {
@@ -8059,7 +8062,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.318.202407271117",
+                "openeuropa/oe_bootstrap_theme": "0.1.202408051724",
                 "php": ">=8.1"
             },
             "require-dev": {
@@ -8100,6 +8103,13 @@
             "extra": {
                 "composer-exit-on-patch-failure": true,
                 "enable-patching": true,
+                "patches-ignore": {
+                    "openeuropa/oe_content": {
+                        "drupal/field_group": {
+                            "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
+                        }
+                    }
+                },
                 "artifacts": {
                     "openeuropa/oe_bootstrap_theme": {
                         "dist": {
@@ -8143,9 +8153,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.318.202407301150"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.20240806928"
             },
-            "time": "2024-07-30T07:29:46+00:00"
+            "time": "2024-08-06T07:07:15+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
