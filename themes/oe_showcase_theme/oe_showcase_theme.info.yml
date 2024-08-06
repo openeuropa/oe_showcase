@@ -22,6 +22,10 @@ regions:
   content: 'Content'
   footer: 'Footer'
 
+color_scheme:
+  scheme-pink: "Pink scheme"
+  scheme-green: "Green scheme"
+
 config_devel:
   install:
     - oe_showcase_theme.settings

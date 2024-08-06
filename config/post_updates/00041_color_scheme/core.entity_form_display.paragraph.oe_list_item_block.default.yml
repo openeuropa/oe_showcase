@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_list_item_block.field_color_scheme
+    - field.field.paragraph.oe_list_item_block.field_oe_link
+    - field.field.paragraph.oe_list_item_block.field_oe_list_item_block_layout
+    - field.field.paragraph.oe_list_item_block.field_oe_paragraphs
+    - field.field.paragraph.oe_list_item_block.field_oe_title
+    - paragraphs.paragraphs_type.oe_list_item_block
+  module:
+    - link
+    - color_scheme_field
+    - paragraphs
+id: paragraph.oe_list_item_block.default
+targetEntityType: paragraph
+bundle: oe_list_item_block
+mode: default
+content:
+  field_color_scheme:
+    type: color_scheme_field_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_oe_list_item_block_layout:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oe_paragraphs:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: oe_list_item
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_oe_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

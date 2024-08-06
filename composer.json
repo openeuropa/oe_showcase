@@ -13,6 +13,7 @@
         "drupal/better_exposed_filters": "^6.0.3",
         "drupal/block_field": "^1.0@RC",
         "drupal/ckeditor": "^1.0",
+        "drupal/color_scheme_field": "1.x-dev",
         "drupal/composite_reference": "^2.2",
         "drupal/core-recommended": "^10",
         "drupal/decoupled_auth": "^3.0",
@@ -55,7 +56,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "^1.6"
+        "openeuropa/oe_whitelabel": "0.1.20240806928"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -118,9 +119,9 @@
             }
         },
         "patches-ignore": {
-            "openeuropa/oe_contact_forms": {
-                "drupal/sparql_entity_storage": {
-                    "https://www.drupal.org/project/sparql_entity_storage/issues/3409679": "https://www.drupal.org/files/issues/2024-01-15/3409679.patch"
+            "openeuropa/oe_content": {
+                "drupal/field_group": {
+                    "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
                 }
             }
         },

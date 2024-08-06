@@ -6,11 +6,11 @@ namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\ContentBannerAssert;
+use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\InPageNavigationAssert;
 use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
 use Drupal\Tests\oe_showcase\Traits\WysiwygTrait;
-use Drupal\Tests\oe_whitelabel\PatternAssertions\ContentBannerAssert;
-use Drupal\Tests\oe_whitelabel\PatternAssertions\InPageNavigationAssert;
 
 /**
  * Tests the publication content type.
@@ -136,7 +136,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
       'meta' => [
         date('d F Y'),
       ],
-      'description' => 'Short description text.',
+      'content' => 'Short description text.',
       'badges' => [],
       'image' => [
         'alt' => 'Alt text',

@@ -2,4 +2,5 @@ global-styling:
   version: VERSION
   css:
     theme:
-      assets/css/oe_showcase_theme.css: {}
+      assets/css/oe_showcase_theme.min.css: {}
+      assets/css/color_scheme.min.css: {}
