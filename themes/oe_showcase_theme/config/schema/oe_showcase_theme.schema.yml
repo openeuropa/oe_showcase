@@ -1,0 +1,3 @@
+oe_showcase_theme.settings:
+  type: oe_whitelabel.settings
+  label: 'OE Showcase Theme settings'
