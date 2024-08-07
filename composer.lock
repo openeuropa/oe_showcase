@@ -7079,16 +7079,16 @@
         },
         {
             "name": "openeuropa/oe_corporate_blocks",
-            "version": "4.18.0",
+            "version": "4.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_corporate_blocks.git",
-                "reference": "dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e"
+                "reference": "f365bbd345541325b5a28b6e3df36045ea1e1d20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e",
-                "reference": "dfba0e9418d8bae855ca50cad3bc1eeb3ec0dc3e",
+                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/f365bbd345541325b5a28b6e3df36045ea1e1d20",
+                "reference": "f365bbd345541325b5a28b6e3df36045ea1e1d20",
                 "shasum": ""
             },
             "require": {
@@ -7150,9 +7150,9 @@
             "description": "OpenEuropa Corporate Blocks.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_corporate_blocks/issues",
-                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/4.18.0"
+                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/4.19.2"
             },
-            "time": "2024-04-16T06:46:34+00:00"
+            "time": "2024-06-24T14:53:49+00:00"
         },
         {
             "name": "openeuropa/oe_corporate_countries",
