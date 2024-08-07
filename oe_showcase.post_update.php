@@ -990,6 +990,7 @@ function oe_showcase_post_update_00042(array &$sandbox): void {
     $node = Node::load($node);
     // Enable automatic alias generation.
     $node->set('path', ['pathauto' => TRUE]);
+    $node->search_api_skip_tracking = TRUE;
     $node->save();
 
     $sandbox['current']++;
