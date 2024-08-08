@@ -101,6 +101,18 @@ pipeline:
       matrix:
         TYPE: update
 
+  audit:
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
+    failure: ignore
+    commands:
+      - composer audit
+
+  validate:
+    group: test
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
+    commands:
+      - composer validate --check-lock
+
   grumphp:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
