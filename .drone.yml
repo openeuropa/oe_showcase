@@ -103,7 +103,6 @@ pipeline:
 
   audit:
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
-    failure: ignore
     commands:
       - composer audit
 
