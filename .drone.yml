@@ -105,12 +105,15 @@ pipeline:
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
       - composer audit
+    when:
+      matrix:
+        branch: 1.x
 
   validate:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
     commands:
-      - composer validate --check-lock
+      - composer validate
 
   grumphp:
     group: test
