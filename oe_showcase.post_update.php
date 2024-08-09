@@ -13,6 +13,7 @@ use Drupal\facets\Entity\Facet;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
+use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\search_api\Entity\Index;
@@ -929,4 +930,77 @@ function oe_showcase_post_update_00041(): void {
     'field.field.paragraph.oe_quote.field_color_scheme',
     'field.field.paragraph.oe_timeline.field_color_scheme',
   ]);
+}
+
+/**
+ * Update aliases for content types.
+ */
+function oe_showcase_post_update_00042(array &$sandbox): void {
+  if (!isset($sandbox['total'])) {
+    ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00042_pathauto_patterns', [
+      'message.template.node_event_update',
+      'pathauto.pattern.event_url_alias_pattern',
+      'pathauto.pattern.news_url_alias_pattern',
+      'pathauto.pattern.page_url_alias_pattern',
+      'pathauto.pattern.person_url_alias_pattern',
+      'pathauto.pattern.project_url_alias_pattern',
+      'pathauto.pattern.publication_url_alias_pattern',
+    ]);
+
+    $node_count = \Drupal::entityQuery('node')
+      ->condition('type', [
+        'oe_showcase_page',
+        'oe_list_page',
+        'oe_sc_event',
+        'oe_sc_news',
+        'oe_project',
+        'oe_sc_publication',
+        'oe_sc_person',
+      ], 'IN')
+      ->accessCheck(FALSE)
+      ->count()
+      ->execute();
+
+    $sandbox['total'] = $node_count;
+    $sandbox['current'] = 0;
+
+    // Update the front page title to preserve the alias.
+    $path_alias = \Drupal::service('path_alias.repository')->lookupByAlias('/home', 'en');
+    $front_nid = intval(str_replace('/node/', '', $path_alias['path']));
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($front_nid);
+    $node->set('title', 'Home');
+    $node->save();
+  }
+
+  $nodes = \Drupal::entityQuery('node')
+    ->range($sandbox['current'], 50)
+    ->condition('type', [
+      'oe_showcase_page',
+      'oe_list_page',
+      'oe_sc_event',
+      'oe_sc_news',
+      'oe_project',
+      'oe_sc_publication',
+      'oe_sc_person',
+    ], 'IN')
+    ->accessCheck(FALSE)
+    ->execute();
+
+  foreach ($nodes as $node) {
+    $node = Node::load($node);
+    // Enable automatic alias generation.
+    $node->set('path', ['pathauto' => TRUE]);
+    $node->search_api_skip_tracking = TRUE;
+    $node->save();
+
+    $sandbox['current']++;
+  }
+
+  if ($sandbox['current'] >= $sandbox['total']) {
+    $sandbox['#finished'] = 1;
+
+    return;
+  }
+
+  $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
 }

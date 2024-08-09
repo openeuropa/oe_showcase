@@ -3,19 +3,19 @@ status: true
 dependencies:
   module:
     - node
-id: project_url_alias_pattern
-label: 'Project URL Alias Pattern'
+id: publication_url_alias_pattern
+label: 'Publication URL Alias Pattern'
 type: 'canonical_entities:node'
-pattern: 'projects/[node:title]'
+pattern: 'publications/[node:title]'
 selection_criteria:
-  906a4c49-2c66-4779-adc7-690176a4f39d:
+  8edc9ddc-010a-4e35-9231-b8542ba52ab8:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 906a4c49-2c66-4779-adc7-690176a4f39d
+    uuid: 8edc9ddc-010a-4e35-9231-b8542ba52ab8
     context_mapping:
       node: node
     bundles:
-      oe_project: oe_project
+      oe_sc_publication: oe_sc_publication
 selection_logic: and
 weight: -5
 relationships: {  }

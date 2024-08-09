@@ -123,7 +123,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Assert values as anonymous user.
     $this->drupalLogout();
-    $this->drupalGet('project/project-page-test');
+    $this->drupalGet('projects/project-page-test');
 
     // Assert the in-page nav.
     $project_details_wrapper = $assert_session->elementExists('css', 'ul.nav-pills > li.nav-item:nth-child(1)');
@@ -219,7 +219,7 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
 
     // Check Project details are not present when empty.
-    $this->drupalGet('project/project-page-test');
+    $this->drupalGet('projects/project-page-test');
     $assert_session->pageTextNotContains('Project details');
     $assert_session->pageTextNotContains('03 March 2022');
     $assert_session->pageTextNotContains('03 March 2023');

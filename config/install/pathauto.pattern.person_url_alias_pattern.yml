@@ -3,19 +3,19 @@ status: true
 dependencies:
   module:
     - node
-id: project_url_alias_pattern
-label: 'Project URL Alias Pattern'
+id: person_url_alias_pattern
+label: 'Person URL Alias Pattern'
 type: 'canonical_entities:node'
-pattern: 'projects/[node:title]'
+pattern: 'persons/[node:title]'
 selection_criteria:
-  906a4c49-2c66-4779-adc7-690176a4f39d:
+  a41a605e-ed64-4f43-be6a-218e3576cc7a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 906a4c49-2c66-4779-adc7-690176a4f39d
+    uuid: a41a605e-ed64-4f43-be6a-218e3576cc7a
     context_mapping:
       node: node
     bundles:
-      oe_project: oe_project
+      oe_sc_person: oe_sc_person
 selection_logic: and
 weight: -5
 relationships: {  }

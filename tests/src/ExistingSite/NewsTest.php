@@ -109,6 +109,7 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
 
     // Assert that news has been created.
+    $assert_session->addressEquals('/en/news/example-title');
     $assert_session->pageTextContains('News Example title has been created.');
     $assert_session->pageTextContains('Example title');
     $assert_session->pageTextContains('News type 1');

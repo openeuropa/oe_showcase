@@ -107,6 +107,7 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
 
     // Assert that person has been created.
+    $assert_session->addressEquals('/en/persons/stefan-mayer');
     $assert_session->pageTextContains('Person Stefan Mayer has been created.');
     $assert_session->pageTextContains('Stefan Mayer');
     $assert_session->pageTextContains('Example short description field.');

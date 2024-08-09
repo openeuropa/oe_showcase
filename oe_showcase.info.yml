@@ -180,7 +180,11 @@ config_devel:
     - legal.settings
     - node.settings
     - oe_authentication.settings
+    - pathauto.pattern.event_url_alias_pattern
+    - pathauto.pattern.news_url_alias_pattern
+    - pathauto.pattern.person_url_alias_pattern
     - pathauto.pattern.project_url_alias_pattern
+    - pathauto.pattern.publication_url_alias_pattern
     - pathauto.settings
     - purge.plugins
     - purge_users.settings

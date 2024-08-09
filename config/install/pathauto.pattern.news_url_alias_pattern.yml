@@ -3,19 +3,19 @@ status: true
 dependencies:
   module:
     - node
-id: project_url_alias_pattern
-label: 'Project URL Alias Pattern'
+id: news_url_alias_pattern
+label: 'News URL Alias Pattern'
 type: 'canonical_entities:node'
-pattern: 'projects/[node:title]'
+pattern: 'news/[node:title]'
 selection_criteria:
-  906a4c49-2c66-4779-adc7-690176a4f39d:
+  d4fd8c0e-3d9f-4ffa-8176-61315f022e22:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 906a4c49-2c66-4779-adc7-690176a4f39d
+    uuid: d4fd8c0e-3d9f-4ffa-8176-61315f022e22
     context_mapping:
       node: node
     bundles:
-      oe_project: oe_project
+      oe_sc_news: oe_sc_news
 selection_logic: and
 weight: -5
 relationships: {  }
