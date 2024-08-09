@@ -101,6 +101,33 @@ pipeline:
       matrix:
         TYPE: update
 
+  audit:
+    group: test
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
+    commands:
+      - composer audit
+    when:
+      event: push
+      branch: [1.x, release-*]
+
+  validate:
+    group: test
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
+    commands:
+      - composer validate
+    when:
+      event: push
+      branch:
+        exclude: [ release-* ]
+
+  validate-strict:
+    group: test
+    image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
+    commands:
+      - composer validate --strict
+    when:
+      branch: [ release-* ]
+
   grumphp:
     group: test
     image: registry.fpfis.eu/fpfis/httpd-php:8.1-ci
