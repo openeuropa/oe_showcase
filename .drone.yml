@@ -106,8 +106,8 @@ pipeline:
     commands:
       - composer audit
     when:
-      matrix:
-        branch: 1.x
+      event: push
+      branch: [1.x, release-*]
 
   validate:
     group: test
