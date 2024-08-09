@@ -118,7 +118,7 @@
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
             },
             "openeuropa/oe_whitelabel": {
-                "Move the Legal section to the top right position in the EU footer": "https://github.com/openeuropa/oe_whitelabel/compare/1.x...contribution/UCPKN-3181.diff"
+                "1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.20240806928...1.x.diff"
             }
         },
         "patches-ignore": {

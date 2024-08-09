@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77b4357feb2e25306ae501fe6a889149",
+    "content-hash": "0f11bfd01e8739d56bf534bc9fa7eef0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1828,6 +1828,10 @@
                     "homepage": "https://www.drupal.org/user/655282"
                 },
                 {
+                    "name": "JeremySkinner",
+                    "homepage": "https://www.drupal.org/user/3564170"
+                },
+                {
                     "name": "yanniboi",
                     "homepage": "https://www.drupal.org/user/1837556"
                 }
@@ -2166,12 +2170,20 @@
                     "homepage": "https://www.drupal.org/user/3094661"
                 },
                 {
+                    "name": "rakesh.gectcr",
+                    "homepage": "https://www.drupal.org/user/1177822"
+                },
+                {
                     "name": "renatog",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
                     "name": "sonemonu",
                     "homepage": "https://www.drupal.org/user/1667988"
+                },
+                {
+                    "name": "spuky",
+                    "homepage": "https://www.drupal.org/user/209353"
                 },
                 {
                     "name": "tatarbj",
@@ -3769,10 +3781,6 @@
                 {
                     "name": "Robert Castelo",
                     "homepage": "https://www.drupal.org/user/3555"
-                },
-                {
-                    "name": "vegantriathlete",
-                    "homepage": "https://www.drupal.org/user/491720"
                 }
             ],
             "description": "Display Terms and Conditions statement on the registration page.",
@@ -20526,5 +20534,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
