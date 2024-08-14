@@ -30,3 +30,41 @@ function oe_showcase_contact_forms_mailer_contact_build(EmailInterface $email) {
   }
   $email->setTo($addresses);
 }
+
+function example() {
+  $a = 'a';
+  $b = 'b';
+    if ($a == $b) {
+        if ($a == $b) {
+              fiddle();
+        } elseif ($a == $b) {
+              fiddle();
+          } else {
+              fiddle();
+          }
+    } elseif ($a == $b) {
+        while ($a == $b) {
+              fiddle();
+          }
+      } elseif ($a == $b) {
+          for ($n = 0; $n < 10; $n++) {
+              fiddle();
+          }
+      } else {
+          switch ($a) {
+              case 1:
+                  fiddle();
+                  break;
+            case 2:
+                  fiddle();
+                  break;
+            case 3:
+                  fiddle();
+                  break;
+              default:
+                  fiddle();
+                  break;
+          }
+      }
+  }
+
