@@ -224,6 +224,8 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $assert_session->elementNotExists('css', 'h2#authors + div.mb-4-5 ul');
     $this->assertEquals('John Red • Bob Purple • Mia Green', trim($assert_session->elementExists('css', 'h2#authors + div.mb-4-5 p')->getText()));
+
+    $this->assertSocialShareBlock();
   }
 
   /**
