@@ -1,10 +1,23 @@
 # Change Log
 
+## [1.9.0](https://github.com/openeuropa/oe_showcase/tree/1.9.0) (2024-08-19)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.8.0...1.9.0)
+
+**Merged pull requests:**
+
+- OEL-1809: Add composer validation and security update checks to pipeline steps. [\#266](https://github.com/openeuropa/oe_showcase/pull/266) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-3177: Add configuration schema to oe\_showcase\_theme. [\#265](https://github.com/openeuropa/oe_showcase/pull/265) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+- OEL-3158: Reposition eu-footer items [\#264](https://github.com/openeuropa/oe_showcase/pull/264) ([drishu](https://github.com/drishu))
+- OEL-3124: Add url alias patterns to content types. [\#263](https://github.com/openeuropa/oe_showcase/pull/263) ([drishu](https://github.com/drishu))
+- EPHEH-465: Update color scheme [\#256](https://github.com/openeuropa/oe_showcase/pull/256) ([drishu](https://github.com/drishu))
+- EPHEH-319: Add Color Scheme [\#247](https://github.com/openeuropa/oe_showcase/pull/247) ([drishu](https://github.com/drishu))
+
 ## [1.8.0](https://github.com/openeuropa/oe_showcase/tree/1.8.0) (2024-07-18)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.7.1...1.8.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.8.0. [\#262](https://github.com/openeuropa/oe_showcase/pull/262) ([drishu](https://github.com/drishu))
 - OEL-3057: Update to Drupal 10.3 [\#261](https://github.com/openeuropa/oe_showcase/pull/261) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-3079: Merge 1.7.x into 1.x. [\#260](https://github.com/openeuropa/oe_showcase/pull/260) ([brummbar](https://github.com/brummbar))
 - OEL-2606: Add hook update to enable glossary terms automatic alias. [\#255](https://github.com/openeuropa/oe_showcase/pull/255) ([AaronGilMartinez](https://github.com/AaronGilMartinez))

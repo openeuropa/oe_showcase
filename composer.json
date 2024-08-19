@@ -13,7 +13,7 @@
         "drupal/better_exposed_filters": "^6.0.3",
         "drupal/block_field": "^1.0@RC",
         "drupal/ckeditor": "^1.0",
-        "drupal/color_scheme_field": "1.x-dev",
+        "drupal/color_scheme_field": "^1.0@alpha",
         "drupal/composite_reference": "^2.2",
         "drupal/core-recommended": "^10",
         "drupal/decoupled_auth": "^3.0",
@@ -56,7 +56,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "0.1.20240806928"
+        "openeuropa/oe_whitelabel": "^1.9.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -116,9 +116,6 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
-            },
-            "openeuropa/oe_whitelabel": {
-                "1.x": "https://github.com/openeuropa/oe_whitelabel/compare/0.1.20240806928...1.x.diff"
             }
         },
         "patches-ignore": {

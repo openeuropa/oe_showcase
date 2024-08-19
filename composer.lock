@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f11bfd01e8739d56bf534bc9fa7eef0",
+    "content-hash": "358db0c82b9619859067b5c596864609",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -980,11 +980,17 @@
         },
         {
             "name": "drupal/color_scheme_field",
-            "version": "dev-1.x",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/color_scheme_field.git",
-                "reference": "33a1eed787330f62ec9ab92ed519feeb38b18a8b"
+                "reference": "1.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/color_scheme_field-1.0.0-alpha1.zip",
+                "reference": "1.0.0-alpha1",
+                "shasum": "9e60449790b77174d68dd118155920e20e98ab28"
             },
             "require": {
                 "drupal/core": "^10",
@@ -992,12 +998,9 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "1.x-dev",
-                    "datestamp": "1721812614",
+                    "version": "1.0.0-alpha1",
+                    "datestamp": "1723799757",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -1024,12 +1027,12 @@
                     "homepage": "https://www.drupal.org/user/3605526"
                 },
                 {
-                    "name": "Andras_Szilagyi",
+                    "name": "andras_szilagyi",
                     "homepage": "https://www.drupal.org/user/1217938"
                 },
                 {
-                    "name": "Brummbar",
-                    "homepage": "https://www.drupal.org/user/1314466"
+                    "name": "sardara",
+                    "homepage": "https://www.drupal.org/user/2353864"
                 },
                 {
                     "name": "tiberiu.dumitru23",
@@ -5631,7 +5634,7 @@
                     "homepage": "https://www.drupal.org/user/1344166"
                 },
                 {
-                    "name": "Christian.wiedemann",
+                    "name": "christian.wiedemann",
                     "homepage": "https://www.drupal.org/user/861002"
                 },
                 {
@@ -5643,7 +5646,7 @@
                     "homepage": "https://www.drupal.org/user/2533498"
                 },
                 {
-                    "name": "Grimreaper",
+                    "name": "grimreaper",
                     "homepage": "https://www.drupal.org/user/2388214"
                 },
                 {
@@ -6738,16 +6741,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202408051724",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "77828e15e2fb51eb9e0eba867d1924328db3dc35"
+                "reference": "e4fb81f7032e5f5c1648dc03739e3c950bea9f61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/77828e15e2fb51eb9e0eba867d1924328db3dc35",
-                "reference": "77828e15e2fb51eb9e0eba867d1924328db3dc35",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/e4fb81f7032e5f5c1648dc03739e3c950bea9f61",
+                "reference": "e4fb81f7032e5f5c1648dc03739e3c950bea9f61",
                 "shasum": ""
             },
             "require": {
@@ -6808,9 +6811,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202408051724"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.12.0"
             },
-            "time": "2024-08-05T14:11:06+00:00"
+            "time": "2024-08-16T12:57:49+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8052,16 +8055,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.20240806928",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "8967b69df8e116cd4bad644944ac3e08e37b0210"
+                "reference": "5faf6756e8b253efd0d5e0c78f038a09de6cb436"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/8967b69df8e116cd4bad644944ac3e08e37b0210",
-                "reference": "8967b69df8e116cd4bad644944ac3e08e37b0210",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/5faf6756e8b253efd0d5e0c78f038a09de6cb436",
+                "reference": "5faf6756e8b253efd0d5e0c78f038a09de6cb436",
                 "shasum": ""
             },
             "require": {
@@ -8070,13 +8073,16 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.1.202408051724",
+                "openeuropa/oe_bootstrap_theme": "^1.12.0",
                 "php": ">=8.1"
+            },
+            "conflict": {
+                "openeuropa/oe_corporate_blocks": "<4.19"
             },
             "require-dev": {
                 "composer/installers": "^1.11",
                 "drupal/better_exposed_filters": "^6.0.3",
-                "drupal/color_scheme_field": "1.x-dev",
+                "drupal/color_scheme_field": "^1.0@alpha",
                 "drupal/composite_reference": "^2.2",
                 "drupal/config_devel": "~1.9",
                 "drupal/core-composer-scaffold": "^10",
@@ -8086,6 +8092,7 @@
                 "drupal/extra_field": "^2.3",
                 "drupal/facets_form": "^1.0.0-alpha6",
                 "drupal/field_group": "^3.4",
+                "drupal/paragraphs": "^1.17",
                 "drupal/search_api": "^1.29",
                 "drupal/search_api_autocomplete": "^1.7",
                 "drupal/typed_link": "^2.0.1",
@@ -8097,7 +8104,7 @@
                 "openeuropa/oe_contact_forms": "~1.11",
                 "openeuropa/oe_content": "^3",
                 "openeuropa/oe_content_extra": "^1.1.0",
-                "openeuropa/oe_corporate_blocks": "^4.13",
+                "openeuropa/oe_corporate_blocks": "^4.19",
                 "openeuropa/oe_link_lists": "^1.0",
                 "openeuropa/oe_list_pages": "^1.0.0",
                 "openeuropa/oe_multilingual": "^1.14",
@@ -8161,9 +8168,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.20240806928"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.9.0"
             },
-            "time": "2024-08-06T07:07:15+00:00"
+            "time": "2024-08-19T12:15:55+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20519,7 +20526,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
-        "drupal/color_scheme_field": 20,
+        "drupal/color_scheme_field": 15,
         "drupal/default_content": 15,
         "drupal/description_list_field": 15,
         "drupal/slim_select": 15,
@@ -20534,5 +20541,5 @@
         "php": ">=8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
