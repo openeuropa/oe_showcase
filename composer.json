@@ -67,7 +67,7 @@
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^12.4",
         "nikic/php-parser": "^4",
-        "openeuropa/code-review": "^2.0.0-alpha6",
+        "openeuropa/code-review": "OEL-3256-2.x-dev",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^2.1"
@@ -170,10 +170,11 @@
             "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpro/grumphp": true,
             "oomphinc/composer-installers-extender": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": false
+            "php-http/discovery": false,
+            "phpro/grumphp-shim": true,
+            "phpro/grumphp": true
         }
     }
 }

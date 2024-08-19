@@ -13,7 +13,10 @@ parameters:
     - theme
     - yml
 
-  extra_tasks:
+grumphp:
+  git_hook_variables:
+    EXEC_GRUMPHP_COMMAND: 'docker-compose exec -T web'
+  tasks:
     phpparser:
       ignore_patterns:
        - vendor/
@@ -26,9 +29,3 @@ parameters:
         - inc
         - theme
         - install
-
-grumphp:
-  git_hook_variables:
-    EXEC_GRUMPHP_COMMAND: 'docker-compose exec -T web'
-  extensions:
-    - OpenEuropa\CodeReview\ExtraTasksExtension
