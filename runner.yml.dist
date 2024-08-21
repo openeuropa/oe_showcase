@@ -69,6 +69,8 @@ commands:
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['pass']='';
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['host']='mailpit';
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['port']='1025';
+        // Override site email.
+        $config['system.site']['mail'] = getenv('SMTP_FROM');
   ci:site-setup:
     - task: "append"
       file: "build/sites/default/settings.php"
