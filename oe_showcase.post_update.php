@@ -1004,3 +1004,15 @@ function oe_showcase_post_update_00042(array &$sandbox): void {
 
   $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
 }
+
+/**
+ * Add social share to publications.
+ */
+function oe_showcase_post_update_00043(): void {
+  ConfigImporter::importSingle(
+    'profile',
+    'oe_showcase',
+    '/config/post_updates/00043_social_share',
+    'block.block.oe_showcase_theme_social_share'
+  );
+}
