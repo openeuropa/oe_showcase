@@ -15566,12 +15566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/code-review-drupal.git",
-                "reference": "6127500e8d019f12e311d2fa177de4f9fb860c82"
+                "reference": "3a34e9ed848c3b0d727a385517cbf6f36577969b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/code-review-drupal/zipball/6127500e8d019f12e311d2fa177de4f9fb860c82",
-                "reference": "6127500e8d019f12e311d2fa177de4f9fb860c82",
+                "url": "https://api.github.com/repos/openeuropa/code-review-drupal/zipball/3a34e9ed848c3b0d727a385517cbf6f36577969b",
+                "reference": "3a34e9ed848c3b0d727a385517cbf6f36577969b",
                 "shasum": ""
             },
             "require": {
@@ -15591,7 +15591,7 @@
                 "source": "https://github.com/openeuropa/code-review-drupal/tree/OEL-3328",
                 "issues": "https://github.com/openeuropa/code-review-drupal/issues"
             },
-            "time": "2024-09-03T16:16:45+00:00"
+            "time": "2024-09-04T11:15:24+00:00"
         },
         {
             "name": "openeuropa/task-runner",
@@ -19356,7 +19356,7 @@
             "version": "2.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/dtt/",
+                "url": "https://git.drupalcode.org/project/dtt.git",
                 "reference": "9ef44f5cd5eef942c84f2d2ffd21734944d566f8"
             },
             "require": {
