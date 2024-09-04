@@ -1,5 +1,5 @@
 imports:
-  - { resource: ./vendor/openeuropa/code-review-drupal/dist/drupal-conventions.yml }
+  - { resource: ./vendor/openeuropa/code-review-library/dist/library-conventions.yml }
 
 grumphp:
   git_hook_variables:

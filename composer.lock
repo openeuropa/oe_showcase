@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0355d7aa6066edc91bf56b1aef4ead9f",
+    "content-hash": "3ca04bc61373382311e05edc1f1b392a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15561,37 +15561,35 @@
             "time": "2024-09-04T11:02:37+00:00"
         },
         {
-            "name": "openeuropa/code-review-drupal",
+            "name": "openeuropa/code-review-library",
             "version": "dev-OEL-3328",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openeuropa/code-review-drupal.git",
-                "reference": "3a34e9ed848c3b0d727a385517cbf6f36577969b"
+                "url": "https://github.com/openeuropa/code-review-library.git",
+                "reference": "6e115343d3f396e8e992edad7d3e3c093f2e9482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/code-review-drupal/zipball/3a34e9ed848c3b0d727a385517cbf6f36577969b",
-                "reference": "3a34e9ed848c3b0d727a385517cbf6f36577969b",
+                "url": "https://api.github.com/repos/openeuropa/code-review-library/zipball/6e115343d3f396e8e992edad7d3e3c093f2e9482",
+                "reference": "6e115343d3f396e8e992edad7d3e3c093f2e9482",
                 "shasum": ""
             },
             "require": {
-                "drupal/coder": "^8.3.16",
-                "mglaman/phpstan-drupal": "^1.2",
                 "openeuropa/code-review": "OEL-3328-dev",
                 "php": ">=8.1",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan-deprecation-rules": "^1.2"
+                "phpstan/phpstan": "^1.12",
+                "squizlabs/php_codesniffer": "^3.10"
             },
             "type": "library",
             "license": [
                 "EUPL-1.2"
             ],
-            "description": "OpenEuropa code review drupal component.",
+            "description": "OpenEuropa code review library component.",
             "support": {
-                "source": "https://github.com/openeuropa/code-review-drupal/tree/OEL-3328",
-                "issues": "https://github.com/openeuropa/code-review-drupal/issues"
+                "source": "https://github.com/openeuropa/code-review-library/tree/OEL-3328",
+                "issues": "https://github.com/openeuropa/code-review-library/issues"
             },
-            "time": "2024-09-04T11:15:24+00:00"
+            "time": "2024-09-04T12:57:53+00:00"
         },
         {
             "name": "openeuropa/task-runner",
@@ -16671,16 +16669,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.11.7",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "52d2bbfdcae7f895915629e4694e9497d0f8e28d"
+                "reference": "d8ed7fffa66de1db0d2972267d8ed1d8fa0fe5a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/52d2bbfdcae7f895915629e4694e9497d0f8e28d",
-                "reference": "52d2bbfdcae7f895915629e4694e9497d0f8e28d",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d8ed7fffa66de1db0d2972267d8ed1d8fa0fe5a2",
+                "reference": "d8ed7fffa66de1db0d2972267d8ed1d8fa0fe5a2",
                 "shasum": ""
             },
             "require": {
@@ -16725,7 +16723,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-06T11:17:41+00:00"
+            "time": "2024-09-03T19:55:22+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -19411,7 +19409,7 @@
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_subscriptions": 15,
         "drupal/datetime_testing": 10,
-        "openeuropa/code-review-drupal": 20
+        "openeuropa/code-review-library": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
