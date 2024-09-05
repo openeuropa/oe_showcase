@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+  <!-- PHP_CodeSniffer standard for Showcase. -->
+  <!-- See http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php -->
+  <ruleset name="OE Showcase">
+    <description>Showcase coding standard</description>
+
+    <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
+    <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
+
+    <!-- Arguments. -->
+    <arg name="report" value="full"/>
+    <arg name="colors"/>
+    <arg value="s"/>
+  </ruleset>

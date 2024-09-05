@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ca04bc61373382311e05edc1f1b392a",
+    "content-hash": "7543d2eb027afd360b05442690233839",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15561,35 +15561,37 @@
             "time": "2024-09-04T11:02:37+00:00"
         },
         {
-            "name": "openeuropa/code-review-library",
+            "name": "openeuropa/code-review-drupal",
             "version": "dev-OEL-3328",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openeuropa/code-review-library.git",
-                "reference": "6e115343d3f396e8e992edad7d3e3c093f2e9482"
+                "url": "https://github.com/openeuropa/code-review-drupal.git",
+                "reference": "e184c0a5d2e41655c44c51fb2edace4626fc50eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/code-review-library/zipball/6e115343d3f396e8e992edad7d3e3c093f2e9482",
-                "reference": "6e115343d3f396e8e992edad7d3e3c093f2e9482",
+                "url": "https://api.github.com/repos/openeuropa/code-review-drupal/zipball/e184c0a5d2e41655c44c51fb2edace4626fc50eb",
+                "reference": "e184c0a5d2e41655c44c51fb2edace4626fc50eb",
                 "shasum": ""
             },
             "require": {
+                "drupal/coder": "^8.3.16",
+                "mglaman/phpstan-drupal": "^1.2",
                 "openeuropa/code-review": "OEL-3328-dev",
                 "php": ">=8.1",
-                "phpstan/phpstan": "^1.12",
-                "squizlabs/php_codesniffer": "^3.10"
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan-deprecation-rules": "^1.2"
             },
             "type": "library",
             "license": [
                 "EUPL-1.2"
             ],
-            "description": "OpenEuropa code review library component.",
+            "description": "OpenEuropa code review drupal component.",
             "support": {
-                "source": "https://github.com/openeuropa/code-review-library/tree/OEL-3328",
-                "issues": "https://github.com/openeuropa/code-review-library/issues"
+                "source": "https://github.com/openeuropa/code-review-drupal/tree/OEL-3328",
+                "issues": "https://github.com/openeuropa/code-review-drupal/issues"
             },
-            "time": "2024-09-04T12:57:53+00:00"
+            "time": "2024-09-04T14:13:34+00:00"
         },
         {
             "name": "openeuropa/task-runner",
@@ -19408,8 +19410,7 @@
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_subscriptions": 15,
-        "drupal/datetime_testing": 10,
-        "openeuropa/code-review-library": 20
+        "drupal/datetime_testing": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

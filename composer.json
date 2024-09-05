@@ -66,7 +66,7 @@
         "drupal/core-dev": "^10",
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^12.4",
-        "openeuropa/code-review-library": "OEL-3328-dev",
+        "openeuropa/code-review-drupal": "dev-OEL-3328",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
         "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^2.1"

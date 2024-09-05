@@ -1,5 +1,5 @@
 imports:
-  - { resource: ./vendor/openeuropa/code-review-library/dist/library-conventions.yml }
+  - { resource: ./vendor/openeuropa/code-review-drupal/dist/drupal-conventions.yml }
 
 grumphp:
   git_hook_variables:
@@ -17,3 +17,6 @@ grumphp:
         - inc
         - theme
         - install
+
+parameters:
+  tasks.phpcs.standard: phpcs.xml
