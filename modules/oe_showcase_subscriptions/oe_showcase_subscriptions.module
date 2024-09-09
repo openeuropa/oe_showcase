@@ -10,9 +10,9 @@ declare(strict_types=1);
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_node_update().
+ * Implements hook_node_postsave().
  */
-function oe_showcase_subscriptions_node_update(NodeInterface $node) {
+function oe_showcase_subscriptions_node_postsave(NodeInterface $node) {
   if ($node->bundle() !== 'oe_sc_event') {
     return;
   }

@@ -112,7 +112,8 @@
             "drupal/core": {
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch",
                 "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2024-06-08/3300404-63.patch",
-                "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch"
+                "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch",
+                "Add hook_entity_postsave hook @see https://www.drupal.org/project/drupal/issues/2221347": "https://www.drupal.org/files/issues/2020-11-13/2221347-26.patch"
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
