@@ -941,7 +941,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function assertResultMetas(array $expected): void {
     $items = $this->assertSession()
       ->elementExists('css', '.bcl-listing')
-      ->findAll('css', '.my-3.me-n3');
+      ->findAll('css', '.mt-3.me-n3');
     $this->assertElementsTexts($expected, $items);
   }
 
