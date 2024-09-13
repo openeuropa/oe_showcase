@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.10.0](https://github.com/openeuropa/oe_showcase/tree/1.10.0) (2024-09-13)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.9.0...1.10.0)
+
+**Merged pull requests:**
+
+- OEL-3338: Fix tests after card changes. [\#272](https://github.com/openeuropa/oe_showcase/pull/272) ([drishu](https://github.com/drishu))
+- OEL-2611: Add social share to publications. [\#267](https://github.com/openeuropa/oe_showcase/pull/267) ([drishu](https://github.com/drishu))
+
 ## [1.9.0](https://github.com/openeuropa/oe_showcase/tree/1.9.0) (2024-08-19)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.8.0...1.9.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.9.0. [\#268](https://github.com/openeuropa/oe_showcase/pull/268) ([drishu](https://github.com/drishu))
 - OEL-1809: Add composer validation and security update checks to pipeline steps. [\#266](https://github.com/openeuropa/oe_showcase/pull/266) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-3177: Add configuration schema to oe\_showcase\_theme. [\#265](https://github.com/openeuropa/oe_showcase/pull/265) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-3158: Reposition eu-footer items [\#264](https://github.com/openeuropa/oe_showcase/pull/264) ([drishu](https://github.com/drishu))
