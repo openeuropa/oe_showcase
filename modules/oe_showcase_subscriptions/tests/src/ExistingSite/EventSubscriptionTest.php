@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\oe_showcase_subscriptions\ExistingSite;
 
+use Drupal\Core\Url;
 use Drupal\symfony_mailer\Email;
 use Drupal\symfony_mailer_test\MailerTestServiceInterface;
 use Drupal\symfony_mailer_test\MailerTestTrait;
@@ -93,17 +94,20 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 1');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 1 has been updated.');
-    \Drupal::service('path_alias.manager')->cacheClear('node/' . $event->id());
 
+    // Construct urls with explicit path and fully transparent construction
+    // method (string concatenation), to be 100% sure that urls found in emails
+    // use the updated url alias.
+    $localized_base_url = Url::fromUserInput('/')->setAbsolute()->toString();
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 1 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-1',
         'text' => 'Event update 1',
       ],
     ], FALSE);
     $this->assertMail('test_anon@example.com', ['The event Event update 1 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-1',
         'text' => 'Event update 1',
       ],
     ]);
@@ -122,14 +126,13 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 2');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 2 has been updated.');
-    \Drupal::service('path_alias.manager')->cacheClear('node/' . $event->id());
     $this->drupalLogout();
 
     // Only one email is expected, to the anonymous user who didn't opt for a
     // digest.
     $this->assertMail('test_anon@example.com', ['The event Event update 2 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-2',
         'text' => 'Event update 2',
       ],
     ]);
@@ -140,7 +143,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 2 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-2',
         'text' => 'Event update 2',
       ],
     ]);
@@ -164,7 +167,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 3');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 3 has been updated.');
-    \Drupal::service('path_alias.manager')->cacheClear('node/' . $event->id());
     $this->drupalLogout();
     $this->noMail();
 
@@ -174,7 +176,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 3 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-3',
         'text' => 'Event update 3',
       ],
     ]);
@@ -186,7 +188,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 3 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-3',
         'text' => 'Event update 3',
       ],
     ]);
@@ -213,7 +215,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 4');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 4 has been updated.');
-    \Drupal::service('path_alias.manager')->cacheClear('node/' . $event->id());
     $this->drupalLogout();
 
     // No mail should have been sent, as both the users have enabled the digest.
@@ -232,11 +233,11 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
       ],
       [
         [
-          'url' => $event_two->toUrl()->setAbsolute()->toString(),
+          'url' => $localized_base_url . '/events/second-event-update-1',
           'text' => 'Second event update 1',
         ],
         [
-          'url' => $event->toUrl()->setAbsolute()->toString(),
+          'url' => $localized_base_url . '/events/event-update-4',
           'text' => 'Event update 4',
         ],
       ]);
@@ -248,7 +249,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 4 has been updated.'], [
       [
-        'url' => $event->toUrl()->setAbsolute()->toString(),
+        'url' => $localized_base_url . '/events/event-update-4',
         'text' => 'Event update 4',
       ],
     ]);
