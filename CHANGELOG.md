@@ -1,11 +1,19 @@
 # Change Log
 
+## [1.11.0](https://github.com/openeuropa/oe_showcase/tree/1.11.0) (2024-09-23)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.10.0...1.11.0)
+
+**Merged pull requests:**
+
+- OEL-3431: Bump up oe\_bootstrap\_theme and oe\_whitelabel. [\#273](https://github.com/openeuropa/oe_showcase/pull/273) ([drishu](https://github.com/drishu))
+
 ## [1.10.0](https://github.com/openeuropa/oe_showcase/tree/1.10.0) (2024-09-13)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.9.0...1.10.0)
 
 **Merged pull requests:**
 
 - OEL-3338: Fix tests after card changes. [\#272](https://github.com/openeuropa/oe_showcase/pull/272) ([drishu](https://github.com/drishu))
+- Prepare release 1.10.0. [\#271](https://github.com/openeuropa/oe_showcase/pull/271) ([drishu](https://github.com/drishu))
 - OEL-2611: Add social share to publications. [\#267](https://github.com/openeuropa/oe_showcase/pull/267) ([drishu](https://github.com/drishu))
 
 ## [1.9.0](https://github.com/openeuropa/oe_showcase/tree/1.9.0) (2024-08-19)
