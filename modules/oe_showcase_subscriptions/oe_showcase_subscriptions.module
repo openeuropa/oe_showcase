@@ -10,9 +10,20 @@ declare(strict_types=1);
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_node_update().
+ * Implements hook_node_postsave().
+ *
+ * The hook updates are executed in the following order:
+ *   1. hook_ENTITY_update.
+ *   2. hook_entity_update.
+ *
+ * We want to make sure that all hook invocations are completed before sending
+ * the notification, e.g. after pathauto has updated the URL alias.
+ * This can be achieved in two ways:
+ *   - introducing the hook_post_save() hook which runs after the update hooks.
+ *   - implementing hook_module_implements_alter() and adding your
+ *     hook_entity_update implementation as last.
  */
-function oe_showcase_subscriptions_node_update(NodeInterface $node) {
+function oe_showcase_subscriptions_node_postsave(NodeInterface $node) {
   if ($node->bundle() !== 'oe_sc_event') {
     return;
   }
