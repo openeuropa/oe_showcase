@@ -156,7 +156,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $this->assertSubscriptionsPageMailStatusMessage();
     $mail = $this->readMail();
     $this->assertTo('test_anon@example.com');
-    $this->drupalGet($this->getMailLinks($mail)[1]);
+    $this->drupalGet($this->getMailLinks($mail)[0]);
     $assert_session->selectExists('Notifications frequency')->selectOption('Weekly');
     $assert_session->buttonExists('Save')->press();
     $assert_session->statusMessageContains('Your preferences have been saved.');
