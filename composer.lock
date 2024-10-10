@@ -2780,28 +2780,28 @@
         },
         {
             "name": "drupal/facets",
-            "version": "2.0.7",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/facets.git",
-                "reference": "2.0.7"
+                "reference": "2.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/facets-2.0.7.zip",
-                "reference": "2.0.7",
-                "shasum": "a58ad0c4c3fc2750bf095232a54218ae906852e3"
+                "url": "https://ftp.drupal.org/files/projects/facets-2.0.9.zip",
+                "reference": "2.0.9",
+                "shasum": "54512df3448c2464ef2bee7eefa825115562c9d5"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10.0"
+                "drupal/core": "^10 || ^11"
             },
             "conflict": {
-                "drupal/search_api": "<1.14"
+                "drupal/search_api": "<1.30"
             },
             "require-dev": {
-                "drupal/jquery_ui_slider": "~2.0",
-                "drupal/jquery_ui_touch_punch": "~1.1",
-                "drupal/search_api": "^1.28||1.x-dev"
+                "drupal/jquery_ui_slider": "^2.1",
+                "drupal/jquery_ui_touch_punch": "^1.1",
+                "drupal/search_api": "1.x-dev"
             },
             "suggest": {
                 "drupal/jquery_ui_slider": "Required for the 'Facets Range Widget' module to work",
@@ -2810,8 +2810,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.7",
-                    "datestamp": "1709900263",
+                    "version": "2.0.9",
+                    "datestamp": "1728492418",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2836,18 +2836,18 @@
                     "homepage": "https://www.drupal.org/user/124705"
                 },
                 {
-                    "name": "Nick_vh",
+                    "name": "nick_vh",
                     "homepage": "https://www.drupal.org/user/122682"
                 },
                 {
-                    "name": "StryKaizer",
+                    "name": "strykaizer",
                     "homepage": "https://www.drupal.org/user/462700"
                 }
             ],
             "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
             "homepage": "https://www.drupal.org/project/facets",
             "support": {
-                "source": "git://git.drupal.org/project/facets.git",
+                "source": "https://git.drupalcode.org/project/facets",
                 "issues": "https://www.drupal.org/project/issues/facets",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             }
@@ -5457,11 +5457,11 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
+                    "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
@@ -5489,17 +5489,17 @@
         },
         {
             "name": "drupal/twig_field_value",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/twig_field_value.git",
-                "reference": "2.0.4"
+                "reference": "2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/twig_field_value-2.0.4.zip",
-                "reference": "2.0.4",
-                "shasum": "0b607167a188fb7aafe8607a68a083bf431ec223"
+                "url": "https://ftp.drupal.org/files/projects/twig_field_value-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "9a13925fc1f9788db65044b179871139da8a7cfd"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -5507,8 +5507,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.4",
-                    "datestamp": "1725019150",
+                    "version": "2.0.5",
+                    "datestamp": "1728385526",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6768,16 +6768,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.14.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "340bf3634cd380c31a4603aa119000c28d0a2ae5"
+                "reference": "dd04afc6fa38bdb91adfff4a4247c1e18d880bf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/340bf3634cd380c31a4603aa119000c28d0a2ae5",
-                "reference": "340bf3634cd380c31a4603aa119000c28d0a2ae5",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/dd04afc6fa38bdb91adfff4a4247c1e18d880bf6",
+                "reference": "dd04afc6fa38bdb91adfff4a4247c1e18d880bf6",
                 "shasum": ""
             },
             "require": {
@@ -6838,9 +6838,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.14.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.16.0"
             },
-            "time": "2024-09-20T14:40:49+00:00"
+            "time": "2024-10-08T13:51:35+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8085,16 +8085,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "f9cbf5a88b1016ddd9dd8350af9759150a536f99"
+                "reference": "4d66b5fa51a492613335c1f0f6421d899401dc46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/f9cbf5a88b1016ddd9dd8350af9759150a536f99",
-                "reference": "f9cbf5a88b1016ddd9dd8350af9759150a536f99",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/4d66b5fa51a492613335c1f0f6421d899401dc46",
+                "reference": "4d66b5fa51a492613335c1f0f6421d899401dc46",
                 "shasum": ""
             },
             "require": {
@@ -8198,9 +8198,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.11.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.12.0"
             },
-            "time": "2024-09-20T15:48:32+00:00"
+            "time": "2024-10-08T14:50:30+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
