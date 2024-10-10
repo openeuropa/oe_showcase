@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc296d133a2b045ed624c9073b82d1b0",
+    "content-hash": "090a1660e13937b5c4a2a543219a6be5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7910,16 +7910,16 @@
         },
         {
             "name": "openeuropa/oe_subscriptions",
-            "version": "1.0.0-alpha4",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_subscriptions.git",
-                "reference": "f366c450325ed7f8dd772ad2ecf4654cb2270048"
+                "reference": "eaa79e7cc907f0b89a679b40a32099d9c85d1dd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_subscriptions/zipball/f366c450325ed7f8dd772ad2ecf4654cb2270048",
-                "reference": "f366c450325ed7f8dd772ad2ecf4654cb2270048",
+                "url": "https://api.github.com/repos/openeuropa/oe_subscriptions/zipball/eaa79e7cc907f0b89a679b40a32099d9c85d1dd3",
+                "reference": "eaa79e7cc907f0b89a679b40a32099d9c85d1dd3",
                 "shasum": ""
             },
             "require": {
@@ -7946,6 +7946,7 @@
                 "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta6",
                 "phpspec/prophecy-phpunit": "^2"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "extra": {
                 "composer-exit-on-patch-failure": true,
@@ -7991,9 +7992,9 @@
             "description": "OpenEuropa Drupal module to handle subscriptions.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_subscriptions/issues",
-                "source": "https://github.com/openeuropa/oe_subscriptions/tree/1.0.0-alpha4"
+                "source": "https://github.com/openeuropa/oe_subscriptions/tree/1.x"
             },
-            "time": "2024-10-09T07:56:06+00:00"
+            "time": "2024-10-10T12:00:55+00:00"
         },
         {
             "name": "openeuropa/oe_webtools",
@@ -20556,7 +20557,7 @@
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
-        "openeuropa/oe_subscriptions": 15
+        "openeuropa/oe_subscriptions": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

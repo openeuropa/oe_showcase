@@ -54,7 +54,7 @@
         "openeuropa/oe_oembed": "^0.10",
         "openeuropa/oe_paragraphs": "^1.21",
         "openeuropa/oe_starter_content": "^1.2.0",
-        "openeuropa/oe_subscriptions": "^1.0@alpha",
+        "openeuropa/oe_subscriptions": "1.x-dev",
         "openeuropa/oe_webtools": "^1.23",
         "openeuropa/oe_whitelabel": "^1.9.0"
     },
