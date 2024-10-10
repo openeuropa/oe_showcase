@@ -1,10 +1,19 @@
 # Change Log
 
+## [1.12.0](https://github.com/openeuropa/oe_showcase/tree/1.12.0) (2024-10-10)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.11.0...1.12.0)
+
+**Merged pull requests:**
+
+- OEL-3392: Fix subscription tests. [\#276](https://github.com/openeuropa/oe_showcase/pull/276) ([drishu](https://github.com/drishu))
+- OEL-3168: Send subscriptions emails after update hooks run [\#270](https://github.com/openeuropa/oe_showcase/pull/270) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+
 ## [1.11.0](https://github.com/openeuropa/oe_showcase/tree/1.11.0) (2024-09-23)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.10.0...1.11.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.11.0. [\#274](https://github.com/openeuropa/oe_showcase/pull/274) ([drishu](https://github.com/drishu))
 - OEL-3431: Bump up oe\_bootstrap\_theme and oe\_whitelabel. [\#273](https://github.com/openeuropa/oe_showcase/pull/273) ([drishu](https://github.com/drishu))
 
 ## [1.10.0](https://github.com/openeuropa/oe_showcase/tree/1.10.0) (2024-09-13)
