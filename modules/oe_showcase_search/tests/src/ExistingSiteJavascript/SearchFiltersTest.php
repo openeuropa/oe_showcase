@@ -113,7 +113,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->indexItems('showcase_search_index');
     $this->drupalGet('/search');
 
-    $search_title = $assert_session->elementExists('css', 'h1.visually-hidden');
+    $assert_session->elementExists('css', 'h1.visually-hidden');
     // Assert that filter facets exist in the sidebar.
     $filter_form = $assert_session->elementExists('css', 'div#block-oe-showcase-theme-facets-form.bcl-offcanvas');
     // Project filters.
