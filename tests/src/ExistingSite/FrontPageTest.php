@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Drupal\Tests\oe_showcase\ExistingSite;
 
 /**
- * Class to test the presence of H1 on the front page.
+ * Class to test the front page.
  */
 class FrontPageTest extends ShowcaseExistingSiteTestBase {
 
