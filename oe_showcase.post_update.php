@@ -1016,3 +1016,13 @@ function oe_showcase_post_update_00043(): void {
     'block.block.oe_showcase_theme_social_share'
   );
 }
+
+/**
+ * Normalize page front.
+ */
+function oe_showcase_post_update_00044(): void {
+  $front_path = \Drupal::service('path_alias.manager')->getPathByAlias('/home');
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('page.front', $front_path);
+  $config->save();
+}
