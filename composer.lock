@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc296d133a2b045ed624c9073b82d1b0",
+    "content-hash": "4fe2c8144b7e1abccb86aa6964851746",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6768,16 +6768,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.16.0",
+            "version": "0.1.202411051530",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "dd04afc6fa38bdb91adfff4a4247c1e18d880bf6"
+                "reference": "6ab0c45ff3b22a0d47354d0cf012c6813be013f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/dd04afc6fa38bdb91adfff4a4247c1e18d880bf6",
-                "reference": "dd04afc6fa38bdb91adfff4a4247c1e18d880bf6",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/6ab0c45ff3b22a0d47354d0cf012c6813be013f8",
+                "reference": "6ab0c45ff3b22a0d47354d0cf012c6813be013f8",
                 "shasum": ""
             },
             "require": {
@@ -6838,9 +6838,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.16.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202411051530"
             },
-            "time": "2024-10-08T13:51:35+00:00"
+            "time": "2024-11-05T13:26:50+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -20545,24 +20545,31 @@
             "time": "2023-10-13T22:55:15+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_bootstrap_theme",
+            "version": "0.1.202411051530.0",
+            "alias": "1.12",
+            "alias_normalized": "1.12.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
         "drupal/color_scheme_field": 15,
-        "drupal/datetime_testing": 10,
         "drupal/default_content": 15,
         "drupal/description_list_field": 15,
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
-        "openeuropa/oe_subscriptions": 15
+        "openeuropa/oe_subscriptions": 15,
+        "drupal/datetime_testing": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
