@@ -72,7 +72,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       $this->assertSession()->statusCodeEquals(403);
     }
 
-    $this->drupalGet('/patterns');
+    $this->drupalGet('/admin/appearance/ui/patterns');
     $this->assertSession()->statusCodeEquals(200);
   }
 
@@ -96,7 +96,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
       $this->assertSession()->statusCodeEquals(403);
     }
 
-    $this->drupalGet('/patterns');
+    $this->drupalGet('/admin/appearance/ui/patterns');
     $this->assertSession()->statusCodeEquals(200);
   }
 

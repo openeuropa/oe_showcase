@@ -1,11 +1,19 @@
 # Change Log
 
+## [1.13.0](https://github.com/openeuropa/oe_showcase/tree/1.13.0) (2024-11-06)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.12.0...1.13.0)
+
+**Merged pull requests:**
+
+- OEL-3424: Added h1 tags on search and homepage. [\#277](https://github.com/openeuropa/oe_showcase/pull/277) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.12.0](https://github.com/openeuropa/oe_showcase/tree/1.12.0) (2024-10-10)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.11.0...1.12.0)
 
 **Merged pull requests:**
 
 - OEL-3392: Fix subscription tests. [\#276](https://github.com/openeuropa/oe_showcase/pull/276) ([drishu](https://github.com/drishu))
+- Prepare release 1.12.0. [\#275](https://github.com/openeuropa/oe_showcase/pull/275) ([drishu](https://github.com/drishu))
 - OEL-3168: Send subscriptions emails after update hooks run [\#270](https://github.com/openeuropa/oe_showcase/pull/270) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 
 ## [1.11.0](https://github.com/openeuropa/oe_showcase/tree/1.11.0) (2024-09-23)

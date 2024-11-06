@@ -293,7 +293,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   Expected number of results to be reported in the title.
    */
   protected function assertSearchResultsTitle(int $expected_count): void {
-    $title = $this->getSearchTopRegion()->find('css', 'h4');
+    $title = $this->getSearchTopRegion()->find('css', 'h2');
     $this->assertSame(
       sprintf('Search Results (%s)', $expected_count),
       $title->getText());
