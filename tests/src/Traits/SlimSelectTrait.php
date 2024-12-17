@@ -47,7 +47,7 @@ trait SlimSelectTrait {
     // as it allows to pass a different container than page.
     $page = $this->getSession()->getPage();
 
-    $fn_is_visible = static function (string $selector, $locator, ElementInterface $container = NULL) use ($page) {
+    $fn_is_visible = static function (string $selector, $locator, ?ElementInterface $container = NULL) use ($page) {
       $container ??= $page;
       return $page->waitFor(10, static function () use ($selector, $locator, $container) {
         $element = $container->find($selector, $locator);

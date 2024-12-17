@@ -1,10 +1,18 @@
 # Change Log
 
+## [1.14.0](https://github.com/openeuropa/oe_showcase/tree/1.14.0) (2024-12-17)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.13.0...1.14.0)
+
+**Merged pull requests:**
+
+- OEL-3577: Update packages. [\#280](https://github.com/openeuropa/oe_showcase/pull/280) ([drishu](https://github.com/drishu))
+
 ## [1.13.0](https://github.com/openeuropa/oe_showcase/tree/1.13.0) (2024-11-06)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.12.0...1.13.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.13.0 [\#279](https://github.com/openeuropa/oe_showcase/pull/279) ([tibi2303](https://github.com/tibi2303))
 - OEL-3424: Added h1 tags on search and homepage. [\#277](https://github.com/openeuropa/oe_showcase/pull/277) ([tibi2303](https://github.com/tibi2303))
 
 ## [1.12.0](https://github.com/openeuropa/oe_showcase/tree/1.12.0) (2024-10-10)
