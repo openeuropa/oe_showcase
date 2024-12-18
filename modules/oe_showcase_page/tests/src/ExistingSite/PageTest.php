@@ -525,7 +525,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
    * @return array
    *   A list of button values, e.g. "Add Accordion".
    */
-  protected function getParagraphAddMoreButtonList(NodeElement $container = NULL): array {
+  protected function getParagraphAddMoreButtonList(?NodeElement $container = NULL): array {
     $container = $container ?: $this->getSession()->getPage();
     $button_wrapper = $container->findAll('css', '.paragraphs-dropbutton-wrapper');
     $this->assertCount(1, $button_wrapper, 'Multiple or no dropdown wrappers found, but one expected.');

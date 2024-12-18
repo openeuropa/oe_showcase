@@ -166,15 +166,16 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "openeuropa/composer-artifacts": true,
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpro/grumphp": true,
+            "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
+            "openeuropa/composer-artifacts": true,
+            "php-http/discovery": false,
+            "phpro/grumphp": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": false
+            "tbachert/spi": false
         }
     }
 }

@@ -26,7 +26,7 @@ class LanguagesWeb extends ConceptSubsetPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function alterQuery(QueryInterface $query, $match_operator, array $concept_schemes = [], string $match = NULL): void {
+  public function alterQuery(QueryInterface $query, $match_operator, array $concept_schemes = [], ?string $match = NULL): void {
     $languages = [
       'Bulgarian' => 'http://publications.europa.eu/resource/authority/language/BUL',
       'Spanish' => 'http://publications.europa.eu/resource/authority/language/SPA',
