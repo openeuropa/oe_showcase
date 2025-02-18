@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc296d133a2b045ed624c9073b82d1b0",
+    "content-hash": "ca4aaf0cd20385501f2818fd237db8fa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5241,26 +5241,26 @@
         },
         {
             "name": "drupal/slim_select",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/slim_select.git",
-                "reference": "1.0.0-alpha4"
+                "reference": "1.0.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-alpha4.zip",
-                "reference": "1.0.0-alpha4",
-                "shasum": "5c84d37ec5fc4eda5d2ce8996cb12ab016fc6401"
+                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-alpha5.zip",
+                "reference": "1.0.0-alpha5",
+                "shasum": "c08f7271eb1c17808b3a3c22f0a5687143d22d26"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^10.2 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-alpha4",
-                    "datestamp": "1704982170",
+                    "version": "1.0.0-alpha5",
+                    "datestamp": "1738840859",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -6767,16 +6767,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.18.0",
+            "version": "0.3503.202502061647",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "8df4c4347d7bd53e16bcb0798b1735b1dc52c7c3"
+                "reference": "5aa4887151fb2abf0a425f9cf71ed34782764dd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/8df4c4347d7bd53e16bcb0798b1735b1dc52c7c3",
-                "reference": "8df4c4347d7bd53e16bcb0798b1735b1dc52c7c3",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/5aa4887151fb2abf0a425f9cf71ed34782764dd4",
+                "reference": "5aa4887151fb2abf0a425f9cf71ed34782764dd4",
                 "shasum": ""
             },
             "require": {
@@ -6837,9 +6837,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.18.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3503.202502061647"
             },
-            "time": "2024-12-16T11:03:01+00:00"
+            "time": "2025-02-06T14:26:46+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8084,16 +8084,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.14.0",
+            "version": "0.3503.202502171700",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "8d248f1698688caddf22cf7a2072c37976f79133"
+                "reference": "37c9cb72a67466276ec2256792f2af3db2d8c6bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/8d248f1698688caddf22cf7a2072c37976f79133",
-                "reference": "8d248f1698688caddf22cf7a2072c37976f79133",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/37c9cb72a67466276ec2256792f2af3db2d8c6bc",
+                "reference": "37c9cb72a67466276ec2256792f2af3db2d8c6bc",
                 "shasum": ""
             },
             "require": {
@@ -8128,7 +8128,7 @@
                 "drush/drush": "^12",
                 "mikey179/vfsstream": "^1.6.10",
                 "nikic/php-parser": "^4",
-                "openeuropa/code-review": "^2.0.0-alpha6",
+                "openeuropa/code-review-drupal": "^1.0.0-alpha",
                 "openeuropa/oe_agenda": "^1.0.0-alpha3",
                 "openeuropa/oe_authentication": "^1.11",
                 "openeuropa/oe_contact_forms": "~1.11",
@@ -8141,7 +8141,7 @@
                 "openeuropa/oe_paragraphs": "^1.20",
                 "openeuropa/oe_starter_content": "^1.2.0",
                 "openeuropa/oe_subscriptions": "^1.0@alpha",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0",
                 "phpspec/prophecy-phpunit": "^2"
             },
             "type": "drupal-theme",
@@ -8198,9 +8198,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.14.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3503.202502171700"
             },
-            "time": "2024-12-17T09:47:08+00:00"
+            "time": "2025-02-07T08:43:52+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20860,7 +20860,14 @@
             "time": "2023-10-13T22:55:15+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_bootstrap_theme",
+            "version": "0.3503.202502061647.0",
+            "alias": "1.18.0",
+            "alias_normalized": "1.18.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
