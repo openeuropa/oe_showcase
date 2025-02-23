@@ -40,6 +40,8 @@ services:
       - SCREEN_WIDTH=1440
       - SCREEN_HEIGHT=900
       - VNC_NO_PASSWORD=1
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
     ports:
       - '7900:7900'
     shm_size: 2g
