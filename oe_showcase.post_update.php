@@ -1026,3 +1026,14 @@ function oe_showcase_post_update_00044(): void {
   $config->set('page.front', $front_path);
   $config->save();
 }
+
+/**
+ * Update Slim select to version 2.
+ */
+function oe_showcase_post_update_00045(): void {
+  $storage = new FileStorage(\Drupal::service('extension.list.profile')->getPath('oe_showcase') . '/config/post_updates/00045_slim_select');
+  $data = $storage->read('slim_select.settings');
+
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('slim_select.settings')->setData($data)->save();
+}
