@@ -1,10 +1,19 @@
 # Change Log
 
-## [1.14.0](https://github.com/openeuropa/oe_showcase/tree/1.14.0) (2024-12-17)
+## [1.15.0](https://github.com/openeuropa/oe_showcase/tree/1.15.0) (2025-03-06)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.15.0...1.15.0)
+
+**Merged pull requests:**
+
+- OEL-3354: BC for text always on top in mobile viewports. [\#284](https://github.com/openeuropa/oe_showcase/pull/284) ([drishu](https://github.com/drishu))
+- OEL-3504: Update to slim\_select 2 [\#283](https://github.com/openeuropa/oe_showcase/pull/283) ([piotrsmykaj](https://github.com/piotrsmykaj))
+
+## [1.14.0](https://github.com/openeuropa/oe_showcase/tree/1.14.0) (2024-12-18)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.13.0...1.14.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.14.0. [\#281](https://github.com/openeuropa/oe_showcase/pull/281) ([drishu](https://github.com/drishu))
 - OEL-3577: Update packages. [\#280](https://github.com/openeuropa/oe_showcase/pull/280) ([drishu](https://github.com/drishu))
 
 ## [1.13.0](https://github.com/openeuropa/oe_showcase/tree/1.13.0) (2024-11-06)
