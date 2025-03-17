@@ -1,0 +1,30 @@
+.pwbi-embed-container {
+  position: relative;
+}
+.pwbi-disclaimer-banner.pwbi-banner-overlay {
+  background-color: inherit;
+}
+.pwbi-disclaimer-banner .bcl-banner__content .pwbi-disclaimer-accept {
+  text-align: center;
+}
+.pwbi-disclaimer-banner.pwbi-banner-overlay .bcl-banner__content .pwbi-disclaimer-accept {
+  text-align: center;
+}
+.pwbi-embed-overlay-blocking {
+  position: absolute;
+}
+.pwbi-embed-overlay-blocking .bcl-banner {
+  min-height: 100%;
+}
+.pwbi-disclaimer-text a {
+  color: rgb(255,255,255);
+}
+.pwbi-disclaimer-text a:hover {
+  color: rgb(124, 76, 76);
+}
+.pwbi-disclaimer-text a:not(.text-underline-hover):not(.standalone) {
+  -webkit-text-decoration-color: rgb(255,255,255);
+}
+.pwbi-disclaimer-text a:not(.text-underline-hover):not(.standalone) {
+  -webkit-text-decoration-color: rgb(255,255,255);
+}

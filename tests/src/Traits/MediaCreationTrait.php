@@ -167,4 +167,33 @@ trait MediaCreationTrait {
     return $media;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function createOeMediaPwbiMedia(array $values = []): MediaInterface {
+    $values['bundle'] = 'oe_media_pwbi';
+
+    $media = $this->createMedia($values + [
+      'name' => 'My test report',
+      'bundle' => 'power_bi_report',
+      'status' => 1,
+      'field_media_pwbi_embed_visual' => [
+        0 => [
+          'report_id' => 'report_id',
+          'workspace_id' => 'report_id',
+          'report_height' => '100',
+          'report_layout' => '3',
+          'report_width' => '100',
+          'token_type' => 'Embed',
+          'embed_type' => 'report',
+          'report_width_units' => '%',
+          'report_height_units' => 'px',
+          'report_breakpoints_height' => 'a:3:{s:7:"pwbi.sm";a:1:{s:6:"height";s:3:"500";}s:7:"pwbi.md";a:1:{s:6:"height";s:3:"900";}s:7:"pwbi.lg";a:1:{s:6:"height";s:4:"1100";}}',
+        ],
+      ],
+    ]);
+
+    return $media;
+  }
+
 }

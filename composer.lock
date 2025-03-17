@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e901fbe1e7dabb3a61022d25e995ede",
+    "content-hash": "a0518f4ff9065f9267d63abe08c85794",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4398,6 +4398,70 @@
             }
         },
         {
+            "name": "drupal/oauth2_client",
+            "version": "4.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/oauth2_client.git",
+                "reference": "4.1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/oauth2_client-4.1.3.zip",
+                "reference": "4.1.3",
+                "shasum": "4d387aeb667c3bf8021ae6ab932f3bae86bb703e"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "league/oauth2-client": "^2.6",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "drupal/key": "^1.17"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.1.3",
+                    "datestamp": "1738776277",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn Duncan (FatherShawn)",
+                    "homepage": "https://www.drupal.org/u/fathershawn",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "dashohoxha",
+                    "homepage": "https://www.drupal.org/u/dashohoxha",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "perelesnyk",
+                    "homepage": "https://www.drupal.org/user/2605196"
+                },
+                {
+                    "name": "voleger",
+                    "homepage": "https://www.drupal.org/user/3260314"
+                }
+            ],
+            "description": "Provides OAuth2 client functionality.",
+            "homepage": "https://drupal.org/project/oauth2_client",
+            "support": {
+                "source": "https://cgit.drupalcode.org/oauth2_client",
+                "issues": "https://drupal.org/project/issues/oauth2_client"
+            }
+        },
+        {
             "name": "drupal/paragraphs",
             "version": "1.17.0",
             "source": {
@@ -4893,6 +4957,66 @@
             "homepage": "https://www.drupal.org/project/purge_users",
             "support": {
                 "source": "https://git.drupalcode.org/project/purge_users"
+            }
+        },
+        {
+            "name": "drupal/pwbi",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pwbi.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pwbi-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "bb829d2319d929218e5cf10316b2d4be812a3512"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "drupal/oauth2_client": "^4.1",
+                "ext-openssl": "*",
+                "php": ">=8.3",
+                "thenetworg/oauth2-azure": "^2.2.2"
+            },
+            "require-dev": {
+                "drupal/http_request_mock": "^1.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1742380976",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Enrique Lacoma",
+                    "homepage": "https://www.drupal.org/user/3605526",
+                    "email": "enriquelacomaperez@gmail.com"
+                },
+                {
+                    "name": "enriquelacoma",
+                    "homepage": "https://www.drupal.org/user/3570766"
+                },
+                {
+                    "name": "phergo",
+                    "homepage": "https://www.drupal.org/user/2619411"
+                }
+            ],
+            "description": "This module provides tools to integrate PowerBi into Drupal",
+            "homepage": "https://www.drupal.org/project/pwbi",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pwbi"
             }
         },
         {
@@ -5918,6 +6042,69 @@
             "time": "2024-12-27T00:36:43+00:00"
         },
         {
+            "name": "firebase/php-jwt",
+            "version": "v6.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "8f718f4dfc9c5d5f0c994cdfd103921b43592712"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/8f718f4dfc9c5d5f0c994cdfd103921b43592712",
+                "reference": "8f718f4dfc9c5d5f0c994cdfd103921b43592712",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^7.4",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psr/cache": "^2.0||^3.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0"
+            },
+            "suggest": {
+                "ext-sodium": "Support EdDSA (Ed25519) signatures",
+                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/v6.11.0"
+            },
+            "time": "2025-01-23T05:11:06+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.9.2",
             "source": {
@@ -6373,6 +6560,71 @@
             "time": "2024-02-20T20:00:00+00:00"
         },
         {
+            "name": "league/oauth2-client",
+            "version": "2.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-client.git",
+                "reference": "9df2924ca644736c835fc60466a3a60390d334f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/9df2924ca644736c835fc60466a3a60390d334f9",
+                "reference": "9df2924ca644736c835fc60466a3a60390d334f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
+                "php": "^7.1 || >=8.0.0 <8.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.5",
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
+                "squizlabs/php_codesniffer": "^3.11"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Bilbie",
+                    "email": "hello@alexbilbie.com",
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "homepage": "https://github.com/shadowhand",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "OAuth 2.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth2",
+                "single sign on"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-client/issues",
+                "source": "https://github.com/thephpleague/oauth2-client/tree/2.8.1"
+            },
+            "time": "2025-02-26T04:37:30+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.9.0",
             "source": {
@@ -6487,6 +6739,15 @@
                 "source": "https://github.com/mck89/peast/tree/v1.16.3"
             },
             "time": "2024-07-23T14:00:32+00:00"
+        },
+        {
+            "name": "microsoft/powerbi",
+            "version": "2.1.19",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/microsoft/PowerBI-JavaScript/archive/refs/tags/v2.19.1.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "ml/iri",
@@ -11824,6 +12085,66 @@
                 }
             ],
             "time": "2025-01-07T09:44:41+00:00"
+        },
+        {
+            "name": "thenetworg/oauth2-azure",
+            "version": "v2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TheNetworg/oauth2-azure.git",
+                "reference": "be204a5135f016470a9c33e82ab48785bbc11af2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TheNetworg/oauth2-azure/zipball/be204a5135f016470a9c33e82ab48785bbc11af2",
+                "reference": "be204a5135f016470a9c33e82ab48785bbc11af2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "firebase/php-jwt": "~3.0||~4.0||~5.0||~6.0",
+                "league/oauth2-client": "~2.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TheNetworg\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Hajek",
+                    "email": "jan.hajek@thenetw.org",
+                    "homepage": "https://thenetw.org"
+                }
+            ],
+            "description": "Azure Active Directory OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "SSO",
+                "aad",
+                "authorization",
+                "azure",
+                "azure active directory",
+                "client",
+                "microsoft",
+                "oauth",
+                "oauth2",
+                "windows azure"
+            ],
+            "support": {
+                "issues": "https://github.com/TheNetworg/oauth2-azure/issues",
+                "source": "https://github.com/TheNetworg/oauth2-azure/tree/v2.2.2"
+            },
+            "time": "2023-12-19T12:10:48+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

@@ -35,6 +35,7 @@ install:
   - oe_dashboard_agent
   - oe_list_pages_address
   - oe_multilingual
+  - oe_showcase_pwbi
   - oe_oembed
   - oe_paragraphs
   - oe_paragraphs_banner
@@ -54,6 +55,7 @@ install:
   - oe_showcase_multilingual
   - oe_showcase_navigation
   - oe_showcase_page
+  - oe_showcase_pwbi
   - oe_showcase_search
   - oe_showcase_subscriptions
   - oe_showcase_user_profile

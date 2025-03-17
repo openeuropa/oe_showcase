@@ -1,0 +1,9 @@
+name: PWBI entities
+description: Provides media and paragraph bundles to use with pwbi module (https://www.drupal.org/project/pwbi)
+package: OpenEuropa Showcase
+type: module
+core_version_requirement: ^10
+dependencies:
+  - drupal:pwbi
+  - drupal:pwbi_banner
+  - oe_oembed:oe_oembed

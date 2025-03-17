@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the OE Pwbi module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\oe_bootstrap_theme\ConfigImporter;
+
+/**
+ * Implements hook_install().
+ *
+ * Imports configuration on module install.
+ */
+function oe_showcase_pwbi_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+
+  $banner_text = sprintf('This page <strong> element </strong> embeds a graph from power Bi. </br> For any question please <a href="%scontact-us">Contact us</a>', base_path());
+  \Drupal::configFactory()
+    ->getEditable('pwbi_banner.settings')
+    ->set('banner_type', 0)
+    ->set('display_options', 1)
+    ->set('banner_text', [
+      "value" => $banner_text,
+      "format" => "full_html",
+    ])->save();
+
+  ConfigImporter::importSingle('module', 'oe_showcase_pwbi', '/config/overrides/', 'field.field.node.oe_showcase_page.field_body');
+}
