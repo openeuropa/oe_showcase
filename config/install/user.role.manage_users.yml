@@ -14,7 +14,6 @@ permissions:
   - 'access administration pages'
   - 'access toolbar'
   - 'access user profiles'
-  - 'administer users'
   - 'assign roles'
   - 'delete own files'
   - 'view the administration theme'

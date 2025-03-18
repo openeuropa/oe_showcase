@@ -1037,3 +1037,12 @@ function oe_showcase_post_update_00045(): void {
   $config_factory = \Drupal::configFactory();
   $config_factory->getEditable('slim_select.settings')->setData($data)->save();
 }
+
+/**
+ * Revoke manage user's administer users permission.
+ */
+function oe_showcase_post_update_000046() {
+  $role = Role::load('manage_users');
+  $role->revokePermission('administer users');
+  $role->save();
+}
