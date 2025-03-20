@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7aefb7462b2fa96dae4c78015bc93d6",
+    "content-hash": "5183484f6eb4a0774561a191e1be612c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3036,26 +3036,26 @@
         },
         {
             "name": "drupal/file_link",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/file_link.git",
-                "reference": "2.1.0"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_link-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "5901d7e783c37d189414c1c5c28f865508d93ccd"
+                "url": "https://ftp.drupal.org/files/projects/file_link-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "8af6ddc65a83684f2d5bcdca4d8acb810da7dac8"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10.3 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1680004119",
+                    "version": "2.2.0",
+                    "datestamp": "1741279028",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6759,16 +6759,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "325515fa3d8dc486d5696f5df10fea1e68e8ba76"
+                "reference": "67650297218466fb88d0d38790009ea036f34daf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/325515fa3d8dc486d5696f5df10fea1e68e8ba76",
-                "reference": "325515fa3d8dc486d5696f5df10fea1e68e8ba76",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/67650297218466fb88d0d38790009ea036f34daf",
+                "reference": "67650297218466fb88d0d38790009ea036f34daf",
                 "shasum": ""
             },
             "require": {
@@ -6830,9 +6830,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.19.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.20.0"
             },
-            "time": "2025-03-06T08:01:25+00:00"
+            "time": "2025-03-17T07:44:49+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8077,16 +8077,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "97f1f8bedba75dc922a03b44f980bcf809eb80c6"
+                "reference": "6b8a203cd70ec963342906dbf1f214c76771cb49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/97f1f8bedba75dc922a03b44f980bcf809eb80c6",
-                "reference": "97f1f8bedba75dc922a03b44f980bcf809eb80c6",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/6b8a203cd70ec963342906dbf1f214c76771cb49",
+                "reference": "6b8a203cd70ec963342906dbf1f214c76771cb49",
                 "shasum": ""
             },
             "require": {
@@ -8095,7 +8095,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.19",
+                "openeuropa/oe_bootstrap_theme": "^1.20",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8191,9 +8191,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.15.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.16.0"
             },
-            "time": "2025-03-06T11:30:59+00:00"
+            "time": "2025-03-17T11:24:16+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20852,19 +20852,19 @@
     "stability-flags": {
         "drupal/block_field": 5,
         "drupal/color_scheme_field": 15,
-        "drupal/datetime_testing": 10,
         "drupal/default_content": 15,
         "drupal/description_list_field": 15,
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
-        "openeuropa/oe_subscriptions": 15
+        "openeuropa/oe_subscriptions": 15,
+        "drupal/datetime_testing": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
