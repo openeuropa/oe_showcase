@@ -23,7 +23,7 @@ It also creates a paragraph that will, reference the media created in oe_media_p
 Install https://www.drupal.org/project/pwbi:
 
 ```bash
-composer require 'drupal/pwbi:^1.0'
+composer require 'drupal/pwbi:^2.0'
 ```
 
 
