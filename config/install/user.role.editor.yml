@@ -12,7 +12,6 @@ dependencies:
     - media.type.av_portal_video
     - media.type.document
     - media.type.image
-    - media.type.oe_media_pwbi
     - media.type.remote_video
     - media.type.webtools_chart
     - media.type.webtools_map
@@ -38,8 +37,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-_core:
-  default_config_hash: IrFqi7mS9fhSh5ZqPIoYNLNnWR9fnUUP-WNRpZe4lso
 id: editor
 label: Editor
 weight: 2
@@ -59,7 +56,6 @@ permissions:
   - 'create document media'
   - 'create image media'
   - 'create oe_list_page content'
-  - 'create oe_media_pwbi media'
   - 'create oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'create oe_organisation oe_stakeholder corporate entity'
   - 'create oe_project content'
@@ -81,7 +77,6 @@ permissions:
   - 'delete any document media'
   - 'delete any image media'
   - 'delete any oe_list_page content'
-  - 'delete any oe_media_pwbi media'
   - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
@@ -111,7 +106,6 @@ permissions:
   - 'edit any document media'
   - 'edit any image media'
   - 'edit any oe_list_page content'
-  - 'edit any oe_media_pwbi media'
   - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'
