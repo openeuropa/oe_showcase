@@ -1,10 +1,29 @@
 # Change Log
 
+## [1.17.0](https://github.com/openeuropa/oe_showcase/tree/1.17.0) (2025-03-28)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.16.0...1.17.0)
+
+**Merged pull requests:**
+
+- OEL-3682: Update oe\_whitelabel. [\#291](https://github.com/openeuropa/oe_showcase/pull/291) ([tibi2303](https://github.com/tibi2303))
+- EWPP-4991: Update to php8.3 [\#282](https://github.com/openeuropa/oe_showcase/pull/282) ([drishu](https://github.com/drishu))
+
+## [1.16.0](https://github.com/openeuropa/oe_showcase/tree/1.16.0) (2025-03-20)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.15.0...1.16.0)
+
+**Merged pull requests:**
+
+- Prepare release 1.16.0. [\#287](https://github.com/openeuropa/oe_showcase/pull/287) ([tibi2303](https://github.com/tibi2303))
+- OEL-3682: Update oe\_whitelabel and oe\_bootstrap\_theme. [\#286](https://github.com/openeuropa/oe_showcase/pull/286) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.15.0](https://github.com/openeuropa/oe_showcase/tree/1.15.0) (2025-03-06)
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.15.0...1.15.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.15.0. [\#285](https://github.com/openeuropa/oe_showcase/pull/285) ([drishu](https://github.com/drishu))
 - OEL-3354: BC for text always on top in mobile viewports. [\#284](https://github.com/openeuropa/oe_showcase/pull/284) ([drishu](https://github.com/drishu))
 - OEL-3504: Update to slim\_select 2 [\#283](https://github.com/openeuropa/oe_showcase/pull/283) ([piotrsmykaj](https://github.com/piotrsmykaj))
 
