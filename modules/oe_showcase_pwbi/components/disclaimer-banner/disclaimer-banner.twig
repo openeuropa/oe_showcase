@@ -1,19 +1,18 @@
 {% set attributes = attributes.addClass('pwbi-disclaimer-banner') %}
+{% set attributes = attributes.addClass('pwbi-disclaimer-showcase') %}
 {% if display_type == "pwbi" %}
   {% set attributes = attributes.addClass("pwbi-banner-overlay") %}
 {% endif %}
-
 <div {{ attributes }}>
-  <div class="bg-primary text-white text-center bcl-banner">
-    <div class="container">
-        <div class="bcl-banner__content">
-          <div class="pwbi-disclaimer-text">
-            {{ banner_text }}
-          </div>
-          <div class="pwbi-disclaimer-accept">
-            <button class="btn btn-light btn-md" type="button">{{ 'Accept'|t }}</button>
-        </div>
-      </div>
+  <div class="pwbi-disclaimer-wrapper">
+    <div class="pwbi-disclaimer-img">
+      <img src="{{ icon_path }}">
     </div>
+    <div class="pwbi-disclaimer-text">
+      {{ banner_text }}
+    </div>
+  </div>
+  <div class="pwbi-disclaimer-accept">
+    <button type="button">{{ 'Show external content'|t }}</button>
   </div>
 </div>

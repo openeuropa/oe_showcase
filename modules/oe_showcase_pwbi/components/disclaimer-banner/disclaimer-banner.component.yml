@@ -20,6 +20,9 @@ props:
         - block
         - pwbi
       type: string
-libraryOverrides:
-  dependencies:
-    - pwbi_banner/pwbi_banner_cookie_lib
+    icon_path:
+      title: Icon path
+      description: The icon path.
+      examples:
+        - /web/icon.png
+      type: string
