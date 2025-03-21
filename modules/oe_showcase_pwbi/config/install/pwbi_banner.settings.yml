@@ -1,0 +1,5 @@
+banner_type: 1
+display_options: 1
+banner_text:
+  value: "<p>This content is hosted by a third party. By showing the external content you accept the <a href=\"https://privacy.microsoft.com/en-US/privacystatement\">terms and conditions</a> of app.powerbi.com.</p>\r\n"
+  format: rich_text
