@@ -19,15 +19,5 @@ function oe_showcase_pwbi_install(bool $is_syncing): void {
     return;
   }
 
-  $banner_text = sprintf('This content is hosted by a third party. By showing the external content you accept the <a href="https://privacy.microsoft.com/en-US/privacystatement" title="Terms and conditions" target="_blank">terms and conditions</a> of app.powerbi.com.');
-  \Drupal::configFactory()
-    ->getEditable('pwbi_banner.settings')
-    ->set('banner_type', 0)
-    ->set('display_options', 1)
-    ->set('banner_text', [
-      "value" => $banner_text,
-      "format" => "full_html",
-    ])->save();
-
   ConfigImporter::importSingle('module', 'oe_showcase_pwbi', '/config/overrides/', 'field.field.node.oe_showcase_page.field_body');
 }
