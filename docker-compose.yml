@@ -1,7 +1,6 @@
-version: '2'
 services:
   web:
-    image: fpfis/httpd-php-dev:8.1
+    image: fpfis/httpd-php-dev:8.3
     working_dir: /var/www/html
     ports:
       - 8080:8080
@@ -19,7 +18,7 @@ services:
 
   mysql:
     image: percona/percona-server:5.7
-    command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
+    command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3 --skip-log-bin --innodb-flush-log-at-trx-commit=2 --innodb-read-io-threads=16 --innodb-write-io-threads=16
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     # ports:
@@ -41,6 +40,8 @@ services:
       - SCREEN_WIDTH=1440
       - SCREEN_HEIGHT=900
       - VNC_NO_PASSWORD=1
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
     ports:
       - '7900:7900'
     shm_size: 2g
