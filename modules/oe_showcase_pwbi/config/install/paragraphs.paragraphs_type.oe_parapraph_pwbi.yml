@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: A6xoqD-jZAg1XNfg413Ik4ak7xx_Di654f9-HyMBacY
 id: oe_parapraph_pwbi
 label: 'Power BI'
 icon_uuid: null

@@ -32,8 +32,6 @@ third_party_settings:
   composite_reference:
     composite: false
     composite_revisions: false
-_core:
-  default_config_hash: Sw9hjDtNricnIXQVclckKY8-AORxiklGWQnEJ6VoS18
 id: node.oe_showcase_page.field_body
 field_name: field_body
 entity_type: node
