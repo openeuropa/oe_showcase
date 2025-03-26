@@ -1,5 +1,7 @@
 .pwbi-disclaimer-banner.pwbi-disclaimer-showcase {
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 .pwbi-disclaimer-banner.pwbi-disclaimer-showcase .pwbi-disclaimer-wrapper .pwbi-disclaimer-img {
   margin: inherit;
