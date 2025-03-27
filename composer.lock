@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dfcc415efcd43a6a0af078414b59b34",
+    "content-hash": "567bf763b0fd5e5b5ac2ec47685b9539",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -333,29 +333,29 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "d8af7f248c74f195f7347424600fd9e17b57af59"
+                "reference": "2eb07e5953eed811ce1b309a7478a3b236f2273d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/d8af7f248c74f195f7347424600fd9e17b57af59",
-                "reference": "d8af7f248c74f195f7347424600fd9e17b57af59",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/2eb07e5953eed811ce1b309a7478a3b236f2273d",
+                "reference": "2eb07e5953eed811ce1b309a7478a3b236f2273d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/deprecations": "^1",
-                "php": "^8.1"
+                "php": "^8.1",
+                "symfony/polyfill-php84": "^1.30"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^12",
                 "ext-json": "*",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.11"
+                "phpunit/phpunit": "^10.5"
             },
             "type": "library",
             "autoload": {
@@ -399,7 +399,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/collections/issues",
-                "source": "https://github.com/doctrine/collections/tree/2.2.2"
+                "source": "https://github.com/doctrine/collections/tree/2.3.0"
             },
             "funding": [
                 {
@@ -415,7 +415,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-18T06:56:21+00:00"
+            "time": "2025-03-22T10:17:19+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -5919,16 +5919,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.9.2",
+            "version": "7.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "d281ed313b989f213357e3be1a179f02196ac99b"
+                "reference": "7b2f29fe81dc4da0ca0ea7d42107a0845946ea77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d281ed313b989f213357e3be1a179f02196ac99b",
-                "reference": "d281ed313b989f213357e3be1a179f02196ac99b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7b2f29fe81dc4da0ca0ea7d42107a0845946ea77",
+                "reference": "7b2f29fe81dc4da0ca0ea7d42107a0845946ea77",
                 "shasum": ""
             },
             "require": {
@@ -6025,7 +6025,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.9.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.9.3"
             },
             "funding": [
                 {
@@ -6041,7 +6041,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-24T11:22:20+00:00"
+            "time": "2025-03-27T13:37:11+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -6128,16 +6128,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "a70f5c95fb43bc83f07c9c948baa0dc1829bf201"
+                "reference": "c2270caaabe631b3b44c85f99e5a04bbb8060d16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/a70f5c95fb43bc83f07c9c948baa0dc1829bf201",
-                "reference": "a70f5c95fb43bc83f07c9c948baa0dc1829bf201",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/c2270caaabe631b3b44c85f99e5a04bbb8060d16",
+                "reference": "c2270caaabe631b3b44c85f99e5a04bbb8060d16",
                 "shasum": ""
             },
             "require": {
@@ -6224,7 +6224,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.7.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.7.1"
             },
             "funding": [
                 {
@@ -6240,7 +6240,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-18T11:15:46+00:00"
+            "time": "2025-03-27T12:30:47+00:00"
         },
         {
             "name": "html2text/html2text",
@@ -6766,16 +6766,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.20.0",
+            "version": "0.3081.202503271630",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "67650297218466fb88d0d38790009ea036f34daf"
+                "reference": "11709fa04c71b0a9015513e374b247b6a0138b9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/67650297218466fb88d0d38790009ea036f34daf",
-                "reference": "67650297218466fb88d0d38790009ea036f34daf",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/11709fa04c71b0a9015513e374b247b6a0138b9e",
+                "reference": "11709fa04c71b0a9015513e374b247b6a0138b9e",
                 "shasum": ""
             },
             "require": {
@@ -6837,9 +6837,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.20.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3081.202503271630"
             },
-            "time": "2025-03-17T07:44:49+00:00"
+            "time": "2025-03-27T15:31:16+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8084,16 +8084,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.16.0",
+            "version": "0.3081.202503271630",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "6b8a203cd70ec963342906dbf1f214c76771cb49"
+                "reference": "a229110327587bc6a83a0e90c4cbd97760a835db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/6b8a203cd70ec963342906dbf1f214c76771cb49",
-                "reference": "6b8a203cd70ec963342906dbf1f214c76771cb49",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/a229110327587bc6a83a0e90c4cbd97760a835db",
+                "reference": "a229110327587bc6a83a0e90c4cbd97760a835db",
                 "shasum": ""
             },
             "require": {
@@ -8102,7 +8102,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.20",
+                "openeuropa/oe_bootstrap_theme": "0.3081.202503271630",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8198,9 +8198,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.16.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3081.202503271630"
             },
-            "time": "2025-03-17T11:24:16+00:00"
+            "time": "2025-03-27T15:35:05+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -10921,6 +10921,82 @@
                 }
             ],
             "time": "2024-09-09T11:45:10+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php84",
+            "version": "v1.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php84.git",
+                "reference": "e5493eb51311ab0b1cc2243416613f06ed8f18bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/e5493eb51311ab0b1cc2243416613f06ed8f18bd",
+                "reference": "e5493eb51311ab0b1cc2243416613f06ed8f18bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php84\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.4+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php84/tree/v1.31.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-09T12:04:04+00:00"
         },
         {
             "name": "symfony/process",
