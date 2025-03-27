@@ -58,7 +58,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "^1.16"
+        "openeuropa/oe_whitelabel": "0.3081.202504091354"
     },
     "require-dev": {
         "composer/installers": "~1.11",
@@ -130,9 +130,6 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
-            },
-            "openeuropa/oe_whitelabel": {
-                "OEL-3699: Change the contentPosition setting": "https://patch-diff.githubusercontent.com/raw/openeuropa/oe_whitelabel/pull/347.patch"
             }
         },
         "patches-ignore": {
