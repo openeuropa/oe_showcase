@@ -4,5 +4,5 @@ package: OpenEuropa Showcase
 type: module
 core_version_requirement: ^10
 dependencies:
-  - pwbi:pwbi
+  - pwbi:pwbi_banner
   - oe_oembed:oe_oembed
