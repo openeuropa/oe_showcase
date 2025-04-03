@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - pwbi
+id: oe_media_pwbi
+label: 'Power BI Report media'
+description: ''
+source: pwbi_embed_visual
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_pwbi_embed_visual
+field_map: {  }

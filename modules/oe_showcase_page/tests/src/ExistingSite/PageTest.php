@@ -73,6 +73,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Links block',
         'Add Listing item block',
         'Add Map',
+        'Add Power BI',
         'Add Quote',
         'Add Rich text',
         'Add Social feed',

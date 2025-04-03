@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_pwbi_embed_visual
+    - media.type.oe_media_pwbi
+  module:
+    - pwbi
+id: media.oe_media_pwbi.field_media_pwbi_embed_visual
+field_name: field_media_pwbi_embed_visual
+entity_type: media
+bundle: oe_media_pwbi
+label: 'PowerBi embed'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: pwbi_embed

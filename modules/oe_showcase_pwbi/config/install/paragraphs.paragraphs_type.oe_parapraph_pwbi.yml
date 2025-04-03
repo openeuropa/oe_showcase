@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: oe_parapraph_pwbi
+label: 'Power BI'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

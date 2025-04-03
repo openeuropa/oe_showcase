@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_parapraph_pwbi.field_oe_power_bi_report
+    - paragraphs.paragraphs_type.oe_parapraph_pwbi
+  module:
+    - oe_oembed
+third_party_settings:
+  oe_oembed:
+    embeddable: false
+id: paragraph.oe_parapraph_pwbi.default
+targetEntityType: paragraph
+bundle: oe_parapraph_pwbi
+mode: default
+content:
+  field_oe_power_bi_report:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  ewcms_available_translations: true
+  extra_field_ewcms_navigation_lists: true
+  search_api_excerpt: true

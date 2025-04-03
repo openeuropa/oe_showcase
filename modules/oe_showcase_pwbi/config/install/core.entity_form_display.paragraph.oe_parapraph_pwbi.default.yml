@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.oe_parapraph_pwbi.field_oe_power_bi_report
+    - paragraphs.paragraphs_type.oe_parapraph_pwbi
+id: paragraph.oe_parapraph_pwbi.default
+targetEntityType: paragraph
+bundle: oe_parapraph_pwbi
+mode: default
+content:
+  field_oe_power_bi_report:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

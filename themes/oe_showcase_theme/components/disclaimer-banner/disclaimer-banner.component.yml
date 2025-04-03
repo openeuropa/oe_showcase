@@ -1,0 +1,28 @@
+replaces: 'pwbi_banner:disclaimer-banner'
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Disclaimer banner
+status: stable
+props:
+  type: object
+  required:
+    - banner_text
+  properties:
+    banner_text:
+      title: Banner text
+      description: The text to show in the banner.
+      examples:
+        - This is a disclaimer.
+      type: string
+    display_type:
+      title: Type of display
+      description: Type of display used, as block or over a powerbi embed.
+      examples:
+        - block
+        - pwbi
+      type: string
+    icon_path:
+      title: Icon path
+      description: The icon path.
+      examples:
+        - /web/icon.png
+      type: string

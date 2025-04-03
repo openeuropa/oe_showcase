@@ -1037,3 +1037,25 @@ function oe_showcase_post_update_00045(): void {
   $config_factory = \Drupal::configFactory();
   $config_factory->getEditable('slim_select.settings')->setData($data)->save();
 }
+
+/**
+ * Install pwbi contrib module, and update editor role.
+ */
+function oe_showcase_post_update_00046(&$sandbox): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_pwbi']);
+
+  // Allow editor role to manage list pages.
+  $permissions = [
+    'create oe_media_pwbi media',
+    'delete any oe_media_pwbi media',
+    'edit any oe_media_pwbi media',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}

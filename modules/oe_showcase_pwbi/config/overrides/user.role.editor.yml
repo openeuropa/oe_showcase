@@ -12,7 +12,6 @@ dependencies:
     - media.type.av_portal_video
     - media.type.document
     - media.type.image
-    - media.type.oe_media_pwbi
     - media.type.remote_video
     - media.type.webtools_chart
     - media.type.webtools_map
@@ -60,7 +59,6 @@ permissions:
   - 'create oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'create oe_organisation oe_stakeholder corporate entity'
   - 'create oe_project content'
-  - 'create oe_media_pwbi media'
   - 'create oe_sc_event content'
   - 'create oe_sc_news content'
   - 'create oe_sc_person content'
@@ -82,7 +80,6 @@ permissions:
   - 'delete any oe_project content'
   - 'delete any oe_sc_event content'
   - 'delete any oe_sc_news content'
-  - 'delete any oe_media_pwbi media'
   - 'delete any oe_sc_person content'
   - 'delete any oe_sc_publication content'
   - 'delete any oe_showcase_page content'
@@ -109,7 +106,6 @@ permissions:
   - 'edit any document media'
   - 'edit any image media'
   - 'edit any oe_list_page content'
-  - 'edit any oe_media_pwbi media'
   - 'edit any oe_project content'
   - 'edit any oe_sc_event content'
   - 'edit any oe_sc_news content'

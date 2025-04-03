@@ -1,0 +1,27 @@
+.pwbi-disclaimer-banner.pwbi-disclaimer-showcase {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+.pwbi-disclaimer-banner.pwbi-disclaimer-showcase .pwbi-disclaimer-wrapper .pwbi-disclaimer-img {
+  margin: inherit;
+  display: block;
+  min-width: 20px;
+  padding-right: 10px;
+}
+.pwbi-disclaimer-banner.pwbi-disclaimer-showcase .pwbi-disclaimer-accept {
+  padding-top: 10px;
+}
+.pwbi-disclaimer-banner.pwbi-disclaimer-showcase .pwbi-disclaimer-accept button {
+  display: inline-block;
+  border: 1px solid #D3D8F2;
+  border-radius: 4px;
+  padding: 0.3rem 0.3rem;
+  margin: 0;
+  text-decoration: none;
+  background: #ffffff;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
