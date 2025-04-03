@@ -68,7 +68,6 @@
         "drupal/core-dev": "^10",
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^12.4",
-        "nikic/php-parser": "^4",
         "openeuropa/code-review-drupal": "^1.0.0-alpha",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
         "phpspec/prophecy-phpunit": "^1 || ^2",
