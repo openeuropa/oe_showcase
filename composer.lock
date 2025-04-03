@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5218df11158c765807182b3c5478c79d",
+    "content-hash": "614eb6d04a2e38b4110ca4d1a22edbf4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5364,17 +5364,17 @@
         },
         {
             "name": "drupal/slim_select",
-            "version": "1.0.0-alpha5",
+            "version": "1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/slim_select.git",
-                "reference": "1.0.0-alpha5"
+                "reference": "1.0.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-alpha5.zip",
-                "reference": "1.0.0-alpha5",
-                "shasum": "c08f7271eb1c17808b3a3c22f0a5687143d22d26"
+                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-beta1.zip",
+                "reference": "1.0.0-beta1",
+                "shasum": "fc4688d9f68372ed48db812ddd89532d28ce3e30"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11"
@@ -5382,11 +5382,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-alpha5",
-                    "datestamp": "1738840859",
+                    "version": "1.0.0-beta1",
+                    "datestamp": "1743761035",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
