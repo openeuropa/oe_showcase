@@ -14,7 +14,7 @@ class UserManagementTest extends ShowcaseExistingSiteTestBase {
   use UserTrait;
 
   /**
-   * Manage users user can activate other users.
+   * Administrator user can activate other users.
    */
   public function testUsersCanBeEnabled(): void {
     $page = $this->getSession()->getPage();
@@ -24,7 +24,7 @@ class UserManagementTest extends ShowcaseExistingSiteTestBase {
     $blocked_user->block();
     $blocked_user->save();
 
-    $user = $this->createUserWithRoles(['manage_users']);
+    $user = $this->createUserWithRoles(['administrator']);
     $this->drupalLogin($user);
     $this->drupalGet('/admin/people');
 

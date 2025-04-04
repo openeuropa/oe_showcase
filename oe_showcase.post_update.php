@@ -1059,3 +1059,55 @@ function oe_showcase_post_update_00046(&$sandbox): void {
   }
   $role->save();
 }
+
+/**
+ * Delete the "Manage users" role and uninstall the "RoleAssign" module.
+ */
+function oe_showcase_post_update_00047() {
+  $role = Role::load('manage_users');
+  if ($role) {
+    $role->delete();
+  }
+
+  $module_name = 'roleassign';
+
+  // Only proceed if the module is enabled.
+  if (!\Drupal::moduleHandler()->moduleExists($module_name)) {
+    return t('Deleted role "manage_users".');
+  }
+
+  $view_id = 'user_admin_people';
+
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface $config_factory */
+  $config_factory = \Drupal::configFactory();
+
+  // Backup the view config.
+  $config_name = "views.view.$view_id";
+  $view_config_data = $config_factory->getEditable($config_name)->getRawData();
+
+  if (empty($view_config_data)) {
+    return t('Deleted role "manage_users".');
+  }
+
+  // Manually delete the view to prevent automatic deletion during module
+  // uninstall.
+  $view_entity = \Drupal::entityTypeManager()->getStorage('view')->load($view_id);
+  if ($view_entity) {
+    $view_entity->delete();
+  }
+
+  // Uninstall roleassign (which would normally delete the view caused by the
+  // added roleassign module dependency (nothing else) to the view by
+  // roleassign_views_data_alter()).
+  \Drupal::service('module_installer')->uninstall(['roleassign']);
+
+  // Restore the view config.
+  $view_restored = \Drupal::entityTypeManager()
+    ->getStorage('view')
+    ->create($view_config_data);
+  $view_restored->save();
+
+  return t('Deleted role "manage_users" and uninstalled @module.', [
+    '@module' => $module_name,
+  ]);
+}
