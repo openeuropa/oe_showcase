@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\facets\Entity\Facet;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
@@ -1063,11 +1064,9 @@ function oe_showcase_post_update_00046(&$sandbox): void {
 /**
  * Delete the "Manage users" role and uninstall the "RoleAssign" module.
  */
-function oe_showcase_post_update_00047() {
+function oe_showcase_post_update_00047(): TranslatableMarkup {
   $role = Role::load('manage_users');
-  if ($role) {
-    $role->delete();
-  }
+  $role?->delete();
 
   $module_name = 'roleassign';
 
