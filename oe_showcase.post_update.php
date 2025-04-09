@@ -1110,3 +1110,14 @@ function oe_showcase_post_update_00047(): TranslatableMarkup {
     '@module' => $module_name,
   ]);
 }
+
+/**
+ * Install OE Agenda.
+ */
+function oe_showcase_post_update_00048(): void {
+  \Drupal::service('module_installer')->install([
+    'oe_agenda',
+    'oe_content_sub_entity_person',
+    'oe_whitelabel_agenda',
+  ]);
+}

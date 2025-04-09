@@ -25,6 +25,7 @@ install:
   - menu_link_content
   - menu_ui
   - node
+  - oe_agenda
   - oe_authentication
   - oe_bootstrap_theme_helper
   - oe_contact_forms_honeypot
@@ -63,6 +64,7 @@ install:
   - oe_webtools_etrans
   - oe_webtools_page_feedback
   - oe_webtools_social_share
+  - oe_whitelabel_agenda
   - oe_whitelabel_extra_project
   - oe_whitelabel_helper
   - oe_whitelabel_list_pages
