@@ -193,6 +193,11 @@ config_devel:
     - pathauto.pattern.person_url_alias_pattern
     - pathauto.pattern.project_url_alias_pattern
     - pathauto.pattern.publication_url_alias_pattern
+    - field.field.oe_agenda_session.oe_default.oe_session_moderators
+    - field.field.oe_agenda_session.oe_default.oe_session_speakers
+    - oe_content_sub_entity_person.oe_person_type.person
+    - field.field.oe_person.person.field_oelp_person_name
+    - field.storage.oe_person.field_oelp_person_name
     - pathauto.settings
     - purge.plugins
     - purge_users.settings

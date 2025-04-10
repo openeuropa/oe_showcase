@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.oe_agenda_session.oe_session_moderators
+    - oe_agenda.oe_agenda_session_type.oe_default
+    - oe_content_sub_entity_person.oe_person_type.person
+  module:
+    - composite_reference
+    - entity_reference_revisions
+third_party_settings:
+  composite_reference:
+    composite: false
+    composite_revisions: false
+id: oe_agenda_session.oe_default.oe_session_moderators
+field_name: oe_session_moderators
+entity_type: oe_agenda_session
+bundle: oe_default
+label: Moderators
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:oe_person'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

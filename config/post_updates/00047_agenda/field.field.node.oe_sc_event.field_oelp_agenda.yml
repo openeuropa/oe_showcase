@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oelp_agenda
+    - node.type.oe_sc_event
+    - oe_agenda.oe_agenda_type.oe_default
+  module:
+    - composite_reference
+third_party_settings:
+  composite_reference:
+    composite: false
+    composite_revisions: false
+id: node.oe_sc_event.field_oelp_agenda
+field_name: field_oelp_agenda
+entity_type: node
+bundle: oe_sc_event
+label: Agenda
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:oe_agenda'
+  handler_settings:
+    target_bundles:
+      oe_default: oe_default
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
