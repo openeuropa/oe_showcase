@@ -1128,11 +1128,11 @@ function oe_showcase_post_update_00048(): void {
     'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
     'core.entity_view_display.node.oe_sc_event.teaser',
     'field.field.node.oe_sc_event.field_oelp_agenda',
+    'oe_content_sub_entity_person.oe_person_type.person',
     'field.field.oe_agenda_session.oe_default.oe_session_moderators',
     'field.field.oe_agenda_session.oe_default.oe_session_speakers',
     'field.field.oe_person.person.field_oelp_person_name',
     'field.storage.node.field_oelp_agenda',
     'field.storage.oe_person.field_oelp_person_name',
-    'oe_content_sub_entity_person.oe_person_type.person',
   ]);
 }

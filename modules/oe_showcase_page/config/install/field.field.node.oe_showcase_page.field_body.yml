@@ -17,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.oe_links_block
     - paragraphs.paragraphs_type.oe_list_item_block
     - paragraphs.paragraphs_type.oe_map
+    - paragraphs.paragraphs_type.oe_parapraph_pwbi
     - paragraphs.paragraphs_type.oe_quote
     - paragraphs.paragraphs_type.oe_rich_text
     - paragraphs.paragraphs_type.oe_social_feed
@@ -63,6 +64,7 @@ settings:
       oe_social_media_follow: oe_social_media_follow
       oe_text_feature_media: oe_text_feature_media
       oe_timeline: oe_timeline
+      oe_parapraph_pwbi: oe_parapraph_pwbi
     negate: 0
     target_bundles_drag_drop:
       contact_form:
@@ -118,6 +120,9 @@ settings:
         enabled: true
       oe_map:
         weight: 33
+        enabled: true
+      oe_parapraph_pwbi:
+        weight: 44
         enabled: true
       oe_quote:
         weight: 34
