@@ -154,6 +154,7 @@ config_devel:
     - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_oelp_agenda
+    - field.storage.node.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
     - field.field.node.oe_sc_news.oe_summary
