@@ -102,6 +102,7 @@ config_devel:
   install:
     - contact.settings
     - core.entity_form_display.node.oe_sc_event.default
+    - core.entity_form_display.oe_person.person.default
     - core.entity_form_display.paragraph.oe_accordion.default
     - core.entity_form_display.paragraph.oe_banner.default
     - core.entity_form_display.paragraph.oe_banner.oe_banner_image
@@ -131,6 +132,7 @@ config_devel:
     - core.entity_view_display.node.oe_sc_event.oe_w_content_banner
     - core.entity_view_display.node.oe_sc_event.teaser
     - core.entity_view_display.node.oe_sc_event.teaser
+    - core.entity_view_display.oe_person.person.default
     - core.entity_view_mode.media.oe_sc_entity_browser_selection
     - core.entity_view_mode.media.showcase_embed
     - easy_breadcrumb.settings
@@ -154,7 +156,6 @@ config_devel:
     - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_oelp_agenda
-    - field.storage.node.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
     - field.field.node.oe_sc_news.oe_summary
@@ -162,6 +163,9 @@ config_devel:
     - field.field.node.oe_sc_person.oe_summary
     - field.field.node.oe_sc_publication.body
     - field.field.node.oe_sc_publication.oe_summary
+    - field.field.oe_agenda_session.oe_default.oe_session_moderators
+    - field.field.oe_agenda_session.oe_default.oe_session_speakers
+    - field.field.oe_person.person.field_oelp_person_name
     - field.field.paragraph.oe_accordion.field_color_scheme
     - field.field.paragraph.oe_accordion_item.field_oe_text_long
     - field.field.paragraph.oe_banner.field_color_scheme
@@ -176,6 +180,8 @@ config_devel:
     - field.field.paragraph.oe_text_feature_media.field_oe_text_long
     - field.field.paragraph.oe_timeline.field_color_scheme
     - field.field.paragraph.oe_timeline.field_oe_text_long
+    - field.storage.node.field_oelp_agenda
+    - field.storage.oe_person.field_oelp_person_name
     - field.storage.paragraph.field_color_scheme
     - filter.format.full_html
     - filter.format.rich_text
@@ -188,16 +194,12 @@ config_devel:
     - oe_agenda.oe_agenda_session_type.oe_default
     - oe_agenda.oe_agenda_type.oe_default
     - oe_authentication.settings
+    - oe_content_sub_entity_person.oe_person_type.person
     - pathauto.pattern.event_url_alias_pattern
     - pathauto.pattern.news_url_alias_pattern
     - pathauto.pattern.person_url_alias_pattern
     - pathauto.pattern.project_url_alias_pattern
     - pathauto.pattern.publication_url_alias_pattern
-    - field.field.oe_agenda_session.oe_default.oe_session_moderators
-    - field.field.oe_agenda_session.oe_default.oe_session_speakers
-    - oe_content_sub_entity_person.oe_person_type.person
-    - field.field.oe_person.person.field_oelp_person_name
-    - field.storage.oe_person.field_oelp_person_name
     - pathauto.settings
     - purge.plugins
     - purge_users.settings
