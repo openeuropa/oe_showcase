@@ -6,3 +6,21 @@ core_version_requirement: ^10
 dependencies:
   - pwbi:pwbi_banner
   - oe_oembed:oe_oembed
+
+config_devel:
+  install:
+    - core.entity_form_display.media.oe_media_pwbi.default
+    - core.entity_form_display.paragraph.oe_parapraph_pwbi.default
+    - core.entity_view_display.media.oe_media_pwbi.default
+    - core.entity_view_display.paragraph.oe_parapraph_pwbi.default
+    - field.field.media.oe_media_pwbi.field_media_pwbi_embed_visual
+    - field.field.paragraph.oe_parapraph_pwbi.field_oe_power_bi_report
+    - field.storage.media.field_media_pwbi_embed_visual
+    - field.storage.paragraph.field_oe_power_bi_report
+    - media.type.oe_media_pwbi
+    - paragraphs.paragraphs_type.oe_parapraph_pwbi
+    - pwbi_banner.settings
+    # List of config overrides. Config_devel doesn't export these entries automatically.
+    # Uncomment them temporarily in the above list if you need to update them.
+    #- field.field.node.oe_showcase_page.field_body
+    #- user.role.editor
