@@ -22,5 +22,4 @@ config_devel:
     - pwbi_banner.settings
     # List of config overrides. Config_devel doesn't export these entries automatically.
     # Uncomment them temporarily in the above list if you need to update them.
-    #- field.field.node.oe_showcase_page.field_body
     #- user.role.editor
