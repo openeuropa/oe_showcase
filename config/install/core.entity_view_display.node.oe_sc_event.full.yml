@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
@@ -32,6 +33,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_oelp_agenda:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }

@@ -153,6 +153,7 @@ config_devel:
     - field.field.node.oe_project.oe_summary
     - field.field.node.oe_project.oe_teaser
     - field.field.node.oe_sc_event.body
+    - field.field.node.oe_sc_event.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_summary
     - field.field.node.oe_sc_news.body
     - field.field.node.oe_sc_news.oe_summary
@@ -181,6 +182,10 @@ config_devel:
     - image.style.media_entity_browser_thumbnail
     - legal.settings
     - node.settings
+    - oe_agenda.oe_agenda_day_type.oe_default
+    - oe_agenda.oe_agenda_session_type.oe_break
+    - oe_agenda.oe_agenda_session_type.oe_default
+    - oe_agenda.oe_agenda_type.oe_default
     - oe_authentication.settings
     - pathauto.pattern.event_url_alias_pattern
     - pathauto.pattern.news_url_alias_pattern

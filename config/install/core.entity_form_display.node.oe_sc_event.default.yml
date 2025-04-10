@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
@@ -14,6 +15,8 @@ dependencies:
   module:
     - address
     - datetime_range
+    - entity_browser_entity_form
+    - inline_entity_form
     - link
     - oe_content_featured_media_field
     - path
@@ -45,6 +48,26 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_oelp_agenda:
+    type: inline_entity_form_complex
+    weight: 26
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
   langcode:
     type: language_select
     weight: 3

@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.oe_w_content_banner
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
@@ -14,6 +15,7 @@ dependencies:
     - node.type.oe_sc_event
   module:
     - field_group
+    - oe_oembed
     - text
     - user
 third_party_settings:
@@ -38,6 +40,8 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+  oe_oembed:
+    embeddable: false
 id: node.oe_sc_event.oe_w_content_banner
 targetEntityType: node
 bundle: oe_sc_event
@@ -70,6 +74,7 @@ content:
     region: content
 hidden:
   body: true
+  field_oelp_agenda: true
   flag_email_node: true
   langcode: true
   links: true

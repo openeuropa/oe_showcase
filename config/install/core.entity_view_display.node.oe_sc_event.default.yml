@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.oe_sc_event.body
     - field.field.node.oe_sc_event.field_event_type
+    - field.field.node.oe_sc_event.field_oelp_agenda
     - field.field.node.oe_sc_event.oe_documents
     - field.field.node.oe_sc_event.oe_featured_media
     - field.field.node.oe_sc_event.oe_sc_event_dates
@@ -62,6 +63,7 @@ content:
     settings:
       timezone_override: ''
       format_type: medium
+      from_to: both
       separator: '-'
     third_party_settings: {  }
     weight: 3
@@ -95,6 +97,7 @@ content:
 hidden:
   'extra_field_oe_subscriptions_anonymous_subscribe_link:subscribe_node': true
   field_event_type: true
+  field_oelp_agenda: true
   flag_email_node: true
   flag_subscribe_node: true
   langcode: true
