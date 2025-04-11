@@ -185,53 +185,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Manage users user cannot access restricted pages.
-   */
-  public function testManageUsersAccess(): void {
-    $user = $this->createUserWithRoles(['manage_users']);
-    $this->drupalLogin($user);
-
-    $paths = [
-      '/admin/people/role-settings',
-      '/admin/people/roleassign',
-      '/admin/people/roles',
-      '/admin/people/roles/add',
-      '/admin/people/permissions',
-    ];
-
-    foreach ($paths as $path) {
-      $this->drupalGet($path);
-      $this->assertSession()->statusCodeEquals(403);
-    }
-  }
-
-  /**
-   * Users with the "Manage users" role can assign a limited set of roles.
-   */
-  public function testManageUsersRoleAssign(): void {
-    $user = $this->createUserWithRoles(['manage_users']);
-    $this->drupalLogin($user);
-    $roles = [
-      'Configure Page Feedback form',
-      'Editor',
-      'Manage contact forms',
-      'Manage menu items',
-      'Manage site specific footer',
-    ];
-
-    // Test roles availability in the user listing page.
-    $this->drupalGet('/admin/people');
-    $this->assertRoleAvailableInAction($roles);
-    $this->assertRoleNotAvailableInAction(['Manage users']);
-
-    // Test roles availability in the user import page.
-    $this->drupalGet('/admin/people/create/cas-bulk');
-    $this->assertRoleOptionsAvailable($roles);
-    $this->assertRoleOptionsNotAvailable(['Manage users']);
-  }
-
-  /**
-   * Users without the "Manage users" role cannot edit user accounts.
+   * Users without the "Administrator" role cannot edit user accounts.
    */
   public function testOtherRolesCannotManageUsers(): void {
     $user = $this->createUserWithRoles([
@@ -256,7 +210,7 @@ class AuthorisationTest extends ShowcaseExistingSiteTestBase {
 
     $this->drupalGet('/admin/people/permissions');
 
-    $assert->pageTextContains('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable by users with Manage users role.');
+    $assert->pageTextContains('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable by users with Administrator role.');
     $assert->buttonNotExists('edit-submit');
     // Assert all checkboxes are disabled on permissions page.
     $this->assertCheckboxesDisabled();

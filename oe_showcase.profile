@@ -121,7 +121,7 @@ function oe_showcase_form_user_admin_permissions_alter(&$form, FormStateInterfac
   $form['actions']['submit']['#access'] = FALSE;
 
   // Add warning message.
-  \Drupal::messenger()->addMessage(t('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable by users with Manage users role.'), MessengerInterface::TYPE_WARNING);
+  \Drupal::messenger()->addMessage(t('Role management is disabled in OE Showcase. Roles and associated permissions are only changeable by users with Administrator role.'), MessengerInterface::TYPE_WARNING);
 
   // Get actual roles and permissions and disable the checkbox.
   $role_names = $form['role_names']['#value'];
@@ -170,18 +170,6 @@ function oe_showcase_form_user_admin_roles_form_alter(&$form, FormStateInterface
         unset($entity['operations']['data']['#links']['delete']);
       }
     }
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter() for the CAS bulk user form.
- *
- * Alter the assignable roles.
- */
-function oe_showcase_form_bulk_add_cas_users_alter(&$form, FormStateInterface $form_state): void {
-  if (_roleassign_restrict_access()) {
-    // Add roles that are available for assignment.
-    $form['roles']['#options'] = _roleassign_get_assignable_roles();
   }
 }
 

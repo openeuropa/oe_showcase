@@ -80,7 +80,6 @@ install:
   - rdf_skos
   - rdf_skos_language_mapping
   - redirect
-  - roleassign
   - slim_select
   - symfony_mailer
   - taxonomy
@@ -189,7 +188,6 @@ config_devel:
     - pathauto.settings
     - purge.plugins
     - purge_users.settings
-    - roleassign.settings
     - search_api.index.oe_list_pages_index
     - symfony_mailer.mailer_policy._
     - system.site
@@ -203,7 +201,6 @@ config_devel:
     - user.role.manage_contact_forms
     - user.role.manage_menu_items
     - user.role.manage_site_specific_footer
-    - user.role.manage_users
     - user.settings
     - user_field_anonymize.settings
     - views.view.media_entity_browsers
