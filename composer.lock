@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "614eb6d04a2e38b4110ca4d1a22edbf4",
+    "content-hash": "ce8c16407a008f650f0b75f394110e9e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -419,26 +419,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9"
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
+            "conflict": {
+                "phpunit/phpunit": "<=7.5 || >=13"
+            },
             "require-dev": {
-                "doctrine/coding-standard": "^9 || ^12",
-                "phpstan/phpstan": "1.4.10 || 2.0.3",
+                "doctrine/coding-standard": "^9 || ^12 || ^13",
+                "phpstan/phpstan": "1.4.10 || 2.1.11",
                 "phpstan/phpstan-phpunit": "^1.0 || ^2",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12",
                 "psr/log": "^1 || ^2 || ^3"
             },
             "suggest": {
@@ -458,9 +461,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.4"
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.5"
             },
-            "time": "2024-12-07T21:18:45+00:00"
+            "time": "2025-04-07T20:06:18+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -5364,17 +5367,17 @@
         },
         {
             "name": "drupal/slim_select",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/slim_select.git",
-                "reference": "1.0.0-beta1"
+                "reference": "1.0.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-beta1.zip",
-                "reference": "1.0.0-beta1",
-                "shasum": "fc4688d9f68372ed48db812ddd89532d28ce3e30"
+                "url": "https://ftp.drupal.org/files/projects/slim_select-1.0.0-alpha5.zip",
+                "reference": "1.0.0-alpha5",
+                "shasum": "c08f7271eb1c17808b3a3c22f0a5687143d22d26"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11"
@@ -5382,11 +5385,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta1",
-                    "datestamp": "1743761035",
+                    "version": "1.0.0-alpha5",
+                    "datestamp": "1738840859",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -7027,16 +7030,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.21.0",
+            "version": "0.1.202504150930",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "4a2ca1c0ba367c3eae64ac87f4060a19f5f308d9"
+                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/4a2ca1c0ba367c3eae64ac87f4060a19f5f308d9",
-                "reference": "4a2ca1c0ba367c3eae64ac87f4060a19f5f308d9",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f5cdbcb82471e6b585d416272227a3b1d72bf764",
+                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764",
                 "shasum": ""
             },
             "require": {
@@ -7098,9 +7101,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.21.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202504150930"
             },
-            "time": "2025-03-27T13:05:58+00:00"
+            "time": "2025-04-15T07:28:58+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8345,16 +8348,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.17.0",
+            "version": "0.1.202504151015",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "2e0ee2fa7716214383a261a847743c77640a93fb"
+                "reference": "a23cd245413f70f586112f849f2d031aac1d6070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/2e0ee2fa7716214383a261a847743c77640a93fb",
-                "reference": "2e0ee2fa7716214383a261a847743c77640a93fb",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/a23cd245413f70f586112f849f2d031aac1d6070",
+                "reference": "a23cd245413f70f586112f849f2d031aac1d6070",
                 "shasum": ""
             },
             "require": {
@@ -8363,7 +8366,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.21",
+                "openeuropa/oe_bootstrap_theme": "0.1.202504150930",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8459,9 +8462,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.17.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202504151015"
             },
-            "time": "2025-03-28T11:01:06+00:00"
+            "time": "2025-04-15T08:13:49+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -9366,16 +9369,16 @@
         },
         {
             "name": "sweetrdf/rdf-helpers",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfHelpers.git",
-                "reference": "3c2cb15e86053fcf5c52235da75c2b141218e3f8"
+                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/3c2cb15e86053fcf5c52235da75c2b141218e3f8",
-                "reference": "3c2cb15e86053fcf5c52235da75c2b141218e3f8",
+                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/339ff628acad1e52a8088de64b8f614990b7ae35",
+                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35",
                 "shasum": ""
             },
             "require": {
@@ -9408,9 +9411,9 @@
             "homepage": "https://github.com/sweetrdf/rdfHelpers",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfHelpers/issues",
-                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.0.0"
+                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.0"
             },
-            "time": "2024-02-13T12:03:47+00:00"
+            "time": "2025-04-10T17:53:23+00:00"
         },
         {
             "name": "sweetrdf/rdf-interface",
@@ -15458,25 +15461,27 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.19.4",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "715f4d25e225bc47b293a8b997fe6ce99bf987d2"
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/715f4d25e225bc47b293a8b997fe6ce99bf987d2",
-                "reference": "715f4d25e225bc47b293a8b997fe6ce99bf987d2",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
+                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.1"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -15484,7 +15489,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.9-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -15508,9 +15513,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.19.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
             },
-            "time": "2024-09-29T15:01:53+00:00"
+            "time": "2024-12-30T11:07:19+00:00"
         },
         {
             "name": "nuvoleweb/robo-config",
@@ -16711,16 +16716,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8"
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
                 "shasum": ""
             },
             "require": {
@@ -16769,9 +16774,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.1"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
             },
-            "time": "2024-12-07T09:39:29+00:00"
+            "time": "2025-04-13T19:20:35+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
