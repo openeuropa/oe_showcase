@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e12348cdc506ef6353a64235eb18c04b",
+    "content-hash": "ce8c16407a008f650f0b75f394110e9e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7030,16 +7030,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3081.202504091345",
+            "version": "0.1.202504150930",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "488228444816546a41a8498dad8bed8044be83c5"
+                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/488228444816546a41a8498dad8bed8044be83c5",
-                "reference": "488228444816546a41a8498dad8bed8044be83c5",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f5cdbcb82471e6b585d416272227a3b1d72bf764",
+                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764",
                 "shasum": ""
             },
             "require": {
@@ -7101,9 +7101,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3081.202504091345"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202504150930"
             },
-            "time": "2025-04-09T09:40:36+00:00"
+            "time": "2025-04-15T07:28:58+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8348,16 +8348,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3081.202504091354",
+            "version": "0.1.202504151015",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "376b7691ed64ccf6a9fb4f872ceca1333b81d53a"
+                "reference": "a23cd245413f70f586112f849f2d031aac1d6070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/376b7691ed64ccf6a9fb4f872ceca1333b81d53a",
-                "reference": "376b7691ed64ccf6a9fb4f872ceca1333b81d53a",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/a23cd245413f70f586112f849f2d031aac1d6070",
+                "reference": "a23cd245413f70f586112f849f2d031aac1d6070",
                 "shasum": ""
             },
             "require": {
@@ -8366,7 +8366,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.3081.202504091345",
+                "openeuropa/oe_bootstrap_theme": "0.1.202504150930",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8462,9 +8462,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3081.202504091354"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202504151015"
             },
-            "time": "2025-04-09T11:53:14+00:00"
+            "time": "2025-04-15T08:13:49+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -9369,16 +9369,16 @@
         },
         {
             "name": "sweetrdf/rdf-helpers",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfHelpers.git",
-                "reference": "3c2cb15e86053fcf5c52235da75c2b141218e3f8"
+                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/3c2cb15e86053fcf5c52235da75c2b141218e3f8",
-                "reference": "3c2cb15e86053fcf5c52235da75c2b141218e3f8",
+                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/339ff628acad1e52a8088de64b8f614990b7ae35",
+                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35",
                 "shasum": ""
             },
             "require": {
@@ -9411,9 +9411,9 @@
             "homepage": "https://github.com/sweetrdf/rdfHelpers",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfHelpers/issues",
-                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.0.0"
+                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.0"
             },
-            "time": "2024-02-13T12:03:47+00:00"
+            "time": "2025-04-10T17:53:23+00:00"
         },
         {
             "name": "sweetrdf/rdf-interface",
@@ -16716,16 +16716,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8"
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
                 "shasum": ""
             },
             "require": {
@@ -16774,9 +16774,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.1"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
             },
-            "time": "2024-12-07T09:39:29+00:00"
+            "time": "2025-04-13T19:20:35+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
