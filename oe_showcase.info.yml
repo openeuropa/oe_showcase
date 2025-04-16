@@ -85,6 +85,9 @@ install:
   - slim_select
   - symfony_mailer
   - taxonomy
+  - tmgmt_config
+  - tmgmt_content
+  - tmgmt_ec_etranslation
   - toolbar
   - ui_patterns
   - ui_patterns_library

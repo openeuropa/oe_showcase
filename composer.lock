@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b7f3f464b90ae7ed083d81ed40a156a",
+    "content-hash": "82f4593982fe8771de395422c619e50e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5651,6 +5651,147 @@
             "support": {
                 "source": "http://git.drupal.org/project/time_field.git",
                 "issues": "https://www.drupal.org/project/issues/time_field"
+            }
+        },
+        {
+            "name": "drupal/tmgmt",
+            "version": "1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt.git",
+                "reference": "8.x-1.17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "83d9796a0e5219cf6fc752d8db8ecadc81550f34"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11"
+            },
+            "require-dev": {
+                "drupal/metatag": "2.0.x-dev || 1.x-dev",
+                "drupal/paragraphs": "1.x-dev",
+                "drupal/pathauto": "1.x-dev",
+                "drupal/tmgmt_content": "*",
+                "drupal/tmgmt_file": "*",
+                "drupal/tmgmt_language_combination": "*",
+                "drupal/tmgmt_local": "*",
+                "drupal/tmgmt_locale": "*",
+                "drupal/webform": "6.1.x-dev || 6.2.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.17",
+                    "datestamp": "1731630348",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "cgalli",
+                    "homepage": "https://www.drupal.org/user/77453"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "floretan",
+                    "homepage": "https://www.drupal.org/user/66163"
+                },
+                {
+                    "name": "fubhy",
+                    "homepage": "https://www.drupal.org/user/761344"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "schnitzel",
+                    "homepage": "https://www.drupal.org/user/643820"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Translation Management Tool",
+            "homepage": "https://www.drupal.org/project/tmgmt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt"
+            }
+        },
+        {
+            "name": "drupal/tmgmt_ec_etranslation",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt_ec_etranslation.git",
+                "reference": "1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_ec_etranslation-1.1.1.zip",
+                "reference": "1.1.1",
+                "shasum": "611bdaaac233da5b25c1aa1095a53778182c321a"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10 || ^11",
+                "drupal/tmgmt": "^1.5",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "drupal/http_request_mock": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.1",
+                    "datestamp": "1732198577",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "claudiu.cristea",
+                    "homepage": "https://www.drupal.org/user/56348"
+                },
+                {
+                    "name": "dieterholvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                }
+            ],
+            "description": "TMGMT plugin for eTranslation, an online machine translation service provided by the European Commission (EC).",
+            "homepage": "https://www.drupal.org/project/tmgmt_ec_etranslation",
+            "keywords": [
+                "Drupal",
+                "tmgmt",
+                "translation"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt_ec_etranslation"
             }
         },
         {
