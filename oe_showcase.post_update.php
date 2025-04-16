@@ -1144,3 +1144,26 @@ function oe_showcase_post_update_00048(): void {
     'field.field.oe_person.person.field_oelp_person_name',
   ]);
 }
+
+/**
+ * Install tmgmt_ec_etranslation contrib module, and update editor role.
+ */
+function oe_showcase_post_update_00049(): void {
+  \Drupal::service('module_installer')->install(['tmgmt_ec_etranslation', 'tmgmt_content', 'tmgmt_config']);
+
+  // Allow editor role to manage translation jobs.
+  $permissions = [
+    'create translation jobs',
+    'delete translation jobs',
+    'submit translation jobs',
+    'accept translation jobs',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}

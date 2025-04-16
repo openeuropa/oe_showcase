@@ -41,6 +41,7 @@
         "drupal/seven": "^1.0",
         "drupal/slim_select": "^1.0@alpha",
         "drupal/symfony_mailer": "^1.4",
+        "drupal/tmgmt_ec_etranslation": "^1.1",
         "drupal/user_field_anonymize": "^1.0@alpha",
         "drupal/user_fields_visibility": "^1.1@alpha",
         "microsoft/powerbi": "^2.1",
