@@ -1153,6 +1153,8 @@ function oe_showcase_post_update_00049(): void {
 
   // Allow editor role to manage translation jobs.
   $permissions = [
+    'translate editable entities',
+    'translate any entity',
     'create translation jobs',
     'delete translation jobs',
     'submit translation jobs',
