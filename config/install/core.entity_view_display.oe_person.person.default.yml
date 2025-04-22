@@ -11,7 +11,7 @@ mode: default
 content:
   field_oelp_person_name:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
