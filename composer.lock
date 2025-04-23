@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33ccc93ef48f633acac59a74bd02f4b5",
+    "content-hash": "a051e099781aeb01cfbedb2949f82d5f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2913,7 +2913,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "0d8972d0a9902769915928c386f4b73c90b8008e"
+                "reference": "ef6a7fc1630d6c881d7044a2493303b270e17fd7"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10 || ^11"
@@ -2927,8 +2927,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.6+3-dev",
-                    "datestamp": "1739379201",
+                    "version": "8.x-3.6+5-dev",
+                    "datestamp": "1745402129",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -7030,16 +7030,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3752.202504141700",
+            "version": "0.3752.202504231630",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "abc1bd36c11d4db60c6ce6f91057de601d1ac6b4"
+                "reference": "58c6c4c531272e3521d30ed99026297e54424071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/abc1bd36c11d4db60c6ce6f91057de601d1ac6b4",
-                "reference": "abc1bd36c11d4db60c6ce6f91057de601d1ac6b4",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/58c6c4c531272e3521d30ed99026297e54424071",
+                "reference": "58c6c4c531272e3521d30ed99026297e54424071",
                 "shasum": ""
             },
             "require": {
@@ -7101,9 +7101,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3752.202504141700"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3752.202504231630"
             },
-            "time": "2025-04-14T14:38:22+00:00"
+            "time": "2025-04-23T13:34:50+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8348,16 +8348,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3752.202504141900",
+            "version": "0.3752.202504231630",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "6660222592b3b2bdea00576b9dfb0c9ae164cf0e"
+                "reference": "c827f688645d2801a71f937d35ef650fe5cb3093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/6660222592b3b2bdea00576b9dfb0c9ae164cf0e",
-                "reference": "6660222592b3b2bdea00576b9dfb0c9ae164cf0e",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/c827f688645d2801a71f937d35ef650fe5cb3093",
+                "reference": "c827f688645d2801a71f937d35ef650fe5cb3093",
                 "shasum": ""
             },
             "require": {
@@ -8366,7 +8366,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.3752.202504141700",
+                "openeuropa/oe_bootstrap_theme": "0.3752.202504231630 as 1.21.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8462,9 +8462,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3752.202504141900"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3752.202504231630"
             },
-            "time": "2025-04-14T16:01:02+00:00"
+            "time": "2025-04-23T14:20:38+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -9369,21 +9369,21 @@
         },
         {
             "name": "sweetrdf/rdf-helpers",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfHelpers.git",
-                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35"
+                "reference": "0c6b599cc8e28997cc4336b1d893c16d89ed2508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/339ff628acad1e52a8088de64b8f614990b7ae35",
-                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35",
+                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/0c6b599cc8e28997cc4336b1d893c16d89ed2508",
+                "reference": "0c6b599cc8e28997cc4336b1d893c16d89ed2508",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
-                "sweetrdf/rdf-interface": "^2",
+                "sweetrdf/rdf-interface": "^2 | ^3",
                 "zozlak/rdf-constants": "^1.1"
             },
             "require-dev": {
@@ -9411,22 +9411,22 @@
             "homepage": "https://github.com/sweetrdf/rdfHelpers",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfHelpers/issues",
-                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.0"
+                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.1"
             },
-            "time": "2025-04-10T17:53:23+00:00"
+            "time": "2025-04-22T13:42:35+00:00"
         },
         {
             "name": "sweetrdf/rdf-interface",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfInterface.git",
-                "reference": "eeee78832fe87c3ee6834df67b5b0cfb73eb503b"
+                "reference": "f9d89e4feac6f1009a0d5ad43763f2b6b57c7476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfInterface/zipball/eeee78832fe87c3ee6834df67b5b0cfb73eb503b",
-                "reference": "eeee78832fe87c3ee6834df67b5b0cfb73eb503b",
+                "url": "https://api.github.com/repos/sweetrdf/rdfInterface/zipball/f9d89e4feac6f1009a0d5ad43763f2b6b57c7476",
+                "reference": "f9d89e4feac6f1009a0d5ad43763f2b6b57c7476",
                 "shasum": ""
             },
             "require": {
@@ -9458,9 +9458,9 @@
             "homepage": "https://github.com/sweetrdf/rdfInterface",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfInterface/issues",
-                "source": "https://github.com/sweetrdf/rdfInterface/tree/2.1.0"
+                "source": "https://github.com/sweetrdf/rdfInterface/tree/3.0.0"
             },
-            "time": "2024-11-22T19:09:12+00:00"
+            "time": "2025-04-22T12:58:31+00:00"
         },
         {
             "name": "symfony/console",
@@ -20124,7 +20124,14 @@
             "time": "2023-10-13T22:55:15+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_whitelabel",
+            "version": "0.3752.202504231630.0",
+            "alias": "1.21.0",
+            "alias_normalized": "1.21.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
