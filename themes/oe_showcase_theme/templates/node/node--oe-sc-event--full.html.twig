@@ -46,6 +46,9 @@
 {% endset %}
 
 <article{{attributes}}>
+  {% if agenda_link is not empty %}
+    {% set inpage_navigation_links = inpage_navigation_links|merge(agenda_link) %}
+  {% endif %}
   {% if inpage_navigation_links is empty %}
     {{ inpage_navigation_fields }}
   {% else %}
