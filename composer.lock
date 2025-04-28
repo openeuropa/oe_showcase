@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce8c16407a008f650f0b75f394110e9e",
+    "content-hash": "87497cbb782061df4d89af79cd08a56e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7030,16 +7030,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202504150930",
+            "version": "0.1.202504281000",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764"
+                "reference": "34d6b2b793b9c6e8e0d95341a964302876e2bb6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f5cdbcb82471e6b585d416272227a3b1d72bf764",
-                "reference": "f5cdbcb82471e6b585d416272227a3b1d72bf764",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/34d6b2b793b9c6e8e0d95341a964302876e2bb6a",
+                "reference": "34d6b2b793b9c6e8e0d95341a964302876e2bb6a",
                 "shasum": ""
             },
             "require": {
@@ -7101,9 +7101,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202504150930"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202504281000"
             },
-            "time": "2025-04-15T07:28:58+00:00"
+            "time": "2025-04-28T06:57:58+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8348,16 +8348,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202504151015",
+            "version": "0.1.202504281045",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "a23cd245413f70f586112f849f2d031aac1d6070"
+                "reference": "8671a1e8269938f89def60e149c5a4f07836fd42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/a23cd245413f70f586112f849f2d031aac1d6070",
-                "reference": "a23cd245413f70f586112f849f2d031aac1d6070",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/8671a1e8269938f89def60e149c5a4f07836fd42",
+                "reference": "8671a1e8269938f89def60e149c5a4f07836fd42",
                 "shasum": ""
             },
             "require": {
@@ -8366,7 +8366,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.1.202504150930",
+                "openeuropa/oe_bootstrap_theme": "0.1.202504281000",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8462,9 +8462,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202504151015"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202504281045"
             },
-            "time": "2025-04-15T08:13:49+00:00"
+            "time": "2025-04-28T07:45:28+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -9369,21 +9369,21 @@
         },
         {
             "name": "sweetrdf/rdf-helpers",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfHelpers.git",
-                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35"
+                "reference": "0c6b599cc8e28997cc4336b1d893c16d89ed2508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/339ff628acad1e52a8088de64b8f614990b7ae35",
-                "reference": "339ff628acad1e52a8088de64b8f614990b7ae35",
+                "url": "https://api.github.com/repos/sweetrdf/rdfHelpers/zipball/0c6b599cc8e28997cc4336b1d893c16d89ed2508",
+                "reference": "0c6b599cc8e28997cc4336b1d893c16d89ed2508",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
-                "sweetrdf/rdf-interface": "^2",
+                "sweetrdf/rdf-interface": "^2 | ^3",
                 "zozlak/rdf-constants": "^1.1"
             },
             "require-dev": {
@@ -9411,22 +9411,22 @@
             "homepage": "https://github.com/sweetrdf/rdfHelpers",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfHelpers/issues",
-                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.0"
+                "source": "https://github.com/sweetrdf/rdfHelpers/tree/2.1.1"
             },
-            "time": "2025-04-10T17:53:23+00:00"
+            "time": "2025-04-22T13:42:35+00:00"
         },
         {
             "name": "sweetrdf/rdf-interface",
-            "version": "2.1.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sweetrdf/rdfInterface.git",
-                "reference": "eeee78832fe87c3ee6834df67b5b0cfb73eb503b"
+                "reference": "a49b06916a1ce129fc43955e5ca0adc71601d740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sweetrdf/rdfInterface/zipball/eeee78832fe87c3ee6834df67b5b0cfb73eb503b",
-                "reference": "eeee78832fe87c3ee6834df67b5b0cfb73eb503b",
+                "url": "https://api.github.com/repos/sweetrdf/rdfInterface/zipball/a49b06916a1ce129fc43955e5ca0adc71601d740",
+                "reference": "a49b06916a1ce129fc43955e5ca0adc71601d740",
                 "shasum": ""
             },
             "require": {
@@ -9458,9 +9458,9 @@
             "homepage": "https://github.com/sweetrdf/rdfInterface",
             "support": {
                 "issues": "https://github.com/sweetrdf/rdfInterface/issues",
-                "source": "https://github.com/sweetrdf/rdfInterface/tree/2.1.0"
+                "source": "https://github.com/sweetrdf/rdfInterface/tree/3.1.0"
             },
-            "time": "2024-11-22T19:09:12+00:00"
+            "time": "2025-04-24T14:35:05+00:00"
         },
         {
             "name": "symfony/console",
