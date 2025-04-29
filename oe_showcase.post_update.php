@@ -1119,7 +1119,7 @@ function oe_showcase_post_update_00048(): void {
     'oe_content_sub_entity_person',
   ]);
 
-  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00047_agenda', [
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00048_agenda', [
     'oe_content_sub_entity_person.oe_person_type.person',
   ]);
 
@@ -1128,7 +1128,7 @@ function oe_showcase_post_update_00048(): void {
     'oe_whitelabel_agenda',
   ]);
 
-  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00047_agenda', [
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00048_agenda', [
     'field.storage.node.field_oelp_agenda',
     'field.storage.oe_person.field_oelp_person_name',
     'core.entity_form_display.node.oe_sc_event.default',
