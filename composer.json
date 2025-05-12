@@ -45,6 +45,7 @@
         "microsoft/powerbi": "^2.1",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_authentication": "^1.9",
+        "openeuropa/oe_bootstrap_theme": "0.3791.202505121800 as 1.21.0",
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
         "openeuropa/oe_content_extra": "^1.1.0",
@@ -58,7 +59,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "0.1.202504281045"
+        "openeuropa/oe_whitelabel": "^1.17.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
