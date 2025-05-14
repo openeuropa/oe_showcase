@@ -1229,3 +1229,41 @@ function oe_showcase_post_update_00049(): void {
   }
   $role->save();
 }
+
+/**
+ * Install ai related modules.
+ */
+function oe_showcase_post_update_00050(): void {
+  \Drupal::service('module_installer')->install([
+    'ai',
+    'ai_api_explorer',
+    'ai_assistant_api',
+    'ai_automators',
+    'ai_chatbot',
+    'ai_ckeditor',
+    'ai_content_suggestions',
+    'ai_eca',
+    'ai_external_moderation',
+    'ai_logging',
+    'ai_agents',
+    'ai_agents_explorer',
+    'ai_agents_extra',
+    'ai_agents_form_integration',
+    'ai_provider_mistral',
+    'bpmn_io',
+    'eca',
+    'eca_base',
+    'eca_content',
+    'eca_file',
+    'eca_form',
+    'eca_language',
+    'eca_log',
+    'eca_misc',
+    'eca_modeller_bpmn',
+    'eca_render',
+    'eca_ui',
+    'eca_user',
+    'eca_views',
+    'eca_workflow',
+  ]);
+}
