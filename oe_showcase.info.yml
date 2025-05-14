@@ -4,6 +4,24 @@ description: Install with commonly used features for OpenEuropa Showcase profile
 core_version_requirement: ^9.4 || ^10
 
 install:
+  - ai
+  - ai_api_explorer
+  - ai_assistant_api
+  - ai_automators
+  - ai_chatbot
+  - ai_ckeditor
+  - ai_content_suggestions
+  - ai_eca
+  - ai_external_moderation
+  - ai_logging
+  - ai_search
+  - ai_translate
+  - ai_agents
+  - ai_agents_explorer
+  - ai_agents_extra
+  - ai_agents_form_integration
+  - ai_provider_mistral
+  - bpmn_io
   - block
   - ckeditor
   - color_scheme_field
@@ -15,6 +33,20 @@ install:
   - dropsolid_purge
   - dynamic_page_cache
   - easy_breadcrumb
+  - eca
+  - eca_base
+  - eca_content
+  - eca_file
+  - eca_form
+  - eca_language
+  - eca_log
+  - eca_misc
+  - eca_modeller_bpmn
+  - eca_render
+  - eca_ui
+  - eca_user
+  - eca_views
+  - eca_workflow
   - editor
   - entity_browser_enhanced
   - file
