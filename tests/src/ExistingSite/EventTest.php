@@ -160,6 +160,28 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('oe_featured_media[0][featured_media][target_id]', $media_name);
     $document_name = $media_document->getName() . ' (' . $media_document->id() . ')';
     $page->fillField('oe_documents[0][target_id]', $document_name);
+    $page->pressButton('Add new agenda');
+    $page->fillField('field_oelp_agenda[form][0][oe_agenda_days][form][0][oe_day_date][0][value][date]', '2025-04-10');
+    $page->selectFieldOption('field_oelp_agenda[form][0][oe_agenda_days][form][0][oe_day_sessions][actions][bundle]', 'Default');
+    $page->pressButton('Add new session');
+    $page->fillField('Name', 'First session');
+    $page->fillField('Start time', '10:00');
+    $page->fillField('End time', '12:00');
+    $page->fillField('Intro.', 'Introduction');
+    $page->pressButton('Add new Moderator');
+    $page->fillField('field_oelp_agenda[form][0][oe_agenda_days][form][0][oe_day_sessions][form][0][oe_session_moderators][form][0][field_oelp_person_name][0][value]', 'Moderator');
+    $page->pressButton('Create Moderator');
+    $page->pressButton('Add new Speaker');
+    $page->fillField('field_oelp_agenda[form][0][oe_agenda_days][form][0][oe_day_sessions][form][0][oe_session_speakers][form][0][field_oelp_person_name][0][value]', 'Speaker');
+    $page->pressButton('Create Speaker');
+    $page->pressButton('Create session');
+    $page->pressButton('Add new session');
+    $page->fillField('Name', 'Big break');
+    $page->fillField('Start time', '12:00');
+    $page->fillField('End time', '15:00');
+    $page->pressButton('Create session');
+    $page->pressButton('Create day');
+    $page->pressButton('Create agenda');
     $page->pressButton('Save');
 
     // Assert that event has been created.
@@ -174,7 +196,15 @@ class EventTest extends ShowcaseExistingSiteTestBase {
     $assert_session->responseContains('Starter Image test');
     $assert_session->responseContains('Starter Image test alt');
     $assert_session->elementContains('css', 'a[target="_blank"]', 'Register');
-
+    $assert_session->pageTextContains('Agenda');
+    $assert_session->pageTextContains('Thursday - 10 April');
+    $assert_session->pageTextContains('10:00 - 12:00');
+    $assert_session->pageTextContains('Introduction');
+    $assert_session->pageTextContains('First session');
+    $assert_session->pageTextContains('Moderator');
+    $assert_session->pageTextContains('Speaker');
+    $assert_session->pageTextContains('12:00 - 15:00');
+    $assert_session->pageTextContains('Big break');
     $this->assertSocialShareBlock();
   }
 

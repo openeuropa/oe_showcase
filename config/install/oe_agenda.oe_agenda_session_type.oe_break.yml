@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: oe_break
+label: Break
+description: 'Break session type'

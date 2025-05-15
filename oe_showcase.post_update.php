@@ -1110,3 +1110,37 @@ function oe_showcase_post_update_00047(): TranslatableMarkup {
     '@module' => $module_name,
   ]);
 }
+
+/**
+ * Install OE Agenda.
+ */
+function oe_showcase_post_update_00048(): void {
+  \Drupal::service('module_installer')->install([
+    'oe_content_sub_entity_person',
+  ]);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00048_agenda', [
+    'oe_content_sub_entity_person.oe_person_type.person',
+  ]);
+
+  \Drupal::service('module_installer')->install([
+    'oe_agenda',
+    'oe_whitelabel_agenda',
+  ]);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00048_agenda', [
+    'field.storage.node.field_oelp_agenda',
+    'field.storage.oe_person.field_oelp_person_name',
+    'core.entity_form_display.node.oe_sc_event.default',
+    'core.entity_form_display.oe_person.person.default',
+    'core.entity_view_display.node.oe_sc_event.default',
+    'core.entity_view_display.node.oe_sc_event.full',
+    'core.entity_view_display.node.oe_sc_event.oe_w_content_banner',
+    'core.entity_view_display.node.oe_sc_event.teaser',
+    'core.entity_view_display.oe_person.person.default',
+    'field.field.node.oe_sc_event.field_oelp_agenda',
+    'field.field.oe_agenda_session.oe_default.oe_session_moderators',
+    'field.field.oe_agenda_session.oe_default.oe_session_speakers',
+    'field.field.oe_person.person.field_oelp_person_name',
+  ]);
+}

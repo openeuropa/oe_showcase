@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.oe_person.person.field_oelp_person_name
+    - oe_content_sub_entity_person.oe_person_type.person
+id: oe_person.person.default
+targetEntityType: oe_person
+bundle: person
+mode: default
+content:
+  field_oelp_person_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  status: true

@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
 use Drupal\oe_bootstrap_theme\ValueObject\ImageValueObject;
@@ -95,4 +96,28 @@ function oe_showcase_theme_preprocess_page(array &$variables): void {
       '#markup' => '<h1 class="visually-hidden">' . $variables['page']['#title'] . '</h1>',
     ];
   }
+}
+
+/**
+ * Implements template_preprocess_node() for the Event node type.
+ */
+function oe_showcase_theme_preprocess_node__oe_sc_event__full(&$variables) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+
+  // We init inpagenav here in case it is not set but agenda will be.
+  $variables['inpage_navigation_links'] = [];
+  $variables['agenda_link'] = [];
+
+  if ($node->get('field_oelp_agenda')->isEmpty()) {
+    return;
+  }
+
+  $unique_id = Html::getUniqueId('oe-content--field_oelp_agenda');
+  $variables['agenda_link'][] = [
+    'path' => '#' . $unique_id,
+    'label' => $node->get('field_oelp_agenda')->getFieldDefinition()->getLabel(),
+  ];
+
+  $variables['content']['field_oelp_agenda']['#attributes'] = ['id' => $unique_id];
 }
