@@ -18,6 +18,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\search_api\Entity\Index;
+use Drupal\tmgmt\Entity\Translator;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
 
@@ -1150,6 +1151,41 @@ function oe_showcase_post_update_00048(): void {
  */
 function oe_showcase_post_update_00049(): void {
   \Drupal::service('module_installer')->install(['tmgmt_ec_etranslation', 'tmgmt_content', 'tmgmt_config']);
+
+  /** @var \Drupal\tmgmt\Entity\Translator $translator */
+  $translator = Translator::load('ec_etranslation');
+  if (!$translator) {
+    throw new \Exception('Translator ec_etranslation not found.');
+  }
+
+  // Set mapping pt-pt -> pt.
+  $translator->set('remote_languages_mappings', [
+    'bg' => 'bg',
+    'es' => 'es',
+    'cs' => 'cs',
+    'da' => 'da',
+    'de' => 'de',
+    'et' => 'et',
+    'el' => 'el',
+    'en' => 'en',
+    'fr' => 'fr',
+    'ga' => 'ga',
+    'hr' => 'hr',
+    'it' => 'it',
+    'lv' => 'lv',
+    'lt' => 'lt',
+    'hu' => 'hu',
+    'mt' => 'mt',
+    'nl' => 'nl',
+    'pl' => 'pl',
+    'pt-pt' => 'pt',
+    'ro' => 'ro',
+    'sk' => 'sk',
+    'sl' => 'sl',
+    'fi' => 'fi',
+    'sv' => 'sv',
+  ]);
+  $translator->save();
 
   // Allow editor role to manage translation jobs.
   $permissions = [
