@@ -1,10 +1,32 @@
 # Change Log
 
-## [1.18.0](https://github.com/openeuropa/oe_showcase/tree/1.18.0) (2025-04-03)
+## [1.19.0](https://github.com/openeuropa/oe_showcase/tree/1.19.0) (2025-05-22)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.1.202504281240...1.19.0)
+
+**Merged pull requests:**
+
+- OEL-0000: Update oe\_whitelabel. [\#302](https://github.com/openeuropa/oe_showcase/pull/302) ([tibi2303](https://github.com/tibi2303))
+- OEL-3662: Integrate oe\_agenda [\#295](https://github.com/openeuropa/oe_showcase/pull/295) ([drishu](https://github.com/drishu))
+
+## [0.1.202504281240](https://github.com/openeuropa/oe_showcase/tree/0.1.202504281240) (2025-04-28)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.18.0...0.1.202504281240)
+
+**Merged pull requests:**
+
+- OEL-0000: Update oe\_whitelabel. [\#299](https://github.com/openeuropa/oe_showcase/pull/299) ([tibi2303](https://github.com/tibi2303))
+- OEL-3689: Delete the manage\_users role and uninstall RoleAssign module [\#294](https://github.com/openeuropa/oe_showcase/pull/294) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-3699: Slim select v2 dropdown menu position issue [\#292](https://github.com/openeuropa/oe_showcase/pull/292) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-3081: Allow to use Slimselect for single value selects. [\#289](https://github.com/openeuropa/oe_showcase/pull/289) ([piotrsmykaj](https://github.com/piotrsmykaj))
+
+## [1.18.0](https://github.com/openeuropa/oe_showcase/tree/1.18.0) (2025-04-04)
+
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.17.0...1.18.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.18.0 [\#293](https://github.com/openeuropa/oe_showcase/pull/293) ([enriquelacoma](https://github.com/enriquelacoma))
 - OEL-3666: Add pwbi module and configure media type. [\#288](https://github.com/openeuropa/oe_showcase/pull/288) ([enriquelacoma](https://github.com/enriquelacoma))
 
 ## [1.17.0](https://github.com/openeuropa/oe_showcase/tree/1.17.0) (2025-03-31)
