@@ -18,7 +18,6 @@ use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 use Drupal\search_api\Entity\Index;
-use Drupal\tmgmt\Entity\Translator;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
 
@@ -1147,19 +1146,44 @@ function oe_showcase_post_update_00048(): void {
 }
 
 /**
- * Install tmgmt_ec_etranslation contrib module, and update editor role.
+ * Install and configure the tmgmt_ec_etranslation module.
  */
 function oe_showcase_post_update_00049(): void {
   \Drupal::service('module_installer')->install(['tmgmt_ec_etranslation', 'tmgmt_content', 'tmgmt_config']);
 
-  /** @var \Drupal\tmgmt\Entity\Translator $translator */
-  $translator = Translator::load('ec_etranslation');
-  if (!$translator) {
-    throw new \Exception('Translator ec_etranslation not found.');
+  $config = \Drupal::configFactory()->getEditable('tmgmt.translator.ec_etranslation');
+  if (!$config) {
+    throw new \Exception("The config 'tmgmt.translator.ec_etranslation' not found.");
   }
 
+  // Set the disclaimer message.
+  $config->set('settings.show_disclaimer', TRUE);
+  $config->set('settings.disclaimer_wrapper.status_message_type', 'information');
+  $message = '<h3>Disclaimer</h3><p>This is a machine translation provided by
+  the European Commission\'s eTranslation service to help you understand this
+  page. <a href="https://ec.europa.eu/info/use-machine-translation-europa-exclusion-liability_en">Please
+  read the conditions of use.</a></p>';
+  $config->set('settings.disclaimer_wrapper.disclaimer_message.value', $message);
+  $config->set('settings.disclaimer_wrapper.disclaimer_message.format', 'rich_text');
+  $config->save();
+
+  // Place the disclaimer message block.
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  /** @var \Drupal\block\Entity\Block $block */
+  $block = Block::create([
+    'id' => $theme . '_machine_translation_disclaimer',
+    'theme' => $theme,
+    'region' => 'content_top',
+    'plugin' => 'machine_translation_disclaimer_block',
+    'settings' => [
+      'label_display' => FALSE,
+    ],
+    'weight' => 0,
+  ]);
+  $block->save();
+
   // Set mapping pt-pt -> pt.
-  $translator->set('remote_languages_mappings', [
+  $config->set('remote_languages_mappings', [
     'bg' => 'bg',
     'es' => 'es',
     'cs' => 'cs',
@@ -1185,7 +1209,7 @@ function oe_showcase_post_update_00049(): void {
     'fi' => 'fi',
     'sv' => 'sv',
   ]);
-  $translator->save();
+  $config->save();
 
   // Allow editor role to manage translation jobs.
   $permissions = [
