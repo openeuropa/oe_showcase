@@ -1,0 +1,432 @@
+diff --git a/config/schema/tmgmt_ec_etranslation.schema.yml b/config/schema/tmgmt_ec_etranslation.schema.yml
+index cc10c2d..f161d4c 100644
+--- a/config/schema/tmgmt_ec_etranslation.schema.yml
++++ b/config/schema/tmgmt_ec_etranslation.schema.yml
+@@ -19,3 +19,22 @@ tmgmt.translator.settings.ec_etranslation:
+     use_queue:
+       type: boolean
+       label: 'Queue the process for incoming translations.'
++    show_disclaimer:
++      type: boolean
++      label: 'Show Disclaimer'
++    disclaimer_title:
++      type: string
++      label: 'Disclaimer Title'
++    disclaimer_wrapper:
++      type: mapping
++      label: 'Disclaimer settings'
++      mapping:
++        disclaimer_title:
++          type: text
++          label: 'Disclaimer title'
++        disclaimer_message:
++          type: text_format
++          label: 'Disclaimer message'
++        status_message_type:
++          type: string
++          label: 'Status message type'
+diff --git a/src/ETranslationTranslatorUi.php b/src/ETranslationTranslatorUi.php
+index 9ff2da2..a6aeabb 100644
+--- a/src/ETranslationTranslatorUi.php
++++ b/src/ETranslationTranslatorUi.php
+@@ -61,6 +61,44 @@ class ETranslationTranslatorUi extends TranslatorPluginUiBase {
+       '#description' => $this->t('Queue the process for incoming translations.'),
+     ];
+ 
++    $form['show_disclaimer'] = [
++      '#type' => 'checkbox',
++      '#title' => $this->t('Show Disclaimer'),
++    ];
++
++    // Wrapper for conditional fields.
++    $form['disclaimer_wrapper'] = [
++      '#type' => 'container',
++      '#states' => [
++        'visible' => [
++          ':input[name="settings[show_disclaimer]"]' => ['checked' => TRUE],
++        ],
++      ],
++    ];
++
++    $form['disclaimer_wrapper']['status_message_type'] = [
++      '#type' => 'select',
++      '#title' => $this->t('Status Message Type'),
++      '#options' => [
++        'status' => $this->t('Status'),
++        'information' => $this->t('Information'),
++        'warning' => $this->t('Warning'),
++        'error' => $this->t('Error'),
++      ],
++      '#description' => $this->t('Choose the type of the Drupal status message.'),
++    ];
++
++    $form['disclaimer_wrapper']['disclaimer_title'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Disclaimer Title'),
++    ];
++
++    $form['disclaimer_wrapper']['disclaimer_message'] = [
++      '#type' => 'text_format',
++      '#title' => $this->t('Disclaimer Message'),
++    ];
++
++    // Load config and apply default values.
+     $config = \Drupal::config($translator->getConfigDependencyName());
+     foreach (Element::children($form) as $child) {
+       $key = 'settings.' . $child;
+@@ -72,6 +110,13 @@ class ETranslationTranslatorUi extends TranslatorPluginUiBase {
+         $form[$child]['#disabled'] = TRUE;
+         $form[$child]['#description'] = $this->t('This config cannot be changed because it is overridden.');
+       }
++      elseif ($child === 'disclaimer_wrapper') {
++        // Handle disclaimer fields individually.
++        $form['disclaimer_wrapper']['disclaimer_title']['#default_value'] = $value['disclaimer_title'] ?? '';
++        $form['disclaimer_wrapper']['status_message_type']['#default_value'] = $value['status_message_type'] ?? 'status';
++        $form['disclaimer_wrapper']['disclaimer_message']['#default_value'] = $value['disclaimer_message']['value'] ?? '';
++        $form['disclaimer_wrapper']['disclaimer_message']['#format'] = $value['disclaimer_message']['format'] ?? filter_default_format();
++      }
+       else {
+         $form[$child]['#default_value'] = $value;
+       }
+diff --git a/src/Helper/EtranslationHelper.php b/src/Helper/EtranslationHelper.php
+new file mode 100644
+index 0000000..d21ca84
+--- /dev/null
++++ b/src/Helper/EtranslationHelper.php
+@@ -0,0 +1,148 @@
++<?php
++
++namespace Drupal\tmgmt_ec_etranslation\Helper;
++
++use Drupal\Component\Utility\Html;
++use Drupal\Core\Database\Connection;
++use Drupal\Core\Entity\ContentEntityInterface;
++use Drupal\Core\Language\LanguageManagerInterface;
++use Drupal\Core\Messenger\MessengerInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\tmgmt\Entity\Translator;
++use Drupal\tmgmt\JobItemInterface;
++use Drupal\tmgmt_ec_etranslation\Plugin\tmgmt\Translator\ETranslationTranslator;
++
++// cspell:ignore tjid tjiid
++
++/**
++ * Provides helper methods for eTranslation-based TMGMT logic.
++ */
++class EtranslationHelper {
++
++  use StringTranslationTrait;
++
++  /**
++   * The database connection.
++   *
++   * @var \Drupal\Core\Database\Connection
++   */
++  protected $database;
++
++  /**
++   * The language manager service.
++   *
++   * @var \Drupal\Core\Language\LanguageManagerInterface
++   */
++  protected $languageManager;
++
++  /**
++   * Constructs the EtranslationHelper.
++   *
++   * @param \Drupal\Core\Database\Connection $database
++   *   The database connection.
++   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
++   *   The language manager.
++   */
++  public function __construct(Connection $database, LanguageManagerInterface $language_manager) {
++    $this->database = $database;
++    $this->languageManager = $language_manager;
++  }
++
++  /**
++   * Determines if the entity's current language translation used eTranslation.
++   *
++   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
++   *   The translatable content entity.
++   *
++   * @return bool
++   *   TRUE if the latest job used ec_etranslation for the current language.
++   */
++  public function isEcEtranslationJob(ContentEntityInterface $entity): bool {
++    $current_language = $this->languageManager->getCurrentLanguage()->getId();
++    $source_language = $entity->getUntranslated()->language()->getId();
++    // If we're viewing the source language, there's no translation.
++    if ($current_language === $source_language) {
++      return FALSE;
++    }
++
++    $query = $this->database->select('tmgmt_job_item', 'ji')
++      ->fields('ji', ['tjiid'])
++      ->condition('ji.item_id', $entity->id())
++      ->condition('ji.item_type', $entity->getEntityTypeId())
++      ->condition('ji.state', JobItemInterface::STATE_ACCEPTED)
++      ->range(0, 1);
++
++    $query->innerJoin('tmgmt_job', 'j', 'ji.tjid = j.tjid');
++    $query->condition('j.translator', 'ec_etranslation')
++      ->condition('j.target_language', $current_language);
++    return (bool) $query->execute()->fetchField();
++  }
++
++  /**
++   * Builds a disclaimer message for content translated via eTranslation.
++   *
++   * @return array
++   *   A render array for a status message.
++   */
++  public function buildDisclaimerMessage(): array {
++    // Load the translator entity.
++    $translator = Translator::load(ETranslationTranslator::ID);
++    if (!$translator) {
++      return [];
++    }
++    $settings = $translator->getSettings();
++    $show_disclaimer = $settings['show_disclaimer'] ?? FALSE;
++    $status_message_type = $settings['disclaimer_wrapper']['status_message_type'] ?? 'warning';
++    $disclaimer_title = Html::escape($settings['disclaimer_wrapper']['disclaimer_title'] ?? '');
++    $disclaimer_message = $settings['disclaimer_wrapper']['disclaimer_message']['value'] ?? '';
++    $disclaimer_message_format = $settings['disclaimer_wrapper']['disclaimer_message']['format'] ?? 'basic_html';
++
++    if (!$show_disclaimer) {
++      return [];
++    }
++    $status_type = $this->mapStatusMessageType($status_message_type);
++    return [
++      '#weight' => -50,
++      '#theme' => 'status_messages',
++      '#message_list' => [
++        $status_type => [
++          [
++            '#type' => 'processed_text',
++            '#text' => $disclaimer_message,
++            '#format' => $disclaimer_message_format,
++          ],
++        ],
++      ],
++      '#status_headings' => [
++        $status_type => $disclaimer_title,
++      ],
++    ];
++  }
++
++  /**
++   * Maps the status message type to Drupal status message type.
++   *
++   * @param string $status_message_type
++   *   The status message type.
++   *
++   * @return string
++   *   The corresponding Drupal status message type.
++   */
++  protected function mapStatusMessageType(string $status_message_type): string {
++    switch ($status_message_type) {
++      case 'error':
++        return MessengerInterface::TYPE_ERROR;
++
++      case 'warning':
++        return MessengerInterface::TYPE_WARNING;
++
++      case 'information':
++        return 'information';
++
++      case 'status':
++      default:
++        return MessengerInterface::TYPE_STATUS;
++    }
++  }
++
++}
+diff --git a/src/Plugin/Block/MachineTranslationDisclaimerBlock.php b/src/Plugin/Block/MachineTranslationDisclaimerBlock.php
+new file mode 100644
+index 0000000..8c78b37
+--- /dev/null
++++ b/src/Plugin/Block/MachineTranslationDisclaimerBlock.php
+@@ -0,0 +1,146 @@
++<?php
++
++namespace Drupal\tmgmt_ec_etranslation\Plugin\Block;
++
++use Drupal\Core\Block\BlockBase;
++use Drupal\Core\Cache\Cache;
++use Drupal\Core\Entity\ContentEntityInterface;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Language\LanguageManagerInterface;
++use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
++use Drupal\Core\Routing\RouteMatchInterface;
++use Drupal\tmgmt_ec_etranslation\Helper\EtranslationHelper;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Provides a 'Machine Translation Disclaimer' block for ec_etranslation jobs.
++ *
++ * @Block(
++ *   id = "machine_translation_disclaimer_block",
++ *   admin_label = @Translation("Machine Translation Disclaimer"),
++ *   context_definitions = {
++ *     "entity" = @ContextDefinition("entity", label = @Translation("Entity"), required = FALSE)
++ *   }
++ * )
++ */
++class MachineTranslationDisclaimerBlock extends BlockBase implements ContainerFactoryPluginInterface {
++
++  /**
++   * The current route match service.
++   *
++   * @var \Drupal\Core\Routing\RouteMatchInterface
++   */
++  protected RouteMatchInterface $routeMatch;
++
++  /**
++   * The language manager service.
++   *
++   * @var \Drupal\Core\Language\LanguageManagerInterface
++   */
++  protected LanguageManagerInterface $languageManager;
++
++  /**
++   * The entity type manager service.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected EntityTypeManagerInterface $entityTypeManager;
++
++  /**
++   * The eTranslation helper service.
++   *
++   * @var \Drupal\tmgmt_ec_etranslation\Helper\EtranslationHelper
++   */
++  protected EtranslationHelper $etranslationHelper;
++
++  /**
++   * Constructs a MachineTranslationDisclaimerBlock object.
++   *
++   * @param array $configuration
++   *   A configuration array containing information about the plugin instance.
++   * @param string $plugin_id
++   *   The plugin ID for the block plugin.
++   * @param mixed $plugin_definition
++   *   The plugin implementation definition.
++   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
++   *   The route match service.
++   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
++   *   The language manager service.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity type manager service.
++   * @param \Drupal\tmgmt_ec_etranslation\Helper\EtranslationHelper $etranslation_helper
++   *   The eTranslation helper service.
++   */
++  public function __construct(
++    array $configuration,
++    $plugin_id,
++    $plugin_definition,
++    RouteMatchInterface $route_match,
++    LanguageManagerInterface $language_manager,
++    EntityTypeManagerInterface $entity_type_manager,
++    EtranslationHelper $etranslation_helper
++  ) {
++    parent::__construct($configuration, $plugin_id, $plugin_definition);
++    $this->routeMatch = $route_match;
++    $this->languageManager = $language_manager;
++    $this->entityTypeManager = $entity_type_manager;
++    $this->etranslationHelper = $etranslation_helper;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): MachineTranslationDisclaimerBlock {
++    return new MachineTranslationDisclaimerBlock(
++      $configuration,
++      $plugin_id,
++      $plugin_definition,
++      $container->get('current_route_match'),
++      $container->get('language_manager'),
++      $container->get('entity_type.manager'),
++      $container->get('tmgmt_ec_etranslation.helper')
++    );
++  }
++
++  /**
++   * {@inheritdoc}
++   *
++   * @throws \Drupal\Component\Plugin\Exception\ContextException
++   */
++  public function build() {
++    $entity = $this->getContextValue('entity') ?: $this->getEntityFromRoute();
++
++    if (($entity instanceof ContentEntityInterface) && $this->etranslationHelper->isEcEtranslationJob($entity)) {
++      return $this->etranslationHelper->buildDisclaimerMessage();
++    }
++  }
++
++  /**
++   * Fallback to entity from the current route if context is not set.
++   *
++   * @return \Drupal\Core\Entity\ContentEntityInterface|null
++   *   The content entity, or NULL if none found or not translatable.
++   */
++  protected function getEntityFromRoute(): ?ContentEntityInterface {
++    $entity_type = 'node';
++    $parameters = $this->routeMatch->getParameters();
++    if ($parameters->has($entity_type)) {
++      $entity = $parameters->get($entity_type);
++      if ($entity instanceof ContentEntityInterface &&
++        $entity->hasTranslation($this->languageManager->getCurrentLanguage()->getId())) {
++        return $entity;
++      }
++    }
++
++    return NULL;
++  }
++
++  public function getCacheTags() {
++    \Drupal::logger('debug')->notice('getCacheTags called');
++    return Cache::mergeTags(
++      parent::getCacheTags(),
++      ['tmgmt_translator:ec_etranslation']
++    );
++  }
++
++}
+diff --git a/tmgmt_ec_etranslation.module b/tmgmt_ec_etranslation.module
+new file mode 100644
+index 0000000..60f4e06
+--- /dev/null
++++ b/tmgmt_ec_etranslation.module
+@@ -0,0 +1,18 @@
++<?php
++
++/**
++ * @file
++ * Main module file for the TMGMT EC Etranslation module.
++ */
++
++use Drupal\Core\Cache\Cache;
++use Drupal\Core\Entity\EntityInterface;
++
++/**
++ * Implements hook_entity_update().
++ */
++function tmgmt_ec_etranslation_entity_update(EntityInterface $entity) {
++  if ($entity->getEntityTypeId() === 'tmgmt_translator' && $entity->id() === 'ec_etranslation') {
++    Cache::invalidateTags(['tmgmt_translator:ec_etranslation']);
++  }
++}
+diff --git a/tmgmt_ec_etranslation.services.yml b/tmgmt_ec_etranslation.services.yml
+index 43fff2d..61670d1 100644
+--- a/tmgmt_ec_etranslation.services.yml
++++ b/tmgmt_ec_etranslation.services.yml
+@@ -19,3 +19,7 @@ services:
+     tags: [{ name: cache.bin }]
+     factory: cache_factory:get
+     arguments: [ 'tmgmt_ec_etranslation' ]
++
++  tmgmt_ec_etranslation.helper:
++    class: Drupal\tmgmt_ec_etranslation\Helper\EtranslationHelper
++    arguments: ['@database', '@language_manager']

@@ -133,6 +133,9 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
+            },
+            "drupal/tmgmt_ec_etranslation": {
+                "Show disclaimer as a block": "https://www.drupal.org/files/issues/2025-05-23/tmgmt_ec_etranslation-show_disclaimer.patch"
             }
         },
         "patches-ignore": {
