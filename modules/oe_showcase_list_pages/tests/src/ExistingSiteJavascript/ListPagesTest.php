@@ -463,13 +463,16 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     // Assert Event title filters only by title.
     $title_input->setValue('This is an Event content number 10');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsCount(0);
     $title_input->setValue('This is an Event introduction number 10');
+    $this->scrollIntoView('#edit-submit');
     $search_button->click();
     $this->assertResultsCount(0);
 
     // Filter results by location.
+    $this->scrollIntoView('#edit-submit');
     $filter_form->pressButton('Clear filters');
     $location = $filter_form->findField('Location');
     $this->selectSlimOption($location, 'France');
