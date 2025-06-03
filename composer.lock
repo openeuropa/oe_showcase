@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d609b73225711f3ce9db0ee39be259a0",
+    "content-hash": "730698a70c65967752cbf2e0c8506e37",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8268,16 +8268,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.20.0",
+            "version": "dev-OEL-3817",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "a0bba6ab448faf0e58ab9716d0634811bc941a65"
+                "reference": "f23d642d3ffab6b9e59eb06dcd18e2021d1345e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/a0bba6ab448faf0e58ab9716d0634811bc941a65",
-                "reference": "a0bba6ab448faf0e58ab9716d0634811bc941a65",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/f23d642d3ffab6b9e59eb06dcd18e2021d1345e1",
+                "reference": "f23d642d3ffab6b9e59eb06dcd18e2021d1345e1",
                 "shasum": ""
             },
             "require": {
@@ -8316,7 +8316,7 @@
                 "openeuropa/oe_contact_forms": "~1.11",
                 "openeuropa/oe_content": "^4.8",
                 "openeuropa/oe_content_extra": "^1.4",
-                "openeuropa/oe_corporate_blocks": "^5.0.0-beta3",
+                "openeuropa/oe_corporate_blocks": "^5.0.0-beta5",
                 "openeuropa/oe_link_lists": "^1.0",
                 "openeuropa/oe_list_pages": "^1.0",
                 "openeuropa/oe_multilingual": "^1.14",
@@ -8369,9 +8369,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.20.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-3817"
             },
-            "time": "2025-06-13T12:40:39+00:00"
+            "time": "2025-06-25T10:00:07+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20152,7 +20152,8 @@
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_corporate_blocks": 10,
-        "openeuropa/oe_subscriptions": 10
+        "openeuropa/oe_subscriptions": 10,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
