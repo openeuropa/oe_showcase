@@ -1144,3 +1144,88 @@ function oe_showcase_post_update_00048(): void {
     'field.field.oe_person.person.field_oelp_person_name',
   ]);
 }
+
+/**
+ * Install and configure the tmgmt_ec_etranslation module.
+ */
+function oe_showcase_post_update_00049(): void {
+  \Drupal::service('module_installer')->install(['tmgmt_ec_etranslation', 'tmgmt_content', 'tmgmt_config']);
+
+  $config = \Drupal::configFactory()->getEditable('tmgmt.translator.ec_etranslation');
+  if (!$config) {
+    throw new \Exception("The config 'tmgmt.translator.ec_etranslation' not found.");
+  }
+
+  // Set the disclaimer message.
+  $config->set('settings.show_disclaimer', TRUE);
+  $config->set('settings.disclaimer_wrapper.status_message_type', 'information');
+  $message = '<h3>Disclaimer</h3><p>This is a machine translation provided by
+  the European Commission\'s eTranslation service to help you understand this
+  page. <a href="https://ec.europa.eu/info/use-machine-translation-europa-exclusion-liability_en">Please
+  read the conditions of use.</a></p>';
+  $config->set('settings.disclaimer_wrapper.disclaimer_message.value', $message);
+  $config->set('settings.disclaimer_wrapper.disclaimer_message.format', 'rich_text');
+  $config->save();
+
+  // Place the disclaimer message block.
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  /** @var \Drupal\block\Entity\Block $block */
+  $block = Block::create([
+    'id' => $theme . '_machine_translation_disclaimer',
+    'theme' => $theme,
+    'region' => 'content_top',
+    'plugin' => 'machine_translation_disclaimer_block',
+    'settings' => [
+      'label_display' => FALSE,
+    ],
+    'weight' => 0,
+  ]);
+  $block->save();
+
+  // Set mapping pt-pt -> pt.
+  $config->set('remote_languages_mappings', [
+    'bg' => 'bg',
+    'es' => 'es',
+    'cs' => 'cs',
+    'da' => 'da',
+    'de' => 'de',
+    'et' => 'et',
+    'el' => 'el',
+    'en' => 'en',
+    'fr' => 'fr',
+    'ga' => 'ga',
+    'hr' => 'hr',
+    'it' => 'it',
+    'lv' => 'lv',
+    'lt' => 'lt',
+    'hu' => 'hu',
+    'mt' => 'mt',
+    'nl' => 'nl',
+    'pl' => 'pl',
+    'pt-pt' => 'pt',
+    'ro' => 'ro',
+    'sk' => 'sk',
+    'sl' => 'sl',
+    'fi' => 'fi',
+    'sv' => 'sv',
+  ]);
+  $config->save();
+
+  // Allow editor role to manage translation jobs.
+  $permissions = [
+    'translate editable entities',
+    'translate any entity',
+    'create translation jobs',
+    'delete translation jobs',
+    'submit translation jobs',
+    'accept translation jobs',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}

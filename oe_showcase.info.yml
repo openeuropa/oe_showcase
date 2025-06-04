@@ -85,6 +85,9 @@ install:
   - slim_select
   - symfony_mailer
   - taxonomy
+  - tmgmt_config
+  - tmgmt_content
+  - tmgmt_ec_etranslation
   - toolbar
   - ui_patterns
   - ui_patterns_library
@@ -207,6 +210,7 @@ config_devel:
     - symfony_mailer.mailer_policy._
     - system.site
     - system.theme
+    - tmgmt.translator.ec_etranslation.yml
     - user.role.administrator
     - user.role.anonymous
     - user.role.anonymous_subscriber

@@ -41,6 +41,7 @@
         "drupal/seven": "^1.0",
         "drupal/slim_select": "^1.0@alpha",
         "drupal/symfony_mailer": "^1.4",
+        "drupal/tmgmt_ec_etranslation": "^1.1",
         "drupal/user_field_anonymize": "^1.0@alpha",
         "drupal/user_fields_visibility": "^1.1@alpha",
         "microsoft/powerbi": "^2.1",
@@ -132,6 +133,9 @@
             },
             "drupal/entity_browser": {
                 "Permissions should declare their dependency on entity browser config entity": "https://www.drupal.org/files/issues/2023-08-16/3381497-4.patch"
+            },
+            "drupal/tmgmt_ec_etranslation": {
+                "Show disclaimer as a block": "https://www.drupal.org/files/issues/2025-05-23/tmgmt_ec_etranslation-show_disclaimer.patch"
             }
         },
         "patches-ignore": {
