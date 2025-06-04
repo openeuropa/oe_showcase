@@ -1,11 +1,21 @@
 # Change Log
 
+## [1.20.0](https://github.com/openeuropa/oe_showcase/tree/1.20.0) (2025-06-04)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.19.0...1.20.0)
+
+**Merged pull requests:**
+
+- OEL-3769: Install and configure tmgmt\_ec\_etranslation [\#298](https://github.com/openeuropa/oe_showcase/pull/298) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-3865: Added remote\_stream\_wrapper module. [\#307](https://github.com/openeuropa/oe_showcase/pull/307) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.19.0](https://github.com/openeuropa/oe_showcase/tree/1.19.0) (2025-05-22)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.1.202504281240...1.19.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.19.0 [\#303](https://github.com/openeuropa/oe_showcase/pull/303) ([tibi2303](https://github.com/tibi2303))
 - OEL-0000: Update oe\_whitelabel. [\#302](https://github.com/openeuropa/oe_showcase/pull/302) ([tibi2303](https://github.com/tibi2303))
 - OEL-3662: Integrate oe\_agenda [\#295](https://github.com/openeuropa/oe_showcase/pull/295) ([drishu](https://github.com/drishu))
 
