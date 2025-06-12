@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9236871f756f106413501bbbf93fff1b",
+    "content-hash": "c1c0dfe9af97d1e2ca69b4459c1ba3a5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8685,83 +8685,70 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.19.0",
+            "version": "dev-release-1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "c170ac99fb33e41706de79527cc84a3e8595b6fd"
+                "reference": "1e9964d1007013dc10aa8ad147e2f7f77314728c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/c170ac99fb33e41706de79527cc84a3e8595b6fd",
-                "reference": "c170ac99fb33e41706de79527cc84a3e8595b6fd",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/1e9964d1007013dc10aa8ad147e2f7f77314728c",
+                "reference": "1e9964d1007013dc10aa8ad147e2f7f77314728c",
                 "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
-                "drupal/core": "^10",
+                "drupal/core": "^10 || ^11",
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.22",
+                "openeuropa/oe_bootstrap_theme": "^1.23",
                 "php": ">=8.1"
             },
             "conflict": {
                 "openeuropa/oe_corporate_blocks": "<4.19"
             },
             "require-dev": {
-                "composer/installers": "^1.11",
-                "drupal/better_exposed_filters": "^6.0.3",
+                "composer/installers": "^1.11 || ^2.3",
+                "drupal/better_exposed_filters": "^6.0.3 || ^7.0",
                 "drupal/color_scheme_field": "^1.0@alpha",
                 "drupal/composite_reference": "^2.2",
                 "drupal/config_devel": "~1.9",
-                "drupal/core-composer-scaffold": "^10",
-                "drupal/core-dev": "^10",
+                "drupal/core-composer-scaffold": "^10 || ^11",
+                "drupal/core-dev": "^10 || ^11",
                 "drupal/description_list_field": "^1.0@alpha",
                 "drupal/entity_reference_revisions": "^1.11",
-                "drupal/extra_field": "^2.3",
+                "drupal/extra_field": "^2.3 || ^3.0@beta",
                 "drupal/facets_form": "^1.0.0-alpha6",
                 "drupal/field_group": "^3.4",
                 "drupal/paragraphs": "^1.17",
                 "drupal/search_api": "^1.29",
                 "drupal/search_api_autocomplete": "^1.7",
                 "drupal/typed_link": "^2.0.1",
-                "drush/drush": "^12",
-                "mikey179/vfsstream": "^1.6.10",
-                "nikic/php-parser": "^4",
+                "drush/drush": "^12 || ^13",
                 "openeuropa/code-review-drupal": "^1.0.0-alpha",
-                "openeuropa/oe_agenda": "^1.0.0-alpha3",
+                "openeuropa/oe_agenda": "^1.0.0-alpha4",
                 "openeuropa/oe_authentication": "^1.11",
                 "openeuropa/oe_contact_forms": "~1.11",
-                "openeuropa/oe_content": "^3",
-                "openeuropa/oe_content_extra": "^1.1.0",
-                "openeuropa/oe_corporate_blocks": "^4.20",
+                "openeuropa/oe_content": "^4.8",
+                "openeuropa/oe_content_extra": "^1.4",
+                "openeuropa/oe_corporate_blocks": "^5.0.0-beta3",
                 "openeuropa/oe_link_lists": "^1.0",
-                "openeuropa/oe_list_pages": "^1.0.0",
+                "openeuropa/oe_list_pages": "^1.0",
                 "openeuropa/oe_multilingual": "^1.14",
-                "openeuropa/oe_paragraphs": "^1.20",
-                "openeuropa/oe_starter_content": "^1.2.0",
-                "openeuropa/oe_subscriptions": "^1.0@alpha",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0",
-                "phpspec/prophecy-phpunit": "^2"
+                "openeuropa/oe_paragraphs": "^1.28",
+                "openeuropa/oe_starter_content": "^1.5",
+                "openeuropa/oe_subscriptions": "^1.0.0-beta3",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0"
             },
             "type": "drupal-theme",
             "extra": {
-                "_readme": [
-                    "Explicit requirement of nikic/php-parser ^4 as later versions are not compatible with grumphp @see https://github.com/phpro/grumphp/issues/1119"
-                ],
                 "artifacts": {
                     "openeuropa/oe_bootstrap_theme": {
                         "dist": {
                             "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
                             "type": "zip"
-                        }
-                    }
-                },
-                "patches-ignore": {
-                    "openeuropa/oe_content": {
-                        "drupal/field_group": {
-                            "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
                         }
                     }
                 },
@@ -8799,9 +8786,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.19.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/release-1.20.0"
             },
-            "time": "2025-06-04T09:19:46+00:00"
+            "time": "2025-06-11T09:43:01+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20480,7 +20467,8 @@
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
-        "openeuropa/oe_subscriptions": 15
+        "openeuropa/oe_subscriptions": 15,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
