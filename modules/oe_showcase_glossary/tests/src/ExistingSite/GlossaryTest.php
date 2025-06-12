@@ -429,7 +429,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
       ]);
     }
 
-    // Sort the terms alphabetically.:
+    // Sort the terms alphabetically.
     $this->sortTerms($terms_by_letter);
     $this->sortTerms($terms_by_number);
 

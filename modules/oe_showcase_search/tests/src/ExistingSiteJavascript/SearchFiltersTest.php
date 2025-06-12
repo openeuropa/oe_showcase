@@ -73,7 +73,7 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
         'title' => 'Publication ' . $i,
         'type' => 'oe_sc_publication',
         'field_publication_type' => $term->id(),
-        'oe_publication_date' => sprintf('2022-04-%02d', $i + 1),
+        'oe_publication_date' => sprintf('2022-04-%02d', $i + 5),
       ]);
     }
 
@@ -267,21 +267,21 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
     $publication_date_from->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
-    $this->assertSearchResultsTitle(4);
+    $this->assertSearchResultsTitle(7);
     $this->assertSearchResults([
       'News number 3',
       'News number 4',
-      'Publication 3',
-      'Publication 4',
+      'Publication 0',
+      'Publication 1',
+      'Publication 2',
     ]);
     // Filter by Publication date to 04/04/2022.
     $publication_date_to->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
     $search_button->click();
-    $this->assertSearchResultsTitle(2);
+    $this->assertSearchResultsTitle(1);
     $this->assertSearchResults([
       'News number 3',
-      'Publication 3',
     ]);
 
   }
