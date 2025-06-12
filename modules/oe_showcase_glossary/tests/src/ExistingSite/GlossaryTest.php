@@ -429,7 +429,7 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
       ]);
     }
 
-    // Sort the terms alphabetically.
+    // Sort the terms alphabetically.:
     $this->sortTerms($terms_by_letter);
     $this->sortTerms($terms_by_number);
 
@@ -437,7 +437,10 @@ class GlossaryTest extends ShowcaseExistingSiteTestBase {
     // last.
     ksort($terms_by_letter);
     ksort($terms_by_number);
-
+    // PHP and mysql sort the æ character differently.
+    $special_char["æ"] = $terms_by_letter["æ"];
+    unset($terms_by_letter["æ"]);
+    $terms_by_letter = array_slice($terms_by_letter, 0, 1) + $special_char + $terms_by_letter;
     return $terms_by_letter + $terms_by_number;
   }
 
