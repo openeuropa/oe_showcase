@@ -1240,3 +1240,10 @@ function oe_showcase_post_update_00050(): void {
     ->save();
   \Drupal::service('theme_installer')->uninstall(['seven']);
 }
+
+/**
+ * Enable Ckeditor5.
+ */
+function oe_showcase_post_update_00051(): void {
+  \Drupal::service('module_installer')->install(['ckeditor5']);
+}
