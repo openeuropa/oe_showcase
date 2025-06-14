@@ -29,6 +29,7 @@ dependencies:
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.publication_type
   module:
+    - content_translation
     - entity_browser
     - file
     - filter
@@ -37,12 +38,14 @@ dependencies:
     - oe_content_entity_organisation
     - system
     - taxonomy
+    - tmgmt
     - toolbar
 id: editor
 label: Editor
 weight: 2
 is_admin: null
 permissions:
+  - 'accept translation jobs'
   - 'access administration pages'
   - 'access content overview'
   - 'access documents entity browser pages'
@@ -71,12 +74,7 @@ permissions:
   - 'create terms in glossary'
   - 'create terms in news_type'
   - 'create terms in publication_type'
-  - 'translate editable entities'
-  - 'translate any entity'
   - 'create translation jobs'
-  - 'delete translation jobs'
-  - 'submit translation jobs'
-  - 'accept translation jobs'
   - 'create webtools_chart media'
   - 'create webtools_map media'
   - 'create webtools_social_feed media'
@@ -110,6 +108,7 @@ permissions:
   - 'delete terms in glossary'
   - 'delete terms in news_type'
   - 'delete terms in publication_type'
+  - 'delete translation jobs'
   - 'edit any av_portal_photo media'
   - 'edit any av_portal_video media'
   - 'edit any document media'
@@ -139,6 +138,9 @@ permissions:
   - 'revert oe_sc_person revisions'
   - 'revert oe_sc_publication revisions'
   - 'revert oe_showcase_page revisions'
+  - 'submit translation jobs'
+  - 'translate any entity'
+  - 'translate editable entities'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
   - 'view oe_list_page revisions'

@@ -5,5 +5,6 @@ dependencies:
     - media
 id: media.oe_sc_entity_browser_selection
 label: 'Entity browser selection'
+description: ''
 targetEntityType: media
 cache: true

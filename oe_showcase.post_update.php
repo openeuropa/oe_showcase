@@ -1246,4 +1246,11 @@ function oe_showcase_post_update_00050(): void {
  */
 function oe_showcase_post_update_00051(): void {
   \Drupal::service('module_installer')->install(['ckeditor5']);
+
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00050_ckeditor5', [
+    'filter.format.rich_text',
+    'filter.format.simple_rich_text',
+    'editor.editor.rich_text',
+    'editor.editor.simple_rich_text',
+  ]);
 }

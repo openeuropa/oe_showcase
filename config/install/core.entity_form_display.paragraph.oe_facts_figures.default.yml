@@ -9,8 +9,8 @@ dependencies:
     - field.field.paragraph.oe_facts_figures.oe_w_n_columns
     - paragraphs.paragraphs_type.oe_facts_figures
   module:
-    - link
     - color_scheme_field
+    - link
     - oe_paragraphs
 id: paragraph.oe_facts_figures.default
 targetEntityType: paragraph

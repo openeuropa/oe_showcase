@@ -142,6 +142,7 @@ config_devel:
     - easy_breadcrumb.settings
     - editor.editor.full_html
     - editor.editor.rich_text
+    - editor.editor.simple_rich_text
     - embed.button.embed_media
     - entity_browser.browser.documents
     - entity_browser.browser.embed_media
