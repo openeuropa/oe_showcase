@@ -45,7 +45,7 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session = $this->assertSession();
     return array_map(function (NodeElement $button) use ($assert_session) {
       return $assert_session->elementExists('css', '#' . $button->getAttribute('aria-labelledby'))->getHtml();
-    }, $wysiwyg->findAll('css', 'a[title][aria-labelledby]'));
+    }, $wysiwyg->findAll('css', 'button[aria-labelledby]'));
   }
 
   /**
@@ -58,7 +58,6 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
         'Bold',
         'Italic',
         'Link',
-        'Unlink',
         'Source',
       ],
     ];
@@ -69,12 +68,14 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
         'Bold',
         'Italic',
         'Link',
-        'Unlink',
-        'Insert/Remove Bulleted List',
-        'Insert/Remove Numbered List',
-        'Block Quote',
+        'Bulleted List',
+        'Numbered List',
+        // Split button has the same label.
+        'Numbered List',
+        'Block quote',
         'Embed media',
         'Source',
+        'Code',
       ],
     ];
   }

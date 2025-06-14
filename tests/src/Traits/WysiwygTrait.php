@@ -97,8 +97,9 @@ trait WysiwygTrait {
     if (count($label_elements) > 1) {
       throw new \Exception("Multiple '$field' labels found in the page.");
     }
-    $wysiwyg_id = 'cke_' . $label_elements[0]->getAttribute('for');
-    $wysiwyg_elements = $driver->find('//div[@id="' . $wysiwyg_id . '"]');
+    $for_attribute = $label_elements[0]->getAttribute('for');
+    $wysiwyg_elements = $driver->find('//textarea[@id="' . $for_attribute . '"]/following-sibling::div[contains(@class, "ck-editor")]');
+
     if (empty($wysiwyg_elements)) {
       throw new \Exception("Could not find the '$field' wysiwyg editor.");
     }
