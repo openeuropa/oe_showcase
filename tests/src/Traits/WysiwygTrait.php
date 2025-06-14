@@ -42,7 +42,7 @@ trait WysiwygTrait {
    */
   protected function pressWysiwygButton($field, $button): void {
     $wysiwyg = $this->getWysiwyg($field);
-    $button_elements = $this->getSession()->getDriver()->find($wysiwyg->getXpath() . '//a[@title="' . $button . '"]');
+    $button_elements = $this->getSession()->getDriver()->find($wysiwyg->getXpath() . '//button[@data-cke-tooltip-text="' . $button . '"]');
     if (empty($button_elements)) {
       throw new \Exception("Could not find the '$button' button.");
     }
