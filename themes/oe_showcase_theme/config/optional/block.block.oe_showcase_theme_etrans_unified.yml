@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - oe_webtools_etrans
+  theme:
+    - oe_showcase_theme
+id: oe_showcase_theme_etrans_unified
+theme: oe_showcase_theme
+region: content
+weight: -3
+provider: null
+plugin: oe_webtools_etrans_unified
+settings:
+  id: oe_webtools_etrans_unified
+  label: 'OpenEuropa Unified eTrans'
+  label_display: '0'
+  provider: oe_webtools_etrans
+  delay: 0
+  exclude: ''
+  include: ''
+visibility: {  }
