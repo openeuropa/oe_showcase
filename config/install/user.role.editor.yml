@@ -16,7 +16,6 @@ dependencies:
     - media.type.remote_video
     - media.type.webtools_chart
     - media.type.webtools_map
-    - media.type.webtools_social_feed
     - node.type.oe_list_page
     - node.type.oe_project
     - node.type.oe_sc_event
@@ -77,7 +76,6 @@ permissions:
   - 'create translation jobs'
   - 'create webtools_chart media'
   - 'create webtools_map media'
-  - 'create webtools_social_feed media'
   - 'delete any av_portal_photo media'
   - 'delete any av_portal_video media'
   - 'delete any document media'
@@ -93,7 +91,6 @@ permissions:
   - 'delete any remote_video media'
   - 'delete any webtools_chart media'
   - 'delete any webtools_map media'
-  - 'delete any webtools_social_feed media'
   - 'delete oe_list_page revisions'
   - 'delete oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'delete oe_organisation oe_stakeholder corporate entity'
@@ -124,7 +121,6 @@ permissions:
   - 'edit any remote_video media'
   - 'edit any webtools_chart media'
   - 'edit any webtools_map media'
-  - 'edit any webtools_social_feed media'
   - 'edit oe_organisation oe_cx_project_stakeholder corporate entity'
   - 'edit oe_organisation oe_stakeholder corporate entity'
   - 'edit terms in event_type'

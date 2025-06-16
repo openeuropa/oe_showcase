@@ -33,6 +33,11 @@ trait MediaCreationTrait {
     $bundles = \Drupal::entityTypeManager()->getStorage('media_type')->loadMultiple();
     $media = [];
     foreach (array_keys($bundles) as $bundle) {
+      if ($bundle === 'webtools_social_feed') {
+        // Deprecated media bundle, already removed in oe_webtools 1.36.0 and
+        // will be removed in oe_media 2.0.
+        continue;
+      }
       $media[$bundle] = $this->createMediaByBundle($bundle);
     }
 
@@ -72,24 +77,6 @@ trait MediaCreationTrait {
     return $this->createMedia($values + [
       'name' => 'Webtools map title',
       'oe_media_webtools' => '{"service":"map"}',
-    ]);
-  }
-
-  /**
-   * Create a Webtools social feed media with default values.
-   *
-   * @param array $values
-   *   (optional) An array of values to set, keyed by property name.
-   *
-   * @return \Drupal\media\MediaInterface
-   *   The media entity.
-   */
-  protected function createWebtoolsSocialFeedMedia(array $values = []): MediaInterface {
-    $values['bundle'] = 'webtools_social_feed';
-
-    return $this->createMedia($values + [
-      'name' => 'Webtools social feed title',
-      'oe_media_webtools' => '{"service":"social_feed"}',
     ]);
   }
 
