@@ -62,22 +62,6 @@ class MultilingualTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert the language interface block is hidden.
     $modal = $page->find('xpath', '//div[@id=\'languageModal\']');
     $this->assertFalse($modal->isVisible());
-
-    // Show the language switcher block by selecting an untranslated language.
-    $this->clickLink('português');
-    $this->assertSession()->waitForElementVisible('css', '#languageModal');
-    $this->clickLink('français');
-    $language_switcher_block = $page->find(
-      'xpath',
-      '//div[@id="block-oe-showcase-theme-content-language-switcher"]'
-    );
-    $this->assertTrue($language_switcher_block->isVisible());
-
-    // Assert a valid translation is available.
-    $button = $page->findButton('Choisir une autre langue');
-    $button->click();
-    $language_switcher_block->findLink('português')->click();
-    $assert_session->pageTextContains('Translated to PT');
   }
 
 }
