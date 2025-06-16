@@ -182,7 +182,7 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function moveCkeditorCursorToEnd(string $instance_id = 'edit-body-0-value'): void {
     $js = <<<JS
     (function() {
-      const ckContent = document.querySelector('textarea#{$instance_id} + .ck-content');
+      const ckContent = document.querySelector('textarea#{$instance_id} ~ .ck-editor .ck-content');
       ckContent.focus();
       const range = document.createRange();
       range.selectNodeContents(ckContent);
