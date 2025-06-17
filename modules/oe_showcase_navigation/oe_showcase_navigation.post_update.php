@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install and update functions for the OE Showcase Navigation module.
+ * OE Showcase Contact form post updates.
  */
 
 declare(strict_types=1);
@@ -10,14 +10,9 @@ declare(strict_types=1);
 use Drupal\oe_bootstrap_theme\ConfigImporter;
 
 /**
- * Implements hook_install().
- *
- * Imports configuration on module install.
+ * Override changes from oe_corporate_blocks.
  */
-function oe_showcase_navigation_install(bool $is_syncing): void {
-  if ($is_syncing) {
-    return;
-  }
+function oe_showcase_navigation_post_update_00001(&$sandbox): void {
 
   $configs = [
     'oe_corporate_blocks.footer_link.general.about_us',
