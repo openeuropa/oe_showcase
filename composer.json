@@ -50,7 +50,7 @@
         "openeuropa/oe_contact_forms": "^1.5",
         "openeuropa/oe_content": "^3.0.0-alpha11",
         "openeuropa/oe_content_extra": "^1.1.0",
-        "openeuropa/oe_corporate_blocks": "^4.13",
+        "openeuropa/oe_corporate_blocks": "^5.0.0-beta5",
         "openeuropa/oe_corporate_countries": "^2.0.0-alpha8",
         "openeuropa/oe_dashboard_agent": "^1.0.0",
         "openeuropa/oe_list_pages": "^1.0",
@@ -60,7 +60,7 @@
         "openeuropa/oe_starter_content": "^1.2.0",
         "openeuropa/oe_subscriptions": "^1.0@alpha",
         "openeuropa/oe_webtools": "^1.23",
-        "openeuropa/oe_whitelabel": "^1.18"
+        "openeuropa/oe_whitelabel": "dev-OEL-3909"
     },
     "require-dev": {
         "composer/installers": "~1.11",

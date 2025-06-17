@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "870ab2789153da10d4848813d3fc4b39",
+    "content-hash": "20706cc5a0cf39176c2d79ffac129e60",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4408,27 +4408,26 @@
         },
         {
             "name": "drupal/multivalue_form_element",
-            "version": "1.0.0-beta6",
+            "version": "1.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/multivalue_form_element.git",
-                "reference": "1.0.0-beta6"
+                "reference": "1.0.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multivalue_form_element-1.0.0-beta6.zip",
-                "reference": "1.0.0-beta6",
-                "shasum": "653214124be45f11bb76c76871355a30651dd6fe"
+                "url": "https://ftp.drupal.org/files/projects/multivalue_form_element-1.0.0-beta7.zip",
+                "reference": "1.0.0-beta7",
+                "shasum": "5d59af85d37c251ef0b4ef36eddc42b0222ecfb9"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
-                "php": ">=7.4"
+                "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta6",
-                    "datestamp": "1678886197",
+                    "version": "1.0.0-beta7",
+                    "datestamp": "1739788827",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -4437,7 +4436,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "EUPL-1.2"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4445,19 +4444,18 @@
                     "homepage": "https://www.drupal.org/user/448086"
                 },
                 {
-                    "name": "ieguskiza",
-                    "homepage": "https://www.drupal.org/user/2652665"
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
                 },
                 {
                     "name": "sardara",
                     "homepage": "https://www.drupal.org/user/2353864"
                 }
             ],
-            "description": "Provides a form element that wraps existing form elements, making them multi-value.",
+            "description": "Provides a multi-value form element that wraps any number of form elements.",
             "homepage": "https://www.drupal.org/project/multivalue_form_element",
             "support": {
-                "source": "https://git.drupalcode.org/project/multivalue_form_element",
-                "issues": "https://www.drupal.org/project/issues/multivalue_form_element"
+                "source": "https://git.drupalcode.org/project/multivalue_form_element"
             }
         },
         {
@@ -5438,28 +5436,28 @@
         },
         {
             "name": "drupal/sparql_entity_storage",
-            "version": "2.0.0-alpha16",
+            "version": "2.0.0-alpha19",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sparql_entity_storage.git",
-                "reference": "2.0.0-alpha16"
+                "reference": "2.0.0-alpha19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sparql_entity_storage-2.0.0-alpha16.zip",
-                "reference": "2.0.0-alpha16",
-                "shasum": "298d9a9430a7c2abe16ff0a2912e5619b95ec387"
+                "url": "https://ftp.drupal.org/files/projects/sparql_entity_storage-2.0.0-alpha19.zip",
+                "reference": "2.0.0-alpha19",
+                "shasum": "f8281134fed82824c7b5ab43aace394d200e2fe5"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
+                "drupal/core": "^10 || ^11",
                 "ml/json-ld": "^1.0",
                 "sweetrdf/easyrdf": "^1.9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha16",
-                    "datestamp": "1705400059",
+                    "version": "2.0.0-alpha19",
+                    "datestamp": "1741685678",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5481,12 +5479,24 @@
                     "homepage": "https://www.drupal.org/user/56348"
                 },
                 {
+                    "name": "hernani",
+                    "homepage": "https://www.drupal.org/user/448086"
+                },
+                {
                     "name": "idimopoulos",
                     "homepage": "https://www.drupal.org/user/2578708"
                 },
                 {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                },
+                {
                     "name": "pfrenssen",
                     "homepage": "https://www.drupal.org/user/382067"
+                },
+                {
+                    "name": "sardara",
+                    "homepage": "https://www.drupal.org/user/2353864"
                 }
             ],
             "description": "Provides SPARQL entity storage and query for Drupal entities.",
@@ -7661,64 +7671,58 @@
         },
         {
             "name": "openeuropa/oe_corporate_blocks",
-            "version": "4.19.2",
+            "version": "5.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_corporate_blocks.git",
-                "reference": "f365bbd345541325b5a28b6e3df36045ea1e1d20"
+                "reference": "a83d41583998d84d9a263088770a3a6723e7af71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/f365bbd345541325b5a28b6e3df36045ea1e1d20",
-                "reference": "f365bbd345541325b5a28b6e3df36045ea1e1d20",
+                "url": "https://api.github.com/repos/openeuropa/oe_corporate_blocks/zipball/a83d41583998d84d9a263088770a3a6723e7af71",
+                "reference": "a83d41583998d84d9a263088770a3a6723e7af71",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^10",
-                "openeuropa/oe_corporate_site_info": "^1.0.0-alpha7",
+                "drupal/core": "^10 || ^11",
+                "openeuropa/oe_corporate_site_info": "^1.2.0",
                 "php": ">=8.1"
             },
             "require-dev": {
                 "composer/installers": "^1.11",
                 "drupal/config_devel": "^1.9",
-                "drupal/core-composer-scaffold": "^10",
+                "drupal/core-composer-scaffold": "^10 || ^11",
+                "drupal/core-dev": "^10 || ^11",
                 "drupal/drupal-extension": "^5.0",
-                "drush/drush": "^12",
+                "drush/drush": "^12.4 || ^13",
                 "openeuropa/behat-transformation-context": "^0.2",
-                "openeuropa/code-review": "^2.0.0-alpha6",
-                "openeuropa/oe_multilingual": "^1.13",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
-                "phpspec/prophecy-phpunit": "^2",
-                "phpunit/phpunit": "^9.0",
-                "symfony/phpunit-bridge": "^6.0"
+                "openeuropa/code-review-drupal": "^1.0.0-alpha",
+                "openeuropa/oe_multilingual": "^1.19.0",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
-                "composer-exit-on-patch-failure": true,
-                "enable-patching": true,
-                "installer-paths": {
-                    "build/core": [
-                        "type:drupal-core"
-                    ],
-                    "build/profiles/contrib/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "build/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "build/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ]
-                },
                 "drupal-scaffold": {
                     "locations": {
                         "web-root": "./build"
                     }
                 },
-                "_readme": [
-                    "Limit phpunit to 9.x until Drupal 10 adds full support.",
-                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits."
-                ]
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ]
+                },
+                "composer-exit-on-patch-failure": true
             },
             "autoload": {
                 "psr-4": {
@@ -7732,9 +7736,9 @@
             "description": "OpenEuropa Corporate Blocks.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_corporate_blocks/issues",
-                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/4.19.2"
+                "source": "https://github.com/openeuropa/oe_corporate_blocks/tree/5.0.0-beta5"
             },
-            "time": "2024-06-24T14:53:49+00:00"
+            "time": "2025-06-16T05:37:20+00:00"
         },
         {
             "name": "openeuropa/oe_corporate_countries",
@@ -7807,60 +7811,60 @@
         },
         {
             "name": "openeuropa/oe_corporate_site_info",
-            "version": "1.0.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_corporate_site_info.git",
-                "reference": "a940c3776ec116e99227bfae98658a9bcbe75624"
+                "reference": "7ece779f2976e588c6531f1779ba2bd8aac0b469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_corporate_site_info/zipball/a940c3776ec116e99227bfae98658a9bcbe75624",
-                "reference": "a940c3776ec116e99227bfae98658a9bcbe75624",
+                "url": "https://api.github.com/repos/openeuropa/oe_corporate_site_info/zipball/7ece779f2976e588c6531f1779ba2bd8aac0b469",
+                "reference": "7ece779f2976e588c6531f1779ba2bd8aac0b469",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^10",
+                "drupal/core": "^10 || ^11",
                 "drupal/multivalue_form_element": "^1.0@beta",
-                "openeuropa/rdf_skos": "^1.0.0-alpha9",
+                "openeuropa/rdf_skos": "^1.2.0",
                 "php": ">=8.1"
             },
             "require-dev": {
                 "composer/installers": "^1.5",
-                "drupal/core-composer-scaffold": "^10",
+                "drupal/core-composer-scaffold": "^10 || ^11",
                 "drupal/drupal-extension": "^5.0",
-                "drush/drush": "^12.4",
-                "openeuropa/code-review": "^2.0.0-alpha6",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
+                "drush/drush": "^12.4 || ^13",
+                "openeuropa/code-review-drupal": "^1.0.0-alpha",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0",
                 "phpspec/prophecy-phpunit": "^2",
-                "symfony/phpunit-bridge": "^6.2"
+                "symfony/phpunit-bridge": "^6.2 || ^7.2"
             },
             "type": "drupal-module",
             "extra": {
-                "composer-exit-on-patch-failure": true,
-                "enable-patching": true,
-                "installer-paths": {
-                    "build/core": [
-                        "type:drupal-core"
-                    ],
-                    "build/profiles/contrib/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "build/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "build/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ]
-                },
+                "_readme": [
+                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits."
+                ],
                 "drupal-scaffold": {
                     "locations": {
                         "web-root": "./build"
                     }
                 },
-                "_readme": [
-                    "Explicit requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits."
-                ]
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ]
+                },
+                "composer-exit-on-patch-failure": true
             },
             "autoload": {
                 "psr-4": {
@@ -7874,9 +7878,9 @@
             "description": "OpenEuropa Corporate Site Information.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_corporate_site_info/issues",
-                "source": "https://github.com/openeuropa/oe_corporate_site_info/tree/1.0.0"
+                "source": "https://github.com/openeuropa/oe_corporate_site_info/tree/1.2.1"
             },
-            "time": "2024-04-03T15:39:08+00:00"
+            "time": "2025-05-05T07:49:20+00:00"
         },
         {
             "name": "openeuropa/oe_dashboard_agent",
@@ -8611,83 +8615,70 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.19.0",
+            "version": "dev-OEL-3909",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "c170ac99fb33e41706de79527cc84a3e8595b6fd"
+                "reference": "b95ea2b105444aceb0e8a8d5c512e1b70245fcb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/c170ac99fb33e41706de79527cc84a3e8595b6fd",
-                "reference": "c170ac99fb33e41706de79527cc84a3e8595b6fd",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/b95ea2b105444aceb0e8a8d5c512e1b70245fcb3",
+                "reference": "b95ea2b105444aceb0e8a8d5c512e1b70245fcb3",
                 "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
-                "drupal/core": "^10",
+                "drupal/core": "^10 || ^11",
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.22",
+                "openeuropa/oe_bootstrap_theme": "^1.23",
                 "php": ">=8.1"
             },
             "conflict": {
                 "openeuropa/oe_corporate_blocks": "<4.19"
             },
             "require-dev": {
-                "composer/installers": "^1.11",
-                "drupal/better_exposed_filters": "^6.0.3",
+                "composer/installers": "^1.11 || ^2.3",
+                "drupal/better_exposed_filters": "^6.0.3 || ^7.0",
                 "drupal/color_scheme_field": "^1.0@alpha",
                 "drupal/composite_reference": "^2.2",
                 "drupal/config_devel": "~1.9",
-                "drupal/core-composer-scaffold": "^10",
-                "drupal/core-dev": "^10",
+                "drupal/core-composer-scaffold": "^10 || ^11",
+                "drupal/core-dev": "^10 || ^11",
                 "drupal/description_list_field": "^1.0@alpha",
                 "drupal/entity_reference_revisions": "^1.11",
-                "drupal/extra_field": "^2.3",
+                "drupal/extra_field": "^2.3 || ^3.0@beta",
                 "drupal/facets_form": "^1.0.0-alpha6",
                 "drupal/field_group": "^3.4",
                 "drupal/paragraphs": "^1.17",
                 "drupal/search_api": "^1.29",
                 "drupal/search_api_autocomplete": "^1.7",
                 "drupal/typed_link": "^2.0.1",
-                "drush/drush": "^12",
-                "mikey179/vfsstream": "^1.6.10",
-                "nikic/php-parser": "^4",
+                "drush/drush": "^12 || ^13",
                 "openeuropa/code-review-drupal": "^1.0.0-alpha",
-                "openeuropa/oe_agenda": "^1.0.0-alpha3",
+                "openeuropa/oe_agenda": "^1.0.0-alpha4",
                 "openeuropa/oe_authentication": "^1.11",
                 "openeuropa/oe_contact_forms": "~1.11",
-                "openeuropa/oe_content": "^3",
-                "openeuropa/oe_content_extra": "^1.1.0",
-                "openeuropa/oe_corporate_blocks": "^4.20",
+                "openeuropa/oe_content": "^4.8",
+                "openeuropa/oe_content_extra": "^1.4",
+                "openeuropa/oe_corporate_blocks": "^5.0.0-beta3",
                 "openeuropa/oe_link_lists": "^1.0",
-                "openeuropa/oe_list_pages": "^1.0.0",
+                "openeuropa/oe_list_pages": "^1.0",
                 "openeuropa/oe_multilingual": "^1.14",
-                "openeuropa/oe_paragraphs": "^1.20",
-                "openeuropa/oe_starter_content": "^1.2.0",
-                "openeuropa/oe_subscriptions": "^1.0@alpha",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0",
-                "phpspec/prophecy-phpunit": "^2"
+                "openeuropa/oe_paragraphs": "^1.28",
+                "openeuropa/oe_starter_content": "^1.5",
+                "openeuropa/oe_subscriptions": "^1.0.0-beta3",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0"
             },
             "type": "drupal-theme",
             "extra": {
-                "_readme": [
-                    "Explicit requirement of nikic/php-parser ^4 as later versions are not compatible with grumphp @see https://github.com/phpro/grumphp/issues/1119"
-                ],
                 "artifacts": {
                     "openeuropa/oe_bootstrap_theme": {
                         "dist": {
                             "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
                             "type": "zip"
-                        }
-                    }
-                },
-                "patches-ignore": {
-                    "openeuropa/oe_content": {
-                        "drupal/field_group": {
-                            "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
                         }
                     }
                 },
@@ -8725,70 +8716,62 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.19.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/OEL-3909"
             },
-            "time": "2025-06-04T09:19:46+00:00"
+            "time": "2025-06-16T13:46:27+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
-            "version": "1.0.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/rdf_skos.git",
-                "reference": "8eb9f44a08ce0d6e9e0cf19fd422e8f53cdcc5f6"
+                "reference": "2d929af2c6f3b9bbd30df58dda282349e6b690e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/rdf_skos/zipball/8eb9f44a08ce0d6e9e0cf19fd422e8f53cdcc5f6",
-                "reference": "8eb9f44a08ce0d6e9e0cf19fd422e8f53cdcc5f6",
+                "url": "https://api.github.com/repos/openeuropa/rdf_skos/zipball/2d929af2c6f3b9bbd30df58dda282349e6b690e4",
+                "reference": "2d929af2c6f3b9bbd30df58dda282349e6b690e4",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^10",
-                "drupal/sparql_entity_storage": "^2.0.0-alpha12",
+                "drupal/core": "^10 || ^11",
+                "drupal/sparql_entity_storage": "^2.0.0-alpha19",
                 "php": ">=8.1"
             },
             "require-dev": {
-                "composer/installers": "^1.11",
-                "drupal/core-composer-scaffold": "^10",
+                "composer/installers": "^2.3",
+                "drupal/core-composer-scaffold": "^10 || ^11",
+                "drupal/core-dev": "^10 || ^11",
                 "drupal/drupal-extension": "^5.0",
-                "drush/drush": "^12",
-                "mikey179/vfsstream": "^1.6.10",
-                "nikic/php-parser": "^4",
+                "drush/drush": "^12.4 || ^13",
                 "openeuropa/behat-transformation-context": "^0.2",
-                "openeuropa/code-review": "^2.0.0-alpha6",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0-beta6",
-                "phpspec/prophecy-phpunit": "^2",
-                "symfony/phpunit-bridge": "^6.2"
+                "openeuropa/code-review-drupal": "^1.0.0-alpha",
+                "openeuropa/task-runner-drupal-project-symlink": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
-                "composer-exit-on-patch-failure": true,
-                "enable-patching": true,
-                "installer-paths": {
-                    "build/core": [
-                        "type:drupal-core"
-                    ],
-                    "build/profiles/contrib/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "build/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "build/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ]
-                },
                 "drupal-scaffold": {
                     "locations": {
                         "web-root": "./build"
                     }
                 },
-                "_readme": [
-                    "Explicit minimum version requirement of symfony/phpunit-bridge to replace drupal/core-dev testing classes and traits.",
-                    "Explicit requirement of mikey179/vfsstream to remove when drupal/core-dev is reinstated.",
-                    "Explicit requirement of nikic/php-parser ^4 as later versions are not compatible with grumphp @see https://github.com/phpro/grumphp/issues/1119"
-                ]
+                "enable-patching": true,
+                "installer-paths": {
+                    "build/core": [
+                        "type:drupal-core"
+                    ],
+                    "build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ],
+                    "build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "build/profiles/contrib/{$name}": [
+                        "type:drupal-profile"
+                    ]
+                },
+                "composer-exit-on-patch-failure": true
             },
             "autoload": {
                 "psr-4": {
@@ -8802,9 +8785,9 @@
             "description": "Drupal module that contains the RDF SKOS entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/rdf_skos/issues",
-                "source": "https://github.com/openeuropa/rdf_skos/tree/1.0.0"
+                "source": "https://github.com/openeuropa/rdf_skos/tree/1.2.1"
             },
-            "time": "2024-02-14T13:52:53+00:00"
+            "time": "2025-05-05T07:53:07+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -20393,7 +20376,8 @@
         "drupal/slim_select": 15,
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
-        "openeuropa/oe_subscriptions": 15
+        "openeuropa/oe_subscriptions": 15,
+        "openeuropa/oe_whitelabel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
