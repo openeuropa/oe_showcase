@@ -96,7 +96,7 @@ install:
   - views
 
 themes:
-  - seven
+  - claro
   - oe_bootstrap_theme
   - oe_whitelabel
   - oe_showcase_theme
