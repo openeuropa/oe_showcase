@@ -6,7 +6,7 @@
 Basic installation profile, all it does is:
 
 1. Enable the bare minimum amount of core modules.
-2. Setup `seven` as administrative theme.
+2. Setup `claro` as administrative theme.
 3. Set `OpenEuropa Showcase theme` as default theme.
 4. Enable dependency modules for the showcased OEL features.
 
