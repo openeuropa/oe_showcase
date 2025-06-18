@@ -23,9 +23,9 @@ trait WysiwygTrait {
    *   The filter format if found.
    */
   protected function getWysiwigTextFormat(NodeElement $field): ?string {
-    $parent = $field->find('xpath', '/ancestor::div[@class and contains(concat(" ", normalize-space(@class), " "), " text-format-wrapper ")]');
-    $this->assertNotNull($parent);
-    $link = $parent->find('css', 'a.filter-help-item');
+    $wrapper = $field->find('xpath', 'ancestor::div[contains(concat(" ", normalize-space(@class), " "), " form-wrapper ")]');
+    $this->assertNotNull($wrapper);
+    $link = $wrapper->find('css', 'a.filter-help-item');
     $this->assertNotNull($link);
 
     return $link->getAttribute('data-filter-format');
