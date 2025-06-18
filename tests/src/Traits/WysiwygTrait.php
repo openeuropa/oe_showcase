@@ -23,7 +23,7 @@ trait WysiwygTrait {
    *   The filter format if found.
    */
   protected function getWysiwigTextFormat(NodeElement $field): ?string {
-    $wrapper = $field->find('xpath', 'ancestor::div[contains(concat(" ", normalize-space(@class), " "), " form-wrapper ")]');
+    $wrapper = $field->getParent()->getParent()->getParent();
     $this->assertNotNull($wrapper);
     $link = $wrapper->find('css', 'a.filter-help-item');
     $this->assertNotNull($link);
