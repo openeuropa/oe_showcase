@@ -224,14 +224,14 @@ config_devel:
     - user_field_anonymize.settings
     - views.view.media_entity_browsers
   optional:
-    - block.block.seven_breadcrumbs
-    - block.block.seven_content
-    - block.block.seven_help
-    - block.block.seven_local_actions
-    - block.block.seven_messages
-    - block.block.seven_page_title
-    - block.block.seven_primary_local_tasks
-    - block.block.seven_secondary_local_tasks
+    - block.block.claro_breadcrumbs
+    - block.block.claro_content
+    - block.block.claro_help
+    - block.block.claro_local_actions
+    - block.block.claro_messages
+    - block.block.claro_page_title
+    - block.block.claro_primary_local_tasks
+    - block.block.claro_secondary_local_tasks
 
 # List of config overrides. Config_devel doesn't export these entries automatically.
 # Copy them temporarily in the above list if you need to update them.
