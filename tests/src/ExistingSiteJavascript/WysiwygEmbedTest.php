@@ -153,6 +153,11 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function embedMediaInWysiwyg(string $label): void {
     $this->scrollIntoView('.field--name-body');
     $this->moveCkeditorCursorToEnd();
+    $get_embedded_titles = fn () => array_map(
+      fn ($node) => trim($node->getText()),
+      $this->getSession()->getPage()->findAll('css', '.ck-oe-oembed'),
+    );
+    $embedded_titles_before = $get_embedded_titles();
 
     $this->pressEditorButton('Embed media');
     $assert_session = $this->assertSession();
@@ -171,6 +176,9 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->linkExists($label);
     $modal_button_pane = $assert_session->elementExists('css', 'div.ui-dialog-buttonset');
     $modal_button_pane->findButton('Embed')->press();
+    $this->getSession()->getPage()->waitFor(10, fn(): bool => count($get_embedded_titles()) === count($embedded_titles_before) + 1);
+    // The new media was inserted, and old media was not removed.
+    $this->assertSame([...$embedded_titles_before, $label], $get_embedded_titles(), $label);
   }
 
   /**
@@ -182,14 +190,13 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function moveCkeditorCursorToEnd(string $instance_id = 'edit-body-0-value'): void {
     $js = <<<JS
     (function() {
-      const ckContent = document.querySelector('textarea#{$instance_id} ~ .ck-editor .ck-content');
-      ckContent.focus();
-      const range = document.createRange();
-      range.selectNodeContents(ckContent);
-      range.collapse(false);
-      const sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
+      const editor = document.querySelector('textarea#{$instance_id} ~ .ck-editor .ck-content').ckeditorInstance;
+      editor.model.change(writer => {
+        const root = editor.model.document.getRoot();
+        // Insert a paragraph, to make sure we don't replace the existing embed.
+        writer.insertElement('paragraph', writer.createPositionAt(root, 'end'));
+        writer.setSelection(writer.createPositionAt(root, 'end'));
+      });
     })();
     JS;
 
