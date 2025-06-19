@@ -226,7 +226,6 @@ config_devel:
   optional:
     - block.block.claro_breadcrumbs
     - block.block.claro_content
-    - block.block.claro_help
     - block.block.claro_local_actions
     - block.block.claro_messages
     - block.block.claro_page_title
