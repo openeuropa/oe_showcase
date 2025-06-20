@@ -1249,8 +1249,10 @@ function oe_showcase_post_update_00051(): void {
   \Drupal::service('module_installer')->uninstall(['ckeditor']);
 
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00050_ckeditor5', [
+    'filter.format.full_html',
     'filter.format.rich_text',
     'filter.format.simple_rich_text',
+    'editor.editor.full_html',
     'editor.editor.rich_text',
     'editor.editor.simple_rich_text',
   ]);
