@@ -1229,3 +1229,14 @@ function oe_showcase_post_update_00049(): void {
   }
   $role->save();
 }
+
+/**
+ * Replace Seven with Claro.
+ */
+function oe_showcase_post_update_00050(): void {
+  \Drupal::service('theme_installer')->install(['claro']);
+  \Drupal::configFactory()->getEditable('system.theme')
+    ->set('admin', 'claro')
+    ->save();
+  \Drupal::service('theme_installer')->uninstall(['seven']);
+}
