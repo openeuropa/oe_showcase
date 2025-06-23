@@ -1,11 +1,23 @@
 # Change Log
 
+## [1.21.0](https://github.com/openeuropa/oe_showcase/tree/1.21.0) (2025-06-23)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.20.0...1.21.0)
+
+**Merged pull requests:**
+
+- OEL-3912: Replace Seven with Claro. [\#315](https://github.com/openeuropa/oe_showcase/pull/315) ([drishu](https://github.com/drishu))
+- OEL-3433: Move to ckeditor 5. [\#312](https://github.com/openeuropa/oe_showcase/pull/312) ([drishu](https://github.com/drishu))
+- OEL-3740: Removed roleassign module. [\#309](https://github.com/openeuropa/oe_showcase/pull/309) ([tibi2303](https://github.com/tibi2303))
+- OEL-3858: Updated images. [\#308](https://github.com/openeuropa/oe_showcase/pull/308) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.20.0](https://github.com/openeuropa/oe_showcase/tree/1.20.0) (2025-06-04)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.19.0...1.20.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.20.0. [\#310](https://github.com/openeuropa/oe_showcase/pull/310) ([piotrsmykaj](https://github.com/piotrsmykaj))
 - OEL-3769: Install and configure tmgmt\_ec\_etranslation [\#298](https://github.com/openeuropa/oe_showcase/pull/298) ([piotrsmykaj](https://github.com/piotrsmykaj))
 - OEL-3865: Added remote\_stream\_wrapper module. [\#307](https://github.com/openeuropa/oe_showcase/pull/307) ([tibi2303](https://github.com/tibi2303))
 
