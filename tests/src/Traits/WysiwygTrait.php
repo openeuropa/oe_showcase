@@ -42,7 +42,7 @@ trait WysiwygTrait {
    */
   protected function pressWysiwygButton($field, $button): void {
     $wysiwyg = $this->getWysiwyg($field);
-    $button_elements = $this->getSession()->getDriver()->find($wysiwyg->getXpath() . '//a[@title="' . $button . '"]');
+    $button_elements = $this->getSession()->getDriver()->find($wysiwyg->getXpath() . '//button[@data-cke-tooltip-text="' . $button . '"]');
     if (empty($button_elements)) {
       throw new \Exception("Could not find the '$button' button.");
     }
@@ -97,8 +97,9 @@ trait WysiwygTrait {
     if (count($label_elements) > 1) {
       throw new \Exception("Multiple '$field' labels found in the page.");
     }
-    $wysiwyg_id = 'cke_' . $label_elements[0]->getAttribute('for');
-    $wysiwyg_elements = $driver->find('//div[@id="' . $wysiwyg_id . '"]');
+    $for_attribute = $label_elements[0]->getAttribute('for');
+    $wysiwyg_elements = $driver->find('//textarea[@id="' . $for_attribute . '"]/following-sibling::div[contains(@class, "ck-editor")]');
+
     if (empty($wysiwyg_elements)) {
       throw new \Exception("Could not find the '$field' wysiwyg editor.");
     }

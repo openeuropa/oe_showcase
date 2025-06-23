@@ -9,8 +9,8 @@ dependencies:
     - field.field.paragraph.oe_list_item_block.field_oe_title
     - paragraphs.paragraphs_type.oe_list_item_block
   module:
-    - link
     - color_scheme_field
+    - link
     - paragraphs
 id: paragraph.oe_list_item_block.default
 targetEntityType: paragraph

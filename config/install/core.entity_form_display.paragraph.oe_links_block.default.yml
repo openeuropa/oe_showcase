@@ -9,8 +9,8 @@ dependencies:
     - field.field.paragraph.oe_links_block.oe_w_links_block_orientation
     - paragraphs.paragraphs_type.oe_links_block
   module:
-    - link
     - color_scheme_field
+    - link
 id: paragraph.oe_links_block.default
 targetEntityType: paragraph
 bundle: oe_links_block

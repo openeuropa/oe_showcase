@@ -4,7 +4,7 @@ description: Provides a demo page content type.
 core_version_requirement: ^10
 package: OpenEuropa Showcase
 dependencies:
-  - drupal:ckeditor
+  - drupal:ckeditor5
   - drupal:editor
   - drupal:json_field
   - drupal:menu_ui

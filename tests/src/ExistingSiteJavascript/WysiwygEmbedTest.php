@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 
-use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
+use Drupal\Tests\ckeditor5\Traits\CKEditor5TestTrait;
 use Drupal\Tests\oe_bootstrap_theme\PatternAssertion\FilePatternAssert;
 use Drupal\Tests\oe_showcase\Traits\EntityBrowserTrait;
 use Drupal\Tests\oe_showcase\Traits\MediaCreationTrait;
@@ -16,7 +16,7 @@ use Drupal\Tests\oe_showcase\Traits\TraversingTrait;
  */
 class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
 
-  use CKEditorTestTrait;
+  use CKEditor5TestTrait;
   use EntityBrowserTrait;
   use MediaCreationTrait;
   use TraversingTrait;
@@ -38,13 +38,12 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->drupalGet('/node/add/oe_sc_news');
     $this->getSession()->getPage()->fillField('Title', 'Test embed');
-    $this->assignNameToCkeditorIframe();
     $this->waitForEditor();
 
     // This presses the button inside the CKEditor.
-    $this->getSession()->getPage()->pressButton('Embed media');
+    $this->pressEditorButton('Embed media');
     $assert_session = $this->assertSession();
-    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->waitForElement('css', 'iframe#entity_browser_iframe_embed_media');
     // Switch to the iframe that contains the embed views.
     $this->getSession()->switchToIFrame('entity_browser_iframe_embed_media');
 
@@ -90,18 +89,18 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->buttonExists('Select media')->press();
 
     $this->getSession()->switchToIFrame();
-    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->waitForElement('css', 'div.oe-oembed-entities-select-dialog');
+
     // Only one bundle is configured for embed.
     $assert_session->fieldNotExists('Display as');
-    $modal_button_pane = $assert_session->elementExists('css', 'div.ui-dialog-buttonpane');
+    // There are two embed dialogs, the second was the embed button.
+    $assert_session->waitForElementVisible('css', 'form.oe-oembed-entity-dialog-step--embed');
+    $modal_button_pane = $assert_session->elementExists('css', 'div.ui-dialog-buttonset');
     $modal_button_pane->findButton('Embed')->press();
-    $assert_session->assertWaitOnAjaxRequest();
 
     // Check that the element has been inserted in the editor.
-    $this->getSession()->switchToIFrame('ckeditor');
     $assert_session->linkExists('Document title');
 
-    $this->getSession()->switchToIFrame();
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Test embed');
 
@@ -124,14 +123,13 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->drupalGet($this->getNodeByTitle('Test embed')->toUrl('edit-form'));
     $this->waitForEditor();
-    $this->assignNameToCkeditorIframe();
-
     // Embed the remaining media.
     $this->embedMediaInWysiwyg('Image title');
     $this->embedMediaInWysiwyg('Euro with miniature figurines');
     $this->embedMediaInWysiwyg('Economic and Financial Affairs Council - Arrivals');
     $this->embedMediaInWysiwyg("Energy, let's save it!");
     $assert_session->buttonExists('Save')->press();
+
     $assert_session->pageTextContains('Test embed');
 
     // Extract the real file name of the image.
@@ -155,25 +153,32 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
   protected function embedMediaInWysiwyg(string $label): void {
     $this->scrollIntoView('.field--name-body');
     $this->moveCkeditorCursorToEnd();
-    $this->getSession()->getPage()->pressButton('Embed media');
-    $assert_session = $this->assertSession();
-    $assert_session->assertWaitOnAjaxRequest();
+    $get_embedded_titles = fn () => array_map(
+      fn ($node) => trim($node->getText()),
+      $this->getSession()->getPage()->findAll('css', '.ck-oe-oembed'),
+    );
+    $embedded_titles_before = $get_embedded_titles();
 
+    $this->pressEditorButton('Embed media');
+    $assert_session = $this->assertSession();
+    $assert_session->waitForElement('css', 'iframe#entity_browser_iframe_embed_media');
     // Switch to the iframe that contains the embed views.
     $this->getSession()->switchToIFrame('entity_browser_iframe_embed_media');
+
     $this->getMediaBrowserTileByMediaName($label)->click();
     $assert_session->buttonExists('Select media')->press();
 
     $this->getSession()->switchToIFrame();
-    $assert_session->assertWaitOnAjaxRequest();
-    $modal_button_pane = $assert_session->elementExists('css', 'div.ui-dialog-buttonpane');
-    $modal_button_pane->findButton('Embed')->press();
-    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->waitForElement('css', 'div.oe-oembed-entities-select-dialog');
 
-    $this->getSession()->switchToIFrame('ckeditor');
+    // There are two embed dialogs, the second was the embed button.
+    $assert_session->waitForElementVisible('css', 'form.oe-oembed-entity-dialog-step--embed');
     $assert_session->linkExists($label);
-
-    $this->getSession()->switchToIFrame();
+    $modal_button_pane = $assert_session->elementExists('css', 'div.ui-dialog-buttonset');
+    $modal_button_pane->findButton('Embed')->press();
+    $this->getSession()->getPage()->waitFor(10, fn(): bool => count($get_embedded_titles()) === count($embedded_titles_before) + 1);
+    // The new media was inserted, and old media was not removed.
+    $this->assertSame([...$embedded_titles_before, $label], $get_embedded_titles(), $label);
   }
 
   /**
@@ -183,15 +188,19 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
    *   (optional) The CKEditor instance ID. Defaults to 'edit-body-0-value'.
    */
   protected function moveCkeditorCursorToEnd(string $instance_id = 'edit-body-0-value'): void {
-    $javascript = <<<JS
-(function(){
-  var editor = CKEDITOR.instances['{$instance_id}'];
-  var range = editor.createRange();
-  range.moveToElementEditablePosition(range.root, true);
-  editor.getSelection().selectRanges([range]);
-})()
-JS;
-    $this->getSession()->evaluateScript($javascript);
+    $js = <<<JS
+    (function() {
+      const editor = document.querySelector('textarea#{$instance_id} ~ .ck-editor .ck-content').ckeditorInstance;
+      editor.model.change(writer => {
+        const root = editor.model.document.getRoot();
+        // Insert a paragraph, to make sure we don't replace the existing embed.
+        writer.insertElement('paragraph', writer.createPositionAt(root, 'end'));
+        writer.setSelection(writer.createPositionAt(root, 'end'));
+      });
+    })();
+    JS;
+
+    $this->getSession()->evaluateScript($js);
   }
 
 }
