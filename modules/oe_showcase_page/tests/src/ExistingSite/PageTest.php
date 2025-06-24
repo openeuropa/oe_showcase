@@ -76,7 +76,7 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         'Add Power BI',
         'Add Quote',
         'Add Rich text',
-        'Add Social feed',
+        'Add Social feed - Deprecated',
         'Add Social media follow',
         'Add Text with Featured media',
         'Add Timeline',

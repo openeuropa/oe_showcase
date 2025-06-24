@@ -1259,3 +1259,30 @@ function oe_showcase_post_update_00051(): void {
   // Disable CKEditor 4, now that none of the editors depend on it anymore.
   \Drupal::service('module_installer')->uninstall(['ckeditor']);
 }
+
+/**
+ * Delete deprecated webtools_social_feed media type.
+ */
+function oe_showcase_post_update_00052(array &$sandbox) {
+  // Delete all media entities of bundle 'webtools_social_feed'.
+  $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+  $medias = $media_storage->loadByProperties([
+    'bundle' => 'webtools_social_feed',
+  ]);
+  if (!empty($medias)) {
+    $media_storage->delete($medias);
+    \Drupal::logger('oe_showcase')->notice('Deleted @count webtools_social_feed media items.', [
+      '@count' => count($medias),
+    ]);
+  }
+
+  // Remove the media bundle configuration.
+  $config_name = 'media.type.webtools_social_feed';
+  $config = \Drupal::configFactory()->getEditable($config_name);
+  if (!$config->isNew()) {
+    $config->delete();
+    \Drupal::logger('oe_showcase')->notice('Removed media bundle configuration @bundle.', [
+      '@bundle' => 'webtools_social_feed',
+    ]);
+  }
+}

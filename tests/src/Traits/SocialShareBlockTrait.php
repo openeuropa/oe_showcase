@@ -27,6 +27,7 @@ trait SocialShareBlockTrait {
         'email',
         'more',
       ],
+      "display" => 'button',
       'stats' => TRUE,
       'selection' => TRUE,
     ];

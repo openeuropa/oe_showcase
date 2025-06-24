@@ -69,10 +69,9 @@
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-dev": "^10",
         "drupal/datetime_testing": "^1.0@beta",
-        "drush/drush": "^12.4",
+        "drush/drush": "^12",
         "openeuropa/code-review-drupal": "^1.0.0-alpha",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
-        "phpspec/prophecy-phpunit": "^1 || ^2",
         "weitzman/drupal-test-traits": "^2.1"
     },
     "scripts": {
