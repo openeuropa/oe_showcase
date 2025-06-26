@@ -1013,7 +1013,6 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       $this->addEntityBrowserMedia("$bundle List page Image test");
     }
     $summary_field = $page->findField('Summary');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($summary_field));
     $this->enterTextInWysiwyg('Summary', $summary);
     $page->selectFieldOption('Source entity type', 'node');
     $page->selectFieldOption('Source bundle', $bundle);

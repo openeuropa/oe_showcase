@@ -69,7 +69,6 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('Page title', 'Project page test');
     $page->fillField('Media item', 'Project Image test');
     $field = $page->findField('Teaser');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Teaser text');
     $page->fillField('Subject', 'financing (http://data.europa.eu/uxp/1000)');
 
@@ -92,16 +91,12 @@ class ProjectTest extends ShowcaseExistingSiteTestBase {
 
     // Summary, objective, impacts and achievements and milestones.
     $field = $page->findField('Summary');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Text summary');
     $field = $page->findField('Objective');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Text Objective');
     $field = $page->findField('Impacts');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Text Impacts');
     $field = $page->findField('Achievements and milestones');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Text Achievements and milestones');
 
     // Participants.

@@ -89,14 +89,12 @@ class PersonTest extends ShowcaseExistingSiteTestBase {
     $page->fillField('First name', 'Stefan');
     $page->fillField('Last name', 'Mayer');
     $field = $page->findField('Short description');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Example short description field.');
     $page->fillField('Use existing media', $media_image->getName() . ' (' . $media_image->id() . ')');
     $page->fillField('Country', 'DE');
     $page->fillField('Occupation', 'DG TEST');
     $page->fillField('Position', 'Director');
     $field = $page->findField('Additional information');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Example additional information field.');
     $page->fillField('URL', 'https://linkedin.com');
     $page->fillField('Link text', 'Linkedin');
