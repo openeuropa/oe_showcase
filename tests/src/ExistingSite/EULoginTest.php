@@ -81,7 +81,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Login!');
 
     // Redirected back to Drupal and user is blocked.
-    $assert->pageTextContains('Your account is blocked or has not been activated. Please contact a site administrator.');
+    $assert->pageTextContains('Thank you for applying for an account. Your account is currently pending approval by the site administrator.In the meantime, a welcome message with further instructions has been sent to your email address.');
     $assert->pageTextNotContains('You have been logged in.');
     $this->assertUserAccountNotActive('chucknorris');
     $this->assertIsHomepage();
@@ -107,6 +107,7 @@ class EULoginTest extends ShowcaseExistingSiteTestBase {
     // Logout.
     $this->drupalGet('/user/logout');
     $page->pressButton('Log out');
+    $page->pressButton('Log me out');
 
     // Redirected back to Drupal.
     $this->assertIsHomepage();
