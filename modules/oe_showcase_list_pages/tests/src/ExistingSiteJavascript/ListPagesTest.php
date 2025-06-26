@@ -541,7 +541,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_summary' => 'This is a closed Project',
       'language' => 'en',
       'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 100,
+      'oe_project_eu_budget' => 100,
       'oe_project_dates' => [
         'value' => '2020-05-10',
         'end_value' => '2020-05-15',
@@ -555,7 +555,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_summary' => 'This is a ongoing Project',
       'language' => 'en',
       'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 33,
+      'oe_project_eu_budget' => 33,
       'oe_project_dates' => [
         'value' => '2022-05-20',
         'end_value' => $date_plus_1,
@@ -569,7 +569,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
       'oe_summary' => 'This is a pending Project',
       'language' => 'en',
       'status' => NodeInterface::PUBLISHED,
-      'oe_project_budget' => 1234,
+      'oe_project_eu_budget' => 1234,
       'oe_project_dates' => [
         'value' => $date_plus_1,
         'end_value' => $date_plus_10,
