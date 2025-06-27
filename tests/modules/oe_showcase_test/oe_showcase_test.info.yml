@@ -2,7 +2,7 @@ name: OpenEuropa Showcase test module
 description: Contains functionalities needed for tests, and test dependencies.
 package: Testing
 type: module
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 
 dependencies:
   - datetime_testing:datetime_testing
