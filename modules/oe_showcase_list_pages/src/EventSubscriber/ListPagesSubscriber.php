@@ -68,8 +68,8 @@ class ListPagesSubscriber implements EventSubscriberInterface {
           'oe_project' => [
             'title__ASC' => 'A-Z',
             'title__DESC' => 'Z-A',
-            'oe_project_budget__ASC' => 'Total budget ASC',
-            'oe_project_budget__DESC' => 'Total budget DESC',
+            'oe_project_eu_budget__ASC' => 'Total budget ASC',
+            'oe_project_eu_budget__DESC' => 'Total budget DESC',
           ],
           'oe_sc_person' => [
             'title__ASC' => 'A-Z',

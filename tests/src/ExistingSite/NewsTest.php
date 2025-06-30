@@ -95,9 +95,7 @@ class NewsTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Add another item');
     $page->fillField('News types (value 3)', 'News type 3');
     $field = $page->findField('Content');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($field));
     $field->setValue('Example Content');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($page->findField('Introduction')));
     $page->fillField('Introduction', 'Example Introduction');
     // Assert that publication date was filled with a default value.
     $publication_date = $page->find('css', 'input[name="oe_publication_date[0][value][date]"]');

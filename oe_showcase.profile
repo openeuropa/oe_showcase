@@ -10,7 +10,6 @@ declare(strict_types = 1);
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
-use Drupal\oe_showcase\AllowedFormats;
 use Drupal\views\Entity\View;
 
 /**
@@ -189,65 +188,4 @@ function oe_showcase_field_widget_single_element_entity_browser_entity_reference
  */
 function oe_showcase_form_entity_browser_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'oe_showcase/entity_browser.form';
-}
-
-/**
- * Implements hook_field_widget_single_element_form_alter().
- *
- * Forces the correct text format for fields where more than one format is
- * allowed.
- */
-function oe_showcase_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
-  /** @var \Drupal\Core\Field\FieldItemListInterface $items */
-  $items = $context['items'];
-  $field_definition = $items->getFieldDefinition();
-  // Apply the code only on supported field types.
-  // @see allowed_formats_field_widget_form_alter()
-  if (!in_array($field_definition->getType(), _allowed_formats_field_types())) {
-    return;
-  }
-
-  // List of field "identifiers" and the expected text format.
-  // An identifier is built with entity type ID, bundle ID and field name.
-  $fields = [
-    'paragraph.oe_accordion_item.field_oe_text_long' => 'rich_text',
-    'paragraph.oe_list_item.field_oe_text_long' => 'simple_rich_text',
-    'paragraph.oe_rich_text.field_oe_text_long' => 'rich_text',
-    'paragraph.oe_text_feature_media.field_oe_text_long' => 'rich_text',
-    'paragraph.oe_timeline.field_oe_text_long' => 'simple_rich_text',
-  ];
-
-  $identifier = implode('.', [
-    $field_definition->getTargetEntityTypeId(),
-    $field_definition->getTargetBundle(),
-    $field_definition->getName(),
-  ]);
-
-  // Bail out if the current field is not in the list. This condition should
-  // never be true as we have a test that checks which fields have more than
-  // one allowed format.
-  if (!isset($fields[$identifier])) {
-    return;
-  }
-
-  $expected_format = $fields[$identifier];
-  \Drupal::classResolver(AllowedFormats::class)->textFormatAlter($element, $context, $expected_format);
-}
-
-/**
- * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
- */
-function oe_showcase_field_widget_single_element_timeline_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
-  $body = &$element['body'];
-  \Drupal::classResolver(AllowedFormats::class)->textFormatAlter($body, $context, 'simple_rich_text');
-}
-/**
- * Implements hook_element_info_alter().
- *
- * Add a custom process method to the TextFormat form element.
- */
-function oe_showcase_element_info_alter(array &$types) {
-  if (isset($types['text_format'])) {
-    $types['text_format']['#process'][] = [AllowedFormats::class, 'alterTextFormatHelp'];
-  }
 }

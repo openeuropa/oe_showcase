@@ -14,24 +14,6 @@ trait WysiwygTrait {
   use TraversingTrait;
 
   /**
-   * Gets a WYSIWYG fields filter format.
-   *
-   * @param \Behat\Mink\Element\NodeElement $field
-   *   The field to check.
-   *
-   * @return string|null
-   *   The filter format if found.
-   */
-  protected function getWysiwigTextFormat(NodeElement $field): ?string {
-    $wrapper = $field->getParent()->getParent()->getParent();
-    $this->assertNotNull($wrapper);
-    $link = $wrapper->find('css', 'a.filter-help-item');
-    $this->assertNotNull($link);
-
-    return $link->getAttribute('data-filter-format');
-  }
-
-  /**
    * Presses the given WYSIWYG button.
    *
    * @param string $field

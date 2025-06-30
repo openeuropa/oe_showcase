@@ -79,13 +79,11 @@ class NewsTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert that editors have access to the Simple/Rich text formats.
     $assert_session->pageTextNotContains('This field has been disabled because you do not have sufficient permissions to edit it.');
     $introduction = $page->findField('Introduction');
-    $this->assertEquals('simple_rich_text', $this->getWysiwigTextFormat($introduction));
     $text = '<p>Example Introduction with <strong>Strong</strong>, <em>Emphasised</em> and <a href="/">Link</a> text.</p>
     <ol><li>1</li> <li>2</li> <li>3</li></ol> <ul><li>4</li> <li>6</li> <li>5</li></ul> <blockquote>Lorem ipsum, famous last words</blockquote>';
     $this->enterTextInWysiwyg('Introduction', $text);
     $page->fillField('Title', 'Example title');
     $content = $page->findField('Content');
-    $this->assertEquals('rich_text', $this->getWysiwigTextFormat($content));
     $this->enterTextInWysiwyg('Content', 'Example Content');
     // Assert that publication date was filled with a default value.
     $publication_date = $page->find('css', 'input[name="oe_publication_date[0][value][date]"]');

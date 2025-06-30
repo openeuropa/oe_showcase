@@ -32,3 +32,15 @@ function oe_showcase_list_pages_post_update_00002(): void {
     'facets.facet.oelp_oe_sc_news__type'
   );
 }
+
+/**
+ * Restore oe_list_pages_index search_api index.
+ */
+function oe_showcase_list_pages_post_update_00003(&$sandbox): void {
+  ConfigImporter::importSingle(
+    'module',
+    'oe_showcase_list_pages',
+    '/config/post_updates/00003_search_api',
+    'search_api.index.oe_list_pages_index'
+  );
+}
