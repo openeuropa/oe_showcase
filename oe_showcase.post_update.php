@@ -1286,3 +1286,10 @@ function oe_showcase_post_update_00052(array &$sandbox) {
     ]);
   }
 }
+
+/**
+ * Uninstall remote_stream_wrapper.
+ */
+function oe_showcase_post_update_00053(): void {
+  \Drupal::service('module_installer')->uninstall(['remote_stream_wrapper']);
+}
