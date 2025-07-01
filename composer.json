@@ -37,7 +37,6 @@
         "drupal/purge_users": "^4.0",
         "drupal/pwbi": "^2.0",
         "drupal/redirect": "^1.11",
-        "drupal/remote_stream_wrapper": "^2.1",
         "drupal/search_api": "^1.38",
         "drupal/search_api_autocomplete": "^1.10",
         "drupal/slim_select": "^1.0@beta",
