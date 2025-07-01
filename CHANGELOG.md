@@ -1,11 +1,24 @@
 # Change Log
 
+## [1.22.0](https://github.com/openeuropa/oe_showcase/tree/1.22.0) (2025-07-01)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.1.202506301139...1.22.0)
+
+**Merged pull requests:**
+
+- EWPP-4664: Uninstall the remote\_stream\_wrapper module. [\#320](https://github.com/openeuropa/oe_showcase/pull/320) ([peterserfozo](https://github.com/peterserfozo))
+- EWPP-4664: Prerequisites of Drupal 11.1 [\#318](https://github.com/openeuropa/oe_showcase/pull/318) ([drishu](https://github.com/drishu))
+- OEL-3909: \[oe\_whitelabel\] Error on phpunit tests [\#316](https://github.com/openeuropa/oe_showcase/pull/316) ([enriquelacoma](https://github.com/enriquelacoma))
+- OEL-3911: Update oe\_webtools, oe\_media and oe\_paragraphs [\#314](https://github.com/openeuropa/oe_showcase/pull/314) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-3872: \[oe\_showcase\] Update MySQL Percona 5.7 -\> 8.0 [\#311](https://github.com/openeuropa/oe_showcase/pull/311) ([enriquelacoma](https://github.com/enriquelacoma))
+
 ## [1.21.0](https://github.com/openeuropa/oe_showcase/tree/1.21.0) (2025-06-23)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.20.0...1.21.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.21.0. [\#317](https://github.com/openeuropa/oe_showcase/pull/317) ([tibi2303](https://github.com/tibi2303))
 - OEL-3912: Replace Seven with Claro. [\#315](https://github.com/openeuropa/oe_showcase/pull/315) ([drishu](https://github.com/drishu))
 - OEL-3433: Move to ckeditor 5. [\#312](https://github.com/openeuropa/oe_showcase/pull/312) ([drishu](https://github.com/drishu))
 - OEL-3740: Removed roleassign module. [\#309](https://github.com/openeuropa/oe_showcase/pull/309) ([tibi2303](https://github.com/tibi2303))
