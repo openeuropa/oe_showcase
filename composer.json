@@ -49,6 +49,7 @@
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
         "openeuropa/oe_authentication": "^1.17",
+        "openeuropa/oe_bootstrap_theme": "0.3910.202507021100 as 1.23.0",
         "openeuropa/oe_contact_forms": "^1.20",
         "openeuropa/oe_content": "^4.8",
         "openeuropa/oe_content_extra": "^1.4",
