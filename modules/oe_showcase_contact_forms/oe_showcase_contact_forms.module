@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\symfony_mailer\Address;
 use Drupal\symfony_mailer\EmailInterface;
 
@@ -29,4 +31,17 @@ function oe_showcase_contact_forms_mailer_contact_build(EmailInterface $email) {
     $addresses[] = new Address(trim($address->getEmail()), $address->getDisplayName(), $address->getLangcode(), $address->getAccount());
   }
   $email->setTo($addresses);
+}
+
+/**
+ * Implements hook_block_build_BASE_BLOCK_ID_alter().
+ *
+ * Disables caching for 'contact_form' paragraphs to prevent the form
+ * from being cached with stale state. This ensures the form submits
+ * correctly under Drupal 11's stricter render caching.
+ */
+function oe_showcase_contact_forms_block_build_oe_contact_forms_corporate_block_alter(array &$build, BlockPluginInterface $block): void {
+  $cache_metadata = new CacheableMetadata();
+  $cache_metadata->setCacheMaxAge(0);
+  $cache_metadata->applyTo($build);
 }
