@@ -1,11 +1,20 @@
 # Change Log
 
+## [1.23.0](https://github.com/openeuropa/oe_showcase/tree/1.23.0) (2025-07-04)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.22.0...1.23.0)
+
+**Merged pull requests:**
+
+- OEL-3817: \[oe\_whitelabel\] Preserve the query parameters when submitting the SearchForm [\#304](https://github.com/openeuropa/oe_showcase/pull/304) ([enriquelacoma](https://github.com/enriquelacoma))
+
 ## [1.22.0](https://github.com/openeuropa/oe_showcase/tree/1.22.0) (2025-07-01)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.1.202506301139...1.22.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.22.0. [\#322](https://github.com/openeuropa/oe_showcase/pull/322) ([tibi2303](https://github.com/tibi2303))
 - EWPP-4664: Uninstall the remote\_stream\_wrapper module. [\#320](https://github.com/openeuropa/oe_showcase/pull/320) ([peterserfozo](https://github.com/peterserfozo))
 - EWPP-4664: Prerequisites of Drupal 11.1 [\#318](https://github.com/openeuropa/oe_showcase/pull/318) ([drishu](https://github.com/drishu))
 - OEL-3909: \[oe\_whitelabel\] Error on phpunit tests [\#316](https://github.com/openeuropa/oe_showcase/pull/316) ([enriquelacoma](https://github.com/enriquelacoma))
