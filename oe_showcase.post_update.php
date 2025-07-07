@@ -1293,3 +1293,15 @@ function oe_showcase_post_update_00052(array &$sandbox) {
 function oe_showcase_post_update_00053(): void {
   \Drupal::service('module_installer')->uninstall(['remote_stream_wrapper']);
 }
+
+/**
+ * Apply the new date format changes introduced in Drupal 11.
+ */
+function oe_showcase_post_update_00054(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00051_date_format', [
+    'core.date_format.fallback',
+    'core.date_format.long',
+    'core.date_format.medium',
+    'core.date_format.short',
+  ]);
+}

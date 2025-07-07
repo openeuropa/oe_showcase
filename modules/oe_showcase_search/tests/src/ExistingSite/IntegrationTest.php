@@ -124,7 +124,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSearchResultsTitle(1);
     $this->assertActiveFilterBadges([
       'Category 2',
-      'After Sun, 08/01/2021 - 00:00',
+      'After Sun, 1 Aug 2021 - 00:00',
     ]);
     $this->assertSearchResults(['Imputo Neo Sagaciter']);
     $this->assertNoPager();

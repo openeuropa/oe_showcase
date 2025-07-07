@@ -91,3 +91,19 @@ function oe_showcase_search_post_update_00004(): void {
 function oe_showcase_search_post_update_00005(): void {
   ConfigImporter::importSingle('module', 'oe_showcase_search', '/config/post_updates/00005', 'core.date_format.oe_showcase_search_demo_date');
 }
+
+/**
+ * Recreate showcase_search related configuration.
+ */
+function oe_showcase_search_post_update_00006(): void {
+  ConfigImporter::importMultiple(
+    'module',
+    'oe_showcase_search',
+    '/config/post_updates/00006',
+    [
+      'facets.facet_source.search_api__views_page__showcase_search__showcase_search_page',
+      'search_api.index.showcase_search_index',
+      'views.view.showcase_search',
+    ]
+  );
+}
