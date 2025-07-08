@@ -24,7 +24,7 @@ trait SlimSelectTrait {
   protected function selectSlimOption(NodeElement $field, string $option, bool $multiple = FALSE): void {
     $slim_select_main = $field->getParent()->find('css', 'div.ss-main');
     $element_id = $field->find('css', '.form-select')->getAttribute('data-id');
-    $slim_select_content = $field->getParent()->getParent()->getParent()->find('css', 'div.ss-content[data-id="' . $element_id . '"]');
+    $slim_select_content = $field->getParent()->getParent()->getParent()->find('css', '#' . $element_id . '-content');
     if (!$multiple) {
       // Elements with no size are not interactable and can't be clicked, so we
       // need to modify delete divs inside the select and make them use space.
