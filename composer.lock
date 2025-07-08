@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf9a812c17055365fb861e87397becc8",
+    "content-hash": "506500d7daaea0f451eaa7c23049525a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6955,16 +6955,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202507071800",
+            "version": "0.3428.202507081640",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "416a7c31cb84798753b20b6b995f04a2f7973a30"
+                "reference": "ff5985a70bdb9a16be0f04967da2b15cfd7a44c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/416a7c31cb84798753b20b6b995f04a2f7973a30",
-                "reference": "416a7c31cb84798753b20b6b995f04a2f7973a30",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/ff5985a70bdb9a16be0f04967da2b15cfd7a44c4",
+                "reference": "ff5985a70bdb9a16be0f04967da2b15cfd7a44c4",
                 "shasum": ""
             },
             "require": {
@@ -7027,9 +7027,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202507071800"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3428.202507081640"
             },
-            "time": "2025-07-07T15:20:44+00:00"
+            "time": "2025-07-08T12:41:42+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8228,16 +8228,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202507081100",
+            "version": "0.3428.202507081750",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "f1720f31a21ef428f91394b0083b3de8a4bc93cf"
+                "reference": "4949274d4062d5e249fee95be01c80a79117be48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/f1720f31a21ef428f91394b0083b3de8a4bc93cf",
-                "reference": "f1720f31a21ef428f91394b0083b3de8a4bc93cf",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/4949274d4062d5e249fee95be01c80a79117be48",
+                "reference": "4949274d4062d5e249fee95be01c80a79117be48",
                 "shasum": ""
             },
             "require": {
@@ -8246,7 +8246,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.1.202507071800 as 1.23.0",
+                "openeuropa/oe_bootstrap_theme": "0.3428.202507081640 as 1.24.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8329,9 +8329,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202507081100"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3428.202507081750"
             },
-            "time": "2025-07-08T07:41:54+00:00"
+            "time": "2025-07-08T14:41:31+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20037,9 +20037,9 @@
     "aliases": [
         {
             "package": "openeuropa/oe_whitelabel",
-            "version": "0.1.202507081100.0",
-            "alias": "1.20.0",
-            "alias_normalized": "1.20.0.0"
+            "version": "0.3428.202507081750.0",
+            "alias": "1.21.0",
+            "alias_normalized": "1.21.0.0"
         }
     ],
     "minimum-stability": "dev",
