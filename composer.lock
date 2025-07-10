@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf9a812c17055365fb861e87397becc8",
+    "content-hash": "26bba60aad5ad6f01cda162f743cd8c2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6955,16 +6955,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.1.202507071800",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "416a7c31cb84798753b20b6b995f04a2f7973a30"
+                "reference": "88c287553526495b9e37d0521258d36e54958f2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/416a7c31cb84798753b20b6b995f04a2f7973a30",
-                "reference": "416a7c31cb84798753b20b6b995f04a2f7973a30",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/88c287553526495b9e37d0521258d36e54958f2a",
+                "reference": "88c287553526495b9e37d0521258d36e54958f2a",
                 "shasum": ""
             },
             "require": {
@@ -7027,9 +7027,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.1.202507071800"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.25.0"
             },
-            "time": "2025-07-07T15:20:44+00:00"
+            "time": "2025-07-10T13:20:26+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8228,16 +8228,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202507081100",
+            "version": "1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "f1720f31a21ef428f91394b0083b3de8a4bc93cf"
+                "reference": "2cf2c74b80ba95dd615d9402ab74a76129b0af7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/f1720f31a21ef428f91394b0083b3de8a4bc93cf",
-                "reference": "f1720f31a21ef428f91394b0083b3de8a4bc93cf",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/2cf2c74b80ba95dd615d9402ab74a76129b0af7e",
+                "reference": "2cf2c74b80ba95dd615d9402ab74a76129b0af7e",
                 "shasum": ""
             },
             "require": {
@@ -8246,7 +8246,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.1.202507071800 as 1.23.0",
+                "openeuropa/oe_bootstrap_theme": "^1.25.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8329,9 +8329,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202507081100"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.22.0"
             },
-            "time": "2025-07-08T07:41:54+00:00"
+            "time": "2025-07-10T15:01:06+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20034,14 +20034,7 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "openeuropa/oe_whitelabel",
-            "version": "0.1.202507081100.0",
-            "alias": "1.20.0",
-            "alias_normalized": "1.20.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
