@@ -56,4 +56,22 @@ class ManageSiteSpecificFooterTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('https://twitter.com');
   }
 
+  /**
+   * Test ec_core_column is removed.
+   */
+  public function testNoEcCoreColumn(): void {
+
+    $this->drupalGet('');
+    $assert = $this->assertSession();
+    $assert->elementTextNotContains('css', 'footer', 'EC Core column');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/about_en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/about/contact_en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/priorities-2024-2029_en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/topics_en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/funding-tenders_en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/get-involved/jobs-european-commission_en');
+    $assert->linkByHrefNotExists('https://ec.europa.eu/commission/presscorner/home/en');
+    $assert->linkByHrefNotExists('https://commission.europa.eu/get-involved/events_en');
+  }
+
 }
