@@ -64,6 +64,9 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
     // Subscribe with a registered user.
     $authenticated_user = $this->createUser();
+    $authenticated_user->passRaw = 'testpass';
+    $authenticated_user->setPassword($authenticated_user->passRaw);
+    $authenticated_user->save();
     $this->drupalLogin($authenticated_user);
     $this->drupalGet($event->toUrl());
     $assert_session = $this->assertSession();
@@ -140,7 +143,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward one day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    $this->waitUntilMailsAreStable(1);
+    $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 2 has been updated.'], [
       [
         'url' => $localized_base_url . '/events/event-update-2',
@@ -173,7 +176,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward one day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    $this->waitUntilMailsAreStable(1);
+    $this->waitUntilMailsAreCollected(1);
     $this->assertMail($authenticated_user->getEmail(), ['The event Event update 3 has been updated.'], [
       [
         'url' => $localized_base_url . '/events/event-update-3',
@@ -184,7 +187,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward a week.
     \Drupal::time()->setTime(strtotime('+1 week +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    $this->waitUntilMailsAreStable(1);
+    $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 3 has been updated.'], [
       [
@@ -223,7 +226,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward another day.
     \Drupal::time()->setTime(strtotime('+1 day +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    $this->waitUntilMailsAreStable(1);
+    $this->waitUntilMailsAreCollected(1);
     // The mail should contain information about the updates of both nodes.
     $this->assertMail(
       $authenticated_user->getEmail(),
@@ -245,7 +248,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     // Move the time forward another week.
     \Drupal::time()->setTime(strtotime('+1 week +1 hour', \Drupal::time()->getCurrentTime()));
     $this->cronRun();
-    $this->waitUntilMailsAreStable(1);
+    $this->waitUntilMailsAreCollected(1);
     // The anonymous user weekly digest mail should have been sent.
     $this->assertMail('test_anon@example.com', ['The event Event update 4 has been updated.'], [
       [
@@ -330,39 +333,24 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
-   * Waits until the expected number of mails are collected and stable.
+   * Waits for mails to be collected.
    *
-   * @param int $expected_min_count
-   *   Minimum number of mails to wait for.
-   * @param int $timeout
-   *   Timeout in seconds (default: 20).
+   * Mails are collected as soon as they are sent, but we want to make sure that
+   * the test didn't move forward before all the mails have been collected.
+   *
+   * @param int $count
+   *   The number of mails to collect.
    */
-  protected function waitUntilMailsAreStable(int $expected_min_count = 1, int $timeout = 20): void {
+  protected function waitUntilMailsAreCollected(int $count): void {
     $state = \Drupal::state();
-    $start = microtime(TRUE);
-    $last_count = 0;
-    $stable_repeats = 0;
-
-    while (microtime(TRUE) - $start < $timeout) {
+    // We don't need the page at all, but we reuse the wait code.
+    $mail_count = 0;
+    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state, &$mail_count) {
       $state->resetCache();
-      $current = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
-
-      if ($current >= $expected_min_count) {
-        if ($current === $last_count) {
-          if (++$stable_repeats >= 3) {
-            return;
-          }
-        }
-        else {
-          $stable_repeats = 0;
-          $last_count = $current;
-        }
-      }
-
-      usleep(100_000);
-    }
-
-    $this->fail(sprintf('Expected at least %d mails, but only %d collected after %d seconds.', $expected_min_count, $last_count, $timeout));
+      $mail_count = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
+      return $mail_count === $count;
+    });
+    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, $mail_count));
   }
 
 }
