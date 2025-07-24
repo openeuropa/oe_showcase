@@ -72,7 +72,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->statusMessageContains('You are now subscribed to this item.');
 
     // Subscribe also with an anonymous user.
-    $this->drupalLogout();
+    $this->safeLogout();
     $this->drupalGet($event->toUrl());
     $action_bar->clickLink('Subscribe');
     $assert_session->fieldExists('Your e-mail')->setValue('test_anon@example.com');
@@ -126,7 +126,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 2');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 2 has been updated.');
-    $this->drupalLogout();
+    $this->safeLogout();
 
     // Only one email is expected, to the anonymous user who didn't opt for a
     // digest.
@@ -167,7 +167,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 3');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 3 has been updated.');
-    $this->drupalLogout();
+    $this->safeLogout();
     $this->noMail();
 
     // Move the time forward one day.
@@ -215,7 +215,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->fieldExists('Title')->setValue('Event update 4');
     $assert_session->buttonExists('Save')->press();
     $assert_session->pageTextContains('Event Event update 4 has been updated.');
-    $this->drupalLogout();
+    $this->safeLogout();
 
     // No mail should have been sent, as both the users have enabled the digest.
     $this->noMail();
@@ -351,6 +351,20 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
   }
 
   /**
+   * Safe logout that doesn't fail if user is already logged out.
+   */
+  private function safeLogout(): void {
+    try {
+      if ($this->loggedInUser) {
+        $this->drupalLogout();
+      }
+    }
+    catch (\Exception $e) {
+      $this->loggedInUser = NULL;
+    }
+  }
+
+  /**
    * Performs login with retry mechanism to handle race conditions.
    *
    * @param mixed $user
@@ -360,6 +374,8 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    */
   private function loginWithRetry($user, int $max_attempts = 3): void {
     $attempts = 0;
+    $last_exception = NULL;
+
     do {
       $attempts++;
       try {
@@ -367,13 +383,28 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
         return;
       }
       catch (\Exception $e) {
+        $last_exception = $e;
+
         if ($attempts >= $max_attempts) {
           throw $e;
         }
+
+        // Brief delay before retry with progressive backoff.
         usleep(200000 * $attempts);
-        $this->drupalLogout();
+
+        // Reset session state without using drupalLogout().
+        $this->loggedInUser = NULL;
+
+        // Clear any session cookies.
+        $session = $this->getSession();
+        if ($session->isStarted()) {
+          $session->restart();
+        }
       }
     } while ($attempts < $max_attempts);
+
+    // This should never be reached, but just in case.
+    throw $last_exception;
   }
 
 }
