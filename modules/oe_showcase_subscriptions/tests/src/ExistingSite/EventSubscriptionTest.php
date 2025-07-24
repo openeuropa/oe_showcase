@@ -64,7 +64,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
     // Subscribe with a registered user.
     $authenticated_user = $this->createUser();
-    $this->drupalLogin($authenticated_user);
+    $this->loginWithRetry($authenticated_user);
     $this->drupalGet($event->toUrl());
     $assert_session = $this->assertSession();
     $action_bar = $assert_session->elementExists('css', '.bcl-content-banner .action-bar');
@@ -89,7 +89,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
     // Update the event.
     $editor = $this->createUserWithRoles(['editor']);
-    $this->drupalLogin($editor);
+    $this->loginWithRetry($editor);
     $this->drupalGet($event->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Event update 1');
     $assert_session->buttonExists('Save')->press();
@@ -113,7 +113,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     ]);
 
     // Opt-in for receiving digest e-mails every day.
-    $this->drupalLogin($authenticated_user);
+    $this->loginWithRetry($authenticated_user);
     $this->drupalGet($authenticated_user->toUrl());
     $this->getSession()->getPage()->clickLink('Subscriptions');
     $assert_session->selectExists('Notifications frequency')->selectOption('Daily');
@@ -121,7 +121,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->statusMessageContains('Your preferences have been saved.');
 
     // Make a new change to the event.
-    $this->drupalLogin($editor);
+    $this->loginWithRetry($editor);
     $this->drupalGet($event->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Event update 2');
     $assert_session->buttonExists('Save')->press();
@@ -162,7 +162,7 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $assert_session->statusMessageContains('Your preferences have been saved.');
 
     // Do another change to the event.
-    $this->drupalLogin($editor);
+    $this->loginWithRetry($editor);
     $this->drupalGet($event->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Event update 3');
     $assert_session->buttonExists('Save')->press();
@@ -197,14 +197,14 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
     $event_two = $this->createEventNode([
       'title' => 'Second event',
     ]);
-    $this->drupalLogin($authenticated_user);
+    $this->loginWithRetry($authenticated_user);
     $this->drupalGet($event_two->toUrl());
     $assert_session = $this->assertSession();
     $action_bar = $assert_session->elementExists('css', '.bcl-content-banner .action-bar');
     $action_bar->clickLink('Subscribe');
     $assert_session->statusMessageContains('You are now subscribed to this item.');
 
-    $this->drupalLogin($editor);
+    $this->loginWithRetry($editor);
     // Update the second event.
     $this->drupalGet($event_two->toUrl('edit-form'));
     $assert_session->fieldExists('Title')->setValue('Second event update 1');
@@ -337,40 +337,43 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    *
    * @param int $count
    *   The number of mails to collect.
-   * @param int $timeout
-   *   Maximum time to wait in seconds (default: 30).
    */
-  protected function waitUntilMailsAreCollected(int $count, int $timeout = 30): void {
+  protected function waitUntilMailsAreCollected(int $count): void {
     $state = \Drupal::state();
+    // We don't need the page at all, but we reuse the wait code.
     $mail_count = 0;
-    $start_time = time();
-
-    $result = $this->getSession()->getPage()->waitFor($timeout, function () use ($count, $state, &$mail_count) {
+    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state, &$mail_count) {
       $state->resetCache();
-      $mails = $state->get(MailerTestServiceInterface::STATE_KEY, []) ?? [];
-      $mail_count = count($mails);
-
+      $mail_count = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
       return $mail_count === $count;
     });
+    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, $mail_count));
+  }
 
-    $elapsed_time = time() - $start_time;
-
-    if (!$result) {
-      $state->resetCache();
-      $final_mails = $state->get(MailerTestServiceInterface::STATE_KEY, []) ?? [];
-      $final_count = count($final_mails);
-
-      $this->fail(sprintf(
-        'Timeout waiting for mails after %d seconds. Expected %d mails, but found %d. ' .
-        'Elapsed time: %d seconds. This suggests a race condition in mail processing.',
-        $timeout,
-        $count,
-        $final_count,
-        $elapsed_time
-      ));
-    }
-
-    $this->assertEquals($count, $mail_count);
+  /**
+   * Performs login with retry mechanism to handle race conditions.
+   *
+   * @param mixed $user
+   *   The user to login.
+   * @param int $max_attempts
+   *   Maximum number of retry attempts.
+   */
+  private function loginWithRetry($user, int $max_attempts = 3): void {
+    $attempts = 0;
+    do {
+      $attempts++;
+      try {
+        $this->drupalLogin($user);
+        return;
+      }
+      catch (\Exception $e) {
+        if ($attempts >= $max_attempts) {
+          throw $e;
+        }
+        usleep(200000 * $attempts);
+        $this->drupalLogout();
+      }
+    } while ($attempts < $max_attempts);
   }
 
 }
