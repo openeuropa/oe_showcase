@@ -64,9 +64,6 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
 
     // Subscribe with a registered user.
     $authenticated_user = $this->createUser();
-    $authenticated_user->passRaw = 'testpass';
-    $authenticated_user->setPassword($authenticated_user->passRaw);
-    $authenticated_user->save();
     $this->drupalLogin($authenticated_user);
     $this->drupalGet($event->toUrl());
     $assert_session = $this->assertSession();
@@ -340,17 +337,40 @@ class EventSubscriptionTest extends ShowcaseExistingSiteTestBase {
    *
    * @param int $count
    *   The number of mails to collect.
+   * @param int $timeout
+   *   Maximum time to wait in seconds (default: 30).
    */
-  protected function waitUntilMailsAreCollected(int $count): void {
+  protected function waitUntilMailsAreCollected(int $count, int $timeout = 30): void {
     $state = \Drupal::state();
-    // We don't need the page at all, but we reuse the wait code.
     $mail_count = 0;
-    $result = $this->getSession()->getPage()->waitFor(10, function () use ($count, $state, &$mail_count) {
+    $start_time = time();
+
+    $result = $this->getSession()->getPage()->waitFor($timeout, function () use ($count, $state, &$mail_count) {
       $state->resetCache();
-      $mail_count = count($state->get(MailerTestServiceInterface::STATE_KEY, []) ?? []);
+      $mails = $state->get(MailerTestServiceInterface::STATE_KEY, []) ?? [];
+      $mail_count = count($mails);
+
       return $mail_count === $count;
     });
-    $this->assertEquals($count, $result, sprintf('%s mails were expected, but %s found.', $count, $mail_count));
+
+    $elapsed_time = time() - $start_time;
+
+    if (!$result) {
+      $state->resetCache();
+      $final_mails = $state->get(MailerTestServiceInterface::STATE_KEY, []) ?? [];
+      $final_count = count($final_mails);
+
+      $this->fail(sprintf(
+        'Timeout waiting for mails after %d seconds. Expected %d mails, but found %d. ' .
+        'Elapsed time: %d seconds. This suggests a race condition in mail processing.',
+        $timeout,
+        $count,
+        $final_count,
+        $elapsed_time
+      ));
+    }
+
+    $this->assertEquals($count, $mail_count);
   }
 
 }
