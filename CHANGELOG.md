@@ -1,11 +1,22 @@
 # Change Log
 
+## [1.25.0](https://github.com/openeuropa/oe_showcase/tree/1.25.0) (2025-07-29)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.24.0...1.25.0)
+
+**Merged pull requests:**
+
+- OEL-0000: Update whitelabel and bootstrap\_theme. [\#331](https://github.com/openeuropa/oe_showcase/pull/331) ([tibi2303](https://github.com/tibi2303))
+- OEL-3939: Remove ec\_core\_column footer section. [\#321](https://github.com/openeuropa/oe_showcase/pull/321) ([enriquelacoma](https://github.com/enriquelacoma))
+
 ## [1.24.0](https://github.com/openeuropa/oe_showcase/tree/1.24.0) (2025-07-10)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.23.0...1.24.0)
 
 **Merged pull requests:**
 
+- OEL-0000: Update oe\_whitelabel. [\#330](https://github.com/openeuropa/oe_showcase/pull/330) ([tibi2303](https://github.com/tibi2303))
+- Prepare release 1.24.0. [\#329](https://github.com/openeuropa/oe_showcase/pull/329) ([tibi2303](https://github.com/tibi2303))
 - OEL-3910: Added test for multiselect accessibility. [\#326](https://github.com/openeuropa/oe_showcase/pull/326) ([tibi2303](https://github.com/tibi2303))
 - EWPP-4664: Update to Drupal 11.1 [\#319](https://github.com/openeuropa/oe_showcase/pull/319) ([peterserfozo](https://github.com/peterserfozo))
 
