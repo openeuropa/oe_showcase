@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 510d5654-561b-4bd7-bd31-fa95d6868e4b
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    86c7a130-4609-4a40-8f86-f6e8cf8850d5: menu_link_content
+    0851c7af-734d-48d7-a90a-d4a81441ead5: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Train engine'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 0851c7af-734d-48d7-a90a-d4a81441ead5
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:86c7a130-4609-4a40-8f86-f6e8cf8850d5'
+  revision_translation_affected:
+    -
+      value: true

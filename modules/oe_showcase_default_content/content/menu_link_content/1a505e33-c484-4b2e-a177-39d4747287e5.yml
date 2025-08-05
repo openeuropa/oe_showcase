@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 1a505e33-c484-4b2e-a177-39d4747287e5
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    510d5654-561b-4bd7-bd31-fa95d6868e4b: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Nolink sub-sub-submenu item'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'route:<nolink>'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:510d5654-561b-4bd7-bd31-fa95d6868e4b'
+  revision_translation_affected:
+    -
+      value: true

@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: a9ffbe3f-e0cb-48d3-8788-b5b8a79f48a0
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    f7271cd6-3e1e-4d48-aa81-40d51dab855d: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Nolink parent level 2'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'route:<nolink>'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:f7271cd6-3e1e-4d48-aa81-40d51dab855d'
+  revision_translation_affected:
+    -
+      value: true

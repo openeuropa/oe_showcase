@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2dc84992-19a4-4daf-a67f-7ffce7611e13
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Vehicles
+  created:
+    -
+      value: 1754382552
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /vehicles
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false

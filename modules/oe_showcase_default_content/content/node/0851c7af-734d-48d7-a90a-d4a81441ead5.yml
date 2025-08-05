@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0851c7af-734d-48d7-a90a-d4a81441ead5
+  bundle: oe_showcase_page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Train engine'
+  created:
+    -
+      value: 1754382825
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /train-engine
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
