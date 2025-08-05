@@ -30,6 +30,10 @@ class MultiSelectAccessibleTest extends ShowcaseExistingSiteJavascriptTestBase {
 
     $this->assertEquals('false', $multiselect->getAttribute('aria-expanded'));
 
+    $multiselectContent = $page->find('css', '.ss-content');
+    $this->assertNotEmpty($multiselectContent->getAttribute('aria-label'));
+    $this->assertEquals('Select an option', $multiselectContent->getAttribute('aria-label'));
+
     $active_id = $multiselect->getAttribute('aria-activedescendant');
     if (!empty($active_id)) {
       $active_option = $page->find('css', '#' . $active_id);
