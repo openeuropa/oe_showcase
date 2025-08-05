@@ -8,8 +8,8 @@ dependencies:
     - oe_showcase_theme
 id: oe_showcase_theme_search_form
 theme: oe_showcase_theme
-region: navigation_right
-weight: 0
+region: header_top
+weight: -3
 provider: null
 plugin: whitelabel_search_block
 settings:
@@ -19,7 +19,7 @@ settings:
   provider: oe_whitelabel_search
   form:
     action: search
-    region: navigation_right
+    region: header_top
   input:
     name: search_api_fulltext
     label: Search
