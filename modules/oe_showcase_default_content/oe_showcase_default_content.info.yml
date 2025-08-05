@@ -47,6 +47,8 @@ default_content:
     - e0bff251-495d-4dbe-b723-62e774ef6238
     - 073cc92d-359d-4195-bf9e-6d49459d1f86
     - e9b437d9-e7a7-4742-8164-5a6e22616aa3
+    - 2dc84992-19a4-4daf-a67f-7ffce7611e13
+    - 0851c7af-734d-48d7-a90a-d4a81441ead5
   taxonomy_term:
     - 78e5b83b-cb54-447c-94c6-72bb1472ad31
     - e5bc5b90-bbbb-4c08-9713-0a9e624650ce
@@ -115,6 +117,19 @@ default_content:
     - 564dacd1-2b25-430d-95d2-816ac0f10452
     - 9d2ee108-3061-48c1-871c-614aa2df2928
     - ca1f9a80-ec63-4b06-bef9-cc0c9b0f3b58
+    - 86c7a130-4609-4a40-8f86-f6e8cf8850d5
+    - 510d5654-561b-4bd7-bd31-fa95d6868e4b
+    # Nolink leaf items
+    - d2342b7c-18b3-4337-a998-085c69bef469
+    - f99e8e7e-f637-4948-89d0-6e99cfcba7e1
+    - 4c467860-891b-420c-add7-0bc6111aa43f
+    - 1a505e33-c484-4b2e-a177-39d4747287e5
+    # Nolink parent items
+    - 5ce9f98a-b2a6-4eb7-9c3e-9bebd7e97b7f
+    - f7271cd6-3e1e-4d48-aa81-40d51dab855d
+    - a9ffbe3f-e0cb-48d3-8788-b5b8a79f48a0
+    - cd121511-f7be-41a6-9794-8d199bc0d1c7
+
   user:
     - 5de73784-3425-4baa-8814-b8bc58bc53de
     - 2366d4e0-80e0-4bc1-9f22-b5a4004a8663
