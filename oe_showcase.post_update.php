@@ -1317,3 +1317,12 @@ function oe_showcase_post_update_00055(): void {
   $block->set('settings', $settings);
   $block->save();
 }
+
+/**
+ * Place the OEL mega menu block.
+ */
+function oe_showcase_post_update_00056(): void {
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00056_megamenu', 'block.block.oe_showcase_theme_oelmegamenu');
+
+  Block::load('oe_showcase_theme_main_navigation')->setStatus(FALSE)->save();
+}
