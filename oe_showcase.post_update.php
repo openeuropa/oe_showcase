@@ -17,6 +17,8 @@ use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
+use Drupal\pathauto\AliasTypeBatchUpdateInterface;
+use Drupal\pathauto\Form\PathautoBulkUpdateForm;
 use Drupal\search_api\Entity\Index;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
@@ -1348,4 +1350,33 @@ function oe_showcase_post_update_00057(&$sandbox): void {
     $role->grantPermission($permission);
   }
   $role->save();
+}
+
+/**
+ * Update existing entity aliases.
+ */
+function oe_showcase_post_update_00058(): void {
+  $batch = [
+    'title' => t('Bulk updating URL aliases'),
+    'operations' => [
+      ['Drupal\pathauto\Form\PathautoBulkUpdateForm::batchStart', []],
+    ],
+    'finished' => 'Drupal\pathauto\Form\PathautoBulkUpdateForm::batchFinished',
+    'progressive' => FALSE,
+  ];
+  $alias_type_manager = \Drupal::service('plugin.manager.alias_type');
+  $definitions = $alias_type_manager->getVisibleDefinitions();
+  foreach ($definitions as $id => $definition) {
+    $alias_type = $alias_type_manager->createInstance($id);
+    if (!$alias_type instanceof AliasTypeBatchUpdateInterface) {
+      continue;
+    }
+    $batch['operations'][] = ['Drupal\pathauto\Form\PathautoBulkUpdateForm::batchProcess',
+      [
+        $id,
+        PathautoBulkUpdateForm::ACTION_UPDATE,
+      ],
+    ];
+  }
+  batch_set($batch);
 }
