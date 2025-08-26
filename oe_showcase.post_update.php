@@ -1305,3 +1305,15 @@ function oe_showcase_post_update_00054(): void {
     'core.date_format.short',
   ]);
 }
+
+/**
+ * Move the search block to 'header_top' region.
+ */
+function oe_showcase_post_update_00055(): void {
+  $block = Block::load('oe_showcase_theme_search_form');
+  $block->setRegion('header_top');
+  $settings = $block->get('settings');
+  $settings['form']['region'] = 'header_top';
+  $block->set('settings', $settings);
+  $block->save();
+}
