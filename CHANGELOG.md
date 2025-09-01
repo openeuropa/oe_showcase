@@ -1,11 +1,22 @@
 # Change Log
 
+## [1.26.0](https://github.com/openeuropa/oe_showcase/tree/1.26.0) (2025-09-01)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.25.0...1.26.0)
+
+**Merged pull requests:**
+
+- OEL-4075: Update facets. [\#338](https://github.com/openeuropa/oe_showcase/pull/338) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-0000: Update oe\_whitelabel. [\#337](https://github.com/openeuropa/oe_showcase/pull/337) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-4014: Move search to header top [\#335](https://github.com/openeuropa/oe_showcase/pull/335) ([donquixote](https://github.com/donquixote))
+
 ## [1.25.0](https://github.com/openeuropa/oe_showcase/tree/1.25.0) (2025-07-29)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.24.0...1.25.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.25.0. [\#332](https://github.com/openeuropa/oe_showcase/pull/332) ([tibi2303](https://github.com/tibi2303))
 - OEL-0000: Update whitelabel and bootstrap\_theme. [\#331](https://github.com/openeuropa/oe_showcase/pull/331) ([tibi2303](https://github.com/tibi2303))
 - OEL-3939: Remove ec\_core\_column footer section. [\#321](https://github.com/openeuropa/oe_showcase/pull/321) ([enriquelacoma](https://github.com/enriquelacoma))
 
