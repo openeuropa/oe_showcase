@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e656ce5cbeddce70aec3b7ce374aa76",
+    "content-hash": "6830c55e5cb6aa5d5abc11f7c9886f04",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6951,16 +6951,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.26.0",
+            "version": "1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "e0adb1ce81b44779f417a6c514418cc9c0a24089"
+                "reference": "9825c2d374ea7362312f17d312133a66246fc01d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/e0adb1ce81b44779f417a6c514418cc9c0a24089",
-                "reference": "e0adb1ce81b44779f417a6c514418cc9c0a24089",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/9825c2d374ea7362312f17d312133a66246fc01d",
+                "reference": "9825c2d374ea7362312f17d312133a66246fc01d",
                 "shasum": ""
             },
             "require": {
@@ -7023,9 +7023,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.26.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.27.0"
             },
-            "time": "2025-07-29T10:34:55+00:00"
+            "time": "2025-09-01T07:11:43+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8224,16 +8224,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.4014.202508261032",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "222b341cce4a0633884c50f541931ee1dd97ef85"
+                "reference": "dabdacc7e2a9a951e9f543f42b5abb437aee87c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/222b341cce4a0633884c50f541931ee1dd97ef85",
-                "reference": "222b341cce4a0633884c50f541931ee1dd97ef85",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/dabdacc7e2a9a951e9f543f42b5abb437aee87c0",
+                "reference": "dabdacc7e2a9a951e9f543f42b5abb437aee87c0",
                 "shasum": ""
             },
             "require": {
@@ -8242,7 +8242,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.25.0",
+                "openeuropa/oe_bootstrap_theme": "^1.27.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8325,9 +8325,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.4014.202508261032"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.24.0"
             },
-            "time": "2025-08-21T09:41:07+00:00"
+            "time": "2025-09-01T11:53:46+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -17226,16 +17226,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "b9e61a61e39e02dd90944e9115241c7f7e76bfd8"
+                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/b9e61a61e39e02dd90944e9115241c7f7e76bfd8",
-                "reference": "b9e61a61e39e02dd90944e9115241c7f7e76bfd8",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/1e0cd5370df5dd2e556a36b9c62f62e555870495",
+                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495",
                 "shasum": ""
             },
             "require": {
@@ -17267,9 +17267,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.2.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.0"
             },
-            "time": "2025-07-13T07:04:09+00:00"
+            "time": "2025-08-30T15:50:23+00:00"
         },
         {
             "name": "phpstan/phpstan",
@@ -19479,16 +19479,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v7.3.1",
+            "version": "v7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "8b2ee2e06ab99fa5f067b6699296d4e35c156bb9"
+                "reference": "efa076ea0eeff504383ff0dcf827ea5ce15690ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/8b2ee2e06ab99fa5f067b6699296d4e35c156bb9",
-                "reference": "8b2ee2e06ab99fa5f067b6699296d4e35c156bb9",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/efa076ea0eeff504383ff0dcf827ea5ce15690ba",
+                "reference": "efa076ea0eeff504383ff0dcf827ea5ce15690ba",
                 "shasum": ""
             },
             "require": {
@@ -19526,7 +19526,7 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v7.3.1"
+                "source": "https://github.com/symfony/dom-crawler/tree/v7.3.3"
             },
             "funding": [
                 {
@@ -19538,11 +19538,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-15T10:07:06+00:00"
+            "time": "2025-08-06T20:13:54+00:00"
         },
         {
             "name": "symfony/lock",
@@ -20134,14 +20138,7 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "openeuropa/oe_whitelabel",
-            "version": "0.4014.202508261032.0",
-            "alias": "1.23.0",
-            "alias_normalized": "1.23.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
