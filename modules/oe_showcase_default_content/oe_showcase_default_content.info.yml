@@ -129,6 +129,26 @@ default_content:
     - f7271cd6-3e1e-4d48-aa81-40d51dab855d
     - a9ffbe3f-e0cb-48d3-8788-b5b8a79f48a0
     - cd121511-f7be-41a6-9794-8d199bc0d1c7
+    # Filler items with non-existing paths.
+    - 8c326d08-5890-4a1b-94dc-21e24a20e434
+    - bdc3db02-2a0b-4122-aa21-63d79d0e9843
+    - 39ab51a5-b6e9-42b8-9107-ec7cb7a4b649
+    - 04cb8be8-9002-46b7-ba22-60e70de3f0c2
+    - 076f3dc9-69ca-4b2a-8419-50c60dceea70
+    - 31eac227-1ccf-41b9-8d3a-738a34084393
+    - fb7ffffd-6521-46a3-bd41-435de87e6b68
+    - 593f5aa2-8f3e-4ce7-ae05-d9e30a71d9c6
+    - 5447d99f-029f-4b41-9391-f1656514e2cc
+    - a2fe6923-60bf-49b7-b2d9-cdb47f0dbb5b
+    - bce06651-a81f-497b-bff2-a182396c4e19
+    - d164c126-4077-4875-96a4-ffbda594e2b9
+    - 4cdb1851-0af9-4f51-b9e0-0f56bf4b44b6
+    - c254c1c2-2f9a-43ba-8ae5-8d7ca07b08d6
+    - 752bf875-e521-4a37-bc8b-e9bc66aa245f
+    - 9dfd2a29-5198-4477-bb31-753880254dcc
+    - 5ac77d0e-3192-4ca1-9b0a-c8904c2ba9b8
+    - 65375c23-28a4-43f3-beba-28a4ca0721c7
+    - 1b19a0f4-f953-46c5-9b27-8519b79420dd
 
   user:
     - 5de73784-3425-4baa-8814-b8bc58bc53de
