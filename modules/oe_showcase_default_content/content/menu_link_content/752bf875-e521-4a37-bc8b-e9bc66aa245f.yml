@@ -1,25 +1,24 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 1b3e4017-2567-4c10-86e1-5171f99a31ef
+  uuid: 752bf875-e521-4a37-bc8b-e9bc66aa245f
   bundle: menu_link_content
   default_langcode: en
+  depends:
+    bdc3db02-2a0b-4122-aa21-63d79d0e9843: menu_link_content
 default:
   enabled:
     -
       value: true
   title:
     -
-      value: 'Dropdown link'
-  description:
-    -
-      value: 'This is a description for this submenu. '
+      value: 'Link 2.5'
   menu_name:
     -
       value: main
   link:
     -
-      uri: 'route:<nolink>'
+      uri: 'internal:/example/link-2-5'
       title: ''
       options: {  }
   external:
@@ -27,13 +26,16 @@ default:
       value: false
   rediscover:
     -
-      value: false
+      value: true
   weight:
     -
-      value: -47
+      value: 0
   expanded:
     -
-      value: true
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:bdc3db02-2a0b-4122-aa21-63d79d0e9843'
   revision_translation_affected:
     -
       value: true

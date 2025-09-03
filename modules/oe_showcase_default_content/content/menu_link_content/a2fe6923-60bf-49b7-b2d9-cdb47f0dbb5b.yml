@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: a2fe6923-60bf-49b7-b2d9-cdb47f0dbb5b
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Long submenu'
+  description:
+    -
+      value: 'This is a long description for a long submenu. It does not contain line breaks or formatting. The editor might get very ambitious writing elaborate descriptions, but they will be truncated at a given limit. It can be edited in the menu link edit form.'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/example/long-submenu'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
