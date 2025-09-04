@@ -12,7 +12,7 @@ default:
       value: true
   title:
     -
-      value: 'Link 2.3'
+      value: 'Link 2.3 with a link text that contains so many words that it is too long to comfortably fit in one line.'
   menu_name:
     -
       value: main

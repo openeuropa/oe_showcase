@@ -12,7 +12,7 @@ default:
       value: true
   title:
     -
-      value: 'Link 3'
+      value: 'Link 3 where the link text is longer than that of a number of of other links combined, causing it to wrap to multiple lines.'
   menu_name:
     -
       value: main
