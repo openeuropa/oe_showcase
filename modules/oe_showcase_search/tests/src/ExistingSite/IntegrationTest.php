@@ -74,7 +74,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Assert exposed sort widget.
     $assert->fieldExists('Sort by', $this->getSearchTopRegion());
 
-    $this->assertSearchResultsTitle(28);
+    $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Webtools',
