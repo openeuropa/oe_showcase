@@ -9,6 +9,7 @@
         "php": ">=8.1",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "^2.0",
+        "drupal/ai": "^1.1",
         "drupal/allowed_formats": "^3.0",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/block_field": "^1.0@RC",
@@ -47,6 +48,7 @@
         "microsoft/powerbi": "^2.1",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
+        "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0@alpha",
         "openeuropa/oe_authentication": "^1.17",
         "openeuropa/oe_contact_forms": "^1.20",
         "openeuropa/oe_content": "^4.8",
@@ -103,6 +105,14 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/openeuropa/oe_ai_provider_gpt_at_ec"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/openeuropa/gpt-at-ec-php-client"
         }
     ],
     "autoload": {

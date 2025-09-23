@@ -13,3 +13,6 @@ vendor
 yarn.lock
 .tmp
 /.gitattributes
+.php-cs-fixer.cache
+.phpactor.json
+.vscode/
