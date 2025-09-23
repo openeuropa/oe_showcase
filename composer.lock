@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da8f9869265338361b57537919277170",
+    "content-hash": "11c0590cee0933b05765b0e76662bd95",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8225,16 +8225,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.4016.202509231130",
+            "version": "0.4016.202509232001",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "c493859edee267e435026d89887358de29bddae5"
+                "reference": "dcffd0144544e6104a0688733a87dfcf1437bb0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/c493859edee267e435026d89887358de29bddae5",
-                "reference": "c493859edee267e435026d89887358de29bddae5",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/dcffd0144544e6104a0688733a87dfcf1437bb0f",
+                "reference": "dcffd0144544e6104a0688733a87dfcf1437bb0f",
                 "shasum": ""
             },
             "require": {
@@ -8327,9 +8327,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.4016.202509231130"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.4016.202509232001"
             },
-            "time": "2025-09-23T08:13:55+00:00"
+            "time": "2025-09-23T14:46:10+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -20173,7 +20173,7 @@
         },
         {
             "package": "openeuropa/oe_whitelabel",
-            "version": "0.4016.202509231130.0",
+            "version": "0.4016.202509232001.0",
             "alias": "1.24.0",
             "alias_normalized": "1.24.0.0"
         }
