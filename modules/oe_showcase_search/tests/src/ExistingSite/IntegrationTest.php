@@ -77,11 +77,11 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
+      'Train engine',
+      'Vehicles',
       'Webtools',
       'Inpage Navigation',
       'About us',
-      'Contact us',
-      'Pages',
     ]);
     // @todo Assert "Last" once OEL-1316 is fixed.
     $this->assertPager(6);
@@ -135,11 +135,11 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
+      'Train engine',
+      'Vehicles',
       'Webtools',
       'Inpage Navigation',
       'About us',
-      'Contact us',
-      'Pages',
     ]);
     $this->assertPager(6);
 
@@ -217,19 +217,19 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Results display the created date.
     $this->drupalGet('/search');
     $this->assertResultsMeta([
+      '05 August 2025',
+      '05 August 2025',
       '16 February 2022',
       '14 January 2022',
-      '01 October 2021',
-      '01 October 2021',
       '01 October 2021',
     ]);
     $page->clickLink('4');
     $this->assertResultsMeta([
+      '12 February 2021',
+      '11 February 2021',
       '10 February 2021',
       '06 February 2021',
       '22 January 2021',
-      '04 January 2021',
-      '06 November 2020',
     ]);
   }
 
