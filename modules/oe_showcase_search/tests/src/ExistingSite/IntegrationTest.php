@@ -132,7 +132,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Clear active filters.
     $page->clickLink('Clear');
 
-    $this->assertSearchResultsTitle(28);
+    $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Webtools',
@@ -147,7 +147,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     $page->selectFieldOption('Sort by', 'Published on Asc');
     $page->pressButton('Apply');
 
-    $this->assertSearchResultsTitle(28);
+    $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Hendrerit',
@@ -161,7 +161,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Visit the second page of search results.
     $page->clickLink('2');
 
-    $this->assertSearchResultsTitle(28);
+    $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Luctus Sit',
@@ -175,7 +175,7 @@ class IntegrationTest extends ShowcaseExistingSiteTestBase {
     // Visit the last page.
     $page->clickLink('4');
 
-    $this->assertSearchResultsTitle(28);
+    $this->assertSearchResultsTitle(30);
     $this->assertActiveFilterBadges([]);
     $this->assertSearchResults([
       'Abico Diam Jugis',
