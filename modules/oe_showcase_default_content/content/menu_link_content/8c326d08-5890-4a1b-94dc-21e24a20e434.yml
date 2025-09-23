@@ -12,7 +12,7 @@ default:
       value: true
   title:
     -
-      value: 'LInk 1'
+      value: 'Link 1'
   menu_name:
     -
       value: main
