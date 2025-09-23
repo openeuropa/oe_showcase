@@ -48,6 +48,7 @@
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
         "openeuropa/oe_authentication": "^1.17",
+        "openeuropa/oe_bootstrap_theme": "0.4016.202509230008 as 1.27.0",
         "openeuropa/oe_contact_forms": "^1.20",
         "openeuropa/oe_content": "^4.8",
         "openeuropa/oe_content_extra": "^1.4",
@@ -61,7 +62,7 @@
         "openeuropa/oe_starter_content": "^1.5",
         "openeuropa/oe_subscriptions": "^1.0@beta",
         "openeuropa/oe_webtools": "^1.40",
-        "openeuropa/oe_whitelabel": "^1.24"
+        "openeuropa/oe_whitelabel": "0.4016.202509230410 as 1.24.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
