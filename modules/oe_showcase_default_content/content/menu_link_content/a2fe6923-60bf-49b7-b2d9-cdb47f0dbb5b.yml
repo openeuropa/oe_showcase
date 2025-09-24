@@ -19,7 +19,7 @@ default:
       value: main
   link:
     -
-      uri: 'internal:/example/long-submenu'
+      uri: 'internal:/showcase/example/long-submenu'
       title: ''
       options: {  }
   external:

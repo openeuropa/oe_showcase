@@ -18,7 +18,7 @@ default:
       value: main
   link:
     -
-      uri: 'internal:/example/link-2-5'
+      uri: 'internal:/showcase/example/link-2-5'
       title: ''
       options: {  }
   external:

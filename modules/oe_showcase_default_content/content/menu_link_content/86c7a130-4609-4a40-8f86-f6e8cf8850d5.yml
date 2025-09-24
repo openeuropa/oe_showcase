@@ -19,7 +19,7 @@ default:
       value: main
   link:
     -
-      target_uuid: 2dc84992-19a4-4daf-a67f-7ffce7611e13
+      uri: 'internal:/showcase/example/vehicles'
       title: ''
       options: {  }
   external:

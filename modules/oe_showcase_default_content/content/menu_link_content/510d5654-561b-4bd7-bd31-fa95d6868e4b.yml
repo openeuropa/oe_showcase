@@ -19,7 +19,7 @@ default:
       value: main
   link:
     -
-      target_uuid: 0851c7af-734d-48d7-a90a-d4a81441ead5
+      uri: 'internal:/showcase/example/train-engine'
       title: ''
       options: {  }
   external:
