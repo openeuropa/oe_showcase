@@ -1,0 +1,8 @@
+oe_showcase_example_route.example:
+  path: '/showcase/example/{arg}'
+  defaults:
+    _controller: '\Drupal\oe_showcase_example_route\Controller\ExampleController::page'
+    _title_callback: '\Drupal\oe_showcase_example_route\Controller\ExampleController::title'
+  requirements:
+    _access: 'TRUE'
+    arg: '\w+(-\w+)*'

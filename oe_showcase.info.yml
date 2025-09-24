@@ -49,6 +49,7 @@ install:
   - oe_paragraphs_timeline
   - oe_showcase_contact_forms
   - oe_showcase_default_content
+  - oe_showcase_example_route
   - oe_showcase_fields
   - oe_showcase_glossary
   - oe_showcase_list_pages
