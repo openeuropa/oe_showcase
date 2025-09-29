@@ -72,6 +72,7 @@
         "drupal/core-dev": "^11.1 <11.2",
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^13",
+        "ec-europa/toolkit": "^10.23",
         "openeuropa/code-review-drupal": "^1.0.0-alpha",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0",
         "weitzman/drupal-test-traits": "^2.1"
@@ -187,6 +188,7 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "ec-europa/toolkit-composer-plugin": true,
             "oomphinc/composer-installers-extender": true,
             "openeuropa/composer-artifacts": true,
             "php-http/discovery": false,
