@@ -11,6 +11,9 @@
     <env name="DTT_MINK_DRIVER_ARGS" value='["${selenium.browser}", {"browserName":"chrome","goog:chromeOptions":{"w3c": false, "args":["--no-sandbox", "--start-maximized", "--disable-gpu", "--window-size=1440,900", "--disable-dev-shm-usage", "--disable-setuid-sandbox", "--disable-web-security", "--DNS-prefetch-disable", "--disable-translate", "--ignore-certificate-errors", "--test-type", "--disable-extensions", "--incognito", "--disable-infobars"]}}, "${selenium.host}:${selenium.port}/wd/hub"]'/>
     <env name="SYMFONY_DEPRECATIONS_HELPER" value='disabled'/>
   </php>
+  <logging>
+    <junit outputFile="junit-export/junit-phpunit.xml"/>
+  </logging>
   <testsuites>
     <testsuite name="unit">
       <directory>./themes/**/tests/src/Unit/</directory>

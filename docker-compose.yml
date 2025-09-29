@@ -15,6 +15,12 @@ services:
       PHP_IDE_CONFIG: "serverName=Docker"
       # Enable step debugging for all PHP request. See ./README.md#step-debugging for more information.
       # XDEBUG_SESSION: 1
+      DRUPAL_DATABASE_NAME: "drupal"
+      DRUPAL_DATABASE_USERNAME: "root"
+      DRUPAL_DATABASE_PASSWORD: ""
+      DRUPAL_DATABASE_HOST: "mysql"
+      DRUPAL_DATABASE_PORT: "3306"
+      DRUPAL_DATABASE_PREFIX: ""
 
   mysql:
     image: percona/percona-server:8.0
