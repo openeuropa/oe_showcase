@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ba3faafd739517acf953f9cfa6d3258",
+    "content-hash": "913539d1f9c087e3ae443f094c78eddc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15231,77 +15231,6 @@
             "time": "2024-03-19T22:19:53+00:00"
         },
         {
-            "name": "gitonomy/gitlib",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gitonomy/gitlib.git",
-                "reference": "ac17834888bf399a4ecae5e108be52c8c5f93958"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gitonomy/gitlib/zipball/ac17834888bf399a4ecae5e108be52c8c5f93958",
-                "reference": "ac17834888bf399a4ecae5e108be52c8c5f93958",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcre": "*",
-                "php": "^8.0",
-                "symfony/polyfill-mbstring": "^1.7",
-                "symfony/process": "^5.4 || ^6.0 || ^7.0"
-            },
-            "require-dev": {
-                "ext-fileinfo": "*",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.20 || ^9.5.9",
-                "psr/log": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Gitonomy\\Git\\": "src/Gitonomy/Git/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "hello@gjcampbell.co.uk",
-                    "homepage": "https://github.com/GrahamCampbell"
-                },
-                {
-                    "name": "Julien Didier",
-                    "email": "genzo.wm@gmail.com",
-                    "homepage": "https://github.com/juliendidier"
-                },
-                {
-                    "name": "Grégoire Pineau",
-                    "email": "lyrixx@lyrixx.info",
-                    "homepage": "https://github.com/lyrixx"
-                },
-                {
-                    "name": "Alexandre Salomé",
-                    "email": "alexandre.salome@gmail.com",
-                    "homepage": "https://github.com/alexandresalome"
-                }
-            ],
-            "description": "Library for accessing git",
-            "support": {
-                "issues": "https://github.com/gitonomy/gitlib/issues",
-                "source": "https://github.com/gitonomy/gitlib/tree/v1.5.0"
-            },
-            "funding": [
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/gitonomy/gitlib",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-11-03T15:59:21+00:00"
-        },
-        {
             "name": "google/protobuf",
             "version": "v4.31.1",
             "source": {
@@ -16205,52 +16134,6 @@
             "time": "2025-08-13T20:13:15+00:00"
         },
         {
-            "name": "nuvoleweb/robo-config",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nuvoleweb/robo-config.git",
-                "reference": "275eee9ad085c4d8a28c1e05036ec43978e850c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nuvoleweb/robo-config/zipball/275eee9ad085c4d8a28c1e05036ec43978e850c2",
-                "reference": "275eee9ad085c4d8a28c1e05036ec43978e850c2",
-                "shasum": ""
-            },
-            "require": {
-                "consolidation/robo": "^4.0 || ^5.0"
-            },
-            "require-dev": {
-                "drupal/coder": "^8.3.16",
-                "phpro/grumphp": "^1.14 || ^2.3",
-                "phpunit/phpunit": "^9.5.5"
-            },
-            "type": "robo-tasks",
-            "autoload": {
-                "psr-4": {
-                    "NuvoleWeb\\Robo\\Tests\\": "./tests/",
-                    "NuvoleWeb\\Robo\\Task\\Config\\": "./src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Antonio De Marco",
-                    "email": "antonio@nuvole.org"
-                }
-            ],
-            "description": "CI/developer-friendly configuration processor for Robo.",
-            "support": {
-                "issues": "https://github.com/nuvoleweb/robo-config/issues",
-                "source": "https://github.com/nuvoleweb/robo-config/tree/3.1.0"
-            },
-            "time": "2024-10-03T09:39:51+00:00"
-        },
-        {
             "name": "nyholm/psr7-server",
             "version": "1.1.0",
             "source": {
@@ -16786,102 +16669,6 @@
                 "source": "https://github.com/openeuropa/code-review-drupal/tree/1.0.0-alpha1"
             },
             "time": "2024-12-06T14:15:52+00:00"
-        },
-        {
-            "name": "openeuropa/task-runner",
-            "version": "2.0.0-alpha5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/openeuropa/task-runner.git",
-                "reference": "14e319ab2f4be99fbc1533d2691be3a330bc6c18"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/task-runner/zipball/14e319ab2f4be99fbc1533d2691be3a330bc6c18",
-                "reference": "14e319ab2f4be99fbc1533d2691be3a330bc6c18",
-                "shasum": ""
-            },
-            "require": {
-                "consolidation/robo": "^4.0 || ^5.0",
-                "gitonomy/gitlib": "^1.0",
-                "jakeasmith/http_build_url": "^1.0.1",
-                "nuvoleweb/robo-config": "^3.1",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "openeuropa/code-review-library": "^1.0.0-alpha1",
-                "phpunit/phpunit": "^9.5"
-            },
-            "bin": [
-                "bin/run"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenEuropa\\TaskRunner\\": "./src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "EUPL-1.2"
-            ],
-            "description": "PHP task runner based on Robo, focused on extensibility.",
-            "keywords": [
-                "automation",
-                "robo",
-                "task-runner",
-                "yaml"
-            ],
-            "support": {
-                "issues": "https://github.com/openeuropa/task-runner/issues",
-                "source": "https://github.com/openeuropa/task-runner/tree/2.0.0-alpha5"
-            },
-            "time": "2024-12-11T12:33:19+00:00"
-        },
-        {
-            "name": "openeuropa/task-runner-drupal-project-symlink",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/openeuropa/task-runner-drupal-project-symlink.git",
-                "reference": "a3b1154dac894b710324a5e7e05f8477e691fd2c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/task-runner-drupal-project-symlink/zipball/a3b1154dac894b710324a5e7e05f8477e691fd2c",
-                "reference": "a3b1154dac894b710324a5e7e05f8477e691fd2c",
-                "shasum": ""
-            },
-            "require": {
-                "openeuropa/task-runner": "^2.0.0-alpha5",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "openeuropa/code-review-library": "^1.0.0-alpha1",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenEuropa\\DrupalProjectSymlink\\": "./src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "EUPL-1.2"
-            ],
-            "description": "OpenEuropa TaskRunner command to symlink a Drupal project codebase within a development site, built locally via Composer.",
-            "keywords": [
-                "automation",
-                "drupal",
-                "robo",
-                "task-runner"
-            ],
-            "support": {
-                "issues": "https://github.com/openeuropa/task-runner-drupal-project-symlink/issues",
-                "source": "https://github.com/openeuropa/task-runner-drupal-project-symlink/tree/1.0.0"
-            },
-            "time": "2024-12-16T12:47:29+00:00"
         },
         {
             "name": "pdepend/pdepend",
