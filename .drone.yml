@@ -57,7 +57,15 @@ pipeline:
     commands:
       - git config --global --add safe.directory /test/oe_showcase
       - git fetch --tags
-      - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+      - |
+        set -ex
+        # Find the latest stable release tag in the history of the current commit.
+        # Include *-alpha* and *-beta* tags (These are matched by the final *).
+        # Exclude tmp releases like 0.****.********.
+        # Abort if no such release found.
+        LATEST_TAG=$(git describe --abbrev=0 --tags --match=[1-9]*.[0-9]*.[0-9]*)
+        echo "Latest tag: $LATEST_TAG"
+        git checkout $LATEST_TAG
       - composer install --ansi --no-progress
     when:
       matrix:
