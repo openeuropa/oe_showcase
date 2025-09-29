@@ -12,13 +12,33 @@ jobs:
     strategy:
       matrix:
         type:
-          #- update
+          - update
           - install
     env:
       PHP_VERSION: 8.3
     steps:
-      - name: Clone repository
+      - name: Clone repository (install)
+        if: ${{ matrix.type != 'update' }}
         uses: actions/checkout@v2
+
+      - name: Clone repository (update)
+        if: ${{ matrix.type == 'update' }}
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+
+      - name: Checkout older version (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git tag -f CURRENT
+          git fetch --tags
+          git log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=8
+          git status
+          LATEST_TAG=$(git describe --abbrev=0 --tags --match=[1-9]*.[0-9]*.[0-9]*)
+          echo "Latest tag: $LATEST_TAG"
+          # Mark the current commit with a tag.
+          git checkout $LATEST_TAG
 
       - name: Modify web container version
         run: |
@@ -42,7 +62,39 @@ jobs:
           docker compose exec -T web ./vendor/bin/run ci:site-setup
           docker compose exec -T web ./vendor/bin/drush en -y oe_showcase_test
 
-      - name: Run grumphp
+      - name: Return to current version (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git status
+          git diff
+          git stash
+          git checkout CURRENT
+          git stash apply
+
+      - name: Restart container (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose down
+          docker compose up -d
+
+      - name: Run composer self-update, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web composer self-update
+
+      - name: Install composer dependencies, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web composer install
+
+      - name: Drupal database updates (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web ./vendor/bin/drush updb -y
+          docker compose exec -T web ./vendor/bin/drush cr
+
+      - name: Run grumphp (install only)
+        if: ${{ matrix.type != 'update' }}
         run: docker compose exec -T web ./vendor/bin/grumphp run
 
       - name: Run phpunit
