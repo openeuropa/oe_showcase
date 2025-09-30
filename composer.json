@@ -61,7 +61,7 @@
         "openeuropa/oe_starter_content": "^1.5",
         "openeuropa/oe_subscriptions": "^1.0@beta",
         "openeuropa/oe_webtools": "^1.40",
-        "openeuropa/oe_whitelabel": "1.25.0"
+        "openeuropa/oe_whitelabel": "^1.25.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
