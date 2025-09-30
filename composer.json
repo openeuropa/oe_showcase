@@ -31,7 +31,7 @@
         "drupal/jquery_ui_datepicker": "^2.1",
         "drupal/jquery_ui_slider": "^2.1",
         "drupal/jquery_ui_touch_punch": "^1.1",
-        "drupal/json_field": "^1.4",
+        "drupal/json_field": "^1.5",
         "drupal/legal": "^3.0.3",
         "drupal/message_digest": "^1.5",
         "drupal/purge_users": "^4.0",
@@ -61,7 +61,7 @@
         "openeuropa/oe_starter_content": "^1.5",
         "openeuropa/oe_subscriptions": "^1.0@beta",
         "openeuropa/oe_webtools": "^1.40",
-        "openeuropa/oe_whitelabel": "1.25.0"
+        "openeuropa/oe_whitelabel": "^1.25.0"
     },
     "require-dev": {
         "composer/installers": "~1.11",
