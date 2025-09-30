@@ -1,0 +1,5 @@
+name: OpenEuropa Showcase Example Route
+type: module
+description: Provides an example route to use as link destination. This allows to create menu links without content nodes.
+core_version_requirement: ^10 || ^11
+package: OpenEuropa Showcase

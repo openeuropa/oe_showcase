@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 39ab51a5-b6e9-42b8-9107-ec7cb7a4b649
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    a2fe6923-60bf-49b7-b2d9-cdb47f0dbb5b: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Link 3 where the link text is longer than that of a number of of other links combined, causing it to wrap to multiple lines.'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'internal:/showcase/example/link-3'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 2
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:a2fe6923-60bf-49b7-b2d9-cdb47f0dbb5b'
+  revision_translation_affected:
+    -
+      value: true
