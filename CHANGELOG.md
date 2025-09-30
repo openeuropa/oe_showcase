@@ -1,11 +1,22 @@
 # Change Log
 
+## [1.27.0](https://github.com/openeuropa/oe_showcase/tree/1.27.0) (2025-09-30)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.4016.202509252330...1.27.0)
+
+**Merged pull requests:**
+
+- OEL-0000: Update oe\_whitelabel. [\#344](https://github.com/openeuropa/oe_showcase/pull/344) ([tibi2303](https://github.com/tibi2303))
+- OEL-4182: Use latest stable release tag in drone "update" step. [\#341](https://github.com/openeuropa/oe_showcase/pull/341) ([donquixote](https://github.com/donquixote))
+- OEL-4016: Mega menu [\#340](https://github.com/openeuropa/oe_showcase/pull/340) ([donquixote](https://github.com/donquixote))
+
 ## [1.26.0](https://github.com/openeuropa/oe_showcase/tree/1.26.0) (2025-09-01)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.25.0...1.26.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.26.0. [\#339](https://github.com/openeuropa/oe_showcase/pull/339) ([piotrsmykaj](https://github.com/piotrsmykaj))
 - OEL-4075: Update facets. [\#338](https://github.com/openeuropa/oe_showcase/pull/338) ([piotrsmykaj](https://github.com/piotrsmykaj))
 - OEL-0000: Update oe\_whitelabel. [\#337](https://github.com/openeuropa/oe_showcase/pull/337) ([piotrsmykaj](https://github.com/piotrsmykaj))
 - OEL-4014: Move search to header top [\#335](https://github.com/openeuropa/oe_showcase/pull/335) ([donquixote](https://github.com/donquixote))
