@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d82fddfe389d216fd03fc628dd55299",
+    "content-hash": "e15219907af4f4c7578454cc4e0fa2bc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6951,16 +6951,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.4016.202509252200",
+            "version": "1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "a8fe735c1b8d7ba5fbb063a1b3f1e79039f66d2f"
+                "reference": "576a41e7f404ec57f4d795a30563fb66133f0d3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/a8fe735c1b8d7ba5fbb063a1b3f1e79039f66d2f",
-                "reference": "a8fe735c1b8d7ba5fbb063a1b3f1e79039f66d2f",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/576a41e7f404ec57f4d795a30563fb66133f0d3d",
+                "reference": "576a41e7f404ec57f4d795a30563fb66133f0d3d",
                 "shasum": ""
             },
             "require": {
@@ -7024,9 +7024,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.4016.202509252200"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.28.0"
             },
-            "time": "2025-09-25T18:49:03+00:00"
+            "time": "2025-09-29T13:51:25+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8225,16 +8225,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.4016.202509252230",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "dbdaee8ad0133e62256a27041d0502bcbb726b10"
+                "reference": "af33b7035b265d24b496d01a8a98ca61c554ef48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/dbdaee8ad0133e62256a27041d0502bcbb726b10",
-                "reference": "dbdaee8ad0133e62256a27041d0502bcbb726b10",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/af33b7035b265d24b496d01a8a98ca61c554ef48",
+                "reference": "af33b7035b265d24b496d01a8a98ca61c554ef48",
                 "shasum": ""
             },
             "require": {
@@ -8243,7 +8243,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.4016.202509252200 as 1.27.0",
+                "openeuropa/oe_bootstrap_theme": "^1.28.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8326,9 +8326,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.4016.202509252230"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.25.0"
             },
-            "time": "2025-09-25T19:33:30+00:00"
+            "time": "2025-09-29T21:44:34+00:00"
         },
         {
             "name": "openeuropa/rdf_skos",
@@ -17752,16 +17752,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.57",
+            "version": "10.5.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8e7598bbb17bb5cd80728f4831d3f83223d3a6b3"
+                "reference": "e24fb46da450d8e6a5788670513c1af1424f16ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e7598bbb17bb5cd80728f4831d3f83223d3a6b3",
-                "reference": "8e7598bbb17bb5cd80728f4831d3f83223d3a6b3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e24fb46da450d8e6a5788670513c1af1424f16ca",
+                "reference": "e24fb46da450d8e6a5788670513c1af1424f16ca",
                 "shasum": ""
             },
             "require": {
@@ -17833,7 +17833,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.57"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.58"
             },
             "funding": [
                 {
@@ -17857,7 +17857,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-24T06:30:38+00:00"
+            "time": "2025-09-28T12:04:46+00:00"
         },
         {
             "name": "psy/psysh",
@@ -20163,20 +20163,7 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "openeuropa/oe_bootstrap_theme",
-            "version": "0.4016.202509252200.0",
-            "alias": "1.27.0",
-            "alias_normalized": "1.27.0.0"
-        },
-        {
-            "package": "openeuropa/oe_whitelabel",
-            "version": "0.4016.202509252230.0",
-            "alias": "1.24.0",
-            "alias_normalized": "1.24.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
