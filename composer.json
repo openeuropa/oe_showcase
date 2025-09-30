@@ -31,7 +31,7 @@
         "drupal/jquery_ui_datepicker": "^2.1",
         "drupal/jquery_ui_slider": "^2.1",
         "drupal/jquery_ui_touch_punch": "^1.1",
-        "drupal/json_field": "^1.4",
+        "drupal/json_field": "^1.5",
         "drupal/legal": "^3.0.3",
         "drupal/message_digest": "^1.5",
         "drupal/purge_users": "^4.0",
