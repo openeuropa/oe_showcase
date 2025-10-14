@@ -25,7 +25,48 @@ settings:
       - '|'
       - code
       - heading
+      - aickeditor
   plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows: {  }
+          enabled: false
+        ai_ckeditor_completion:
+          enabled: true
+          provider: ''
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_modify_prompt:
+          enabled: false
+          provider: ''
+        ai_ckeditor_reformat_html:
+          enabled: true
+          provider: ''
+        ai_ckeditor_spellfix:
+          enabled: true
+          provider: ''
+        ai_ckeditor_summarize:
+          enabled: true
+          provider: ''
+        ai_ckeditor_tone:
+          autocreate: false
+          provider: ''
+          tone_vocabulary: categories
+          use_description: 0
+          enabled: false
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: ''
+          translate_vocabulary: categories
+          use_description: false
+          language_source: tax
+          enabled: false
     ckeditor5_heading:
       enabled_headings:
         - heading2

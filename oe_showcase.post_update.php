@@ -1326,3 +1326,10 @@ function oe_showcase_post_update_00056(): void {
 
   Block::load('oe_showcase_theme_main_navigation')->setStatus(FALSE)->save();
 }
+
+/**
+ * Enable and configure ai modules.
+ */
+function oe_showcase_post_update_00057(&$sandbox): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_ai']);
+}
