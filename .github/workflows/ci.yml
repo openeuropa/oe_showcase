@@ -47,12 +47,12 @@ jobs:
           # Report the difference.
           git diff
 
-      - name: Start services with Docker Compose
-        run: docker compose up -d
+      - run: docker compose up -d
 
-      - run: docker compose exec -T web composer self-update
+      - name: composer self-update
+        run: docker compose exec -T web composer self-update
 
-      - name: Build dependencies
+      - name: composer install
         run: docker compose exec -T web composer install
 
       - name: Install Drupal
@@ -71,7 +71,7 @@ jobs:
           git checkout CURRENT
           git stash apply
 
-      - name: Restart container (update only)
+      - name: Restart docker containers (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
           docker compose up -d --build
