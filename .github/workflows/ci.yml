@@ -28,6 +28,12 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
+      - name: Report current commit
+        run: |
+          git rev-parse HEAD
+          git status
+          git log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=20 -n 20
+
       - name: Checkout older version (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
@@ -39,6 +45,13 @@ jobs:
           echo "Latest tag: $LATEST_TAG"
           # Mark the current commit with a tag.
           git checkout $LATEST_TAG
+
+      - name: Report current commit (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git rev-parse HEAD
+          git status
+          git log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=20 -n 20
 
       - name: Modify web container version
         run: |
@@ -124,6 +137,13 @@ jobs:
           git stash
           git checkout CURRENT
           git stash apply
+
+      - name: Report current commit (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git rev-parse HEAD
+          git status
+          git log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=20 -n 20
 
       - name: Restart docker containers (update only)
         if: ${{ matrix.type == 'update' }}
