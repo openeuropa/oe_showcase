@@ -73,10 +73,14 @@ jobs:
           git checkout CURRENT
           git stash apply
 
-      - name: Restart container (update only)
+      - name: docker compose down (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
           docker compose down
+
+      - name: docker compose up (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
           docker compose up -d
 
       - run: sleep 13
