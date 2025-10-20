@@ -115,11 +115,15 @@ jobs:
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
+          docker compose exec -T web which composer
+          docker compose exec -T web composer --version
           docker compose exec -T web composer self-update
 
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
+          docker compose exec -T web which composer
+          docker compose exec -T web composer --version
           docker compose exec -T web composer self-update
 
       - name: Build dependencies
@@ -128,6 +132,8 @@ jobs:
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
+          docker compose exec -T web which composer
+          docker compose exec -T web composer --version
           docker compose exec -T web composer self-update
 
       - name: Restart docker containers (update only)
