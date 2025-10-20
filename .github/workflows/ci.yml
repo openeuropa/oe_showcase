@@ -74,8 +74,7 @@ jobs:
       - name: Restart container (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
-          docker compose down
-          docker compose up -d
+          docker compose up -d --build
 
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
