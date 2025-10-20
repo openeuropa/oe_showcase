@@ -73,17 +73,20 @@ jobs:
           git checkout CURRENT
           git stash apply
 
-      - name: docker compose down (update only)
+      - name: Restart docker containers (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
-          docker compose down
+          docker compose up -d --build
 
-      - name: docker compose up (update only)
+      - name: Wait until container ready (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
-          docker compose up -d
+          until docker compose ps --status=running | grep -q 'web'; do
+            echo wait
+            sleep 1
+          done
 
-      - run: sleep 13
+#      - run: sleep 13
 
       - run: docker compose exec web php -v
 
