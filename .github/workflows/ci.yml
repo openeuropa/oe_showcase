@@ -117,6 +117,11 @@ jobs:
         run: |
           docker compose exec -T web composer self-update
 
+      - name: Run composer self-update, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web composer self-update
+
       - name: Build dependencies
         run: docker compose exec -T web composer install
 
