@@ -79,7 +79,9 @@ jobs:
           docker compose down
           docker compose up -d
 
-      - run: sleep 3
+      - run: sleep 13
+
+      - run: docker compose exec web php -v
 
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
