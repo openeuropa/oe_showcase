@@ -50,6 +50,8 @@ jobs:
       - name: Start services with Docker Compose
         run: docker compose up -d
 
+      - run: sleep 3
+
       - run: docker compose exec -T web composer self-update
 
       - name: Build dependencies
@@ -76,6 +78,8 @@ jobs:
         run: |
           docker compose down
           docker compose up -d
+
+      - run: sleep 3
 
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
