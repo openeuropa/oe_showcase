@@ -93,6 +93,30 @@ jobs:
         run: |
           docker compose exec -T web composer self-update
 
+      - name: Restart docker containers (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose up -d --build
+
+      - name: Wait until container ready (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          until docker compose ps --status=running | grep -q 'web'; do
+            echo wait
+            sleep 1
+          done
+
+      - run: docker compose exec web php -v
+        if: ${{ matrix.type == 'update' }}
+
+      - run: docker compose exec -T web php -v
+        if: ${{ matrix.type == 'update' }}
+
+      - name: Run composer self-update, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web composer self-update
+
       - name: Build dependencies
         run: docker compose exec -T web composer install
 
