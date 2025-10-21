@@ -1,0 +1,115 @@
+name: ci
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - 1.x
+
+jobs:
+  automated-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        type:
+          - update
+          - install
+    env:
+      PHP_VERSION: 8.3
+    steps:
+      - name: Clone repository (install)
+        if: ${{ matrix.type != 'update' }}
+        uses: actions/checkout@v2
+
+      - name: Clone repository (update)
+        if: ${{ matrix.type == 'update' }}
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+
+      - name: Checkout older version (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git tag -f CURRENT
+          git fetch --tags
+          git log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=8
+          git status
+          LATEST_TAG=$(git describe --abbrev=0 --tags --match=[1-9]*.[0-9]*.[0-9]*)
+          echo "Latest tag: $LATEST_TAG"
+          # Mark the current commit with a tag.
+          git checkout $LATEST_TAG
+
+      - name: Modify web container version
+        run: |
+          # Replace -dev with -ci.
+          sed -i 's/httpd-php:8\.3-\(dev\|ci\)/httpd-php:8.3-ci/g' docker-compose.yml
+          # Report the difference.
+          git diff
+
+      - run: docker compose up -d
+
+      - name: composer self-update
+        run: |
+          set -x
+          docker compose exec -T web composer --version
+          docker compose exec -T web composer self-update
+          docker compose exec -T web composer --version
+
+      - name: composer install
+        run: docker compose exec -T web composer install
+
+      - name: Install Drupal
+        run: |
+          docker compose exec -T web ./vendor/bin/run drupal:site-install
+          docker compose exec -T web ./vendor/bin/drush pmu -y update
+          docker compose exec -T web ./vendor/bin/run ci:site-setup
+          docker compose exec -T web ./vendor/bin/drush en -y oe_showcase_test
+
+      - name: Return to current version (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          git status
+          git diff
+          git stash
+          git checkout CURRENT
+          git stash apply
+
+      - name: Restart docker containers (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose up -d --build
+
+      - name: Run composer self-update, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          set -x
+          # In some versions, the web image adds /var/www/html/vendor/bin to the $PATH variable.
+          # In that case, `composer self-update` would not work and is also not needed.
+          docker compose exec -T web which composer
+          docker compose exec -T web composer --version
+          if [ "$(docker compose exec -T web which composer)" != "/var/www/html/vendor/bin/composer" ]; then
+            echo "Running composer self-update."
+            docker compose exec -T web composer self-update
+            docker compose exec -T web composer --version
+          else
+            echo "Skipping composer self-update."
+          fi
+
+      - name: Install composer dependencies, again (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web composer install
+
+      - name: Drupal database updates (update only)
+        if: ${{ matrix.type == 'update' }}
+        run: |
+          docker compose exec -T web ./vendor/bin/drush updb -y
+          docker compose exec -T web ./vendor/bin/drush cr
+
+      - name: Run grumphp (install only)
+        if: ${{ matrix.type != 'update' }}
+        run: docker compose exec -T web ./vendor/bin/grumphp run
+
+      - name: Run phpunit
+        run: docker compose exec -T web ./vendor/bin/phpunit
