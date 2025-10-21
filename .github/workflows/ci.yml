@@ -50,7 +50,11 @@ jobs:
       - run: docker compose up -d
 
       - name: composer self-update
-        run: docker compose exec -T web composer self-update
+        run: |
+          set -x
+          docker compose exec -T web composer --version
+          docker compose exec -T web composer self-update
+          docker compose exec -T web composer --version
 
       - name: composer install
         run: docker compose exec -T web composer install
@@ -79,11 +83,15 @@ jobs:
       - name: Run composer self-update, again (update only)
         if: ${{ matrix.type == 'update' }}
         run: |
+          set -x
           # In some versions, the web image adds /var/www/html/vendor/bin to the $PATH variable.
           # In that case, `composer self-update` would not work and is also not needed.
+          docker compose exec -T web which composer
+          docker compose exec -T web composer --version
           if [ "$(docker compose exec -T web which composer)" != "/var/www/html/vendor/bin/composer" ]; then
             echo "Running composer self-update."
             docker compose exec -T web composer self-update
+            docker compose exec -T web composer --version
           else
             echo "Skipping composer self-update."
           fi
