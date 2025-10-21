@@ -6,18 +6,23 @@ namespace Drupal\Tests\oe_showcase\ExistingSiteJavascript;
 
 use Drupal\Tests\oe_showcase\Traits\UserTrait;
 
+/**
+ * Test ai plugins.
+ */
 class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
 
   use UserTrait;
 
-  public function testContent() {
+  /**
+   * Test AI content plugins.
+   */
+  public function testContentPlugins() {
     $user = $this->createUser([]);
     $user->addRole('editor');
     $user->save();
     $this->drupalLogin($user);
     $this->drupalGet('node/add/oe_sc_event');
 
-    $page = $this->getSession()->getPage()->getHtml();
     // Check content suggestion plugins are available.
     $assert_session = $this->assertSession();
     $assert_session->pageTextContains('Alter tone');
@@ -27,4 +32,5 @@ class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('Suggest taxonomy tags');
     $assert_session->pageTextContains('AI Assistant');
   }
+
 }
