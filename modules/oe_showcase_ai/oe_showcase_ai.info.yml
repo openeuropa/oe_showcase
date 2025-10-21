@@ -4,18 +4,18 @@ description: Provides the configuration for AI services.
 core_version_requirement: ^10 || ^11
 package: OpenEuropa Showcase
 dependencies:
-  - drupal:key
-  - drupal:ai
-  - drupal:ai_api_explorer
-  - drupal:ai_assistant_api
-  - drupal:ai_automators
-  - drupal:ai_chatbot
-  - drupal:ai_ckeditor
-  - drupal:ai_content_suggestions
-  - drupal:ai_external_moderation
-  - drupal:ai_image_alt_text
-  - drupal:ai_logging
-  - drupal:ai_translate
+  - key:key
+  - ai:ai
+  - ai:ai_api_explorer
+  - ai:ai_assistant_api
+  - ai:ai_automators
+  - ai:ai_chatbot
+  - ai:ai_ckeditor
+  - ai:ai_content_suggestions
+  - ai:ai_external_moderation
+  - ai:ai_logging
+  - ai:ai_translate
+  - ai_image_alt_text:ai_image_alt_text
   - openeuropa:oe_ai_provider_gpt_at_ec
 
 config_devel:
