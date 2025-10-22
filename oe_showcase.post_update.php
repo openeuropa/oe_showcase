@@ -1332,6 +1332,7 @@ function oe_showcase_post_update_00056(): void {
  */
 function oe_showcase_post_update_00057(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_ai']);
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00057_ai_ckeditor', 'editor.editor.rich_text');
 
   // Allow editor role to use AI plugins.
   $permissions = [

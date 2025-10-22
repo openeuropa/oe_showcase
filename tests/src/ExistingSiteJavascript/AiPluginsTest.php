@@ -16,7 +16,7 @@ class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
   /**
    * Test AI content plugins.
    */
-  public function testContentPlugins() {
+  public function testContentPlugins(): void {
     $user = $this->createUser([]);
     $user->addRole('editor');
     $user->save();
@@ -30,7 +30,7 @@ class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('Suggest title');
     $assert_session->pageTextContains('Summarise text');
     $assert_session->pageTextContains('Suggest taxonomy tags');
-    $assert_session->pageTextContains('AI Assistant');
+    $assert_session->pageTextContains('Ai Assistant');
   }
 
 }

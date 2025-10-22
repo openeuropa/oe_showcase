@@ -1,0 +1,99 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor5
+format: rich_text
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - embed_media
+      - '|'
+      - sourceEditing
+      - '|'
+      - code
+      - heading
+      - aickeditor
+  plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows: {  }
+          enabled: false
+        ai_ckeditor_completion:
+          enabled: true
+          provider: ''
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_modify_prompt:
+          enabled: false
+          provider: ''
+        ai_ckeditor_reformat_html:
+          enabled: true
+          provider: ''
+        ai_ckeditor_spellfix:
+          enabled: true
+          provider: ''
+        ai_ckeditor_summarize:
+          enabled: true
+          provider: ''
+        ai_ckeditor_tone:
+          autocreate: false
+          provider: ''
+          tone_vocabulary: categories
+          use_description: 0
+          enabled: false
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: ''
+          translate_vocabulary: categories
+          use_description: false
+          language_source: tax
+          enabled: false
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<img src alt data-entity-type data-entity-uuid>'
+        - '<a hreflang>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+image_upload:
+  status: false
