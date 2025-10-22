@@ -76,6 +76,7 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
         'Embed media',
         'Source',
         'Code',
+        'AI Assistant',
       ],
     ];
   }

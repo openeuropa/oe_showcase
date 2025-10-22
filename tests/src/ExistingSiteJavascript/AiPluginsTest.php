@@ -30,7 +30,7 @@ class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->pageTextContains('Suggest title');
     $assert_session->pageTextContains('Summarise text');
     $assert_session->pageTextContains('Suggest taxonomy tags');
-    $assert_session->pageTextContains('Ai Assistant');
+    $assert_session->pageTextContains('AI Assistant');
   }
 
 }
