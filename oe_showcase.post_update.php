@@ -1332,4 +1332,19 @@ function oe_showcase_post_update_00056(): void {
  */
 function oe_showcase_post_update_00057(&$sandbox): void {
   \Drupal::service('module_installer')->install(['oe_showcase_ai']);
+
+  // Allow editor role to use AI plugins.
+  $permissions = [
+    'use ai ckeditor',
+    'access ai content suggestion tools',
+    'generate ai alt tags',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
 }
