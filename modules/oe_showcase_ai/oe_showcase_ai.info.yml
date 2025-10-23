@@ -1,7 +1,7 @@
 name: OpenEuropa Showcase AI
 type: module
 description: Provides the configuration for AI services.
-core_version_requirement: ^10 || ^11
+core_version_requirement: ^11
 package: OpenEuropa Showcase
 dependencies:
   - key:key
