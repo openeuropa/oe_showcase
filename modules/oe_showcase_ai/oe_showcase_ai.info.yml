@@ -1,0 +1,34 @@
+name: OpenEuropa Showcase AI
+type: module
+description: Provides the configuration for AI services.
+core_version_requirement: ^11
+package: OpenEuropa Showcase
+dependencies:
+  - key:key
+  - ai:ai
+  - ai:ai_api_explorer
+  - ai:ai_assistant_api
+  - ai:ai_automators
+  - ai:ai_chatbot
+  - ai:ai_ckeditor
+  - ai:ai_content_suggestions
+  - ai:ai_external_moderation
+  - ai:ai_logging
+  - ai:ai_translate
+  - ai_image_alt_text:ai_image_alt_text
+  - openeuropa:oe_ai_provider_gpt_at_ec
+
+config_devel:
+  install:
+  - ai.settings
+  - ai_ckeditor.settings
+  - ai_content_suggestions.prompts
+  - ai_content_suggestions.settings
+  - ai_content_suggestions.tone
+  - ai_external_moderation.settings
+  - ai_image_alt_text.settings
+  - ai_logging.ai_log_type.generic
+  - ai_logging.settings
+  - ai_translate.settings
+  - key.key.gptec_key
+  - oe_ai_provider_gpt_at_ec.settings

@@ -47,6 +47,7 @@ install:
   - oe_paragraphs_media
   - oe_paragraphs_social_feed
   - oe_paragraphs_timeline
+  - oe_showcase_ai
   - oe_showcase_contact_forms
   - oe_showcase_default_content
   - oe_showcase_example_route

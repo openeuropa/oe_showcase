@@ -1326,3 +1326,26 @@ function oe_showcase_post_update_00056(): void {
 
   Block::load('oe_showcase_theme_main_navigation')->setStatus(FALSE)->save();
 }
+
+/**
+ * Enable and configure ai modules.
+ */
+function oe_showcase_post_update_00057(&$sandbox): void {
+  \Drupal::service('module_installer')->install(['oe_showcase_ai']);
+  ConfigImporter::importSingle('profile', 'oe_showcase', '/config/post_updates/00057_ai_ckeditor', 'editor.editor.rich_text');
+
+  // Allow editor role to use AI plugins.
+  $permissions = [
+    'use ai ckeditor',
+    'access ai content suggestion tools',
+    'generate ai alt tags',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}

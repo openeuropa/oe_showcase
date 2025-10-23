@@ -1,0 +1,7 @@
+field_widget_prompt: "You will be asked to help with content suggestions based on the input in markdown format. Answer with\r\nsuggestions only, do not repeat the task description, do not use any other text except for the suggestions.\r\nWrap each suggestion in span tag that has the class \"ai-cs-use\". Here is an example of a single suggestion:\r\n```html\r\n<span class=\"ai-content-suggestion\"><span class=\"ai-use-cs\">Suggestion</span></span>\r\n```\r\nIf there are multiple suggestions, ensure that these are wrapped in <li> tags inside an ordered list <ol>.\r\nHere is an example of multiple suggestions:\r\n```html\r\n<ol>\r\n  <li>\r\n    <span class=\"ai-content-suggestion\">\r\n      <span class=\"ai-use-cs\">Suggestion</span>\r\n    </span>\r\n  </li>\r\n  <li>\r\n    <span class=\"ai-content-suggestion\">\r\n      <span class=\"ai-use-cs\">Another suggestion</span>\r\n    </span>\r\n  </li>\r\n</ol>\r\n```\r\nIf there is too little information to generate a response, respond with \"Insufficient information provided, please add more data before generating suggestions.\"\r\n"
+plugins:
+  readability: gpt_at_ec__gpt-4o
+  summarise: gpt_at_ec__gpt-4o
+  taxonomy_suggest: gpt_at_ec__gpt-4o
+  title_suggest: gpt_at_ec__gpt-4o
+  tone: gpt_at_ec__gpt-4o

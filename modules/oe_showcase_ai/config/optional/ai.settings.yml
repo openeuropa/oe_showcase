@@ -1,0 +1,18 @@
+prompt_logging: false
+prompt_logging_tags: ''
+default_providers:
+  chat:
+    provider_id: gpt_at_ec
+    model_id: gpt-4o
+  chat_with_complex_json:
+    provider_id: gpt_at_ec
+    model_id: gpt-4o
+  chat_with_image_vision:
+    provider_id: gpt_at_ec
+    model_id: gpt-4o
+  chat_with_structured_response:
+    provider_id: gpt_at_ec
+    model_id: gpt-4o
+  chat_with_tools:
+    provider_id: gpt_at_ec
+    model_id: gpt-4o
