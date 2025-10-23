@@ -69,6 +69,13 @@ commands:
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['pass']='';
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['host']='mailpit';
         $config['symfony_mailer.mailer_transport.sendmail']['configuration']['port']='1025';
+
+        // Enable full error reporting.
+        error_reporting(E_ALL);
+        ini_set('display_errors', TRUE);
+        ini_set('display_startup_errors', TRUE);
+        $config['system.logging']['error_level'] = 'verbose';
+
   ci:site-setup:
     - task: "append"
       file: "build/sites/default/settings.php"
