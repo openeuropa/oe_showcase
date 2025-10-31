@@ -16,7 +16,7 @@
         "drupal/block_field": "^1.0@RC",
         "drupal/color_scheme_field": "^1.0@beta",
         "drupal/composite_reference": "^2.4",
-        "drupal/core-recommended": "^11.1 <11.2",
+        "drupal/core-recommended": "^11.2",
         "drupal/decoupled_auth": "^3.1",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@beta",
@@ -70,8 +70,8 @@
         "composer/installers": "~1.11",
         "drupal/cas_mock_server": "^2.0.2",
         "drupal/config_devel": "^1.10",
-        "drupal/core-composer-scaffold": "^11.1 <11.2",
-        "drupal/core-dev": "^11.1 <11.2",
+        "drupal/core-composer-scaffold": "^11.2",
+        "drupal/core-dev": "^11.2",
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^13",
         "openeuropa/code-review-drupal": "^1.0.0-alpha",
@@ -139,8 +139,7 @@
                 "Allow altering the post_update run order @see https://www.drupal.org/project/drupal/issues/3129231": "https://www.drupal.org/files/issues/2022-06-27/drupal-post_update_alter-3129231-20.patch",
                 "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2024-06-08/3300404-63.patch",
                 "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch",
-                "Add hook_entity_postsave hook @see https://www.drupal.org/project/drupal/issues/2221347": "https://www.drupal.org/files/issues/2025-07-02/2221347-39.patch",
-                "Allow empty version value in install profile @see https://www.drupal.org/project/drupal/issues/3270892": "https://www.drupal.org/files/issues/2022-04-15/3270892-test-only.patch"
+                "Add hook_entity_postsave hook @see https://www.drupal.org/project/drupal/issues/2221347": "https://www.drupal.org/files/issues/2025-07-02/2221347-39.patch"
             },
             "drupal/tmgmt_ec_etranslation": {
                 "Show disclaimer as a block": "https://www.drupal.org/files/issues/2025-05-23/tmgmt_ec_etranslation-show_disclaimer.patch"
@@ -150,6 +149,9 @@
             "openeuropa/oe_content": {
                 "drupal/field_group": {
                     "https://www.drupal.org/project/field_group/issues/2787179": "https://www.drupal.org/files/issues/2023-04-07/2787179-highlight-html5-validation-85.patch"
+                },
+                "drupal/core": {
+                    "https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2023-12-21/2230909-309.patch"
                 }
             }
         },
