@@ -1,0 +1,59 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index aee7a0c7..46230887 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -12,7 +12,7 @@ jobs:
+     strategy:
+       matrix:
+         php_version: ["8.3"]
+-        core_version: ["~10.4.0", "10.5.2", "~11.1.0"]
++        core_version: ["~10.4.0", "~10.5.0", "~11.1.0", "~11.2.0"]
+     env:
+       PHP_VERSION: ${{ matrix.php_version }}
+     steps:
+diff --git a/modules/oe_paragraphs_media_field_storage/config/import/field.storage.paragraph.field_oe_media.yml b/modules/oe_paragraphs_media_field_storage/config/install/field.storage.paragraph.field_oe_media.yml
+similarity index 100%
+rename from modules/oe_paragraphs_media_field_storage/config/import/field.storage.paragraph.field_oe_media.yml
+rename to modules/oe_paragraphs_media_field_storage/config/install/field.storage.paragraph.field_oe_media.yml
+diff --git a/modules/oe_paragraphs_media_field_storage/oe_paragraphs_media_field_storage.install b/modules/oe_paragraphs_media_field_storage/oe_paragraphs_media_field_storage.install
+deleted file mode 100644
+index 7b3a5afe..00000000
+--- a/modules/oe_paragraphs_media_field_storage/oe_paragraphs_media_field_storage.install
++++ /dev/null
+@@ -1,36 +0,0 @@
+-<?php
+-
+-/**
+- * @file
+- * OE Paragraphs Media Field Storage install.
+- */
+-
+-declare(strict_types=1);
+-
+-use Drupal\Core\Config\FileStorage;
+-
+-/**
+- * Implements hook_install().
+- */
+-function oe_paragraphs_media_field_storage_install($is_syncing) {
+-  if ($is_syncing) {
+-    return;
+-  }
+-  // The storage of field_oe_media was initially used only in the "Text with
+-  // Featured Media" paragraph but we created a new module that installs
+-  // "Banner" paragraph where the field_oe_media storage is required as well.
+-  // We moved the storage of the field within this module under the
+-  // /config/import folder and import it with an install hook in order to avoid
+-  // errors when enabling this module on sites where this configuration already
+-  // exists.
+-  $field_config_storage = \Drupal::entityTypeManager()->getStorage('field_storage_config');
+-  $field = $field_config_storage->load('paragraph.field_oe_media');
+-  if ($field) {
+-    return;
+-  }
+-
+-  $storage = new FileStorage(\Drupal::service('extension.list.module')->getPath('oe_paragraphs_media_field_storage') . '/config/import');
+-  $config_record = $storage->read('field.storage.paragraph.field_oe_media');
+-  $field = $field_config_storage->createFromStorageRecord($config_record);
+-  $field->save();
+-}
