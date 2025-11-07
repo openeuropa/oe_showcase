@@ -48,10 +48,10 @@
         "microsoft/powerbi": "^2.1",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
-        "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0@alpha",
+        "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0.0-alpha3",
         "openeuropa/oe_authentication": "^1.17",
         "openeuropa/oe_contact_forms": "^1.20",
-        "openeuropa/oe_content": "^4.8",
+        "openeuropa/oe_content": "^4.11.0",
         "openeuropa/oe_content_extra": "^1.4",
         "openeuropa/oe_corporate_blocks": "^5.0@beta",
         "openeuropa/oe_corporate_countries": "^2.3",
@@ -59,11 +59,11 @@
         "openeuropa/oe_list_pages": "^1.15",
         "openeuropa/oe_multilingual": "^1.20",
         "openeuropa/oe_oembed": "^0.13",
-        "openeuropa/oe_paragraphs": "^1.28",
+        "openeuropa/oe_paragraphs": "^1.32.0",
         "openeuropa/oe_starter_content": "^1.5",
         "openeuropa/oe_subscriptions": "^1.0@beta",
         "openeuropa/oe_webtools": "^1.40",
-        "openeuropa/oe_whitelabel": "^1.25.0"
+        "openeuropa/oe_whitelabel": "^1.27.2"
     },
     "require-dev": {
         "composer/installers": "~1.11",
