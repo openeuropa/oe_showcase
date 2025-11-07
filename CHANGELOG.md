@@ -1,11 +1,20 @@
 # Change Log
 
+## [1.28.1](https://github.com/openeuropa/oe_showcase/tree/1.28.1)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.28.0...1.28.1)
+
+**Merged pull requests:**
+
+- OEL-3801: Remove ai\_ckeditor\_extras module. [\#352](https://github.com/openeuropa/oe_showcase/pull/352) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
+
 ## [1.28.0](https://github.com/openeuropa/oe_showcase/tree/1.28.0) (2025-10-31)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.27.0...1.28.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.28.0. [\#350](https://github.com/openeuropa/oe_showcase/pull/350) ([tibi2303](https://github.com/tibi2303))
 - OEL-0000: Update oe\_whitelabel. [\#349](https://github.com/openeuropa/oe_showcase/pull/349) ([tibi2303](https://github.com/tibi2303))
 - OEL-3794: Install and configure AI modules [\#347](https://github.com/openeuropa/oe_showcase/pull/347) ([enriquelacoma](https://github.com/enriquelacoma))
 - OEL-4095: GitHub actions [\#343](https://github.com/openeuropa/oe_showcase/pull/343) ([donquixote](https://github.com/donquixote))
