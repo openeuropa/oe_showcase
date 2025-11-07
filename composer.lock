@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0efab714f359a31378beb002b307988d",
+    "content-hash": "57048873647cb4738f0da0122a90b9b2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7683,16 +7683,16 @@
         },
         {
             "name": "openeuropa/oe_content",
-            "version": "4.10.0",
+            "version": "dev-EWPP-6061",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_content.git",
-                "reference": "8ab7eb3376b0b1da9aeff4c6377d223567c49a4a"
+                "reference": "a493b5e909644d91909cbd56ae3b71344bf6ca8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/8ab7eb3376b0b1da9aeff4c6377d223567c49a4a",
-                "reference": "8ab7eb3376b0b1da9aeff4c6377d223567c49a4a",
+                "url": "https://api.github.com/repos/openeuropa/oe_content/zipball/a493b5e909644d91909cbd56ae3b71344bf6ca8d",
+                "reference": "a493b5e909644d91909cbd56ae3b71344bf6ca8d",
                 "shasum": ""
             },
             "require": {
@@ -7722,6 +7722,7 @@
                 "drupal/token": "^1.10",
                 "drupal/typed_link": "^2.1",
                 "drush/drush": "^12.4 || ^13",
+                "ec-europa/toolkit": "^10.23",
                 "friends-of-behat/service-container-extension": "^1.0",
                 "lullabot/mink-selenium2-driver": "1.6.0 as 1.7.3",
                 "openeuropa/behat-transformation-context": "~0.2",
@@ -7731,9 +7732,7 @@
                 "openeuropa/oe_corporate_site_info": "^1.2",
                 "openeuropa/oe_link_lists": "^1.8",
                 "openeuropa/oe_multilingual": "^1.18",
-                "openeuropa/oe_time_caching": "^1.8",
-                "openeuropa/task-runner-drupal-project-symlink": "^1.0",
-                "openeuropa/task-runner-ensure-behat-batching": "^1.0"
+                "openeuropa/oe_time_caching": "^1.8"
             },
             "type": "drupal-module",
             "extra": {
@@ -7804,9 +7803,9 @@
             "description": "OpenEuropa Drupal module that contains the EC corporate entity types.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_content/issues",
-                "source": "https://github.com/openeuropa/oe_content/tree/4.10.0"
+                "source": "https://github.com/openeuropa/oe_content/tree/EWPP-6061"
             },
-            "time": "2025-09-25T11:59:56+00:00"
+            "time": "2025-10-24T13:31:38+00:00"
         },
         {
             "name": "openeuropa/oe_content_extra",
@@ -8484,16 +8483,16 @@
         },
         {
             "name": "openeuropa/oe_paragraphs",
-            "version": "1.31.0",
+            "version": "dev-EWPP-6075",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_paragraphs.git",
-                "reference": "c4da0e514c98ec49a24920766af114408f8ed456"
+                "reference": "d3684fd9c2bbbbbeb193639a9e4193c7cba95ae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/c4da0e514c98ec49a24920766af114408f8ed456",
-                "reference": "c4da0e514c98ec49a24920766af114408f8ed456",
+                "url": "https://api.github.com/repos/openeuropa/oe_paragraphs/zipball/d3684fd9c2bbbbbeb193639a9e4193c7cba95ae4",
+                "reference": "d3684fd9c2bbbbbeb193639a9e4193c7cba95ae4",
                 "shasum": ""
             },
             "require": {
@@ -8567,9 +8566,9 @@
             "description": "Drupal module providing a collection of Paragraph types based on ECL components.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_paragraphs/issues",
-                "source": "https://github.com/openeuropa/oe_paragraphs/tree/1.31.0"
+                "source": "https://github.com/openeuropa/oe_paragraphs/tree/EWPP-6075"
             },
-            "time": "2025-09-25T14:07:40+00:00"
+            "time": "2025-10-23T15:54:06+00:00"
         },
         {
             "name": "openeuropa/oe_starter_content",
@@ -20999,7 +20998,20 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_content",
+            "version": "dev-EWPP-6061",
+            "alias": "4.10.0",
+            "alias_normalized": "4.10.0.0"
+        },
+        {
+            "package": "openeuropa/oe_paragraphs",
+            "version": "dev-EWPP-6075",
+            "alias": "1.31.0",
+            "alias_normalized": "1.31.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
@@ -21012,7 +21024,9 @@
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_ai_provider_gpt_at_ec": 15,
+        "openeuropa/oe_content": 20,
         "openeuropa/oe_corporate_blocks": 10,
+        "openeuropa/oe_paragraphs": 20,
         "openeuropa/oe_subscriptions": 10
     },
     "prefer-stable": true,
