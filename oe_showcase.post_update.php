@@ -1380,3 +1380,25 @@ function oe_showcase_post_update_00058(): void {
   }
   batch_set($batch);
 }
+
+/**
+ * Enable and configure editoria11y.
+ */
+function oe_showcase_post_update_00059(&$sandbox): void {
+  \Drupal::service('module_installer')->install(['editoria11y']);
+
+  // Allow editor role to editoria11y.
+  $permissions = [
+    'view editoria11y checker',
+    'mark as hidden in editoria11y',
+    'manage editoria11y results',
+  ];
+  $role = Role::load('editor');
+  if ($role === NULL) {
+    throw new \Exception("Role not found: 'editor'.");
+  }
+  foreach ($permissions as $permission) {
+    $role->grantPermission($permission);
+  }
+  $role->save();
+}
