@@ -52,6 +52,9 @@ jobs:
       - name: composer self-update
         run: |
           set -x
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep 1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
           docker compose exec -T web composer --version
           docker compose exec -T web composer self-update
           docker compose exec -T web composer --version
