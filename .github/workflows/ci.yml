@@ -66,6 +66,35 @@ jobs:
           echo $COMPOSERVER || true
           docker compose exec -T web echo $COMPOSERVER || true
 
+      - name: report and wait container readiness
+        run: |
+          exec 2>&1  # avoid unsynced stderr vs stdout
+          set -x
+          date +"%T.%N"
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+          sleep .1
+          docker compose exec -T web ls -lA /usr/bin | grep composer
+
       - name: composer self-update
         run: |
           exec 2>&1  # avoid unsynced stderr vs stdout
