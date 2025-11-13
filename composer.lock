@@ -609,17 +609,17 @@
         },
         {
             "name": "drupal/ai",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "1.2.2"
+                "reference": "1.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai-1.2.2.zip",
-                "reference": "1.2.2",
-                "shasum": "761bbf7578a26ea4ef122b76f0e82a10254f9df1"
+                "url": "https://ftp.drupal.org/files/projects/ai-1.2.3.zip",
+                "reference": "1.2.3",
+                "shasum": "9ceaf655acb9da4c1ab08d1cbac0a2292996fd5c"
             },
             "require": {
                 "drupal/core": "^10.4 || ^11",
@@ -646,8 +646,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.2.2",
-                    "datestamp": "1761744723",
+                    "version": "1.2.3",
+                    "datestamp": "1762955697",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7129,16 +7129,16 @@
         },
         {
             "name": "openai-php/client",
-            "version": "v0.15.0",
+            "version": "v0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openai-php/client.git",
-                "reference": "4db080738104be6a1144fa9f203c428ea4e58128"
+                "reference": "3362ab004fcfc9d77df3aff7671fbcbe70177cae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openai-php/client/zipball/4db080738104be6a1144fa9f203c428ea4e58128",
-                "reference": "4db080738104be6a1144fa9f203c428ea4e58128",
+                "url": "https://api.github.com/repos/openai-php/client/zipball/3362ab004fcfc9d77df3aff7671fbcbe70177cae",
+                "reference": "3362ab004fcfc9d77df3aff7671fbcbe70177cae",
                 "shasum": ""
             },
             "require": {
@@ -7200,7 +7200,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openai-php/client/issues",
-                "source": "https://github.com/openai-php/client/tree/v0.15.0"
+                "source": "https://github.com/openai-php/client/tree/v0.18.0"
             },
             "funding": [
                 {
@@ -7216,7 +7216,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-04T17:44:21+00:00"
+            "time": "2025-10-31T18:58:57+00:00"
         },
         {
             "name": "openeuropa/composer-artifacts",
@@ -7313,40 +7313,6 @@
             "time": "2023-02-20T09:45:45+00:00"
         },
         {
-            "name": "openeuropa/gpt-at-ec-php-client",
-            "version": "1.0.0-beta1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/openeuropa/gpt-at-ec-php-client",
-                "reference": "c732b74efeb1ae6d77efc2bd16493acb71fa5611"
-            },
-            "require": {
-                "openai-php/client": "^0.15.0",
-                "php": "^8.3"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "^7.9",
-                "guzzlehttp/psr7": "^2.7",
-                "phpunit/phpunit": "^12.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Openeuropa\\GptAtEcPhpClient\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Openeuropa\\Tests\\GptAtEcPhpClient\\": "tests/src"
-                }
-            },
-            "license": [
-                "EUPL-1.2"
-            ],
-            "description": "PHP API client to interact with European Commission GPT@EC.",
-            "time": "2025-09-17T15:02:04+00:00"
-        },
-        {
             "name": "openeuropa/oe_agenda",
             "version": "1.0.0-alpha5",
             "source": {
@@ -7425,16 +7391,16 @@
         },
         {
             "name": "openeuropa/oe_ai_provider_gpt_at_ec",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_ai_provider_gpt_at_ec",
-                "reference": "d2bc83d85418ca3449bb7677b66892019a6b13e1"
+                "reference": "f3430c069d45202883071676a68d790df012ac48"
             },
             "require": {
                 "drupal/ai": "^1.1",
                 "drupal/key": "^1.20",
-                "openeuropa/gpt-at-ec-php-client": "~1.0.0-beta1"
+                "openai-php/client": ">=v0.10.1"
             },
             "require-dev": {
                 "drush/drush": "^12 || ^13"
@@ -7444,7 +7410,7 @@
                 "EUPL-1.2"
             ],
             "description": "Enables the use of GPT@EC as provider for the AI module.",
-            "time": "2025-09-17T16:28:02+00:00"
+            "time": "2025-07-24T18:41:56+00:00"
         },
         {
             "name": "openeuropa/oe_authentication",
@@ -8816,16 +8782,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.26.0",
+            "version": "1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "cf218dfa9b9f37180043d1d320adf0290e0ac1b2"
+                "reference": "dde8f0941c863eb38cae2c482858c77ac92bed25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/cf218dfa9b9f37180043d1d320adf0290e0ac1b2",
-                "reference": "cf218dfa9b9f37180043d1d320adf0290e0ac1b2",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/dde8f0941c863eb38cae2c482858c77ac92bed25",
+                "reference": "dde8f0941c863eb38cae2c482858c77ac92bed25",
                 "shasum": ""
             },
             "require": {
@@ -8863,18 +8829,26 @@
                 "openeuropa/oe_agenda": "^1.0.0-alpha4",
                 "openeuropa/oe_authentication": "^1.11",
                 "openeuropa/oe_contact_forms": "~1.11",
-                "openeuropa/oe_content": "^4.8",
+                "openeuropa/oe_content": "4.10.0",
                 "openeuropa/oe_content_extra": "^1.4",
                 "openeuropa/oe_corporate_blocks": "^5.0.0-beta5",
                 "openeuropa/oe_link_lists": "^1.0",
                 "openeuropa/oe_list_pages": "^1.0",
                 "openeuropa/oe_multilingual": "^1.14",
-                "openeuropa/oe_paragraphs": "^1.28",
+                "openeuropa/oe_paragraphs": "1.31.0",
                 "openeuropa/oe_starter_content": "^1.5",
                 "openeuropa/oe_subscriptions": "^1.0.0-beta3"
             },
             "type": "drupal-theme",
             "extra": {
+                "patches": {
+                    "openeuropa/oe_content": {
+                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_content/pull/673:": "./patches/oe_content-PR_673-05112025.patch"
+                    },
+                    "openeuropa/oe_paragraphs": {
+                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_paragraphs/pull/267:": "./patches/oe_paragraphs-PR_267-05112025.patch"
+                    }
+                },
                 "artifacts": {
                     "openeuropa/oe_bootstrap_theme": {
                         "dist": {
@@ -8917,9 +8891,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.26.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.27.0"
             },
-            "time": "2025-10-30T15:44:58+00:00"
+            "time": "2025-11-13T13:03:37+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -14890,23 +14864,25 @@
         },
         {
             "name": "drupal/cas_mock_server",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/cas_mock_server.git",
-                "reference": "2.0.2"
+                "reference": "2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cas_mock_server-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "7ad9f563d3cddfcd03df3917e914c517d202639d"
+                "url": "https://ftp.drupal.org/files/projects/cas_mock_server-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "314cc2dd3706c3a9843efc1db1b03aacb49573e5"
             },
             "require": {
                 "drupal/core": ">=9.3"
             },
             "require-dev": {
-                "drupal/cas": "^2.1"
+                "drupal/cas": "^2.1 || ^3.0",
+                "drupal/drupal-extension": "^5",
+                "drush/drush": "^12.4 || ^13"
             },
             "suggest": {
                 "drupal/config_override_warn": "Shows a warning on the CAS configuration form when the mock server is active."
@@ -14914,8 +14890,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1736329039",
+                    "version": "2.0.3",
+                    "datestamp": "1762884839",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -14933,20 +14909,28 @@
                     "role": "Maintainer"
                 },
                 {
+                    "name": "andras_szilagyi",
+                    "homepage": "https://www.drupal.org/user/1217938"
+                },
+                {
                     "name": "claudiu.cristea",
                     "homepage": "https://www.drupal.org/user/56348"
+                },
+                {
+                    "name": "dimilias",
+                    "homepage": "https://www.drupal.org/user/2578708"
                 },
                 {
                     "name": "huzooka",
                     "homepage": "https://www.drupal.org/user/281301"
                 },
                 {
-                    "name": "idimopoulos",
-                    "homepage": "https://www.drupal.org/user/2578708"
-                },
-                {
                     "name": "pfrenssen",
                     "homepage": "https://www.drupal.org/user/382067"
+                },
+                {
+                    "name": "saidatom",
+                    "homepage": "https://www.drupal.org/user/1846674"
                 }
             ],
             "description": "A mocked CAS server for testing purposes.",
