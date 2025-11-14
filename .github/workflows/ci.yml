@@ -51,6 +51,7 @@ jobs:
 
       - name: composer self-update
         run: |
+          exec 2>&1  # avoid unsynced stderr vs stdout
           set -x
           docker compose exec -T web composer --version
           docker compose exec -T web composer self-update
