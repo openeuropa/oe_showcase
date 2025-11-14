@@ -57,6 +57,15 @@ jobs:
           docker compose up -d
           date +"%T.%N"
 
+      - name: report env variables
+        run: |
+          exec 2>&1  # avoid unsynced stderr vs stdout
+          set -x
+          printenv COMPOSERVER || true
+          docker compose exec -T web printenv COMPOSERVER || true
+          echo $COMPOSERVER || true
+          docker compose exec -T web echo $COMPOSERVER || true
+
       - name: composer self-update
         run: |
           exec 2>&1  # avoid unsynced stderr vs stdout
