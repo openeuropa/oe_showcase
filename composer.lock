@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30c17ae1f95536dcd69e99b338d6281e",
+    "content-hash": "89f6824b274f2ddc89ab443fc47cd741",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8782,16 +8782,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.27.0",
+            "version": "1.27.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "dde8f0941c863eb38cae2c482858c77ac92bed25"
+                "reference": "286555034f1e013d09eb16bc8474c67e8b7f6c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/dde8f0941c863eb38cae2c482858c77ac92bed25",
-                "reference": "dde8f0941c863eb38cae2c482858c77ac92bed25",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/286555034f1e013d09eb16bc8474c67e8b7f6c6f",
+                "reference": "286555034f1e013d09eb16bc8474c67e8b7f6c6f",
                 "shasum": ""
             },
             "require": {
@@ -8843,10 +8843,10 @@
             "extra": {
                 "patches": {
                     "openeuropa/oe_content": {
-                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_content/pull/673:": "./patches/oe_content-PR_673-05112025.patch"
+                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_content/pull/673:": "https://raw.githubusercontent.com/openeuropa/oe_whitelabel/refs/tags/1.27.0/patches/oe_content-PR_673-05112025.patch"
                     },
                     "openeuropa/oe_paragraphs": {
-                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_paragraphs/pull/267:": "./patches/oe_paragraphs-PR_267-05112025.patch"
+                        "Support for Drupal 11.2. https://github.com/openeuropa/oe_paragraphs/pull/267:": "https://raw.githubusercontent.com/openeuropa/oe_whitelabel/refs/tags/1.27.0/patches/oe_paragraphs-PR_267-05112025.patch"
                     }
                 },
                 "artifacts": {
@@ -8891,9 +8891,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.27.0"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.27.1"
             },
-            "time": "2025-11-13T13:03:37+00:00"
+            "time": "2025-11-14T09:16:20+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -21035,5 +21035,5 @@
         "php": ">=8.1"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
