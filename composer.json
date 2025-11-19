@@ -143,6 +143,9 @@
             },
             "drupal/tmgmt_ec_etranslation": {
                 "Show disclaimer as a block": "https://www.drupal.org/files/issues/2025-05-23/tmgmt_ec_etranslation-show_disclaimer.patch"
+            },
+            "drupal/pathauto": {
+                "Alias for translation undefined https://www.drupal.org/project/pathauto/issues/2946354": "https://www.drupal.org/files/issues/2024-01-09/pathauto_undefined_translation-2946354-9.patch"
             }
         },
         "patches-ignore": {
