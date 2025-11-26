@@ -17,7 +17,7 @@ class WebToolsEtransUnifiedTest extends ShowcaseExistingSiteTestBase {
   public function testWebToolsEtransUnified(): void {
     $assert_session = $this->assertSession();
 
-    $etrans_block_json = '{"service":"etrans","renderAs":{"icon":false,"link":false,"button":false},"languages":{"source":"en"},"config":{"targets":{"receiver":"#etrans-widget"}},"delay":0}';
+    $etrans_block_json = '{"service":"etrans","renderAs":{"icon":false,"link":false,"button":false},"languages":{"source":"en"},"config":{"mode":"lc2023","targets":{"receiver":"#etrans-widget"}},"delay":0}';
     $link_text = 'Translate to French';
     $message = "French is available via eTranslation, the European Commission's machine translation service.";
     $url_options = ['language' => \Drupal::languageManager()->getLanguage('fr')];

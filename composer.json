@@ -15,7 +15,7 @@
         "drupal/block_field": "^1.0@RC",
         "drupal/color_scheme_field": "^1.0@beta",
         "drupal/composite_reference": "^2.4",
-        "drupal/core-recommended": "^11.1 <11.2",
+        "drupal/core-recommended": "~11.2.0",
         "drupal/decoupled_auth": "^3.1",
         "drupal/default_content": "^2.0@alpha",
         "drupal/description_list_field": "^1.0@beta",
@@ -48,10 +48,10 @@
         "microsoft/powerbi": "^2.1",
         "openeuropa/composer-artifacts": "^1.0.0-alpha1",
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
-        "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0@alpha",
+        "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0.0-alpha3",
         "openeuropa/oe_authentication": "^1.17",
         "openeuropa/oe_contact_forms": "^1.20",
-        "openeuropa/oe_content": "^4.8",
+        "openeuropa/oe_content": "^4.11.0",
         "openeuropa/oe_content_extra": "^1.4",
         "openeuropa/oe_corporate_blocks": "^5.0@beta",
         "openeuropa/oe_corporate_countries": "^2.3",
@@ -59,18 +59,18 @@
         "openeuropa/oe_list_pages": "^1.15",
         "openeuropa/oe_multilingual": "^1.20",
         "openeuropa/oe_oembed": "^0.13",
-        "openeuropa/oe_paragraphs": "^1.28",
+        "openeuropa/oe_paragraphs": "^1.32.0",
         "openeuropa/oe_starter_content": "^1.5",
         "openeuropa/oe_subscriptions": "^1.0@beta",
         "openeuropa/oe_webtools": "^1.40",
-        "openeuropa/oe_whitelabel": "^1.25.0"
+        "openeuropa/oe_whitelabel": "^1.27.2"
     },
     "require-dev": {
         "composer/installers": "~1.11",
         "drupal/cas_mock_server": "^2.0.2",
         "drupal/config_devel": "^1.10",
-        "drupal/core-composer-scaffold": "^11.1 <11.2",
-        "drupal/core-dev": "^11.1 <11.2",
+        "drupal/core-composer-scaffold": "~11.2.0",
+        "drupal/core-dev": "~11.2.0",
         "drupal/datetime_testing": "^1.0@beta",
         "drush/drush": "^13",
         "openeuropa/code-review-drupal": "^1.0.0-alpha",
@@ -139,7 +139,7 @@
                 "Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated @see https://www.drupal.org/project/drupal/issues/3300404": "https://www.drupal.org/files/issues/2024-06-08/3300404-63.patch",
                 "strpos(): Passing null is deprecated in core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php @see https://www.drupal.org/project/drupal/issues/3328187": "https://www.drupal.org/files/issues/2023-07-05/3372667-2_0.patch",
                 "Add hook_entity_postsave hook @see https://www.drupal.org/project/drupal/issues/2221347": "https://www.drupal.org/files/issues/2025-07-02/2221347-39.patch",
-                "Allow empty version value in install profile @see https://www.drupal.org/project/drupal/issues/3270892": "https://www.drupal.org/files/issues/2022-04-15/3270892-test-only.patch"
+                "Simple decimals fail to pass validation @see https://www.drupal.org/project/drupal/issues/2230909": "https://www.drupal.org/files/issues/2025-09-04/2230909-383.patch"
             },
             "drupal/tmgmt_ec_etranslation": {
                 "Show disclaimer as a block": "https://www.drupal.org/files/issues/2025-05-23/tmgmt_ec_etranslation-show_disclaimer.patch"

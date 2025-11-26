@@ -51,7 +51,7 @@ class EditorTest extends ShowcaseExistingSiteJavascriptTestBase {
   /**
    * Data provider for editor format tests.
    */
-  public function formatEditorProvider(): \Generator {
+  public static function formatEditorProvider(): \Generator {
     yield 'Simple rich text' => [
       'Introduction',
       [
