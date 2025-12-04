@@ -7527,16 +7527,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.30.0",
+            "version": "1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "5bdc641d9db2ff1ebce26ed475e93b935291a4c2"
+                "reference": "b3c6c04edab7f8f711ce1d1a022a33925e6dc8a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/5bdc641d9db2ff1ebce26ed475e93b935291a4c2",
-                "reference": "5bdc641d9db2ff1ebce26ed475e93b935291a4c2",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/b3c6c04edab7f8f711ce1d1a022a33925e6dc8a6",
+                "reference": "b3c6c04edab7f8f711ce1d1a022a33925e6dc8a6",
                 "shasum": ""
             },
             "require": {
@@ -7600,9 +7600,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.30.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.31.0"
             },
-            "time": "2025-10-30T14:38:37+00:00"
+            "time": "2025-12-04T09:05:20+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
