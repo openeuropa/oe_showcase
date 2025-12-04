@@ -1,11 +1,29 @@
 # Change Log
 
-## [1.28.1](https://github.com/openeuropa/oe_showcase/tree/1.28.1)
+## [1.29.1](https://github.com/openeuropa/oe_showcase/tree/1.30.0) (2025-12-04)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.29.0...1.30.0)
+
+**Merged pull requests:**
+
+- OEL-0000: Update oe\_bootstrap\_theme. [\#358](https://github.com/openeuropa/oe_showcase/pull/358) ([tibi2303](https://github.com/tibi2303))
+
+## [1.29.0](https://github.com/openeuropa/oe_showcase/tree/1.29.0) (2025-11-26)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.4179.202511261248...1.29.0)
+
+**Merged pull requests:**
+
+- OEL-4017: Missing URL alias for machine-translated pages. [\#336](https://github.com/openeuropa/oe_showcase/pull/336) ([piotrsmykaj](https://github.com/piotrsmykaj))
+- OEL-4179: Use drupal/core:~11.2.0. [\#346](https://github.com/openeuropa/oe_showcase/pull/346) ([donquixote](https://github.com/donquixote))
+
+## [1.28.1](https://github.com/openeuropa/oe_showcase/tree/1.28.1) (2025-11-07)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.28.0...1.28.1)
 
 **Merged pull requests:**
 
+- Prepare release 1.28.1. [\#353](https://github.com/openeuropa/oe_showcase/pull/353) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 - OEL-3801: Remove ai\_ckeditor\_extras module. [\#352](https://github.com/openeuropa/oe_showcase/pull/352) ([AaronGilMartinez](https://github.com/AaronGilMartinez))
 
 ## [1.28.0](https://github.com/openeuropa/oe_showcase/tree/1.28.0) (2025-10-31)
