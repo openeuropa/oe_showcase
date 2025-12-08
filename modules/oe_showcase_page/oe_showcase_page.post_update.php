@@ -28,3 +28,28 @@ function oe_showcase_page_post_update_00001(&$sandbox): void {
 function oe_showcase_page_post_update_00002(&$sandbox): void {
   ConfigImporter::importSingle('module', 'oe_showcase_page', '/config/post_updates/00002_date_format', 'core.date_format.oe_showcase_page_date');
 }
+
+/**
+ * Hide the links pseudo field on showcase page view displays.
+ */
+function oe_showcase_page_post_update_00003(&$sandbox): void {
+  $config_factory = \Drupal::configFactory();
+  foreach (['default', 'teaser'] as $view_mode) {
+    $config_name = "core.entity_view_display.node.oe_showcase_page.$view_mode";
+    $config = $config_factory->getEditable($config_name);
+
+    if ($config->isNew()) {
+      continue;
+    }
+
+    $content = $config->get('content') ?? [];
+    unset($content['links']);
+    $config->set('content', $content);
+
+    $hidden = $config->get('hidden') ?? [];
+    $hidden['links'] = TRUE;
+    $config->set('hidden', $hidden);
+
+    $config->save();
+  }
+}
