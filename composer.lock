@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "119673a206b16ccadbb9e43b5f416ada",
+    "content-hash": "44f09413cfc2bd976df98a63c21514c9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8822,16 +8822,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "1.27.2",
+            "version": "0.3926.202512081700",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "1b7f7446e849df3bbfc81fe0bdee3d02ce315656"
+                "reference": "5ff1e0474150965d47205a63efa8594fa7d17310"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/1b7f7446e849df3bbfc81fe0bdee3d02ce315656",
-                "reference": "1b7f7446e849df3bbfc81fe0bdee3d02ce315656",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/5ff1e0474150965d47205a63efa8594fa7d17310",
+                "reference": "5ff1e0474150965d47205a63efa8594fa7d17310",
                 "shasum": ""
             },
             "require": {
@@ -8923,9 +8923,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.27.2"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3926.202512081700"
             },
-            "time": "2025-11-19T13:59:05+00:00"
+            "time": "2025-12-08T14:07:15+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -21046,7 +21046,14 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_whitelabel",
+            "version": "0.3926.202512081700.0",
+            "alias": "1.27.2",
+            "alias_normalized": "1.27.2.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
@@ -21067,5 +21074,5 @@
         "php": ">=8.1"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
