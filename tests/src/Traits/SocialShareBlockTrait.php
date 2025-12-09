@@ -15,7 +15,7 @@ trait SocialShareBlockTrait {
    * Asserts Social Share block.
    */
   protected function assertSocialShareBlock(): void {
-    $main_content = $this->cssSelect('main > div.container')[0];
+    $main_content = $this->cssSelect('#block-oe-showcase-theme-social-share')[0];
     $this->assertStringContainsString('Share this page', $main_content->getText());
     $social_share_config = [
       'service' => 'share',
