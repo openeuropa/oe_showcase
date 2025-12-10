@@ -16,6 +16,7 @@ dependencies:
   - ai:ai_logging
   - ai:ai_translate
   - ai_image_alt_text:ai_image_alt_text
+  - editoria11y:editoria11y
   - openeuropa:oe_ai_provider_gpt_at_ec
 
 config_devel:
