@@ -1402,3 +1402,21 @@ function oe_showcase_post_update_00059(&$sandbox): void {
   }
   $role->save();
 }
+
+/**
+ * Disable caching for the media entity browsers view to avoid deadlocks.
+ */
+function oe_showcase_post_update_00060(): void {
+  $config = \Drupal::configFactory()->getEditable('views.view.media_entity_browsers');
+  if ($config->isNew()) {
+    return;
+  }
+
+  $display = $config->get('display') ?? [];
+  $display['default']['display_options']['cache'] = [
+    'type' => 'none',
+    'options' => [],
+  ];
+
+  $config->set('display', $display)->save();
+}

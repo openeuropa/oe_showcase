@@ -230,7 +230,7 @@ display:
         options:
           perm: 'view media'
       cache:
-        type: tag
+        type: none
         options: {  }
       empty: {  }
       sorts:
