@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44f09413cfc2bd976df98a63c21514c9",
+    "content-hash": "ff63811e88e0628d965fe7557dcfdf77",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3926.202512081700",
+            "version": "0.1.202512101800",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "5ff1e0474150965d47205a63efa8594fa7d17310"
+                "reference": "cf7fd028354a640c57522a0cdd6dec7295a0567b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/5ff1e0474150965d47205a63efa8594fa7d17310",
-                "reference": "5ff1e0474150965d47205a63efa8594fa7d17310",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/cf7fd028354a640c57522a0cdd6dec7295a0567b",
+                "reference": "cf7fd028354a640c57522a0cdd6dec7295a0567b",
                 "shasum": ""
             },
             "require": {
@@ -8923,6 +8923,7 @@
                 "drupal/extra_field": "^2.3 || ^3.0@beta",
                 "drupal/facets_form": "^1.0.0-alpha6",
                 "drupal/field_group": "^3.4",
+                "drupal/modal_page": "^6.0@beta",
                 "drupal/paragraphs": "^1.17",
                 "drupal/search_api": "^1.29",
                 "drupal/search_api_autocomplete": "^1.7",
@@ -8945,6 +8946,14 @@
             },
             "type": "drupal-theme",
             "extra": {
+                "patches": {
+                    "drupal/modal_page": {
+                        "Improve cache invalidation process: https://www.drupal.org/project/modal_page/issues/3555830": "https://www.drupal.org/files/issues/2025-11-25/3555830-12.patch",
+                        "RouteNotFoundException thrown during module install: https://www.drupal.org/project/modal_page/issues/3543767": "https://www.drupal.org/files/issues/2025-11-25/3543767-7.patch",
+                        "Support for less-intrusive dialogs via Bootstrap Toasts: https://www.drupal.org/project/modal_page/issues/3535144": "https://www.drupal.org/files/issues/2025-11-25/3535144-21.patch",
+                        "Allow modal entity management without granting access to global module config: https://www.drupal.org/project/modal_page/issues/3559425": "https://www.drupal.org/files/issues/2025-11-25/3559425-5.patch"
+                    }
+                },
                 "artifacts": {
                     "openeuropa/oe_bootstrap_theme": {
                         "dist": {
@@ -8987,9 +8996,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3926.202512081700"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202512101800"
             },
-            "time": "2025-12-08T14:07:15+00:00"
+            "time": "2025-12-10T15:06:09+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -21110,14 +21119,7 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "openeuropa/oe_whitelabel",
-            "version": "0.3926.202512081700.0",
-            "alias": "1.27.2",
-            "alias_normalized": "1.27.2.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
