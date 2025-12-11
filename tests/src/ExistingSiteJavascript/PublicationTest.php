@@ -294,6 +294,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->getSession()->executeScript("const el = document.querySelector('$selector'); if (el) { el.scrollIntoView({block: 'center'}); }");
     $field = $assert_session->elementExists('css', $selector);
     $field->setValue($value);
+    $this->getSession()->executeScript("const el = document.querySelector('$selector'); if (el) { el.dispatchEvent(new Event('change', {bubbles: true})); }");
   }
 
   /**
