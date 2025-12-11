@@ -203,6 +203,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->createPerson('Bob', 'Purple');
     $this->drupalGet($publication->toUrl('edit-form'));
     $assert_session->buttonExists('Add another item')->press();
+    $assert_session->waitForText('Bob Purple');
     $this->setAuthorFieldValue('input[name="field_publication_authors[1][target_id]"]', 'Bob Purple');
     $assert_session->buttonExists('Save')->press();
     $assert_session->waitForText('Publication Test publication has been updated.');
@@ -218,6 +219,7 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->createPerson('Mia', 'Green');
     $this->drupalGet($publication->toUrl('edit-form'));
     $assert_session->buttonExists('Add another item')->press();
+    $assert_session->waitForText('Mia Green');
     $this->setAuthorFieldValue('input[name="field_publication_authors[2][target_id]"]', 'Mia Green');
     $assert_session->buttonExists('Save')->press();
     $assert_session->waitForText('Publication Test publication has been updated.');
