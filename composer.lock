@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff63811e88e0628d965fe7557dcfdf77",
+    "content-hash": "9ee47080e38cc02eb2fec82d8b88949d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.1.202512101800",
+            "version": "1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "cf7fd028354a640c57522a0cdd6dec7295a0567b"
+                "reference": "ce8e59e92cf18280541f6c04bd1111be513a0189"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/cf7fd028354a640c57522a0cdd6dec7295a0567b",
-                "reference": "cf7fd028354a640c57522a0cdd6dec7295a0567b",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/ce8e59e92cf18280541f6c04bd1111be513a0189",
+                "reference": "ce8e59e92cf18280541f6c04bd1111be513a0189",
                 "shasum": ""
             },
             "require": {
@@ -8996,9 +8996,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.1.202512101800"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/1.28.0"
             },
-            "time": "2025-12-10T15:06:09+00:00"
+            "time": "2025-12-11T13:41:29+00:00"
         },
         {
             "name": "pear/archive_tar",
