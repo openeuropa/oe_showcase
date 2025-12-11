@@ -78,11 +78,11 @@ class WysiwygEmbedTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->elementNotExists('css', 'nav.pager');
 
     // Check that the search tab is present.
-    $this->clickLink('Search in AV Portal');
+    $this->getSession()->getPage()->pressButton('Search in AV Portal');
     $assert_session->fieldExists('Search');
     $assert_session->pageTextContains('Visit by Federica Mogherini, Vice-President of the EC');
 
-    $this->clickLink('Media library');
+    $this->getSession()->getPage()->pressButton('Media library');
 
     // Embed an image media.
     $this->getMediaBrowserTileByMediaName('Document title')->click();

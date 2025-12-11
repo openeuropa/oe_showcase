@@ -57,8 +57,8 @@ class GalleryParagraphTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->buttonExists('Select media', $fieldset)->press();
     $assert_session->assertWaitOnAjaxRequest();
     $this->getSession()->switchToIFrame('entity_browser_iframe_images_and_videos');
-    $assert_session->linkExistsExact('Media library');
-    $assert_session->linkExistsExact('Search in AV Portal');
+    $assert_session->buttonExists('Media library');
+    $assert_session->buttonExists('Search in AV Portal');
 
     // Assert the exposed filters.
     $assert_session->fieldExists('Filter by name');
