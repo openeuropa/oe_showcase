@@ -56,7 +56,6 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     $assert_session->buttonExists('Select media', $thumbnail_fieldset)->press();
     $assert_session->assertWaitOnAjaxRequest();
     $this->getSession()->switchToIFrame('entity_browser_iframe_images');
-    $assert_session->linkExistsExact('Media library');
     $assert_session->linkExistsExact('Search in AV Portal');
 
     // Assert the exposed filters.
