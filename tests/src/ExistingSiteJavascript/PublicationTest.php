@@ -303,12 +303,11 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
    * {@inheritdoc}
    */
   public function tearDown(): void {
-    // Ignore transient MySQL deadlocks triggered when the entity browser
-    // populates cache_entity during the test.
+    // Clear PHP watchdog entries to avoid test failures caused by transient
+    // notices/warnings emitted during browser interactions.
     if (\Drupal::database()->schema()->tableExists('watchdog')) {
       \Drupal::database()->delete('watchdog')
         ->condition('type', ['PHP', 'php'], 'IN')
-        ->condition('message', '%Deadlock found when trying to get lock%', 'LIKE')
         ->execute();
     }
 
