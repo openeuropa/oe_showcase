@@ -54,8 +54,9 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Assert the media browser for the thumbnail field.
     $thumbnail_fieldset = $assert_session->elementExists('css', '[data-drupal-selector="edit-oe-featured-media-wrapper"]');
     $assert_session->buttonExists('Select media', $thumbnail_fieldset)->press();
-    $assert_session->assertWaitOnAjaxRequest();
+    $assert_session->waitForElementVisible('css', '#entity_browser_iframe_images');
     $this->getSession()->switchToIFrame('entity_browser_iframe_images');
+    $assert_session->linkExistsExact('Media library');
     $assert_session->linkExistsExact('Search in AV Portal');
 
     // Assert the exposed filters.
