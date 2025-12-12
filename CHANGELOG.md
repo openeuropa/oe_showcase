@@ -1,11 +1,23 @@
 # Change Log
 
-## [1.29.1](https://github.com/openeuropa/oe_showcase/tree/1.30.0) (2025-12-04)
+## [1.30.0](https://github.com/openeuropa/oe_showcase/tree/1.30.0) (2025-12-12)
 
-[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.29.0...1.30.0)
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.3926.202512081700...1.30.0)
 
 **Merged pull requests:**
 
+- OEL-4395: Minimal changes for tests. [\#366](https://github.com/openeuropa/oe_showcase/pull/366) ([tibi2303](https://github.com/tibi2303))
+- OEL-0000: Update oe\_showcase. [\#362](https://github.com/openeuropa/oe_showcase/pull/362) ([tibi2303](https://github.com/tibi2303))
+- OEL-3926: Moved links to hidden and prerelease oe\_whitelabel. [\#360](https://github.com/openeuropa/oe_showcase/pull/360) ([tibi2303](https://github.com/tibi2303))
+- OEL-4316: Enable module editoria11y. [\#354](https://github.com/openeuropa/oe_showcase/pull/354) ([enriquelacoma](https://github.com/enriquelacoma))
+
+## [1.29.1](https://github.com/openeuropa/oe_showcase/tree/1.29.1) (2025-12-04)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.29.0...1.29.1)
+
+**Merged pull requests:**
+
+- Prepare release 1.29.1. [\#359](https://github.com/openeuropa/oe_showcase/pull/359) ([tibi2303](https://github.com/tibi2303))
 - OEL-0000: Update oe\_bootstrap\_theme. [\#358](https://github.com/openeuropa/oe_showcase/pull/358) ([tibi2303](https://github.com/tibi2303))
 
 ## [1.29.0](https://github.com/openeuropa/oe_showcase/tree/1.29.0) (2025-11-26)
