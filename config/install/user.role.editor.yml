@@ -30,7 +30,6 @@ dependencies:
   module:
     - content_translation
     - entity_browser
-    - editoria11y
     - file
     - filter
     - media
@@ -130,8 +129,6 @@ permissions:
   - 'edit terms in news_type'
   - 'edit terms in publication_type'
   - 'generate ai alt tags'
-  - 'manage editoria11y results'
-  - 'mark as hidden in editoria11y'
   - 'revert oe_list_page revisions'
   - 'revert oe_project revisions'
   - 'revert oe_sc_event revisions'
@@ -145,7 +142,6 @@ permissions:
   - 'use ai ckeditor'
   - 'use text format rich_text'
   - 'use text format simple_rich_text'
-  - 'view editoria11y checker'
   - 'view oe_list_page revisions'
   - 'view oe_project revisions'
   - 'view oe_sc_event revisions'
