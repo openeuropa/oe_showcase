@@ -38,6 +38,16 @@ abstract class ShowcaseExistingSiteJavascriptTestBase extends ExistingSiteSeleni
     if (!$this->casForcedLogin) {
       $this->disableForcedLogin();
     }
+
+    // Make sure the AJAX counters used by JSWebAssert are available.
+    // js_testing_ajax_request_test injects window.drupalActiveXhrCount.
+    if (!\Drupal::moduleHandler()->moduleExists('js_testing_ajax_request_test')) {
+      \Drupal::service('module_installer')->install(['js_testing_ajax_request_test']);
+    }
+    // Enable test helpers that provide AV Portal/oEmbed mocks used by JS tests.
+    if (!\Drupal::moduleHandler()->moduleExists('oe_showcase_test')) {
+      \Drupal::service('module_installer')->install(['oe_showcase_test']);
+    }
   }
 
   /**
