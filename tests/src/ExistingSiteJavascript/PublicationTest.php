@@ -104,7 +104,10 @@ class PublicationTest extends ShowcaseExistingSiteJavascriptTestBase {
     // Make sure this entity browser shows documents.
     $expected_media_bundles = ['document'];
     foreach (array_diff(array_keys($media), $expected_media_bundles) as $unwanted_bundle) {
-      $assert_session->pageTextNotContains($media[$unwanted_bundle]->label());
+      $label = $media[$unwanted_bundle]->label();
+      if (!empty($label)) {
+        $assert_session->pageTextNotContains($label);
+      }
     }
 
     // Assert that the "Create new document" tab allows to create a document
