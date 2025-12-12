@@ -24,8 +24,8 @@ class AiPluginsTest extends ShowcaseExistingSiteJavascriptTestBase {
     $this->drupalLogin($user);
     // Test editoria11y is enabled for editor role.
     $this->drupalGet('home');
-    $this->assertSession()->waitForElement('css', 'ed11y-element-panel');
-    $this->assertSession()->elementExists('css', 'ed11y-element-panel');
+    $this->assertTrue((bool) $this->getSession()->evaluateScript('return !!(window.drupalSettings && drupalSettings.editoria11y);'));
+    $this->assertSession()->elementExists('css', 'script[src*="editoria11y"]');
 
     // Test content suggestion plugins are available for editor role.
     $this->drupalGet('node/add/oe_sc_event');
