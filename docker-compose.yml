@@ -26,7 +26,7 @@ services:
     #   - 3306:3306
 
   sparql:
-    image: openeuropa/triple-store-dev
+    image: registry.fpfis.eu/digit/devsecops/triplestore
     environment:
       - SPARQL_UPDATE=true
       - DBA_PASSWORD=dba

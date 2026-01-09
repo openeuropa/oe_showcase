@@ -44,6 +44,8 @@ jobs:
         run: |
           # Replace -dev with -ci.
           sed -i 's/httpd-php:8\.3-\(dev\|ci\)/httpd-php:8.3-ci/g' docker-compose.yml
+          # Replace old SPARQL image when running older tags.
+          sed -i 's#openeuropa/triple-store-dev#registry.fpfis.eu/digit/devsecops/triplestore#g' docker-compose.yml
           # Remove COMPOSERVER, which may be present in the older version we checked out.
           # See https://git.fpfis.tech.ec.europa.eu/digit/devsecops/httpd-php/-/issues/3.
           sed -i '/COMPOSERVER/d' docker-compose.yml
