@@ -103,6 +103,8 @@ class GalleryParagraphTest extends ShowcaseExistingSiteJavascriptTestBase {
     // oe_whitelabel.
     $assert_session->elementTextEquals('css', '.paragraph--type--oe-gallery > h2.bcl-heading.mb-4', 'Gallery title');
     $assert_session->elementTextEquals('css', '.paragraph--type--oe-gallery > p', 'Example <strong>description</strong> for the gallery paragraph.');
+    $assert_session->elementExists('css', '.paragraph--type--oe-gallery .copyright-overlay');
+    $assert_session->elementTextContains('css', '.paragraph--type--oe-gallery .copyright-overlay', $this->getTestMediaCopyright());
 
     $node = $this->getNodeByTitle('Gallery test page');
     $this->drupalGet($node->toUrl('edit-form'));

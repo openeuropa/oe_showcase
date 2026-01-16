@@ -45,6 +45,12 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $this->markEntityTypeForCleanup('node');
     $this->markEntityTypeForCleanup('paragraph');
 
+    $copyright_text = $this->getTestMediaCopyright();
+    $media_1 = $this->createImageMedia([
+      'name' => 'First image',
+      'field_media_copyright' => $copyright_text,
+    ]);
+
     $assert_session = $this->assertSession();
     $page = $this->getSession()->getPage();
 
@@ -348,7 +354,6 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     );
 
     // Add Carousel paragraph.
-    $media_1 = $this->createImageMedia(['name' => 'First image']);
     $this->createAvPortalPhotoMedia(['oe_media_avportal_photo' => 'P-039321/00-04']);
 
     $page->pressButton('Add Carousel');
@@ -405,6 +410,20 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     // Save node.
     $page->pressButton('Save');
 
+    $node_storage = $this->container->get('entity_type.manager')->getStorage('node');
+    $node = reset($node_storage->loadByProperties(['title' => 'OE Showcase Demo Page']));
+    $this->assertNotEmpty($node);
+    foreach ($node->get('field_body') as $item) {
+      $paragraph = $item->entity;
+      if ($paragraph && $paragraph->bundle() === 'oe_banner') {
+        $paragraph->set('field_oe_media', ['target_id' => $media_1->id()]);
+        $paragraph->save();
+        break;
+      }
+    }
+
+    $this->drupalGet($node->toUrl());
+
     // Assert node view.
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $assert_session->addressEquals($language . '/oe-showcase-demo-page');
@@ -434,6 +453,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
     $assert_session->elementExists('css', '.bcl-banner.scheme-green');
+    $assert_session->elementExists('css', '.paragraph--type--oe-banner .copyright-overlay');
+    $assert_session->elementTextContains('css', '.paragraph--type--oe-banner .copyright-overlay', $copyright_text);
 
     // Assert Listing item block.
     $assert_session->pageTextContains('List item block example');
@@ -505,6 +526,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
       ],
     ];
     $assert->assertPattern($expected_values, $paragraph->getOuterHtml());
+    $assert_session->elementExists('css', '.carousel .copyright-overlay');
+    $assert_session->elementTextContains('css', '.carousel .copyright-overlay', $copyright_text);
 
     $this->assertSocialShareBlock();
   }

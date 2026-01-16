@@ -39,9 +39,23 @@ trait MediaCreationTrait {
         continue;
       }
       $media[$bundle] = $this->createMediaByBundle($bundle);
+      if ($media[$bundle]->hasField('field_media_copyright')) {
+        $media[$bundle]->set('field_media_copyright', $this->getTestMediaCopyright());
+        $media[$bundle]->save();
+      }
     }
 
     return $media;
+  }
+
+  /**
+   * Returns the default test copyright string for media items.
+   *
+   * @return string
+   *   The copyright string.
+   */
+  protected function getTestMediaCopyright(): string {
+    return 'Copyright text for tests';
   }
 
   /**

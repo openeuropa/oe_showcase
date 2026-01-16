@@ -14,6 +14,16 @@ Basic installation profile, all it does is:
 
 This profile is aimed to provide developers with a series of examples on how the Open Europa Library features are built and configured. Exposing that features, the building of new sites will be easy to get the necessary components to achieve every site's goals.
 
+## Media copyright overlay
+
+Showcase enables the copyright overlay for media images and remote videos using the OpenEuropa Bootstrap Theme recipes and media templates.
+
+For other projects, apply the recipes shipped with `oe_bootstrap_theme` and mirror the view mode and template setup:
+
+- Apply the recipes from `oe_bootstrap_theme/recipes/media_image_copyright` and `oe_bootstrap_theme/recipes/media_remote_video_copyright`.
+- Ensure `field_media_copyright` is available in the view modes you render (for example `default` and `showcase_embed`).
+- Reuse the media templates in `themes/oe_showcase_theme/templates/media/` to wrap the media field with the `media_container` and `copyright_overlay` patterns.
+
 ## Installation
 
 The recommended way of installing the OpenEuropa Profile is via a [Composer-based workflow][1].
@@ -105,4 +115,3 @@ like the ones generated at https://www.jetbrains.com/phpstorm/marklets/.
 [1]: https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
 [2]: https://www.docker.com/get-docker
 [3]: https://docs.docker.com/compose
-

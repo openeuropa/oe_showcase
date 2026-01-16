@@ -1402,3 +1402,20 @@ function oe_showcase_post_update_00059(&$sandbox): void {
   }
   $role->save();
 }
+
+/**
+ * Add copyright fields to image and remote video media and update displays.
+ */
+function oe_showcase_post_update_00060(): void {
+  ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00060_media_copyright', [
+    'field.storage.media.field_media_copyright',
+    'field.field.media.image.field_media_copyright',
+    'field.field.media.remote_video.field_media_copyright',
+    'core.entity_form_display.media.image.default',
+    'core.entity_form_display.media.remote_video.default',
+    'core.entity_view_display.media.image.default',
+    'core.entity_view_display.media.remote_video.default',
+    'core.entity_view_display.media.image.showcase_embed',
+    'core.entity_view_display.media.remote_video.showcase_embed',
+  ]);
+}
