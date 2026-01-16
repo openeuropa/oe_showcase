@@ -7,6 +7,25 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
+
+/**
+ * Implements hook_install().
+ */
+function oe_showcase_install(): void {
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_bootstrap_theme');
+  $recipes = [
+    $theme_path . '/recipes/media_image_copyright',
+    $theme_path . '/recipes/media_remote_video_copyright',
+  ];
+  foreach ($recipes as $recipe_path) {
+    if (is_dir($recipe_path)) {
+      RecipeRunner::processRecipe(Recipe::createFromDirectory($recipe_path));
+    }
+  }
+}
+
 /**
  * Implements hook_post_updates_alter().
  */

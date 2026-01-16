@@ -16,7 +16,7 @@ This profile is aimed to provide developers with a series of examples on how the
 
 ## Media copyright overlay
 
-Showcase enables the copyright overlay for media images and remote videos using the OpenEuropa Bootstrap Theme recipes and media templates.
+Showcase enables the copyright overlay for media images and remote videos using the OpenEuropa Bootstrap Theme recipes and media templates. The profile applies the recipes during installation.
 
 For other projects, apply the recipes shipped with `oe_bootstrap_theme` and mirror the view mode and template setup:
 

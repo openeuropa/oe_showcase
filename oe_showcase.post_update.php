@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\facets\Entity\Facet;
 use Drupal\field\Entity\FieldConfig;
@@ -1407,17 +1409,21 @@ function oe_showcase_post_update_00059(&$sandbox): void {
  * Add copyright fields to image and remote video media and update displays.
  */
 function oe_showcase_post_update_00060(): void {
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_bootstrap_theme');
+  $recipes = [
+    $theme_path . '/recipes/media_image_copyright',
+    $theme_path . '/recipes/media_remote_video_copyright',
+  ];
+  foreach ($recipes as $recipe_path) {
+    if (is_dir($recipe_path)) {
+      RecipeRunner::processRecipe(Recipe::createFromDirectory($recipe_path));
+    }
+  }
+
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00060_media_copyright', [
-    'field.storage.media.field_media_copyright',
-    'field.field.media.image.field_media_copyright',
-    'field.field.media.remote_video.field_media_copyright',
-    'core.entity_form_display.media.image.default',
-    'core.entity_form_display.media.remote_video.default',
-    'core.entity_view_display.media.image.default',
-    'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
-    'core.entity_view_display.media.remote_video.default',
-    'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.image.showcase_embed',
     'core.entity_view_display.media.remote_video.showcase_embed',
+    'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
+    'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
   ]);
 }
