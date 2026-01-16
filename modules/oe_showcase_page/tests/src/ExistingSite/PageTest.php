@@ -416,6 +416,9 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     foreach ($node->get('field_body') as $item) {
       $paragraph = $item->entity;
       if ($paragraph && $paragraph->bundle() === 'oe_banner') {
+        if ($paragraph->hasField('oe_paragraphs_variant')) {
+          $paragraph->set('oe_paragraphs_variant', 'oe_banner_image');
+        }
         $paragraph->set('field_oe_media', ['target_id' => $media_1->id()]);
         $paragraph->save();
         break;

@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme override to display the 'banner' type paragraph with optional copyright.
+ *
+ * @see ./modules/contrib/paragraphs/templates/paragraph.html.twig
+ */
+#}
+{% if url %}
+  {% set _call_to_action = {
+    'label': label,
+    'path': url,
+    'attributes': create_attribute({
+      'class': [
+        'btn',
+        variant == 'primary' ? 'btn-light' : 'btn-primary',
+      ],
+    }),
+    'icon': {
+      'name': 'chevron-right',
+      'size': 'fluid',
+      'path': bcl_icon_path,
+    },
+  } %}
+{% endif %}
+{% set _hero = 'hero' in pattern %}
+{% set _shade = 'shade' in variant %}
+
+{% set copyright_value = '' %}
+{% if not paragraph.get('field_oe_media').isEmpty() %}
+  {% set media_entity = paragraph.get('field_oe_media').entity %}
+  {% if media_entity and media_entity.hasField('field_media_copyright') and not media_entity.get('field_media_copyright').isEmpty() %}
+    {% set copyright_value = media_entity.field_media_copyright.value %}
+  {% endif %}
+{% endif %}
+
+{% set banner_markup %}
+  {{ pattern('banner', {
+    'variant': variant,
+    'title': title,
+    'description': description,
+    'call_to_action': _call_to_action,
+    'image': image.src,
+    'hero': _hero,
+    'shade': _shade,
+    'full_width': full_width,
+    'centered': centered,
+    'attributes': attributes,
+  }) }}
+{% endset %}
+
+{% if copyright_value and (variant == 'image' or variant == 'image_shade') %}
+  {{ pattern('media_container', {
+    media: banner_markup,
+    copyright: {
+      content: copyright_value,
+    },
+    tag: 'div',
+  }) }}
+{% else %}
+  {{ banner_markup }}
+{% endif %}

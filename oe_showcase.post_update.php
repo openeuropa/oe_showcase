@@ -1414,7 +1414,9 @@ function oe_showcase_post_update_00060(): void {
     'core.entity_form_display.media.image.default',
     'core.entity_form_display.media.remote_video.default',
     'core.entity_view_display.media.image.default',
+    'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.remote_video.default',
+    'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.image.showcase_embed',
     'core.entity_view_display.media.remote_video.showcase_embed',
   ]);
