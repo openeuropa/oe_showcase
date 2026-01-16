@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ee47080e38cc02eb2fec82d8b88949d",
+    "content-hash": "d729324ae67acf9915f71ac21c3cd3b3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -21124,7 +21124,14 @@
             "time": "2025-07-07T02:18:46+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "openeuropa/oe_bootstrap_theme",
+            "version": "0.3342.202501161800.0",
+            "alias": "1.31.0",
+            "alias_normalized": "1.31.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
