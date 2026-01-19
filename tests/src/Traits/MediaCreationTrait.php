@@ -55,7 +55,7 @@ trait MediaCreationTrait {
    *   The copyright string.
    */
   protected function getTestMediaCopyright(): string {
-    return 'Copyright text for tests';
+    return 'Copyright text for demo';
   }
 
   /**

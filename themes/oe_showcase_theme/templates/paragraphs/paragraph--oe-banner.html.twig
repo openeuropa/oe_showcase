@@ -46,9 +46,11 @@
   'centered': centered,
 } %}
 
+{% set wrapper_attributes = attributes|without('id') %}
+
 {% set banner_markup %}
   {{ pattern('banner', banner_params|merge({
-    'attributes': create_attribute(),
+    'attributes': attributes,
   })) }}
 {% endset %}
 
@@ -59,10 +61,8 @@
       content: copyright_value,
     },
     tag: 'div',
-    attributes: attributes,
+    attributes: wrapper_attributes,
   }) }}
 {% else %}
-  {{ pattern('banner', banner_params|merge({
-    'attributes': attributes,
-  })) }}
+  {{ banner_markup }}
 {% endif %}
