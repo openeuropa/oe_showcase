@@ -1423,8 +1423,12 @@ function oe_showcase_post_update_00060(): void {
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00060_media_copyright', [
     'core.entity_view_display.media.image.showcase_embed',
     'core.entity_view_display.media.remote_video.showcase_embed',
+    'core.entity_view_display.media.av_portal_photo.showcase_embed',
+    'core.entity_view_display.media.av_portal_video.showcase_embed',
     'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
+    'core.entity_view_display.media.av_portal_photo.oe_w_pattern_gallery_item',
+    'core.entity_view_display.media.av_portal_video.oe_w_pattern_gallery_item',
   ]);
 
   \Drupal::moduleHandler()->loadInclude('oe_showcase', 'install');

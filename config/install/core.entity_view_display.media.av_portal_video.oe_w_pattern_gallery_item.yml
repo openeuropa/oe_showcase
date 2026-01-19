@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.oe_w_pattern_gallery_item
+    - field.field.media.av_portal_video.field_media_copyright
+    - field.field.media.av_portal_video.oe_media_avportal_video
+    - media.type.av_portal_video
+  module:
+    - image
+    - media_avportal
+    - oe_whitelabel_helper
+id: media.av_portal_video.oe_w_pattern_gallery_item
+targetEntityType: media
+bundle: av_portal_video
+mode: oe_w_pattern_gallery_item
+content:
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      oe_whitelabel_helper:
+        pattern_mapping: caption_title
+    weight: 0
+    region: content
+  oe_media_avportal_video:
+    type: avportal_video
+    label: hidden
+    settings:
+      max_width: 640
+      max_height: 390
+    third_party_settings:
+      oe_whitelabel_helper:
+        pattern_mapping: media
+    weight: 2
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings:
+      oe_whitelabel_helper:
+        pattern_mapping: thumbnail
+    weight: 1
+    region: content
+  field_media_copyright:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      oe_whitelabel_helper:
+        pattern_mapping: copyright
+    weight: 3
+    region: content
+hidden:
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true

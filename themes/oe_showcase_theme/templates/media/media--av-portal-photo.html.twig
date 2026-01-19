@@ -1,11 +1,12 @@
 {#
 /**
  * @file
- * Theme override to display image media with optional copyright overlay.
+ * Theme override to display AV Portal photo media with optional copyright overlay.
  */
 #}
 {% set copyright_value = media.hasField('field_media_copyright') ? media.field_media_copyright.value : '' %}
-{% set media_output = content.oe_media_image %}
+{% set media_output = content.oe_media_avportal_photo %}
+
 <div{{ attributes }}>
   {{ title_suffix.contextual_links }}
   {% if media_output is not empty %}
@@ -20,5 +21,5 @@
       {{ media_output }}
     {% endif %}
   {% endif %}
-  {{ content|without('oe_media_image', 'field_media_copyright') }}
+  {{ content|without('oe_media_avportal_photo', 'field_media_copyright') }}
 </div>
