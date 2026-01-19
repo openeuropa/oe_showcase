@@ -50,14 +50,12 @@
 {% endset %}
 
 {% if copyright_value and (variant == 'image' or variant == 'image_shade') %}
-  {% set wrapper_attributes = create_attribute({ 'class': attributes.class }) %}
   {{ pattern('media_container', {
     media: banner_markup,
     copyright: {
       content: copyright_value,
     },
     tag: 'div',
-    attributes: wrapper_attributes,
   }) }}
 {% else %}
   {{ banner_markup }}

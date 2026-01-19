@@ -11,7 +11,7 @@
 {% set icon_path = bcl_icon_path %}
 
 {% set items = items|default([]) %}
-{% set items = items|map(_item => (_item.copyright is defined and (_item.copyright|striptags|trim))
+{% set items = items|map(_item => (_item.copyright is defined and _item.copyright is not empty)
   ? _item|merge({
     media: pattern('media_container', {
       media: _item.media,
