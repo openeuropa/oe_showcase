@@ -411,7 +411,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $page->pressButton('Save');
 
     $node_storage = $this->container->get('entity_type.manager')->getStorage('node');
-    $node = reset($node_storage->loadByProperties(['title' => 'OE Showcase Demo Page']));
+    $nodes = $node_storage->loadByProperties(['title' => 'OE Showcase Demo Page']);
+    $node = reset($nodes);
     $this->assertNotEmpty($node);
     foreach ($node->get('field_body') as $item) {
       $paragraph = $item->entity;
