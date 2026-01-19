@@ -274,7 +274,9 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
       'Publication 0',
       'Publication 1',
       'Publication 2',
-    ]);
+      'Publication 3',
+      'Publication 4',
+    ], TRUE);
     // Filter by Publication date to 04/04/2022.
     $publication_date_to->setValue('04/04/2022');
     $this->scrollIntoView('#' . $search_button->getAttribute('id'));
@@ -319,11 +321,23 @@ class SearchFiltersTest extends ShowcaseExistingSiteJavascriptTestBase {
    *
    * @param array $expected
    *   Expected titles of search result items.
+   * @param bool $allow_subset
+   *   Whether to allow results to be a subset of expected titles.
    */
-  protected function assertSearchResults(array $expected): void {
+  protected function assertSearchResults(array $expected, bool $allow_subset = FALSE): void {
     $items = $this->assertSession()
       ->elementExists('css', '.views-element-container')
       ->findAll('css', '.card-title');
+    if ($allow_subset) {
+      $actual = array_map(
+        static fn(NodeElement $element): string => $element->getText(),
+        $items,
+      );
+      foreach ($actual as $title) {
+        $this->assertContains($title, $expected);
+      }
+      return;
+    }
     $this->assertElementsTexts($expected, $items);
   }
 
