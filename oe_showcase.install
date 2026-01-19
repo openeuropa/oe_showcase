@@ -9,6 +9,10 @@ declare(strict_types=1);
 
 use Drupal\Core\Recipe\Recipe;
 use Drupal\Core\Recipe\RecipeRunner;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_install().
@@ -22,6 +26,112 @@ function oe_showcase_install(): void {
   foreach ($recipes as $recipe_path) {
     if (is_dir($recipe_path)) {
       RecipeRunner::processRecipe(Recipe::createFromDirectory($recipe_path));
+    }
+  }
+
+  oe_showcase_apply_media_copyright_to_all_bundles();
+}
+
+/**
+ * Adds the media copyright field to all media bundles and default displays.
+ */
+function oe_showcase_apply_media_copyright_to_all_bundles(): void {
+  $default_copyright = 'Copyright text for demo';
+  $field_storage = FieldStorageConfig::loadByName('media', 'field_media_copyright');
+  if ($field_storage === NULL) {
+    FieldStorageConfig::create([
+      'field_name' => 'field_media_copyright',
+      'entity_type' => 'media',
+      'type' => 'string',
+      'settings' => [
+        'max_length' => 255,
+        'case_sensitive' => FALSE,
+        'is_ascii' => FALSE,
+      ],
+      'cardinality' => 1,
+      'translatable' => TRUE,
+    ])->save();
+  }
+
+  $bundle_info = \Drupal::service('entity_type.bundle.info')->getBundleInfo('media');
+  foreach (array_keys($bundle_info) as $bundle) {
+    $field_config = FieldConfig::loadByName('media', $bundle, 'field_media_copyright');
+    if ($field_config === NULL) {
+      $field_config = FieldConfig::create([
+        'field_name' => 'field_media_copyright',
+        'entity_type' => 'media',
+        'bundle' => $bundle,
+        'label' => 'Copyright',
+        'description' => 'Copyright information for this media.',
+        'required' => FALSE,
+        'translatable' => TRUE,
+        'default_value' => [
+          ['value' => $default_copyright],
+        ],
+      ]);
+      $field_config->save();
+    }
+    elseif (empty($field_config->get('default_value'))) {
+      $field_config->set('default_value', [
+        ['value' => $default_copyright],
+      ]);
+      $field_config->save();
+    }
+
+    $form_display = EntityFormDisplay::load("media.$bundle.default");
+    if ($form_display === NULL) {
+      $form_display = EntityFormDisplay::create([
+        'targetEntityType' => 'media',
+        'bundle' => $bundle,
+        'mode' => 'default',
+        'status' => TRUE,
+      ]);
+    }
+    if (!$form_display->getComponent('field_media_copyright')) {
+      $form_display->setComponent('field_media_copyright', [
+        'type' => 'string_textfield',
+        'settings' => [
+          'size' => 60,
+          'placeholder' => '',
+        ],
+        'weight' => 1,
+        'region' => 'content',
+      ]);
+      $form_display->save();
+    }
+
+    $view_display = EntityViewDisplay::load("media.$bundle.default");
+    if ($view_display === NULL) {
+      $view_display = EntityViewDisplay::create([
+        'targetEntityType' => 'media',
+        'bundle' => $bundle,
+        'mode' => 'default',
+        'status' => TRUE,
+      ]);
+    }
+    if (!$view_display->getComponent('field_media_copyright')) {
+      $view_display->setComponent('field_media_copyright', [
+        'type' => 'string',
+        'label' => 'visually_hidden',
+        'settings' => [
+          'link_to_entity' => FALSE,
+        ],
+        'weight' => 1,
+        'region' => 'content',
+      ]);
+      $view_display->save();
+    }
+  }
+
+  $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+  $media_ids = \Drupal::entityQuery('media')->accessCheck(FALSE)->execute();
+  foreach (array_chunk($media_ids, 50) as $chunk) {
+    $media_items = $media_storage->loadMultiple($chunk);
+    foreach ($media_items as $media) {
+      if ($media->hasField('field_media_copyright') && $media->get('field_media_copyright')->isEmpty()) {
+        $media->set('field_media_copyright', $default_copyright);
+        $media->save();
+      }
     }
   }
 }

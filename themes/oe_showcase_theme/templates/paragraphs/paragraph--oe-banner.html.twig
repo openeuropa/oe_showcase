@@ -34,19 +34,22 @@
   {% endif %}
 {% endif %}
 
+{% set banner_params = {
+  'variant': variant,
+  'title': title,
+  'description': description,
+  'call_to_action': _call_to_action,
+  'image': image.src,
+  'hero': _hero,
+  'shade': _shade,
+  'full_width': full_width,
+  'centered': centered,
+} %}
+
 {% set banner_markup %}
-  {{ pattern('banner', {
-    'variant': variant,
-    'title': title,
-    'description': description,
-    'call_to_action': _call_to_action,
-    'image': image.src,
-    'hero': _hero,
-    'shade': _shade,
-    'full_width': full_width,
-    'centered': centered,
-    'attributes': attributes,
-  }) }}
+  {{ pattern('banner', banner_params|merge({
+    'attributes': create_attribute(),
+  })) }}
 {% endset %}
 
 {% if copyright_value and (variant == 'image' or variant == 'image_shade') %}
@@ -56,7 +59,10 @@
       content: copyright_value,
     },
     tag: 'div',
+    attributes: attributes,
   }) }}
 {% else %}
-  {{ banner_markup }}
+  {{ pattern('banner', banner_params|merge({
+    'attributes': attributes,
+  })) }}
 {% endif %}

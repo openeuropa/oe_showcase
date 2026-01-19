@@ -1406,7 +1406,7 @@ function oe_showcase_post_update_00059(&$sandbox): void {
 }
 
 /**
- * Add copyright fields to image and remote video media and update displays.
+ * Add copyright fields to media bundles and update displays.
  */
 function oe_showcase_post_update_00060(): void {
   $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_bootstrap_theme');
@@ -1426,4 +1426,9 @@ function oe_showcase_post_update_00060(): void {
     'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
   ]);
+
+  \Drupal::moduleHandler()->loadInclude('oe_showcase', 'install');
+  if (function_exists('oe_showcase_apply_media_copyright_to_all_bundles')) {
+    oe_showcase_apply_media_copyright_to_all_bundles();
+  }
 }
