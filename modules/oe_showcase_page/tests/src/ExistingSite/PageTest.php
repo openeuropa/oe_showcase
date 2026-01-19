@@ -421,6 +421,11 @@ class PageTest extends ShowcaseExistingSiteTestBase {
         }
         $paragraph->set('field_oe_media', ['target_id' => $media_1->id()]);
         $paragraph->save();
+        $item->setValue([
+          'target_id' => $paragraph->id(),
+          'target_revision_id' => $paragraph->getRevisionId(),
+        ]);
+        $node->save();
         break;
       }
     }

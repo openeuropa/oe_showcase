@@ -10,6 +10,7 @@ declare(strict_types=1);
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\media\MediaInterface;
 use Drupal\oe_bootstrap_theme\ValueObject\ImageValueObject;
 
 /**
@@ -120,4 +121,80 @@ function oe_showcase_theme_preprocess_node__oe_sc_event__full(&$variables) {
   ];
 
   $variables['content']['field_oelp_agenda']['#attributes'] = ['id' => $unique_id];
+}
+
+/**
+ * Implements hook_preprocess_paragraph() for the carousel paragraph.
+ */
+function oe_showcase_theme_preprocess_paragraph__oe_carousel(array &$variables): void {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $variables['slides'] = [];
+  $entity_repository = \Drupal::service('entity.repository');
+  $cacheability = CacheableMetadata::createFromRenderArray($variables);
+  /** @var \Drupal\Core\File\FileUrlGeneratorInterface $file_url_generator */
+  $file_url_generator = \Drupal::service('file_url_generator');
+
+  foreach ($paragraph->get('field_oe_carousel_items')->referencedEntities() as $sub_paragraph) {
+    $sub_paragraph = $entity_repository
+      ->getTranslationFromContext($sub_paragraph, $paragraph->language()->getId());
+    $media = $sub_paragraph->get('field_oe_media')->entity;
+    if (!$media instanceof MediaInterface) {
+      continue;
+    }
+
+    $media = $entity_repository->getTranslationFromContext($media, $paragraph->language()->getId());
+    $cacheability->addCacheableDependency($media);
+    $access = $media->access('view', $variables['user'], TRUE);
+    $cacheability->addCacheableDependency($access);
+    if (!$access->isAllowed()) {
+      $cacheability->applyTo($variables);
+      continue;
+    }
+
+    $source = $media->getSource();
+    $uri = _oe_whitelabel_get_media_uri($source, $media, $cacheability);
+
+    if (empty($uri)) {
+      // Fallback for AV Portal sources when the interface is not detected.
+      $plugin_id = $source->getPluginId();
+      if (strpos($plugin_id, 'media_avportal_') === 0) {
+        $source_field = $source->getConfiguration()['source_field'] ?? '';
+        if ($source_field && !$media->get($source_field)->isEmpty()) {
+          $resource_ref = $media->get($source_field)->value;
+          $uri = 'avportal://' . $resource_ref . '.jpg';
+        }
+      }
+    }
+    if (empty($uri)) {
+      $cacheability->applyTo($variables);
+      continue;
+    }
+
+    $slide = [
+      'caption_title' => $sub_paragraph->get('field_oe_title')->value,
+      'caption' => !$sub_paragraph->get('field_oe_text')->isEmpty() ? $sub_paragraph->get('field_oe_text')->value : '',
+      'image' => [
+        'src' => $file_url_generator->generateAbsoluteString($uri),
+        'alt' => $media->label(),
+      ],
+    ];
+
+    if (!$sub_paragraph->get('field_oe_link')->isEmpty()) {
+      /** @var \Drupal\link\Plugin\Field\FieldType\LinkItem $link_item */
+      $link_item = $sub_paragraph->get('field_oe_link')->first();
+      $slide['link'] = [
+        'path' => $link_item->getUrl(),
+        'label' => $link_item->get('title')->getValue(),
+      ];
+    }
+
+    if ($media->hasField('field_media_copyright')) {
+      $slide['copyright'] = $media->get('field_media_copyright')->value ?: 'Copyright text for demo';
+    }
+
+    $variables['slides'][] = $slide;
+  }
+
+  $cacheability->applyTo($variables);
 }

@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Carousel pattern override to include optional copyright overlays.
+ */
+#}
+{% set _slides = [] %}
+{% for slide in slides %}
+  {% set _image %}
+    {% block image %}
+      <img{{ create_attribute(slide.image).addClass(['d-block', 'w-100']) }} />
+    {% endblock %}
+  {% endset %}
+  {% if slide.copyright is defined and slide.copyright is not empty %}
+    {% set _image = pattern('media_container', {
+      media: _image,
+      copyright: {
+        content: slide.copyright,
+      },
+      tag: 'div',
+    }) %}
+  {% endif %}
+  {% set _item = slide|merge({
+    'image': _image,
+  }) %}
+  {% if slide.link %}
+    {% set _item = _item|merge({
+      'link': slide.link|merge({
+        'icon_position': 'before',
+        'icon': {
+          'name': 'link',
+          'path': bcl_icon_path,
+        },
+      }),
+    }) %}
+  {% endif %}
+  {% set _slides = _slides|merge([_item]) %}
+{% endfor %}
+{% include '@oe-bcl/carousel' with {
+  'title': title,
+  'title_tag': title_tag,
+  'id': carousel_id,
+  'autoplay': autoplay ?? true,
+  'dark': dark_mode,
+  'active_item': active_item,
+  'items': _slides,
+  'fade': fade ?? false,
+  'with_controls': show_controls ?? true,
+  'prev_label': 'Previous'|t,
+  'next_label': 'Next'|t,
+  'with_indicators': show_indicators ?? false,
+  'disable_touch': disable_touch ?? false,
+  'attributes': attributes,
+} only %}

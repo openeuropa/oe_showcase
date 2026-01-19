@@ -26,11 +26,25 @@
 {% set _hero = 'hero' in pattern %}
 {% set _shade = 'shade' in variant %}
 
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+{% set attributes = attributes.addClass(classes) %}
+
 {% set copyright_value = '' %}
+{% set has_media = false %}
 {% if not paragraph.get('field_oe_media').isEmpty() %}
   {% set media_entity = paragraph.get('field_oe_media').entity %}
-  {% if media_entity and media_entity.hasField('field_media_copyright') and not media_entity.get('field_media_copyright').isEmpty() %}
-    {% set copyright_value = media_entity.field_media_copyright.value %}
+  {% if media_entity %}
+    {% set has_media = true %}
+    {% if media_entity.hasField('field_media_copyright') %}
+      {% set copyright_value = media_entity.field_media_copyright.value ?: 'Copyright text for demo' %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
@@ -46,15 +60,16 @@
   'centered': centered,
 } %}
 
-{% set wrapper_attributes = attributes|without('id') %}
+{% set wrapper_attributes = attributes %}
+{% set banner_attributes = create_attribute(attributes.toArray()|without('id')) %}
 
 {% set banner_markup %}
   {{ pattern('banner', banner_params|merge({
-    'attributes': attributes,
+    'attributes': banner_attributes,
   })) }}
 {% endset %}
 
-{% if copyright_value and (variant == 'image' or variant == 'image_shade') %}
+{% if copyright_value and has_media %}
   {{ pattern('media_container', {
     media: banner_markup,
     copyright: {
