@@ -44,3 +44,21 @@ function oe_showcase_list_pages_post_update_00003(&$sandbox): void {
     'search_api.index.oe_list_pages_index'
   );
 }
+
+/**
+ * Add placeholders for facets.
+ */
+function oe_showcase_list_pages_post_update_00004(): void {
+  ConfigImporter::importMultiple('module', 'oe_showcase_list_pages', '/config/post_updates/00004_facets', [
+    'facets.facet.oelp_oe_sc_event__location',
+    'facets.facet.oelp_oe_sc_event__title',
+    'facets.facet.oelp_oe_sc_event__type',
+    'facets.facet.oelp_oe_sc_news__title',
+    'facets.facet.oelp_oe_sc_news__type',
+    'facets.facet.oelp_oe_sc_person__title',
+    'facets.facet.oelp_oe_sc_project__status',
+    'facets.facet.oelp_oe_sc_project__type',
+    'facets.facet.oelp_oe_sc_publication__keyword',
+    'facets.facet.oelp_oe_sc_publication__type',
+  ]);
+}
