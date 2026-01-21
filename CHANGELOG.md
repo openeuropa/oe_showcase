@@ -1,11 +1,20 @@
 # Change Log
 
+## [1.31.0](https://github.com/openeuropa/oe_showcase/tree/1.31.0) (2026-01-21)
+
+[Full Changelog](https://github.com/openeuropa/oe_showcase/compare/1.30.0...1.31.0)
+
+**Merged pull requests:**
+
+- OEL-4426: Update triple store path. [\#370](https://github.com/openeuropa/oe_showcase/pull/370) ([tibi2303](https://github.com/tibi2303))
+
 ## [1.30.0](https://github.com/openeuropa/oe_showcase/tree/1.30.0) (2025-12-12)
 
 [Full Changelog](https://github.com/openeuropa/oe_showcase/compare/0.3926.202512081700...1.30.0)
 
 **Merged pull requests:**
 
+- Prepare release 1.30.0. [\#367](https://github.com/openeuropa/oe_showcase/pull/367) ([tibi2303](https://github.com/tibi2303))
 - OEL-4395: Minimal changes for tests. [\#366](https://github.com/openeuropa/oe_showcase/pull/366) ([tibi2303](https://github.com/tibi2303))
 - OEL-0000: Update oe\_showcase. [\#362](https://github.com/openeuropa/oe_showcase/pull/362) ([tibi2303](https://github.com/tibi2303))
 - OEL-3926: Moved links to hidden and prerelease oe\_whitelabel. [\#360](https://github.com/openeuropa/oe_showcase/pull/360) ([tibi2303](https://github.com/tibi2303))
