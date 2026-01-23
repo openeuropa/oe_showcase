@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d729324ae67acf9915f71ac21c3cd3b3",
+    "content-hash": "c2254876f3eebe1f2fc94c53de4b8969",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7591,16 +7591,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "1.32.0",
+            "version": "0.3342.202501161800",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "f4eab8267b07311739277d24a236757341acf897"
+                "reference": "f51faae4b4f61d6878ca6442e688d23f67ac5ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f4eab8267b07311739277d24a236757341acf897",
-                "reference": "f4eab8267b07311739277d24a236757341acf897",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/f51faae4b4f61d6878ca6442e688d23f67ac5ace",
+                "reference": "f51faae4b4f61d6878ca6442e688d23f67ac5ace",
                 "shasum": ""
             },
             "require": {
@@ -7664,9 +7664,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/1.32.0"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202501161800"
             },
-            "time": "2026-01-20T17:10:07+00:00"
+            "time": "2026-01-16T09:11:29+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -21128,8 +21128,8 @@
         {
             "package": "openeuropa/oe_bootstrap_theme",
             "version": "0.3342.202501161800.0",
-            "alias": "1.31.0",
-            "alias_normalized": "1.31.0.0"
+            "alias": "1.32.0",
+            "alias_normalized": "1.32.0.0"
         }
     ],
     "minimum-stability": "dev",
