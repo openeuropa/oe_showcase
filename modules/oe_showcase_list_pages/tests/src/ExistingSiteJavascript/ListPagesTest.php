@@ -218,8 +218,10 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
+    $this->assertSame('Search by keywords...', $title_input->getAttribute('placeholder'));
     $this->assertNotNull($publication_date_input);
     $this->assertNotNull($type);
+    $this->assertSame('Search by type...', $type->getAttribute('placeholder'));
 
     // Filter the News results by date.
     $publication_date_input->setValue('gt');
@@ -423,10 +425,16 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $title_input = $filter_form->findField('Title');
     $event_date_input = $filter_form->findField('Event dates');
     $type = $filter_form->findField('Type');
+    $location = $filter_form->findField('Location');
     $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
+    $this->assertSame('Search by title...', $title_input->getAttribute('placeholder'));
     $this->assertNotNull($event_date_input);
+    $this->assertNotNull($type);
+    $this->assertSame('Search by type...', $type->getAttribute('placeholder'));
+    $this->assertNotNull($location);
+    $this->assertSame('Search by location...', $location->getAttribute('placeholder'));
 
     // Filter results by date.
     $event_date_input->setValue('gt');
@@ -612,7 +620,9 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $filter_end = $filter_form->findField('End date');
     $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($filter_status);
+    $this->assertSame('Search by status...', $filter_status->getAttribute('placeholder'));
     $this->assertNotNull($filter_type);
+    $this->assertSame('Search by project type...', $filter_type->getAttribute('placeholder'));
     $this->assertNotNull($filter_start);
     $this->assertNotNull($filter_end);
     $this->assertNotNull($search_button);
@@ -744,6 +754,7 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($search_button);
     $this->assertNotNull($title_input);
+    $this->assertSame('Search by name...', $title_input->getAttribute('placeholder'));
 
     // Filter Person results by title.
     $title_input->setValue('John Doe 8');
@@ -831,8 +842,10 @@ class ListPagesTest extends ShowcaseExistingSiteJavascriptTestBase {
     $type_select = $filter_form->findField('Type');
     $search_button = $filter_form->findButton('Refine');
     $this->assertNotNull($keyword_input);
+    $this->assertSame('Search by keyword...', $keyword_input->getAttribute('placeholder'));
     $this->assertNotNull($publication_date_input);
     $this->assertNotNull($type_select);
+    $this->assertSame('Search by type...', $type_select->getAttribute('placeholder'));
     $this->assertNotNull($search_button);
 
     // Filter the News results by date.
