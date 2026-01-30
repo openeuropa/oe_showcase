@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1fa075cfbdc0b7d439a3e58953e100b",
+    "content-hash": "6f50397244c23e191013e26004958fbf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7591,16 +7591,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3342.202601301530",
+            "version": "0.3342.202601301915",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "25c692644bf9a814a240cda99c4aaf585829b91d"
+                "reference": "3ca23065cc22b147c5067517b2123d7710a83a4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/25c692644bf9a814a240cda99c4aaf585829b91d",
-                "reference": "25c692644bf9a814a240cda99c4aaf585829b91d",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/3ca23065cc22b147c5067517b2123d7710a83a4f",
+                "reference": "3ca23065cc22b147c5067517b2123d7710a83a4f",
                 "shasum": ""
             },
             "require": {
@@ -7664,9 +7664,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202601301530"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202601301915"
             },
-            "time": "2026-01-30T13:24:07+00:00"
+            "time": "2026-01-30T16:51:08+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -21127,7 +21127,7 @@
     "aliases": [
         {
             "package": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3342.202601301530.0",
+            "version": "0.3342.202601301915.0",
             "alias": "1.32.0",
             "alias_normalized": "1.32.0.0"
         }
