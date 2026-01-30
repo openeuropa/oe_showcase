@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.showcase_embed
-    - field.field.media.av_portal_photo.field_media_copyright
     - field.field.media.av_portal_photo.oe_media_avportal_photo
     - image.style.wide
     - media.type.av_portal_photo
@@ -25,14 +24,6 @@ content:
       image_style: wide
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_media_copyright:
-    type: string
-    label: visually_hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   created: true

@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.showcase_embed
-    - field.field.media.av_portal_video.field_media_copyright
     - field.field.media.av_portal_video.oe_media_avportal_video
     - media.type.av_portal_video
   module:
@@ -25,14 +24,6 @@ content:
       max_height: 390
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_media_copyright:
-    type: string
-    label: visually_hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   created: true

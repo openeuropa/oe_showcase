@@ -16,12 +16,12 @@ This profile is aimed to provide developers with a series of examples on how the
 
 ## Media copyright overlay
 
-Showcase enables the copyright overlay for media images and remote videos using the OpenEuropa Bootstrap Theme recipes and media templates. The profile applies the recipes during installation, attaches the copyright field to all existing media bundles so it can be filled in for other media types, and provides a demo default value for new media.
+Showcase enables the copyright overlay for media images, remote videos, and AV Portal photos/videos using the OpenEuropa Bootstrap Theme recipes and media templates. The profile applies the recipes during installation and post-updates, then seeds a demo default value for existing media items.
 
 For other projects, apply the recipes shipped with `oe_bootstrap_theme` and mirror the view mode and template setup:
 
-- Apply the recipes from `oe_bootstrap_theme/recipes/media_image_copyright` and `oe_bootstrap_theme/recipes/media_remote_video_copyright`.
-- Ensure `field_media_copyright` is available in the view modes you render (for example `default` and `showcase_embed`). If you need it on additional media bundles, add the field configuration for those bundles as well.
+- Apply the recipes from `oe_bootstrap_theme/recipes/media_image_copyright`, `oe_bootstrap_theme/recipes/media_remote_video_copyright`, `oe_bootstrap_theme/recipes/media_av_portal_photo_copyright`, and `oe_bootstrap_theme/recipes/media_av_portal_video_copyright` (or create equivalents for additional media bundles).
+- Ensure `field_media_copyright` is available in the view modes you render (for example `default` and any gallery-specific view modes you map). If you need it on additional media bundles, add the field configuration for those bundles as well.
 - Reuse the media templates in `themes/oe_showcase_theme/templates/media/` to wrap the media field with the `media_container` and `copyright_overlay` patterns.
 
 ## Installation

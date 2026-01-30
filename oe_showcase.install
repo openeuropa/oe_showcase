@@ -9,8 +9,6 @@ declare(strict_types=1);
 
 use Drupal\Core\Recipe\Recipe;
 use Drupal\Core\Recipe\RecipeRunner;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\oe_bootstrap_theme\ConfigImporter;
@@ -23,6 +21,8 @@ function oe_showcase_install(): void {
   $recipes = [
     $theme_path . '/recipes/media_image_copyright',
     $theme_path . '/recipes/media_remote_video_copyright',
+    $theme_path . '/recipes/media_av_portal_photo_copyright',
+    $theme_path . '/recipes/media_av_portal_video_copyright',
   ];
   foreach ($recipes as $recipe_path) {
     if (is_dir($recipe_path)) {
@@ -30,108 +30,39 @@ function oe_showcase_install(): void {
     }
   }
 
-  oe_showcase_apply_media_copyright_to_all_bundles();
-
   ConfigImporter::importMultiple('profile', 'oe_showcase', '/config/post_updates/00060_media_copyright', [
-    'core.entity_view_display.media.image.showcase_embed',
-    'core.entity_view_display.media.remote_video.showcase_embed',
-    'core.entity_view_display.media.av_portal_photo.showcase_embed',
-    'core.entity_view_display.media.av_portal_video.showcase_embed',
     'core.entity_view_display.media.image.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.remote_video.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.av_portal_photo.oe_w_pattern_gallery_item',
     'core.entity_view_display.media.av_portal_video.oe_w_pattern_gallery_item',
   ]);
+
+  oe_showcase_apply_media_copyright_to_all_bundles();
 }
 
 /**
- * Adds the media copyright field to all media bundles and default displays.
+ * Applies a demo default copyright to existing media items.
  */
 function oe_showcase_apply_media_copyright_to_all_bundles(): void {
   $default_copyright = 'Copyright text for demo';
   $field_storage = FieldStorageConfig::loadByName('media', 'field_media_copyright');
   if ($field_storage === NULL) {
-    FieldStorageConfig::create([
-      'field_name' => 'field_media_copyright',
-      'entity_type' => 'media',
-      'type' => 'string',
-      'settings' => [
-        'max_length' => 255,
-        'case_sensitive' => FALSE,
-        'is_ascii' => FALSE,
-      ],
-      'cardinality' => 1,
-      'translatable' => TRUE,
-    ])->save();
+    return;
   }
 
-  $bundle_info = \Drupal::service('entity_type.bundle.info')->getBundleInfo('media');
-  foreach (array_keys($bundle_info) as $bundle) {
+  $bundles = [
+    'image',
+    'remote_video',
+    'av_portal_photo',
+    'av_portal_video',
+  ];
+  foreach ($bundles as $bundle) {
     $field_config = FieldConfig::loadByName('media', $bundle, 'field_media_copyright');
-    if ($field_config === NULL) {
-      $field_config = FieldConfig::create([
-        'field_name' => 'field_media_copyright',
-        'entity_type' => 'media',
-        'bundle' => $bundle,
-        'label' => 'Copyright',
-        'description' => 'Copyright information for this media.',
-        'required' => FALSE,
-        'translatable' => TRUE,
-        'default_value' => [
-          ['value' => $default_copyright],
-        ],
-      ]);
-      $field_config->save();
-    }
-    elseif (empty($field_config->get('default_value'))) {
+    if ($field_config !== NULL && empty($field_config->get('default_value'))) {
       $field_config->set('default_value', [
         ['value' => $default_copyright],
       ]);
       $field_config->save();
-    }
-
-    $form_display = EntityFormDisplay::load("media.$bundle.default");
-    if ($form_display === NULL) {
-      $form_display = EntityFormDisplay::create([
-        'targetEntityType' => 'media',
-        'bundle' => $bundle,
-        'mode' => 'default',
-        'status' => TRUE,
-      ]);
-    }
-    if (!$form_display->getComponent('field_media_copyright')) {
-      $form_display->setComponent('field_media_copyright', [
-        'type' => 'string_textfield',
-        'settings' => [
-          'size' => 60,
-          'placeholder' => '',
-        ],
-        'weight' => 1,
-        'region' => 'content',
-      ]);
-      $form_display->save();
-    }
-
-    $view_display = EntityViewDisplay::load("media.$bundle.default");
-    if ($view_display === NULL) {
-      $view_display = EntityViewDisplay::create([
-        'targetEntityType' => 'media',
-        'bundle' => $bundle,
-        'mode' => 'default',
-        'status' => TRUE,
-      ]);
-    }
-    if (!$view_display->getComponent('field_media_copyright')) {
-      $view_display->setComponent('field_media_copyright', [
-        'type' => 'string',
-        'label' => 'visually_hidden',
-        'settings' => [
-          'link_to_entity' => FALSE,
-        ],
-        'weight' => 1,
-        'region' => 'content',
-      ]);
-      $view_display->save();
     }
   }
 

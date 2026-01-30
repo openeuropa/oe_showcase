@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.showcase_embed
-    - field.field.media.image.field_media_copyright
     - field.field.media.image.oe_media_image
     - image.style.wide
     - media.type.image
@@ -28,14 +27,6 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_media_copyright:
-    type: string
-    label: visually_hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   created: true

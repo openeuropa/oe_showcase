@@ -51,7 +51,7 @@
         "openeuropa/oe_agenda": "^1.0.0-alpha4",
         "openeuropa/oe_ai_provider_gpt_at_ec": "^1.0.0-alpha3",
         "openeuropa/oe_authentication": "^1.17",
-        "openeuropa/oe_bootstrap_theme": "0.3342.202501161800 as 1.32.0",
+        "openeuropa/oe_bootstrap_theme": "0.3342.202601301530 as 1.32.0",
         "openeuropa/oe_contact_forms": "^1.20",
         "openeuropa/oe_content": "^4.11.0",
         "openeuropa/oe_content_extra": "^1.4",
