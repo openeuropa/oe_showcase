@@ -462,8 +462,8 @@ class PageTest extends ShowcaseExistingSiteTestBase {
     $assert_session->pageTextContains('Banner 0 item title');
     $assert_session->pageTextContains('Banner 0 item Body');
     $assert_session->elementExists('css', '.bcl-banner.scheme-green');
-    $assert_session->elementExists('css', '.paragraph--type--oe-banner .copyright-overlay');
-    $assert_session->elementTextContains('css', '.paragraph--type--oe-banner .copyright-overlay', $copyright_text);
+    $assert_session->elementExists('css', '.bcl-banner + .copyright-overlay');
+    $assert_session->elementTextContains('css', '.bcl-banner + .copyright-overlay', $copyright_text);
 
     // Assert Listing item block.
     $assert_session->pageTextContains('List item block example');
