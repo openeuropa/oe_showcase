@@ -10,8 +10,8 @@
   {{ title_suffix.contextual_links }}
   {% if media_output is not empty %}
     {% if copyright_value %}
-      {{ pattern('media_container', {
-        media: media_output,
+      {{ pattern('copyright_wrapper', {
+        content: media_output,
         copyright: {
           content: copyright_value,
         },

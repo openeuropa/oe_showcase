@@ -22,7 +22,7 @@ For other projects, apply the recipes shipped with `oe_whitelabel` and mirror th
 
 - Apply the recipes from `oe_whitelabel/recipes/media_image_copyright`, `oe_whitelabel/recipes/media_remote_video_copyright`, `oe_whitelabel/recipes/media_av_portal_photo_copyright`, and `oe_whitelabel/recipes/media_av_portal_video_copyright` (or create equivalents for additional media bundles).
 - Ensure `field_media_copyright` is available in the view modes you render (for example `default` and any gallery-specific view modes you map). If you need it on additional media bundles, add the field configuration for those bundles as well.
-- Reuse the media templates in `themes/oe_showcase_theme/templates/media/` to wrap the media field with the `media_container` and `copyright_overlay` patterns.
+- Reuse the media templates in `themes/oe_showcase_theme/templates/media/` to wrap the media field with the `copyright_wrapper` pattern.
 
 ## Installation
 

@@ -12,8 +12,8 @@
   {{ content|without('oe_media_oembed_video', 'field_media_copyright') }}
   {% if media_output is not empty %}
     {% if copyright_value %}
-      {{ pattern('media_container', {
-        media: media_output,
+      {{ pattern('copyright_wrapper', {
+        content: media_output,
         copyright: {
           content: copyright_value,
         },

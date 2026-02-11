@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98d9d3ee113c590bb6c7255e72cea945",
+    "content-hash": "4e2ac01a8fbff9f1a344aa577ce9a058",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7591,16 +7591,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3342.202602111545",
+            "version": "0.3342.202602120030",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5"
+                "reference": "b7a955a88ae708ea8ea9970278bf5591ba323b71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5",
-                "reference": "a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/b7a955a88ae708ea8ea9970278bf5591ba323b71",
+                "reference": "b7a955a88ae708ea8ea9970278bf5591ba323b71",
                 "shasum": ""
             },
             "require": {
@@ -7664,9 +7664,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202602111545"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202602120030"
             },
-            "time": "2026-02-11T13:10:21+00:00"
+            "time": "2026-02-11T22:24:31+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202602112020",
+            "version": "0.3347.202602120030",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "edfee4198886e79a1fb0507b90f6a728cfda9644"
+                "reference": "03d2e10b7d6ef1b393befe483a45774af7aa98e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/edfee4198886e79a1fb0507b90f6a728cfda9644",
-                "reference": "edfee4198886e79a1fb0507b90f6a728cfda9644",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/03d2e10b7d6ef1b393befe483a45774af7aa98e5",
+                "reference": "03d2e10b7d6ef1b393befe483a45774af7aa98e5",
                 "shasum": ""
             },
             "require": {
@@ -8904,7 +8904,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "0.3342.202602111545 as 1.32.0",
+                "openeuropa/oe_bootstrap_theme": "0.3342.202602120030 as 1.32.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8995,9 +8995,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202602112020"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202602120030"
             },
-            "time": "2026-02-11T18:11:48+00:00"
+            "time": "2026-02-11T22:31:35+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -14899,29 +14899,30 @@
         },
         {
             "name": "doctrine/instantiator",
-            "version": "2.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "23da848e1a2308728fe5fdddabf4be17ff9720c7"
+                "reference": "c6222283fa3f4ac679f8b9ced9a4e23f163e80d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/23da848e1a2308728fe5fdddabf4be17ff9720c7",
-                "reference": "23da848e1a2308728fe5fdddabf4be17ff9720c7",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/c6222283fa3f4ac679f8b9ced9a4e23f163e80d0",
+                "reference": "c6222283fa3f4ac679f8b9ced9a4e23f163e80d0",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.4"
+                "php": "^8.1"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^14",
+                "doctrine/coding-standard": "^11",
                 "ext-pdo": "*",
                 "ext-phar": "*",
                 "phpbench/phpbench": "^1.2",
-                "phpstan/phpstan": "^2.1",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^10.5.58"
+                "phpstan/phpstan": "^1.9.4",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpunit/phpunit": "^9.5.27",
+                "vimeo/psalm": "^5.4"
             },
             "type": "library",
             "autoload": {
@@ -14948,7 +14949,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
-                "source": "https://github.com/doctrine/instantiator/tree/2.1.0"
+                "source": "https://github.com/doctrine/instantiator/tree/2.0.0"
             },
             "funding": [
                 {
@@ -14964,7 +14965,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-05T06:47:08+00:00"
+            "time": "2022-12-30T00:23:10+00:00"
         },
         {
             "name": "drupal/cas_mock_server",
@@ -21139,7 +21140,7 @@
     "aliases": [
         {
             "package": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202602112020.0",
+            "version": "0.3347.202602120030.0",
             "alias": "1.29.0",
             "alias_normalized": "1.29.0.0"
         }
@@ -21148,6 +21149,7 @@
     "stability-flags": {
         "drupal/block_field": 5,
         "drupal/color_scheme_field": 10,
+        "drupal/datetime_testing": 10,
         "drupal/default_content": 15,
         "drupal/description_list_field": 10,
         "drupal/extra_field": 10,
@@ -21155,14 +21157,13 @@
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_corporate_blocks": 10,
-        "openeuropa/oe_subscriptions": 10,
-        "drupal/datetime_testing": 10
+        "openeuropa/oe_subscriptions": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
