@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e87226ebf28092a861a58e2d668a53d5",
+    "content-hash": "98d9d3ee113c590bb6c7255e72cea945",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202602111820",
+            "version": "0.3347.202602112020",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "16ae05c37ee05f479bf79107e841ddbd27003556"
+                "reference": "edfee4198886e79a1fb0507b90f6a728cfda9644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/16ae05c37ee05f479bf79107e841ddbd27003556",
-                "reference": "16ae05c37ee05f479bf79107e841ddbd27003556",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/edfee4198886e79a1fb0507b90f6a728cfda9644",
+                "reference": "edfee4198886e79a1fb0507b90f6a728cfda9644",
                 "shasum": ""
             },
             "require": {
@@ -8995,9 +8995,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202602111820"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202602112020"
             },
-            "time": "2026-02-11T16:10:18+00:00"
+            "time": "2026-02-11T18:11:48+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -14899,30 +14899,29 @@
         },
         {
             "name": "doctrine/instantiator",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "c6222283fa3f4ac679f8b9ced9a4e23f163e80d0"
+                "reference": "23da848e1a2308728fe5fdddabf4be17ff9720c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/c6222283fa3f4ac679f8b9ced9a4e23f163e80d0",
-                "reference": "c6222283fa3f4ac679f8b9ced9a4e23f163e80d0",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/23da848e1a2308728fe5fdddabf4be17ff9720c7",
+                "reference": "23da848e1a2308728fe5fdddabf4be17ff9720c7",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.4"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^11",
+                "doctrine/coding-standard": "^14",
                 "ext-pdo": "*",
                 "ext-phar": "*",
                 "phpbench/phpbench": "^1.2",
-                "phpstan/phpstan": "^1.9.4",
-                "phpstan/phpstan-phpunit": "^1.3",
-                "phpunit/phpunit": "^9.5.27",
-                "vimeo/psalm": "^5.4"
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^10.5.58"
             },
             "type": "library",
             "autoload": {
@@ -14949,7 +14948,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
-                "source": "https://github.com/doctrine/instantiator/tree/2.0.0"
+                "source": "https://github.com/doctrine/instantiator/tree/2.1.0"
             },
             "funding": [
                 {
@@ -14965,7 +14964,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-30T00:23:10+00:00"
+            "time": "2026-01-05T06:47:08+00:00"
         },
         {
             "name": "drupal/cas_mock_server",
@@ -21140,7 +21139,7 @@
     "aliases": [
         {
             "package": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202602111820.0",
+            "version": "0.3347.202602112020.0",
             "alias": "1.29.0",
             "alias_normalized": "1.29.0.0"
         }
@@ -21149,7 +21148,6 @@
     "stability-flags": {
         "drupal/block_field": 5,
         "drupal/color_scheme_field": 10,
-        "drupal/datetime_testing": 10,
         "drupal/default_content": 15,
         "drupal/description_list_field": 10,
         "drupal/extra_field": 10,
@@ -21157,13 +21155,14 @@
         "drupal/user_field_anonymize": 15,
         "drupal/user_fields_visibility": 15,
         "openeuropa/oe_corporate_blocks": 10,
-        "openeuropa/oe_subscriptions": 10
+        "openeuropa/oe_subscriptions": 10,
+        "drupal/datetime_testing": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
