@@ -17,7 +17,7 @@ use Drupal\oe_bootstrap_theme\ConfigImporter;
  * Implements hook_install().
  */
 function oe_showcase_install(): void {
-  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_bootstrap_theme');
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_whitelabel');
   $recipes = [
     $theme_path . '/recipes/media_image_copyright',
     $theme_path . '/recipes/media_remote_video_copyright',

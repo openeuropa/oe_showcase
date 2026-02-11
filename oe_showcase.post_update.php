@@ -1409,7 +1409,7 @@ function oe_showcase_post_update_00059(&$sandbox): void {
  * Add copyright fields to media bundles and update displays.
  */
 function oe_showcase_post_update_00060(): void {
-  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_bootstrap_theme');
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('oe_whitelabel');
   $recipes = [
     $theme_path . '/recipes/media_image_copyright',
     $theme_path . '/recipes/media_remote_video_copyright',

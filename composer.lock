@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f94f38ff513966b7ac4575b29b53c20b",
+    "content-hash": "e87226ebf28092a861a58e2d668a53d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -416,29 +416,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38"
+                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
-                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
+                "reference": "d4fe3e6fd9bb9e72557a19674f44d8ac7db4c6ca",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "conflict": {
-                "phpunit/phpunit": "<=7.5 || >=13"
+                "phpunit/phpunit": "<=7.5 || >=14"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9 || ^12 || ^13",
-                "phpstan/phpstan": "1.4.10 || 2.1.11",
+                "doctrine/coding-standard": "^9 || ^12 || ^14",
+                "phpstan/phpstan": "1.4.10 || 2.1.30",
                 "phpstan/phpstan-phpunit": "^1.0 || ^2",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12.4 || ^13.0",
                 "psr/log": "^1 || ^2 || ^3"
             },
             "suggest": {
@@ -458,9 +458,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.5"
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.6"
             },
-            "time": "2025-04-07T20:06:18+00:00"
+            "time": "2026-02-07T07:09:04+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -5990,17 +5990,17 @@
         },
         {
             "name": "drupal/ui_patterns",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ui_patterns.git",
-                "reference": "8.x-1.13"
+                "reference": "8.x-1.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ui_patterns-8.x-1.13.zip",
-                "reference": "8.x-1.13",
-                "shasum": "8fc716810b51fb0b050407bb04649ba1549f183a"
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns-8.x-1.14.zip",
+                "reference": "8.x-1.14",
+                "shasum": "f4f0b249586b4363cccd2efa7a379c0529eaf412"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -6012,8 +6012,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.13",
-                    "datestamp": "1750172163",
+                    "version": "8.x-1.14",
+                    "datestamp": "1770223677",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7591,16 +7591,16 @@
         },
         {
             "name": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3342.202601301915",
+            "version": "0.3342.202602111545",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_bootstrap_theme.git",
-                "reference": "3ca23065cc22b147c5067517b2123d7710a83a4f"
+                "reference": "a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/3ca23065cc22b147c5067517b2123d7710a83a4f",
-                "reference": "3ca23065cc22b147c5067517b2123d7710a83a4f",
+                "url": "https://api.github.com/repos/openeuropa/oe_bootstrap_theme/zipball/a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5",
+                "reference": "a1a66f6a4f29a9c063b84bd4ca8b0628a13e20d5",
                 "shasum": ""
             },
             "require": {
@@ -7664,9 +7664,9 @@
             "description": "OpenEuropa Bootstrap base theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_bootstrap_theme/issues",
-                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202601301915"
+                "source": "https://github.com/openeuropa/oe_bootstrap_theme/tree/0.3342.202602111545"
             },
-            "time": "2026-01-30T16:51:08+00:00"
+            "time": "2026-02-11T13:10:21+00:00"
         },
         {
             "name": "openeuropa/oe_contact_forms",
@@ -8886,16 +8886,16 @@
         },
         {
             "name": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202502021940",
+            "version": "0.3347.202602111820",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openeuropa/oe_whitelabel.git",
-                "reference": "3585824d92d9bbc793eb1e49cd2518ea149a9a57"
+                "reference": "16ae05c37ee05f479bf79107e841ddbd27003556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/3585824d92d9bbc793eb1e49cd2518ea149a9a57",
-                "reference": "3585824d92d9bbc793eb1e49cd2518ea149a9a57",
+                "url": "https://api.github.com/repos/openeuropa/oe_whitelabel/zipball/16ae05c37ee05f479bf79107e841ddbd27003556",
+                "reference": "16ae05c37ee05f479bf79107e841ddbd27003556",
                 "shasum": ""
             },
             "require": {
@@ -8904,7 +8904,7 @@
                 "drupal/daterange_compact": "^2.0.1",
                 "drupal/twig_field_value": "^2.0.2",
                 "openeuropa/composer-artifacts": "^1.0.0-alpha1",
-                "openeuropa/oe_bootstrap_theme": "^1.32",
+                "openeuropa/oe_bootstrap_theme": "0.3342.202602111545 as 1.32.0",
                 "php": ">=8.1"
             },
             "conflict": {
@@ -8923,7 +8923,7 @@
                 "drupal/extra_field": "^2.3 || ^3.0@beta",
                 "drupal/facets_form": "^1.0.0-alpha6",
                 "drupal/field_group": "^3.4",
-                "drupal/modal_page": "6.0.0-beta10",
+                "drupal/modal_page": "^6.0-beta11",
                 "drupal/paragraphs": "^1.17",
                 "drupal/search_api": "^1.29",
                 "drupal/search_api_autocomplete": "^1.7",
@@ -8949,7 +8949,7 @@
                 "patches": {
                     "drupal/modal_page": {
                         "Improve cache invalidation process: https://www.drupal.org/project/modal_page/issues/3555830": "https://www.drupal.org/files/issues/2026-01-09/3555830-14.patch",
-                        "Support for less-intrusive dialogs via Bootstrap Toasts: https://www.drupal.org/project/modal_page/issues/3535144": "https://www.drupal.org/files/issues/2025-11-25/3535144-21.patch",
+                        "Support for less-intrusive dialogs via Bootstrap Toasts: https://www.drupal.org/project/modal_page/issues/3535144": "https://www.drupal.org/files/issues/2026-02-04/modal_page-3535144-26.patch",
                         "Allow modal entity management without granting access to global module config: https://www.drupal.org/project/modal_page/issues/3559425": "https://www.drupal.org/files/issues/2025-11-25/3559425-5.patch"
                     }
                 },
@@ -8995,9 +8995,9 @@
             "description": "OpenEuropa Whitelabel theme.",
             "support": {
                 "issues": "https://github.com/openeuropa/oe_whitelabel/issues",
-                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202502021940"
+                "source": "https://github.com/openeuropa/oe_whitelabel/tree/0.3347.202602111820"
             },
-            "time": "2026-02-02T16:49:27+00:00"
+            "time": "2026-02-11T16:10:18+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -9118,7 +9118,6 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Console_Getopt",
                 "source": "https://github.com/pear/Console_Getopt"
             },
-            "abandoned": true,
             "time": "2019-11-20T18:27:48+00:00"
         },
         {
@@ -17833,31 +17832,31 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.24.0",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "a24f1bda2d00a03877f7f99d9e6b150baf543f6d"
+                "reference": "7ab965042096282307992f1b9abff020095757f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/a24f1bda2d00a03877f7f99d9e6b150baf543f6d",
-                "reference": "a24f1bda2d00a03877f7f99d9e6b150baf543f6d",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/7ab965042096282307992f1b9abff020095757f0",
+                "reference": "7ab965042096282307992f1b9abff020095757f0",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2 || ^2.0",
                 "php": "8.2.* || 8.3.* || 8.4.* || 8.5.*",
                 "phpdocumentor/reflection-docblock": "^5.2",
-                "sebastian/comparator": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
-                "sebastian/recursion-context": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "sebastian/comparator": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
+                "sebastian/recursion-context": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.88",
+                "php-cs-fixer/shim": "^3.93.1",
                 "phpspec/phpspec": "^6.0 || ^7.0 || ^8.0",
-                "phpstan/phpstan": "^2.1.13",
-                "phpunit/phpunit": "^11.0 || ^12.0"
+                "phpstan/phpstan": "^2.1.13, <2.1.34 || ^2.1.39",
+                "phpunit/phpunit": "^11.0 || ^12.0 || ^13.0"
             },
             "type": "library",
             "extra": {
@@ -17898,9 +17897,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/v1.24.0"
+                "source": "https://github.com/phpspec/prophecy/tree/v1.25.0"
             },
-            "time": "2025-11-21T13:10:52+00:00"
+            "time": "2026-02-09T11:58:00+00:00"
         },
         {
             "name": "phpspec/prophecy-phpunit",
@@ -18553,16 +18552,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.50",
+            "version": "11.5.53",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fdfc727f0fcacfeb8fcb30c7e5da173125b58be3"
+                "reference": "a997a653a82845f1240d73ee73a8a4e97e4b0607"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fdfc727f0fcacfeb8fcb30c7e5da173125b58be3",
-                "reference": "fdfc727f0fcacfeb8fcb30c7e5da173125b58be3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a997a653a82845f1240d73ee73a8a4e97e4b0607",
+                "reference": "a997a653a82845f1240d73ee73a8a4e97e4b0607",
                 "shasum": ""
             },
             "require": {
@@ -18577,7 +18576,7 @@
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
                 "phpunit/php-code-coverage": "^11.0.12",
-                "phpunit/php-file-iterator": "^5.1.0",
+                "phpunit/php-file-iterator": "^5.1.1",
                 "phpunit/php-invoker": "^5.0.1",
                 "phpunit/php-text-template": "^4.0.1",
                 "phpunit/php-timer": "^7.0.1",
@@ -18589,6 +18588,7 @@
                 "sebastian/exporter": "^6.3.2",
                 "sebastian/global-state": "^7.0.2",
                 "sebastian/object-enumerator": "^6.0.1",
+                "sebastian/recursion-context": "^6.0.3",
                 "sebastian/type": "^5.1.3",
                 "sebastian/version": "^5.0.2",
                 "staabm/side-effects-detector": "^1.0.5"
@@ -18634,7 +18634,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.50"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.53"
             },
             "funding": [
                 {
@@ -18658,7 +18658,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-27T05:59:18+00:00"
+            "time": "2026-02-10T12:28:25+00:00"
         },
         {
             "name": "psy/psysh",
@@ -21139,14 +21139,8 @@
     ],
     "aliases": [
         {
-            "package": "openeuropa/oe_bootstrap_theme",
-            "version": "0.3342.202601301915.0",
-            "alias": "1.32.0",
-            "alias_normalized": "1.32.0.0"
-        },
-        {
             "package": "openeuropa/oe_whitelabel",
-            "version": "0.3347.202502021940.0",
+            "version": "0.3347.202602111820.0",
             "alias": "1.29.0",
             "alias_normalized": "1.29.0.0"
         }
